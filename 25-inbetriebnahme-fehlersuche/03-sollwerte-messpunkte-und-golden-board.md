@@ -1,0 +1,41 @@
+# 25.3 – Sollwerte, Messpunkte und Golden Board
+
+[← Zurück](02-strombegrenzung-und-power-rail-sequenz.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](04-hypothesenbasierte-fehlersuche.md)
+
+> **Ausbaustatus:** Inhaltsskelett. Diese Lektion wird in einer späteren Ausbauphase fachlich vollständig entwickelt und geprüft.
+
+## Lernziele
+
+Nach dieser Lektion kannst du die zentralen Zusammenhänge von **Sollwerte, Messpunkte und Golden Board** erklären, eine passende Schaltung oder Messung planen und das Ergebnis anhand definierter Kriterien beurteilen.
+
+## Geplanter Inhalt
+
+- Begriffe, Modelle und Gültigkeitsgrenzen
+- Dimensionierung mit Einheiten und Plausibilitätsprüfung
+- Reale Bauteileigenschaften und typische Fehlerbilder
+- Mess- oder Simulationsbeispiel
+- Transfer in die Berufspraxis
+
+## Hardware ↔ Firmware
+
+Dieser Abschnitt beschreibt in der Endfassung die elektrische Wirkung von Firmwarekonfigurationen, notwendige Schutzgrenzen und messbare Diagnosepunkte. Passende Vertiefungen werden mit dem [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs) verknüpft.
+
+## Sicherheit
+
+Vor Aufbau und Messung werden Gefährdung, Energiequelle, Grenzwerte, Massebezug und strombegrenzte Erstinbetriebnahme festgelegt.
+
+## Praxis und Übungen
+
+- [Labor 25](../praxis/lab-25.md)
+- [Übungen zu Modul 25](../uebungen/modul-25.md)
+- [Separate Lösungen](../loesungen/modul-25-loesungen.md)
+
+## Bildungsplan 2026
+
+Geplante Zuordnung: `b4`, `b5`, `b6`, `c2`, `d6`, `d8`. Details: [Kompetenzmatrix](../bildungsplan/kompetenzmatrix.md).
+
+## Kurzcheck
+
+1. Welches Modell oder welche Annahme ist für dieses Thema entscheidend?
+2. Welche reale Nichtidealität kann das Ergebnis dominieren?
+3. Wie würdest du die Funktion messen, ohne Schaltung oder Messgerät zu gefährden?

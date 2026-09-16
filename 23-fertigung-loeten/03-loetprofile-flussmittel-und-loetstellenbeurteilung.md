@@ -1,0 +1,41 @@
+# 23.3 – Lötprofile, Flussmittel und Lötstellenbeurteilung
+
+[← Zurück](02-tht-und-smd-loettechnik.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](04-esd-sichere-handhabung.md)
+
+> **Ausbaustatus:** Inhaltsskelett. Diese Lektion wird in einer späteren Ausbauphase fachlich vollständig entwickelt und geprüft.
+
+## Lernziele
+
+Nach dieser Lektion kannst du die zentralen Zusammenhänge von **Lötprofile, Flussmittel und Lötstellenbeurteilung** erklären, eine passende Schaltung oder Messung planen und das Ergebnis anhand definierter Kriterien beurteilen.
+
+## Geplanter Inhalt
+
+- Begriffe, Modelle und Gültigkeitsgrenzen
+- Dimensionierung mit Einheiten und Plausibilitätsprüfung
+- Reale Bauteileigenschaften und typische Fehlerbilder
+- Mess- oder Simulationsbeispiel
+- Transfer in die Berufspraxis
+
+## Hardware ↔ Firmware
+
+Dieser Abschnitt beschreibt in der Endfassung die elektrische Wirkung von Firmwarekonfigurationen, notwendige Schutzgrenzen und messbare Diagnosepunkte. Passende Vertiefungen werden mit dem [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs) verknüpft.
+
+## Sicherheit
+
+Vor Aufbau und Messung werden Gefährdung, Energiequelle, Grenzwerte, Massebezug und strombegrenzte Erstinbetriebnahme festgelegt.
+
+## Praxis und Übungen
+
+- [Labor 23](../praxis/lab-23.md)
+- [Übungen zu Modul 23](../uebungen/modul-23.md)
+- [Separate Lösungen](../loesungen/modul-23-loesungen.md)
+
+## Bildungsplan 2026
+
+Geplante Zuordnung: `b3`, `d5`. Details: [Kompetenzmatrix](../bildungsplan/kompetenzmatrix.md).
+
+## Kurzcheck
+
+1. Welches Modell oder welche Annahme ist für dieses Thema entscheidend?
+2. Welche reale Nichtidealität kann das Ergebnis dominieren?
+3. Wie würdest du die Funktion messen, ohne Schaltung oder Messgerät zu gefährden?
