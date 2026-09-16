@@ -20,10 +20,10 @@ Das Modul folgt konsequent der Denkfolge **vorstellen → begründen → berechn
 8. [Übungen](../uebungen/modul-01.md)
 9. [Praxis – Rechnen, Kennlinien lesen und Messwerte plausibilisieren](../praxis/modul-01.md)
 
-## Bildungsplan 2026
-
-Die konkreten Zuordnungen zu `b1–b5` und den ergänzenden Kompetenzen stehen in der [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
-
 ## Projektbezug
 
 Die Inhalte werden in den [Projekten A–C](../projekte/README.md) wieder aufgenommen und dort als nachvollziehbare Entwicklungs- und Messnachweise angewendet.
+
+## Bildungsplan 2026
+
+Die konkreten Zuordnungen zu `b1–b5` und den ergänzenden Kompetenzen stehen in der [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

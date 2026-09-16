@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - die Pflichtkompetenzen und den Hardwarebereich b1–b5 einordnen
 - Kurslektionen über die Kompetenzmatrix mit offiziellen Anforderungen verbinden
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: alle Pflichtkompetenzen, Schwerpunkt `b1–b5`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Lektionen 00.1 und die Bereitschaft, mit Tabellen und Querverweisen zu arbeiten.
-
 ## Warum ist das wichtig?
 
 Der Bildungsplan ist kein Inhaltsverzeichnis eines Lehrbuchs. Er beschreibt, was eine ausgebildete Fachperson in realen Arbeitssituationen leisten können muss. Darum tauchen Themen wie Messen, Dokumentieren oder Sicherheit in mehreren Kompetenzen auf.
@@ -40,6 +31,16 @@ Ein **Handlungskompetenzbereich** bündelt verwandte berufliche Tätigkeiten. Ei
 `b1` behandelt Dimensionierung und Schema, `b2` PCB-Layout, `b3` Fertigung, `b4` Inbetriebnahme/Messung/Fehlersuche und `b5` die Prüfung gegen Anforderungen. Diese Kompetenzen bilden eine Prozesskette; sie werden durch Anforderungen (`a`), Firmware (`c`) und Projektverantwortung (`d`) ergänzt.
 
 Die [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md) ordnet jedes hardwarebezogene Leistungskriterium Theorie, Praxis und Projekten zu. Die Kurzformulierungen helfen bei der Navigation; verbindlich bleibt die offizielle Quelle.
+
+### Kompetenz entsteht durch wiederholte Anwendung
+
+Eine Handlungskompetenz wird nicht durch das einmalige Lesen einer Erklärung erworben. Zuerst lernst du Begriffe und Modelle kennen. Danach wendest du sie in überschaubaren Übungen an, triffst im Labor eigene Entscheidungen und musst in einem Projekt mehrere Teilkompetenzen gleichzeitig verbinden. Darum taucht dasselbe Leistungskriterium an verschiedenen Stellen des Kurses auf.
+
+Die Leistungsniveaus des Bildungsplans beschreiben dabei die erwartete Selbstständigkeit und Komplexität. Etwas nach Anleitung anwenden ist eine andere Leistung, als eine neue Lösung zu planen, zu berechnen und begründet auszuwählen. Der Kurs steigert deshalb nicht nur die fachliche Tiefe, sondern auch die Verantwortung, die du im Arbeitsablauf übernimmst.
+
+### Mindestanforderung und fachliche Vertiefung
+
+Der Bildungsplan definiert die verbindliche Mindestanforderung. Für eine professionelle Hardwarepraxis werden ausgewählte Themen bewusst vertieft, etwa Messgerätebelastung, MOSFET-Auswahl, Worst-Case-Betrachtung oder sichere Oszilloskopmessung. Diese Vertiefung widerspricht dem Bildungsplan nicht; sie liefert zusätzliches Verständnis für die dort verlangten Handlungen.
 
 ## Anschauliches Beispiel
 
@@ -74,3 +75,8 @@ Der verbindliche Bildungsplan 2026 definiert Mindeststandards. Die Kompetenzen b
 3. Welche Rolle spielen die drei Lernorte?
 
 Weitere Aufgaben: [Übungen zu Modul 00](../uebungen/modul-00.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: alle Pflichtkompetenzen, Schwerpunkt `b1–b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

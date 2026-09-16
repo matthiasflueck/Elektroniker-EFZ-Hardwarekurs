@@ -6,10 +6,6 @@
 
 Du sagst Strom und Leistung eines einfachen Stromkreises voraus, baust ihn sicher auf, misst U, I und R mit korrektem Anschluss und erklärst Soll-Ist-Abweichungen.
 
-## Voraussetzungen
-
-Module 00–02; sichere Bedienung von Netzgerät und DMM.
-
 ## Benötigtes Material
 
 Steckbrett, R1 = 1 kΩ (mindestens 0,25 W), Leitungen, Schalter oder Steckbrücke.
@@ -20,7 +16,7 @@ Strombegrenztes 0–5-V-Labornetzgerät und abgesichertes Digitalmultimeter; ide
 
 ## Schaltung / Messaufbau
 
-![Messaufbau mit IEC-Widerstand, Voltmeter parallel und Amperemeter in Serie](../bilder/02-elektrische-grundgroessen/02-07-vollstaendiger-messaufbau.svg)
+![Messaufbau mit IEC-Widerstand, Voltmeter parallel und Amperemeter in Serie](../bilder/02-elektrische-grundgroessen/02-07-vollstaendiger-messaufbau.png)
 
 ## Sicherheitshinweise
 
@@ -75,3 +71,8 @@ Lektionen 02.1–02.7; besonders `b1-LK02–03`, `b4-LK01–10`.
 ## 🔗 Hardware ↔ Firmware
 
 Wiederhole gedanklich den Versuch mit einem GPIO als Quelle. Welche Pin-Konfiguration, Stromgrenze und Messung wären nötig? Die elektrische Last bleibt auch bei logisch korrekter Firmware real.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen und Leistungskriterien: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
+- Vollständige Zuordnung: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

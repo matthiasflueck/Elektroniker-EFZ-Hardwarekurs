@@ -16,7 +16,9 @@ Lektionen und Kapitel beginnen mit zwei bis vier verständlichen Absätzen. Eine
 
 ## Verbindliche Lektionsstruktur
 
-Lernziele · Bezug Bildungsplan · Voraussetzungen · Warum ist das wichtig? · Theorie · anschauliches Beispiel · Berechnungsbeispiel · Praxisbezug · optional **🔗 Hardware ↔ Firmware** · Merksatz · häufige Fehler · Zusammenfassung · Übungsfragen.
+Lernziele · Warum ist das wichtig? · Theorie · anschauliches Beispiel · Berechnungsbeispiel · Praxisbezug · optional **🔗 Hardware ↔ Firmware** · Merksatz · häufige Fehler · Zusammenfassung · Übungsfragen · **Bezug Bildungsplan 2026 als letzter Abschnitt**.
+
+Ein eigenes Kapitel «Voraussetzungen» wird nicht verwendet. Benötigtes Vorwissen wird bei Bedarf kurz und natürlich in die Einleitung oder an der fachlich passenden Stelle aufgenommen.
 
 ## Formeln
 
@@ -24,7 +26,7 @@ Vor jeder Formel werden Zweck und physikalische Vorstellung erklärt. Danach fol
 
 ## Schaltbilder und Visualisierungen
 
-Elektrische Grundprinzipien erhalten bevorzugt ein genormtes Schema statt einer rein dekorativen Grafik. IEC-Symbole, Referenzbezeichner, Werte, Netznamen, Verbindungspunkte, Strom-/Spannungspfeile und Bezugspotentiale müssen konsistent sein. Reproduzierbare SVGs werden an der didaktisch richtigen Stelle eingebunden.
+Elektrische Grundprinzipien erhalten bevorzugt ein genormtes Schema statt einer rein dekorativen Grafik. IEC-Symbole, Referenzbezeichner, Werte, Netznamen, Verbindungspunkte, Strom-/Spannungspfeile und Bezugspotentiale müssen konsistent sein. Schaltbilder und Diagramme werden reproduzierbar erstellt, fachlich geprüft und als hochauflösende PNG-Dateien an der didaktisch richtigen Stelle eingebunden.
 
 ## Definition of Done
 
@@ -32,4 +34,4 @@ Fachlich korrekt; sicher; Bildungsplanbezug bis zum Leistungskriterium; ausführ
 
 ## Praxisstandard
 
-Praxislektionen folgen: Lernziel → Voraussetzungen → Material → Messgeräte → Schaltung → Sicherheit → Vorbereitung → Berechnung → Aufbau → Durchführung → Messung → Messwerte → Auswertung → Fragen → erwartete Beobachtung → Theoriebezug → Hardware↔Firmware.
+Praxislektionen folgen: Lernziel → Material → Messgeräte → Schaltung → Sicherheit → Vorbereitung → Berechnung → Aufbau → Durchführung → Messung → Messwerte → Auswertung → Fragen → erwartete Beobachtung → Theoriebezug → Hardware↔Firmware → **Bezug Bildungsplan 2026 als letzter Abschnitt**.

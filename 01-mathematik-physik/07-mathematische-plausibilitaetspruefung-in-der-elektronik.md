@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - unabhängige Rechen- und Messwege vergleichen
 - unplausible Resultate systematisch eingrenzen
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls.
-
 ## Warum ist das wichtig?
 
 Taschenrechner führen auch falsch eingegebene Rechnungen zuverlässig aus. Plausibilitätsprüfung ist deshalb kein optionaler letzter Blick, sondern eine zweite, möglichst unabhängige Methode.
@@ -36,6 +27,16 @@ Ein Resultat wird nicht genauer, nur weil der Rechner viele Ziffern anzeigt. Ein
 ### Fehler eingrenzen
 
 Bei einem unplausiblen Wert werden Präfixe, Einheiten, Vorzeichen, Klammern, Schaltungsmodell und Messaufbau einzeln geprüft. Nicht sofort eine neue Zahl ausprobieren; zuerst eine Hypothese formulieren.
+
+### Mehrere unabhängige Kontrollwege
+
+Eine Rückrechnung mit derselben falsch eingegebenen Zahl kann denselben Fehler bestätigen. Besser ist ein möglichst unabhängiger Weg: grobe Kopfrechnung, zweite Formel, Simulation, Messung oder Vergleich mit einem bekannten Grenzwert. Je unterschiedlicher die Methoden sind, desto wahrscheinlicher entdecken sie gemeinsame Denkfehler.
+
+Auch ein plausibler Einzelwert kann in einem unplausiblen Zusammenhang stehen. Eine Versorgung von 5,00 V wirkt korrekt, während gleichzeitig 2 A durch einen 10-kΩ-Widerstand gemeldet werden. Deshalb werden zusammengehörige Grössen als System geprüft und nicht nur jede Zahl für sich.
+
+### Plausibel ist noch nicht bewiesen
+
+Plausibilität zeigt, dass ein Wert möglich erscheint. Sie ersetzt keine genaue Verifikation. Nach dem schnellen Filter folgen – abhängig vom Risiko – Toleranzrechnung, kalibrierte Messung und dokumentierter Test. Plausibilitätsprüfung verhindert grobe Fehler, die formale Prüfung bestätigt die Anforderung.
 
 ## Anschauliches Beispiel
 
@@ -74,3 +75,8 @@ Plausibilitätsprüfung kombiniert Dimension, Grössenordnung, Grenzfall und una
 3. Nenne einen sinnvollen Grenzfall für `I = U/R`.
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

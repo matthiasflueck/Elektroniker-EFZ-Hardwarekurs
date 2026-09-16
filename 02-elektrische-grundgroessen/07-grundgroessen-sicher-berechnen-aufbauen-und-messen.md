@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - Spannung, Strom und Widerstand sicher messen
 - Messabweichungen mit Toleranz und Gerätebelastung erklären
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls sowie sichere Präfix- und Einheitenrechnung.
-
 ## Warum ist das wichtig?
 
 Einzelbegriffe werden erst nützlich, wenn sie in einem realen Stromkreis zusammenpassen. Diese Lektion führt deshalb den ganzen Arbeitsablauf durch: vom Schema über die Rechnung und Freigabe bis zur Messung und Bewertung.
@@ -29,7 +20,7 @@ Einzelbegriffe werden erst nützlich, wenn sie in einem realen Stromkreis zusamm
 
 Die Quelle U1 speist R1. Der technische Strom läuft vom Pluspol durch R1 zurück zur Quelle. Das Voltmeter liegt parallel zu R1; das Amperemeter wird in Serie eingefügt. Der Aufbau folgt dem Schema, nicht der räumlichen Anordnung der Zeichnung.
 
-![Vollständiger Messaufbau mit IEC-Symbolen und gekennzeichneten Messpunkten](../bilder/02-elektrische-grundgroessen/02-07-vollstaendiger-messaufbau.svg)
+![Vollständiger Messaufbau mit IEC-Symbolen und gekennzeichneten Messpunkten](../bilder/02-elektrische-grundgroessen/02-07-vollstaendiger-messaufbau.png)
 
 ### Sichere Reihenfolge
 
@@ -38,6 +29,16 @@ Die Quelle U1 speist R1. Der technische Strom läuft vom Pluspol durch R1 zurüc
 ### Messung beeinflusst den Aufbau
 
 Das Voltmeter hat endlichen Eingangswiderstand, das Amperemeter einen Shunt. Bei 1 kΩ ist die Belastung eines 10-MΩ-Voltmeters klein; bei sehr hochohmigen Schaltungen wird sie relevant. Leitungen und Kontakte erzeugen zusätzliche Widerstände.
+
+### Messstrategie vor dem Verdrahten
+
+Bevor Messleitungen angeschlossen werden, wird festgelegt, welche Frage jede Messung beantworten soll. Die Spannungsmessung bestätigt Quelle und Spannungsabfall. Die Strommessung prüft den Serienpfad. Die Widerstandsmessung kontrolliert das Bauteil im energiefreien Zustand. Dadurch entsteht eine Reihenfolge, in der jede Messung auf der vorherigen aufbaut.
+
+Ein unerwarteter Wert führt nicht sofort zum Umbau. Zuerst werden Messfunktion, Buchse, Bereich, Bezug und Kontakt geprüft. Danach wird eine einzelne Fehlerhypothese getestet. Mehrere gleichzeitige Änderungen würden zwar zufällig zum Erfolg führen können, aber die Ursache bliebe unbekannt.
+
+### Kennlinie statt Einzelpunkt
+
+Mehrere Spannungs-/Strompaare zeigen, ob der Widerstand im untersuchten Bereich annähernd linear bleibt. Die Gerade sollte nahe durch den Ursprung verlaufen; ihre Steigung hängt von der gewählten Achsendarstellung ab. Einzelne Ausreisser werden nicht gelöscht, sondern auf Ablese-, Kontakt- oder Einstellfehler untersucht.
 
 ## Anschauliches Beispiel
 
@@ -76,3 +77,8 @@ Der vollständige Arbeitsablauf verbindet Schema, Rechnung, sichere Freigabe, ge
 3. Was ist nach der Strommessung sofort zu tun?
 
 Weitere Aufgaben: [Übungen zu Modul 02](../uebungen/modul-02.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

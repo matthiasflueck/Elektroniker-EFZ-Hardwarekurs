@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - Entwicklung, Fertigung, Inbetriebnahme und Prüfung als zusammenhängenden Prozess beschreiben
 - sorgfältige Dokumentation und Kommunikation als technische Arbeit begründen
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a1–a3`, `d1–d3`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Keine fachlichen Vorkenntnisse. Hilfreich sind Neugier, sorgfältiges Arbeiten und die Bereitschaft, Vermutungen durch Messungen zu prüfen.
-
 ## Warum ist das wichtig?
 
 Elektronik wirkt am Anfang oft wie eine Sammlung von Bauteilen und Formeln. Im Berufsalltag geht es aber selten nur darum, einen Widerstand auszurechnen oder ein Kabel anzulöten. Entscheidend ist, aus einer unvollständigen Aufgabenstellung eine zuverlässige, sichere und prüfbare Lösung zu machen.
@@ -43,6 +34,16 @@ Elektroniker/innen arbeiten in Entwicklung, Versuch, Prototypenbau, Produktion, 
 ### Fachliche und überfachliche Verantwortung
 
 Technische Qualität bedeutet mehr als Funktion. Eine Lösung muss unter definierten Bedingungen funktionieren, Normen und Schutzmassnahmen einhalten, herstellbar, wartbar und dokumentiert sein. Dazu kommen Teamarbeit, Rückfragen bei Unklarheiten und ein ehrlicher Umgang mit Messabweichungen oder Fehlern.
+
+### Was eine Fachperson von einem zufälligen Aufbau unterscheidet
+
+Ein zufälliger Aufbau kann unter günstigen Bedingungen funktionieren. Eine fachgerecht entwickelte Lösung muss dagegen auch dann beurteilt werden können, wenn Versorgung, Temperatur, Bauteilstreuung oder Last vom Idealwert abweichen. Elektronikerinnen und Elektroniker denken deshalb früh über Grenzfälle nach: Was geschieht beim Einschalten? Wie verhält sich die Schaltung bei einem offenen Sensor? Welche Messung beweist die geforderte Genauigkeit?
+
+Dazu gehört auch, Unsicherheit offen zu benennen. Wenn eine Anforderung unklar ist, wird sie nicht stillschweigend ergänzt. Die Fachperson stellt eine präzise Rückfrage, dokumentiert die Antwort und leitet daraus technische Prüfkriterien ab. Dadurch werden spätere Diskussionen über «richtig» und «falsch» durch nachvollziehbare Kriterien ersetzt.
+
+### Zusammenarbeit im Entwicklungsprozess
+
+Hardwareentwicklung ist Teamarbeit. Schema, Leiterplatte, Firmware, Mechanik und Test beeinflussen sich gegenseitig. Ein grösserer Steckverbinder kann das PCB verändern; ein anderer Sensor kann neue Firmwarekalibrierung verlangen; ein schnelleres Signal kann eine andere Leitungsführung nötig machen. Gute Zusammenarbeit bedeutet, solche Abhängigkeiten früh sichtbar zu machen und Änderungen an alle betroffenen Stellen weiterzugeben.
 
 ## Anschauliches Beispiel
 
@@ -81,3 +82,8 @@ Elektroniker/innen führen Aufgaben von der Anforderung bis zum geprüften Resul
 3. Nenne drei Informationen, die vor der Entwicklung einer Lüftersteuerung fehlen.
 
 Weitere Aufgaben: [Übungen zu Modul 00](../uebungen/modul-00.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a1–a3`, `d1–d3`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

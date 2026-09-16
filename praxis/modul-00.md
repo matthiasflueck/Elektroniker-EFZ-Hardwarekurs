@@ -6,10 +6,6 @@
 
 Du richtest einen sicheren, nachvollziehbaren ESD-Arbeitsplatz ein, prüfst die Schutzmittel und führst die vier Freigaben an einem spannungslosen Kleinspannungsaufbau durch.
 
-## Voraussetzungen
-
-Lektionen 00.4–00.7 und lokale Sicherheits-/ESD-Einweisung. Keine Arbeiten an Netzspannung.
-
 ## Benötigtes Material
 
 ESD-Matte, geprüftes Handgelenkband, ESD-Beutel mit Übungsbaugruppe, isolierte Ablage, Steckbrett, 1-kΩ-Widerstand, beschriftete Leitungen, Laborjournal.
@@ -20,7 +16,7 @@ Zugelassener ESD-Tester, Digitalmultimeter und strombegrenztes SELV-Labornetzger
 
 ## Schaltung / Messaufbau
 
-![ESD-Arbeitsplatz mit Schutzwiderständen und gemeinsamem Punkt](../bilder/00-einstieg/00-05-esd-arbeitsplatz.svg)
+![ESD-Arbeitsplatz mit Schutzwiderständen und gemeinsamem Punkt](../bilder/00-einstieg/00-05-esd-arbeitsplatz.png)
 
 Die Übungsschaltung besteht aus einer 5-V-Quelle und 1 kΩ. Sie wird erst nach Abschluss des ESD-Teils aufgebaut.
 
@@ -76,3 +72,8 @@ Lektionen 00.4–00.7; Kompetenzbezug `b3-LK04`, `b3-LK12`, `b4-LK03` und `b4-LK
 ## 🔗 Hardware ↔ Firmware
 
 Dokumentiere Board- und Firmwarestand. Prüfe vor dem Programmieren Reset-Zustände, mögliche aktive Ausgänge und Debuggerverhalten.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen und Leistungskriterien: `b3-LK04`, `b3-LK12`, `b4-LK03`, `b4-LK09`, `d1–d3`
+- Vollständige Zuordnung: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - Bauteiltoleranzen als Bereich angeben
 - günstige und ungünstige Grenzfälle unterscheiden
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls.
-
 ## Warum ist das wichtig?
 
 Reale Bauteile besitzen keinen exakt idealen Wert. Ein 1-kΩ-Widerstand kann etwas höher oder tiefer liegen, und ein Messgerät zeigt ebenfalls nicht den unbekannten wahren Wert. Prozentrechnung übersetzt diese Streuungen in nachvollziehbare Grenzen.
@@ -36,6 +27,16 @@ Bei einem Nennwert `x_N` und einer symmetrischen Toleranz `t` liegen die Grenzen
 ### Worst Case
 
 Für eine Ausgangsgrösse werden jene Extremwerte kombiniert, die sie maximal beziehungsweise minimal machen. Vorzeichen und Wirkungsrichtung müssen verstanden werden; blindes Addieren aller Prozente ist oft falsch.
+
+### Bezugswert eindeutig festlegen
+
+Eine Prozentangabe ist nur verständlich, wenn der Bezugswert genannt wird. «Drei Prozent zu klein» kann sich auf Nennwert, Messwert oder Endwert beziehen. Im Soll-Ist-Vergleich wird die Differenz üblicherweise auf den Sollwert bezogen. Diese Vereinbarung muss im Prüfbericht erkennbar sein.
+
+Toleranzen verschiedener Ursachen dürfen nicht unüberlegt addiert werden. Bauteiltoleranz, Temperaturänderung und Messunsicherheit beschreiben unterschiedliche Effekte. Für eine erste sichere Grenze kann eine Worst-Case-Summe geeignet sein; für eine statistische Aussage wäre dagegen ein anderes Verfahren notwendig.
+
+### Asymmetrische Grenzen
+
+Nicht jede Spezifikation ist symmetrisch. Ein Regler kann beispielsweise `+2 %/−3 %` erlauben. Dann werden obere und untere Grenze getrennt berechnet. Auch Grenzwerte wie «höchstens 100 mA» haben nur eine relevante Richtung und dürfen nicht als symmetrische Toleranz interpretiert werden.
 
 ## Anschauliches Beispiel
 
@@ -70,3 +71,8 @@ Absolute Abweichung zeigt den Unterschied in der Einheit, relative Abweichung ma
 3. Warum ist Toleranz nicht gleich Messunsicherheit?
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

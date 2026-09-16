@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - Ohmsches Gesetz sicher nach U, I und R anwenden
 - Gültigkeitsbereich und Verlustleistung berücksichtigen
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls sowie sichere Präfix- und Einheitenrechnung.
-
 ## Warum ist das wichtig?
 
 Ein Widerstand begrenzt Strom nicht aktiv wie ein Wächter. Seine Material- und Geometrieeigenschaften führen dazu, dass für einen bestimmten Strom eine bestimmte Spannung nötig ist. Dieses Verhältnis lässt sich bei ohmschem Verhalten einfach beschreiben.
@@ -29,7 +20,7 @@ Ein Widerstand begrenzt Strom nicht aktiv wie ein Wächter. Seine Material- und 
 
 Legt man verschiedene Spannungen an einen idealisierten ohmschen Widerstand und misst den Strom, entsteht eine Gerade durch den Ursprung. Das konstante Verhältnis von Spannung zu Strom heisst Widerstand.
 
-![Messschaltung mit IEC-Widerstand, Amperemeter in Serie und Voltmeter parallel](../bilder/02-elektrische-grundgroessen/02-05-ohm-messschaltung.svg)
+![Messschaltung mit IEC-Widerstand, Amperemeter in Serie und Voltmeter parallel](../bilder/02-elektrische-grundgroessen/02-05-ohm-messschaltung.png)
 
 ### Ohmsches Gesetz
 
@@ -38,6 +29,16 @@ Nach dieser Beobachtung wird die Beziehung formuliert: `U = R·I`. Daraus folgen
 ### Gültigkeitsgrenze
 
 Die einfache Proportionalität gilt für ein ohmsches Bauteil bei annähernd konstanter Temperatur. LED, Diode und Glühlampe besitzen nichtlineare oder temperaturabhängige Kennlinien. Auch ein Widerstand hat Toleranz, Temperaturkoeffizient, maximale Spannung und Leistung.
+
+### Material, Länge und Querschnitt
+
+Der Widerstand eines homogenen Leiters hängt von Material, Länge und Querschnitt ab. Ein längerer Leiter bietet mehr Weg für Stösse der Ladungsträger; ein grösserer Querschnitt stellt mehr parallele Transportwege bereit. Diese Vorstellung führt zur Beziehung `R = ρ·l/A`, wobei der spezifische Widerstand ρ das Material beschreibt.
+
+Temperatur kann ρ verändern. Bei vielen Metallen steigt der Widerstand mit der Temperatur. Deshalb kann ein Bauteil bei der Messung mit kleinem Prüfstrom einen anderen Wert zeigen als im heissen Betriebszustand. Das Ohmsche Gesetz bleibt am jeweiligen Zustand nutzbar, der Widerstand ist aber nicht mehr konstant.
+
+### Statischer und differentieller Widerstand
+
+Bei einer nichtlinearen Kennlinie bezeichnet `U/I` das Verhältnis vom Ursprung zum Arbeitspunkt. Die lokale Steigung `dU/dI` beschreibt dagegen die Reaktion auf eine kleine Änderung um diesen Punkt. Bei einem ideal ohmschen Widerstand sind beide gleich; bei Dioden oder Transistoren nicht.
 
 ## Anschauliches Beispiel
 
@@ -76,3 +77,8 @@ Bei ohmschem Verhalten sind Spannung und Strom proportional. Das Gesetz erlaubt 
 3. Wie wird das Voltmeter angeschlossen?
 
 Weitere Aufgaben: [Übungen zu Modul 02](../uebungen/modul-02.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

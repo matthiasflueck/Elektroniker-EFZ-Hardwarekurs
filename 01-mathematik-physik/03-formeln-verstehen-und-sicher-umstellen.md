@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - Formeln schrittweise nach einer gesuchten Grösse umstellen
 - das Resultat mit Einheiten und Rückeinsetzen prüfen
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls.
-
 ## Warum ist das wichtig?
 
 Eine Formel ist eine verdichtete Aussage über einen Zusammenhang. Wer sie nur als Zahlenrezept benutzt, übersieht leicht, wann sie gilt und was sich physikalisch ändert. Sicheres Umstellen beginnt deshalb mit einer sprachlichen Beschreibung.
@@ -36,6 +27,16 @@ Die Aussage `U = R · I` bedeutet: Bei konstantem Widerstand steigt die Spannung
 ### Bedingungen und Symbole
 
 Vor dem Einsetzen werden Symbole, Einheiten und Modellgrenzen notiert. Das Ohmsche Gesetz in dieser Form beschreibt einen ohmschen Widerstand bei hinreichend konstanter Temperatur; es ist nicht die Kennlinie jeder LED oder Diode.
+
+### Erst die Abhängigkeit verstehen
+
+Vor dem Umstellen wird gefragt, wie sich die gesuchte Grösse verändert. Bei `I = U/R` muss der Strom steigen, wenn U steigt, und sinken, wenn R steigt. Diese qualitative Aussage ist ein wirksamer Kontrollpunkt: Ergibt die umgestellte Formel das Gegenteil, ist sie falsch oder das Modell wurde missverstanden.
+
+Klammern helfen, zusammengehörige Terme sichtbar zu halten. Bei längeren Formeln wird nicht versucht, mehrere Schritte gleichzeitig «im Kopf» zu erledigen. Jede Zeile enthält genau eine nachvollziehbare Operation. Das dauert kaum länger und macht Vorzeichen- oder Kehrwertfehler deutlich leichter auffindbar.
+
+### Symbole vor Zahlen
+
+Eine Formel wird zuerst symbolisch umgestellt und erst danach mit Zahlen gefüllt. Dadurch bleibt sichtbar, welche Grössen im Zähler und Nenner stehen. Ausserdem lässt sich derselbe Rechenweg für andere Werte verwenden und durch Dimensionsanalyse prüfen.
 
 ## Anschauliches Beispiel
 
@@ -74,3 +75,8 @@ Formeln beschreiben Bedingungen und Zusammenhänge. Systematisches Umstellen, Ei
 3. Welche Bedingung gilt beim ohmschen Widerstand?
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

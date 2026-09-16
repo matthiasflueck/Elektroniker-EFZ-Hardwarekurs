@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - Schutzmassnahmen nach dem STOP-Prinzip wählen
 - einen Kleinspannungsaufbau sicher erstinbetriebnehmen
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b3-LK04`, `b3-LK14–15`, `b4-LK03`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Lektionen 00.1–00.3. Arbeiten an Netzspannung gehören nicht zu dieser Lektion.
-
 ## Warum ist das wichtig?
 
 Die meisten Grundversuche arbeiten mit kleiner Spannung. Trotzdem können Kurzschlüsse heisse Leitungen erzeugen, Kondensatoren Energie speichern und falsche Messanschlüsse Bauteile zerstören. «Nur 12 Volt» ist deshalb keine vollständige Risikobeurteilung.
@@ -42,6 +33,16 @@ Vor dem Einschalten werden Schema, Polarität, Kurzschlussfreiheit und Messpunkt
 ### Gespeicherte Energie
 
 Ein Kondensator kann nach dem Ausschalten geladen bleiben. Erst nachdem diese reale Gefahr verstanden ist, ist die Formel sinnvoll: `E = ½ · C · U²`. Entladen wird kontrolliert über einen geeigneten Widerstand, niemals durch absichtlichen Kurzschluss.
+
+### Strom, Spannung und Einwirkdauer gemeinsam betrachten
+
+Eine Spannungsangabe allein beschreibt die Gefahr nicht vollständig. Entscheidend sind auch möglicher Strom, Einwirkdauer, Strompfad durch den Körper, Frequenz, Umgebung und verfügbare Energie. Für Bauteile kommen thermische Belastung, Lichtbogen, heisse Oberflächen und wegfliegende Teile hinzu. Deshalb wird jede neue Quelle mit ihren Strom- und Energiemöglichkeiten betrachtet.
+
+Auch die Strombegrenzung eines Labornetzgeräts ist kein universeller Schutz. Sie wirkt nur, wenn sie vor dem Einschalten korrekt eingestellt ist und schnell genug auf den Fehler reagiert. Ein bereits geladener Kondensator oder ein Akku kann Energie liefern, ohne dass die Begrenzung des Netzgeräts eingreift.
+
+### Sicherer Zustand nach dem Abschalten
+
+«Ausgeschaltet» bedeutet nicht automatisch «energiefrei». Kondensatoren können geladen, Spulenströme noch im Abklingen und Bauteile heiss sein. Vor dem Eingriff wird deshalb nicht nur der Schalterzustand kontrolliert, sondern der sichere Zustand nachgewiesen. Dazu gehören Spannungsmessung, angemessene Wartezeit und gegebenenfalls eine kontrollierte Entladung.
 
 ## Anschauliches Beispiel
 
@@ -80,3 +81,8 @@ Sicheres Arbeiten bewertet Energie und Fehlerfälle, nutzt das STOP-Prinzip und 
 3. Welche drei Abbruchzeichen beobachtest du beim ersten Einschalten?
 
 Weitere Aufgaben: [Übungen zu Modul 00](../uebungen/modul-00.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b3-LK04`, `b3-LK14–15`, `b4-LK03`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

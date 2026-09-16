@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - Energieumwandlung in einem elektromechanischen System verfolgen
 - Wirkungsgrad und Verlustleistung berechnen
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls.
-
 ## Warum ist das wichtig?
 
 Elektronik wirkt auf die physische Welt: Ein Motor hebt eine Last, ein Relais bewegt einen Anker, ein Kühlkörper führt Wärme ab. Die gleichen Begriffe Energie und Leistung verbinden Mechanik, Elektrik und Thermik.
@@ -36,6 +27,16 @@ Leistung sagt, wie schnell Energie umgesetzt wird: `P = W/t`. Ein Joule pro Seku
 ### Wirkungsgrad und Wärme
 
 Der Wirkungsgrad ist `η = P_nutz/P_zu`. Er liegt bei passiven Umwandlungen zwischen 0 und 1. Die Differenz wird überwiegend zu Wärme. Diese Verlustleistung bestimmt Temperaturanstieg und Kühlbedarf.
+
+### Energie kann gespeichert und übertragen werden
+
+Eine angehobene Masse speichert potenzielle Energie, ein bewegter Körper kinetische Energie. In der Elektronik speichern Kondensatoren Energie im elektrischen Feld und Spulen im magnetischen Feld. Eine Quelle stellt Energie bereit; sie erzeugt sie nicht aus dem Nichts. Für jeden Vorgang lässt sich fragen, woher Energie kommt, wo sie gespeichert wird und wohin sie geht.
+
+Leistung wird besonders wichtig, wenn sich ein Zustand schnell ändert. Eine kleine Energie, die in sehr kurzer Zeit umgesetzt wird, kann eine hohe Momentanleistung erzeugen. Das erklärt, warum ESD oder das Abschalten einer Spule trotz begrenzter Gesamtenergie Bauteile schädigen kann.
+
+### Thermischer Endzustand
+
+Verlustleistung erhöht zunächst die Temperatur. Gleichzeitig wächst meist die Wärmeabgabe an Umgebung oder Kühlkörper. Im stationären Zustand sind erzeugte und abgeführte Wärmeleistung gleich. Die erreichte Temperatur hängt daher nicht nur von Watt, sondern auch von Gehäuse, Leiterplatte, Luftstrom und Umgebung ab.
 
 ## Anschauliches Beispiel
 
@@ -74,3 +75,8 @@ Mechanische und elektrische Systeme folgen derselben Energiebilanz. Leistung, Wi
 3. Berechne die Verlustleistung bei 20 W Eingang und 80 % Wirkungsgrad.
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

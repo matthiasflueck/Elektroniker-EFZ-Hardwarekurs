@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - einen ESD-Schutzbereich korrekt benutzen
 - ESD-bedingte Fehler in der Diagnose berücksichtigen
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b3-LK04`, `b3-LK11`, `b3-LK14–15`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Lektion 00.4 und Einweisung in die lokal verwendete ESD-Ausrüstung.
-
 ## Warum ist das wichtig?
 
 Ein Funke, den Menschen spüren, ist deutlich stärker als viele Halbleitereingänge vertragen. Noch schwieriger sind Entladungen, die unbemerkt bleiben: Eine Baugruppe kann zunächst funktionieren und später sporadisch ausfallen.
@@ -39,9 +30,19 @@ Ein **katastrophaler Schaden** ist sofort sichtbar. Ein **latenter Schaden** ver
 
 ESD-Matte, Handgelenkband und geeignete Werkzeuge werden über definierte Schutzwiderstände an einem gemeinsamen Erdungspunkt zusammengeführt. Das begrenzt den Ausgleichsstrom. Ein Handgelenkband wird nie improvisiert direkt mit Schutzleiter verbunden.
 
-![ESD-Arbeitsplatz mit gemeinsamem Erdungspunkt und Schutzwiderständen](../bilder/00-einstieg/00-05-esd-arbeitsplatz.svg)
+![ESD-Arbeitsplatz mit gemeinsamem Erdungspunkt und Schutzwiderständen](../bilder/00-einstieg/00-05-esd-arbeitsplatz.png)
 
 Die Baugruppe kommt geschlossen im ESD-Beutel an den Platz, wird erst im Schutzbereich geöffnet und an Kanten gehalten. Schutzmittel und Prüfdatum werden vor Arbeitsbeginn kontrolliert.
+
+### Warum hohe Spannung nicht automatisch viel Energie bedeutet
+
+Bei elektrostatischer Aufladung können mehrere Kilovolt entstehen, obwohl die gespeicherte Gesamtenergie klein ist. Für Menschen ist die Entladung dann möglicherweise kaum bemerkbar. In einem Halbleiter konzentriert sie sich jedoch auf sehr kleine Strukturen und extrem kurze Zeit. Dadurch entstehen lokal hohe Feldstärken und Stromdichten.
+
+ESD-Schutz verhindert nicht jede Ladung. Er sorgt dafür, dass sich Potentiale langsam und kontrolliert angleichen, bevor eine empfindliche Verbindung berührt wird. Leitfähige und ableitfähige Materialien erfüllen dabei unterschiedliche Aufgaben. Welche Ausrüstung zulässig ist, wird nicht nach Farbe oder Aussehen entschieden, sondern nach Spezifikation und Prüfung.
+
+### Schutzkette statt Einzelmassnahme
+
+Ein geprüftes Handgelenkband nützt wenig, wenn die Baugruppe auf normalem Kunststoff liegt oder ungeschützt transportiert wird. Umgekehrt ersetzt eine ESD-Matte nicht die korrekte Personenerdung. Erst Verpackung, Transport, Arbeitsplatz, Person, Werkzeug und Lagerung bilden zusammen eine wirksame Schutzkette.
 
 ## Anschauliches Beispiel
 
@@ -80,3 +81,8 @@ ESD kann sofortige, latente oder parametrische Schäden verursachen. Ein geprüf
 3. Wann wird eine Baugruppe aus dem ESD-Beutel genommen?
 
 Weitere Aufgaben: [Übungen zu Modul 00](../uebungen/modul-00.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b3-LK04`, `b3-LK11`, `b3-LK14–15`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

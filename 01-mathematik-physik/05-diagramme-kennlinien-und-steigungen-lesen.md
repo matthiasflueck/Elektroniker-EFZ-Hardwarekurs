@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - Werte, Steigungen und Bereiche aus Kennlinien lesen
 - Interpolation von unzulässiger Extrapolation unterscheiden
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls.
-
 ## Warum ist das wichtig?
 
 Datenblätter beschreiben Bauteile häufig besser mit Kennlinien als mit einer einzigen Zahl. Wer nur einen Punkt abliest, kann Temperatur, Streuung oder den nichtlinearen Verlauf übersehen.
@@ -37,7 +28,17 @@ Die mittlere Steigung zwischen zwei Punkten ist `Δy/Δx`. Eine positive Steigun
 
 Interpolation schätzt zwischen gemessenen Punkten. Extrapolation setzt einen Verlauf ausserhalb des dargestellten Bereichs fort und ist riskanter. Absolute Grenzwerte dürfen nicht aus einer typischen Kennlinie extrapoliert werden.
 
-![Kennlinie mit Arbeitspunkt, Steigung und zulässigem Interpolationsbereich](../bilder/01-mathematik-physik/01-05-kennlinie-steigung.svg)
+![Kennlinie mit Arbeitspunkt, Steigung und zulässigem Interpolationsbereich](../bilder/01-mathematik-physik/01-05-kennlinie-steigung.png)
+
+### Messpunkte, Verbindungslinie und Modell unterscheiden
+
+Einzelne Punkte zeigen gemessene oder berechnete Daten. Eine Linie zwischen ihnen kann nur der besseren Lesbarkeit dienen oder ein mathematisches Modell darstellen. Ohne Legende darf nicht angenommen werden, dass zwischen zwei Punkten tatsächlich linearer Verlauf gilt.
+
+Bei Datenblattkennlinien ist zusätzlich zu prüfen, ob typische oder garantierte Werte gezeigt werden. Typische Kurven helfen beim Verständnis und bei einer ersten Dimensionierung, ersetzen aber keine garantierten Min-/Max-Angaben. Die Bedingungen unter dem Diagramm sind Teil der Aussage.
+
+### Arbeitspunkt und lokale Änderung
+
+Der Arbeitspunkt bezeichnet den aktuellen Betriebszustand auf der Kennlinie. Bei nichtlinearem Verlauf kann die Steigung in seiner Nähe für kleine Änderungen genutzt werden, obwohl das Verhältnis vom Ursprung zum Arbeitspunkt anders ist. Diese Unterscheidung wird später bei Diode, Transistor und Sensor wichtig.
 
 ## Anschauliches Beispiel
 
@@ -76,3 +77,8 @@ Kennlinien verbinden Betriebsbedingungen und Bauteilverhalten. Achsenprüfung, S
 3. Warum ist Extrapolation riskanter als Interpolation?
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

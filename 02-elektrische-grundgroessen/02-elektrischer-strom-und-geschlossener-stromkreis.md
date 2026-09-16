@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - technische Stromrichtung und Elektronenbewegung unterscheiden
 - einen geschlossenen Strompfad im Schema verfolgen
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls sowie sichere Präfix- und Einheitenrechnung.
-
 ## Warum ist das wichtig?
 
 Eine Lampe leuchtet nur, wenn Ladung durch einen geschlossenen Weg bewegt wird. Das klingt einfach, verhindert aber viele Denkfehler: Strom wird nicht im Verbraucher «aufgebraucht», und eine einzelne Leitung bildet noch keinen Stromkreis.
@@ -29,7 +20,7 @@ Eine Lampe leuchtet nur, wenn Ladung durch einen geschlossenen Weg bewegt wird. 
 
 Eine Quelle trennt Ladung und stellt Energie bereit. Im geschlossenen Kreis verläuft der technische Strom vom Pluspol durch die Last zum Minuspol. In Metall bewegen sich Elektronen entgegengesetzt. Für Schaltpläne und Berechnungen wird die technische Richtung verwendet.
 
-![Einfacher geschlossener Stromkreis mit IEC-Widerstand und technischer Stromrichtung](../bilder/02-elektrische-grundgroessen/02-02-geschlossener-stromkreis.svg)
+![Einfacher geschlossener Stromkreis mit IEC-Widerstand und technischer Stromrichtung](../bilder/02-elektrische-grundgroessen/02-02-geschlossener-stromkreis.png)
 
 ### Stromstärke
 
@@ -38,6 +29,16 @@ Je mehr Ladung pro Zeit einen Querschnitt passiert, desto grösser ist der Strom
 ### Strom an Knoten
 
 Ladung verschwindet nicht. In einer unverzweigten Reihenschaltung ist der Strom überall gleich. An einem Knoten teilt er sich auf; die Summe hinein entspricht im stationären Zustand der Summe hinaus.
+
+### Bewegung der Träger und Ausbreitung des Feldes
+
+Die einzelnen Elektronen bewegen sich in einem Metallleiter im Mittel relativ langsam. Trotzdem reagiert eine Lampe nahezu sofort nach dem Schliessen des Schalters, weil sich das elektrische Feld im gesamten Stromkreis sehr schnell ausbreitet. Eine Wasserrohr-Analogie kann den geschlossenen Pfad veranschaulichen, darf aber nicht mit der tatsächlichen Geschwindigkeit einzelner Elektronen verwechselt werden.
+
+Die Stromstärke beschreibt einen Querschnitt des Leiters. Wird an einer Stelle pro Sekunde eine bestimmte Ladungsmenge transportiert, muss im unverzweigten stationären Kreis dieselbe Ladungsmenge auch jede andere Stelle passieren. Sonst würde sich dazwischen fortlaufend Ladung ansammeln.
+
+### Gleichstrom und zeitabhängiger Strom
+
+Bei konstantem Gleichstrom bleiben Betrag und Richtung gleich. In realen Schaltungen können Strom und Richtung zeitlich wechseln. Die Definition als Ladungsänderung pro Zeit gilt weiterhin; nur reicht dann ein einzelner Zahlenwert nicht mehr, und der Verlauf muss als Funktion oder Signal betrachtet werden.
 
 ## Anschauliches Beispiel
 
@@ -76,3 +77,8 @@ Strom beschreibt bewegte Ladung pro Zeit. Ein vollständiger Kreis ist notwendig
 3. Was geschieht beim Öffnen des Schalters?
 
 Weitere Aufgaben: [Übungen zu Modul 02](../uebungen/modul-02.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

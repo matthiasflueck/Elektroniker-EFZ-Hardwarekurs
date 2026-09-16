@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - mit Zehnerpotenzen multiplizieren und dividieren
 - Grössenordnungen vor einer Detailrechnung abschätzen
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls.
-
 ## Warum ist das wichtig?
 
 Zwischen einem Leckstrom von Nanoampere und einem Motorstrom von Ampere liegen neun Zehnerpotenzen. Die wissenschaftliche Schreibweise macht solche Unterschiede sichtbar und verhindert lange Folgen von Nullen.
@@ -36,6 +27,16 @@ Beim Multiplizieren werden Mantissen multipliziert und Exponenten addiert. Beim 
 ### Grössenordnung
 
 Vor dem Taschenrechner wird grob geschätzt. `3,3 V / 1 kΩ` muss im Milliamperebereich liegen, denn Volt durch Kiloohm ergibt Milliampere. Ein Ergebnis von 3300 A wäre offensichtlich falsch.
+
+### Das Dezimalzeichen bewusst verschieben
+
+Beim Wechsel zur wissenschaftlichen Schreibweise wird das Dezimalzeichen so verschoben, dass links genau eine von null verschiedene Ziffer steht. Jede Stelle nach links erhöht den Exponenten um eins; jede Stelle nach rechts verringert ihn um eins. Zahl und Zehnerpotenz ändern sich gemeinsam, der Wert bleibt gleich.
+
+Bei technischen Präfixen sind Dreierschritte besonders wichtig. Mikro, Milli, Basis, Kilo und Mega unterscheiden sich jeweils um drei Zehnerpotenzen. Ein Wechsel um eine Präfixstufe verändert den Zahlenwert daher um den Faktor 1000, nicht um zehn.
+
+### Überschlagsrechnung vor der exakten Rechnung
+
+Für die Schätzung werden Mantissen grob gerundet. Aus 4,7 wird etwa 5, aus 2,2 etwa 2. Der Exponent bleibt bewusst sichtbar. Stimmt das exakte Ergebnis nicht mit diesem groben Bereich überein, werden Eingabe und Potenzrechnung geprüft, bevor das Resultat weiterverwendet wird.
 
 ## Anschauliches Beispiel
 
@@ -70,3 +71,8 @@ Wissenschaftliche Schreibweise trennt signifikanten Zahlenwert und Grössenordnu
 3. In welchem Strombereich liegt 5 V / 10 kΩ?
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

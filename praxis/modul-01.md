@@ -6,10 +6,6 @@
 
 Du rechnest Einheiten und Präfixe sicher um, wertest eine Kennlinie aus und erkennst absichtlich eingebaute Rechen- und Messfehler mit unabhängigen Plausibilitätsprüfungen.
 
-## Voraussetzungen
-
-Lektionen 01.1–01.7.
-
 ## Benötigtes Material
 
 Arbeitsblatt, reale Widerstände 330 Ω/1 kΩ/10 kΩ, Datenblatt oder bereitgestellte Kennlinie, Laborjournal.
@@ -71,3 +67,8 @@ Vollständige Anwendung der Lektionen 01.1–01.7.
 ## 🔗 Hardware ↔ Firmware
 
 Übertrage einen Messwert gedanklich in einen ADC-Code. Notiere explizit Volt, Millivolt und Count, damit keine Einheit stillschweigend verloren geht.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen und Leistungskriterien: `a3`, `b1-LK02`, `b4-LK08–09`, `b5`
+- Vollständige Zuordnung: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

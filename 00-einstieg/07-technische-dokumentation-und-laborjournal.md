@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - Sollwert, Messwert, Abweichung und Bewertung trennen
 - Revisionen und Entscheidungen rückverfolgbar dokumentieren
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b4-LK05`, `b4-LK09–10`, `b5-LK05`, `d1–d3`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Lektionen 00.1–00.6.
-
 ## Warum ist das wichtig?
 
 Nach einigen Tagen ist kaum noch sicher erinnerlich, welcher Widerstand eingesetzt oder welche Geräteeinstellung verwendet wurde. Ohne Aufzeichnung kann selbst ein korrektes Resultat nicht zuverlässig wiederholt werden.
@@ -38,6 +29,16 @@ Ein Messwert wird nie allein notiert. `TP3 = 3,28 V gegen GND, DMM-01, 10-V-Bere
 ### Revision und Versionsverwaltung
 
 Schema, Stückliste, PCB, Firmware und Testplan müssen denselben Stand beschreiben. Eine Änderung erhält Grund, Datum, verantwortliche Person und Prüfnachweis. Versionsverwaltung bewahrt Historie; eine Freigabe bezeichnet den geprüften Stand.
+
+### Beobachtung und Interpretation trennen
+
+Im Laborjournal steht zuerst, was tatsächlich beobachtet wurde: Messwert, Signalform, Geräteeinstellung oder sichtbarer Zustand. Danach folgt die Interpretation. «TP4 = 0,18 V gegen GND» ist eine Beobachtung; «der Ausgang ist kurzgeschlossen» ist bereits eine Hypothese. Diese Trennung verhindert, dass Vermutungen später wie gesicherte Tatsachen gelesen werden.
+
+Eine gute Hypothese führt zu einer unterscheidenden Prüfung. Wenn sowohl Kurzschluss als auch deaktivierter Ausgang einen niedrigen Pegel erklären könnten, wird eine Messung geplant, die beide Fälle trennt. Das Ergebnis und die verworfene Ursache bleiben dokumentiert. So entsteht aus Fehlersuche technisches Wissen.
+
+### Diagramme und Bildschirmbilder
+
+Messbilder benötigen Achsenskalierung, Kopplung, Tastkopffaktor, Triggerbedingung, Messpunkt und Bezug. Diagramme enthalten Grösse, Einheit und Betriebsbedingung. Ein Bild ohne diese Angaben kann anschaulich aussehen, ist aber kein reproduzierbarer Nachweis. Wo möglich bleiben zusätzlich die Rohdaten erhalten.
 
 ## Anschauliches Beispiel
 
@@ -76,3 +77,8 @@ Ein Laborjournal verbindet Erwartung, Rohdaten, Auswertung und Entscheidung. Rev
 3. Was unterscheidet Versionsstand und Freigabe?
 
 Weitere Aufgaben: [Übungen zu Modul 00](../uebungen/modul-00.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b4-LK05`, `b4-LK09–10`, `b5-LK05`, `d1–d3`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

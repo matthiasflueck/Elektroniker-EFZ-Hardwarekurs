@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - Werte ohne Bedeutungsänderung umrechnen
 - eine Rechnung mit Einheiten prüfen
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Grundrechenarten und Modul 00.
-
 ## Warum ist das wichtig?
 
 In Elektronikdatenblättern stehen Werte von Pikofarad bis Megaohm. Ein übersehenes Präfix kann ein Ergebnis um den Faktor tausend oder eine Million verändern. Einheiten sind deshalb Teil der technischen Aussage, nicht bloss eine Beschriftung hinter der Zahl.
@@ -45,6 +36,16 @@ Gross-/Kleinschreibung ist bedeutsam: `m` ist milli, `M` ist mega. Beim Umrechne
 ### Einheiten als Fehlerdetektor
 
 Eine Gleichung muss auf beiden Seiten dieselbe Dimension besitzen. Bei `U = R · I` ergibt `Ω · A = V`. Passt die Einheit nicht, ist mindestens ein Rechenschritt oder eine Formel falsch.
+
+### Mit Einheiten rechnen
+
+Einheiten dürfen wie algebraische Faktoren behandelt werden. Werden Meter durch Sekunden geteilt, entsteht Meter pro Sekunde. Werden Volt durch Ampere geteilt, entsteht Ohm. Dieses Mitführen zwingt dazu, Eingangsgrössen korrekt umzuwandeln und macht sichtbar, ob die verwendete Beziehung überhaupt zur gesuchten Grösse passt.
+
+Vor dem Einsetzen werden alle Werte entweder in zusammenpassende technische Einheiten oder in SI-Einheiten gebracht. Beide Wege sind zulässig, solange sie konsequent bleiben. Die praktische Beziehung `V/kΩ = mA` ist schnell und sicher; ein Gemisch wie Volt, Ohm und Milliampere ohne Umrechnung führt dagegen zum Faktor-1000-Fehler.
+
+### Sinnvolle Schreibweise wählen
+
+Technische Werte werden so geschrieben, dass sie gut lesbar und schwer verwechselbar sind. `0,000001 F` ist mathematisch korrekt, `1 µF` aber leichter zu erfassen. Sehr viele oder sehr wenige signifikante Stellen erschweren den Vergleich. Die Schreibweise soll zur Genauigkeit der Angabe passen.
 
 ## Anschauliches Beispiel
 
@@ -83,3 +84,8 @@ SI-Einheiten machen technische Angaben vergleichbar. Präfixe verkürzen grosse 
 3. Welche Einheit ergibt Ω·A?
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

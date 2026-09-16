@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - elektrische Leistung mit mehreren Formeln berechnen
 - Verlustleistung und thermische Reserve beurteilen
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls sowie sichere Präfix- und Einheitenrechnung.
-
 ## Warum ist das wichtig?
 
 Eine Schaltung kann elektrisch richtig funktionieren und trotzdem überhitzen. Strom und Spannung sagen, was fliesst und anliegt; Leistung sagt, wie schnell Energie umgesetzt wird. Sie entscheidet über Bauteilgrösse, Temperatur und Laufzeit.
@@ -29,7 +20,7 @@ Eine Schaltung kann elektrisch richtig funktionieren und trotzdem überhitzen. S
 
 Fliesst Ladung durch eine Potentialdifferenz, wird Energie übertragen. Pro Zeit ergibt sich Leistung. Erst aus dieser Vorstellung folgt `P = U·I`. Für einen ohmschen Widerstand dürfen mit dem Ohmschen Gesetz auch `P = I²R` und `P = U²/R` verwendet werden.
 
-![Energiefluss von Quelle über Schaltung zur Nutzleistung und Verlustwärme](../bilder/02-elektrische-grundgroessen/02-06-leistung-wirkungsgrad.svg)
+![Energiefluss von Quelle über Schaltung zur Nutzleistung und Verlustwärme](../bilder/02-elektrische-grundgroessen/02-06-leistung-wirkungsgrad.png)
 
 ### Energie über Zeit
 
@@ -38,6 +29,16 @@ Bei konstanter Leistung gilt `E = P·t`. Joule beziehungsweise Wattsekunde ist d
 ### Wirkungsgrad
 
 `η = P_nutz/P_zu`. Die Differenz `P_verlust = P_zu − P_nutz` erwärmt Bauteile oder wird anderweitig ungewollt umgesetzt. Nennleistung ist kein Zielbetrieb; Reserve und Umgebungstemperatur sind zu beachten.
+
+### Vorzeichen der Leistung
+
+Wird Strompfeil und Spannungspolung nach der passiven Vorzeichenkonvention gewählt, bedeutet positive Leistung, dass ein Bauteil Energie aufnimmt. Ein negatives Ergebnis bedeutet, dass es Energie abgibt. So lassen sich Quelle, Verbraucher und rückspeisende Systeme mit derselben Gleichung beschreiben.
+
+Die Formeln `I²R` und `U²/R` dürfen nur verwendet werden, wenn U, I und R zum selben ohmschen Bauteil und Betriebszustand gehören. `P = U·I` ist allgemeiner, bei zeitabhängigen Signalen muss jedoch die momentane Leistung oder ein korrekt gebildeter Mittelwert betrachtet werden.
+
+### Temperatur ist nicht Leistung
+
+Watt beschreibt Wärmeentstehung pro Zeit, Grad Celsius einen Temperaturzustand. Zwei Bauteile mit gleicher Verlustleistung können wegen unterschiedlicher Gehäuse und Kühlpfade sehr verschiedene Temperaturen erreichen. Deshalb wird eine Leistungsrechnung später durch thermische Widerstände und zulässige Sperrschichttemperatur ergänzt.
 
 ## Anschauliches Beispiel
 
@@ -76,3 +77,8 @@ Elektrische Leistung ist U·I, Energie ist Leistung über Zeit. Wirkungsgrad tre
 3. Warum kann ein korrekt geregelter Linearregler überhitzen?
 
 Weitere Aufgaben: [Übungen zu Modul 02](../uebungen/modul-02.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

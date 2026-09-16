@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - Messgeräte vor dem Anschluss richtig vorbereiten
 - Dokumenten-, Aufbau-, Energie- und Messfreigabe unterscheiden
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b3-LK12`, `b3-LK14–15`, `b4-LK02–03`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Lektionen 00.4–00.5 und lokale Geräteeinweisung.
-
 ## Warum ist das wichtig?
 
 Viele Laborfehler entstehen nicht durch schwierige Theorie, sondern durch eine Leitung in der falschen Buchse, eine unterbrochene Versorgungsschiene oder eine unklare Aufbauversion. Ein gut organisierter Platz senkt diese Fehlerwahrscheinlichkeit.
@@ -38,6 +29,16 @@ Das Netzgerät wird bei ausgeschaltetem Ausgang eingestellt. Beim Multimeter wer
 ### Vier Freigaben
 
 Die **Dokumentenfreigabe** bestätigt Schema und Revision. Die **Aufbaufreigabe** prüft Verbindung, Polarität und Kurzschlussfreiheit. Die **Energiefreigabe** legt Quelle, Begrenzung und Abbruch fest. Die **Messfreigabe** bestätigt Messgerät, Bezugspunkt und erwartete Belastung.
+
+### Leitungsführung als Teil der Fehlervorbeugung
+
+Leitungen werden so geführt, dass ihr Zweck erkennbar bleibt und sie nicht unbeabsichtigt herausgezogen werden. Versorgung und Rückleiter liegen möglichst nahe beieinander. Messleitungen erhalten einen festen Bezugspunkt, damit ein Umstecken nicht unbemerkt die Messrichtung verändert. Bei komplexeren Aufbauten werden Netznamen oder Messpunktnummern verwendet; Farbe allein ist nicht eindeutig genug.
+
+Ein professioneller Platz unterstützt auch die Fehlersuche. Sind Bauteile verdeckt, Messpunkte unzugänglich oder mehrere Revisionen vermischt, wird jede Diagnose langsamer und unsicherer. Darum werden nicht benötigte Teile entfernt und ausgebaute Komponenten klar als geprüft, ungeprüft oder fehlerhaft gekennzeichnet.
+
+### Gerätezustand sichtbar machen
+
+Ausgang EIN/AUS, eingestellte Stromgrenze, Tastkopffaktor und DMM-Buchse müssen vor dem Anschluss erkennbar sein. Nach Arbeitsende werden Geräte in einen definierten Grundzustand gebracht. Diese Gewohnheit schützt besonders die nächste Person, die den Arbeitsplatz verwendet und sonst von einer unbemerkten Voreinstellung überrascht werden könnte.
 
 ## Anschauliches Beispiel
 
@@ -76,3 +77,8 @@ Funktionszonen, vorbereitete Geräte und vier klar getrennte Freigaben reduziere
 3. Was gehört in die Dokumentationszone?
 
 Weitere Aufgaben: [Übungen zu Modul 00](../uebungen/modul-00.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b3-LK12`, `b3-LK14–15`, `b4-LK02–03`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

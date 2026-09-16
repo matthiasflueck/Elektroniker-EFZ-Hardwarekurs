@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - galvanische Trennung erklären
 - gefährliche Masseverbindungen beim Oszilloskop erkennen
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls sowie sichere Präfix- und Einheitenrechnung.
-
 ## Warum ist das wichtig?
 
 Das Massesymbol wird häufig als universelles Nullpotential missverstanden. In Wirklichkeit kann eine Schaltung mehrere Bezugssysteme besitzen, die getrennt sind oder nur an einem definierten Punkt verbunden werden. Ein Messgerät kann diese Trennung unbeabsichtigt aufheben.
@@ -29,7 +20,7 @@ Das Massesymbol wird häufig als universelles Nullpotential missverstanden. In W
 
 **GND/0 V** ist der gewählte elektrische Bezug eines Stromkreises. **Chassis** bezeichnet ein leitfähiges Gehäuse. **PE/Schutzleiter** ist ein sicherheitsrelevanter Leiter der Netzinstallation. Sie dürfen im Schema nicht ohne Begründung gleichgesetzt werden.
 
-![Getrennter GND, Chassis und Schutzleiter mit definierter Kopplung](../bilder/02-elektrische-grundgroessen/02-04-gnd-erde-trennung.svg)
+![Getrennter GND, Chassis und Schutzleiter mit definierter Kopplung](../bilder/02-elektrische-grundgroessen/02-04-gnd-erde-trennung.png)
 
 ### Galvanische Trennung
 
@@ -38,6 +29,16 @@ Zwei Stromkreise sind galvanisch getrennt, wenn kein direkter leitender Pfad bes
 ### Messgeräte schaffen Verbindungen
 
 Bei vielen Tischoszilloskopen ist die BNC-Aussenleitung mit PE verbunden. Die Masseklemme an einem beliebigen Schaltungsknoten kann diesen hart erden und einen Kurzschluss verursachen. Der Bezug wird deshalb vor dem Anschluss geklärt.
+
+### Mehrere Bezugspotentiale in einem System
+
+Analoge, digitale und leistungsführende Schaltungsteile können eigene GND-Netze besitzen. Unterschiedliche Namen bedeuten zunächst, dass die Verbindung bewusst geplant werden muss. Werden sie an mehreren ungeeigneten Stellen verbunden, können Lastströme über empfindliche Messbezüge fliessen und Signale verfälschen.
+
+Eine galvanisch getrennte Quelle «schwebt» gegenüber Erde, solange kein weiterer Pfad besteht. Sobald USB, Programmiergerät, Oszilloskop oder ein zweites Netzgerät angeschlossen wird, kann sich dieser Zustand ändern. Deshalb wird das gesamte Messsystem betrachtet, nicht nur der Prüfling.
+
+### Common-Mode-Bereich beachten
+
+Auch differentielle Eingänge dürfen nur innerhalb ihres zulässigen Gleichtaktbereichs betrieben werden. Zwei Leitungen können untereinander nur wenige Millivolt Differenz haben und dennoch gemeinsam so weit gegenüber Gerätemasse verschoben sein, dass ein Eingang überlastet wird. Galvanische Trennung und Differentialtastkopf lösen unterschiedliche Aufgaben und sind nicht beliebig austauschbar.
 
 ## Anschauliches Beispiel
 
@@ -76,3 +77,8 @@ GND, Chassis und PE erfüllen verschiedene Aufgaben. Trennungen und definierte K
 3. Warum ist die Scope-Masse potenziell gefährlich?
 
 Weitere Aufgaben: [Übungen zu Modul 02](../uebungen/modul-02.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

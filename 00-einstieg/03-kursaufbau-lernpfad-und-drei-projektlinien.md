@@ -10,15 +10,6 @@ Nach dieser Lektion kannst du:
 - Theorie, Übungen, Praxis und Projekte unterscheiden
 - die drei Projektlinien fachlich einordnen
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a1–a3`, `d1–d3`
-- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Lektionen 00.1–00.2.
-
 ## Warum ist das wichtig?
 
 Ein umfangreicher Kurs kann unübersichtlich wirken. Du musst aber nicht 197 Lektionen gleichzeitig im Kopf behalten. Entscheidend ist eine wiederkehrende Arbeitsweise: verstehen, vorhersagen, aufbauen, messen, vergleichen und erklären.
@@ -38,6 +29,16 @@ Theorie-Lektionen bauen Begriffe und Modelle auf. Übungen prüfen Verständnis,
 ### Lernschleife statt Kochrezept
 
 Vor dem Aufbau wird ein erwarteter Wertebereich notiert. Nach der Messung wird nicht nur «richtig/falsch» entschieden, sondern die Abweichung erklärt. Bei unerwartetem Resultat folgt eine Hypothese und eine gezielte Kontrollmessung.
+
+### Wie du mit einer Lektion arbeitest
+
+Lies zuerst Lernziele und Einleitung, ohne Formeln auswendig zu lernen. Versuche danach, das Prinzip in eigenen Worten und mit einem einfachen Strom- oder Signalpfad zu erklären. Erst wenn die Vorstellung stimmt, folgen Gleichungen und Zahlen. Bei einem Rechenbeispiel deckst du die Lösung möglichst ab und schätzt den Wertebereich, bevor du nachrechnest.
+
+In der Praxis wird diese Reihenfolge verbindlich. Ein Aufbau ohne dokumentierte Vorhersage liefert zwar Messwerte, aber wenig Lernertrag. Ein abweichender Messwert ist besonders wertvoll, wenn du erklären kannst, welche Annahme nicht erfüllt war und welche Kontrollmessung zwischen mehreren Ursachen unterscheidet.
+
+### Meilensteine der Projekte
+
+Die Projekte wachsen mit dem Kurs. Am Anfang entstehen Anforderung, Blockdiagramm und erste Berechnungen. Später kommen Bauteilentscheid, Schema, Aufbau, Messungen und Verifikation hinzu. Ein Meilenstein gilt erst als abgeschlossen, wenn die Unterlagen zum tatsächlich geprüften Stand passen. So wird verhindert, dass am Ende eine scheinbar fertige Dokumentation entsteht, die den realen Aufbau nicht mehr beschreibt.
 
 ## Anschauliches Beispiel
 
@@ -76,3 +77,8 @@ Der Kurs verbindet vier Materialarten und drei Projekte. Wiederkehrende Lernschl
 3. Was notierst du vor der ersten Messung?
 
 Weitere Aufgaben: [Übungen zu Modul 00](../uebungen/modul-00.md). Die Lösungen liegen bewusst getrennt.
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a1–a3`, `d1–d3`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
