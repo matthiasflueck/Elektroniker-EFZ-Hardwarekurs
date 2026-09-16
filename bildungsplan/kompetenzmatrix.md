@@ -40,3 +40,17 @@ Die Matrix führt **alle 24 Handlungskompetenzen** des offiziellen Bildungsplans
 ## Besonders hardwarebezogene Leistungskriterien
 
 Der Kurs operationalisiert insbesondere die offiziellen Kriterien zu Bauteilevaluation und -dimensionierung, Datenblattanalyse, klassischen Grundschaltungen, Simulation, Messung, normgerechtem Schema, PCB-Layout und Produktionsdaten, ESD-sicherer Fertigung, Messpunkt- und Messmittelauswahl, sicherer Inbetriebnahme, Soll-Ist-Protokollierung, Fehlersuche und Verifikation. Die verbindlichen Originalformulierungen und Leistungsniveaus stehen in Kapitel 4 des Bildungsplans.
+
+## Detailzuordnung der Pilotmodule 00–02
+
+| Lektion/Nachweis | Primäre Codes | Beobachtbarer Beitrag |
+|---|---|---|
+| 00.1–00.4 | `a1`, `d1`, `d2` | Auftrag strukturieren, Risiken und Freigabeschritte planen, Verlauf kontrollieren |
+| 00.5–00.7 | `b4`, `b5`, `d3`, ergänzend `c1–c2` | Messplan, Soll-Ist-Nachweis, Hardware-/Firmware-Schnittstellen und Revisionen dokumentieren |
+| Labor 00 | `b4`, `b5`, `d1–d3` | Kleinspannungsschaltung sicher in Betrieb nehmen, Messwerte protokollieren und bewerten |
+| 01.1–01.6 | `a3`, `b1`, `b5` | Gleichstromnetze dimensionieren, Machbarkeit und Grenzwerte beurteilen |
+| 01.7 und Labor 01 | `b4`, `b5`, `d3` | Messpunkte und Messmittel wählen, Belastung und Abweichungen auswerten |
+| 02.1–02.6 | `b1`, `b3`, `b5` | Schema interpretieren, Bauteile auswählen, Schaltung fachgerecht aufbauen und prüfen |
+| 02.7 und Labor 02 | `b4`, `b5`, ergänzend `c1–c2` | Zeitverhalten und Signalformen messen, Hardwarewirkung späterer GPIO/PWM-Firmware verifizieren |
+
+Die Pilotmodule führen bewusst noch nicht zu einem vollständigen Nachweis aller genannten Handlungskompetenzen. Sie liefern überprüfbare Teilhandlungen, die in den späteren Entwicklungs-, Fertigungs- und Projektmodulen auf NQR- und Leistungsniveau des Bildungsplans zusammengeführt werden.

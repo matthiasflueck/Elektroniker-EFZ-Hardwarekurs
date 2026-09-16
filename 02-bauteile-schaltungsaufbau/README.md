@@ -4,7 +4,7 @@
 
 ## Ziel des Moduls
 
-Dieses Modul führt die Themen **Bauteile, Schaltungsaufbau und erste Signale** systematisch von den fachlichen Grundlagen zur professionellen Anwendung. Die sieben Lektionen, das Labor, Übungen und Projektbezüge werden gemeinsam abgeschlossen.
+Du liest einfache Schemas, wählst und prüfst passive Bauteile, baust sichere Kleinspannungsschaltungen auf und beobachtest erstmals zeitabhängige Signale mit Funktionsgenerator und Oszilloskop.
 
 ## Lektionen
 
@@ -18,14 +18,18 @@ Dieses Modul führt die Themen **Bauteile, Schaltungsaufbau und erste Signale** 
 8. [Übungen zu Modul 02](../uebungen/modul-02.md)
 9. [Labor 02 – RC-Sprungantwort und LED-Schaltung](../praxis/lab-02.md)
 
+## Voraussetzungen und Material
+
+Module 00–01; Netzgerät, DMM, Funktionsgenerator, Oszilloskop mit geprüften `10:1`-Tastköpfen, Steckbrett, Widerstände, LEDs, Taster, Keramik- und Elektrolytkondensatoren.
+
 ## Hardware ↔ Firmware
 
-Die Modul-Lektionen kennzeichnen jeweils, welche elektrischen Eigenschaften die Firmware konfigurieren, beobachten oder absichern muss. Vertiefende Programmierinhalte verweisen gezielt auf den [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Pull-Widerstände, RC-Zeitverhalten, GPIO-Ströme, aktive Polarität und PWM werden mit konkreten Querverweisen zum [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs) verbunden.
 
 ## Bildungsplan 2026
 
-Schwerpunktcodes: `b1`, `b3`, `b4`, `b5`. Die genaue Primär-/Sekundärzuordnung steht in der [Kompetenzmatrix](../bildungsplan/kompetenzmatrix.md).
+`b1`, `b3`, `b4`, `b5`.
 
-## Projektbezug
+## Projektmeilenstein P1-M2
 
-Prüfe in der [Projektübersicht](../projekte/README.md), welcher Meilenstein von P1, P2 oder P3 mit diesem Modul bearbeitet wird.
+Der [Mess- und Lernadapter](../projekte/p1-messadapter.md) erhält LED-Pfad, RC-Netz, geschützte Testpunkte und einen ersten as-built-Aufbau. Zeitkonstante, Ströme und Signalform werden wie in [Labor 02](../praxis/lab-02.md) verifiziert.

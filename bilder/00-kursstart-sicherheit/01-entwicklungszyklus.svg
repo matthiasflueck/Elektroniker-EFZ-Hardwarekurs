@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Entwicklungs- und Nachweiszyklus</title><desc id="desc">Sieben verbundene Schritte von der Anforderung bis zur Dokumentation, mit einer Rückkopplung zur Anforderung.</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#315a8a"/></marker></defs>
+  <rect width="1200" height="360" fill="#f7f9fc"/>
+  <text x="600" y="45" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="700" fill="#18324f">Vom Auftrag zum belastbaren Nachweis</text>
+  <g font-family="sans-serif" font-size="18" text-anchor="middle" fill="#18324f">
+    <g fill="#e7f0fa" stroke="#315a8a" stroke-width="2">
+      <rect x="35" y="120" width="135" height="70" rx="12"/><rect x="200" y="120" width="135" height="70" rx="12"/><rect x="365" y="120" width="135" height="70" rx="12"/><rect x="530" y="120" width="135" height="70" rx="12"/><rect x="695" y="120" width="135" height="70" rx="12"/><rect x="860" y="120" width="135" height="70" rx="12"/><rect x="1025" y="120" width="140" height="70" rx="12"/>
+    </g>
+    <text x="102" y="162">Anforderung</text><text x="267" y="162">Modell</text><text x="432" y="151">Berechnung</text><text x="432" y="174">Simulation</text><text x="597" y="162">Aufbau</text><text x="762" y="162">Messung</text><text x="927" y="162">Bewertung</text><text x="1095" y="162">Dokumentation</text>
+  </g>
+  <g stroke="#315a8a" stroke-width="3" marker-end="url(#a)"><path d="M170 155H195"/><path d="M335 155H360"/><path d="M500 155H525"/><path d="M665 155H690"/><path d="M830 155H855"/><path d="M995 155H1020"/><path d="M1095 200 C1095 305 102 305 102 200" fill="none"/></g>
+  <text x="600" y="280" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#315a8a">Abweichungen führen kontrolliert zurück zu Annahmen, Entwurf oder Anforderung</text>
+</svg>

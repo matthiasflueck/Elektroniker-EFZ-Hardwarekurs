@@ -1,10 +1,10 @@
 # Modul 00 – Kursstart, Sicherheit und Laborpraxis
 
-[← Kursübersicht](../README.md) · [Kursübersicht](../README.md) · [Nächstes Modul →](../01-elektrische-grundgroessen/README.md)
+[← Kursübersicht](../README.md) · [Nächstes Modul →](../01-elektrische-grundgroessen/README.md)
 
 ## Ziel des Moduls
 
-Dieses Modul führt die Themen **Kursstart, Sicherheit und Laborpraxis** systematisch von den fachlichen Grundlagen zur professionellen Anwendung. Die sieben Lektionen, das Labor, Übungen und Projektbezüge werden gemeinsam abgeschlossen.
+Du richtest einen sicheren, nachvollziehbaren Arbeitsprozess ein. Nach dem Modul kannst du einen Kleinspannungsversuch planen, vor dem Einschalten freigeben, strukturiert messen und den getesteten Hardware-/Firmwarestand eindeutig dokumentieren.
 
 ## Lektionen
 
@@ -18,14 +18,18 @@ Dieses Modul führt die Themen **Kursstart, Sicherheit und Laborpraxis** systema
 8. [Übungen zu Modul 00](../uebungen/modul-00.md)
 9. [Labor 00 – Sicherer Messplatz und Freigabecheck](../praxis/lab-00.md)
 
-## Hardware ↔ Firmware
+## Erforderliche Ausrüstung
 
-Die Modul-Lektionen kennzeichnen jeweils, welche elektrischen Eigenschaften die Firmware konfigurieren, beobachten oder absichern muss. Vertiefende Programmierinhalte verweisen gezielt auf den [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Regelbares, galvanisch getrenntes Kleinspannungsnetzgerät mit Strombegrenzung, Digitalmultimeter, berührungssichere Messleitungen, ESD-Arbeitsplatz für empfindliche Baugruppen sowie Laborjournal. Oszilloskop und Funktionsgenerator werden ab Modul 02 eingesetzt.
+
+## Sicherheitsgrenze
+
+Keine Arbeiten an Netzspannung oder offenen Primärseiten. Die Übungen bleiben bei strombegrenzter SELV-Kleinspannung. Lokale Laborregeln und Anweisungen der verantwortlichen Fachperson haben Vorrang.
 
 ## Bildungsplan 2026
 
-Schwerpunktcodes: `a1`, `d1`, `d2`, `d3`. Die genaue Primär-/Sekundärzuordnung steht in der [Kompetenzmatrix](../bildungsplan/kompetenzmatrix.md).
+Schwerpunkt: `a1`, `d1`, `d2`, `d3`; als Querschnitt unterstützt das Modul die sichere und dokumentierte Umsetzung von `b1–b5`.
 
-## Projektbezug
+## Projektmeilenstein P1-M0
 
-Prüfe in der [Projektübersicht](../projekte/README.md), welcher Meilenstein von P1, P2 oder P3 mit diesem Modul bearbeitet wird.
+Für den [Mess- und Lernadapter](../projekte/p1-messadapter.md) werden Sicherheitsgrenze, Laborjournal, Signalnamenskonvention, Freigabekette und messbare Abnahmekriterien festgelegt. Noch wird keine Hardware freigegeben.

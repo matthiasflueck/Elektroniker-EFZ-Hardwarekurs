@@ -2,7 +2,7 @@
 
 [← Kursübersicht](../README.md)
 
-Alle Labore verwenden dieselbe sichere, reproduzierbare Arbeitsweise. Die Pilotlabore 00–02 werden in Phase 2 vollständig freigegeben; die übrigen Dateien sind Ausbau-Skelette.
+Alle Labore verwenden dieselbe sichere, reproduzierbare Arbeitsweise. Die Pilotlabore 00–02 sind vollständig ausgearbeitet; die übrigen Dateien sind klar gekennzeichnete Ausbau-Skelette.
 
 - [Labor 00 – Sicherer Messplatz und Freigabecheck](lab-00.md)
 - [Labor 01 – Ohmsches Gesetz und Belastung vermessen](lab-01.md)

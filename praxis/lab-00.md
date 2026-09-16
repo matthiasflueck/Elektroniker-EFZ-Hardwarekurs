@@ -2,33 +2,54 @@
 
 [← Praxisübersicht](README.md) · [Modul 00](../00-kursstart-sicherheit/README.md) · [Kursübersicht](../README.md)
 
-> **Ausbaustatus:** Labor-Skelett. Vor der Durchführung werden Schaltung, Grenzwerte, Stückliste und erwartete Messwerte in der Ausbauphase vollständig freigegeben.
-
 ## Ziel
 
-Die Inhalte aus **Kursstart, Sicherheit und Laborpraxis** werden aufgebaut, gemessen, beurteilt und nachvollziehbar dokumentiert.
+Du richtest einen sicheren SELV-Messplatz ein, konfigurierst Netzgerät und Multimeter korrekt und dokumentierst einen vollständigen Freigabeablauf. Es wird noch keine komplexe Schaltung aufgebaut.
 
-## Sicherheitsfreigabe vor dem Einschalten
+## Material
 
-- [ ] Energiequelle und maximale Spannung sind festgelegt.
-- [ ] Strombegrenzung ist berechnet und eingestellt.
-- [ ] Massebezug und zulässige Messkategorie sind geklärt.
-- [ ] Polaritäten, Bauteilgrenzen und Kurzschlussfreiheit sind geprüft.
-- [ ] Oszilloskop-Masse kann keinen unbeabsichtigten Kurzschluss erzeugen.
+- galvanisch getrenntes Labornetzgerät, `0…12 V`, mit Strombegrenzung,
+- Digitalmultimeter mit intakten Messleitungen,
+- `1 kΩ`, mindestens `0.25 W`, sowie rote LED,
+- Steckbrett und Leitungen,
+- ESD-Ausrüstung, falls ESD-empfindliche Baugruppen verwendet werden,
+- Laborjournal.
 
-## Geplanter Ablauf
+## Schaltung und Sollwerte
 
-1. Schaltung und Messpunkte aus dem Schema ableiten.
-2. Erwartete Werte mit Toleranzen berechnen.
-3. Spannungsfrei aufbauen und Sicht-/Durchgangsprüfung ausführen.
-4. Mit Strombegrenzung stufenweise in Betrieb nehmen.
-5. Messwerte mit Bedingungen und Unsicherheit protokollieren.
-6. Soll-Ist-Abweichungen begründen und Änderungen nachführen.
+Reihenschaltung: `+5 V → 1 kΩ → rote LED → 0 V`. Mit angenommener LED-Spannung `2.0 V` gilt `I ≈ (5 V - 2 V) / 1 kΩ = 3 mA`. Erwartete Widerstandsleistung: `P ≈ 9 mW`.
 
-## Hardware ↔ Firmware
+## Freigabe
 
-Wo ein Mikrocontroller beteiligt ist, werden Pinzustände, Startreihenfolge, Grenzwerte, Diagnoseausgaben und Fail-Safe-Verhalten vorab festgelegt. Firmware darf keine unsichere Hardwarekonfiguration erzeugen.
+- [ ] Netzgerät aus; `5.00 V` und `10 mA` Stromgrenze vorbereitet.
+- [ ] LED-Polarität und Widerstandswert geprüft.
+- [ ] Kein Kurzschluss zwischen `+5 V` und `0 V`.
+- [ ] DMM für DC-Spannung, rote Leitung in V/Ω-Buchse.
+- [ ] Messpunkte: Versorgung, LED und Widerstand; Bezug `0 V`.
+
+## Durchführung
+
+1. Prüfe Netzgerätspannung zunächst **ohne** Schaltung und schalte den Ausgang wieder aus.
+2. Baue die Reihenschaltung spannungsfrei auf.
+3. Lass den Aufbau freigeben oder dokumentiere den Selbstcheck.
+4. Schalte ein und beobachte Stromanzeige. Bei Strombegrenzung sofort wieder aus.
+5. Miss Versorgung, LED-Spannung und Widerstandsspannung jeweils gegen `0 V`.
+6. Berechne den Strom aus der Widerstandsspannung und vergleiche ihn mit der Netzgerätanzeige.
+7. Schalte aus, kontrolliere Spannungsfreiheit und räume geordnet auf.
+
+## Protokolltabelle
+
+| Grösse | Soll | Ist | Messmittel/Bedingung | Bewertung |
+|---|---:|---:|---|---|
+| Versorgung | `5.00 V ± 2 %` | | | |
+| LED-Spannung | ca. `1.7…2.2 V` | | | |
+| Widerstandsspannung | ca. `2.8…3.3 V` | | | |
+| Strom | ca. `2.8…3.3 mA` | | | |
+
+## Reflexion
+
+Erkläre die Abweichung zur angenommenen LED-Spannung. Notiere, welcher einzelne Bedienfehler beim Multimeter die grösste Kurzschlussgefahr erzeugt und wie dein Arbeitsplatz ihn verhindert.
 
 ## Bildungsplan 2026
 
-`a1`, `d1`, `d2`, `d3`
+`a1`, `b4`, `b5`, `d1`, `d2`, `d3`.

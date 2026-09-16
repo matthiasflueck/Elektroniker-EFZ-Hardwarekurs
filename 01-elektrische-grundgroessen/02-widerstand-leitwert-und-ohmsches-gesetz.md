@@ -2,40 +2,56 @@
 
 [← Zurück](01-ladung-strom-spannung-und-bezugspotential.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](03-leistung-energie-und-wirkungsgrad.md)
 
-> **Ausbaustatus:** Inhaltsskelett. Diese Lektion wird in einer späteren Ausbauphase fachlich vollständig entwickelt und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die zentralen Zusammenhänge von **Widerstand, Leitwert und Ohmsches Gesetz** erklären, eine passende Schaltung oder Messung planen und das Ergebnis anhand definierter Kriterien beurteilen.
+Nach dieser Lektion kannst du die behandelten Grössen mit korrektem Bezug und Vorzeichen beschreiben, typische Schaltungen berechnen, reale Abweichungen einordnen und eine sichere Messung planen.
 
-## Geplanter Inhalt
+## 1. Verhältnis von Spannung und Strom
 
-- Begriffe, Modelle und Gültigkeitsgrenzen
-- Dimensionierung mit Einheiten und Plausibilitätsprüfung
-- Reale Bauteileigenschaften und typische Fehlerbilder
-- Mess- oder Simulationsbeispiel
-- Transfer in die Berufspraxis
+Für ein ohmsches Bauteil bei konstanter Temperatur gilt:
+
+$$U = R \cdot I, \qquad I = \frac{U}{R}, \qquad R = \frac{U}{I}$$
+
+Der Widerstand `R` wird in Ohm (`Ω`) angegeben. Der Leitwert `G = 1/R` hat die Einheit Siemens (`S`). Ein `1-kΩ`-Widerstand hat `G = 1 mS`.
+
+Die Gleichung ist keine allgemeine Definition jedes Bauteils. Bei LED, Diode, Glühlampe oder Transistor ist die Strom-Spannungs-Beziehung nicht linear oder temperaturabhängig.
+
+## 2. Einheiten sicher umrechnen
+
+Häufige Präfixe:
+
+| Präfix | Faktor | Beispiel |
+|---|---:|---:|
+| m | `10⁻³` | `3 mA = 0.003 A` |
+| µ | `10⁻⁶` | `220 µA` |
+| k | `10³` | `4.7 kΩ` |
+| M | `10⁶` | `10 MΩ` |
+
+Praktische Regel: `V / kΩ = mA`. So ergibt `5 V / 1 kΩ = 5 mA` direkt.
+
+## 3. Kennlinie und Widerstand
+
+Der statische Widerstand an einem Arbeitspunkt ist `R = U/I`. Der differentielle Widerstand beschreibt die lokale Steigung `r = dU/dI`. Bei einem linearen Widerstand sind beide konstant; bei Halbleitern nicht.
+
+## 4. Reale Widerstände
+
+Ein Widerstand besitzt Toleranz, Temperaturkoeffizient, maximale Spannung und Verlustleistung. `1 kΩ ± 5 %` bedeutet bei Referenzbedingungen `950…1050 Ω`. Die Toleranz ist kein Messfehler, sondern zulässige Bauteilstreuung.
 
 ## Hardware ↔ Firmware
 
-Dieser Abschnitt beschreibt in der Endfassung die elektrische Wirkung von Firmwarekonfigurationen, notwendige Schutzgrenzen und messbare Diagnosepunkte. Passende Vertiefungen werden mit dem [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs) verknüpft.
+Pull-up- und Pull-down-Widerstände definieren Eingänge, wenn kein aktiver Treiber wirkt. Zu grosse Werte werden empfindlich gegen Leckstrom und Störungen; zu kleine Werte erhöhen Strom und belasten den Ausgang. Der [GPIO-Abschnitt zu Pull-Widerständen](https://github.com/matthiasflueck/STM32-Programmierkurs/blob/main/04-gpio/02-push-pull-open-drain-pullup-pulldown.md) zeigt die Firmwarekonfiguration.
 
-## Sicherheit
+## Beispiel
 
-Vor Aufbau und Messung werden Gefährdung, Energiequelle, Grenzwerte, Massebezug und strombegrenzte Erstinbetriebnahme festgelegt.
+Ein Eingang hat `100 kΩ` Pull-up an `3.3 V` und maximal `5 µA` Leckstrom gegen Masse. Im ungünstigen Fall fällt `U = 5 µA · 100 kΩ = 0.5 V` ab; der High-Pegel ist nur noch `2.8 V`. Ob das genügt, entscheidet der garantierte Eingangsschwellwert im Datenblatt.
 
-## Praxis und Übungen
-
-- [Labor 01](../praxis/lab-01.md)
-- [Übungen zu Modul 01](../uebungen/modul-01.md)
-- [Separate Lösungen](../loesungen/modul-01-loesungen.md)
 
 ## Bildungsplan 2026
 
-Geplante Zuordnung: `a3`, `b1`, `b4`, `b5`. Details: [Kompetenzmatrix](../bildungsplan/kompetenzmatrix.md).
+Primär: `b1` (dimensionieren und Schema verstehen), `b4` (messen und Fehler eingrenzen), `b5` (Anforderungen überprüfen). Die begründete Machbarkeit unterstützt `a3`.
 
 ## Kurzcheck
 
-1. Welches Modell oder welche Annahme ist für dieses Thema entscheidend?
-2. Welche reale Nichtidealität kann das Ergebnis dominieren?
-3. Wie würdest du die Funktion messen, ohne Schaltung oder Messgerät zu gefährden?
+1. Welche Bezugsrichtung oder welcher Bezugspunkt wurde verwendet?
+2. Welche Bauteiltoleranz oder Messbeeinflussung ist im realen Aufbau relevant?
+3. Ist das Ergebnis hinsichtlich Einheit und Grössenordnung plausibel?

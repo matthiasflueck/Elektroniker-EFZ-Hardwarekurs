@@ -2,26 +2,28 @@
 
 [← Modul 00](../00-kursstart-sicherheit/README.md) · [Übungsübersicht](README.md) · [Kursübersicht](../README.md)
 
-> **Ausbaustatus:** Aufgabenskelett. Vollständige Aufgaben und geprüfte Zahlenwerte folgen mit der fachlichen Ausarbeitung des Moduls.
+## Übung 1 – Risiko und STOP-Prinzip
 
-## 1 – Verständnis
+Ein `4700-µF`-Kondensator soll auf `12 V` geladen werden. Berechne die gespeicherte Energie. Nenne je eine Substitutions-, technische und organisatorische Massnahme für einen sicheren Versuch. Begründe, weshalb ein Schraubendreher zum Entladen ungeeignet ist.
 
-Erkläre die wichtigsten Zusammenhänge aus **Kursstart, Sicherheit und Laborpraxis** in eigenen Worten und kennzeichne Annahmen sowie Gültigkeitsgrenzen.
+## Übung 2 – Freigabefehler finden
 
-## 2 – Dimensionierung
+Jemand verbindet zuerst die Schaltung mit dem eingeschalteten Netzgerät, stellt dann `12 V` ein und verschiebt während des Betriebs einen Draht auf dem Steckbrett. Formuliere den sicheren Ablauf und mindestens drei Abbruchkriterien.
 
-Dimensioniere eine typische Schaltung aus dem Modul. Dokumentiere Formel, Einheit, Bauteilwahl, Toleranz und Plausibilitätsprüfung.
+## Übung 3 – Messauftrag präzisieren
 
-## 3 – Messplanung
+Verwandle „Miss die Ausgangsspannung“ in einen vollständigen Prüfauftrag mit Messpunkt, Bezug, Betriebszustand, Sollbereich, Messmittel und Dokumentation.
 
-Lege Messpunkte, erwartete Werte, Messmittel, Schutzmassnahmen und Abbruchkriterien fest.
+## Übung 4 – As-built bestimmen
 
-## 4 – Fehlersuche
+Im Schema steht `R17 = 10 kΩ`, auf der Baugruppe wurde nachträglich `4.7 kΩ` eingesetzt. Ein Test war erfolgreich. Welche Dokumente und Kennzeichnungen müssen vor der Freigabe aktualisiert werden?
 
-Erstelle für eine plausible Fehlfunktion mindestens drei Hypothesen und ordne jedem Verdacht eine möglichst eindeutige Messung zu.
+## Übung 5 – Hardware ↔ Firmware
 
-## Bildungsplan
+Ein MOSFET schaltet eine Last aktiv HIGH. Während Reset ist der GPIO hochohmig. Entwirf einen Schnittstellenvertrag mit sicherem Resetzustand, externer Beschaltung, aktiver Polarität und Diagnosepunkt.
 
-`a1`, `d1`, `d2`, `d3`
+## Übung 6 – Laborjournal
 
-> [Separate Lösungen](../loesungen/modul-00-loesungen.md)
+Erstelle eine leere Protokollseite für Labor 00. Sie muss Aufbauversion, Geräte, Einstellungen, Sollwerte, Messwerte, Abweichungen, Änderungen und Freigabe enthalten.
+
+> [Lösungen zu Modul 00](../loesungen/modul-00-loesungen.md)

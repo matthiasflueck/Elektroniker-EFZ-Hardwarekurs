@@ -7,7 +7,7 @@ Ein systematischer, praxisorientierter Hardwarekurs für Elektronikerinnen und E
 ## Stand
 
 - **Architektur:** Module 00–27, 196 geplante Lektionen, 28 Laborlinien und drei durchgängige Projekte sind angelegt.
-- **Pilotinhalte:** Module 00–02 werden in Phase 2 vollständig ausgearbeitet.
+- **Pilotinhalte:** Module 00–02 sind als Qualitätsreferenz vollständig ausgearbeitet: 21 Lektionen, drei Labore, getrennte Übungen/Lösungen und acht technische SVG-Abbildungen.
 - **Weitere Module:** Die Lektionen ab Modul 03 sind bewusst als klar gekennzeichnete Ausbau-Skelette angelegt.
 
 ## Verbindliche Grundlage

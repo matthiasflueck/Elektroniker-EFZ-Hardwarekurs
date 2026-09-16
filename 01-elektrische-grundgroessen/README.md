@@ -4,7 +4,7 @@
 
 ## Ziel des Moduls
 
-Dieses Modul führt die Themen **Elektrische Grundgrössen und Gleichstromnetze** systematisch von den fachlichen Grundlagen zur professionellen Anwendung. Die sieben Lektionen, das Labor, Übungen und Projektbezüge werden gemeinsam abgeschlossen.
+Du beschreibst Strom, Spannung, Widerstand, Leistung und Energie mit eindeutigen Bezügen; berechnest einfache Gleichstromnetze; erkennst den Einfluss realer Quellen und Messgeräte; und weist Ergebnisse mit sicheren DMM-Messungen nach.
 
 ## Lektionen
 
@@ -18,14 +18,18 @@ Dieses Modul führt die Themen **Elektrische Grundgrössen und Gleichstromnetze*
 8. [Übungen zu Modul 01](../uebungen/modul-01.md)
 9. [Labor 01 – Ohmsches Gesetz und Belastung vermessen](../praxis/lab-01.md)
 
+## Voraussetzungen und Material
+
+Modul 00; Labornetzgerät mit Strombegrenzung, DMM, Steckbrett, Widerstände `330 Ω`, `1 kΩ`, `2.2 kΩ`, `10 kΩ`, Anschlussleitungen.
+
 ## Hardware ↔ Firmware
 
-Die Modul-Lektionen kennzeichnen jeweils, welche elektrischen Eigenschaften die Firmware konfigurieren, beobachten oder absichern muss. Vertiefende Programmierinhalte verweisen gezielt auf den [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+GPIO-, ADC- und Versorgungsthemen erhalten von Beginn an einen elektrischen Bezug. Passende Vertiefungen stehen im [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
 
 ## Bildungsplan 2026
 
-Schwerpunktcodes: `a3`, `b1`, `b4`, `b5`. Die genaue Primär-/Sekundärzuordnung steht in der [Kompetenzmatrix](../bildungsplan/kompetenzmatrix.md).
+`a3`, `b1`, `b4`, `b5`.
 
-## Projektbezug
+## Projektmeilenstein P1-M1
 
-Prüfe in der [Projektübersicht](../projekte/README.md), welcher Meilenstein von P1, P2 oder P3 mit diesem Modul bearbeitet wird.
+Für den [Mess- und Lernadapter](../projekte/p1-messadapter.md) werden Versorgungs-, LED- und Teilerströme berechnet. Akzeptanzbereiche und DMM-Messpunkte entstehen vor dem Aufbau; Ergebnisse aus [Labor 01](../praxis/lab-01.md) dienen als Referenz.

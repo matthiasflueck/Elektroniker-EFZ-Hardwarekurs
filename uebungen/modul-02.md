@@ -2,26 +2,32 @@
 
 [← Modul 02](../02-bauteile-schaltungsaufbau/README.md) · [Übungsübersicht](README.md) · [Kursübersicht](../README.md)
 
-> **Ausbaustatus:** Aufgabenskelett. Vollständige Aufgaben und geprüfte Zahlenwerte folgen mit der fachlichen Ausarbeitung des Moduls.
+## Übung 1 – Schema lesen
 
-## 1 – Verständnis
+Ein Taster verbindet `BUTTON_N` mit GND; `10 kΩ` zieht das Netz an `3.3 V`. Beschreibe Strompfad und Logikpegel bei offenem und gedrücktem Taster. Welche Firmwarepolarität folgt daraus?
 
-Erkläre die wichtigsten Zusammenhänge aus **Bauteile, Schaltungsaufbau und erste Signale** in eigenen Worten und kennzeichne Annahmen sowie Gültigkeitsgrenzen.
+## Übung 2 – LED dimensionieren
 
-## 2 – Dimensionierung
+Eine grüne LED (`UF = 2.0…2.4 V` bei geplantem Strom) wird von einem `3.3-V`-GPIO gespeist. Dimensioniere für höchstens `4 mA` den nächsthöheren Wert aus `220, 270, 330, 390 Ω`. Berechne Stromgrenzen und Widerstandsleistung.
 
-Dimensioniere eine typische Schaltung aus dem Modul. Dokumentiere Formel, Einheit, Bauteilwahl, Toleranz und Plausibilitätsprüfung.
+## Übung 3 – RC-Zeitkonstante
 
-## 3 – Messplanung
+`R = 4.7 kΩ`, `C = 22 µF`. Berechne `τ`, die Spannung nach `1τ` und `3τ` beim Laden auf `5 V` sowie die grobe Zeit bis `99 %`.
 
-Lege Messpunkte, erwartete Werte, Messmittel, Schutzmassnahmen und Abbruchkriterien fest.
+## Übung 4 – Kondensatorauswahl
 
-## 4 – Fehlersuche
+Nenne mindestens sechs Kriterien für einen `10-µF`-Kondensator an einer `5-V`-Versorgung. Erkläre, weshalb ein `10 µF / 6.3 V` Keramikkondensator real deutlich weniger Kapazität haben kann.
 
-Erstelle für eine plausible Fehlfunktion mindestens drei Hypothesen und ordne jedem Verdacht eine möglichst eindeutige Messung zu.
+## Übung 5 – Spulenabschaltung
 
-## Bildungsplan
+Ein Relais hat `L = 80 mH` und führt `150 mA`. Berechne gespeicherte Energie. Erkläre Wirkung und Polarität einer Freilaufdiode sowie den Einfluss auf die Abfallzeit.
 
-`b1`, `b3`, `b4`, `b5`
+## Übung 6 – Oszilloskopfehler
 
-> [Separate Lösungen](../loesungen/modul-02-loesungen.md)
+Ein Generator zeigt `1.00 Vpp, 50 Ω`; am hochohmigen Oszilloskop werden fast `2.00 Vpp` gemessen. Erkläre den Befund. Nenne alle Einstellungen, die im Screenshot dokumentiert werden müssen.
+
+## Übung 7 – Fehlersuche Steckbrett
+
+Eine RC-Kurve bleibt bei `0 V`. Formuliere fünf priorisierte Hypothesen und für jede genau eine unterscheidende Prüfung.
+
+> [Lösungen zu Modul 02](../loesungen/modul-02-loesungen.md)

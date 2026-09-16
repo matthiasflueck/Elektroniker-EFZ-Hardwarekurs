@@ -2,33 +2,49 @@
 
 [← Praxisübersicht](README.md) · [Modul 01](../01-elektrische-grundgroessen/README.md) · [Kursübersicht](../README.md)
 
-> **Ausbaustatus:** Labor-Skelett. Vor der Durchführung werden Schaltung, Grenzwerte, Stückliste und erwartete Messwerte in der Ausbauphase vollständig freigegeben.
-
 ## Ziel
 
-Die Inhalte aus **Elektrische Grundgrössen und Gleichstromnetze** werden aufgebaut, gemessen, beurteilt und nachvollziehbar dokumentiert.
+Du überprüfst das Ohmsche Gesetz, bestimmst einen belasteten Spannungsteiler und quantifizierst die Messbeeinflussung. Alle Werte werden vorab berechnet.
 
-## Sicherheitsfreigabe vor dem Einschalten
+## Material und sichere Grenzen
 
-- [ ] Energiequelle und maximale Spannung sind festgelegt.
-- [ ] Strombegrenzung ist berechnet und eingestellt.
-- [ ] Massebezug und zulässige Messkategorie sind geklärt.
-- [ ] Polaritäten, Bauteilgrenzen und Kurzschlussfreiheit sind geprüft.
-- [ ] Oszilloskop-Masse kann keinen unbeabsichtigten Kurzschluss erzeugen.
+Netzgerät `0…6 V` mit `20 mA` Stromgrenze, DMM, `R1 = 2.2 kΩ`, `R2 = 1.0 kΩ`, `RL = 1.0 kΩ`, Steckbrett. Nur spannungsfrei umstecken. Widerstandsmessung ausschliesslich bei ausgeschaltetem und getrenntem Netzgerät.
 
-## Geplanter Ablauf
+## Teil A – Widerstandskennlinie
 
-1. Schaltung und Messpunkte aus dem Schema ableiten.
-2. Erwartete Werte mit Toleranzen berechnen.
-3. Spannungsfrei aufbauen und Sicht-/Durchgangsprüfung ausführen.
-4. Mit Strombegrenzung stufenweise in Betrieb nehmen.
-5. Messwerte mit Bedingungen und Unsicherheit protokollieren.
-6. Soll-Ist-Abweichungen begründen und Änderungen nachführen.
+1. Miss `R1` energiefrei und notiere Toleranz/Anzeige.
+2. Berechne für `1, 2, 3, 4, 5 V` jeweils Strom und Leistung.
+3. Baue `Quelle → R1 → 0 V`; stelle `20 mA` Stromgrenze ein.
+4. Miss bei jedem Spannungswert die tatsächliche Spannung am Widerstand.
+5. Bestimme den Strom zuerst aus `I = U/R`. Führe danach bei einem Punkt eine direkte Strommessung in Reihe aus und notiere den Unterschied.
 
-## Hardware ↔ Firmware
+| U Soll | U Ist | I berechnet | I direkt | P | Bewertung |
+|---:|---:|---:|---:|---:|---|
+| 1 V | | | | | |
+| 2 V | | | | | |
+| 3 V | | | | | |
+| 4 V | | | | | |
+| 5 V | | | | | |
 
-Wo ein Mikrocontroller beteiligt ist, werden Pinzustände, Startreihenfolge, Grenzwerte, Diagnoseausgaben und Fail-Safe-Verhalten vorab festgelegt. Firmware darf keine unsichere Hardwarekonfiguration erzeugen.
+## Teil B – Belasteter Spannungsteiler
+
+1. Baue `5 V → R1 (2.2 kΩ) → OUT → R2 (1 kΩ) → 0 V`.
+2. Berechne `UOUT` unbelastet: Soll etwa `1.5625 V`.
+3. Miss `UOUT` und prüfe die Maschensumme.
+4. Schalte `RL = 1 kΩ` parallel zu `R2`. Berechne neu mit `R2 || RL = 500 Ω`: Soll etwa `0.926 V`.
+5. Miss erneut und erkläre die Änderung über den zusätzlichen Strompfad.
+
+## Teil C – Fehlerdiagnose
+
+Vertausche kontrolliert einen Widerstandswert oder öffne einen Zweig bei ausgeschalteter Quelle. Eine zweite Person erhält nur Sollwerte und Messpunkte und lokalisiert den Fehler mit maximal drei Messungen. Danach Originalzustand wiederherstellen und Regressionstest ausführen.
+
+## Abnahme
+
+- Abweichungen zu den Sollwerten sind mit Bauteiltoleranz und Messunsicherheit erklärt.
+- Direkte Strommessung wurde korrekt in Reihe durchgeführt.
+- Die Maschenregel stimmt innerhalb der erwarteten Unsicherheit.
+- Fehler und Rückbau sind dokumentiert.
 
 ## Bildungsplan 2026
 
-`a3`, `b1`, `b4`, `b5`
+`a3`, `b1`, `b4`, `b5`, `d3`.

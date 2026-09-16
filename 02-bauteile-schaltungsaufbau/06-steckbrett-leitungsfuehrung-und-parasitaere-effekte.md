@@ -2,40 +2,51 @@
 
 [← Zurück](05-leds-schalter-und-grundlegende-schutzbeschaltung.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](07-erste-messungen-mit-funktionsgenerator-und-oszilloskop.md)
 
-> **Ausbaustatus:** Inhaltsskelett. Diese Lektion wird in einer späteren Ausbauphase fachlich vollständig entwickelt und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die zentralen Zusammenhänge von **Steckbrett, Leitungsführung und parasitäre Effekte** erklären, eine passende Schaltung oder Messung planen und das Ergebnis anhand definierter Kriterien beurteilen.
+Nach dieser Lektion kannst du Funktion, Grenzwerte und reale Nichtidealitäten der behandelten Bauteile erklären, sie im Schema und Aufbau sicher zuordnen und ihr Verhalten mit geeigneten Messmitteln prüfen.
 
-## Geplanter Inhalt
+## 1. Interne Verbindungen kennen
 
-- Begriffe, Modelle und Gültigkeitsgrenzen
-- Dimensionierung mit Einheiten und Plausibilitätsprüfung
-- Reale Bauteileigenschaften und typische Fehlerbilder
-- Mess- oder Simulationsbeispiel
-- Transfer in die Berufspraxis
+Bei üblichen Steckbrettern sind Fünfergruppen verbunden; die mittlere Nut trennt die beiden Seiten. Versorgungsschienen können in der Mitte unterbrochen sein. Diese Struktur wird mit Durchgangsprüfung verifiziert, bevor sie angenommen wird.
+
+Ein Aufbau soll das Schema lesbar abbilden: kurze Rückstrompfade, Versorgung farblich konsistent, Bauteile nicht übereinander verborgen, Messpunkte zugänglich.
+
+## 2. Parasitäre Elemente
+
+Jeder Draht besitzt Widerstand und Induktivität; benachbarte Reihen besitzen Kapazität. Bei langsamen DC-Schaltungen sind diese Effekte klein. Bei schnellen Flanken, hochohmigen Knoten oder Schaltreglern können sie dominieren.
+
+Ein Steckbrett eignet sich nicht für:
+
+- hohe Ströme,
+- Netzspannung,
+- präzise sehr hochohmige Messungen,
+- schnelle Leistungs-Schaltknoten,
+- reproduzierbare Hochfrequenzschaltungen.
+
+## 3. Entkopplung und Stromschleifen
+
+Ein Entkopplungskondensator wirkt nur gut, wenn die Schleife zwischen Versorgungspin, Kondensator und Masse klein ist. Ein Kondensator am entfernten Ende langer Steckdrähte kann schnelle Stromspitzen kaum liefern.
+
+## 4. Kontaktfehler
+
+Typische Fehler sind versetzte Pins, lose Drähte, oxidierte Kontakte, unterbrochene Versorgungsschienen und Bauteilbeinchen, die nicht dieselbe Reihe treffen. Systematische Prüfung arbeitet netzweise und vergleicht mit dem Schema.
 
 ## Hardware ↔ Firmware
 
-Dieser Abschnitt beschreibt in der Endfassung die elektrische Wirkung von Firmwarekonfigurationen, notwendige Schutzgrenzen und messbare Diagnosepunkte. Passende Vertiefungen werden mit dem [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs) verknüpft.
+Schlechte Kontakte können Reset, ADC-Sprünge oder Busfehler erzeugen. Firmware-Logging hilft, Zeitpunkt und Zustand zu sehen, beweist aber nicht die Ursache. Wackeltests dürfen nur kontrolliert und bei sicherer Energie durchgeführt werden; besser sind Messung und reproduzierbarer Neuaufbau.
 
-## Sicherheit
+## Aufbaucheck
 
-Vor Aufbau und Messung werden Gefährdung, Energiequelle, Grenzwerte, Massebezug und strombegrenzte Erstinbetriebnahme festgelegt.
+Vor Energie: Netzstruktur prüfen, Versorgungsschienen markieren, Widerstände messen, Polaritäten prüfen, GND-Kontinuität bestätigen und Kurzschlusswiderstand zwischen Versorgung und GND beurteilen.
 
-## Praxis und Übungen
-
-- [Labor 02](../praxis/lab-02.md)
-- [Übungen zu Modul 02](../uebungen/modul-02.md)
-- [Separate Lösungen](../loesungen/modul-02-loesungen.md)
 
 ## Bildungsplan 2026
 
-Geplante Zuordnung: `b1`, `b3`, `b4`, `b5`. Details: [Kompetenzmatrix](../bildungsplan/kompetenzmatrix.md).
+Primär: `b1`, `b3`, `b4`, `b5`; je nach Aufbau zusätzlich Anforderungen und Machbarkeit aus `a1–a3`.
 
 ## Kurzcheck
 
-1. Welches Modell oder welche Annahme ist für dieses Thema entscheidend?
-2. Welche reale Nichtidealität kann das Ergebnis dominieren?
-3. Wie würdest du die Funktion messen, ohne Schaltung oder Messgerät zu gefährden?
+1. Welche Energie oder Zustandsgrösse kann dieses Bauteil speichern oder beeinflussen?
+2. Welcher Datenblattwert begrenzt den sicheren Betrieb?
+3. Wie unterscheidest du Bauteilfehler, Aufbaufehler und falsche Messung?
