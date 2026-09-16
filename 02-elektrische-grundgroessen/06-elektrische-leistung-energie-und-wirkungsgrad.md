@@ -2,59 +2,77 @@
 
 [← Zurück](05-widerstand-und-ohmsches-gesetz.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](07-grundgroessen-sicher-berechnen-aufbauen-und-messen.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Elektrische Leistung, Energie und Wirkungsgrad** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
+
+- Leistung, Energie und Wirkungsgrad im Strompfad erklären
+- elektrische Leistung mit mehreren Formeln berechnen
+- Verlustleistung und thermische Reserve beurteilen
 
 ## Bezug Bildungsplan 2026
 
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
 
 ## Voraussetzungen
 
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+Vorherige Lektionen dieses Moduls sowie sichere Präfix- und Einheitenrechnung.
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Eine Schaltung kann elektrisch richtig funktionieren und trotzdem überhitzen. Strom und Spannung sagen, was fliesst und anliegt; Leistung sagt, wie schnell Energie umgesetzt wird. Sie entscheidet über Bauteilgrösse, Temperatur und Laufzeit.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Leistung im Bauteil
+
+Fliesst Ladung durch eine Potentialdifferenz, wird Energie übertragen. Pro Zeit ergibt sich Leistung. Erst aus dieser Vorstellung folgt `P = U·I`. Für einen ohmschen Widerstand dürfen mit dem Ohmschen Gesetz auch `P = I²R` und `P = U²/R` verwendet werden.
+
+![Energiefluss von Quelle über Schaltung zur Nutzleistung und Verlustwärme](../bilder/02-elektrische-grundgroessen/02-06-leistung-wirkungsgrad.svg)
+
+### Energie über Zeit
+
+Bei konstanter Leistung gilt `E = P·t`. Joule beziehungsweise Wattsekunde ist die SI-Einheit; bei Energieversorgung wird häufig Wattstunde verwendet. `1 Wh = 3600 J`.
+
+### Wirkungsgrad
+
+`η = P_nutz/P_zu`. Die Differenz `P_verlust = P_zu − P_nutz` erwärmt Bauteile oder wird anderweitig ungewollt umgesetzt. Nennleistung ist kein Zielbetrieb; Reserve und Umgebungstemperatur sind zu beachten.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Linearregler wandelt 12 V auf 5 V bei 100 mA. Die Last erhält 0,5 W, der Regler verheizt ungefähr 0,7 W. Die Funktion stimmt, doch das thermische Design kann ungenügend sein.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Am 1-kΩ-Widerstand aus Lektion 02.5 liegen 5 V. `P = U²/R = 25 V² / 1000 Ω = 0,025 W = 25 mW`. In 10 min: `E = 0,025 W × 600 s = 15 J`. Bei 0,25-W-Nennleistung beträgt die statische Auslastung 10 %.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 02](../praxis/modul-02.md).
+Berechne vor dem Aufbau Strom und Widerstandsleistung. Miss U und I, berechne daraus P und vergleiche. Berühre keine möglicherweise heissen Bauteile; Temperaturmessung erfolgt nach freigegebener Methode.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+PWM kann die mittlere Lastleistung steuern. Momentanstrom, MOSFET-Verluste und thermische Grenzwerte bleiben Hardwarethemen. Firmware muss Tastgrad und Fehlerzustände innerhalb dieser Grenzen halten.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Leistung bestimmt die momentane Belastung; Energie berücksichtigt zusätzlich die Zeit.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Watt und Wattstunde verwechseln.
+- Nur Lastleistung, nicht Verlustleistung betrachten.
+- Bauteile dauerhaft direkt an der Nennleistungsgrenze betreiben.
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Elektrische Leistung ist U·I, Energie ist Leistung über Zeit. Wirkungsgrad trennt Nutz- und Verlustleistung und verbindet die Rechnung mit thermischer Auslegung.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wie viel Leistung nimmt 100 Ω an 10 V auf?
+2. Wie viele Joule sind 2 Wh?
+3. Warum kann ein korrekt geregelter Linearregler überhitzen?
+
+Weitere Aufgaben: [Übungen zu Modul 02](../uebungen/modul-02.md). Die Lösungen liegen bewusst getrennt.

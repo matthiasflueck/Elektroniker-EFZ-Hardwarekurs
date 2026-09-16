@@ -1,79 +1,73 @@
 # Praxis 01 – Rechnen, Kennlinien lesen und Messwerte plausibilisieren
 
-[← Modul 01](../01-mathematik-physik/README.md) · [Praxisübersicht](README.md) · [Kursübersicht](../README.md)
-
-> **Ausbaustatus:** Praxisgerüst. Vor Durchführung werden Schaltung, Material, Grenzen, Sollwerte und Auswertung vollständig freigegeben.
+[← Modul 01](../01-mathematik-physik/README.md) · [Kursübersicht](../README.md)
 
 ## Lernziel
 
-Rechnen, Kennlinien lesen und Messwerte plausibilisieren und das Ergebnis fachlich begründet beurteilen.
+Du rechnest Einheiten und Präfixe sicher um, wertest eine Kennlinie aus und erkennst absichtlich eingebaute Rechen- und Messfehler mit unabhängigen Plausibilitätsprüfungen.
 
 ## Voraussetzungen
 
-Theorie und Übungen des Moduls 01.
+Lektionen 01.1–01.7.
 
 ## Benötigtes Material
 
-Wird mit der fachlichen Ausarbeitung spezifiziert.
+Arbeitsblatt, reale Widerstände 330 Ω/1 kΩ/10 kΩ, Datenblatt oder bereitgestellte Kennlinie, Laborjournal.
 
 ## Benötigte Messgeräte
 
-Werden passend zu Messgrösse, Bereich, Belastung und Sicherheit ausgewählt.
+Digitalmultimeter; für den optionalen Aufbau strombegrenztes 0–5-V-Netzgerät.
 
 ## Schaltung / Messaufbau
 
-Die Endfassung enthält ein genormtes Schema mit eindeutigen Mess- und Bezugspunkten.
+Verwende die Messschaltung aus Modul 02 erst nach Freigabe. Der mathematische Parcours kann vollständig spannungsfrei durchgeführt werden.
 
 ## Sicherheitshinweise
 
-Energiequelle, Strombegrenzung, gespeicherte Energie, Massebezug und Abbruchkriterien vor Aufbau festlegen.
+Nur SELV-Kleinspannung. Widerstände nur an spannungsfreier Schaltung mit dem Ohmmeter messen.
 
 ## Vorbereitung
 
-Erst vorhersagen, dann berechnen und erst danach aufbauen.
+Erstelle eine Tabelle mit Eingabewert, Umrechnung, Erwartungsbereich, Ergebnis, Einheitenprüfung und unabhängigem Kontrollweg.
 
 ## Berechnung
 
-Sollwerte, Toleranzen und Grenzwerte mit Einheiten bestimmen.
+Rechne mindestens zehn Präfixaufgaben, drei Formelumstellungen, drei Toleranzbereiche und zwei Steigungen. Schätze jeweils zuerst die Grössenordnung.
 
 ## Aufbau
 
-Spannungsfrei aufbauen, Sicht- und Durchgangsprüfung durchführen.
+Optional: 1-kΩ-Widerstand an 5 V. Dokumentiere Schema, Bauteilwert, Quelle und Stromgrenze.
 
 ## Durchführung
 
-Mit Strombegrenzung schrittweise in Betrieb nehmen.
+Bearbeite vier Stationen: SI/Präfixe, Formeln, Toleranzen, Kennlinie/Plausibilität. Bei jedem auffälligen Resultat zuerst Hypothese notieren, dann korrigieren.
 
 ## Messung
 
-Messpunkte, Geräte und Einstellungen dokumentieren.
+Miss drei Widerstände und vergleiche Anzeige, Nennwert und Toleranz. Miss im optionalen Aufbau U und I.
 
 ## Messwerte
 
-| Grösse | Soll | Ist | Unsicherheit/Bedingung |
-|---|---:|---:|---|
-| | | | |
+| Aufgabe / Bauteil | Schätzung | Ergebnis / Ist | Einheit | Bewertung |
+|---|---:|---:|---|---|
+|  |  |  |  |  |
 
 ## Auswertung
 
-Soll und Ist vergleichen, Abweichungen erklären und Änderungen nachführen.
+Ordne jeden gefundenen Fehler einer Kategorie zu: Präfix, Einheit, Vorzeichen, Klammer, Modell, Messanschluss oder unzulässige Genauigkeit.
 
 ## Fragen
 
-Welche Annahme beeinflusst das Resultat am stärksten?
+1. Welche Prüfung fand die meisten Fehler? 2. Wo war ein Taschenrechner hilfreich, wo nicht? 3. Welche Aussage darf aus einer typischen Kennlinie nicht abgeleitet werden?
 
 ## Was solltest du beobachtet haben?
 
-Wird in der Endfassung mit zulässigem Wertebereich beschrieben.
+Die Kombination aus Grössenordnung und Einheit erkennt grobe Fehler sehr schnell. Reale Messwerte benötigen Toleranz- und Bedingungsangaben.
 
 ## Bezug zur Theorie
 
-Modul 01 – Mathematik und Physik für Elektroniker/innen.
+Vollständige Anwendung der Lektionen 01.1–01.7.
 
 ## 🔗 Hardware ↔ Firmware
 
-Falls ein Mikrocontroller beteiligt ist: Konfiguration, Pinzustand, Peripherie und reale Messung gemeinsam beurteilen.
-
-## Bildungsplan 2026
-
-`a3`, `b1`, `b4`, `b5`
+Übertrage einen Messwert gedanklich in einen ADC-Code. Notiere explizit Volt, Millivolt und Count, damit keine Einheit stillschweigend verloren geht.

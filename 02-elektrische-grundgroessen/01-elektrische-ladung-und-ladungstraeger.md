@@ -2,59 +2,75 @@
 
 [← Zurück](README.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](02-elektrischer-strom-und-geschlossener-stromkreis.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Elektrische Ladung und Ladungsträger** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
+
+- positive und negative Ladung sowie Ladungsträger erklären
+- Ladungsmenge und Elementarladung einordnen
+- Aufladung, Polarisation und Neutralität unterscheiden
 
 ## Bezug Bildungsplan 2026
 
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
 
 ## Voraussetzungen
 
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+Module 00–01.
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Bevor Strom fliessen kann, muss geklärt sein, was sich überhaupt bewegt. Ladung ist eine grundlegende Eigenschaft von Materie. Sie erklärt elektrostatische Anziehung, ESD und später den Strom in Leitern und Halbleitern.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Ladung als Eigenschaft
+
+Protonen tragen positive, Elektronen negative Ladung. Gleichnamige Ladungen stossen sich ab, ungleichnamige ziehen sich an. Ein Körper ist elektrisch neutral, wenn sich positive und negative Ladungen insgesamt ausgleichen. Neutral bedeutet nicht, dass keine Ladungen vorhanden sind.
+
+### Bewegliche Ladungsträger
+
+In Metallen sind Elektronen beweglich, während die Atomrümpfe im Gitter bleiben. In Elektrolyten bewegen sich positive und negative Ionen. In Halbleitern werden Elektronen und Löcher als Ladungsträger beschrieben. Das Material bestimmt also, welche Träger beweglich sind.
+
+### Quantisierung und Einheit
+
+Erst nach dieser Vorstellung wird die Grösse definiert: Ladung `Q` wird in Coulomb (`C`) angegeben. Die Elementarladung hat den Betrag `e ≈ 1,602 × 10⁻¹⁹ C`. Makroskopische Ladungsmengen enthalten daher sehr viele einzelne Träger.
+
+### Ladungstrennung
+
+Reibung, chemische Reaktion oder eine Spannungsquelle können Ladung trennen. Dadurch entsteht ein elektrisches Feld und eine Potentialdifferenz. Ohne geschlossenen Pfad kann Ladung getrennt bleiben; mit einem Pfad erfolgt ein Ausgleich.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Beim Gehen auf einem isolierenden Boden können Elektronen zwischen Materialien übertragen werden. Berührst du danach eine leitende Baugruppe, gleicht sich die Ladung sehr schnell aus: eine ESD-Entladung.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Eine Ladungsmenge von `1 µC = 1 × 10⁻⁶ C` entspricht näherungsweise `N = Q/e = 10⁻⁶ / 1,602×10⁻¹⁹ ≈ 6,24 × 10¹²` Elementarladungen. Der grosse Wert erklärt, warum wir im Stromkreis mit kontinuierlichen Grössen rechnen können.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 02](../praxis/modul-02.md).
-
-## 🔗 Hardware ↔ Firmware
-
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Beobachte mit einem geeigneten ungefährlichen Elektrostatikversuch Anziehung nach Ladungstrennung. Empfindliche Elektronik bleibt dabei ausserhalb des Versuchsbereichs.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Elektrische Neutralität ist ein Gleichgewicht von Ladungen, nicht die Abwesenheit von Ladung.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Elektronen und elektrische Energie gleichsetzen.
+- Annehmen, in jedem Material bewegten sich dieselben Ladungsträger.
+- ESD nur dann annehmen, wenn ein Funke sichtbar ist.
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Ladung kann positiv oder negativ sein und wird in Coulomb gemessen. Bewegliche Ladungsträger hängen vom Material ab; Ladungstrennung erzeugt Feld und Potentialunterschied.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was bedeutet elektrisch neutral?
+2. Welche Ladungsträger bewegen sich in Metall?
+3. Warum kann eine unsichtbare Entladung schaden?
+
+Weitere Aufgaben: [Übungen zu Modul 02](../uebungen/modul-02.md). Die Lösungen liegen bewusst getrennt.

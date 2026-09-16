@@ -2,59 +2,77 @@
 
 [← Zurück](02-bildungsplan-2026-und-handlungskompetenzen.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](04-elektrische-sicherheit-und-sichere-kursgrenzen.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Kursaufbau, Lernpfad und drei Projektlinien** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
+
+- die Lernlogik des Kurses anwenden
+- Theorie, Übungen, Praxis und Projekte unterscheiden
+- die drei Projektlinien fachlich einordnen
 
 ## Bezug Bildungsplan 2026
 
-- Handlungskompetenzen: `a1`, `d1`, `d2`, `d3`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
+- Handlungskompetenzen: `a1–a3`, `d1–d3`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
 
 ## Voraussetzungen
 
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+Lektionen 00.1–00.2.
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Ein umfangreicher Kurs kann unübersichtlich wirken. Du musst aber nicht 197 Lektionen gleichzeitig im Kopf behalten. Entscheidend ist eine wiederkehrende Arbeitsweise: verstehen, vorhersagen, aufbauen, messen, vergleichen und erklären.
+
+Die drei Projekte sorgen dafür, dass einzelne Grundlagen nicht isoliert bleiben. Eine Rechnung aus Modul 02 taucht später in einer echten Sensorkette oder Leistungsstufe wieder auf.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Vier Materialarten
+
+Theorie-Lektionen bauen Begriffe und Modelle auf. Übungen prüfen Verständnis, Rechnung und Fehlersuche; ihre Lösungen liegen separat. Praxislektionen führen zu Messdaten. Projekte verbinden mehrere Module und erzeugen freigabefähige Unterlagen.
+
+### Drei Projektlinien
+
+**Projekt A** führt vom resistiven Sensor über Teiler/Brücke, Verstärker und Filter zum ADC-tauglichen 0–3,3-V-Signal. **Projekt B** verbindet MCU-Signal, Gate-Ansteuerung, MOSFET, Schutzpfad, Last, PWM und Messung. **Projekt C** durchläuft den gesamten Entwicklungsprozess von der Anforderung bis zur Verifikation.
+
+### Lernschleife statt Kochrezept
+
+Vor dem Aufbau wird ein erwarteter Wertebereich notiert. Nach der Messung wird nicht nur «richtig/falsch» entschieden, sondern die Abweichung erklärt. Bei unerwartetem Resultat folgt eine Hypothese und eine gezielte Kontrollmessung.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Bei Projekt A berechnest du zuerst den Sensorteiler. Später prüfst du, ob der OPV-Eingangsbereich passt, ob der ADC die Quelle belastet und ob das Filter schnell genug reagiert. Derselbe Spannungswert wird so aus mehreren fachlichen Blickwinkeln beurteilt.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein Lernblock aus 45 Minuten Theorie, 30 Minuten Übungen und 90 Minuten Labor benötigt ohne Dokumentation bereits `45 + 30 + 90 = 165 min = 2 h 45 min`. Plane zusätzlich Zeit für Vorbereitung, Fehlersuche und Auswertung ein.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 00](../praxis/modul-00.md).
+Lege ein Laborjournal an. Erstelle für ein frei gewähltes Mini-Experiment die Felder Ziel, Sollwert, Schaltung, Material, Messmittel, Rohdaten, Auswertung, Abweichung und nächste Schritte.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Die Projekte trennen Zuständigkeiten klar: Dieser Kurs erklärt elektrische Schnittstelle, Schutz, Pegel und Messung. Der STM32-Kurs erklärt Peripherie, Register und Programmstruktur. Querverweise verbinden beide, ohne Inhalte unnötig zu duplizieren.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Vorhersagen → berechnen → aufbauen → messen → vergleichen → erklären.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Nur lesen und die Praxis auf später verschieben.
+- Messwerte ohne vorherige Erwartung sammeln.
+- Lösungen ansehen, bevor ein eigener Lösungsweg dokumentiert wurde.
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Der Kurs verbindet vier Materialarten und drei Projekte. Wiederkehrende Lernschleifen machen aus Einzelwissen eine professionelle Vorgehensweise.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Welche Aufgabe hat Projekt B im Lernpfad?
+2. Warum liegen Lösungen getrennt?
+3. Was notierst du vor der ersten Messung?
+
+Weitere Aufgaben: [Übungen zu Modul 00](../uebungen/modul-00.md). Die Lösungen liegen bewusst getrennt.

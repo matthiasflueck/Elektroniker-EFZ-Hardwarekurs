@@ -2,59 +2,75 @@
 
 [← Zurück](05-diagramme-kennlinien-und-steigungen-lesen.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](07-mathematische-plausibilitaetspruefung-in-der-elektronik.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Grundlegende Mechanik, Energie und Leistung** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
+
+- Kraft, Arbeit, Energie und Leistung sprachlich unterscheiden
+- Energieumwandlung in einem elektromechanischen System verfolgen
+- Wirkungsgrad und Verlustleistung berechnen
 
 ## Bezug Bildungsplan 2026
 
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
+- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
 
 ## Voraussetzungen
 
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+Vorherige Lektionen dieses Moduls.
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Elektronik wirkt auf die physische Welt: Ein Motor hebt eine Last, ein Relais bewegt einen Anker, ein Kühlkörper führt Wärme ab. Die gleichen Begriffe Energie und Leistung verbinden Mechanik, Elektrik und Thermik.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Arbeit und Energie
+
+Arbeit beschreibt übertragene Energie. Wird eine konstante Kraft F entlang des Weges s ausgeübt, gilt nach dieser Vorstellung `W = F·s`. Die Einheit Joule ist gleich Newtonmeter. Energie kann gespeichert oder umgewandelt werden.
+
+### Leistung
+
+Leistung sagt, wie schnell Energie umgesetzt wird: `P = W/t`. Ein Joule pro Sekunde ist ein Watt. Zwei Geräte können dieselbe Energie verbrauchen, aber unterschiedlich schnell.
+
+### Wirkungsgrad und Wärme
+
+Der Wirkungsgrad ist `η = P_nutz/P_zu`. Er liegt bei passiven Umwandlungen zwischen 0 und 1. Die Differenz wird überwiegend zu Wärme. Diese Verlustleistung bestimmt Temperaturanstieg und Kühlbedarf.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Motor hebt eine Masse. Die elektrische Quelle liefert Energie, der Treiber verliert Wärme, der Motor wandelt einen Teil in Bewegung um und Reibung erzeugt weitere Wärme. Der gesamte Energiepfad muss bilanziert werden.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein System nimmt 12 W auf und liefert 9 W mechanisch. `η = 9/12 = 0,75 = 75 %`. Die Verlustleistung beträgt `12 W − 9 W = 3 W`. Läuft es 10 min, werden `3 W × 600 s = 1800 J` als Verlustenergie umgesetzt.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 01](../praxis/modul-01.md).
+Erstelle für Lüfter, Relais oder Motor ein Energieflussdiagramm. Markiere Nutzleistung, Verluste und Messstellen. Schätze Werte und begründe Unsicherheiten.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+PWM verändert die mittlere Energiezufuhr zur Last. Firmware bestimmt Tastgrad und Regelung, die Hardware trägt Schalt- und Leitverluste. Ein softwareseitig kleiner Mittelwert schliesst hohe Spitzenströme nicht aus.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Energie ist eine Menge; Leistung beschreibt deren Umsetzung pro Zeit.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Watt und Wattstunde verwechseln.
+- Wirkungsgrad in Prozent direkt als Zahl 75 einsetzen statt 0,75.
+- Verlustleistung ohne thermische Folgen betrachten.
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Mechanische und elektrische Systeme folgen derselben Energiebilanz. Leistung, Wirkungsgrad und Verlustwärme machen die Umwandlung quantitativ.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was unterscheidet Joule und Watt?
+2. Wohin geht die Differenz zwischen Zu- und Nutzleistung?
+3. Berechne die Verlustleistung bei 20 W Eingang und 80 % Wirkungsgrad.
+
+Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.

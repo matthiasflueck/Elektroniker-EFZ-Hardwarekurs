@@ -2,59 +2,77 @@
 
 [← Zurück](04-prozentrechnung-abweichung-und-toleranz.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](06-grundlegende-mechanik-energie-und-leistung.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Diagramme, Kennlinien und Steigungen lesen** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
+
+- Achsen, Skalierung und Einheiten eines Diagramms prüfen
+- Werte, Steigungen und Bereiche aus Kennlinien lesen
+- Interpolation von unzulässiger Extrapolation unterscheiden
 
 ## Bezug Bildungsplan 2026
 
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
+- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
 
 ## Voraussetzungen
 
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+Vorherige Lektionen dieses Moduls.
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Datenblätter beschreiben Bauteile häufig besser mit Kennlinien als mit einer einzigen Zahl. Wer nur einen Punkt abliest, kann Temperatur, Streuung oder den nichtlinearen Verlauf übersehen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Zuerst die Achsen
+
+Vor jeder Interpretation werden x- und y-Grösse, Einheit, lineare oder logarithmische Skalierung und Messbedingungen gelesen. Mehrere Kurven können unterschiedliche Temperaturen oder Betriebszustände darstellen.
+
+### Steigung als Änderungsrate
+
+Die mittlere Steigung zwischen zwei Punkten ist `Δy/Δx`. Eine positive Steigung bedeutet, dass y mit x wächst. Bei nichtlinearen Kennlinien hängt die lokale Steigung vom Arbeitspunkt ab.
+
+### Interpolation und Extrapolation
+
+Interpolation schätzt zwischen gemessenen Punkten. Extrapolation setzt einen Verlauf ausserhalb des dargestellten Bereichs fort und ist riskanter. Absolute Grenzwerte dürfen nicht aus einer typischen Kennlinie extrapoliert werden.
+
+![Kennlinie mit Arbeitspunkt, Steigung und zulässigem Interpolationsbereich](../bilder/01-mathematik-physik/01-05-kennlinie-steigung.svg)
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Eine NTC-Kennlinie fällt mit steigender Temperatur. Zwischen 20 °C und 30 °C kann ein Wert näherungsweise interpoliert werden. Oberhalb des dokumentierten Bereichs darf der Verlauf nicht einfach linear verlängert werden.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Eine Gerade geht durch `(1 V, 2 mA)` und `(3 V, 6 mA)`. Die Steigung ist `(6−2) mA / (3−1) V = 2 mA/V = 2 mS`. Der Kehrwert entspricht hier `500 Ω`.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 01](../praxis/modul-01.md).
+Wähle eine reale Widerstands- oder Sensorkennlinie. Markiere Achsen, Bedingungen, einen Arbeitspunkt, Interpolationsbereich und eine Stelle, an der lineare Näherung nicht mehr passt.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Firmware nutzt oft Kennlinientabellen oder Näherungsfunktionen. ADC-Wert, Referenzspannung und Eingangsschaltung bestimmen zuerst den elektrischen Messpunkt; erst dann darf die Software in Temperatur oder Druck umrechnen.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Keine Kennlinie interpretieren, bevor Achsen, Einheit, Skalierung und Bedingungen gelesen sind.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Logarithmische Achsen wie lineare behandeln.
+- Typische Kurven als garantierte Grenzen lesen.
+- Weit ausserhalb der Daten extrapolieren.
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Kennlinien verbinden Betriebsbedingungen und Bauteilverhalten. Achsenprüfung, Steigung und vorsichtige Interpolation liefern belastbare Aussagen.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was prüfst du vor dem Ablesen?
+2. Was bedeutet negative Steigung?
+3. Warum ist Extrapolation riskanter als Interpolation?
+
+Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.

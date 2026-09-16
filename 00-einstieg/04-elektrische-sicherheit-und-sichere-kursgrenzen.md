@@ -2,59 +2,81 @@
 
 [← Zurück](03-kursaufbau-lernpfad-und-drei-projektlinien.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](05-esd-verstehen-und-baugruppen-schuetzen.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Elektrische Sicherheit und sichere Kursgrenzen** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
+
+- Gefährdung und Risiko unterscheiden
+- Schutzmassnahmen nach dem STOP-Prinzip wählen
+- einen Kleinspannungsaufbau sicher erstinbetriebnehmen
 
 ## Bezug Bildungsplan 2026
 
-- Handlungskompetenzen: `a1`, `d1`, `d2`, `d3`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
+- Handlungskompetenzen: `b3-LK04`, `b3-LK14–15`, `b4-LK03`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
 
 ## Voraussetzungen
 
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+Lektionen 00.1–00.3. Arbeiten an Netzspannung gehören nicht zu dieser Lektion.
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Die meisten Grundversuche arbeiten mit kleiner Spannung. Trotzdem können Kurzschlüsse heisse Leitungen erzeugen, Kondensatoren Energie speichern und falsche Messanschlüsse Bauteile zerstören. «Nur 12 Volt» ist deshalb keine vollständige Risikobeurteilung.
+
+Sicherheit beginnt vor dem Einschalten. Wer Energiequelle, möglichen Fehlerstrom und Abbruchkriterien kennt, kann ruhig und systematisch arbeiten.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Gefahr, Exposition und Risiko
+
+Eine Gefährdung ist eine mögliche Schadensquelle. Das Risiko hängt zusätzlich davon ab, wie wahrscheinlich und wie schwer ein Schaden ist. Beurteilt werden elektrische, thermische, mechanische und chemische Gefährdungen sowie gespeicherte Energie.
+
+### STOP-Prinzip
+
+Schutz wird in dieser Reihenfolge geplant: **Substitution** durch eine weniger gefährliche Lösung, **technische** Schutzmassnahmen wie Strombegrenzung, **organisatorische** Regeln und zuletzt **persönliche** Schutzausrüstung. Die Kurslabore verwenden galvanisch getrennte SELV-Kleinspannung, in der Regel 0–12 V DC, mit eingestellter Stromgrenze.
+
+### Sichere Erstinbetriebnahme
+
+Vor dem Einschalten werden Schema, Polarität, Kurzschlussfreiheit und Messpunkte geprüft. Das Netzgerät steht auf 0 V, der Ausgang ist aus, die Stromgrenze ist begründet. Beim Hochfahren werden Strom und Temperatur beobachtet. Unerwarteter Strom, Geruch, Geräusch oder Erwärmung bedeutet: abschalten, Energie entfernen, spannungsfrei untersuchen.
+
+### Gespeicherte Energie
+
+Ein Kondensator kann nach dem Ausschalten geladen bleiben. Erst nachdem diese reale Gefahr verstanden ist, ist die Formel sinnvoll: `E = ½ · C · U²`. Entladen wird kontrolliert über einen geeigneten Widerstand, niemals durch absichtlichen Kurzschluss.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein 4700-µF-Kondensator an 12 V sieht harmlos aus, kann beim Kurzschliessen aber einen hohen Impulsstrom liefern. Vor dem Berühren misst du seine Spannung und verwendest einen dimensionierten Entladewiderstand.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Mit `C = 4700 µF = 0,0047 F` und `U = 12 V` ergibt sich `E = 0,5 × 0,0047 F × (12 V)² = 0,338 J`. Die quadratische Spannung zeigt: Verdoppelt sich U, vervierfacht sich die Energie.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 00](../praxis/modul-00.md).
+Erstelle für den Praxisaufbau des Moduls eine kurze Risikobeurteilung: Quelle, maximale Spannung, Stromgrenze, gespeicherte Energie, heisse Bauteile, Schutzmassnahmen und Abbruchkriterien.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Firmware kann Schutzfunktionen überwachen, aber ein Programmfehler darf keine gefährliche Energie freigeben. Sichere Reset-Zustände, Strombegrenzungen und Abschaltpfade müssen hardwareseitig wirken. Beim Debug-Halt können Ausgänge ihren letzten Zustand behalten.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Spannungsfrei ändern, strombegrenzt einschalten, beobachtbar hochfahren.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Kleinspannung automatisch mit risikofrei gleichsetzen.
+- Die Stromgrenze erst nach dem Anschluss einstellen.
+- Ein Bauteil ohne Spannungsprüfung anfassen, weil die Quelle ausgeschaltet ist.
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Sicheres Arbeiten bewertet Energie und Fehlerfälle, nutzt das STOP-Prinzip und trennt Aufbauänderung von Inbetriebnahme. Im Kurs gelten bewusst enge Kleinspannungsgrenzen.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Warum ist ein Akku trotz kleiner Spannung gefährlich?
+2. Ordne Strombegrenzung und Schutzbrille im STOP-Prinzip ein.
+3. Welche drei Abbruchzeichen beobachtest du beim ersten Einschalten?
+
+Weitere Aufgaben: [Übungen zu Modul 00](../uebungen/modul-00.md). Die Lösungen liegen bewusst getrennt.

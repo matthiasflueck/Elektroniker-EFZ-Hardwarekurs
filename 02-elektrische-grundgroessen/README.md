@@ -4,7 +4,9 @@
 
 ## Worum geht es?
 
-Dieses Modul führt **Elektrische Grundgrössen** von einer verständlichen Vorstellung zu technisch belastbaren Berechnungen, Schaltungen und Messungen. Die Theorie-Lektionen bereiten die Praxis gezielt vor; Übungen und Lösungen sind getrennt.
+Spannung, Strom und Widerstand sind nicht bloss Buchstaben in drei Formeln. Sie beschreiben Energieunterschiede, Ladungsbewegung und die Reaktion realer Bauteile. Dieses Modul baut zuerst eine anschauliche Vorstellung auf, zeigt die Vorgänge in normgerechten Schaltungen und führt erst danach die mathematischen Beziehungen ein.
+
+Das Modul folgt konsequent der Denkfolge **vorstellen → begründen → berechnen → aufbauen → messen → vergleichen → erklären**. Begriffe und Formeln werden nicht vorausgesetzt, sondern aus realen Aufgaben entwickelt.
 
 ## Lektionen
 
@@ -20,8 +22,8 @@ Dieses Modul führt **Elektrische Grundgrössen** von einer verständlichen Vors
 
 ## Bildungsplan 2026
 
-Schwerpunkt: `a3`, `b1`, `b4`, `b5`. Details und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
+Die konkreten Zuordnungen zu `b1–b5` und den ergänzenden Kompetenzen stehen in der [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
 
 ## Projektbezug
 
-Die [Projektübersicht](../projekte/README.md) zeigt, wie das Modul in Projekt A, B oder C einfliesst.
+Die Inhalte werden in den [Projekten A–C](../projekte/README.md) wieder aufgenommen und dort als nachvollziehbare Entwicklungs- und Messnachweise angewendet.

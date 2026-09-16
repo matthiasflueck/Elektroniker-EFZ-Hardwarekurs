@@ -2,59 +2,71 @@
 
 [← Zurück](01-si-einheiten-praefixe-und-einheitenkontrolle.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](03-formeln-verstehen-und-sicher-umstellen.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Zehnerpotenzen und wissenschaftliche Schreibweise** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
+
+- Zahlen in wissenschaftlicher Schreibweise darstellen
+- mit Zehnerpotenzen multiplizieren und dividieren
+- Grössenordnungen vor einer Detailrechnung abschätzen
 
 ## Bezug Bildungsplan 2026
 
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
+- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
 
 ## Voraussetzungen
 
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+Vorherige Lektionen dieses Moduls.
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Zwischen einem Leckstrom von Nanoampere und einem Motorstrom von Ampere liegen neun Zehnerpotenzen. Die wissenschaftliche Schreibweise macht solche Unterschiede sichtbar und verhindert lange Folgen von Nullen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Mantisse und Exponent
+
+Eine Zahl wird als `a × 10ⁿ` geschrieben, wobei der Betrag von `a` zwischen 1 und 10 liegt. Der Exponent sagt, wie weit das Dezimalzeichen verschoben wurde. `0,000 0047 A` wird zu `4,7 × 10⁻⁶ A`.
+
+### Rechenregeln
+
+Beim Multiplizieren werden Mantissen multipliziert und Exponenten addiert. Beim Dividieren werden Mantissen dividiert und Exponenten subtrahiert. Bei Addition müssen die Exponenten zuerst gleich gemacht werden.
+
+### Grössenordnung
+
+Vor dem Taschenrechner wird grob geschätzt. `3,3 V / 1 kΩ` muss im Milliamperebereich liegen, denn Volt durch Kiloohm ergibt Milliampere. Ein Ergebnis von 3300 A wäre offensichtlich falsch.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Kondensatorwert `100 nF` entspricht `100 × 10⁻⁹ F = 1,0 × 10⁻⁷ F`. Beide Darstellungen bezeichnen denselben Wert; `100 nF` ist für Schaltpläne meist lesbarer.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+`(4,7 × 10³) × (2,0 × 10⁻³) = 9,4 × 10⁰ = 9,4`. Die Exponenten `3 + (−3)` heben sich auf. Eine Abschätzung `≈ 5 × 2 = 10` bestätigt die Grössenordnung.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 01](../praxis/modul-01.md).
-
-## 🔗 Hardware ↔ Firmware
-
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Rechne zehn Werte zwischen pF und MΩ ohne Taschenrechner in wissenschaftliche Schreibweise um. Prüfe anschliessend mit einem zweiten Rechenweg.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Erst Grössenordnung schätzen, dann exakt rechnen.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Beim Dividieren die Exponenten addieren.
+- Eine Mantisse grösser als 10 stehen lassen.
+- Negativen Exponenten mit negativem Zahlenwert verwechseln.
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Wissenschaftliche Schreibweise trennt signifikanten Zahlenwert und Grössenordnung. Die Potenzregeln vereinfachen Rechnungen über viele Präfixbereiche.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Schreibe 0,00047 in wissenschaftlicher Form.
+2. Was ergibt `10⁶ / 10³`?
+3. In welchem Strombereich liegt 5 V / 10 kΩ?
+
+Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.

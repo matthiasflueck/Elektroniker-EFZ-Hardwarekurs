@@ -1,79 +1,78 @@
 # Praxis 00 – ESD- und Elektronikarbeitsplatz korrekt einrichten
 
-[← Modul 00](../00-einstieg/README.md) · [Praxisübersicht](README.md) · [Kursübersicht](../README.md)
-
-> **Ausbaustatus:** Praxisgerüst. Vor Durchführung werden Schaltung, Material, Grenzen, Sollwerte und Auswertung vollständig freigegeben.
+[← Modul 00](../00-einstieg/README.md) · [Kursübersicht](../README.md)
 
 ## Lernziel
 
-ESD- und Elektronikarbeitsplatz korrekt einrichten und das Ergebnis fachlich begründet beurteilen.
+Du richtest einen sicheren, nachvollziehbaren ESD-Arbeitsplatz ein, prüfst die Schutzmittel und führst die vier Freigaben an einem spannungslosen Kleinspannungsaufbau durch.
 
 ## Voraussetzungen
 
-Theorie und Übungen des Moduls 00.
+Lektionen 00.4–00.7 und lokale Sicherheits-/ESD-Einweisung. Keine Arbeiten an Netzspannung.
 
 ## Benötigtes Material
 
-Wird mit der fachlichen Ausarbeitung spezifiziert.
+ESD-Matte, geprüftes Handgelenkband, ESD-Beutel mit Übungsbaugruppe, isolierte Ablage, Steckbrett, 1-kΩ-Widerstand, beschriftete Leitungen, Laborjournal.
 
 ## Benötigte Messgeräte
 
-Werden passend zu Messgrösse, Bereich, Belastung und Sicherheit ausgewählt.
+Zugelassener ESD-Tester, Digitalmultimeter und strombegrenztes SELV-Labornetzgerät. Das Netzgerät bleibt bis zur Freigabe ausgeschaltet.
 
 ## Schaltung / Messaufbau
 
-Die Endfassung enthält ein genormtes Schema mit eindeutigen Mess- und Bezugspunkten.
+![ESD-Arbeitsplatz mit Schutzwiderständen und gemeinsamem Punkt](../bilder/00-einstieg/00-05-esd-arbeitsplatz.svg)
+
+Die Übungsschaltung besteht aus einer 5-V-Quelle und 1 kΩ. Sie wird erst nach Abschluss des ESD-Teils aufgebaut.
 
 ## Sicherheitshinweise
 
-Energiequelle, Strombegrenzung, gespeicherte Energie, Massebezug und Abbruchkriterien vor Aufbau festlegen.
+Nur 0–5 V DC, Stromgrenze höchstens 20 mA. Ein Handgelenkband niemals direkt an PE improvisieren. Beschädigte Schutzausrüstung nicht verwenden. Vor jeder Aufbauänderung: Ausgang AUS.
 
 ## Vorbereitung
 
-Erst vorhersagen, dann berechnen und erst danach aufbauen.
+Erstelle Checklisten für Dokumenten-, Aufbau-, Energie- und Messfreigabe. Notiere Abbruchkriterien und die erwartete Stromstärke.
 
 ## Berechnung
 
-Sollwerte, Toleranzen und Grenzwerte mit Einheiten bestimmen.
+Für 5 V und 1 kΩ gilt `I = 5 mA`, `P_R = 25 mW`. Begründe eine Stromgrenze von 10 mA.
 
 ## Aufbau
 
-Spannungsfrei aufbauen, Sicht- und Durchgangsprüfung durchführen.
+1. Zonen markieren und Fremdmaterial entfernen. 2. ESD-Ausrüstung visuell prüfen. 3. Testergebnis dokumentieren. 4. Baugruppe geschützt ein- und auspacken. 5. Übungsschaltung spannungsfrei aufbauen.
 
 ## Durchführung
 
-Mit Strombegrenzung schrittweise in Betrieb nehmen.
+Arbeite in der Folge **vorhersagen → prüfen → freigeben → einschalten → beobachten → dokumentieren**. Eine zweite Person übernimmt die Gegenprüfung der Freigaben.
 
 ## Messung
 
-Messpunkte, Geräte und Einstellungen dokumentieren.
+Messe vor Power-on den Widerstand der Schaltung. Stelle danach 5,00 V und 10 mA ein, schalte ein und miss Spannung sowie Strom.
 
 ## Messwerte
 
-| Grösse | Soll | Ist | Unsicherheit/Bedingung |
+| Grösse | Soll / Grenze | Ist | Gerät / Bedingung |
 |---|---:|---:|---|
-| | | | |
+| ESD-Test | bestanden |  |  |
+| R1 | ca. 1 kΩ |  | spannungsfrei |
+| U | 5,00 V |  |  |
+| I | ca. 5 mA |  |  |
 
 ## Auswertung
 
-Soll und Ist vergleichen, Abweichungen erklären und Änderungen nachführen.
+Bewerte jede Freigabe, Abweichung und Änderung. Eine reine Checkmark-Liste ohne Beobachtung genügt nicht.
 
 ## Fragen
 
-Welche Annahme beeinflusst das Resultat am stärksten?
+1. Welche Schutzwirkung hat der definierte Ableitwiderstand? 2. Welcher Fehler wird durch die Buchsenkontrolle verhindert? 3. Was müsste vor einem Firmwaredownload zusätzlich geprüft werden?
 
 ## Was solltest du beobachtet haben?
 
-Wird in der Endfassung mit zulässigem Wertebereich beschrieben.
+Ein strukturierter Arbeitsplatz macht Zustand, Strompfad und Revision schneller erkennbar. Der ESD-Schutz ist nur dann belastbar, wenn das Gesamtsystem geprüft und dokumentiert ist.
 
 ## Bezug zur Theorie
 
-Modul 00 – Einstieg, Beruf, Bildungsplan und Sicherheit.
+Lektionen 00.4–00.7; Kompetenzbezug `b3-LK04`, `b3-LK12`, `b4-LK03` und `b4-LK09`.
 
 ## 🔗 Hardware ↔ Firmware
 
-Falls ein Mikrocontroller beteiligt ist: Konfiguration, Pinzustand, Peripherie und reale Messung gemeinsam beurteilen.
-
-## Bildungsplan 2026
-
-`a1`, `d1`, `d2`, `d3`
+Dokumentiere Board- und Firmwarestand. Prüfe vor dem Programmieren Reset-Zustände, mögliche aktive Ausgänge und Debuggerverhalten.

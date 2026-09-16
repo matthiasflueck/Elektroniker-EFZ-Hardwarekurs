@@ -1,60 +1,78 @@
 # 00.7 – Technische Dokumentation und Laborjournal
 
-[← Zurück](06-professioneller-elektronikarbeitsplatz.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../uebungen/modul-00.md)
-
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
+[← Zurück](06-professioneller-elektronikarbeitsplatz.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](README.md)
 
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Technische Dokumentation und Laborjournal** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
+
+- ein reproduzierbares Laborjournal führen
+- Sollwert, Messwert, Abweichung und Bewertung trennen
+- Revisionen und Entscheidungen rückverfolgbar dokumentieren
 
 ## Bezug Bildungsplan 2026
 
-- Handlungskompetenzen: `a1`, `d1`, `d2`, `d3`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
+- Handlungskompetenzen: `b4-LK05`, `b4-LK09–10`, `b5-LK05`, `d1–d3`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
 
 ## Voraussetzungen
 
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+Lektionen 00.1–00.6.
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Nach einigen Tagen ist kaum noch sicher erinnerlich, welcher Widerstand eingesetzt oder welche Geräteeinstellung verwendet wurde. Ohne Aufzeichnung kann selbst ein korrektes Resultat nicht zuverlässig wiederholt werden.
+
+Gute Dokumentation entsteht während der Arbeit. Sie zeigt auch verworfene Hypothesen und verhindert, dass derselbe Fehler später nochmals untersucht werden muss.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Mindestinhalt eines Laborjournals
+
+Zu jedem Versuch gehören Datum, Person, Ziel, Schaltungsrevision, Aufbau, Material, Geräteidentifikation, erwartete Werte, Messbedingungen, Rohdaten, Auswertung, Abweichungen, Änderungen und Schlussfolgerung. Fotos ergänzen ein Schema, ersetzen es aber nicht.
+
+### Soll, Ist und Bewertung
+
+Ein Messwert wird nie allein notiert. `TP3 = 3,28 V gegen GND, DMM-01, 10-V-Bereich, 5,00-V-Versorgung` ist aussagekräftiger als `3,28`. Die Bewertung berücksichtigt Toleranzen und Messunsicherheit.
+
+### Revision und Versionsverwaltung
+
+Schema, Stückliste, PCB, Firmware und Testplan müssen denselben Stand beschreiben. Eine Änderung erhält Grund, Datum, verantwortliche Person und Prüfnachweis. Versionsverwaltung bewahrt Historie; eine Freigabe bezeichnet den geprüften Stand.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Nach dem Austausch von R7 wird nicht nur «R7 geändert» notiert. Dokumentiert werden alter und neuer Wert, Grund, Schema-Revision, betroffene Messwerte und der Regressionstest, der die Änderung bestätigt.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Bei `Soll = 5,00 V` und `Ist = 4,92 V` ist die absolute Abweichung `ΔU = −0,08 V`. Relativ: `−0,08 V / 5,00 V × 100 % = −1,6 %`. Erst der zulässige Bereich entscheidet, ob dies akzeptabel ist.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 00](../praxis/modul-00.md).
+Führe das Laborjournal in der Praxisarbeit vollständig. Tausche es anschliessend mit einer zweiten Person: Diese muss Aufbau, Messpunkte und Bewertung ohne mündliche Ergänzung nachvollziehen können.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Board-, Schema- und Firmwareversion gehören gemeinsam ins Protokoll. Ein Messbild ohne Firmwarestand ist bei PWM, ADC oder Bussignalen oft nicht reproduzierbar. Detaillierte Codeversionierung wird im STM32-Kurs behandelt.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Ein Wert ohne Messpunkt, Bezug, Bedingung, Einheit und Revision ist kein belastbarer Nachweis.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Rohdaten nachträglich durch berechnete Werte ersetzen.
+- Fotos ohne Beschriftung, Massstab oder Schaltungsrevision ablegen.
+- Fehlversuche löschen, statt Ursache und Erkenntnis festzuhalten.
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Ein Laborjournal verbindet Erwartung, Rohdaten, Auswertung und Entscheidung. Revisionen sorgen dafür, dass die geprüfte Hardware-/Firmwarekombination eindeutig bleibt.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Welche Angaben fehlen bei «Spannung = 3,3»?
+2. Warum müssen Rohdaten erhalten bleiben?
+3. Was unterscheidet Versionsstand und Freigabe?
+
+Weitere Aufgaben: [Übungen zu Modul 00](../uebungen/modul-00.md). Die Lösungen liegen bewusst getrennt.

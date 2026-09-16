@@ -2,59 +2,75 @@
 
 [← Zurück](01-berufsbild-elektroniker-in-efz-und-arbeitsfelder.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](03-kursaufbau-lernpfad-und-drei-projektlinien.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Bildungsplan 2026 und Handlungskompetenzen** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
+
+- Bildungsplan, Handlungskompetenz und Leistungskriterium unterscheiden
+- die Pflichtkompetenzen und den Hardwarebereich b1–b5 einordnen
+- Kurslektionen über die Kompetenzmatrix mit offiziellen Anforderungen verbinden
 
 ## Bezug Bildungsplan 2026
 
-- Handlungskompetenzen: `a1`, `d1`, `d2`, `d3`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
+- Handlungskompetenzen: alle Pflichtkompetenzen, Schwerpunkt `b1–b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
 
 ## Voraussetzungen
 
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+Lektionen 00.1 und die Bereitschaft, mit Tabellen und Querverweisen zu arbeiten.
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Der Bildungsplan ist kein Inhaltsverzeichnis eines Lehrbuchs. Er beschreibt, was eine ausgebildete Fachperson in realen Arbeitssituationen leisten können muss. Darum tauchen Themen wie Messen, Dokumentieren oder Sicherheit in mehreren Kompetenzen auf.
+
+Wer den Aufbau versteht, lernt zielgerichteter: Du erkennst, warum eine Übung verlangt wird und welcher beobachtbare Nachweis am Ende zählt.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Verbindliche Grundlage
+
+Für diesen Kurs gilt der definitive Schweizer Bildungsplan Elektroniker/in EFZ vom 29. August 2025, in Kraft seit 1. Januar 2026, Berufsnummer 46506. Er bezeichnet Kompetenzen `a1–a3`, `b1–b5`, `c1–c2` und `d1–d3` als Pflicht. Aus den Wahlpflichtbereichen werden zusätzlich zwei Kompetenzen betrieblich aufgebaut.
+
+### Drei Ebenen
+
+Ein **Handlungskompetenzbereich** bündelt verwandte berufliche Tätigkeiten. Eine **Handlungskompetenz** beschreibt eine ganze Arbeitssituation. **Leistungskriterien** zerlegen sie in beobachtbare, mess- und beurteilbare Teilhandlungen. Die Lernorte Betrieb, Berufsfachschule und überbetrieblicher Kurs tragen unterschiedlich dazu bei.
+
+### Hardwarekern b1–b5
+
+`b1` behandelt Dimensionierung und Schema, `b2` PCB-Layout, `b3` Fertigung, `b4` Inbetriebnahme/Messung/Fehlersuche und `b5` die Prüfung gegen Anforderungen. Diese Kompetenzen bilden eine Prozesskette; sie werden durch Anforderungen (`a`), Firmware (`c`) und Projektverantwortung (`d`) ergänzt.
+
+Die [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md) ordnet jedes hardwarebezogene Leistungskriterium Theorie, Praxis und Projekten zu. Die Kurzformulierungen helfen bei der Navigation; verbindlich bleibt die offizielle Quelle.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Das Kriterium «Messpunkte aus Schema und Funktion festlegen» gehört zu `b4`. Im Kurs wird es zuerst in der Messtechnik erklärt, beim Oszilloskop praktisch trainiert und in Projekt C anhand der eigenen Schaltung nachgewiesen. So führt ein Kriterium zu mehreren Lerngelegenheiten, aber zu einem klaren Kompetenznachweis.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Leistungsniveaus sind keine Prozentwerte. Eine einfache Abdeckungsprüfung kann trotzdem zählen: Wenn 12 von 12 intern erfassten `b4`-Kriterien mindestens einer Theorie-, Praxis- und Projektstelle zugeordnet sind, beträgt die strukturelle Zuordnung `12/12 = 100 %`. Das beweist noch nicht die Lernqualität, verhindert aber offensichtliche Lücken.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 00](../praxis/modul-00.md).
-
-## 🔗 Hardware ↔ Firmware
-
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Öffne die Kompetenzmatrix. Wähle je ein Kriterium aus `b1`, `b4` und `b5` und verfolge den Pfad bis zu einer Lektion, einer Praxisarbeit und einem Projekt. Formuliere, welcher konkrete Nachweis dort entstehen soll.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Der Bildungsplan beschreibt beobachtbare berufliche Handlungen; der Kurs liefert den Lernweg und die Nachweise dazu.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Einen älteren FUTUREMEM-Entwurf statt des definitiven Plans verwenden.
+- Themenliste und Handlungskompetenz gleichsetzen.
+- Eine Zuordnung in der Matrix bereits als erworbene Kompetenz betrachten.
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Der verbindliche Bildungsplan 2026 definiert Mindeststandards. Die Kompetenzen b1–b5 decken den Hardwareprozess ab; die Matrix macht die Behandlung bis zum Leistungskriterium rückverfolgbar.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was unterscheidet eine Handlungskompetenz von einem Leistungskriterium?
+2. Warum wird b4 in mehreren Mess- und Fehlersuchmodulen behandelt?
+3. Welche Rolle spielen die drei Lernorte?
+
+Weitere Aufgaben: [Übungen zu Modul 00](../uebungen/modul-00.md). Die Lösungen liegen bewusst getrennt.

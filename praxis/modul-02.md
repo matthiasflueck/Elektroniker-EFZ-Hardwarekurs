@@ -1,79 +1,77 @@
 # Praxis 02 – Widerstand an einer Spannungsquelle berechnen, aufbauen und messen
 
-[← Modul 02](../02-elektrische-grundgroessen/README.md) · [Praxisübersicht](README.md) · [Kursübersicht](../README.md)
-
-> **Ausbaustatus:** Praxisgerüst. Vor Durchführung werden Schaltung, Material, Grenzen, Sollwerte und Auswertung vollständig freigegeben.
+[← Modul 02](../02-elektrische-grundgroessen/README.md) · [Kursübersicht](../README.md)
 
 ## Lernziel
 
-Widerstand an einer Spannungsquelle berechnen, aufbauen und messen und das Ergebnis fachlich begründet beurteilen.
+Du sagst Strom und Leistung eines einfachen Stromkreises voraus, baust ihn sicher auf, misst U, I und R mit korrektem Anschluss und erklärst Soll-Ist-Abweichungen.
 
 ## Voraussetzungen
 
-Theorie und Übungen des Moduls 02.
+Module 00–02; sichere Bedienung von Netzgerät und DMM.
 
 ## Benötigtes Material
 
-Wird mit der fachlichen Ausarbeitung spezifiziert.
+Steckbrett, R1 = 1 kΩ (mindestens 0,25 W), Leitungen, Schalter oder Steckbrücke.
 
 ## Benötigte Messgeräte
 
-Werden passend zu Messgrösse, Bereich, Belastung und Sicherheit ausgewählt.
+Strombegrenztes 0–5-V-Labornetzgerät und abgesichertes Digitalmultimeter; idealerweise zweites DMM für gleichzeitige U-/I-Messung.
 
 ## Schaltung / Messaufbau
 
-Die Endfassung enthält ein genormtes Schema mit eindeutigen Mess- und Bezugspunkten.
+![Messaufbau mit IEC-Widerstand, Voltmeter parallel und Amperemeter in Serie](../bilder/02-elektrische-grundgroessen/02-07-vollstaendiger-messaufbau.svg)
 
 ## Sicherheitshinweise
 
-Energiequelle, Strombegrenzung, gespeicherte Energie, Massebezug und Abbruchkriterien vor Aufbau festlegen.
+Maximal 5 V und 20 mA. Aufbau nur spannungsfrei ändern. Strommessung nie parallel zur Quelle. Widerstand nur energiefrei messen. Nach Strommessung Leitung sofort in V/Ω-Buchse zurückstecken.
 
 ## Vorbereitung
 
-Erst vorhersagen, dann berechnen und erst danach aufbauen.
+Markiere Plus, GND, technischen Strompfeil, Mess- und Bezugspunkte. Kontrolliere DMM-Buchsen und Netzgerät bei Ausgang AUS.
 
 ## Berechnung
 
-Sollwerte, Toleranzen und Grenzwerte mit Einheiten bestimmen.
+Miss R1 spannungsfrei. Berechne für 1, 2, 3, 4 und 5 V jeweils I und P. Ergänze einen Bereich aus Widerstandstoleranz und Quellenabweichung.
 
 ## Aufbau
 
-Spannungsfrei aufbauen, Sicht- und Durchgangsprüfung durchführen.
+Verdrahte Quelle, R1 und Rückleiter. Lass die Aufbaufreigabe gegen das Schema prüfen. Stelle 0 V und 10 mA Stromgrenze ein.
 
 ## Durchführung
 
-Mit Strombegrenzung schrittweise in Betrieb nehmen.
+Erhöhe U in 1-V-Schritten. Vor jedem Schritt: I und P vorhersagen. Danach U parallel und I in Serie messen. Schalte vor jeder Änderung des Strompfads aus.
 
 ## Messung
 
-Messpunkte, Geräte und Einstellungen dokumentieren.
+Erfasse tatsächliche Quellspannung, Widerstandsspannung und Strom. Berechne zusätzlich `R = U/I` und `P = U·I`.
 
 ## Messwerte
 
-| Grösse | Soll | Ist | Unsicherheit/Bedingung |
-|---|---:|---:|---|
-| | | | |
+| U eingestellt | U gemessen | I Soll | I Ist | R aus U/I | P Ist | Abweichung / Erklärung |
+|---:|---:|---:|---:|---:|---:|---|
+| 1 V |  |  |  |  |  |  |
+| 2 V |  |  |  |  |  |  |
+| 3 V |  |  |  |  |  |  |
+| 4 V |  |  |  |  |  |  |
+| 5 V |  |  |  |  |  |  |
 
 ## Auswertung
 
-Soll und Ist vergleichen, Abweichungen erklären und Änderungen nachführen.
+Zeichne I über U. Prüfe Linearität, Steigung, grösste Abweichung und mögliche Messgerätebelastung. Formuliere ein Ergebnis mit Akzeptanzbereich statt nur «stimmt».
 
 ## Fragen
 
-Welche Annahme beeinflusst das Resultat am stärksten?
+1. Warum ist der Strom nahezu proportional zu U? 2. Welche Spannung verursacht das Amperemeter selbst? 3. Wie ändert sich P bei doppelter U? 4. Was geschieht bei offenem Rückleiter?
 
 ## Was solltest du beobachtet haben?
 
-Wird in der Endfassung mit zulässigem Wertebereich beschrieben.
+Eine annähernd gerade Kennlinie, gleichen Strom im Serienpfad und kleine, erklärbare Abweichungen durch reale Werte und Messgeräte.
 
 ## Bezug zur Theorie
 
-Modul 02 – Elektrische Grundgrössen.
+Lektionen 02.1–02.7; besonders `b1-LK02–03`, `b4-LK01–10`.
 
 ## 🔗 Hardware ↔ Firmware
 
-Falls ein Mikrocontroller beteiligt ist: Konfiguration, Pinzustand, Peripherie und reale Messung gemeinsam beurteilen.
-
-## Bildungsplan 2026
-
-`a3`, `b1`, `b4`, `b5`
+Wiederhole gedanklich den Versuch mit einem GPIO als Quelle. Welche Pin-Konfiguration, Stromgrenze und Messung wären nötig? Die elektrische Last bleibt auch bei logisch korrekter Firmware real.

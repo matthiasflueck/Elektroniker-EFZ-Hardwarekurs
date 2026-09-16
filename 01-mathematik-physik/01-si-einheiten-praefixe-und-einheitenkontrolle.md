@@ -2,59 +2,84 @@
 
 [← Zurück](README.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](02-zehnerpotenzen-und-wissenschaftliche-schreibweise.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **SI-Einheiten, Präfixe und Einheitenkontrolle** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
+
+- SI-Grössen, Einheiten und Präfixe sicher verwenden
+- Werte ohne Bedeutungsänderung umrechnen
+- eine Rechnung mit Einheiten prüfen
 
 ## Bezug Bildungsplan 2026
 
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
+- Handlungskompetenzen: `a3`, `b1-LK02`, `b4`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
 
 ## Voraussetzungen
 
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+Grundrechenarten und Modul 00.
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+In Elektronikdatenblättern stehen Werte von Pikofarad bis Megaohm. Ein übersehenes Präfix kann ein Ergebnis um den Faktor tausend oder eine Million verändern. Einheiten sind deshalb Teil der technischen Aussage, nicht bloss eine Beschriftung hinter der Zahl.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Grösse, Zahlenwert und Einheit
+
+Eine physikalische Angabe besteht aus Zahlenwert und Einheit, zum Beispiel `4,7 kΩ`. Der Widerstand ist die Grösse, 4,7 der Zahlenwert und Kiloohm die Einheit mit Präfix. Erst gemeinsam ist die Aussage vollständig.
+
+### Häufige Präfixe
+
+| Präfix | Zeichen | Faktor | Beispiel |
+|---|---:|---:|---:|
+| pico | p | `10⁻¹²` | `22 pF` |
+| nano | n | `10⁻⁹` | `100 nF` |
+| mikro | µ | `10⁻⁶` | `10 µA` |
+| milli | m | `10⁻³` | `25 mA` |
+| kilo | k | `10³` | `4,7 kΩ` |
+| mega | M | `10⁶` | `10 MΩ` |
+
+Gross-/Kleinschreibung ist bedeutsam: `m` ist milli, `M` ist mega. Beim Umrechnen bleibt die physikalische Grösse gleich; nur Zahlenwert und Einheit ändern sich.
+
+### Einheiten als Fehlerdetektor
+
+Eine Gleichung muss auf beiden Seiten dieselbe Dimension besitzen. Bei `U = R · I` ergibt `Ω · A = V`. Passt die Einheit nicht, ist mindestens ein Rechenschritt oder eine Formel falsch.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Schaltplan nennt `R1 = 4k7`. Das bedeutet `4,7 kΩ = 4700 Ω`, nicht 47 kΩ. Die Schreibweise ersetzt das Dezimalkomma und verhindert, dass es im Druck verschwindet.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+`3300 µA` werden in Milliampere umgerechnet. Da `1 mA = 1000 µA`, gilt `3300 µA ÷ 1000 = 3,3 mA`. Kontrolle: Die Einheit wird grösser, also muss der Zahlenwert kleiner werden.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 01](../praxis/modul-01.md).
+Suche an fünf realen Bauteilen oder Geräten Werte mit unterschiedlichen Präfixen. Übertrage sie in die SI-Basiseinheit und danach in eine gut lesbare technische Einheit.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Registerwerte sind einheitenlos, aber Firmware rechnet sie in Volt, Ampere oder Sekunden um. Konstanten brauchen deshalb klare Einheiten im Namen oder in der Dokumentation. `timeout_ms` und `timeout_us` dürfen nicht verwechselt werden.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Zahlenwert und Einheit gehören zusammen; das Präfix ist ein Teil der Zahl.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- `m` und `M` verwechseln.
+- Einheiten während der Rechnung weglassen.
+- Dezimalpräfixe wie Zweierpotenzen behandeln.
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+SI-Einheiten machen technische Angaben vergleichbar. Präfixe verkürzen grosse und kleine Zahlen, während die Einheitenkontrolle viele Rechenfehler sichtbar macht.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wie viele Ohm sind 2,2 MΩ?
+2. Warum ist 10 mA nicht dasselbe wie 10 MA?
+3. Welche Einheit ergibt Ω·A?
+
+Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.

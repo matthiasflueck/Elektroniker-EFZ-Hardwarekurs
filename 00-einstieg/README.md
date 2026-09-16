@@ -4,7 +4,9 @@
 
 ## Worum geht es?
 
-Dieses Modul führt **Einstieg, Beruf, Bildungsplan und Sicherheit** von einer verständlichen Vorstellung zu technisch belastbaren Berechnungen, Schaltungen und Messungen. Die Theorie-Lektionen bereiten die Praxis gezielt vor; Übungen und Lösungen sind getrennt.
+Bevor du die erste Schaltung aufbaust, brauchst du ein Bild davon, wie Elektronikerinnen und Elektroniker arbeiten. Sie verbinden Denken, Handwerk und Messung: Eine Idee wird in Anforderungen übersetzt, als Schaltung realisiert und mit Messdaten überprüft. Dieses Modul erklärt den Beruf, den Bildungsplan und die Regeln, die sich durch den ganzen Kurs ziehen.
+
+Das Modul folgt konsequent der Denkfolge **vorstellen → begründen → berechnen → aufbauen → messen → vergleichen → erklären**. Begriffe und Formeln werden nicht vorausgesetzt, sondern aus realen Aufgaben entwickelt.
 
 ## Lektionen
 
@@ -20,8 +22,8 @@ Dieses Modul führt **Einstieg, Beruf, Bildungsplan und Sicherheit** von einer v
 
 ## Bildungsplan 2026
 
-Schwerpunkt: `a1`, `d1`, `d2`, `d3`. Details und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
+Die konkreten Zuordnungen zu `b1–b5` und den ergänzenden Kompetenzen stehen in der [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
 
 ## Projektbezug
 
-Die [Projektübersicht](../projekte/README.md) zeigt, wie das Modul in Projekt A, B oder C einfliesst.
+Die Inhalte werden in den [Projekten A–C](../projekte/README.md) wieder aufgenommen und dort als nachvollziehbare Entwicklungs- und Messnachweise angewendet.

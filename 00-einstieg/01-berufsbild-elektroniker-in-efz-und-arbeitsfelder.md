@@ -2,59 +2,82 @@
 
 [← Zurück](README.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](02-bildungsplan-2026-und-handlungskompetenzen.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Berufsbild Elektroniker/in EFZ und Arbeitsfelder** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
+
+- typische Arbeitsaufgaben und Verantwortungen des Berufs erklären
+- Entwicklung, Fertigung, Inbetriebnahme und Prüfung als zusammenhängenden Prozess beschreiben
+- sorgfältige Dokumentation und Kommunikation als technische Arbeit begründen
 
 ## Bezug Bildungsplan 2026
 
-- Handlungskompetenzen: `a1`, `d1`, `d2`, `d3`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
+- Handlungskompetenzen: `a1–a3`, `d1–d3`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
 
 ## Voraussetzungen
 
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+Keine fachlichen Vorkenntnisse. Hilfreich sind Neugier, sorgfältiges Arbeiten und die Bereitschaft, Vermutungen durch Messungen zu prüfen.
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Elektronik wirkt am Anfang oft wie eine Sammlung von Bauteilen und Formeln. Im Berufsalltag geht es aber selten nur darum, einen Widerstand auszurechnen oder ein Kabel anzulöten. Entscheidend ist, aus einer unvollständigen Aufgabenstellung eine zuverlässige, sichere und prüfbare Lösung zu machen.
+
+Diese Lektion gibt dir deshalb zuerst das grosse Bild. Wenn du weisst, wozu ein einzelner Lernschritt später gebraucht wird, kannst du Formeln, Messmethoden und Dokumente besser einordnen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Vom Bedürfnis zum nachgewiesenen Produkt
+
+Ein Auftrag beginnt beispielsweise mit dem Wunsch: „Die Temperatur soll erfasst und ein Lüfter geregelt werden.“ Daraus entstehen messbare Anforderungen: Messbereich, Genauigkeit, Versorgung, Reaktionszeit, Schnittstellen und sichere Fehlerzustände. Erst danach werden Sensor, Eingangsschaltung, Mikrocontroller, Leistungsschalter und Software gewählt.
+
+```text
+Bedürfnis → Anforderungen → Konzept → Schema → Aufbau
+          → Inbetriebnahme → Messung → Verifikation → Dokumentation
+```
+
+### Typische Arbeitsfelder
+
+Elektroniker/innen arbeiten in Entwicklung, Versuch, Prototypenbau, Produktion, Prüftechnik, Inbetriebnahme, Service oder Qualitätssicherung. Je nach Betrieb liegt der Schwerpunkt anders. Gemeinsam sind das systematische Vorgehen, der sichere Umgang mit Energie und Betriebsmitteln sowie die Fähigkeit, Resultate verständlich zu belegen.
+
+### Fachliche und überfachliche Verantwortung
+
+Technische Qualität bedeutet mehr als Funktion. Eine Lösung muss unter definierten Bedingungen funktionieren, Normen und Schutzmassnahmen einhalten, herstellbar, wartbar und dokumentiert sein. Dazu kommen Teamarbeit, Rückfragen bei Unklarheiten und ein ehrlicher Umgang mit Messabweichungen oder Fehlern.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Bei einer defekten Baugruppe ersetzt eine Fachperson nicht wahllos Teile. Sie klärt das Symptom, beschafft Schema und Sollwerte, prüft Versorgung und Signalpfad, dokumentiert Messpunkte und bestätigt nach der Reparatur mit einem Regressionstest, dass keine neue Abweichung entstanden ist.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Hier steht noch keine Schaltungsformel im Zentrum. Eine erste quantitative Abschätzung ist dennoch möglich: Braucht eine Prüfung 12 Minuten und werden 25 Baugruppen geprüft, sind mindestens `12 min × 25 = 300 min = 5 h` reine Prüfzeit einzuplanen. Rüstzeit, Dokumentation und Fehlerfälle kommen hinzu. Auch Arbeitsplanung ist technische Arbeit.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 00](../praxis/modul-00.md).
+Wähle ein elektronisches Alltagsprodukt. Zerlege seinen Lebenszyklus in Anforderung, Hardware, Firmware, Fertigung, Prüfung und Wartung. Notiere zu jeder Phase mindestens eine Aufgabe einer Elektronikerin oder eines Elektronikers.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Ein modernes Produkt entsteht fast immer an der Grenze von Hardware und Firmware. Die Hardware legt Spannungen, Ströme, Schutz und physische Schnittstellen fest. Firmware konfiguriert Peripherie und verarbeitet Zustände. Ein Fehler kann auf beiden Seiten liegen; deshalb werden beide Sichtweisen im Kurs verbunden. Die Programmierung selbst wird im [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs) vertieft.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Professionelle Elektronik endet nicht beim funktionierenden Aufbau, sondern beim nachvollziehbaren Nachweis.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Den Beruf auf Löten oder Programmieren reduzieren.
+- Ein einmal funktionierender Prototyp mit einem verifizierten Produkt verwechseln.
+- Dokumentation als Zusatz statt als Teil der technischen Lösung betrachten.
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Elektroniker/innen führen Aufgaben von der Anforderung bis zum geprüften Resultat. Sie kombinieren Schaltungsverständnis, praktische Fertigkeiten, Messmethodik, Firmwarebezug und nachvollziehbare Dokumentation.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Warum reicht die Aussage «Es funktioniert» als Prüfnachweis nicht?
+2. Welche zwei Arbeitsfelder interessieren dich besonders und weshalb?
+3. Nenne drei Informationen, die vor der Entwicklung einer Lüftersteuerung fehlen.
+
+Weitere Aufgaben: [Übungen zu Modul 00](../uebungen/modul-00.md). Die Lösungen liegen bewusst getrennt.

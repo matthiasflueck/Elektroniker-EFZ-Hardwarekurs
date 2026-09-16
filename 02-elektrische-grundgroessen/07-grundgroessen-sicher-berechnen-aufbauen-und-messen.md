@@ -1,60 +1,78 @@
 # 02.7 – Grundgrössen sicher berechnen, aufbauen und messen
 
-[← Zurück](06-elektrische-leistung-energie-und-wirkungsgrad.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../uebungen/modul-02.md)
-
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
+[← Zurück](06-elektrische-leistung-energie-und-wirkungsgrad.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](README.md)
 
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Grundgrössen sicher berechnen, aufbauen und messen** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
+
+- einen einfachen Stromkreis vollständig vorhersagen und aufbauen
+- Spannung, Strom und Widerstand sicher messen
+- Messabweichungen mit Toleranz und Gerätebelastung erklären
 
 ## Bezug Bildungsplan 2026
 
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
+- Nachweise und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
 
 ## Voraussetzungen
 
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+Vorherige Lektionen dieses Moduls sowie sichere Präfix- und Einheitenrechnung.
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Einzelbegriffe werden erst nützlich, wenn sie in einem realen Stromkreis zusammenpassen. Diese Lektion führt deshalb den ganzen Arbeitsablauf durch: vom Schema über die Rechnung und Freigabe bis zur Messung und Bewertung.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Das Schema zuerst lesen
+
+Die Quelle U1 speist R1. Der technische Strom läuft vom Pluspol durch R1 zurück zur Quelle. Das Voltmeter liegt parallel zu R1; das Amperemeter wird in Serie eingefügt. Der Aufbau folgt dem Schema, nicht der räumlichen Anordnung der Zeichnung.
+
+![Vollständiger Messaufbau mit IEC-Symbolen und gekennzeichneten Messpunkten](../bilder/02-elektrische-grundgroessen/02-07-vollstaendiger-messaufbau.svg)
+
+### Sichere Reihenfolge
+
+1. Sollwerte und Toleranzbereich berechnen. 2. Netzgerät bei Ausgang AUS einstellen. 3. Widerstand spannungsfrei messen. 4. Aufbau und Polarität prüfen. 5. Stromgrenze setzen. 6. Spannung parallel messen. 7. Für Strommessung ausschalten, Pfad öffnen, A-Meter in Serie einsetzen. 8. Nachher Messleitung in V/Ω-Buchse zurückstecken.
+
+### Messung beeinflusst den Aufbau
+
+Das Voltmeter hat endlichen Eingangswiderstand, das Amperemeter einen Shunt. Bei 1 kΩ ist die Belastung eines 10-MΩ-Voltmeters klein; bei sehr hochohmigen Schaltungen wird sie relevant. Leitungen und Kontakte erzeugen zusätzliche Widerstände.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Für 5,00 V und gemessene 997 Ω werden 5,02 mA erwartet. Zeigt das DMM 4,98 mA, ist nicht automatisch etwas defekt. Quellenabweichung, Widerstandstoleranz, Burden Voltage und Gerätegenauigkeit werden verglichen.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Mit `U = 5,00 V` und `R = 997 Ω`: `I_soll = 5,015 mA`. Gemessen seien `U_R = 4,96 V` und `I_ist = 4,98 mA`. Aus U/I folgt `R = 996 Ω`. Die relative Stromabweichung ist etwa `(4,98−5,015)/5,015 = −0,70 %` und damit plausibel.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 02](../praxis/modul-02.md).
+Führe die vollständige [Praxis Modul 02](../praxis/modul-02.md) durch. Trage Soll, Grenzbereich, Ist, Abweichung und Erklärung ins Protokoll ein.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Ersetzt später ein GPIO die Spannungsquelle, besitzt er einen Ausgangswiderstand und Stromgrenzen. Firmware setzt HIGH oder LOW; gemessen werden reale Pinspannung und Strom. Ein Spannungseinbruch kann sowohl zu hohe Last als auch falsche Pin-Konfiguration bedeuten.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Erst vorhersagen, dann spannungsfrei aufbauen, strombegrenzt einschalten und Messwert gegen den Sollbereich bewerten.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Strommessgerät parallel anschliessen.
+- Widerstand in der versorgten Schaltung messen.
+- Messabweichung ohne Toleranz- und Unsicherheitsbetrachtung als Fehler bezeichnen.
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Der vollständige Arbeitsablauf verbindet Schema, Rechnung, sichere Freigabe, geeigneten Messanschluss und begründeten Soll-Ist-Vergleich.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Warum wird für die Strommessung der Pfad geöffnet?
+2. Welche Einflüsse erklären eine kleine Soll-Ist-Abweichung?
+3. Was ist nach der Strommessung sofort zu tun?
+
+Weitere Aufgaben: [Übungen zu Modul 02](../uebungen/modul-02.md). Die Lösungen liegen bewusst getrennt.
