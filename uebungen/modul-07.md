@@ -1,27 +1,13 @@
-# Übungen – Modul 07
+# Übungen – Modul 07: Periodische Signale und Wechselgrössen
 
-[← Modul 07](../07-bipolartransistoren/README.md) · [Übungsübersicht](README.md) · [Kursübersicht](../README.md)
+[← Modul 07](../07-periodische-signale/README.md) · [Übungsübersicht](README.md)
 
-> **Ausbaustatus:** Aufgabenskelett. Vollständige Aufgaben und geprüfte Zahlenwerte folgen mit der fachlichen Ausarbeitung des Moduls.
+> **Ausbaustatus:** Aufgabengerüst. Verständnis, Berechnung, Schaltungsanalyse, Datenblattarbeit, Messwertinterpretation und Fehlersuche werden mit dem Modul ausgearbeitet.
 
-## 1 – Verständnis
-
-Erkläre die wichtigsten Zusammenhänge aus **Bipolartransistoren und Stromquellen** in eigenen Worten und kennzeichne Annahmen sowie Gültigkeitsgrenzen.
-
-## 2 – Dimensionierung
-
-Dimensioniere eine typische Schaltung aus dem Modul. Dokumentiere Formel, Einheit, Bauteilwahl, Toleranz und Plausibilitätsprüfung.
-
-## 3 – Messplanung
-
-Lege Messpunkte, erwartete Werte, Messmittel, Schutzmassnahmen und Abbruchkriterien fest.
-
-## 4 – Fehlersuche
-
-Erstelle für eine plausible Fehlfunktion mindestens drei Hypothesen und ordne jedem Verdacht eine möglichst eindeutige Messung zu.
-
-## Bildungsplan
-
-`b1`, `b4`, `b5`
+1. Erkläre das wichtigste Prinzip zunächst ohne Formel.
+2. Zeichne ein genormtes Schema oder Messbild und markiere Strom-, Spannungs- oder Signalpfad.
+3. Führe eine vollständige Berechnung mit Einheiten und Plausibilitätsprüfung aus.
+4. Plane eine Messung und nenne erwartete reale Abweichungen.
+5. Formuliere drei Fehlerhypothesen und jeweils eine unterscheidende Prüfung.
 
 > [Separate Lösungen](../loesungen/modul-07-loesungen.md)

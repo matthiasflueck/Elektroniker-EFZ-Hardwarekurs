@@ -2,33 +2,34 @@
 
 [← Kursübersicht](README.md)
 
-## Definition of Done für eine Lektion
+## Didaktische Reihenfolge
 
-Eine Lektion gilt erst als fertig, wenn sie:
+Jede fertige Lektion führt den Lernenden in dieser Reihenfolge:
 
-1. überprüfbare Lernziele nennt,
-2. Begriffe, Annahmen und Einheiten sauber einführt,
-3. mindestens ein nachvollziehbares Rechen-, Mess- oder Schaltungsbeispiel enthält,
-4. typische Fehlvorstellungen und reale Nichtidealitäten erklärt,
-5. Sicherheits- und Bauteilgrenzen sichtbar macht,
-6. **Hardware ↔ Firmware** konkret verbindet,
-7. auf passende Übungen, Lösungen und Labore verweist,
-8. Bildungsplan-Kompetenzen mit Codes zuordnet,
-9. Quellen, Datenblätter und Abbildungen nachvollziehbar bezeichnet,
-10. korrekte Vor-/Zurück-Navigation und gültige relative Links besitzt.
+```text
+Warum brauche ich das? → einfache Vorstellung → physikalischer Vorgang
+→ genormtes Schema → Grössen und Formel → Beispielrechnung
+→ realer Aufbau → Messung → Abweichung → typische Fehler
+```
 
-## Schreibweise
+Lektionen und Kapitel beginnen mit zwei bis vier verständlichen Absätzen. Eine Formel darf nie der erste Erklärschritt eines neuen Prinzips sein. Fachbegriffe und mathematische Beschreibung folgen erst, nachdem die reale Frage und eine anschauliche Vorstellung geklärt sind.
 
-- Schweizer Rechtschreibung (`ss` statt `ß`).
-- SI-Einheiten mit Leerzeichen: `3.3 V`, `10 kΩ`, `2.2 µF`.
-- Formeln mit Grössen, Einheit und Gültigkeitsbereich erklären.
-- Messwerte nie ohne Messbedingung und angemessene signifikante Stellen angeben.
-- Absolute Maximum Ratings nie als zulässigen Dauerbetrieb darstellen.
+## Verbindliche Lektionsstruktur
 
-## Laborstandard
+Lernziele · Bezug Bildungsplan · Voraussetzungen · Warum ist das wichtig? · Theorie · anschauliches Beispiel · Berechnungsbeispiel · Praxisbezug · optional **🔗 Hardware ↔ Firmware** · Merksatz · häufige Fehler · Zusammenfassung · Übungsfragen.
 
-Jedes Labor folgt derselben Abfolge: Ziel → Gefährdungen → Material → Schaltung → Vorhersage → Aufbauprüfung → Inbetriebnahme → Messplan → Messwerte → Auswertung → Fehlerbilder → Aufräumen. Vor dem Einschalten erfolgt der Vier-Augen- oder dokumentierte Selbstcheck.
+## Formeln
 
-## Abbildungen
+Vor jeder Formel werden Zweck und physikalische Vorstellung erklärt. Danach folgen Bedeutung jeder Variable, SI-Einheiten, Gültigkeitsbereich, vollständige Beispielrechnung und Plausibilitätskontrolle. Formeln ersetzen kein Schaltbild.
 
-Bevorzugt werden selbst erstellte SVG-Diagramme mit lesbaren Beschriftungen, korrekten Strompfeilen, eindeutigen Bezugspotentialen und Alt-Text. Schematische Darstellungen sind als solche zu kennzeichnen und ersetzen keine normgerechten CAD-Unterlagen.
+## Schaltbilder und Visualisierungen
+
+Elektrische Grundprinzipien erhalten bevorzugt ein genormtes Schema statt einer rein dekorativen Grafik. IEC-Symbole, Referenzbezeichner, Werte, Netznamen, Verbindungspunkte, Strom-/Spannungspfeile und Bezugspotentiale müssen konsistent sein. Reproduzierbare SVGs werden an der didaktisch richtigen Stelle eingebunden.
+
+## Definition of Done
+
+Fachlich korrekt; sicher; Bildungsplanbezug bis zum Leistungskriterium; ausführliche Einführung; Schema/Visualisierung; vollständige Berechnung; reale Nichtidealitäten; Praxis- und Messbezug; separate Übungen/Lösungen; sinnvolle Hardware↔Firmware-Verknüpfung; gültige Navigation und geprüfte Links.
+
+## Praxisstandard
+
+Praxislektionen folgen: Lernziel → Voraussetzungen → Material → Messgeräte → Schaltung → Sicherheit → Vorbereitung → Berechnung → Aufbau → Durchführung → Messung → Messwerte → Auswertung → Fragen → erwartete Beobachtung → Theoriebezug → Hardware↔Firmware.

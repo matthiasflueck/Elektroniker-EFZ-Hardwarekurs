@@ -1,9 +1,5 @@
-# Lösungen – Modul 14
+# Lösungen – Modul 14: Digitaltechnik und Logik
 
-[← Übungen](../uebungen/modul-14.md) · [Lösungsübersicht](README.md) · [Kursübersicht](../README.md)
+[← Übungen](../uebungen/modul-14.md) · [Lösungsübersicht](README.md)
 
-> **Ausbaustatus:** Lösungsskelett. Die Musterlösungen werden erst zusammen mit den freigegebenen Aufgaben veröffentlicht.
-
-## Bewertungskriterien
-
-Eine vollständige Lösung enthält nachvollziehbare Annahmen, korrekte Einheiten, eine Grössenordnungsprüfung, Bauteilgrenzen, Messsicherheit und eine begründete Soll-Ist-Bewertung. Alternative technisch korrekte Lösungswege sind ausdrücklich möglich.
+> **Ausbaustatus:** Lösungsgerüst. Jede Musterlösung erklärt später Lösungsweg, Einheiten, Annahmen, Plausibilitätsprüfung und alternative technisch korrekte Wege.

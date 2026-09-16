@@ -1,74 +1,85 @@
 # Elektroniker/in EFZ – Hardwarekurs 2026
 
-Ein systematischer, praxisorientierter Hardwarekurs für Elektronikerinnen und Elektroniker EFZ nach dem Schweizer Bildungsplan ab Lehrbeginn 2026.
+Ein systematisch aufgebauter, stark praxisorientierter Hardwarekurs für Elektronikerinnen und Elektroniker EFZ nach Schweizer Bildungsplan ab Lehrbeginn 2026.
 
-> **Ziel:** Schaltungen nicht nur nachbauen, sondern Anforderungen verstehen, dimensionieren, sicher aufbauen, messen, in Betrieb nehmen, verifizieren und Fehler systematisch beheben — immer mit dem passenden Bezug zur Firmware.
+> **Kursziel:** Elektronik nicht nur nachbauen, sondern physikalisch verstehen, berechnen, sicher realisieren, messen, in Betrieb nehmen, systematisch untersuchen und gegen Anforderungen verifizieren.
+
+## Zielgruppe
+
+- Lernende Elektroniker/in EFZ ab Lehrbeginn 2026
+- Berufsbildner/innen und Lehrpersonen als ergänzende Kursgrundlage
+- Praktiker/innen, die Elektronik, Messtechnik und Hardwareentwicklung systematisch vertiefen möchten
+
+Der Kurs beginnt verständlich bei den Grundlagen und erreicht schrittweise ein professionell brauchbares Niveau. Der offizielle Bildungsplan definiert die Mindestanforderung, nicht die maximale fachliche Tiefe.
+
+## Voraussetzungen
+
+Neugier, sorgfältiges Arbeiten und grundlegende Algebra. Frühere Elektronikerfahrung ist hilfreich, aber nicht notwendig. Laborarbeiten erfolgen grundsätzlich mit strombegrenzter SELV-Kleinspannung und geeigneter Aufsicht.
 
 ## Stand
 
-- **Architektur:** Module 00–27, 196 geplante Lektionen, 28 Laborlinien und drei durchgängige Projekte sind angelegt.
-- **Pilotinhalte:** Module 00–02 sind als Qualitätsreferenz vollständig ausgearbeitet: 21 Lektionen, drei Labore, getrennte Übungen/Lösungen und acht technische SVG-Abbildungen.
-- **Weitere Module:** Die Lektionen ab Modul 03 sind bewusst als klar gekennzeichnete Ausbau-Skelette angelegt.
+- Module 00–27 und rund 200 Theorie-Lektionen sind vollständig geplant.
+- Jedes Modul besitzt README, Übungs-, Lösungs-, Praxis- und Bildstruktur.
+- Die Module 00–02 bilden den ausgearbeiteten Qualitäts-Pilot.
+- Spätere Lektionen sind klar als Ausbaugerüste gekennzeichnet.
 
-## Verbindliche Grundlage
+## Bildungsplan 2026
 
-Massgeblich ist der [offizielle Bildungsplan Elektroniker/in EFZ vom 29. August 2025, gültig ab 1. Januar 2026](https://www.swissmem-berufsbildung.ch/fileadmin/user_upload/Swissmem_Berufsbildung/Ausbildungsdokumente_und_Regelwerke/ET/Ausbildungsdokumente_ab_Lehrbeginn_2026/D/Bildungsplan_ET_ab_Lehrbeginn_2026.pdf). Er definiert Mindeststandards; dieser Kurs vertieft die professionelle Hardwarepraxis bewusst darüber hinaus.
+Massgeblich ist der [offizielle Bildungsplan Elektroniker/in EFZ vom 29. August 2025, gültig ab 1. Januar 2026](https://www.swissmem-berufsbildung.ch/fileadmin/user_upload/Swissmem_Berufsbildung/Ausbildungsdokumente_und_Regelwerke/ET/Ausbildungsdokumente_ab_Lehrbeginn_2026/D/Bildungsplan_ET_ab_Lehrbeginn_2026.pdf). Die [Bildungsplan-Dokumentation](bildungsplan-2026/README.md) enthält Handlungskompetenzen und die konkrete Zuordnung von Leistungskriterien zu Modulen, Lektionen, Praxis und Projekten.
 
-Die vollständige Zuordnung steht in der [Bildungsplan-Kompetenzmatrix](bildungsplan/kompetenzmatrix.md). Quellenstand und Abgrenzung sind in [bildungsplan/README.md](bildungsplan/README.md) dokumentiert.
+## Lernpfad und vollständige Modulnavigation
 
-## Kursnavigation
+00. [Einstieg, Beruf, Bildungsplan und Sicherheit](00-einstieg/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-00.md)
+01. [Mathematik und Physik für Elektroniker/innen](01-mathematik-physik/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-01.md)
+02. [Elektrische Grundgrössen](02-elektrische-grundgroessen/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-02.md)
+03. [Gleichstromnetzwerke und Netzwerkanalyse](03-gleichstromnetzwerke/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-03.md)
+04. [Widerstände und Widerstandssensoren](04-widerstaende-sensoren/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-04.md)
+05. [Kondensatoren und RC-Verhalten](05-kondensatoren/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-05.md)
+06. [Spulen und Elektromagnetismus](06-spulen-elektromagnetismus/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-06.md)
+07. [Periodische Signale und Wechselgrössen](07-periodische-signale/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-07.md)
+08. [Passive Filter und Resonanz](08-filter-resonanz/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-08.md)
+09. [Dioden, Gleichrichtung und Schutz](09-dioden-schutz/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-09.md)
+10. [Bipolartransistoren](10-bipolartransistoren/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-10.md)
+11. [MOSFETs und Leistungsschalter](11-mosfets/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-11.md)
+12. [Operationsverstärker](12-operationsverstaerker/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-12.md)
+13. [Analoge Signalaufbereitung und Sensorik](13-analoge-signalaufbereitung/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-13.md)
+14. [Digitaltechnik und Logik](14-digitaltechnik/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-14.md)
+15. [Digitale Schnittstellen und Busse](15-schnittstellen-busse/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-15.md)
+16. [Stromversorgungen](16-stromversorgungen/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-16.md)
+17. [Grundlagen der Messtechnik](17-messtechnik-grundlagen/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-17.md)
+18. [Digitalmultimeter](18-digitalmultimeter/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-18.md)
+19. [Oszilloskop](19-oszilloskop/README.md) — 8 Theorie-Lektionen · [Praxis](praxis/modul-19.md)
+20. [Weitere Laborgeräte](20-laborgeraete/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-20.md)
+21. [Systematische Fehlersuche](21-fehlersuche/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-21.md)
+22. [Schaltungsentwicklung](22-schaltungsentwicklung/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-22.md)
+23. [Professionelle Schaltpläne und CAD](23-schaltplan-cad/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-23.md)
+24. [PCB-Design](24-pcb-design/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-24.md)
+25. [Fertigung, Löten und Verbindungstechnik](25-fertigung-loeten/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-25.md)
+26. [Erstinbetriebnahme elektronischer Baugruppen](26-inbetriebnahme/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-26.md)
+27. [Verifikation und technische Dokumentation](27-verifikation-dokumentation/README.md) — 7 Theorie-Lektionen · [Praxis](praxis/modul-27.md)
 
-00. [Kursstart, Sicherheit und Laborpraxis](00-kursstart-sicherheit/README.md) — 7 Lektionen · [Labor](praxis/lab-00.md)
-01. [Elektrische Grundgrössen und Gleichstromnetze](01-elektrische-grundgroessen/README.md) — 7 Lektionen · [Labor](praxis/lab-01.md)
-02. [Bauteile, Schaltungsaufbau und erste Signale](02-bauteile-schaltungsaufbau/README.md) — 7 Lektionen · [Labor](praxis/lab-02.md)
-03. [Netzwerkanalyse und Ersatzschaltungen](03-netzwerkanalyse/README.md) — 7 Lektionen · [Labor](praxis/lab-03.md)
-04. [Datenblätter, Bauteilauswahl und Toleranzen](04-datenblaetter-bauteilauswahl/README.md) — 7 Lektionen · [Labor](praxis/lab-04.md)
-05. [Passive Bauteile, Wechselstrom und Filter](05-passive-filter/README.md) — 7 Lektionen · [Labor](praxis/lab-05.md)
-06. [Dioden, Gleichrichtung und Schutz](06-dioden-schutz/README.md) — 7 Lektionen · [Labor](praxis/lab-06.md)
-07. [Bipolartransistoren und Stromquellen](07-bipolartransistoren/README.md) — 7 Lektionen · [Labor](praxis/lab-07.md)
-08. [MOSFETs und Leistungsschalter](08-mosfets-leistungsschalter/README.md) — 7 Lektionen · [Labor](praxis/lab-08.md)
-09. [Operationsverstärker](09-operationsverstaerker/README.md) — 7 Lektionen · [Labor](praxis/lab-09.md)
-10. [Analoge Signalaufbereitung](10-analoge-signalaufbereitung/README.md) — 7 Lektionen · [Labor](praxis/lab-10.md)
-11. [Oszillatoren, Takt und Signalerzeugung](11-oszillatoren-takt/README.md) — 7 Lektionen · [Labor](praxis/lab-11.md)
-12. [Lineare Stromversorgungen und Referenzen](12-lineare-stromversorgung/README.md) — 7 Lektionen · [Labor](praxis/lab-12.md)
-13. [Schaltregler und Energieumwandlung](13-schaltregler/README.md) — 7 Lektionen · [Labor](praxis/lab-13.md)
-14. [Digitale Grundschaltungen und Logikfamilien](14-digitale-grundschaltungen/README.md) — 7 Lektionen · [Labor](praxis/lab-14.md)
-15. [Sequentielle Logik, Speicher und programmierbare Logik](15-sequentielle-logik/README.md) — 7 Lektionen · [Labor](praxis/lab-15.md)
-16. [Signalintegrität, Timing und Leitungen](16-signal-integrity/README.md) — 7 Lektionen · [Labor](praxis/lab-16.md)
-17. [ADC, DAC, Referenzen und Sensoren](17-datenwandler-sensoren/README.md) — 7 Lektionen · [Labor](praxis/lab-17.md)
-18. [Mikrocontroller-Hardware und Board-Design](18-mikrocontroller-hardware/README.md) — 7 Lektionen · [Labor](praxis/lab-18.md)
-19. [Schnittstellen, Busse und Pegelanpassung](19-schnittstellen-busse/README.md) — 7 Lektionen · [Labor](praxis/lab-19.md)
-20. [EMV, ESD, Erdung und Schutzkonzepte](20-emv-esd-schutz/README.md) — 7 Lektionen · [Labor](praxis/lab-20.md)
-21. [Systematische Schaltungsentwicklung](21-schaltungsentwicklung/README.md) — 7 Lektionen · [Labor](praxis/lab-21.md)
-22. [PCB-Design und Fertigungsdaten](22-pcb-design/README.md) — 7 Lektionen · [Labor](praxis/lab-22.md)
-23. [Fertigung, Löten und Baugruppenmontage](23-fertigung-loeten/README.md) — 7 Lektionen · [Labor](praxis/lab-23.md)
-24. [Professionelle Mess- und Prüftechnik](24-messtechnik/README.md) — 7 Lektionen · [Labor](praxis/lab-24.md)
-25. [Inbetriebnahme, Fehlersuche und Reparatur](25-inbetriebnahme-fehlersuche/README.md) — 7 Lektionen · [Labor](praxis/lab-25.md)
-26. [Zuverlässigkeit, Normen und Produktionsreife](26-zuverlaessigkeit-normen-produktion/README.md) — 7 Lektionen · [Labor](praxis/lab-26.md)
-27. [Systemintegration und Abschlussprojekte](27-systemintegration-abschluss/README.md) — 7 Lektionen · [Labor](praxis/lab-27.md)
+## Drei durchgängige Projekte
+
+- [Projekt A – Analoge Sensormesskette](projekte/projekt-a-sensormesskette.md)
+- [Projekt B – Mikrocontroller-gesteuerte MOSFET-Leistungsstufe](projekte/projekt-b-mosfet-leistungsstufe.md)
+- [Projekt C – Vollständige Hardwareentwicklung](projekte/projekt-c-abschlussprojekt.md)
+
+## Hardware ↔ Firmware
+
+```text
+Elektronische Schaltung ↔ MCU-Pin ↔ Peripherie ↔ Register ↔ Firmware
+```
+
+Geeignete Lektionen erklären die elektrische Wirkung am Pin, notwendige Firmwarekonfiguration, beteiligte MCU-Peripherie, messbare Signale und Fehler mit möglicher Hardware- oder Firmwareursache. Detaillierte STM32-Programmierung wird nicht dupliziert, sondern mit dem [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs) verknüpft.
+
+## Benötigte Laborausrüstung
+
+Grundausstattung: ESD-Arbeitsplatz, strombegrenztes Labornetzgerät, Digitalmultimeter, Oszilloskop mit geeigneten Tastköpfen, Funktionsgenerator, Logic Analyzer, Steckbretter, Bauteilsortiment und sichere Messleitungen. Spätere Module nutzen je nach Versuch LCR-Meter, elektronische Last, Stromzange oder Differentialtastkopf.
 
 ## Begleitmaterial
 
-- [Praxis und Labore](praxis/README.md)
+- [Praxisübersicht](praxis/README.md)
 - [Übungen](uebungen/README.md) und [separate Lösungen](loesungen/README.md)
-- [Drei durchgängige Projekte](projekte/README.md)
-- [Bildungsplan 2026 und Kompetenzmatrix](bildungsplan/README.md)
-- [Referenz, Formeln und Checklisten](referenz/README.md)
-- [Bildkonzept und Abbildungen](bilder/README.md)
-- [Qualitäts- und Autorenleitfaden](AUTORENLEITFADEN.md)
-
-## Didaktisches Grundmuster
-
-```text
-Anforderung → Modell → Dimensionierung → Aufbau → Messung → Bewertung → Dokumentation
-                                    ↕
-                             Hardware ↔ Firmware
-```
-
-Jede fertige Lektion enthält Lernziele, fachliche Erklärung, Praxis- oder Messbezug, Sicherheitsaspekte, einen Abschnitt **Hardware ↔ Firmware**, Bildungsplan-Zuordnung, Kurzcheck und konsistente Navigation. Relevante Firmwarethemen verweisen auf den [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
-
-## Empfohlener Einsatz
-
-Die Reihenfolge 00–27 bildet einen vollständigen Lernpfad. Übungen werden ohne Lösungen bearbeitet; Lösungen liegen getrennt. Labore verlangen vor dem Einschalten eine dokumentierte Vorhersage, sichere Strombegrenzung und anschliessend den Soll-Ist-Vergleich. Die Projekte P1–P3 laufen parallel und wachsen mit dem Kompetenzstand.
-
-> **Sicherheitsgrenze:** Der Grundkurs arbeitet grundsätzlich mit SELV-Kleinspannung. Netzspannung, leistungsstarke Energiespeicher und andere erhöhte Gefährdungen gehören nur in eine dafür ausgerüstete Umgebung und unter fachkundiger Aufsicht.
+- [Abbildungen](bilder/README.md)
+- [Referenz und Checklisten](referenz/README.md)
+- [Autoren- und Qualitätsleitfaden](AUTORENLEITFADEN.md)
