@@ -10,7 +10,15 @@ Sensor → Messbrücke/Spannungsteiler → OPV → Filter → 0–3.3-V-Signal �
 
 ## Module
 
-04, 08, 12–13, 15, 17–19, 22–23, 27
+03–04, 08, 12–13, 15, 17–19, 22–23, 27
+
+## Meilenstein nach Modul 04
+
+- Sensorprinzip und konkreten NTC-Typ dokumentieren
+- Kennlinie mit Messbedingungen aufnehmen und gegen Herstellerdaten prüfen
+- Spannungsteiler inklusive Last, Toleranz, Eigenerwärmung und ADC-Bereich dimensionieren
+- Rohdaten, Diagramm und erste Diagnosegrenzen für Unterbruch/Kurzschluss festhalten
+- Hardware-/Firmware-Schnittstelle mit Teilerorientierung, Referenz und Umrechnungsweg beschreiben
 
 ## Verbindliche Nachweise
 

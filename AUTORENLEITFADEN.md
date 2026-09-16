@@ -24,9 +24,11 @@ Ein eigenes Kapitel «Voraussetzungen» wird nicht verwendet. Benötigtes Vorwis
 
 Vor jeder Formel werden Zweck und physikalische Vorstellung erklärt. Danach folgen Bedeutung jeder Variable, SI-Einheiten, Gültigkeitsbereich, vollständige Beispielrechnung und Plausibilitätskontrolle. Formeln ersetzen kein Schaltbild.
 
+Neue oder selten verwendete Formelzeichen werden unmittelbar an der ersten Verwendungsstelle in einer kompakten Tabelle mit Bedeutung und Einheit erklärt. Bereits sicher eingeführte Standardgrössen wie `U`, `I` oder `R` müssen nicht in jeder Lektion erneut definiert werden; ungewohnte Indizes, Koeffizienten und Funktionen dagegen schon.
+
 ## Schaltbilder und Visualisierungen
 
-Elektrische Grundprinzipien erhalten bevorzugt ein genormtes Schema statt einer rein dekorativen Grafik. IEC-Symbole, Referenzbezeichner, Werte, Netznamen, Verbindungspunkte, Strom-/Spannungspfeile und Bezugspotentiale müssen konsistent sein. Schaltbilder und Diagramme werden reproduzierbar erstellt, fachlich geprüft und als hochauflösende PNG-Dateien an der didaktisch richtigen Stelle eingebunden.
+Elektrische Grundprinzipien erhalten bevorzugt ein genormtes Schema statt einer rein dekorativen Grafik. IEC-Symbole, Referenzbezeichner, Werte, Netznamen, Verbindungspunkte, Strom-/Spannungspfeile und Bezugspotentiale müssen konsistent sein. Schaltbilder und Diagramme werden reproduzierbar erstellt, fachlich geprüft und als hochauflösende PNG-Dateien an der didaktisch richtigen Stelle eingebunden. Umfangreiche Lektionen verwenden bei didaktischem Mehrwert mehrere getrennte Bilder, beispielsweise ein Funktionsschema und eine Kennlinie, statt zu viele Aussagen in eine einzige Grafik zu packen.
 
 ## Definition of Done
 

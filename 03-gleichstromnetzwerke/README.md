@@ -4,7 +4,18 @@
 
 ## Worum geht es?
 
-Dieses Modul führt **Gleichstromnetzwerke und Netzwerkanalyse** von einer verständlichen Vorstellung zu technisch belastbaren Berechnungen, Schaltungen und Messungen. Die Theorie-Lektionen bereiten die Praxis gezielt vor; Übungen und Lösungen sind getrennt.
+Ein einzelner Widerstand erklärt noch kein Netzwerk. In diesem Modul lernst du, wie Ströme sich an Knoten aufteilen, wie Spannungen sich entlang geschlossener Pfade verteilen und wie eine angeschlossene Last das Ergebnis verändert. Dabei entsteht aus einzelnen Regeln eine wiederverwendbare Analysemethode.
+
+Der Schwerpunkt liegt auf nachvollziehbaren Strompfaden, genormten Schemas, vollständigen Rechnungen und messbaren Kontrollen. Jede Gleichung wird aus der Schaltung abgeleitet. Grenzfälle, Leistungsbilanz und Soll-Ist-Vergleich helfen dir zu erkennen, ob ein rechnerisch erzeugtes Resultat auch physikalisch sinnvoll ist.
+
+## Lernpfad
+
+Die Inhalte bauen von einfachen Topologien zu einem vollständigen Analyse- und Messablauf auf:
+
+```text
+Reihe / parallel → Kirchhoff → Spannungsteiler → Stromteiler
+→ reale Quellen → Thévenin/Norton → vollständige Netzwerkanalyse
+```
 
 ## Lektionen
 
@@ -18,10 +29,17 @@ Dieses Modul führt **Gleichstromnetzwerke und Netzwerkanalyse** von einer verst
 8. [Übungen](../uebungen/modul-03.md)
 9. [Praxis – Spannungsteiler vermessen und Innenwiderstand bestimmen](../praxis/modul-03.md)
 
-## Bildungsplan 2026
+## Nach Abschluss kannst du
 
-Schwerpunkt: `a3`, `b1`, `b4`, `b5`. Details und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
+- Gleichstromnetze anhand ihrer Knoten statt anhand der Zeichenform lesen
+- belastete Teiler und reale Quellen dimensionieren
+- Knoten-, Maschen- und Leistungsbilanzen als Kontrollen einsetzen
+- einen sicheren Messplan erstellen und Abweichungen systematisch erklären
 
 ## Projektbezug
 
-Die [Projektübersicht](../projekte/README.md) zeigt, wie das Modul in Projekt A, B oder C einfliesst.
+Die Netzwerkanalyse bildet die Grundlage für den Sensorteiler von [Projekt A](../projekte/projekt-a-sensormesskette.md) und für die Strom- und Spannungsbilanzen von [Projekt C](../projekte/projekt-c-abschlussprojekt.md). Die Ergebnisse dieses Moduls werden später bei OPV-Eingängen, ADC-Beschaltungen und Stromversorgungen wiederverwendet.
+
+## Bezug Bildungsplan 2026
+
+Schwerpunkt: `a3`, `b1-LK02–03`, `b1-LK06`, `b1-LK08`, `b4-LK01–10` und vorbereitend `b5`. Konkrete Theorie-, Praxis- und Projektnachweise stehen in der [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

@@ -25,3 +25,12 @@ Abbildungen liegen passend zu den Modulen in `00-einstieg` bis `27-verifikation-
 | `02-elektrische-grundgroessen/02-05-ohm-messschaltung.png` | Amperemeter in Serie und Voltmeter parallel |
 | `02-elektrische-grundgroessen/02-06-leistung-wirkungsgrad.png` | Nutz- und Verlustleistung im Energiefluss |
 | `02-elektrische-grundgroessen/02-07-vollstaendiger-messaufbau.png` | sicheren vollständigen Laboraufbau |
+
+## Abbildungen der Module 03–04
+
+| Modul | Anzahl | Schwerpunkte |
+|---|---:|---|
+| `03-gleichstromnetzwerke` | 9 | Reihen-/Parallelnetze, Kirchhoff, belasteter Teiler, Stromteiler, reale Quellen, Thévenin/Norton, Analyse und Messpunkte |
+| `04-widerstaende-sensoren` | 14 | Technologien, E-Reihen, Worst Case, Temperatur, Derating, Pulse, Shunt, SMD-Codes, Potentiometer, NTC/PTC, ADC, LDR und Brücke |
+
+Alle 23 Abbildungen sind als hochauflösende PNG-Dateien direkt in den fachlich zugehörigen Lektionen eingebunden. Schaltbilder verwenden rechteckige IEC-Widerstandssymbole; Diagramme kennzeichnen Achsen, Betriebsrichtung und qualitative Grenzen.
