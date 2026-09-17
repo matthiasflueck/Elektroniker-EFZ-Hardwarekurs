@@ -4,7 +4,11 @@
 
 ## Worum geht es?
 
-Dieses Modul führt **Passive Filter und Resonanz** von einer verständlichen Vorstellung zu technisch belastbaren Berechnungen, Schaltungen und Messungen. Die Theorie-Lektionen bereiten die Praxis gezielt vor; Übungen und Lösungen sind getrennt.
+RC- und RL-Filter werden in Zeit und Frequenz untersucht. Bode-Diagramme machen Übertragungsfunktion und Phase sichtbar; RLC-Netze führen zu Resonanz, Güte und realen Überhöhungsgrenzen.
+
+## Lernpfad
+
+`RC-Tiefpass → RC-Hochpass → τ und fG → Bode → RL → RLC → Resonanz und Q`
 
 ## Lektionen
 
@@ -15,13 +19,8 @@ Dieses Modul führt **Passive Filter und Resonanz** von einer verständlichen Vo
 5. [08.5 – RL-Netzwerke](05-rl-netzwerke.md)
 6. [08.6 – RLC-Netzwerke](06-rlc-netzwerke.md)
 7. [08.7 – Resonanz, Güte und reale Verluste](07-resonanz-guete-und-reale-verluste.md)
-8. [Übungen](../uebungen/modul-08.md)
-9. [Praxis – Tiefpass dimensionieren und Frequenzgang vermessen](../praxis/modul-08.md)
+8. [Übungen](../uebungen/modul-08.md) · [Praxis](../praxis/modul-08.md)
 
-## Bildungsplan 2026
+## Bezug Bildungsplan 2026
 
-Schwerpunkt: `a3`, `b1`, `b4`, `b5`. Details und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
-
-## Projektbezug
-
-Die [Projektübersicht](../projekte/README.md) zeigt, wie das Modul in Projekt A, B oder C einfliesst.
+Schwerpunkt: `a3`, `b1-LK01–06`, `b1-LK09`, `b4-LK01–10`, `b5` und `c1–c2`. Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

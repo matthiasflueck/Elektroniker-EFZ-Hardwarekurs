@@ -1,60 +1,90 @@
 # 08.7 – Resonanz, Güte und reale Verluste
 
-[← Zurück](06-rlc-netzwerke.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../uebungen/modul-08.md)
-
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
+[← Zurück](06-rlc-netzwerke.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../09-dioden-schutz/README.md)
 
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Resonanz, Güte und reale Verluste** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Güte und Bandbreite qualitativ und rechnerisch verbinden
+- reale Verlustquellen zuordnen
+- Resonanzmessungen sicher auswerten
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Zwei Schwingkreise mit gleicher f0 können völlig verschieden reagieren. Die Güte beschreibt, wie wenig Energie pro Zyklus verloren geht und wie schmal beziehungsweise hoch die Resonanz ausfällt.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Güte und Bandbreite
+
+Für eine hinreichend schwach gedämpfte Resonanz gilt `Q = f0/B`, wobei B die −3-dB-Bandbreite zwischen f1 und f2 ist: `B = f2−f1`.
+
+![Resonanzkurven mit unterschiedlicher Güte und markierter Bandbreite](../bilder/08-filter-resonanz/08-07-guete-bandbreite.png)
+
+| Zeichen | Bedeutung | Einheit |
+|---|---|---|
+| `Q` | Gütefaktor | einheitenlos |
+| `B` | Bandbreite | Hz |
+| `f1`, `f2` | untere und obere −3-dB-Frequenz | Hz |
+
+Hohe Q bedeutet schmale Bandbreite und lange Ausschwingzeit. Niedrige Q bedeutet breite, flache Resonanz und schnelle Dämpfung.
+
+### Verlustquellen
+
+DCR, ESR, Kernverluste, Strahlung, Last und Quellenwiderstand reduzieren Q. Messgerät und Tastkopf werden Teil dieser Dämpfung. Ein ideal berechneter Schwingkreis kann deshalb deutlich weniger selektiv sein.
+
+### Grenzwerte
+
+Hohe Güte kann interne Spannungen und Ströme stark erhöhen. Vor einem Sweep werden Maximalwerte abgeschätzt und Generatoramplitude klein gewählt.
+
+### Bandbreite, Einschwingen und Toleranzen
+
+Für ein schwach gedämpftes System gilt näherungsweise `Q = f0/B`, wobei `B = f2 − f1` die Bandbreite zwischen den beiden −3-dB-Punkten ist. `f1` und `f2` sind die untere und obere Grenzfrequenz. Diese Beziehung macht Güte messbar: Resonanzfrequenz suchen, beide Abfallpunkte bestimmen und Bandbreite berechnen. Bei stark asymmetrischen oder belasteten Kurven muss geprüft werden, ob das einfache Modell noch passt.
+
+Eine hohe Güte bedeutet nicht nur schmale Auswahl, sondern auch langes Einschwingen und Nachschwingen. Ein kurzer Anregungsimpuls kann deshalb noch viele Perioden sichtbar bleiben. Bauteiltoleranzen wirken auf f0 nicht linear; bei Toleranzen von L und C wird eine obere und untere Grenzfrequenz berechnet. Temperatur, Gleichstrom-Bias und Alterung können den Bereich weiter verschieben. Ein robustes Design prüft daher nicht nur den Nennwert, sondern Resonanzlage und Bauteilbelastung im ungünstigsten zulässigen Zustand.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Weinglas klingt lange und schmalbandig nach, ein gepolsterter Gegenstand kurz und breitbandig. Beide besitzen eine bevorzugte Frequenz, aber sehr unterschiedliche Güte.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Eine Resonanz liegt bei 10 kHz; die −3-dB-Punkte sind 9,5 kHz und 10,5 kHz. B = 1,0 kHz und `Q = 10`. Eine Halbierung der Verlustwiderstände würde im passenden Serienmodell Q ungefähr verdoppeln.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 08](../praxis/modul-08.md).
+Messe die Kurve mit logarithmischem Grob-Sweep und dichtem Raster um f0. Bestimme f1, f0, f2, B und Q. Halte Uin konstant und kontrolliere Bauteiltemperatur.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Digitale Anregung kann f0 suchen oder vermeiden. Eine automatische Suche braucht Amplitudenbegrenzung und Abbruchkriterien, weil hohe Q schmale, grosse Spitzen erzeugt und Frequenzdrift auftreten kann.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Hohe Güte bedeutet geringe Verluste, schmale Bandbreite und stärkere mögliche Überhöhung.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Bandbreite an falschen Pegeln bestimmen
+- Messlast ignorieren
+- hohe Q nur als Vorteil betrachten
+- Sweep ohne Grenzwertkontrolle ausführen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Q verbindet Resonanzfrequenz, Bandbreite und Verluste. Eine reale Messung muss Belastung, Temperatur und interne Überhöhung berücksichtigen.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Berechne Q für f0 = 2 kHz und B = 200 Hz.
+2. Wie wirkt höhere Dämpfung auf Bandbreite?
+3. Welche Messmittel reduzieren Q?
+4. Welche Sicherheitsfunktion braucht ein automatischer Sweep?
+
+Weitere Aufgaben: [Übungen zu Modul 08](../uebungen/modul-08.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK01–06`, `b1-LK09`, `b4-LK01–10`, `b5-LK01–05`, `c2`
+- Nachweise: Resonanzkurve, Bandbreite, Güte und Grenzwertprotokoll; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

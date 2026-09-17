@@ -2,59 +2,79 @@
 
 [← Zurück](03-ein-und-ausschaltvorgaenge.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](05-relais-und-freilaufdiode.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Energie in der Spule** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Magnetfeldenergie berechnen
+- Energiepfade beim Abschalten verfolgen
+- Bauteilbelastung aus Strom und Induktivität abschätzen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Beim Abschalten verschwindet Magnetfeldenergie nicht. Sie muss in Widerständen, Diode, Klemme, Lichtbogen oder Last umgesetzt werden. Die Energiebilanz erklärt, weshalb eine kleine Relaisspule einen Halbleiter zerstören kann und weshalb Schutzbauteile Energieangaben besitzen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Feldenergie
+
+Die gespeicherte Energie einer linearen Induktivität ist `EL = 1/2·L·I²`. Sie wächst quadratisch mit dem Strom. In Sättigung ist L nicht konstant; dann ist diese einfache Rechnung nur eine Näherung.
+
+![Energiefluss von Quelle über Spule zum Abschaltpfad](../bilder/06-spulen-elektromagnetismus/06-04-spulenenergie.png)
+
+| Zeichen | Bedeutung | Einheit |
+|---|---|---|
+| `EL` | magnetische Feldenergie | J |
+
+### Energieabbau
+
+Bei einer Diode wird Energie hauptsächlich in Wicklungswiderstand und Diode umgesetzt. Bei TVS oder Zenerklemme fliesst sie bei höherer Spannung schneller ab. Schalter, Klemme und Leiterbahn müssen Spitzenstrom und Energie vertragen.
+
+### Wiederholbetrieb
+
+Bei periodischem Schalten zählt neben Einzelenergie die Wiederholrate. Die mittlere umgesetzte Leistung ist näherungsweise Energie pro Zyklus mal Schaltfrequenz, sofern die Energie jedes Mal vollständig auf- und abgebaut wird.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Eine gespannte Feder gibt ihre Energie beim Loslassen ab. Ein weiches Dämpfungselement bremst lange mit kleiner Kraft, ein hartes kurz mit grosser Kraft. Die Energie muss in beiden Fällen irgendwo hin.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Eine Spule mit 150 mH führt 100 mA. `EL = 0,5·0,15 H·(0,1 A)² = 0,75 mJ`. Bei 20 Schaltungen pro Sekunde werden idealisiert 15 mW Feldenergie pro Sekunde umgesetzt; Schaltspitzen bleiben trotzdem separat zu prüfen.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 06](../praxis/modul-06.md).
+Bestimme L und stationären Strom aus Datenblatt oder Messung. Berechne EL vor dem Versuch und vergleiche Abschaltzeit sowie Spannungsmaximum für verschiedene freigegebene Schutzpfade.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Eine maximale Schaltfrequenz ist eine Schutzanforderung. Firmware kann sie begrenzen, doch Reset, Fehlzustand oder externe Ansteuerung müssen berücksichtigt werden. Energiegrenzen dürfen nicht nur von einem normalen Programmablauf abhängen.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Magnetfeldenergie verschwindet beim Abschalten nicht; sie wechselt nur den Ort und die Form.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- quadratische Stromwirkung übersehen
+- Einzelenergie mit Leistung verwechseln
+- Kernsättigung ignorieren
+- Schutz nur auf Spitzenspannung prüfen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Spulenenergie hängt von L und I² ab. Beim Abschalten muss ein definierter Pfad Energie und Spitzenstrom sicher aufnehmen. Wiederholrate ergänzt die Einzelpulsprüfung.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wie verändert doppelter Strom EL?
+2. Berechne EL für 47 mH und 0,5 A.
+3. Wo wird Energie bei einer Freilaufdiode umgesetzt?
+4. Warum ist eine Firmwarefrequenzgrenze allein kein vollständiger Schutz?
+
+Weitere Aufgaben: [Übungen zu Modul 06](../uebungen/modul-06.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02–04`, `b4-LK03`, `b5-LK01–05`
+- Nachweise: Energie- und Wiederholleistungsrechnung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

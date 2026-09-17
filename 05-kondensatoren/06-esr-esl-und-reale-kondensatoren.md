@@ -2,59 +2,83 @@
 
 [← Zurück](05-kondensatorbauarten-und-auswahl.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](07-entkopplung-und-abblockung.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **ESR, ESL und reale Kondensatoren** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- ESR und ESL im Ersatzmodell erklären
+- Selbstresonanz und Ripple-Erwärmung beurteilen
+- Messabweichungen realer Kondensatoren deuten
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Ein realer Kondensator ist bei hoher Frequenz nicht nur C. Anschluss- und Aufbauinduktivität sowie Verluste verändern seine Impedanz. Deshalb kann ein grosser Kondensator schnelle Stromspitzen schlechter abfangen als ein kleiner, günstig platzierter Typ.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Ersatzmodell
+
+Das einfache Serienmodell enthält ideale Kapazität C, äquivalenten Serienwiderstand ESR und äquivalente Serieninduktivität ESL. Ein Parallelwiderstand modelliert Leckstrom.
+
+![Ersatzschaltbild und Impedanzverlauf eines realen Kondensators](../bilder/05-kondensatoren/05-06-ersatzschaltbild-impedanz.png)
+
+ESR setzt Ripple-Strom in Wärme um: `PESR = Irms²·ESR`. ESL verursacht bei schneller Stromänderung eine Spannung `uESL = ESL·di/dt`.
+
+| Zeichen | Bedeutung | Einheit |
+|---|---|---|
+| `ESR` | äquivalenter Serienwiderstand | Ω |
+| `ESL` | äquivalente Serieninduktivität | H |
+| `Irms` | Effektivwert des Ripple-Stroms | A |
+
+### Selbstresonanz
+
+Unterhalb der Selbstresonanz dominiert C und die Impedanz sinkt. Am Minimum kompensieren sich kapazitiver und induktiver Anteil. Oberhalb dominiert ESL; das Bauteil wirkt zunehmend induktiv.
+
+### Messbedingungen
+
+Ein LCR-Meter misst bei definierter Frequenz und Signalhöhe. Kapazitäts-, ESR- und Impedanzwerte ohne Messbedingung sind unvollständig. Ein Oszilloskop zeigt die Wirkung im realen Strompfad, nicht direkt einen einzelnen Modellparameter.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Wasserspeicher mit engem Zulauf besitzt zwar grosses Volumen, kann aber einen sehr kurzen Bedarfspuls nicht liefern. ESR entspricht einer Reibung im Zulauf, ESL der Trägheit des bewegten Wassers. Für schnelle Vorgänge muss der Weg kurz und breit sein.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein Kondensator trägt 0,8 A RMS Ripple und besitzt 80 mΩ ESR. `PESR = 0,8²·0,08 Ω = 51,2 mW`. Diese innere Erwärmung beeinflusst Lebensdauer und muss gegen Ripple- und Temperaturangaben geprüft werden.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 05](../praxis/modul-05.md).
+Vergleiche Kondensatoren mit LCR-Meter bei mehreren verfügbaren Frequenzen oder untersuche den Ripple in einer freigegebenen Kleinspannungsschaltung. Anschlusslänge und Masseführung werden dokumentiert, weil sie ESL und Messbild beeinflussen.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Schnelle GPIO- oder PWM-Flanken besitzen hohe di/dt-Anteile. Firmware kann Flankenrate, Schaltfrequenz oder gleichzeitige Ausgänge beeinflussen; ESR, ESL und Platzierung bestimmen die resultierenden Versorgungsspitzen.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Oberhalb seiner Selbstresonanz verhält sich ein realer Kondensator zunehmend wie eine Induktivität.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Kapazitätswert ohne Messfrequenz vergleichen
+- Ripple-Strom mit Gleichstrom verwechseln
+- Anschlussinduktivität ignorieren
+- ESR pauschal als unerwünscht betrachten
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+ESR erzeugt Verluste, ESL begrenzt schnelle Stromlieferung und beide bestimmen zusammen mit C die Selbstresonanz. Das reale Impedanzverhalten ist frequenz- und aufbauabhängig.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wie entsteht ESR-Erwärmung?
+2. Was geschieht oberhalb der Selbstresonanz?
+3. Warum sind kurze Anschlüsse wichtig?
+4. Welche Firmwareeinstellung kann di/dt verändern?
+
+Weitere Aufgaben: [Übungen zu Modul 05](../uebungen/modul-05.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK01–04`, `b4-LK02`, `b4-LK06–09`
+- Nachweise: Ersatzmodell, Verlustrechnung und frequenzabhängige Messung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

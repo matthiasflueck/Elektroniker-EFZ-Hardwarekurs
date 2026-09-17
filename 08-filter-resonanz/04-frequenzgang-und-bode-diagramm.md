@@ -2,59 +2,86 @@
 
 [← Zurück](03-grenzfrequenz-und-zeitkonstante.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](05-rl-netzwerke.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Frequenzgang und Bode-Diagramm** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Betrag in dB umrechnen
+- logarithmische Frequenzachsen lesen
+- Messdaten als Bode-Diagramm darstellen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Elektronische Systeme wirken über viele Frequenzdekaden. Ein lineares Diagramm würde wichtige Bereiche zusammendrängen. Das Bode-Diagramm stellt Betrag und Phase über logarithmischer Frequenz dar und macht Eckpunkte sowie Steigungen sichtbar.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Dezibel
+
+Für ein Spannungsverhältnis bei gleichen Bezugsimpedanzen gilt `AdB = 20·log10(|Uout/Uin|)`. 0 dB bedeutet Verhältnis 1, −20 dB Verhältnis 0,1 und +20 dB Verhältnis 10.
+
+![Bode-Diagramm eines Tiefpasses erster Ordnung mit Betrag und Phase](../bilder/08-filter-resonanz/08-04-bode.png)
+
+| Zeichen | Bedeutung | Einheit |
+|---|---|---|
+| `AdB` | logarithmischer Betragsgang | dB |
+| `log10` | Zehnerlogarithmus | – |
+
+### Asymptote
+
+Ein Tiefpass erster Ordnung fällt weit oberhalb fG mit ungefähr −20 dB pro Dekade. Die reale Kurve geht weich über und liegt an fG bei −3,01 dB. Die Phase wandert von ungefähr 0° gegen −90°.
+
+### Messreihe
+
+Frequenzen werden logarithmisch gewählt, etwa 1-2-5 pro Dekade und dichter um fG. Uin wird an jedem Punkt kontrolliert; Generator und Last können frequenzabhängig sein.
+
+### Messpunkte und Interpretation
+
+An jedem Messpunkt werden Eingangsamplitude, Ausgangsamplitude und Zeitverschiebung dokumentiert. Der Betrag folgt aus `20·log10(Uout/Uin)`, die Phase aus `360°·Δt/T`. `Δt` ist der gemessene Zeitversatz gleichartiger Signalpunkte. Mehrere Punkte pro Dekade zeigen die asymptotische Steigung, zusätzliche Punkte um fG erfassen den Übergang.
+
+Bei sehr kleiner Ausgangsspannung steigt der relative Einfluss von Rauschen und Oszilloskopauflösung. Gleichzeitig können Generatorausgang und Tastkopfkapazität die Schaltung belasten. Eine geglättete Kurve darf diese Unsicherheit nicht verbergen; auffällige Punkte werden wiederholt oder mit veränderter Amplitude kontrolliert. Ein gemessener Peak deutet auf Resonanz, Rückkopplung oder parasitäre Kopplung hin und passt nicht zum idealen RC-Filter erster Ordnung. Das Diagramm dient deshalb nicht nur zur Bestätigung, sondern auch zur Diagnose eines unvollständigen Modells.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Eine Landkarte nutzt Massstab und Höhenlinien, um sehr grosse Entfernungen und Steigungen lesbar zu machen. Das Bode-Diagramm komprimiert Frequenzbereiche und macht Steigungen vergleichbar.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+`Uout/Uin = 0,25` ergibt `20·log10(0,25) ≈ −12,04 dB`. Ein weiterer Faktor 0,1 würde 20 dB zusätzliche Dämpfung ergeben.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 08](../praxis/modul-08.md).
+Erstelle aus mindestens zehn Frequenzpunkten Tabellen für Verhältnis, dB und Phase. Zeichne die Frequenz logarithmisch und markiere gemessene fG sowie theoretische Asymptote.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Digitale Filter werden ebenfalls mit Betrag und Phase bewertet. Abtastrate, Quantisierung und Rechenverzögerung verändern den Frequenzgang. Der analoge Vorfilter bleibt für Frequenzen oberhalb der Nyquist-Grenze wichtig.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Dezibel machen Verhältnisse addierbar; die logarithmische Frequenzachse macht Dekaden vergleichbar.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- 10·log für Spannungsverhältnis verwenden
+- negative dB als negative Spannung deuten
+- Uin nicht kontrollieren
+- lineare x-Achse als Bode-Achse bezeichnen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Das Bode-Diagramm zeigt Betrag und Phase übersichtlich über viele Dekaden. dB, logarithmische Frequenzpunkte und dokumentierte Messbedingungen sind dafür unverzichtbar.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Welches Verhältnis entspricht −20 dB?
+2. Warum werden Frequenzen logarithmisch gewählt?
+3. Welche Steigung hat ein Tiefpass erster Ordnung?
+4. Was kann digitale Filterung oberhalb Nyquist nicht reparieren?
+
+Weitere Aufgaben: [Übungen zu Modul 08](../uebungen/modul-08.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK03`, `b1-LK09`, `b4-LK07–10`, `c2`
+- Nachweise: gemessener und berechneter Bode-Plot; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

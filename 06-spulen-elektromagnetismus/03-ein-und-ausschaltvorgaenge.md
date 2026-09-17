@@ -2,59 +2,77 @@
 
 [← Zurück](02-induktivitaet-und-stromaenderung.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](04-energie-in-der-spule.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Ein- und Ausschaltvorgänge** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- die RL-Zeitkonstante bestimmen
+- Stromanstieg und Abfall berechnen
+- Schaltspannung und reale Begrenzung erklären
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Eine reale Spule besitzt Widerstand. Zusammen bilden R und L ein zeitabhängiges Netzwerk. Der Strom nähert sich exponentiell seinem Endwert und erzeugt beim Abschalten eine Spannung mit umgekehrter Polarität.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### RL-Zeitkonstante
+
+Für eine Reihenschaltung gilt `τ = L/Rges`. Nach einer Zeitkonstante hat der Strom beim Einschalten etwa 63,2 % seines Endwerts erreicht. Der Endwert wird durch `Iend = U/Rges` bestimmt.
+
+![Stromanstieg und Spulenspannung beim Ein- und Ausschalten](../bilder/06-spulen-elektromagnetismus/06-03-rl-einschalten.png)
+
+`Rges` enthält Wicklungswiderstand, Treiberwiderstand und weitere Serienanteile. Beim Ausschalten hängt der Stromabfall vom verfügbaren Freilaufpfad und dessen Spannung ab.
+
+### Ausschalten
+
+Die Spule kehrt ihre Spannungspolarität so um, dass der bisherige Strom weiterfliessen kann. Ohne Schutz steigt die Spannung, bis parasitäre Kapazität, Halbleiterdurchbruch, Lichtbogen oder Isolation einen Pfad bilden. Das ist kein kontrollierter Betriebszustand.
+
+### Schnell oder schonend
+
+Eine einfache Freilaufdiode begrenzt die Spannung stark und lässt den Strom langsam abklingen. Eine höhere kontrollierte Klemmschaltung baut Energie schneller ab, beansprucht den Schalter aber stärker. Die Auswahl folgt Relais-Abfallzeit und Spannungsgrenze.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein fahrender Zug kann nicht augenblicklich anhalten. Eine sanfte Bremse braucht Zeit; eine stärkere Bremse erzeugt grössere Kräfte und stoppt schneller. Ebenso bestimmt die zulässige Abschaltspannung, wie schnell Spulenstrom und Magnetfeld abgebaut werden.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+`L = 200 mH`, `Rges = 100 Ω` und U = 12 V ergeben `τ = 2 ms` und `Iend = 120 mA`. Nach 2 ms fliessen etwa 75,8 mA, nach 10 ms nahezu 119 mA.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 06](../praxis/modul-06.md).
+Untersuche nur an einer freigegebenen Kleinspannungsschaltung. Trigger auf das Abschaltsignal und miss Spulenspannung sowie Shuntspannung. Beginne mit wirksamem Schutz; ungeschütztes Schalten erfordert ausdrücklich geeignete Begrenzung und Geräte.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Eine Firmwarewartezeit bis zum Ablesen eines Relaiskontakts muss elektrischen Stromaufbau und mechanische Bewegung berücksichtigen. Beim Ausschalten beeinflusst die Schutzbeschaltung die Abfallzeit; ein Timerwert allein kann Kontaktprellen nicht verhindern.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Die RL-Zeitkonstante bestimmt den Stromaufbau; die Abschaltklemme bestimmt den Energieabbau.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- nur den Induktivitätswert statt Rges verwenden
+- Abschaltspannung unkontrolliert messen
+- Freilaufdiode als schnellste Lösung ansehen
+- mechanische Relaiszeit ignorieren
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Ein RL-Kreis zeigt exponentiellen Stromverlauf. Beim Ausschalten hält die Spule den Strom aufrecht und benötigt einen sicheren Energiepfad. Spannungsschutz und gewünschte Abfallzeit stehen im Zielkonflikt.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Berechne τ für 50 mH und 25 Ω.
+2. Warum kehrt die Spulenspannung beim Ausschalten um?
+3. Wie beeinflusst eine höhere Klemmschwellenspannung die Abfallzeit?
+4. Welche Verzögerungen muss Firmware bei einem Relais beachten?
+
+Weitere Aufgaben: [Übungen zu Modul 06](../uebungen/modul-06.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b1-LK06`, `b4-LK01–10`
+- Nachweise: RL-Berechnung und Schaltverlaufsmessung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

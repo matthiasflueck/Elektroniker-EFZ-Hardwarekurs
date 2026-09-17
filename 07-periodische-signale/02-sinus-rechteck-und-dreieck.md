@@ -2,59 +2,81 @@
 
 [← Zurück](01-periodische-vorgaenge-frequenz-und-periodendauer.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](03-amplitude-spitze-und-peak-to-peak.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Sinus, Rechteck und Dreieck** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Sinus Rechteck und Dreieck anhand ihrer Entstehung unterscheiden
+- Flanken und Oberwellen qualitativ erklären
+- eine Signalform passend zur Aufgabe auswählen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Gleiches f und gleicher Spitzenwert bedeuten nicht gleiche Wirkung. Signalform bestimmt Effektivwert, Oberwellen, Flankenstrom und Filterverhalten. Rechtecksignale fordern eine Schaltung oft weit über ihre Grundfrequenz hinaus.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Drei Grundformen
+
+![Sinus Rechteck und Dreieck mit gleicher Periodendauer](../bilder/07-periodische-signale/07-02-signalformen.png)
+
+Ein Sinus besitzt ideal nur eine Frequenz. Ein Rechteck wechselt zwischen Pegeln und enthält bei ideal symmetrischer Form ungeradzahlige Oberwellen. Ein Dreieck besitzt ebenfalls Oberwellen, deren Amplituden schneller abfallen. Ein idealer Sprung hätte unendliche Bandbreite; reale Flanken sind endlich.
+
+### Flankenzeit
+
+Rise Time und Fall Time beschreiben Übergänge typischerweise zwischen festgelegten Prozentpunkten. Eine Schaltung muss die zur Flanke gehörenden Frequenzanteile übertragen, nicht nur die Wiederholfrequenz.
+
+### Tastgrad
+
+Beim Rechteck ist `D = ton/T`. D ist der Tastgrad, ton die Einschaltzeit. D beeinflusst Mittelwert und Energie pro Periode. Signalform, Offset und Tastgrad müssen gemeinsam genannt werden.
+
+### Spektrum und reale Flanken
+
+Die Zeitform verrät noch nicht vollständig, welche Frequenzanteile ein Signal enthält. Ein idealer Sinus besteht aus genau einer Frequenz. Ein Rechteck setzt sich aus Grundschwingung und ungeraden Oberschwingungen zusammen; ein Dreieck enthält ebenfalls ungerade Oberschwingungen, deren Amplituden jedoch schneller abnehmen. Deshalb benötigt ein scharfes Rechteck wesentlich mehr Bandbreite als seine Wiederholfrequenz vermuten lässt.
+
+Reale Generatoren und digitale Ausgänge besitzen keine senkrechten Flanken. Anstiegszeit, Ausgangswiderstand, Leitungsimpedanz, Lastkapazität und Messkopf formen den Übergang. Wird ein 1-MHz-Rechteck auf einem zu langsamen Oszilloskop fast sinusförmig dargestellt, muss nicht die Quelle fehlerhaft sein: Messkette und Bandbreitenbegrenzung können die Oberschwingungen entfernt haben. Für einen Vergleich werden deshalb Frequenz, Amplitude, Offset, Tastgrad, Last und Tastkopfeinstellung gemeinsam dokumentiert. Erst dann lässt sich entscheiden, ob eine Abweichung vom Generator, von der Schaltung oder von der Messung stammt.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein ruhiges Schwingen der Hand ähnelt einem Sinus. Ein abruptes Umschlagen zwischen zwei Anschlägen ähnelt einem Rechteck und regt viele mechanische Schwingungen an. Ein gleichmässiges Hin-und-her-Fahren entspricht eher einem Dreieck.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Bei 20 kHz und 30 % Tastgrad ist `T = 50 µs` und `ton = 15 µs`. Diese Zeit sagt noch nichts über die Flankenzeit; sie wird separat gemessen.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 07](../praxis/modul-07.md).
+Erzeuge alle drei Formen mit gleicher Frequenz und ähnlichem Upp. Vergleiche Zeitbild und Spektrum, sofern verfügbar. Ausgangsimpedanz und Last des Generators werden berücksichtigt.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Timer erzeugen meist Rechteck oder PWM. Ein DAC kann stufige Sinus- und Dreiecksformen liefern; Rekonstruktionsfilter und Aktualisierungsrate bestimmen die reale Glätte.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Die Grundfrequenz beschreibt die Wiederholung, die Signalform bestimmt zusätzliche Frequenzanteile.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Rechteck als einzelne Frequenz behandeln
+- Tastgrad mit Flankenzeit verwechseln
+- Generatoramplitude ohne Lastangabe übernehmen
+- DAC-Stufen ignorieren
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Sinus, Rechteck und Dreieck unterscheiden sich in zeitlichem Verlauf und Spektrum. Flanke, Tastgrad und Last sind wesentliche Messbedingungen.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Welche Signalform besitzt ideal nur eine Frequenz?
+2. Berechne ton bei 10 kHz und 40 %.
+3. Warum fordert eine schnelle Rechteckflanke hohe Bandbreite?
+4. Wie entsteht ein Sinus aus DAC-Werten?
+
+Weitere Aufgaben: [Übungen zu Modul 07](../uebungen/modul-07.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK02–03`, `b4-LK07–10`, `c1–c2`
+- Nachweise: Signalform-, Tastgrad- und Flankenmessung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

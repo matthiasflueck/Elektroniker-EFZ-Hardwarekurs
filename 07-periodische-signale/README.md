@@ -4,7 +4,11 @@
 
 ## Worum geht es?
 
-Dieses Modul führt **Periodische Signale und Wechselgrössen** von einer verständlichen Vorstellung zu technisch belastbaren Berechnungen, Schaltungen und Messungen. Die Theorie-Lektionen bereiten die Praxis gezielt vor; Übungen und Lösungen sind getrennt.
+Signale werden vollständig beschrieben: Zeit, Frequenz, Form, Pegel, Effektivwert und Phase. Anschliessend führen Blindwiderstand und Impedanz zu einem professionellen Verständnis komplexer Wechselstromlasten.
+
+## Lernpfad
+
+`f und T → Signalform → Pegel → RMS → Phase → XC/XL → Impedanz`
 
 ## Lektionen
 
@@ -15,13 +19,8 @@ Dieses Modul führt **Periodische Signale und Wechselgrössen** von einer verst�
 5. [07.5 – Phase und Phasenverschiebung](05-phase-und-phasenverschiebung.md)
 6. [07.6 – Blindwiderstand von C und L](06-blindwiderstand-von-c-und-l.md)
 7. [07.7 – Impedanz und komplexe Lasten](07-impedanz-und-komplexe-lasten.md)
-8. [Übungen](../uebungen/modul-07.md)
-9. [Praxis – Signale mit Funktionsgenerator und Oszilloskop untersuchen](../praxis/modul-07.md)
+8. [Übungen](../uebungen/modul-07.md) · [Praxis](../praxis/modul-07.md)
 
-## Bildungsplan 2026
+## Bezug Bildungsplan 2026
 
-Schwerpunkt: `b1`, `b4`, `b5`. Details und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
-
-## Projektbezug
-
-Die [Projektübersicht](../projekte/README.md) zeigt, wie das Modul in Projekt A, B oder C einfliesst.
+Schwerpunkt: `a3`, `b1-LK02–06`, `b4-LK01–10`, `b5` und `c1–c2`. Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

@@ -2,59 +2,88 @@
 
 [← Zurück](04-effektivwert-und-leistung.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](06-blindwiderstand-von-c-und-l.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Phase und Phasenverschiebung** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Phase als Lage innerhalb einer Periode erklären
+- Zeitverschiebung in Grad umrechnen
+- Vorzeichen und Messrichtung konsistent verwenden
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Zwei Signale können gleiche Frequenz und Amplitude besitzen, aber zeitlich gegeneinander verschoben sein. Diese Phase entscheidet bei Filtern, Leistungsübertragung, Motoren und Bussignalen über Funktion und Messinterpretation.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Phase ist relativ
+
+Eine absolute Phase benötigt einen definierten Bezug. Für zwei gleichfrequente Signale gilt `φ = 360°·Δt/T`.
+
+![Zwei Sinussignale mit Zeit- und Phasenverschiebung](../bilder/07-periodische-signale/07-05-phase.png)
+
+| Zeichen | Bedeutung | Einheit |
+|---|---|---|
+| `φ` | Phasenverschiebung | ° oder rad |
+| `Δt` | Zeitverschiebung gleicher Phasenpunkte | s |
+
+Das Vorzeichen hängt davon ab, welches Signal als Bezug dient und welche Richtung als «eilt voraus» definiert wird. Diese Festlegung gehört zum Resultat.
+
+### Mehrdeutigkeit
+
+Eine Verschiebung um eine ganze Periode entspricht 360° und erscheint zeitlich wieder gleich. Bei unterschiedlichen Frequenzen ändert sich die relative Phase fortlaufend; eine einzelne Gradangabe ist dann unvollständig.
+
+### Oszilloskopmessung
+
+Beide Kanäle benötigen denselben Zeitbezug. Tastköpfe, Kabellängen und Kanalverzögerung können bei schnellen Signalen relevant werden.
+
+### Vorzeichen und Messung
+
+Eine Phasenangabe ist nur mit klarer Referenz eindeutig. Wird Signal B gegenüber Signal A später erreicht, hinkt B hinterher; bei gleicher Frequenz entspricht die Zeitverschiebung `Δt` dem Winkel `φ = 360°·Δt/T`. Ein negatives Vorzeichen wird häufig für Nacheilen verwendet. Da Fachliteratur und Messgeräte unterschiedliche Vorzeichenkonventionen nutzen können, werden Referenz und Richtung ausdrücklich notiert.
+
+Am Oszilloskop werden beide Signale gleichzeitig und mit gemeinsamem Trigger dargestellt. Man misst zwei gleichartige Punkte, beispielsweise steigende Nulldurchgänge, und nicht beliebige Spitzen eines verzerrten Signals. Unsicherheit entsteht durch begrenzte Abtastrate, Triggerjitter, Kanallaufzeit und Tastköpfe. Bei hohen Frequenzen können schon unterschiedlich lange Leitungen eine sichtbare Phase erzeugen. Vor der Bauteilmessung werden daher beide Kanäle an dasselbe Signal angeschlossen; die beobachtete Restverschiebung ist der systematische Beitrag der Messkette.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Zwei Läufer auf einer Rundbahn können gleich schnell sein, aber einer ist eine Viertelrunde voraus. Ihre Frequenz ist gleich, ihre Phase um 90° verschieden. Laufen sie unterschiedlich schnell, ändert sich der Abstand ständig.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Bei `f = 1 kHz` ist T = 1 ms. Eine Verschiebung von 250 µs entspricht `φ = 360°·0,25 = 90°`.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 07](../praxis/modul-07.md).
+Miss Δt zwischen gleichartigen Nulldurchgängen zweier Kanäle. Wiederhole bei anderer Frequenz und prüfe, ob eine konstante Zeitverzögerung oder konstante Phase vorliegt.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Timerkanäle können phasenversetzte PWM erzeugen. Registerwerte definieren ideale Kanten; Treiber- und Lastverzögerung verändern die reale Phase. Beide Signale werden gleichzeitig am Pin oder an der Last gemessen.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Phase beschreibt die relative Lage im Zyklus; ohne Bezug und Frequenz ist eine Gradangabe unvollständig.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- unterschiedliche Flanken vergleichen
+- Vorzeichenkonvention weglassen
+- Phase bei verschiedenen Frequenzen als konstant angeben
+- Kanalverzögerung ignorieren
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Phase übersetzt Zeitverschiebung in einen Zyklusanteil. Bezug, Vorzeichen, Frequenz und Messpunkte müssen eindeutig sein.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wieviel Grad entsprechen T/8?
+2. Welche Zeit sind 45° bei 10 kHz?
+3. Warum ist Phase eine relative Grösse?
+4. Wo entsteht zusätzliche Hardwareverzögerung bei PWM?
+
+Weitere Aufgaben: [Übungen zu Modul 07](../uebungen/modul-07.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK02–03`, `b4-LK01–10`, `c1–c2`
+- Nachweise: Zweikanal-Zeit- und Phasenmessung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

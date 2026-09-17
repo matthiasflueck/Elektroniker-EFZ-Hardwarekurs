@@ -2,59 +2,88 @@
 
 [← Zurück](05-phase-und-phasenverschiebung.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](07-impedanz-und-komplexe-lasten.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Blindwiderstand von C und L** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- kapazitiven und induktiven Blindwiderstand berechnen
+- Frequenztrends vergleichen
+- Phasenlage und Energieaustausch erklären
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Kondensator und Spule verhalten sich bei Sinus nicht wie konstante Widerstände. Ihre Wirkung hängt von f ab und verschiebt Strom und Spannung. Blindwiderstände bilden die Brücke von Zeitvorgängen zu Filter- und Resonanzrechnung.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Gegensätzliche Frequenztrends
+
+`XC = 1/(2πfC)` sinkt mit f; `XL = 2πfL` steigt mit f.
+
+![Kapazitiver und induktiver Blindwiderstand über der Frequenz](../bilder/07-periodische-signale/07-06-blindwiderstand.png)
+
+| Zeichen | Bedeutung | Einheit |
+|---|---|---|
+| `XC` | Betrag des kapazitiven Blindwiderstands | Ω |
+| `XL` | Betrag des induktiven Blindwiderstands | Ω |
+
+Beim idealen Kondensator eilt I um 90° voraus; bei der idealen Spule hinkt I um 90° hinter U. Beide speichern Energie zeitweise und geben sie zurück.
+
+### Gültigkeit
+
+Die Formeln gelten für sinusförmigen eingeschwungenen Betrieb und idealisierte Bauteile. ESR, DCR, ESL, parasitäre Kapazität und Sättigung ergänzen reale Modelle.
+
+### Grenzfälle
+
+Für f gegen null wird XC sehr gross und XL sehr klein. Hohe Frequenz kehrt diese Tendenz um, bis parasitäre Eigenschaften dominieren.
+
+### Frequenzgrenzen und Bauteilauswahl
+
+Die Formeln beschreiben ideale Bauteile. Beim Kondensator liegt der kapazitive Bereich nur unterhalb seiner Selbstresonanz; darüber dominiert die parasitäre Induktivität. Bei der Spule begrenzen Wicklungskapazität, Kernverluste und Sättigung den nutzbaren Bereich. Ein berechneter Blindwiderstand ist daher nur dann aussagekräftig, wenn die Arbeitsfrequenz innerhalb des im Datenblatt beschriebenen Bereichs liegt.
+
+Der Blindwiderstand bestimmt zusammen mit realen Widerständen Strom und Spannungsteilung. Ein 100-nF-Kondensator besitzt bei 1 kHz rund 1,59 kΩ, bei 100 kHz dagegen nur etwa 15,9 Ω. Diese starke Frequenzabhängigkeit erklärt, weshalb ein Abblockkondensator schnelle Stromanteile lokal führen kann, langsame Versorgungsschwankungen aber kaum korrigiert. Umgekehrt kann eine Drossel hochfrequente Störungen bremsen, während Gleichstrom nahezu ungehindert fliesst. Für reale Verlustleistung werden zusätzlich ESR beziehungsweise Wicklungswiderstand und der Effektivstrom benötigt.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein elastisches Element lässt langsame dauerhafte Verschiebung anders zu als schnelle Bewegung; eine schwere Masse widersetzt sich besonders schneller Beschleunigung. Kondensator und Spule zeigen elektrische Gegenstücke dieser gegensätzlichen Reaktionen.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Bei 1 kHz besitzen 100 nF ungefähr `XC = 1,59 kΩ`; 100 mH besitzen `XL = 628 Ω`. Die Zahlen sind Beträge. Für die vollständige Phasenrechnung wird Impedanz verwendet.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 07](../praxis/modul-07.md).
+Miss Strom indirekt über einen Serienwiderstand bei mehreren Frequenzen. Halte Generatoramplitude und Lastbedingungen konstant und vergleiche mit XC beziehungsweise XL.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Ändert Firmware eine PWM-Frequenz, ändern sich Kondensator- und Spulenströme selbst bei gleichem Tastgrad. Das kann Ripple, Verlust und EMV deutlich verschieben.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> XC fällt mit Frequenz, XL steigt mit Frequenz.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- XC und XL vertauschen
+- Hz und rad/s mischen
+- Beträge als reelle Widerstände addieren
+- parasitäre Grenzen vergessen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Blindwiderstände beschreiben frequenzabhängige Beträge idealer C und L. Ihre gegensätzlichen Trends und Phasen bilden die Grundlage von Filtern und Resonanz.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wie verändert zehnfaches f den XC?
+2. Berechne XL für 10 mH bei 5 kHz.
+3. Welche Phase besitzt der ideale Spulenstrom?
+4. Warum kann eine PWM-Frequenzänderung Verluste verändern?
+
+Weitere Aufgaben: [Übungen zu Modul 07](../uebungen/modul-07.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK02–03`, `b1-LK06`, `b4-LK07–09`, `c1`
+- Nachweise: Frequenzreihe und Blindwiderstandsvergleich; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

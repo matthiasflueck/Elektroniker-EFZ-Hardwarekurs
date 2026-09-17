@@ -12,6 +12,14 @@ MCU/Logik → Gate-Ansteuerung → MOSFET → Last; ergänzt um Schutz, Freilauf
 
 06, 11, 15–21, 26–27
 
+## Meilenstein nach Modul 06
+
+- induktive Last mit Nennstrom, Spulenwiderstand und gespeicherter Energie beschreiben
+- Strompfad im eingeschalteten Zustand und beim Abschalten vollständig einzeichnen
+- Freilaufpfad dimensionieren und Polarität von D1 begründen
+- erwartete Abschaltspannung für Diode und kontrollierte höhere Klemmung qualitativ vergleichen
+- Messpunkte, Massebezug, Strombegrenzung und sichere Oszilloskopmessung planen
+
 ## Verbindliche Nachweise
 
 Anforderungen und Akzeptanzkriterien, Blockdiagramm, Berechnungen, Datenblattentscheidungen, genormtes Schema, Gefährdungs- und Messplan, as-built-Stand, Rohdaten, Soll-Ist-Auswertung, Fehler-/Änderungsjournal sowie Abschluss- und Übergabedokumentation.

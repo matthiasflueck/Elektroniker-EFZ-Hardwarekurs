@@ -1,60 +1,80 @@
 # 05.7 – Entkopplung und Abblockung
 
-[← Zurück](06-esr-esl-und-reale-kondensatoren.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../uebungen/modul-05.md)
-
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
+[← Zurück](06-esr-esl-und-reale-kondensatoren.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../06-spulen-elektromagnetismus/README.md)
 
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Entkopplung und Abblockung** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- lokale Entkopplungsstrompfade erklären
+- Kondensatoren platzierungs- und frequenzgerecht auswählen
+- Versorgungseinbrüche gemeinsam mit MCU-Aktivität untersuchen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Digitale ICs ziehen beim Umschalten kurze Stromimpulse. Die entfernte Versorgung kann wegen Leiterbahninduktivität nicht augenblicklich liefern. Ein lokaler Kondensator stellt den Strom über eine kleine Schleife bereit und hält die Versorgung am IC stabil.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Stromschleife statt Dekoration
+
+Ein Abblockkondensator gehört zwischen Versorgungspin und zugehörigen Massepin, möglichst mit kurzer, breiter Verbindung. Entscheidend ist die Fläche der Hochfrequenz-Stromschleife, nicht nur die geometrische Nähe zum Gehäuse.
+
+![Lokaler Entkopplungsstrompfad am Mikrocontroller](../bilder/05-kondensatoren/05-07-entkopplungsstrompfad.png)
+
+### Mehrere Frequenzbereiche
+
+Kleine Keramikkondensatoren besitzen geringe ESL und bedienen schnelle Anteile. Grössere lokale oder zentrale Kondensatoren stützen langsamere Laständerungen. Mehrere Werte werden nicht nach einer universellen Rezeptzahl verteilt, sondern nach IC-Datenblatt, Stromprofil, Layout und Impedanzziel.
+
+### Ladungsabschätzung
+
+Für einen Lastsprung kann zunächst `ΔU = ΔI·Δt/C` abgeschätzt werden. `ΔI` ist die Stromänderung, `Δt` die Zeit, bis die übrige Versorgung übernimmt, und `ΔU` der erlaubte Spannungseinbruch. ESR und ESL erzeugen zusätzliche Sprünge.
+
+### Messen am richtigen Ort
+
+Ripple wird direkt an den Versorgungspins mit sehr kleiner Tastkopfschleife gemessen. Eine lange Masseleitung zeigt zusätzliche induzierte Spannung und kann das Problem grösser erscheinen lassen.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein kleiner Wasserspeicher direkt neben einer schnell öffnenden Maschine liefert den ersten Schwall, während die lange Hauptleitung nachzieht. Ein grosser Tank weit entfernt ersetzt den kurzen lokalen Weg nicht vollständig.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein IC benötigt für 2 µs zusätzlich 50 mA; höchstens 100 mV Einbruch sind erlaubt. Ideal wären `C = ΔI·Δt/ΔU = 50 mA·2 µs/0,1 V = 1 µF`. Wegen Toleranz, DC-Bias, ESR und ESL wird der konkrete Aufbau mit Reserve und Datenblatt geprüft.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 05](../praxis/modul-05.md).
+Vergleiche Versorgungspitzen mit korrekt platziertem Kondensator und mit absichtlich verlängerter Verbindung an einer ungefährlichen Testschaltung. Tastkopfanschluss, Bandbreite und Lastzustand müssen identisch bleiben.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Firmware kann mehrere Ausgänge gleichzeitig umschalten, CPU-Takt oder Funk aktivieren und dadurch Lastsprünge erzeugen. Ein Trigger auf GPIO-Ereignis und gleichzeitige Versorgungsspannungsmessung verbindet Codeereignis mit realem Ripple.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Entkopplung ist ein kurzer lokaler Strompfad, nicht bloss ein Kapazitätswert im Schema.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Kondensator weit vom Massepin platzieren
+- lange Oszilloskop-Masseleitung verwenden
+- DC-Bias ignorieren
+- jeden Versorgungseinbruch als Firmwarefehler deuten
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Gute Entkopplung verbindet passende Kapazität, geringe ESR/ESL und eine kleine Stromschleife. Lastprofil, Layout und Messmethode entscheiden gemeinsam über die Wirksamkeit.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Warum ist Schleifenfläche wichtig?
+2. Was beschreibt ΔU = ΔI·Δt/C?
+3. Welche Stromanteile übernimmt ein kleiner Keramikkondensator?
+4. Wie kann Firmware einen Lastsprung reproduzierbar auslösen?
+
+Weitere Aufgaben: [Übungen zu Modul 05](../uebungen/modul-05.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK01–04`, `b1-LK06`, `b2-LK03–04`, `b4-LK01–10`, `c1–c2`
+- Nachweise: Entkopplungsdimensionierung und Ripple-Messplan; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

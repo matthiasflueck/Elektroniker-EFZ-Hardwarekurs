@@ -2,59 +2,82 @@
 
 [← Zurück](README.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](02-sinus-rechteck-und-dreieck.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Periodische Vorgänge, Frequenz und Periodendauer** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Periode und Frequenz aus einem Zeitdiagramm bestimmen
+- zwischen periodisch und wiederkehrend gestört unterscheiden
+- passende Zeitbasis und Abtastrate wählen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Takt, PWM, Netzripple und Sensorsignale wiederholen sich zeitlich. Frequenz beschreibt, wie oft ein vollständiger Vorgang pro Sekunde auftritt; Periodendauer beschreibt die Zeit eines Zyklus. Beide Sichtweisen werden beim Oszilloskop und in Firmware ständig benötigt.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Ein vollständiger Zyklus
+
+Zwei Punkte markieren nur dann eine Periode, wenn Signalzustand und Bewegungsrichtung gleich sind, etwa zwei aufeinanderfolgende steigende Nulldurchgänge. Für stabile periodische Signale gilt `f = 1/T`.
+
+![Periodisches Signal mit Periodendauer und Frequenz](../bilder/07-periodische-signale/07-01-periode-frequenz.png)
+
+| Zeichen | Bedeutung | Einheit |
+|---|---|---|
+| `f` | Frequenz | Hz |
+| `T` | Periodendauer | s |
+
+1 Hz bedeutet einen Zyklus pro Sekunde. kHz und MHz müssen vor Rechnungen sauber in Zehnerpotenzen umgewandelt werden.
+
+### Repetition ist nicht immer stabile Periodizität
+
+Jitter verändert die Lage einzelner Flanken, Drift verändert die mittlere Frequenz, und fehlende Pulse unterbrechen die Folge. Ein einzelner automatischer Messwert kann diese Fehler verbergen. Zeitbild und Statistik ergänzen sich.
+
+### Messfenster
+
+Für eine Periodenmessung müssen genügend Signalabschnitte sichtbar und ausreichend abgetastet sein. Eine lange Aufzeichnung verbessert Frequenzauflösung, während eine kurze Zeitbasis Flankendetails zeigt.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Bei einem Karussell ist T die Zeit für eine Runde und f die Zahl der Runden pro Sekunde. Beobachtest du nur einen kleinen Ausschnitt, erkennst du die Geschwindigkeit, aber nicht zuverlässig, ob jede Runde gleich lange dauert.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein PWM-Signal hat `T = 20 µs`. Damit ist `f = 1/(20 µs) = 50 kHz`. Zehn Perioden dauern 200 µs; eine passende Zeitbasis zeigt sowohl mehrere Zyklen als auch genügend Flankendetail.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 07](../praxis/modul-07.md).
+Miss T mit Cursorn über mehrere Perioden und teile durch deren Anzahl. Vergleiche mit automatischer Frequenzmessung. Dokumentiere Abtastrate, Zeitbasis und Triggerquelle.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Timer-Takt, Prescaler und Periodenregister bestimmen die ideale Wiederholrate. Reale Abweichungen entstehen durch Taktgenauigkeit, Interrupt-Latenz oder falschen Ausgangsmodus. Das Oszilloskop misst das Ergebnis am Pin.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Frequenz und Periodendauer sind Kehrwerte desselben vollständigen Zyklus.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- halbe oder doppelte Periode markieren
+- µs und ms verwechseln
+- nur einen Automatikwert übernehmen
+- Jitter durch ungeeigneten Trigger verdecken
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+T misst Zeit pro Zyklus, f Zyklen pro Sekunde. Eine belastbare Messung definiert gleiche Phasenpunkte, geeignetes Fenster und ausreichende Abtastung.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Welche Frequenz hat T = 2,5 ms?
+2. Warum misst man besser über mehrere Perioden?
+3. Was unterscheidet Jitter und Drift?
+4. Welche Timerparameter beeinflussen die Ausgangsfrequenz?
+
+Weitere Aufgaben: [Übungen zu Modul 07](../uebungen/modul-07.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK02–03`, `b4-LK01–10`, `c1–c2`
+- Nachweise: Cursor- und Automatikmessung eines Timersignals; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

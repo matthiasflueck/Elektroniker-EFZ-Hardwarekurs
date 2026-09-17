@@ -1,60 +1,86 @@
 # 06.7 – Reale Spulen, Sättigung und Verluste
 
-[← Zurück](06-transformator-und-drosseln.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../uebungen/modul-06.md)
-
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
+[← Zurück](06-transformator-und-drosseln.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../07-periodische-signale/README.md)
 
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Reale Spulen, Sättigung und Verluste** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- ein reales Spulenmodell verwenden
+- Sättigungs- und Erwärmungsgrenzen unterscheiden
+- Datenblattkurven für Strom und Frequenz auswerten
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Die aufgedruckte Induktivität gilt nur unter definierten Messbedingungen. Gleichstrom, Ripple, Frequenz und Temperatur verändern reale Spulen. In Sättigung fällt die differentielle Induktivität; der Strom kann dadurch sehr schnell ansteigen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Reales Modell
+
+Wicklungswiderstand DCR erzeugt Kupferverlust `PCu = Irms²·DCR`. Kernverluste hängen nichtlinear von Material, Frequenz und Flussänderung ab. Parasitäre Kapazität führt zu einer Selbstresonanz.
+
+![Reales Spulenmodell sowie Induktivitätsabfall durch Sättigung](../bilder/06-spulen-elektromagnetismus/06-07-saettigung-verluste.png)
+
+### Zwei Stromgrenzen
+
+Der Sättigungsstrom wird über einen spezifizierten Induktivitätsabfall definiert. Der thermische Nennstrom wird über eine zulässige Temperaturerhöhung bestimmt. Je nach Anwendung kann eine der beiden Grenzen zuerst erreicht werden; beide sind zu prüfen.
+
+### Ripple und Spitzenstrom
+
+In Schaltreglern setzt sich Strom aus Mittelwert und Ripple zusammen. Für Sättigung zählt der Spitzenstrom, für Kupfererwärmung der Effektivwert. Ein Datenblattwert ohne Definition darf nicht als beliebige harte Grenze interpretiert werden.
+
+### Layout
+
+Kurze Stromschleifen, ausreichende Leiterbahnen und Abstand zu empfindlichen Signalen reduzieren Verluste und Einkopplung. Das Streufeld kann Sensoren oder analoge Eingänge beeinflussen.
+
+### Datenblatt und Messbedingungen
+
+Der aufgedruckte Induktivitätswert gilt gewöhnlich bei einer festgelegten Messfrequenz, kleinen Wechselstromamplitude und häufig ohne Gleichstromvormagnetisierung. Im Einsatz kann ein grosser Gleichstrom die effektive Induktivität bereits deutlich reduzieren, lange bevor ein abrupter Sättigungsknick sichtbar wird. Datenblätter zeigen dafür Kurven wie `L/L0` über dem Biasstrom sowie Temperaturanstieg über dem Effektivstrom. Der Sättigungsstrom und der thermisch zulässige Strom beschreiben unterschiedliche Grenzen; verwendet wird der kleinere Wert für die konkrete Anwendung.
+
+Mit einem LCR-Meter lässt sich die Kleinsignalinduktivität prüfen, nicht automatisch das Verhalten im Schaltregler. Dort werden zusätzlich Stromrampe, Tastgrad, Schaltfrequenz und Spitzentemperatur beobachtet. Beginnt die Stromrampe innerhalb eines Schaltzyklus nach oben zu krümmen, ist das ein starkes Zeichen fallender Induktivität. Die Messung erfolgt mit geeigneter Stromsonde oder niederinduktivem Shunt und kurzer Tastkopfschleife, damit die parasitäre Messanordnung nicht mit der Spule verwechselt wird.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein weicher Schwamm federt zunächst gut, wird aber unter hoher Last zusammengedrückt und bietet kaum zusätzlichen Federweg. Ähnlich verliert ein gesättigter Kern einen Teil seiner inkrementellen Induktivitätswirkung.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Eine Spule besitzt 120 mΩ DCR und führt 1,5 A RMS. Die Kupferverlustleistung beträgt `PCu = 1,5²·0,12 Ω = 0,27 W`. Kernverluste kommen hinzu; die Temperatur muss unter realer Kühlung geprüft werden.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 06](../praxis/modul-06.md).
+Miss DCR mit geeignetem Verfahren und vergleiche den erwarteten Kupferverlust mit der Temperaturerhöhung. Eine Sättigungsmessung erfordert einen strombegrenzten Pulsaufbau und wird nur mit freigegebener Schaltung durchgeführt.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Firmware kann Tastgrad oder Stromsollwert begrenzen. Bei Sättigung steigt di/dt dennoch schneller als im Modell. Hardware-Komparator oder Strombegrenzung reagiert zuverlässiger als eine langsam ablaufende Softwareprüfung.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Für Sättigung zählt Spitzenstrom, für Kupferwärme vor allem Effektivstrom.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- thermischen und Sättigungsstrom verwechseln
+- nur DCR-Verlust betrachten
+- Nenninduktivität bei jedem Strom annehmen
+- Streufeld und Layout ignorieren
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Reale Spulen besitzen DCR, Kernverlust, Kapazität und Sättigung. Stromform, Frequenz, Temperatur und Aufbau bestimmen, ob eine Datenblattauswahl im Betrieb trägt.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was unterscheidet Sättigungs- und thermischen Strom?
+2. Berechne PCu für 80 mΩ und 2 A RMS.
+3. Warum zählt für Sättigung der Spitzenstrom?
+4. Welche Schutzfunktion sollte nicht nur in Firmware liegen?
+
+Weitere Aufgaben: [Übungen zu Modul 06](../uebungen/modul-06.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK01–04`, `b1-LK07`, `b2-LK03–04`, `b4-LK01–09`
+- Nachweise: Verlustrechnung, Datenblattkurven und thermische Messung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

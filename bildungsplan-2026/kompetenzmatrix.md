@@ -14,12 +14,12 @@ Die Leistungskriterien sind hier knapp und sinngemäss wiedergegeben. Verbindlic
 
 | ID | Leistungskriterium, sinngemäss | Theorie / Lektionen | Praxisnachweis | Projekt |
 |---|---|---|---|---|
-| `b1-LK01` | Bauteile aus Anforderungen evaluieren | 04.1–04.7; 09–13; 16; 22.5 | Praxis 04, 09–13, 16, 22 | A, B, C |
+| `b1-LK01` | Bauteile aus Anforderungen evaluieren | 04.1–04.7; 05.5–05.7; 06.5–06.7; 08.7; 09–13; 16; 22.5 | Praxis 04–06, 08–13, 16, 22 | A, B, C |
 | `b1-LK02` | Elektronische Komponenten dimensionieren | 01.3–01.4; 02.5–02.7; 03.1–03.7; 04.1–04.7; 05–13; 16; 22.4 | Praxis 02–16, 22 | A, B, C |
 | `b1-LK03` | Eigenschaften elektronischer Komponenten messen | 03.3–03.7; 04.2–04.7; 05–13; 17–20 | Praxis 03–13, 17–20 | A, B, C |
-| `b1-LK04` | Relevante Bauteileigenschaften aus Datenblättern entnehmen | 04.1–04.7; 09–13; 16; 22.5 | Praxis 04, 09–13, 16, 22 | A, B, C |
+| `b1-LK04` | Relevante Bauteileigenschaften aus Datenblättern entnehmen | 04.1–04.7; 05.5–05.7; 06.5–06.7; 08.7; 09–13; 16; 22.5 | Praxis 04–06, 08–13, 16, 22 | A, B, C |
 | `b1-LK05` | Aus einem Konzept eine Schaltung entwickeln | 13.7; 22.1–22.7 | Praxis 13 und 22 | A, C |
-| `b1-LK06` | Klassische Grundschaltungen erarbeiten und anwenden | 03.1–03.7; 04.6–04.7; 08–14; 16 | Praxis 03–04, 08–14, 16 | A, B, C |
+| `b1-LK06` | Klassische Grundschaltungen erarbeiten und anwenden | 03.1–03.7; 04.6–04.7; 05.2–05.4; 06.2–06.6; 08–14; 16 | Praxis 03–06, 08–14, 16 | A, B, C |
 | `b1-LK07` | Material- und Energieeffizienz im Ecodesign erklären | 16.5; 22.1; 27.7 | Praxis 16, 22, 27 | C |
 | `b1-LK08` | Prinzipielle Funktion von Schaltungsteilen anhand des Schemas prüfen | 03.1–03.7; 04.7; 21.1–21.3; 23.2–23.4 | Praxis 03–04, 21, 23 | A, B, C |
 | `b1-LK09` | Elektronische Schaltungen simulieren | 08.4; 22.6 | Praxis 08 und 22 | A, B, C |
@@ -70,16 +70,16 @@ Die Leistungskriterien sind hier knapp und sinngemäss wiedergegeben. Verbindlic
 
 | ID | Leistungskriterium, sinngemäss | Theorie / Lektionen | Praxisnachweis | Projekt |
 |---|---|---|---|---|
-| `b4-LK01` | Messpunkte aus Schema und Funktion festlegen | 03.3–03.7; 04.6–04.7; 17.5; 18–21; 26.6 | Praxis 03–04, 17–21 und 26 | A, B, C |
-| `b4-LK02` | Passende Messgeräte und Hilfsmittel bestimmen | 03.7; 04.6; 17–20; 26.7 | Praxis 03–04, 17–20 und 26 | A, B, C |
-| `b4-LK03` | Schutzmassnahmen für Menschen, Gerät und Prüfling treffen | 00.4; 03.5; 04.3–04.4; 18.7; 19.8; 26.1–26.3 | Praxis 00, 03–04, 18–19, 26 | A, B, C |
+| `b4-LK01` | Messpunkte aus Schema und Funktion festlegen | 03.3–03.7; 04.6–04.7; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 17.5; 18–21; 26.6 | Praxis 03–08, 17–21 und 26 | A, B, C |
+| `b4-LK02` | Passende Messgeräte und Hilfsmittel bestimmen | 03.7; 04.6; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 17–20; 26.7 | Praxis 03–08, 17–20 und 26 | A, B, C |
+| `b4-LK03` | Schutzmassnahmen für Menschen, Gerät und Prüfling treffen | 00.4; 03.5; 04.3–04.4; 05.2; 06.3–06.5; 07.3; 08.1–08.2; 18.7; 19.8; 26.1–26.3 | Praxis 00, 03–08, 18–19, 26 | A, B, C |
 | `b4-LK04` | Inbetriebnahmeschritte in korrekter Reihenfolge ausführen | 26.1–26.7 | Praxis 26 | B, C |
-| `b4-LK05` | Vermutungen bei Sollwertabweichungen protokollieren | 03.7; 04.2; 21.1; 26.7 | Praxis 03–04, 21 und 26 | A, B, C |
-| `b4-LK06` | Schaltungen messen, ohne ihre Funktion unzulässig zu beeinflussen | 03.3–03.7; 04.6; 17.4; 18–20 | Praxis 03–04, 17–20 | A, B, C |
+| `b4-LK05` | Vermutungen bei Sollwertabweichungen protokollieren | 03.7; 04.2; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 21.1; 26.7 | Praxis 03–08, 21 und 26 | A, B, C |
+| `b4-LK06` | Schaltungen messen, ohne ihre Funktion unzulässig zu beeinflussen | 03.3–03.7; 04.6; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 17.4; 18–20 | Praxis 03–08, 17–20 | A, B, C |
 | `b4-LK07` | Signalverläufe klassischer Grundschaltungen grafisch darstellen | 04.6–04.7; 05–09; 17.6; 19.6–19.7 | Praxis 04–09 und 19 | A, B |
 | `b4-LK08` | Einfluss der Messgeräte abschätzen | 03.3; 03.6–03.7; 04.6; 17.4; 18.6–18.7; 19.3–19.5 | Praxis 03–04, 17–19 | A, B, C |
-| `b4-LK09` | Messparameter und Messwerte vollständig protokollieren | 00.7; 03.7; 04.6–04.7; 17.5–17.7; 27.5 | Praxis 03–04, 17 und 27 | A, B, C |
-| `b4-LK10` | Übersichtliche Messschemas erstellen | 03.7; 04.6–04.7; 17.5; 23.2; 26.7 | Praxis 03–04, 17, 23, 26 | A, B, C |
+| `b4-LK09` | Messparameter und Messwerte vollständig protokollieren | 00.7; 03.7; 04.6–04.7; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 17.5–17.7; 27.5 | Praxis 03–08, 17 und 27 | A, B, C |
+| `b4-LK10` | Übersichtliche Messschemas erstellen | 03.7; 04.6–04.7; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 17.5; 23.2; 26.7 | Praxis 03–08, 17, 23, 26 | A, B, C |
 | `b4-LK11` | Unterlagen beschaffen, Fehler eingrenzen und strukturiert beheben | 21.1–21.7; 26.5–26.7 | Praxis 21 und 26 | A, B, C |
 | `b4-LK12` | Messungen gegenüber dem Pflichtenheft validieren | 22.1; 27.1–27.5 | Praxis 22 und 27 | A, B, C |
 
@@ -102,8 +102,8 @@ Die Leistungskriterien sind hier knapp und sinngemäss wiedergegeben. Verbindlic
 | `a1` | Anforderungen und Bedürfnisse erfassen, klären und dokumentieren | 00.2–00.3; 22.1–22.2; Praxis 22 | A, B, C |
 | `a2` | Lösungsvarianten, Blockdiagramme und Konzepte entwickeln und begründet auswählen | 22.2–22.3; Praxis 22 | A, B, C |
 | `a3` | Machbarkeit durch Recherche, Versuch, Messung und Abschätzung belegen | 01.7; 03–04; 17; 22.5–22.7; Praxis 03–04, 17 und 22 | A, B, C |
-| `c1` | Hardware-Schnittstellen definieren, MCU und Peripherie passend konfigurieren, externe Hardware ansteuern | 03.3–03.7; 04.6–04.7; 11; 13–16; 26.5; jeweilige Hardware↔Firmware-Abschnitte | A, B, C |
-| `c2` | Hardware-/Firmware-Systemtests ableiten, durchführen und auswerten | 04.6–04.7; 15; 21.7; 26–27; Praxis 04, 15, 21, 26–27 | A, B, C |
+| `c1` | Hardware-Schnittstellen definieren, MCU und Peripherie passend konfigurieren, externe Hardware ansteuern | 03.3–03.7; 04.6–04.7; 05.3–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 11; 13–16; 26.5; jeweilige Hardware↔Firmware-Abschnitte | A, B, C |
+| `c2` | Hardware-/Firmware-Systemtests ableiten, durchführen und auswerten | 04.6–04.7; 05.3–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 15; 21.7; 26–27; Praxis 04–08, 15, 21, 26–27 | A, B, C |
 | `d1` | Projektorientierte Hardwareaufträge mit Ressourcen, Phasen und Risiken planen | 00.3; 22; Projekte A–C | A, B, C |
 | `d2` | Fortschritt, Qualität, Abweichungen und Änderungen kontrollieren | 00.7; 17.5; 22.7; 27.5–27.7 | A, B, C |
 | `d3` | Resultate auswerten, dokumentieren und Verbesserungen ableiten | 17.6–17.7; 21.7; 27.4–27.7 | A, B, C |

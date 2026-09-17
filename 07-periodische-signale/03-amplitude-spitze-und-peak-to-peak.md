@@ -2,59 +2,81 @@
 
 [← Zurück](02-sinus-rechteck-und-dreieck.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](04-effektivwert-und-leistung.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Amplitude, Spitze und Peak-to-Peak** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Offset Spitze und Spitze-Spitze unterscheiden
+- Messwerte aus dem Oszilloskop korrekt zuordnen
+- zulässige Eingangsgrenzen mit Extremwerten prüfen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+«Das Signal hat 2 V» ist unvollständig. Gemeint sein können Amplitude, Effektivwert oder Spitze-Spitze-Wert. Für Übersteuerung und Schutz zählen absolute Maximal- und Minimalwerte inklusive Gleichanteil.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Bezugsgrössen
+
+![Signal mit Offset positivem und negativem Spitzenwert sowie Spitze-Spitze](../bilder/07-periodische-signale/07-03-amplitude-offset.png)
+
+`Upp = Umax − Umin`. Bei einem symmetrischen Sinus ohne Offset gilt `Upp = 2·Û`; Û bezeichnet den Spitzenwert. Der Gleichanteil oder Offset verschiebt die gesamte Kurve.
+
+| Zeichen | Bedeutung | Einheit |
+|---|---|---|
+| `Upp` | Spitze-Spitze-Spannung | V |
+| `Û` | Spitzenwert bezogen auf den Mittelwert | V |
+| `Umax`, `Umin` | absolute Extremwerte gegen Bezug | V |
+
+### AC- und DC-Kopplung
+
+DC-Kopplung zeigt Gleich- und Wechselanteil. AC-Kopplung entfernt langsame beziehungsweise konstante Anteile über einen internen Hochpass und kann das Signalbild bei niedriger Frequenz verfälschen.
+
+### Grenzen
+
+Für einen MCU-Eingang werden Umax und Umin gegen absolute und normale Betriebsgrenzen geprüft. Upp allein kann einen gefährlichen Offset verbergen.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Die Wellenhöhe eines Sees kann von Tal zu Kamm gemessen werden, während der Wasserstand die gesamte Welle anhebt. Upp ist die Wellenhöhe, der Offset der mittlere Wasserstand.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein Signal hat 1,5 V Offset und 2,0 Vpp. Bei symmetrischer Form beträgt die Amplitude 1,0 V; somit liegen Umin bei 0,5 V und Umax bei 2,5 V.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 07](../praxis/modul-07.md).
+Vergleiche Cursor- und Automatikwerte für Umax, Umin, Upp und Mittelwert. Verschiebe den Generatoroffset und beobachte, welche Grössen gleich bleiben.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Ein ADC-Code bildet den absoluten Pinpegel relativ zur Referenz ab. Firmware muss Offset und Skalierung kennen. Ein AC-gekoppeltes Oszilloskopbild darf nicht ungeprüft mit ADC-Rohwerten verglichen werden.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Upp beschreibt die gesamte Auslenkung; Schutzgrenzen benötigen Umin und Umax gegen den realen Bezug.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Amplitude und Upp verwechseln
+- Offset ignorieren
+- AC-Kopplung unbemerkt verwenden
+- automatische Messung ohne sichtbare stabile Kurve glauben
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Signalhöhe besitzt mehrere Definitionen. Klare Bezeichnung und Bezug verhindern Übersteuerung und falsche Vergleiche zwischen Generator, Oszilloskop und ADC.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was ist Upp bei −1 V bis 4 V?
+2. Welche Extremwerte hat 3 Vpp bei 1,8 V Offset?
+3. Wann verfälscht AC-Kopplung?
+4. Welche Grösse ist für MCU-Schutz entscheidend?
+
+Weitere Aufgaben: [Übungen zu Modul 07](../uebungen/modul-07.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK02–03`, `b4-LK01–10`, `c1–c2`
+- Nachweise: vollständige Pegelbeschreibung und Grenzwertprüfung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

@@ -26,6 +26,8 @@ Vor jeder Formel werden Zweck und physikalische Vorstellung erklärt. Danach fol
 
 Neue oder selten verwendete Formelzeichen werden unmittelbar an der ersten Verwendungsstelle in einer kompakten Tabelle mit Bedeutung und Einheit erklärt. Bereits sicher eingeführte Standardgrössen wie `U`, `I` oder `R` müssen nicht in jeder Lektion erneut definiert werden; ungewohnte Indizes, Koeffizienten und Funktionen dagegen schon.
 
+Formelzeichen und Bauteil-Designatoren werden ohne typografische Unterstriche geschrieben: `R1`, `C2`, `Uout`, `fG` und `RNTC` statt Schreibweisen wie `R_1` oder `U_out`. Dateinamen und normale Satzzeichen sind von dieser Regel nicht betroffen.
+
 ## Schaltbilder und Visualisierungen
 
 Elektrische Grundprinzipien erhalten bevorzugt ein genormtes Schema statt einer rein dekorativen Grafik. IEC-Symbole, Referenzbezeichner, Werte, Netznamen, Verbindungspunkte, Strom-/Spannungspfeile und Bezugspotentiale müssen konsistent sein. Schaltbilder und Diagramme werden reproduzierbar erstellt, fachlich geprüft und als hochauflösende PNG-Dateien an der didaktisch richtigen Stelle eingebunden. Umfangreiche Lektionen verwenden bei didaktischem Mehrwert mehrere getrennte Bilder, beispielsweise ein Funktionsschema und eine Kennlinie, statt zu viele Aussagen in eine einzige Grafik zu packen.

@@ -34,3 +34,14 @@ Abbildungen liegen passend zu den Modulen in `00-einstieg` bis `27-verifikation-
 | `04-widerstaende-sensoren` | 14 | Technologien, E-Reihen, Worst Case, Temperatur, Derating, Pulse, Shunt, SMD-Codes, Potentiometer, NTC/PTC, ADC, LDR und Brücke |
 
 Alle 23 Abbildungen sind als hochauflösende PNG-Dateien direkt in den fachlich zugehörigen Lektionen eingebunden. Schaltbilder verwenden rechteckige IEC-Widerstandssymbole; Diagramme kennzeichnen Achsen, Betriebsrichtung und qualitative Grenzen.
+
+## Abbildungen der Module 05–08
+
+| Modul | Anzahl | Schwerpunkte |
+|---|---:|---|
+| `05-kondensatoren` | 7 | elektrisches Feld, Lade- und Entladevorgang, Zeitkonstante, Bauarten, Selbstresonanz und lokale Entkopplungsstrompfade |
+| `06-spulen-elektromagnetismus` | 7 | Magnetkreis, Induktionsgesetz, RL-Übergänge, Energiepfad, Relaistreiber mit Freilauf, Transformator und Sättigung |
+| `07-periodische-signale` | 7 | Signalformen, Periode, Amplitude, Effektivwert, Phasenverschiebung, Blindwiderstände und Impedanzdreieck |
+| `08-filter-resonanz` | 7 | RC-Tief-/Hochpass, Zeit- und Frequenzsicht, Bode-Diagramm, RL-/RLC-Netzwerke, Resonanz und Güte |
+
+Die 28 Abbildungen dieses Blocks sind hochauflösende PNG-Dateien. Die Schaltbilder verwenden genormte Bauteilsymbole und eindeutige Referenzbezeichner ohne Unterstriche; Diagramme zeigen qualitative Zusammenhänge und werden im Text durch Berechnungen und Messaufträge ergänzt.

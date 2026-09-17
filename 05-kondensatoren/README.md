@@ -4,7 +4,11 @@
 
 ## Worum geht es?
 
-Dieses Modul führt **Kondensatoren und RC-Verhalten** von einer verständlichen Vorstellung zu technisch belastbaren Berechnungen, Schaltungen und Messungen. Die Theorie-Lektionen bereiten die Praxis gezielt vor; Übungen und Lösungen sind getrennt.
+Kondensatoren speichern Feldenergie, reagieren auf Spannungsänderungen und prägen Zeit- sowie Frequenzverhalten. Das Modul verbindet physikalische Vorstellung, RC-Rechnung, Bauartenauswahl, reale ESR/ESL-Effekte und wirksame Versorgungentkopplung.
+
+## Lernpfad
+
+`Aufbau und C → Energie → RC-Zeit → Wechselspannung → Auswahl → reales Modell → Entkopplung`
 
 ## Lektionen
 
@@ -15,13 +19,8 @@ Dieses Modul führt **Kondensatoren und RC-Verhalten** von einer verständlichen
 5. [05.5 – Kondensatorbauarten und Auswahl](05-kondensatorbauarten-und-auswahl.md)
 6. [05.6 – ESR, ESL und reale Kondensatoren](06-esr-esl-und-reale-kondensatoren.md)
 7. [05.7 – Entkopplung und Abblockung](07-entkopplung-und-abblockung.md)
-8. [Übungen](../uebungen/modul-05.md)
-9. [Praxis – RC-Ladekurve mit dem Oszilloskop messen](../praxis/modul-05.md)
+8. [Übungen](../uebungen/modul-05.md) · [Praxis](../praxis/modul-05.md)
 
-## Bildungsplan 2026
+## Bezug Bildungsplan 2026
 
-Schwerpunkt: `a3`, `b1`, `b4`, `b5`. Details und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
-
-## Projektbezug
-
-Die [Projektübersicht](../projekte/README.md) zeigt, wie das Modul in Projekt A, B oder C einfliesst.
+Schwerpunkt: `a3`, `b1-LK01–06`, `b2-LK03–04`, `b4-LK01–10`, `b5` und Hardwareanteile von `c1–c2`. Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

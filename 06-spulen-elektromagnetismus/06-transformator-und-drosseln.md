@@ -2,59 +2,83 @@
 
 [← Zurück](05-relais-und-freilaufdiode.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](07-reale-spulen-saettigung-und-verluste.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Transformator und Drosseln** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Transformator und Drossel funktional unterscheiden
+- Übersetzungsverhältnisse berechnen
+- galvanische Trennung und gemeinsame Masse korrekt beurteilen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Transformatoren übertragen Wechselenergie magnetisch zwischen Wicklungen; Drosseln begrenzen Stromänderungen oder filtern Störungen. Ähnliche Bauteile können sehr verschiedene Aufgaben und Sicherheitsanforderungen besitzen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Idealer Transformator
+
+Für sinusförmigen Betrieb im vorgesehenen Bereich gilt `U1/U2 = N1/N2` und näherungsweise `I1/I2 = N2/N1`. N ist die Windungszahl. Leistung bleibt ideal erhalten; real treten Kupfer-, Kern- und Streuverluste auf.
+
+![Transformator mit Übersetzung und Drossel im Strompfad](../bilder/06-spulen-elektromagnetismus/06-06-transformator-drossel.png)
+
+Gleichspannung wird nicht dauerhaft transformiert. Ein Gleichanteil kann den Kern in Sättigung treiben und hohen Strom verursachen.
+
+### Galvanische Trennung
+
+Getrennte Wicklungen besitzen keinen beabsichtigten leitenden Pfad. Sobald Oszilloskop, USB oder Schutzleiter verbunden werden, kann diese Trennung aufgehoben werden. Für Netztrennung sind geprüfte Sicherheitsbauteile und Normen erforderlich; Laborübungen bleiben bei SELV.
+
+### Drosseln
+
+Eine Seriendrossel behindert schnelle Stromänderungen. Gleichtaktdrosseln wirken auf gleichgerichtete Störströme beider Leiter anders als auf den Nutzstrom. Auswahlgrössen sind L, Nennstrom, Sättigungsstrom, Gleichstromwiderstand und Verlustkurven.
+
+### Übersetzung, Belastung und reale Grenzen
+
+Für den idealen Transformator gilt `U1/U2 = N1/N2`. Die Spannungsübersetzung entspricht dem Windungsverhältnis. Weil die Leistung ideal erhalten bleibt, verhält sich der Strom umgekehrt: `I1/I2 = N2/N1`. `N1` und `N2` bezeichnen die Windungszahlen der Primär- und Sekundärwicklung. Diese Beziehungen gelten nur näherungsweise, denn Wicklungswiderstände, Streufluss und Kernverluste verursachen Spannungsabfall und Erwärmung.
+
+Ein Transformator benötigt einen zeitlich veränderlichen Fluss. Reine Gleichspannung erzeugt nach dem Einschaltvorgang keine dauerhafte Sekundärspannung, kann den Kern aber in Sättigung treiben und einen gefährlich hohen Primärstrom verursachen. Bei getakteten Wandlern begrenzen deshalb Frequenz, Tastgrad, Eingangsspannung, Windungszahl und Kernquerschnitt gemeinsam die Flussdichte. Eine Drossel wird dagegen nach Induktivität, Gleichstromwiderstand, Sättigungsstrom, Verlusten und zulässiger Temperaturerhöhung ausgewählt. Gleiche Induktivitätswerte bedeuten daher nicht automatisch austauschbare Bauteile.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Zwei Zahnräder übertragen Bewegung mit anderem Verhältnis, ohne dass ihre Zähne gleich schnell laufen. Ein Transformator übersetzt Spannung und Strom über das gemeinsame Feld; die Analogie endet bei Gleichspannung und magnetischen Verlusten.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein idealer Transformator mit `N1:N2 = 5:1` erhält 10 V RMS. Sekundär entstehen 2 V RMS. Bei 0,5 A sekundär wären ideal 0,1 A primär nötig; reale Verluste erhöhen den Primärstrom.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 06](../praxis/modul-06.md).
+Untersuche nur einen Kleinspannungs- oder Signaltransformator. Bestimme Wicklungen mit dem Ohmmeter spannungsfrei und miss Übersetzung mit kleiner Sinusspannung. Keine unbekannten Wicklungen an Netzspannung anschliessen.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Ein per PWM angesteuerter Transformator benötigt symmetrische Flussbilanz und geeignete Treiber. Ein kleiner Tastgradfehler oder Gleichanteil kann Sättigung verursachen; Hardwarestrommessung und Abschaltung bleiben erforderlich.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Transformatoren benötigen wechselnden Fluss; Gleichanteile können den Kern sättigen.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Gleichspannung an einen Transformator legen
+- galvanische Trennung nach Messgeräteanschluss voraussetzen
+- Stromübersetzung gleich der Spannungsübersetzung setzen
+- Sättigungsstrom einer Drossel ignorieren
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Transformatoren übersetzen Spannung und Strom über gekoppelten Fluss; Drosseln formen Stromänderungen. Reale Auswahl berücksichtigt Verluste, Sättigung, Isolation und Betriebsfrequenz.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Warum transformiert konstante Gleichspannung nicht?
+2. Berechne U2 bei 12 V und 3:1.
+3. Wann geht galvanische Trennung durch Messgeräte verloren?
+4. Welche Daten bestimmen eine Leistungsdrossel?
+
+Weitere Aufgaben: [Übungen zu Modul 06](../uebungen/modul-06.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK01–04`, `b1-LK06`, `b4-LK03`, `b5-LK01`
+- Nachweise: sichere Wicklungsidentifikation und Übersetzungsmessung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

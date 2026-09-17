@@ -1,60 +1,84 @@
-# 06.2 – Induktivität und Stromänderung
+# 06.2 – Induktivität und Stromänderung
 
 [← Zurück](01-magnetismus-und-elektromagnetismus.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](03-ein-und-ausschaltvorgaenge.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Induktivität und Stromänderung** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Induktivität als Widerstand gegen schnelle Stromänderung erklären
+- Induktionsspannung berechnen
+- Windungszahl und Kern als Einflussgrössen benennen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Eine Spule reagiert nicht auf Strom an sich, sondern auf dessen Änderung. Beim Einschalten verzögert sie den Stromanstieg; beim Ausschalten erzeugt sie die nötige Spannung, um den Strom weiterzuführen. Dieses Verhalten verursacht sowohl nützliche Energieübertragung als auch gefährliche Spannungsspitzen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Induktionsgesetz
+
+Für eine idealisierte Spule gilt `uL = L·diL/dt`. Eine schnelle Stromänderung erzeugt eine grosse Spannung. Die Polarität ist so, dass die verursachende Stromänderung entgegengewirkt wird; dies beschreibt die Lenzsche Regel.
+
+![Spule mit Stromänderung, Fluss und induzierter Spannung](../bilder/06-spulen-elektromagnetismus/06-02-induktionsgesetz.png)
+
+| Zeichen | Bedeutung | Einheit |
+|---|---|---|
+| `L` | Induktivität | H (Henry) |
+| `uL` | momentane Spulenspannung | V |
+| `diL/dt` | Änderungsgeschwindigkeit des Spulenstroms | A/s |
+
+Die Gleichung verwendet eine festgelegte Strom- und Spannungspolung. Ein negatives Ergebnis bedeutet eine entgegengesetzte reale Richtung, nicht eine «negative Induktivität».
+
+### Einfluss von Aufbau und Kern
+
+Mehr Windungen erhöhen L stark; im einfachen Bereich wächst L ungefähr mit dem Quadrat der Windungszahl. Kernmaterial und magnetischer Kreis erhöhen den Fluss, während ein Luftspalt L reduziert und Sättigung kontrollierbarer macht.
+
+### Strom ist stetig
+
+Ein idealer Spulenstrom kann nicht sprunghaft ändern, weil dazu unendliche Spannung nötig wäre. Reale parasitäre Kapazitäten und Überschläge begrenzen die Spannung, wenn kein sicherer Strompfad vorhanden ist.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Eine schwere Wasserströmung in einem langen Rohr widersetzt sich schneller Geschwindigkeitsänderung. Wird das Ventil abrupt geschlossen, entsteht ein Druckstoss. Die Spule zeigt elektrisch ein ähnliches Trägheitsverhalten, speichert aber Energie im Magnetfeld.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Der Strom in `L = 100 mH` soll in 2 ms von 0 auf 0,20 A steigen. Die ideale mittlere Spulenspannung beträgt `uL = 0,1 H·0,2 A/0,002 s = 10 V`. Wicklungswiderstand und Versorgungsspannung müssen zusätzlich berücksichtigt werden.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 06](../praxis/modul-06.md).
+Miss den Strom indirekt über einen kleinen Serienwiderstand und die Spulenspannung mit dem Oszilloskop. Massebezug und zulässige Eingangsspannung werden vor dem Anschluss geprüft.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+PWM bestimmt Ein- und Ausschaltzeiten; L und Versorgung bestimmen die reale Stromsteigung. Ein Timerwert ist daher nicht direkt ein Stromwert. Strommessung oder ein validiertes Modell verbindet Firmwarevorgabe und Magnetwirkung.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Eine Spule widersetzt sich der Änderung ihres Stroms, nicht einem konstanten Strom an sich.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Spule im Einschaltmoment als Kurzschluss betrachten
+- Vorzeichen ohne Pfeile deuten
+- Wicklungswiderstand vergessen
+- Stromsprung im idealen Modell annehmen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Induktivität verknüpft Stromänderung und Spannung. Aufbau, Kern und Windungszahl bestimmen L; reale Widerstände und parasitäre Kapazitäten ergänzen das Modell.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was bewirkt eine doppelt so schnelle Stromänderung?
+2. Welche Spannung entsteht bei 10 mH und 1 A/ms?
+3. Warum ist Spulenstrom stetig?
+4. Wie beeinflusst PWM die Stromwelligkeit?
+
+Weitere Aufgaben: [Übungen zu Modul 06](../uebungen/modul-06.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b1-LK06`, `b4-LK01–09`
+- Nachweise: Induktionsrechnung und Stromanstiegsmessung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

@@ -10,7 +10,7 @@ Sensor → Messbrücke/Spannungsteiler → OPV → Filter → 0–3.3-V-Signal �
 
 ## Module
 
-03–04, 08, 12–13, 15, 17–19, 22–23, 27
+03–05, 08, 12–13, 15, 17–19, 22–23, 27
 
 ## Meilenstein nach Modul 04
 
@@ -19,6 +19,14 @@ Sensor → Messbrücke/Spannungsteiler → OPV → Filter → 0–3.3-V-Signal �
 - Spannungsteiler inklusive Last, Toleranz, Eigenerwärmung und ADC-Bereich dimensionieren
 - Rohdaten, Diagramm und erste Diagnosegrenzen für Unterbruch/Kurzschluss festhalten
 - Hardware-/Firmware-Schnittstelle mit Teilerorientierung, Referenz und Umrechnungsweg beschreiben
+
+## Meilenstein nach Modul 08
+
+- Entkopplung des Sensorknotens und der späteren Verstärkerstufe begründen
+- zulässige Filterbandbreite aus Messdynamik und Störfrequenzen ableiten
+- RC-Tiefpass mit Toleranzen dimensionieren und seinen Bode-Verlauf vorhersagen
+- Frequenzgang messen und Grenzfrequenz sowie Phasenlage mit der Rechnung vergleichen
+- Einfluss von Quellimpedanz, ADC-Abtastung und Firmware-Abtastrate dokumentieren
 
 ## Verbindliche Nachweise
 

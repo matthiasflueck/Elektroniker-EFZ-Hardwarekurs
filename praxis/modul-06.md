@@ -2,78 +2,55 @@
 
 [← Modul 06](../06-spulen-elektromagnetismus/README.md) · [Praxisübersicht](README.md) · [Kursübersicht](../README.md)
 
-> **Ausbaustatus:** Praxisgerüst. Vor Durchführung werden Schaltung, Material, Grenzen, Sollwerte und Auswertung vollständig freigegeben.
-
 ## Lernziel
 
-Relaisspule schalten und Abschaltspannung messen und das Ergebnis fachlich begründet beurteilen.
+Du baust einen sicheren Low-Side-Relaistreiber, misst Spulenstrom und vergleichst Abschaltverläufe mit Diode und freigegebener höherer Klemme.
 
-## Voraussetzungen
+## Benötigtes Material und Messgeräte
 
-Theorie und Übungen des Moduls 06.
-
-## Benötigtes Material
-
-Wird mit der fachlichen Ausarbeitung spezifiziert.
-
-## Benötigte Messgeräte
-
-Werden passend zu Messgrösse, Bereich, Belastung und Sicherheit ausgewählt.
+Kleinspannungsrelais 5 oder 12 V mit Datenblatt, geeigneter NPN-Transistor, Basiswiderstand, Basis-Emitter-Pulldown, Freilaufdiode, 1-Ω-Shunt geeigneter Leistung, optionale TVS-Klemme, strombegrenztes Netzgerät und Oszilloskop. Ein freigegebener Logik-MOSFET mit Gatewiderstand und Gate-Pulldown ist als spätere Vergleichsvariante möglich.
 
 ## Schaltung / Messaufbau
 
-Die Endfassung enthält ein genormtes Schema mit eindeutigen Mess- und Bezugspunkten.
+Spule von +U zum Kollektor, NPN-Transistor als Low-Side-Schalter nach GND, Diode antiparallel zur Spule mit Kathode an +U. Der Basiswiderstand begrenzt den GPIO-Strom; der Pulldown sorgt bei hochohmigem Steuersignal für einen definierten Aus-Zustand. Der Shunt liegt im sicheren Low-Side-Messpfad.
+
+![Low-Side-Relaistreiber mit NPN-Transistor und Freilaufdiode](../bilder/06-spulen-elektromagnetismus/06-05-relais-freilauf.png)
 
 ## Sicherheitshinweise
 
-Energiequelle, Strombegrenzung, gespeicherte Energie, Massebezug und Abbruchkriterien vor Aufbau festlegen.
+Nur Kleinspannung und unbelastete beziehungsweise sichere Kontakte verwenden. Die Variante «ohne Diode» ist nur mit definierter alternativer Klemme zulässig. Tastkopfgrenze und Massebezug vorab prüfen.
 
-## Vorbereitung
+## Vorbereitung und Berechnung
 
-Erst vorhersagen, dann berechnen und erst danach aufbauen.
+Berechne Spulenstrom, Wicklungsleistung und EL mit Datenblatt-L. Fehlt L, wird keine Energiezahl erfunden. Wähle einen erzwungenen Stromverstärkungsfaktor für sicheren Schaltbetrieb, berechne daraus Basisstrom und Basiswiderstand und prüfe die GPIO-Grenze. Leite erwartete Shuntspannung und zulässige Kollektor-Emitter-Spannung ab.
 
-## Berechnung
+## Aufbau und Durchführung
 
-Sollwerte, Toleranzen und Grenzwerte mit Einheiten bestimmen.
-
-## Aufbau
-
-Spannungsfrei aufbauen, Sicht- und Durchgangsprüfung durchführen.
-
-## Durchführung
-
-Mit Strombegrenzung schrittweise in Betrieb nehmen.
-
-## Messung
-
-Messpunkte, Geräte und Einstellungen dokumentieren.
+Zuerst spannungsfrei Diodenpolung, Basisbeschaltung und Kurzschlussfreiheit prüfen. Stromgrenze knapp oberhalb des Sollstroms einstellen. Kanal 1 misst den Kollektor, Kanal 2 den Shunt. Zuerst mit Diode schalten, danach optional mit freigegebener Klemme. Spitzenwert, Stromabfallzeit und Kontaktabfall vergleichen.
 
 ## Messwerte
 
-| Grösse | Soll | Ist | Unsicherheit/Bedingung |
-|---|---:|---:|---|
-| | | | |
+| Schutz | I Spule | UCE max | Abfallzeit Strom | Kontaktabfall | Bedingung |
+|---|---:|---:|---:|---:|---|
+| Diode | | | | | |
+| höhere Klemme | | | | | |
 
-## Auswertung
+## Auswertung und Fragen
 
-Soll und Ist vergleichen, Abweichungen erklären und Änderungen nachführen.
-
-## Fragen
-
-Welche Annahme beeinflusst das Resultat am stärksten?
+Erkläre Energiepfad und Zielkonflikt aus Spannung und Abfallzeit. Welche Grenzwerte schützen Transistor und Diode? Warum ist ungeschütztes Abschalten kein regulärer Vergleich?
 
 ## Was solltest du beobachtet haben?
 
-Wird in der Endfassung mit zulässigem Wertebereich beschrieben.
+Die Diode begrenzt die Kollektorspitze stark und führt zu langsamem Stromabfall. Eine höhere kontrollierte Klemme beschleunigt den Abbau bei höherer Transistorbelastung.
 
 ## Bezug zur Theorie
 
-Modul 06 – Spulen und Elektromagnetismus.
+Lektionen 06.2–06.5 und 06.7.
 
 ## 🔗 Hardware ↔ Firmware
 
-Falls ein Mikrocontroller beteiligt ist: Konfiguration, Pinzustand, Peripherie und reale Messung gemeinsam beurteilen.
+Timer oder GPIO erzeugt das Steuersignal. Reset-Pegel, maximale Schaltfrequenz und Kontaktentprellung werden mit realen Strömen und Zeiten abgestimmt.
 
-## Bildungsplan 2026
+## Bezug Bildungsplan 2026
 
-`a3`, `b1`, `b4`, `b5`
+`a3`, `b1-LK01–06`, `b4-LK01–10`, `b5`, `c1–c2`; Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

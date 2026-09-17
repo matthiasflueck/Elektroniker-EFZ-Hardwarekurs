@@ -2,59 +2,85 @@
 
 [← Zurück](03-rc-zeitkonstante.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](05-kondensatorbauarten-und-auswahl.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Kondensatoren an Gleich- und Wechselspannung** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- das Verhalten bei Gleich- und Wechselspannung unterscheiden
+- kapazitiven Blindwiderstand berechnen
+- Phasenlage von Strom und Spannung erklären
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Die Aussage «ein Kondensator sperrt Gleichstrom und lässt Wechselstrom durch» ist nur eine Kurzfassung. Beim Einschalten fliesst auch an Gleichspannung Strom, und bei Wechselspannung hängt die Wirkung stark von Frequenz und Kapazität ab.
+
+Wer den Strom als Reaktion auf Spannungsänderung versteht, kann Kopplung, Entkopplung und Filterwirkung korrekt beurteilen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Gleichspannung
+
+Nach dem Einschwingvorgang ist uC konstant; damit ist `duC/dt = 0` und im idealen Modell fliesst kein Strom. Beim Ein- und Ausschalten gilt diese Vereinfachung nicht.
+
+### Wechselspannung und Blindwiderstand
+
+Bei einer Sinusspannung ändert sich uC fortlaufend. Der kapazitive Blindwiderstand ist `XC = 1/(2πfC)`.
+
+| Zeichen | Bedeutung | Einheit |
+|---|---|---|
+| `XC` | Betrag des kapazitiven Blindwiderstands | Ω |
+| `f` | Frequenz | Hz |
+| `π` | Kreiszahl | – |
+
+![Kondensatorverhalten bei Gleich- und Wechselspannung](../bilder/05-kondensatoren/05-04-gleich-wechselspannung.png)
+
+Mit steigender Frequenz oder Kapazität sinkt XC. Beim idealen Kondensator eilt der Strom der Spannung um 90° voraus. Es wird periodisch Energie gespeichert und zur Quelle zurückgegeben; ein idealer Blindwiderstand setzt im Mittel keine Wirkleistung um.
+
+### Gleichanteil und Wechselanteil
+
+Ein Koppelkondensator kann einen Gleichanteil blockieren und einen ausreichend schnellen Wechselanteil übertragen. Zusammen mit den umgebenden Widerständen entsteht immer ein frequenzabhängiges Netzwerk.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Eine elastische Membran in einem Rohr blockiert einen dauerhaften Flüssigkeitsstrom, kann aber schnelle Hin-und-her-Bewegungen übertragen. Je langsamer die Bewegung, desto weniger wird übertragen. Die Membran transportiert dabei keine Flüssigkeit dauerhaft durch sich hindurch – ähnlich bleibt das Dielektrikum isolierend.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Für `C = 100 nF` und `f = 1 kHz` gilt `XC ≈ 1/(2π·1000·100 nF) ≈ 1,59 kΩ`. Bei 10 kHz sinkt XC auf ungefähr 159 Ω. Das Ergebnis zeigt die starke Frequenzabhängigkeit.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 05](../praxis/modul-05.md).
+Speise einen sicheren Kondensator über einen Serienwiderstand mit Sinus unterschiedlicher Frequenz. Miss Spannungen über R und C. Die Spannung über R ist proportional zum Strom und macht die Phasenbeziehung sichtbar.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+PWM enthält einen Gleichanteil und viele Frequenzanteile. Ein Kondensator reagiert auf die Flanken und Oberwellen, nicht nur auf die PWM-Grundfrequenz. Firmware beeinflusst Frequenz und Tastgrad; Hardware bestimmt Stromspitzen und Filterung.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Ein Kondensator reagiert auf Spannungsänderung; sein Blindwiderstand sinkt mit Frequenz und Kapazität.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- den Einschaltvorgang bei Gleichspannung ignorieren
+- XC ohne Frequenzangabe nennen
+- Phasenverschiebung mit Zeitverzögerung verwechseln
+- Kondensator als verlustfrei annehmen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Im Gleichstrom-Endzustand sperrt der ideale Kondensator. Bei Wechselspannung bestimmt XC den Strom; ideal eilt dieser um 90° voraus. Reale Schaltungen kombinieren Kondensator und Widerstände zu frequenzabhängigen Netzwerken.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wie ändert sich XC bei zehnfacher Frequenz?
+2. Warum fliesst beim Einschalten Gleichstrom?
+3. Welche Phase hat der ideale Kondensatorstrom?
+4. Welche Anteile einer PWM belasten den Kondensator besonders?
+
+Weitere Aufgaben: [Übungen zu Modul 05](../uebungen/modul-05.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b1-LK06`, `b4-LK07–09`
+- Nachweise: Blindwiderstandsrechnung und Phasenmessung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

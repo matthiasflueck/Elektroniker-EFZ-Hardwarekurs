@@ -2,59 +2,83 @@
 
 [← Zurück](README.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](02-rc-hochpass.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **RC-Tiefpass** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- RC-Tiefpass im Zeit- und Frequenzbereich erklären
+- Übertragungsbetrag berechnen
+- Belastung und Quellenwiderstand berücksichtigen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Ein Tiefpass glättet schnelle Änderungen und lässt langsame Signalanteile eher passieren. Er begrenzt ADC-Rauschen, formt PWM in eine Mittelspannung und reduziert hochfrequente Störungen. Dabei entsteht immer ein Kompromiss zwischen Glättung und Reaktionsgeschwindigkeit.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Schaltung und Wirkung
+
+R liegt in Serie, C nach GND; Uout wird über C gemessen. Bei niedriger Frequenz ist XC gross und Uout folgt Uin. Bei hoher Frequenz leitet C stärker nach GND und Uout wird kleiner.
+
+![RC-Tiefpass mit Strompfaden bei tiefer und hoher Frequenz](../bilder/08-filter-resonanz/08-01-rc-tiefpass.png)
+
+Der ideale Übertragungsbetrag lautet `|H(f)| = 1/sqrt[1+(f/fG)²]`. H ist das Verhältnis Uout/Uin. An fG beträgt der Betrag `1/√2 ≈ 0,707`, entsprechend −3,01 dB; die Phase beträgt −45°.
+
+### Zeitbereich
+
+Ein Eingangssprung erzeugt die bekannte RC-Ladekurve. Hohe Frequenzdämpfung und verlangsamte Sprungantwort sind zwei Beschreibungen desselben Systems.
+
+### Belastung
+
+Eine Last parallel zu C verändert den wirksamen Widerstand und die Gleichspannungsverstärkung. Auch der Quellenwiderstand addiert sich zu R. Der ideale Aufbau gilt nur bei niederohmiger Quelle und hochohmiger Last.
+
+### Belastung und Störquelle
+
+Vor der Dimensionierung werden Ausgangswiderstand der Quelle, Eingangswiderstand und Eingangskapazität der Folgestufe ermittelt. Der reale Quellwiderstand liegt zu R1 in Serie; eine Last am Ausgang verändert den wirksamen Widerstand. Dadurch verschieben sich Gleichverstärkung und Grenzfrequenz. Der Messkopf ist ebenfalls eine Last und gehört bei hohen Widerständen oder Frequenzen zum Modell.
+
+Ein Tiefpass entfernt Störungen nicht spurlos, sondern schwächt Frequenzanteile abgestuft. Bei einer Dekade über fG beträgt die ideale Dämpfung erster Ordnung ungefähr 20 dB, also Faktor 10 in der Spannung. Gleichzeitig verzögert der Filter schnelle Nutzsignaländerungen. Die Wahl von fG ist damit ein Kompromiss zwischen Rauschunterdrückung und Reaktionszeit. Für ADC-Eingänge kommt hinzu, dass der Sample-and-Hold-Kondensator kurzzeitig Ladung verlangt. Ein zu grosser R1 kann trotz passender Filterkurve zu Einschwingfehlern während der Abtastzeit führen.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein schweres Pendel folgt einer langsamen Handbewegung, kann schnellen Zitterbewegungen aber nicht vollständig folgen. Der Tiefpass überträgt langsame Änderungen und mittelt schnelle Anteile.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Für R = 10 kΩ und C = 100 nF ist `fG = 1/(2πRC) ≈ 159 Hz`. Bei 1,59 kHz, also zehnfacher Grenzfrequenz, ist |H| ungefähr 0,0995 oder −20 dB.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 08](../praxis/modul-08.md).
+Speise den Tiefpass mit konstantem Sinus-Uin und variiere f logarithmisch. Miss Betrag und Phase. Generatorausgang und Oszilloskopeingang bleiben Teil des realen Netzwerks.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Vor einem ADC reduziert der Tiefpass Aliasing nicht beliebig; fG und Abtastrate müssen zusammenpassen. Zu grosser R kann die ADC-Abtastkapazität nicht schnell genug laden. Hardwarefilter und digitale Filter erfüllen unterschiedliche Aufgaben.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Ein Tiefpass glättet schnelle Änderungen und verzögert dadurch zwangsläufig die Reaktion.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Uout am Widerstand statt am Kondensator abgreifen
+- Last ignorieren
+- −3 dB als halbe Spannung deuten
+- RC-Filter als vollständigen Aliasschutz annehmen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Der RC-Tiefpass verbindet exponentielle Sprungantwort und frequenzabhängige Dämpfung. fG, Quelle und Last bestimmen das reale Verhalten.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wo wird Uout abgegriffen?
+2. Berechne fG für 4,7 kΩ und 1 µF.
+3. Was bedeutet −3 dB als Spannungsverhältnis?
+4. Warum kann hoher R einen ADC beeinflussen?
+
+Weitere Aufgaben: [Übungen zu Modul 08](../uebungen/modul-08.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b1-LK06`, `b4-LK01–10`, `c1–c2`
+- Nachweise: Tiefpassdimensionierung und Frequenzmessung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

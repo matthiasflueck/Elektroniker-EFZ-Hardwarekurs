@@ -4,7 +4,11 @@
 
 ## Worum geht es?
 
-Dieses Modul führt **Spulen und Elektromagnetismus** von einer verständlichen Vorstellung zu technisch belastbaren Berechnungen, Schaltungen und Messungen. Die Theorie-Lektionen bereiten die Praxis gezielt vor; Übungen und Lösungen sind getrennt.
+Dieses Modul führt vom Magnetfeld über Induktivität und Feldenergie bis zur sicheren Ansteuerung von Relais, Transformatoren und realen Drosseln. Stromanstieg, Abschaltspannung, Freilauf, Sättigung und Verluste werden berechnet und gemessen.
+
+## Lernpfad
+
+`Magnetfeld → Induktivität → RL-Schalten → Energie → Relais → Transformator → reale Spule`
 
 ## Lektionen
 
@@ -15,13 +19,8 @@ Dieses Modul führt **Spulen und Elektromagnetismus** von einer verständlichen 
 5. [06.5 – Relais und Freilaufdiode](05-relais-und-freilaufdiode.md)
 6. [06.6 – Transformator und Drosseln](06-transformator-und-drosseln.md)
 7. [06.7 – Reale Spulen, Sättigung und Verluste](07-reale-spulen-saettigung-und-verluste.md)
-8. [Übungen](../uebungen/modul-06.md)
-9. [Praxis – Relaisspule schalten und Abschaltspannung messen](../praxis/modul-06.md)
+8. [Übungen](../uebungen/modul-06.md) · [Praxis](../praxis/modul-06.md)
 
-## Bildungsplan 2026
+## Bezug Bildungsplan 2026
 
-Schwerpunkt: `a3`, `b1`, `b4`, `b5`. Details und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
-
-## Projektbezug
-
-Die [Projektübersicht](../projekte/README.md) zeigt, wie das Modul in Projekt A, B oder C einfliesst.
+Schwerpunkt: `a3`, `b1-LK01–06`, `b2-LK03–04`, `b4-LK01–10`, `b5` und `c1–c2`. Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

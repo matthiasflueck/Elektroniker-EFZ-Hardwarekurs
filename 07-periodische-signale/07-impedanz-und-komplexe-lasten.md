@@ -1,60 +1,84 @@
 # 07.7 – Impedanz und komplexe Lasten
 
-[← Zurück](06-blindwiderstand-von-c-und-l.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../uebungen/modul-07.md)
-
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
+[← Zurück](06-blindwiderstand-von-c-und-l.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../08-filter-resonanz/README.md)
 
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Impedanz und komplexe Lasten** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Impedanz als Betrag und Phase verstehen
+- R und Blindanteil vektoriell kombinieren
+- Wirkleistung Scheinleistung und Leistungsfaktor unterscheiden
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+In einer Wechselstromschaltung reicht eine einzelne Ohmzahl oft nicht. Impedanz beschreibt gleichzeitig, wie stark eine Last den Strom begrenzt und wie weit Strom und Spannung phasenverschoben sind.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Komplexe Darstellung
+
+Impedanz wird als `Z = R + jX` geschrieben. j kennzeichnet eine Drehung um 90°; X ist positiv induktiv und negativ kapazitiv. Betrag und Winkel sind `|Z| = sqrt(R²+X²)` und `φ = atan(X/R)`.
+
+![Impedanzdreieck mit Wirkwiderstand Blindanteil und Betrag](../bilder/07-periodische-signale/07-07-impedanzdreieck.png)
+
+| Zeichen | Bedeutung | Einheit |
+|---|---|---|
+| `Z` | komplexe Impedanz | Ω |
+| `X` | Blindanteil | Ω |
+| `j` | imaginäre Einheit in Elektrotechnik | – |
+
+Reihenelemente werden als Impedanzen addiert. Parallele Netze lassen sich oft übersichtlicher mit Admittanz behandeln.
+
+### Leistung
+
+Wirkleistung P wird dauerhaft umgesetzt, Blindleistung Q pendelt zwischen Quelle und Speicher, Scheinleistung S beschreibt das Produkt der Effektivwerte. Der Leistungsfaktor ist bei Sinus `cos φ = P/S`.
+
+### Reale Lasten
+
+Motoren, Netzteile und Treiber können nichtlinear sein. Dann entstehen Oberwellen, und der Leistungsfaktor wird nicht allein durch einen Phasenwinkel beschrieben.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Seilzug kann eine Kraft teils in Bewegungsrichtung und teils quer dazu übertragen. Der Betrag ist die Gesamtkraft, doch nur der Anteil in Bewegungsrichtung verrichtet die gewünschte Arbeit. Das Impedanzdreieck trennt ähnlich Wirk- und Blindanteil.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Eine Reihenschaltung besitzt R = 100 Ω und XL = 100 Ω. `|Z| = 141,4 Ω`, der Winkel beträgt +45°. An 10 V RMS fliessen ungefähr 70,7 mA RMS; der Strom hinkt um 45° hinterher.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 07](../praxis/modul-07.md).
+Bestimme Betrag und Phase aus gleichzeitiger Spannungs- und Strommessung. Für Labor-Kleinspannung wird Strom über einen bekannten Shunt abgeleitet. Massebezug und Kanalpolarität werden dokumentiert.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Digitale Regelungen benötigen Betrag und Phase der realen Strecke. Abtast- und Rechenverzögerungen fügen zusätzliche Phase hinzu; ein Modell nur aus Bauteilnennwerten reicht bei hohen Frequenzen nicht.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Impedanz verbindet Strombegrenzung und Phasenverschiebung in einer frequenzabhängigen Grösse.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- R und X arithmetisch als Beträge addieren
+- Vorzeichen des kapazitiven X vergessen
+- P mit S gleichsetzen
+- nichtlineare Last nur mit cos φ beschreiben
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Komplexe Impedanz fasst Wirk- und Blindanteil zusammen. Betrag bestimmt Stromhöhe, Winkel die Phase. Reale und nichtlineare Lasten verlangen Messung und erweitertes Modell.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Berechne |Z| für R = 30 Ω und X = 40 Ω.
+2. Welches Vorzeichen hat kapazitives X?
+3. Worin unterscheiden sich P und S?
+4. Welche zusätzliche Phase kann Firmware erzeugen?
+
+Weitere Aufgaben: [Übungen zu Modul 07](../uebungen/modul-07.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b1-LK06`, `b4-LK01–10`, `c2`
+- Nachweise: Impedanzdreieck und Zweikanal-Phasenmessung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
