@@ -1,60 +1,74 @@
 # 12.1 – Grundprinzip, idealer und realer OPV
 
-[← Zurück](README.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](02-gegenkopplung-und-spannungsfolger.md)
-
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
+[← Zurück](../11-mosfets/07-schaltverluste-thermik-und-datenblattwahl.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](02-gegenkopplung-und-spannungsfolger.md)
 
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Grundprinzip, idealer und realer OPV** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Differenzeingang und Ausgang erklären
+- ideales Modell sinnvoll anwenden
+- Eingangs- und Ausgangsgrenzen realer OPVs erkennen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Operationsverstärker verstärken, filtern, puffern und vergleichen Sensorsignale. Ihr Symbol wirkt einfach, doch die Ausgangsspannung hängt von Versorgung, Gegenkopplung, Eingangsbereich, Last und Geschwindigkeit ab. Das ideale Modell ist nützlich, solange seine Voraussetzungen geprüft werden.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Differenzverstärker mit hoher Leerlaufverstärkung
+
+Ein OPV erzeugt grundsätzlich `Uout = A0·(Uplus − Uminus)`. A0 ist sehr gross und frequenzabhängig. Ohne Gegenkopplung genügt eine winzige Differenz, um den Ausgang an eine Versorgunggrenze zu treiben.
+
+![OPV-Symbol mit Versorgung Differenzeingang und Ausgangsgrenzen](../bilder/12-operationsverstaerker/12-01-opv-grundprinzip.png)
+
+Im idealen Modell gilt unendliche Leerlaufverstärkung, unendlicher Eingangswiderstand, null Ausgangswiderstand und unbegrenzte Bandbreite. Daraus folgt bei stabiler negativer Gegenkopplung näherungsweise `Uplus ≈ Uminus` und nahezu kein Eingangsstrom. Diese «goldenen Regeln» sind Ergebnisse eines funktionierenden Regelkreises, keine universellen Bauteilgesetze.
+
+### Reale Grenzen
+
+Common-Mode-Eingangsbereich, Ausgangshub, Kurzschlussstrom, Versorgungsspannung, Verstärkungs-Bandbreiten-Produkt, Offset und Biasströme begrenzen die Schaltung. Ein OPV kann am Eingang ausserhalb seines zulässigen Bereichs liegen, obwohl die Ausgangsspannung rechnerisch plausibel erscheint.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein sehr empfindlicher Steuermann vergleicht Soll- und Istkurs und bewegt das Ruder stark. Nur mit Rückmeldung hält er den Kurs; ohne sie fährt das Ruder rasch an einen Anschlag.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Bei A0 = 100000 würden bereits 100 µV Differenz ideal 10 V Ausgang verlangen. An einer 5-V-Versorgung kann das nicht entstehen; der Ausgang sättigt. Die Rechnung zeigt, warum Gegenkopplung nötig ist.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 12](../praxis/modul-12.md).
+Prüfe Versorgungspins und Ruhestrom, bevor Signale angelegt werden. Vergleiche einen für Single-Supply geeigneten OPV mit einem Typ, dessen Eingangsbereich GND nicht einschliesst – ausschliesslich innerhalb der Datenblattgrenzen.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Der ADC sieht nur den realen Ausgang. Firmware kann Sättigung als plausiblen Maximalcode missverstehen. Diagnosegrenzen sollten Offset, Versorgung und erlaubten Ausgangshub berücksichtigen.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Das ideale OPV-Modell gilt nur innerhalb von Versorgung, Eingangsbereich, Ausgangshub, Bandbreite und stabiler Gegenkopplung.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Uplus gleich Uminus ohne Gegenkopplung annehmen
+- Versorgungspins im Schema vergessen
+- Rail-to-Rail ungeprüft voraussetzen
+- Sättigung als gültiges Messsignal behandeln
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Der OPV verstärkt Eingangsdifferenz sehr stark. Gegenkopplung macht daraus eine definierte Funktion; reale Grenzen müssen vor jeder Rechnung geprüft werden.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was verstärkt der OPV?
+2. Wann gilt Uplus ungefähr Uminus?
+3. Welche vier Grenzen prüfst du?
+4. Wie erkennt Firmware Sättigung?
+
+Weitere Aufgaben: [Übungen zu Modul 12](../uebungen/modul-12.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b4-LK01–08`, `c1`
+- Nachweise: Grenzprüfung am realen OPV-Datenblatt; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

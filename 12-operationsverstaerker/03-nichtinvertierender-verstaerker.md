@@ -2,59 +2,72 @@
 
 [← Zurück](02-gegenkopplung-und-spannungsfolger.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](04-invertierender-verstaerker-und-summierer.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Nichtinvertierender Verstärker** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- nichtinvertierende Verstärkung dimensionieren
+- Eingangs- und Ausgangsbereich prüfen
+- Bandbreite und Widerstandstoleranz einbeziehen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Sensorsignale sind oft zu klein für den ADC-Bereich. Der nichtinvertierende Verstärker erhöht sie mit hoher Eingangsimpedanz. Eine richtige Widerstandsformel genügt jedoch nicht, wenn Offset, Common Mode oder Ausgangshub verletzt werden.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Rückkopplungsteiler
+
+R1 liegt vom invertierenden Eingang nach Bezugspotential, R2 vom Ausgang zum invertierenden Eingang. Bei stabiler Gegenkopplung gilt `Av = 1 + R2/R1`. Av ist die geschlossene Spannungsverstärkung.
+
+![Nichtinvertierender OPV mit Rückkopplungsteiler](../bilder/12-operationsverstaerker/12-03-nichtinvertierend.png)
+
+Die Eingangsspannung liegt am nichtinvertierenden Eingang und erscheint ideal phasengleich verstärkt. Für Single-Supply-Signale kann R1 statt an GND an einer Referenz Vref liegen; dann wird um diesen Arbeitspunkt verstärkt.
+
+### Reale Dimensionierung
+
+Widerstände bestimmen zusätzlich Rauschen, Biasstromfehler und Ausgangslast. Das Verstärkungs-Bandbreiten-Produkt begrenzt näherungsweise `fBW ≈ GBW/Av`. Slew Rate kann grosse schnelle Signale früher begrenzen. Widerstandstoleranzen erzeugen Verstärkungsfehler.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Der Rückkopplungsteiler ist wie ein Massstab: Der OPV bewegt den Ausgang so weit, bis der zurückgemeldete Teil dem Eingang entspricht. Ein kleiner zurückgemeldeter Anteil verlangt einen grösseren Ausgang.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein Sensor liefert 0,2 bis 0,8 V und soll ideal um Faktor 4 verstärkt werden. `R2/R1 = 3`; mit R1 = 10 kΩ und R2 = 30 kΩ entstehen 0,8 bis 3,2 V. Versorgung, Ausgangshub und ADC-Reserve werden danach geprüft.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 12](../praxis/modul-12.md).
+Miss Verstärkung bei DC und mehreren Frequenzen. Erhöhe die Amplitude nur bis vor Clipping; dokumentiere Versorgung, Last und Ausgangshub.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Die Firmware verwendet Verstärkung und Referenz in der Umrechnung. Widerstandstoleranz, Offset und ADC-Referenz werden kalibriert, aber Clipping bleibt ein Hardwarefehler.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Die Widerstände legen die ideale Verstärkung fest; Versorgung, Common Mode, Bandbreite und Ausgangshub entscheiden, ob sie erreichbar ist.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Formel ohne Bezugspunkt anwenden
+- Ausgangsreserve vergessen
+- GBW mit maximaler Signalfrequenz gleichsetzen
+- Kalibrierung als Ersatz für Headroom nutzen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Der nichtinvertierende Verstärker besitzt hohe Eingangsimpedanz und phasengleiche Verstärkung. Reale Grenzen werden nach der Widerstandsrechnung geprüft.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wie lautet Av?
+2. Dimensioniere Av = 6 mit R1 = 10 kΩ. Wie schätzt du fBW?
+3. Welche Fehler kann Firmware kalibrieren?
+
+Weitere Aufgaben: [Übungen zu Modul 12](../uebungen/modul-12.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK01–06`, `b4-LK01–10`, `c1–c2`
+- Nachweise: dimensionierte und vermessene Sensorverstärkung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

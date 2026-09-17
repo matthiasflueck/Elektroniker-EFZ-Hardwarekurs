@@ -4,7 +4,16 @@
 
 ## Worum geht es?
 
-Dieses Modul führt **MOSFETs und Leistungsschalter** von einer verständlichen Vorstellung zu technisch belastbaren Berechnungen, Schaltungen und Messungen. Die Theorie-Lektionen bereiten die Praxis gezielt vor; Übungen und Lösungen sind getrennt.
+MOSFETs verbinden digitale Steuerung mit realen Lastströmen. Das Gate benötigt kaum statischen Strom, aber definierte Ladung beim Umschalten. Threshold-Spannung, RDS(on), Gate Charge, SOA, Body-Diode und thermischer Pfad entscheiden gemeinsam über einen sicheren Schalter.
+
+Dieses Modul behandelt deshalb nicht nur das Symbol, sondern den vollständigen Pfad vom Timerregister über Treiber und Gate bis zu Drainstrom, Verlustleistung und Temperatur. Die Datenblattauswahl wird als überprüfbarer Workflow aufgebaut.
+
+## Lernpfad
+
+```text
+Feldeffekt → N-/P-Kanal → VGS(th) richtig lesen → RDS(on) und SOA
+→ Gate Charge → Low-/High-Side und Halbbrücke → Verlustbilanz
+```
 
 ## Lektionen
 
@@ -15,13 +24,13 @@ Dieses Modul führt **MOSFETs und Leistungsschalter** von einer verständlichen 
 5. [11.5 – Gate-Kapazität, Gate Charge und Treiber](05-gate-kapazitaet-gate-charge-und-treiber.md)
 6. [11.6 – Low-Side- und High-Side-Schalter](06-low-side-und-high-side-schalter.md)
 7. [11.7 – Schaltverluste, Thermik und Datenblattwahl](07-schaltverluste-thermik-und-datenblattwahl.md)
-8. [Übungen](../uebungen/modul-11.md)
-9. [Praxis – MOSFET-Leistungsstufe aufbauen und Gate/Drain messen](../praxis/modul-11.md)
 
-## Bildungsplan 2026
+## Üben und messen
 
-Schwerpunkt: `b1`, `b4`, `b5`, `c1`. Details und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
+- [Übungen zu Modul 11](../uebungen/modul-11.md)
+- [Separate Lösungen](../loesungen/modul-11-loesungen.md)
+- [Praxis – MOSFET-Leistungsstufe aufbauen und Gate/Drain messen](../praxis/modul-11.md)
 
-## Projektbezug
+## Bezug Bildungsplan 2026
 
-Die [Projektübersicht](../projekte/README.md) zeigt, wie das Modul in Projekt A, B oder C einfliesst.
+Schwerpunkte: `b1-LK01–06`, `b4-LK01–10`, `b5` und `c1–c2`. Nachgewiesen werden professionelle Datenblattwahl, Verlust- und Temperaturrechnung, sichere Gate-/Drainmessung sowie Hardware-/Firmware-Abgleich der PWM. Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

@@ -2,78 +2,70 @@
 
 [← Modul 10](../10-bipolartransistoren/README.md) · [Praxisübersicht](README.md) · [Kursübersicht](../README.md)
 
-> **Ausbaustatus:** Praxisgerüst. Vor Durchführung werden Schaltung, Material, Grenzen, Sollwerte und Auswertung vollständig freigegeben.
-
 ## Lernziel
 
-LED oder Relais über BJT schalten und das Ergebnis fachlich begründet beurteilen.
-
-## Voraussetzungen
-
-Theorie und Übungen des Moduls 10.
+Du dimensionierst einen NPN-Low-Side-Schalter, misst Basis- und Kollektorstrom, weist Sättigung nach und erklärst die Wirkung einer Freilaufdiode bei einer Relaisspule.
 
 ## Benötigtes Material
 
-Wird mit der fachlichen Ausarbeitung spezifiziert.
+NPN-Transistor mit Datenblatt, LED mit Vorwiderstand oder Kleinspannungsrelais, Basiswiderstände, Basis-Emitter-Pulldown, Freilaufdiode, 10-Ω- oder geeigneter Strom-Shunt und Steckbrett.
 
 ## Benötigte Messgeräte
 
-Werden passend zu Messgrösse, Bereich, Belastung und Sicherheit ausgewählt.
+Strombegrenztes Labornetzgerät, DMM, Zweikanal-Oszilloskop und 10:1-Tastköpfe.
 
 ## Schaltung / Messaufbau
 
-Die Endfassung enthält ein genormtes Schema mit eindeutigen Mess- und Bezugspunkten.
+Last von +U an den Kollektor von Q1, Emitter über den freigegebenen Shunt an GND. GPIO-/Generatorersatz speist die Basis über RB; Pulldown von Basis nach Emitter. Bei Relais liegt D1 antiparallel zur Spule, Kathode an +U.
+
+![NPN-Low-Side-Schalter mit Basiswiderstand und Lastpfad](../bilder/10-bipolartransistoren/10-05-bjt-schalter.png)
 
 ## Sicherheitshinweise
 
-Energiequelle, Strombegrenzung, gespeicherte Energie, Massebezug und Abbruchkriterien vor Aufbau festlegen.
+Nur SELV-Kleinspannung. Stromgrenze knapp oberhalb des berechneten Sollstroms. Freilaufdiode nie für einen «interessanteren» Impuls entfernen; ein Vergleich erfolgt nur mit freigegebener alternativer Klemme. Transistortemperatur und Oszilloskopmasse überwachen.
 
-## Vorbereitung
+## Vorbereitung und Berechnung
 
-Erst vorhersagen, dann berechnen und erst danach aufbauen.
-
-## Berechnung
-
-Sollwerte, Toleranzen und Grenzwerte mit Einheiten bestimmen.
+Bestimme Laststrom, βforced, IB, RB, Verlustleistung von RB und erwartetes VCE(sat). Prüfe GPIO-Strom und Portsumme. Für das Relais berechne Wicklungsleistung und – falls L angegeben ist – Feldenergie.
 
 ## Aufbau
 
-Spannungsfrei aufbauen, Sicht- und Durchgangsprüfung durchführen.
+Spannungsfrei Pinout aus Datenblatt prüfen. Diodenpolung, Pulldown, Widerstandswerte und Kurzschlussfreiheit kontrollieren. Netzgerätstromgrenze mit abgetrennter Schaltung einstellen.
 
-## Durchführung
+## Durchführung und Messung
 
-Mit Strombegrenzung schrittweise in Betrieb nehmen.
-
-## Messung
-
-Messpunkte, Geräte und Einstellungen dokumentieren.
+1. Schalte mit dem berechneten RB ein und miss UGPIO, UBE, Spannung über RB, VCE und Laststrom.
+2. Berechne reales IB, IC und βforced. Prüfe PQ.
+3. Vergrössere RB unter sicheren Bedingungen. Beobachte, wann VCE deutlich steigt.
+4. Bei Relais: Miss Kollektorspannung und Shuntspannung beim Abschalten mit D1.
+5. Vergleiche Pinzustand beim aktiv getriebenen Low, High und hochohmigen Eingang.
 
 ## Messwerte
 
-| Grösse | Soll | Ist | Unsicherheit/Bedingung |
-|---|---:|---:|---|
-| | | | |
+| RB | UGPIO | UBE | IB | IC | VCE | PQ | Zustand |
+|---:|---:|---:|---:|---:|---:|---:|---|
+| | | | | | | | |
 
 ## Auswertung
 
-Soll und Ist vergleichen, Abweichungen erklären und Änderungen nachführen.
+Erkläre, ob Q1 gesperrt, aktiv oder gesättigt arbeitet. Vergleiche berechneten und gemessenen Basisstrom. Begründe Abweichungen mit GPIO-Ausgangswiderstand, UBE, Last und Mess-Shunt.
 
 ## Fragen
 
-Welche Annahme beeinflusst das Resultat am stärksten?
+Warum ist typisches β ungeeignet? Weshalb steigt VCE bei zu kleinem IB? Welche Energie führt D1 ab? Welcher Zustand ist bei MCU-Reset sicher?
 
 ## Was solltest du beobachtet haben?
 
-Wird in der Endfassung mit zulässigem Wertebereich beschrieben.
+Ausreichender Basisstrom senkt VCE, kostet aber GPIO-Strom. Zu grosser RB hält Q1 im aktiven Bereich und erhöht Verlustleistung. Der Pulldown verhindert unbeabsichtigtes Einschalten bei hochohmigem Eingang.
 
 ## Bezug zur Theorie
 
-Modul 10 – Bipolartransistoren.
+Lektionen 10.1–10.5 und 10.7; Induktivschutz aus Modul 06 und 09.
 
 ## 🔗 Hardware ↔ Firmware
 
-Falls ein Mikrocontroller beteiligt ist: Konfiguration, Pinzustand, Peripherie und reale Messung gemeinsam beurteilen.
+Vergleiche optional GPIO- und Timer-PWM. Prüfe Reset, Bootloader und Debug-Halt. Miss reale Frequenz, Tastgrad und Kollektorspannung statt nur Registerwerte zu kontrollieren.
 
-## Bildungsplan 2026
+## Bezug Bildungsplan 2026
 
-`b1`, `b4`, `b5`
+`a3`, `b1-LK01–06`, `b4-LK01–10`, `b5`, `c1–c2`; Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

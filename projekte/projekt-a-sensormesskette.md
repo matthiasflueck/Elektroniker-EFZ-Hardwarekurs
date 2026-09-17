@@ -28,6 +28,15 @@ Sensor → Messbrücke/Spannungsteiler → OPV → Filter → 0–3.3-V-Signal �
 - Frequenzgang messen und Grenzfrequenz sowie Phasenlage mit der Rechnung vergleichen
 - Einfluss von Quellimpedanz, ADC-Abtastung und Firmware-Abtastrate dokumentieren
 
+## Meilenstein nach Modul 12
+
+- erforderliche Verstärkung aus minimalem und maximalem Sensorsignal sowie dem zulässigen ADC-Eingangsbereich ableiten
+- OPV anhand von Versorgung, Ein- und Ausgangsspannungsbereich, Offset, Biasstrom, Bandbreite und Slew Rate auswählen
+- nichtinvertierende Verstärkerstufe mit R1 und R2 dimensionieren und Toleranzeinfluss berechnen
+- Headroom, Sättigungsgrenzen und Verhalten bei Sensorunterbruch oder Kurzschluss vor dem Aufbau vorhersagen
+- Gleichspannungs-Arbeitspunkte und ein dynamisches Testsignal messen; Soll- und Ist-Verstärkung vergleichen
+- elektrische Schnittstelle zum ADC mit Massebezug, Schutz, Quellimpedanz und Firmware-Plausibilitätsgrenzen dokumentieren
+
 ## Verbindliche Nachweise
 
 Anforderungen und Akzeptanzkriterien, Blockdiagramm, Berechnungen, Datenblattentscheidungen, genormtes Schema, Gefährdungs- und Messplan, as-built-Stand, Rohdaten, Soll-Ist-Auswertung, Fehler-/Änderungsjournal sowie Abschluss- und Übergabedokumentation.

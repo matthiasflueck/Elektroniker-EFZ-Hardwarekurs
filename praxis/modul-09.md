@@ -2,78 +2,86 @@
 
 [← Modul 09](../09-dioden-schutz/README.md) · [Praxisübersicht](README.md) · [Kursübersicht](../README.md)
 
-> **Ausbaustatus:** Praxisgerüst. Vor Durchführung werden Schaltung, Material, Grenzen, Sollwerte und Auswertung vollständig freigegeben.
-
 ## Lernziel
 
-Diodenkennlinie und Gleichrichter untersuchen und das Ergebnis fachlich begründet beurteilen.
-
-## Voraussetzungen
-
-Theorie und Übungen des Moduls 09.
+Du nimmst eine Diodenkennlinie strombegrenzt auf, vergleichst PN- und Schottky-Diode und untersuchst einen Kleinspannungs-Brückengleichrichter mit Last und Glättung.
 
 ## Benötigtes Material
 
-Wird mit der fachlichen Ausarbeitung spezifiziert.
+- Siliziumdiode und Schottky-Diode mit Datenblatt
+- Brückengleichrichter oder vier geeignete Dioden
+- R1 = 1 kΩ sowie passende Lastwiderstände
+- C1 = 470 µF und 1000 µF mit ausreichender Spannungsfestigkeit
+- Steckbrett und sichere Leitungen
 
 ## Benötigte Messgeräte
 
-Werden passend zu Messgrösse, Bereich, Belastung und Sicherheit ausgewählt.
+Strombegrenztes Labornetzgerät, galvanisch sichere Kleinspannungs-AC-Quelle, zwei DMM und Zweikanal-Oszilloskop mit 10:1-Tastköpfen.
 
 ## Schaltung / Messaufbau
 
-Die Endfassung enthält ein genormtes Schema mit eindeutigen Mess- und Bezugspunkten.
+Teil A: einstellbare Gleichspannung speist R1 und D1 in Serie. DMM 1 misst UD, DMM 2 die Widerstandsspannung zur Berechnung von ID.
+
+Teil B: die isolierte Kleinspannungs-AC-Quelle speist eine Brücke. C1 und Last liegen am DC-Ausgang. Gemessen werden Eingang, Ausgangsmittelwert und Ripple.
+
+![Diodenkennlinie mit Lastgerade und Arbeitspunkt](../bilder/09-dioden-schutz/09-02-kennlinie-lastgerade.png)
 
 ## Sicherheitshinweise
 
-Energiequelle, Strombegrenzung, gespeicherte Energie, Massebezug und Abbruchkriterien vor Aufbau festlegen.
+Keine direkte Netzspannung verwenden. AC-Quelle und Messgerätemassen müssen galvanisch sicher sein. Elektrolytkondensator polrichtig einsetzen, Spannungsfestigkeit prüfen und vor Umbauten über einen Widerstand entladen. Stromgrenze vor dem Einschalten einstellen.
 
 ## Vorbereitung
 
-Erst vorhersagen, dann berechnen und erst danach aufbauen.
+Sage die Reihenfolge der Flussspannungen von Schottky- und PN-Diode voraus. Skizziere Kennlinie und erwarteten Ripple. Lege maximale Diodenströme, Kondensatorspannung und Abbruchtemperatur fest.
 
 ## Berechnung
 
-Sollwerte, Toleranzen und Grenzwerte mit Einheiten bestimmen.
+Berechne für jede Sollquelle den maximalen Strom mit kleinstmöglicher UD. Für den Gleichrichter bestimme Spitzenspannung nach zwei Dioden, Ripplefrequenz und erwartetes ΔU mit `ΔU ≈ IL/(fRipple·C)`.
 
 ## Aufbau
 
-Spannungsfrei aufbauen, Sicht- und Durchgangsprüfung durchführen.
+Spannungsfrei verdrahten. Diodenpolung und Brückenanschlüsse anhand Datenblatt prüfen, nicht anhand Gehäuseannahmen. Kondensator zunächst weglassen. Sicht-, Durchgangs- und Kurzschlussprüfung durchführen.
 
-## Durchführung
+## Durchführung und Messung
 
-Mit Strombegrenzung schrittweise in Betrieb nehmen.
-
-## Messung
-
-Messpunkte, Geräte und Einstellungen dokumentieren.
+1. Erhöhe Teil A in kleinen Schritten und erfasse mindestens acht Kennlinienpunkte bis zum freigegebenen Maximalstrom.
+2. Wiederhole identisch mit der zweiten Diode; dokumentiere Temperatur und Messbereiche.
+3. Nimm Teil B zuerst ohne C1 und ohne Last in Betrieb. Beobachte beide Halbwellen.
+4. Ergänze Last, dann 470 µF und 1000 µF. Miss Mittelwert, Upp-Ripple und Ladeimpulsform.
+5. Vergleiche Vorhersage, Rechnung und Messung. Ändere nur einen Parameter gleichzeitig.
 
 ## Messwerte
 
-| Grösse | Soll | Ist | Unsicherheit/Bedingung |
-|---|---:|---:|---|
-| | | | |
+| Diode | UD | UR1 | ID | Temperatur/Bedingung |
+|---|---:|---:|---:|---|
+| | | | | |
+
+| C1 | Laststrom | UDC | Ripple Upp | fRipple | Bedingung |
+|---:|---:|---:|---:|---:|---|
+| ohne | | | | | |
+| 470 µF | | | | | |
+| 1000 µF | | | | | |
 
 ## Auswertung
 
-Soll und Ist vergleichen, Abweichungen erklären und Änderungen nachführen.
+Zeichne ID über UD für beide Dioden. Markiere einen Arbeitspunkt und bestimme statischen sowie lokalen differentiellen Widerstand. Erkläre beim Gleichrichter Abweichungen durch Quellenwiderstand, Diodenabfall, Kapazitätstoleranz und kurze Ladeimpulse.
 
 ## Fragen
 
-Welche Annahme beeinflusst das Resultat am stärksten?
+Warum ist die Kennlinie temperaturabhängig? Weshalb halbiert doppeltes C den Ripple nur näherungsweise? Warum kann ein grösserer Kondensator Dioden und Quelle stärker belasten?
 
 ## Was solltest du beobachtet haben?
 
-Wird in der Endfassung mit zulässigem Wertebereich beschrieben.
+Die Schottky-Diode zeigt im gewählten Strombereich meist kleinere UD. Der Brückenausgang nutzt beide Halbwellen; C1 erhöht den Mittelwert und reduziert Ripple, konzentriert den Nachladestrom aber auf kurze Zeitfenster.
 
 ## Bezug zur Theorie
 
-Modul 09 – Dioden, Gleichrichtung und Schutz.
+Lektionen 09.1–09.3 und 09.6; Schutzgrenzen aus 09.7.
 
 ## 🔗 Hardware ↔ Firmware
 
-Falls ein Mikrocontroller beteiligt ist: Konfiguration, Pinzustand, Peripherie und reale Messung gemeinsam beurteilen.
+Optional erfasst ein ADC den Ripple über einen sicheren Teiler. Abtastrate und Trigger müssen 100-Hz-Ripple und Ladeimpulse unterscheiden. Rohdaten werden mit dem Oszilloskop verglichen.
 
-## Bildungsplan 2026
+## Bezug Bildungsplan 2026
 
-`b1`, `b4`, `b5`, `d8`
+`a3`, `b1-LK02–04`, `b1-LK06`, `b4-LK01–10`, `b5`, `c2`, `d8`; Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

@@ -2,59 +2,73 @@
 
 [← Zurück](03-gleichrichter-und-schottky-dioden.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](05-leds-und-optische-kennwerte.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Z-Dioden und Spannungsbegrenzung** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`, `d8`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Z-Diode im Durchbruchbereich erklären
+- Vorwiderstand für Lastgrenzen dimensionieren
+- Verlustleistung und dynamischen Widerstand prüfen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Eine Z-Diode kann eine Spannung begrenzen oder eine einfache Referenz bilden. Ohne Strombegrenzung zerstört sie sich jedoch. Zudem bleibt ihre Spannung nicht exakt konstant; Strom, Temperatur und dynamischer Widerstand bestimmen die Genauigkeit.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Kontrollierter Durchbruch
+
+Z-Dioden werden in Sperrrichtung betrieben. Unterhalb der Nennspannung fliesst wenig Strom; im Durchbruch steigt er stark. Je nach Spannung dominieren Zener- oder Lawineneffekt. Der gemeinsame Schaltplanname sagt nichts über ideale Konstanz aus.
+
+![Z-Diodenbegrenzer mit Vorwiderstand und Last](../bilder/09-dioden-schutz/09-04-z-diodenbegrenzer.png)
+
+Der Serienwiderstand führt `IR = (Uin − UZ)/R1`. Dieser Strom teilt sich in Z-Diodenstrom IZ und Laststrom IL: `IR = IZ + IL`. Für jeden Grenzfall müssen Mindest-IZ und maximal zulässige Leistung `PZ = UZ·IZ` eingehalten werden.
+
+### Genauigkeit
+
+Die Prüfspannung UZ gilt bei einem definierten Teststrom. Der dynamische Widerstand rz beschreibt die lokale Spannungsänderung. Toleranz, Temperaturkoeffizient und Leitungswiderstände kommen hinzu. Für präzise Referenzen sind spezielle Referenzbausteine meist besser.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Überlauf hält den Wasserstand ungefähr konstant, aber nur wenn der Zulauf begrenzt ist. Bei zu wenig Zulauf fällt der Pegel; bei zu viel muss der Überlauf gefährlich viel Wasser abführen.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Uin liegt zwischen 10 und 14 V, UZ = 5,1 V, die Last benötigt maximal 5 mA und IZ soll mindestens 5 mA sein. Bei 10 V gilt `R1 ≤ (10 − 5,1)/(10 mA) = 490 Ω`; gewählt werden 470 Ω. Bei 14 V ohne Last fliessen etwa 18,9 mA, also `PZ ≈ 96 mW`.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 09](../praxis/modul-09.md).
+Vermesse UZ bei mehreren begrenzten Strömen und zwei Lastzuständen. Vergleiche Messwerte mit Datenblatt-Teststrom und maximaler Leistung.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Ein ADC kann eine Z-Spannung überwachen, aber nicht als genauer annehmen als deren Toleranz und Temperaturgang. Überspannungsereignisse benötigen zusätzlich Strombegrenzung und einen belastbaren Energiepfad.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Eine Z-Diode begrenzt Spannung nur dann sicher, wenn ihr Strom für alle Betriebsfälle begrenzt und geprüft ist.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Vorwiderstand weglassen
+- nur Nenneingang rechnen
+- Laststrom vergessen
+- Z-Spannung als ideale Referenz behandeln
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Z-Begrenzer werden mit Mindeststrom, Höchststrom und Verlustleistung dimensioniert. Genauigkeit folgt Datenblatt und realem Arbeitspunkt.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Warum braucht D1 einen Vorwiderstand?
+2. Wie teilen sich IR IZ und IL?
+3. Welcher Grenzfall erzeugt maximale PZ?
+4. Warum ist UZ nicht exakt konstant?
+
+Weitere Aufgaben: [Übungen zu Modul 09](../uebungen/modul-09.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b4-LK01–10`, `b5`
+- Nachweise: Worst-Case-Dimensionierung eines Z-Begrenzers; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

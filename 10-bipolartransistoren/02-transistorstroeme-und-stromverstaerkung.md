@@ -2,59 +2,80 @@
 
 [← Zurück](01-npn-und-pnp-grundprinzip.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](03-kennlinien-und-betriebsbereiche.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Transistorströme und Stromverstärkung** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Strombeziehungen des BJT anwenden
+- β als streuenden Arbeitspunktparameter verstehen
+- erzwungene Verstärkung für Schalter verwenden
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Die Datenblattverstärkung ist kein präziser Konstruktionswert. Sie hängt von Strom, Spannung, Temperatur und Exemplar ab. Gute Schaltungen funktionieren deshalb auch mit der garantierten unteren Grenze oder verwenden im Schaltbetrieb eine bewusst kleinere erzwungene Verstärkung.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Drei Ströme
+
+Nach der Knotenregel gilt `IE = IC + IB`. Im aktiven Bereich wird die Gleichstromverstärkung häufig als `β = IC/IB` beziehungsweise hFE angegeben. β kann zwischen Exemplaren stark streuen und fällt bei sehr kleinen oder grossen Strömen ab.
+
+![BJT-Ströme und Stromverstärkung](../bilder/10-bipolartransistoren/10-02-stroeme-beta.png)
+
+| Zeichen | Bedeutung | Einheit |
+|---|---|---|
+| `β` | Gleichstromverstärkung im Arbeitspunkt | 1 |
+| `hFE` | Datenblattbezeichnung für DC-Verstärkung | 1 |
+
+### Schalterdimensionierung
+
+In Sättigung gilt `IC = β·IB` nicht zuverlässig. Für robustes Schalten wird `βforced = IC/IB` bewusst kleiner als die typische Verstärkung gewählt. Danach werden GPIO-Strom, Basiswiderstand, VCE(sat) und Verlustleistung geprüft.
+
+### Verstärkerbetrieb
+
+In einer linearen Stufe beeinflusst β den Arbeitspunkt, aber Gegenkopplung über einen Emitterwiderstand kann die Abhängigkeit reduzieren. Wechselstromverstärkung und Gleichstromarbeitspunkt sind getrennt zu analysieren.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+β gleicht der Übersetzung eines Helfers, dessen Kraft mit Temperatur, Exemplar und Belastung schwankt. Eine robuste Konstruktion plant nicht mit seinem persönlichen Bestwert, sondern mit einer garantierten Mindestleistung und Reserve.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Für IC = 120 mA und `βforced = 10` werden 12 mA Basisstrom benötigt. Ein 3,3-V-GPIO könnte damit bereits über seiner empfohlenen Belastung liegen. Statt blind RB zu verkleinern wird ein MOSFET oder eine Treiberstufe geprüft.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 10](../praxis/modul-10.md).
+Miss IC bei mehreren IB und konstantem VCE im sicheren Bereich. Berechne β für jeden Punkt und dokumentiere Temperatur sowie Bauteiltyp.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Firmware kann den Pinpegel setzen, garantiert aber keinen ausreichenden Basisstrom. GPIO-Ausgangsspannung sinkt unter Last; zulässiger Pin- und Portgesamtstrom stammen aus dem MCU-Datenblatt.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> β ist ein streuender Betriebsparameter, keine präzise Verstärkungsgarantie.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- typisches β als Mindestwert verwenden
+- IE und IC gleichsetzen ohne IB zu beachten
+- Sättigung mit aktivem Bereich verwechseln
+- GPIO-Gesamtstrom ignorieren
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+IE teilt sich in IC und IB. β beschreibt einen Arbeitspunkt; robuste Schalter verwenden erzwungene Verstärkung und prüfen den Treiber.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wie hängen IE IC und IB zusammen?
+2. Was bedeutet βforced?
+3. Warum sinkt der GPIO-Pegel?
+4. Wann ist ein MOSFET sinnvoller?
+
+Weitere Aufgaben: [Übungen zu Modul 10](../uebungen/modul-10.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK02–04`, `b4-LK01–10`, `c1`
+- Nachweise: Strommessung und robuste Basisdimensionierung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

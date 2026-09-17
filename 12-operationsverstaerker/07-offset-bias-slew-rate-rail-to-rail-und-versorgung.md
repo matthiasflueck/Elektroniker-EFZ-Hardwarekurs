@@ -1,60 +1,79 @@
 # 12.7 – Offset, Bias, Slew Rate, Rail-to-Rail und Versorgung
 
-[← Zurück](06-komparator-und-schmitt-trigger.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../uebungen/modul-12.md)
-
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
+[← Zurück](06-komparator-und-schmitt-trigger.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../13-analoge-signalaufbereitung/README.md)
 
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Offset, Bias, Slew Rate, Rail-to-Rail und Versorgung** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Offset- und Biasfehler abschätzen
+- Slew Rate und GBW unterscheiden
+- Rail-to-Rail-Angaben und Versorgung korrekt prüfen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Eine OPV-Schaltung kann die ideale Verstärkung erfüllen und trotzdem falsche DC-Werte, verzerrte Flanken oder begrenzten Ausgang zeigen. Diese Abweichungen sind systematisch im Datenblatt beschrieben und entscheiden bei kleinen Sensorsignalen über die Messqualität.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### DC-Fehler
+
+Eingangs-Offsetspannung VOS wirkt wie eine kleine Differenzspannung und wird mit der Noise Gain verstärkt. Biasströme erzeugen an Quell- und Rückkopplungswiderständen zusätzliche Spannungsfehler. Drift beschreibt die Änderung mit Temperatur.
+
+### Geschwindigkeit
+
+GBW begrenzt kleine Signale in Abhängigkeit von der Verstärkung. Slew Rate `SR = max|dUout/dt|` begrenzt grosse schnelle Signale. Für einen Sinus gilt näherungsweise `SRneeded = 2πfÛ`. Beide Bedingungen müssen erfüllt sein.
+
+![OPV-Grenzen durch Slew Rate und Ausgangshub](../bilder/12-operationsverstaerker/12-07-opv-grenzen.png)
+
+### Rail-to-Rail und Versorgung
+
+Rail-to-Rail Input und Output sind getrennte Eigenschaften und gelten nur unter spezifizierten Lasten und Versorgungen. Der Ausgang erreicht die Schiene meist nicht exakt. Manche Eingangsstufen zeigen am Übergang erhöhte Verzerrung. Abblockkondensatoren liegen nahe an jedem Versorgungspin; Rückstrompfad und Analogmasse werden geplant.
+
+### Auswahl
+
+Geprüft werden Versorgung, Eingangsbereich, Ausgangshub bei Last, Offset und Drift, Bias, Rauschen, GBW, SR, Stabilität, Ruhestrom, Gehäuse und Temperaturbereich.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Aufzug kann sehr genau positionieren, aber nur innerhalb seines Schachts und mit begrenzter Geschwindigkeit. «Bis zum obersten Stock» bedeutet nicht, dass die Kabine über die Schiene hinausfahren kann.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein 20-kHz-Sinus mit 4 V Spitze benötigt `SR = 2π·20 kHz·4 V ≈ 0,503 V/µs`. Ein OPV mit garantierten 0,3 V/µs verzerrt, auch wenn sein GBW rechnerisch genügen würde.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 12](../praxis/modul-12.md).
+Miss DC-Offset bei kurzgeschlossenem Eingang in korrekter Gegenkopplung, danach die Sinusantwort bei wachsender Frequenz und Amplitude. Versorgung und Ausgangshub werden gleichzeitig beobachtet.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Kalibrierung kann einen stabilen Offset reduzieren. Drift, Clipping, Slew-Verzerrung und Rauschen benötigen Hardwarereserve, Temperaturmodell oder Diagnose. ADC-Referenz und OPV-Versorgung müssen gemeinsam betrachtet werden.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Ein OPV ist nur innerhalb seiner DC-, Dynamik-, Eingangs-, Ausgangs- und Versorgungsgrenzen präzise.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- GBW und Slew Rate gleichsetzen
+- Rail-to-Rail als exakt bis zur Schiene lesen
+- Biasfehler bei hohen Widerständen ignorieren
+- Offsetkalibrierung gegen Clipping einsetzen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Offset und Bias bestimmen DC-Genauigkeit, GBW und SR die Dynamik, Eingangs- und Ausgangsbereiche den nutzbaren Spannungsraum.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was verstärkt VOS?
+2. Wie unterscheidet sich SR von GBW?
+3. Berechne SR für 10 kHz und 5 V Spitze. Welche Rail-to-Rail-Angabe brauchst du?
+
+Weitere Aufgaben: [Übungen zu Modul 12](../uebungen/modul-12.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK01–04`, `b4-LK01–10`, `b5`, `c1–c2`
+- Nachweise: Datenblattwahl sowie Offset- und Grosssignalmessung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

@@ -1,60 +1,74 @@
 # 10.1 – NPN- und PNP-Grundprinzip
 
-[← Zurück](README.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](02-transistorstroeme-und-stromverstaerkung.md)
-
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
+[← Zurück](../09-dioden-schutz/07-tvs-dioden-und-schutzschaltungen.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](02-transistorstroeme-und-stromverstaerkung.md)
 
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **NPN- und PNP-Grundprinzip** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- NPN und PNP anhand Symbol und Stromrichtung unterscheiden
+- Basis Emitter und Kollektor funktional erklären
+- Low-Side und High-Side einordnen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Ein kleiner Steuerstrom kann einen grösseren Laststrom beeinflussen. Der BJT bildet damit Schalter, Verstärker, Stromquelle und Eingangsstufe. Entscheidend ist, dass Basis, Emitter und Kollektor nicht beliebig vertauschbar sind und immer auf reale Potentiale bezogen werden.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Aufbau und Steuerung
+
+Ein BJT besitzt zwei PN-Übergänge, verhält sich aber nicht wie zwei unabhängige Dioden. Im aktiven Betrieb injiziert der vorwärts gepolte Basis-Emitter-Übergang Ladungsträger in die dünne Basis; das Kollektorfeld übernimmt den grössten Teil. So steuert ein kleiner Basisstrom den Kollektorstrom.
+
+![NPN- und PNP-Symbole mit Stromrichtungen](../bilder/10-bipolartransistoren/10-01-npn-pnp.png)
+
+Beim NPN zeigt der Emitterpfeil nach aussen; konventioneller Kollektorstrom fliesst typischerweise von C nach E. Beim PNP zeigt der Pfeil nach innen, die Polaritäten und Stromrichtungen sind umgekehrt. Der Pfeil gehört zum Emitter.
+
+### Schaltungsrollen
+
+NPN eignet sich häufig als Low-Side-Schalter: Last an Plus, Transistor nach GND. PNP kann als einfacher High-Side-Schalter dienen, verlangt aber eine auf seinen Emitter bezogene Basisansteuerung. Für beide Typen sind Basisstrombegrenzung und definierter Aus-Zustand nötig.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein kleines Steuerventil beeinflusst einen grösseren Hauptstrom. Die Analogie hilft beim Verhältnis der Ströme; anders als ein ideales Ventil benötigt der BJT aber stetigen Basisstrom und besitzt Spannungs- sowie Temperaturgrenzen.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Eine 12-V-Last zieht 40 mA. Wird ein NPN als Schalter mit erzwungenem Faktor 10 betrieben, werden mindestens 4 mA Basisstrom geplant. Bei 3,3-V-GPIO und 0,8 V Basis-Emitter-Spannung ergibt sich `RB = (3,3 − 0,8)/4 mA = 625 Ω`; der nächste geeignete Wert wird mit GPIO-Grenzen geprüft.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 10](../praxis/modul-10.md).
+Identifiziere an Datenblatt und Diodentest Basis, Emitter und Kollektor. Ein Diodentest kann die beiden Übergänge zeigen, beweist aber weder Verstärkung noch zulässige Pinvertauschung.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Ein GPIO liefert Basisstrom und muss beim Reset einen sicheren Zustand behalten. Active-High beziehungsweise Active-Low hängt von NPN/PNP und Schaltung ab; Firmwarebezeichner sollen die reale Wirkung statt nur den Pinpegel ausdrücken.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Beim BJT steuert der Basis-Emitter-Kreis den Kollektorstrom; der Emitterpfeil unterscheidet NPN und PNP.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- BJT als zwei unabhängige Dioden behandeln
+- C und E vertauschen
+- Basis ohne Widerstand treiben
+- PNP-Ansteuerung auf GND statt Emitter beziehen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+NPN und PNP besitzen komplementäre Polaritäten. Symbol, Strompfad und Bezugspotential bestimmen ihre Rolle in der Schaltung.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Woran erkennst du den Emitter?
+2. Warum braucht die Basis R1?
+3. Was ist ein Low-Side-Schalter?
+4. Weshalb ist ein PNP-High-Side nicht einfach invertiert?
+
+Weitere Aufgaben: [Übungen zu Modul 10](../uebungen/modul-10.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b4-LK01–10`, `c1`
+- Nachweise: korrekte Symbol- und Strompfadanalyse; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

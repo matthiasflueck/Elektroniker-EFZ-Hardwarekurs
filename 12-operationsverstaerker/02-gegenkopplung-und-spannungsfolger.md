@@ -2,59 +2,73 @@
 
 [← Zurück](01-grundprinzip-idealer-und-realer-opv.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](03-nichtinvertierender-verstaerker.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Gegenkopplung und Spannungsfolger** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- negative Gegenkopplung als Regelkreis erklären
+- Spannungsfolger analysieren
+- Stabilität und kapazitive Last beurteilen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Der Spannungsfolger verstärkt die Spannung nicht, aber er entkoppelt eine hochohmige Quelle von einer Last. Gleichzeitig zeigt er am klarsten, wie der OPV seinen Ausgang so nachführt, dass die Eingangsdifferenz klein wird.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Geschlossener Regelkreis
+
+Beim Spannungsfolger liegt Uout direkt am invertierenden Eingang; das Signal treibt den nichtinvertierenden Eingang. Ist Uout zu klein, wird Uplus − Uminus positiv und der Ausgang steigt. Ist er zu gross, sinkt er. Negative Rückkopplung korrigiert die Abweichung.
+
+![Spannungsfolger als negativer Regelkreis](../bilder/12-operationsverstaerker/12-02-spannungsfolger.png)
+
+Ideal gilt `Uout = Uin`. Der Eingang belastet die Quelle kaum, der Ausgang liefert den Laststrom. Real bleiben Offset, Biasstrom, Ausgangsstromgrenze, Ausgangswiderstand und Bandbreite.
+
+### Stabilität
+
+Nicht jeder OPV ist bei Verstärkung 1 stabil. Kapazitive Last erzeugt zusätzliche Phase und kann Überschwingen oder Oszillation verursachen. Datenblattangaben zu Unity-Gain-Stabilität, Lastkapazität und empfohlenem Serienwiderstand sind verbindlich. Versorgung erhält lokale Abblockkondensatoren mit kurzem Rückweg.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Tempomat vergleicht Soll- und Istgeschwindigkeit. Er liefert die nötige Motorleistung, damit die Geschwindigkeit folgt, ohne dass der Bedienknopf selbst Leistung liefern muss.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Eine 100-kΩ-Quelle wird direkt von einer 10-kΩ-Last belastet; der ideale Teiler liefert nur 9,1 % der Quellenspannung. Ein geeigneter Spannungsfolger dazwischen entlastet die Quelle, sofern Ausgangsstrom und Bereiche eingehalten werden.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 12](../praxis/modul-12.md).
+Vergleiche Quellenspannung mit und ohne Last sowie mit Puffer. Prüfe Sprungantwort zunächst ohne, dann mit kleiner freigegebener Kapazität und beobachte Überschwingen.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Vor einem ADC senkt der Puffer die Quellimpedanz und lädt die Sample-and-Hold-Kapazität schneller. Einschwingzeit nach Kanalwechsel und OPV-Stabilität bleiben messbare Hardwaregrössen.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Der Spannungsfolger liefert Stromverstärkung und Entkopplung; Stabilität bei Verstärkung 1 muss im Datenblatt bestätigt sein.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- keinen Nutzen bei Verstärkung 1 sehen
+- kapazitive Last beliebig erhöhen
+- Unity-Gain-Stabilität voraussetzen
+- Versorgung nicht lokal entkoppeln
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Negative Gegenkopplung zwingt Uout zur Nachführung. Der Puffer schützt die Quelle, benötigt aber Ausgangsreserve und Stabilität.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wie wirkt negative Rückkopplung?
+2. Was entkoppelt der Puffer?
+3. Warum kann CLast schwingen?
+4. Was verbessert er vor einem ADC?
+
+Weitere Aufgaben: [Übungen zu Modul 12](../uebungen/modul-12.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b4-LK01–10`, `c1–c2`
+- Nachweise: Belastungs- und Sprungantwortvergleich; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

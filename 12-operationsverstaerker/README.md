@@ -4,7 +4,17 @@
 
 ## Worum geht es?
 
-Dieses Modul führt **Operationsverstärker** von einer verständlichen Vorstellung zu technisch belastbaren Berechnungen, Schaltungen und Messungen. Die Theorie-Lektionen bereiten die Praxis gezielt vor; Übungen und Lösungen sind getrennt.
+Operationsverstärker formen kleine analoge Signale, treiben ADC-Eingänge und bilden Filter, Komparatoren oder Rechenstufen. Das ideale Modell macht Schaltungen berechenbar; reale Eingangsbereiche, Ausgangshub, Offset, Bias, Bandbreite, Slew Rate und Stabilität entscheiden, ob sie tatsächlich funktionieren.
+
+Jede Grundschaltung wird deshalb in vier Schritten betrachtet: Rückkopplung verstehen, ideale Funktion berechnen, reale Grenzen prüfen und am Oszilloskop beziehungsweise DMM verifizieren.
+
+## Lernpfad
+
+```text
+Differenzeingang → Gegenkopplung und Puffer → nichtinvertierend
+→ invertierend und summierend → Differenz → Schmitt-Trigger
+→ Genauigkeit, Dynamik und Versorgung
+```
 
 ## Lektionen
 
@@ -15,13 +25,13 @@ Dieses Modul führt **Operationsverstärker** von einer verständlichen Vorstell
 5. [12.5 – Differenzverstärker](05-differenzverstaerker.md)
 6. [12.6 – Komparator und Schmitt-Trigger](06-komparator-und-schmitt-trigger.md)
 7. [12.7 – Offset, Bias, Slew Rate, Rail-to-Rail und Versorgung](07-offset-bias-slew-rate-rail-to-rail-und-versorgung.md)
-8. [Übungen](../uebungen/modul-12.md)
-9. [Praxis – Sensorsignal verstärken und vermessen](../praxis/modul-12.md)
 
-## Bildungsplan 2026
+## Üben und messen
 
-Schwerpunkt: `a3`, `b1`, `b4`, `b5`. Details und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
+- [Übungen zu Modul 12](../uebungen/modul-12.md)
+- [Separate Lösungen](../loesungen/modul-12-loesungen.md)
+- [Praxis – Sensorsignal verstärken und vermessen](../praxis/modul-12.md)
 
-## Projektbezug
+## Bezug Bildungsplan 2026
 
-Die [Projektübersicht](../projekte/README.md) zeigt, wie das Modul in Projekt A, B oder C einfliesst.
+Schwerpunkte: `a3`, `b1-LK01–06`, `b4-LK01–10`, `b5` und `c1–c2`. Nachgewiesen werden Dimensionierung, Bereichs- und Stabilitätsprüfung, Messung von Verstärkung und Grenzverhalten sowie ADC-gerechte Signalaufbereitung. Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

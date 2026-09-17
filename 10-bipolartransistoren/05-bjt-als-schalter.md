@@ -2,59 +2,73 @@
 
 [← Zurück](04-arbeitspunkt-und-dimensionierung.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](06-bjt-als-verstaerker.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **BJT als Schalter** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- NPN-Schalter vollständig dimensionieren
+- Basiswiderstand und Freilaufpfad prüfen
+- Schaltverlust und Speicherzeit erkennen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Relais, LED und kleine Motoren benötigen oft mehr Strom als ein GPIO liefern darf. Der BJT übernimmt den Laststrom. Ein guter Schalter braucht jedoch ausreichenden Basisstrom, Schutz vor induktiver Energie und einen sicheren Zustand während Reset.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Low-Side-Schalter
+
+Die Last liegt zwischen Versorgung und Kollektor, der Emitter an GND. Ein Basiswiderstand begrenzt IB, ein Basis-Emitter-Widerstand hält Q1 bei hochohmigem GPIO aus. Induktive Lasten benötigen einen Freilaufpfad.
+
+![NPN-Low-Side-Schalter mit LED und Freilaufoption](../bilder/10-bipolartransistoren/10-05-bjt-schalter.png)
+
+Für robustes Einschalten wird IB aus `IC/βforced` bestimmt. Danach gilt `RB = (UGPIO − UBE)/IB`. Prüfe GPIO-Ausgangsspannung bei IB, VCE(sat), Transistorleistung `PQ ≈ VCE(sat)·IC` und Widerstandsleistung.
+
+### Dynamik
+
+Tiefe Sättigung speichert Ladung und kann das Abschalten verzögern. Bei langsamer PWM oder Relais ist dies oft unkritisch; bei hoher Frequenz werden Basisentladung, Schottky-Klemme oder MOSFET geprüft.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Türstopper soll die Tür sicher ganz öffnen oder schliessen. Bleibt sie halb geöffnet, entsteht Reibung und Wärme. Zu starkes Hineindrücken kann das spätere Lösen verzögern – ähnlich tiefe Sättigung.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Eine LED-Last benötigt 60 mA. Mit βforced = 10 sind 6 mA Basisstrom nötig. Bei 3,3 V und UBE = 0,8 V folgt `RB ≈ 417 Ω`; 430 Ω ist ein Kandidat. GPIO- und Portgrenzen werden vor Freigabe geprüft.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 10](../praxis/modul-10.md).
+Miss GPIO-Pegel, IB über RB, IC über Shunt und VCE. Wiederhole mit zu grossem RB und beobachte höhere VCE sowie Erwärmung, ohne Grenzwerte zu überschreiten.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Initialisiere den GPIO ohne kurzen Ein-Puls und berücksichtige invertierte Logik. PWM-Frequenz wird so gewählt, dass Schaltzeit, Lastdynamik und Verlustleistung zusammenpassen.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Ein BJT-Schalter ist nur dann «ein», wenn Treiberstrom, Sättigung, Last und Wärme gemeinsam geprüft sind.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- RB nur mit typischem β berechnen
+- Freilaufdiode vergessen
+- VCE(sat) gleich null setzen
+- Reset-Pegel nicht definieren
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Der BJT entlastet den GPIO, benötigt aber dauernden Basisstrom. Robuste Auslegung umfasst Treiber, Last, Schutz und Dynamik.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was bedeutet βforced?
+2. Welche Leistung entsteht in Q1?
+3. Warum verzögert tiefe Sättigung?
+4. Welche Reset-Konfiguration ist sicher?
+
+Weitere Aufgaben: [Übungen zu Modul 10](../uebungen/modul-10.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b4-LK01–10`, `c1–c2`
+- Nachweise: sicherer GPIO-gesteuerter BJT-Lastschalter; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

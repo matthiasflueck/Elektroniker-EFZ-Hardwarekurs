@@ -2,59 +2,74 @@
 
 [← Zurück](03-vgs-und-threshold-spannung-richtig-verstehen.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](05-gate-kapazitaet-gate-charge-und-treiber.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **RDS(on), Kennfelder und sichere Betriebsbereiche** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`, `c1`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Leitverluste mit RDS(on) berechnen
+- Kennfelder und Maximalwerte unterscheiden
+- MOSFET-SOA für linear und gepulst prüfen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Ein kleiner RDS(on) reduziert Leitverluste, sagt aber nicht alles über Schaltbetrieb, Kühlung oder linearen Betrieb. Datenblattwerte gelten bei definierter VGS und Temperatur; die Sperrschicht kann während eines Pulses viel heisser werden als das Gehäuse.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Leitender Kanal
+
+Im ohmschen Bereich gilt näherungsweise `VDS = ID·RDS(on)` und `Pcond = IDrms²·RDS(on)`. Für Worst Case wird der maximale heisse Widerstand verwendet, nicht der typische 25-°C-Wert.
+
+![RDS(on) über Temperatur und MOSFET-SOA](../bilder/11-mosfets/11-04-rds-soa.png)
+
+### Kennfelder
+
+Ausgangskennlinien zeigen ID über VDS für verschiedene VGS; Transferkurven ID über VGS. Sie erklären Verhalten, sind aber meist typisch. Absolute-Maximum-Ströme gelten nur unter thermischen Bedingungen, die kleine Gehäuse in realen Leiterplatten selten erreichen.
+
+### Safe Operating Area
+
+Die SOA begrenzt Kombinationen aus VDS, ID und Pulsdauer. Viele Schalt-MOSFETs sind für linearen Betrieb nur eingeschränkt geeignet. Repetitive Avalanche darf nur verwendet werden, wenn Datenblatt, Energie, Temperatur und Lebensdauer sie ausdrücklich abdecken.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Der niedrige Rollwiderstand eines Reifens sagt nichts darüber, wie viel Last er bei hoher Geschwindigkeit und Hitze sicher trägt. RDS(on), SOA und Kühlung beantworten verschiedene Fragen.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+IDrms = 8 A und heisser `RDS(on) = 25 mΩ` ergeben `Pcond = 8²·0,025 = 1,6 W`. Bei 10 A wären es bereits 2,5 W. Leiterplatte und thermischer Pfad müssen diese Wärme abführen.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 11](../praxis/modul-11.md).
+Miss VDS im Ein-Zustand mit differenzieller oder korrekt referenzierter Methode und bestimme den effektiven Widerstand. Kleine Spannungen verlangen kurze Leitungen und möglichst Kelvin-nahe Messpunkte.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Tastgrad beeinflusst Irms und Erwärmung; Stromspitzen beeinflussen SOA. Eine Software-Strombegrenzung benötigt Messlatenz und Hardwareabschaltung für schnelle Kurzschlüsse.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> RDS(on) bestimmt Leitverlust nur innerhalb einer thermisch und durch SOA zulässigen Anwendung.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- typischen kalten RDS(on) verwenden
+- ID max ohne Gehäusebedingungen übernehmen
+- SOA bei linearem Betrieb ignorieren
+- Drainspannung mit langer Masseschleife messen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Leitverlust, Temperatur und SOA werden gemeinsam geprüft. Kennlinien erklären, garantierte Tabellenwerte dimensionieren.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Berechne Pcond für 6 A und 30 mΩ. Warum nutzt du den heissen Maximalwert?
+2. Was zeigt die SOA?
+3. Wozu dienen Kelvin-Messpunkte?
+
+Weitere Aufgaben: [Übungen zu Modul 11](../uebungen/modul-11.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–04`, `b4-LK01–10`, `b5`, `c1`
+- Nachweise: Leitverlust- und SOA-Nachweis; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

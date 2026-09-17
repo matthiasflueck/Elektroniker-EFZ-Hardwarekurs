@@ -2,59 +2,76 @@
 
 [← Zurück](04-z-dioden-und-spannungsbegrenzung.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](06-ein-und-mehrweg-gleichrichter.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **LEDs und optische Kennwerte** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`, `d8`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- LED-Strom sicher begrenzen
+- elektrische und optische Daten unterscheiden
+- PWM-Dimmung korrekt beurteilen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+LEDs wandeln Strom in Licht, sind aber keine Glühlampen. Kleine Spannungsänderungen können grosse Stromänderungen bewirken. Farbe, Helligkeit, Pulsbetrieb und Temperatur werden deshalb über Datenblatt und Strombegrenzung beherrscht.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Licht aus Rekombination
+
+Bei geeigneten Halbleitermaterialien wird bei der Rekombination Energie als Photon abgegeben. Die Bandlücke bestimmt die Wellenlänge und beeinflusst die Durchlassspannung. Rot, grün und blau besitzen daher unterschiedliche typische UD-Bereiche.
+
+![LED mit Vorwiderstand und optischen Kennwerten](../bilder/09-dioden-schutz/09-05-led-vorwiderstand.png)
+
+### Strombegrenzung
+
+Für eine Anzeige-LED gilt näherungsweise `R1 = (UQ − UF)/IF`. `UF` ist die Flussspannung beim vorgesehenen Strom, `IF` der Durchlassstrom. Widerstandsleistung und ungünstige Kombination aus hoher Versorgung und kleiner UF werden geprüft. Konstantstromquellen sind bei Leistungs-LEDs zweckmässiger.
+
+### Optische Angaben
+
+Lichtstärke in Candela hängt vom Abstrahlwinkel ab; Lichtstrom in Lumen beschreibt die gesamte sichtbare Leistung gewichtet nach Augenempfindlichkeit. Dominante Wellenlänge, Farbort und Temperaturverschiebung sind nicht durch Gehäusefarbe zuverlässig festgelegt.
+
+Pulsstromgrenzen gelten nur für definierte Pulsdauer, Tastgrad und Temperatur. Ein hoher zulässiger Pulsstrom ist keine Freigabe für beliebige PWM.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Eine LED ist wie eine empfindliche Düse: Die Versorgung stellt Druck bereit, der Vorwiderstand begrenzt den Durchfluss. Die sichtbare Helligkeit hängt zusätzlich von Düse, Blickrichtung und menschlichem Auge ab.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+UQ = 5,0 V, UF liegt im Worst Case bei 1,8 V und IF soll höchstens 8 mA sein. `R1 ≥ (5,0 − 1,8)/8 mA = 400 Ω`; E24 liefert 430 Ω. Die maximale Widerstandsleistung liegt bei ungefähr 24 mW.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 09](../praxis/modul-09.md).
+Vergleiche LED-Strom und Helligkeit bei mehreren Widerständen. Strom wird über Widerstandsspannung bestimmt; die LED niemals direkt an eine starre Spannungsquelle anschliessen.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+PWM verändert den zeitlichen Mittelwert des Stroms, nicht automatisch dessen Spitzenwert. Timerfrequenz, Tastgrad, GPIO-Grenze und Treiberstufe bestimmen sichtbare Helligkeit, Flimmern und Belastung.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Eine LED wird über ihren Strom betrieben; Spannung und optische Wirkung sind strom-, temperatur- und typabhängig.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- LED ohne Strombegrenzung betreiben
+- typische UF für Worst Case verwenden
+- Candela und Lumen gleichsetzen
+- PWM-Pulsstromgrenze ohne Bedingungen übernehmen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+LED-Auslegung verbindet elektrischen Arbeitspunkt, thermische Grenze und optische Anforderungen. Widerstand oder Stromquelle begrenzen den Strom.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Warum unterscheiden sich LED-Farben elektrisch?
+2. Dimensioniere R1 für 3,3 V, 2,0 V und 5 mA. Was beschreibt Candela?
+3. Welche Grenze prüfst du bei PWM?
+
+Weitere Aufgaben: [Übungen zu Modul 09](../uebungen/modul-09.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–04`, `b4-LK01–10`, `c1`
+- Nachweise: LED-Worst-Case-Rechnung und PWM-Messung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

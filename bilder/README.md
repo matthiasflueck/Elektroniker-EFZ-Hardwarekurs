@@ -45,3 +45,14 @@ Alle 23 Abbildungen sind als hochauflösende PNG-Dateien direkt in den fachlich 
 | `08-filter-resonanz` | 7 | RC-Tief-/Hochpass, Zeit- und Frequenzsicht, Bode-Diagramm, RL-/RLC-Netzwerke, Resonanz und Güte |
 
 Die 28 Abbildungen dieses Blocks sind hochauflösende PNG-Dateien. Die Schaltbilder verwenden genormte Bauteilsymbole und eindeutige Referenzbezeichner ohne Unterstriche; Diagramme zeigen qualitative Zusammenhänge und werden im Text durch Berechnungen und Messaufträge ergänzt.
+
+## Abbildungen der Module 09–12
+
+| Modul | Anzahl | Schwerpunkte |
+|---|---:|---|
+| `09-dioden-schutz` | 7 | PN-Übergang, Kennlinie und Lastgerade, Diodenauswahl, Z-Dioden-Begrenzung, LED-Strompfad, Brückengleichrichter und koordinierter Überspannungsschutz |
+| `10-bipolartransistoren` | 7 | NPN/PNP, Strombeziehungen, Kennlinienfelder, Arbeitspunkt, Low-Side-Schalter, Kleinsignalverstärker und thermischer Arbeitsbereich |
+| `11-mosfets` | 7 | Feldsteuerung, N-/P-Kanal-Topologien, Threshold-Kennlinie, RDS(on), Gate-Ladung, High-/Low-Side-Ansteuerung und Verlustbilanz |
+| `12-operationsverstaerker` | 7 | reales OPV-Modell, Gegenkopplung, nichtinvertierende und invertierende Verstärker, Differenzverstärker, Schmitt-Trigger und dynamische Grenzen |
+
+Die 28 Abbildungen sind als PNG direkt bei den zugehörigen Erklärungen eingebunden. Neben Kennlinien und Funktionsdiagrammen enthält der Block bewusst viele vollständige Schaltungen mit IEC-Widerstandssymbolen, Referenzbezeichnern und klar erkennbaren Signal- oder Strompfaden.

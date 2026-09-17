@@ -4,7 +4,16 @@
 
 ## Worum geht es?
 
-Dieses Modul führt **Bipolartransistoren** von einer verständlichen Vorstellung zu technisch belastbaren Berechnungen, Schaltungen und Messungen. Die Theorie-Lektionen bereiten die Praxis gezielt vor; Übungen und Lösungen sind getrennt.
+Bipolartransistoren steuern einen Kollektorstrom über den Basis-Emitter-Kreis. Sie eignen sich als Schalter, Verstärker und Stromquelle, verlangen aber eine saubere Betrachtung von Stromverstärkung, Arbeitspunkt, Sättigung und Wärme.
+
+Das Modul trennt bewusst den Schaltbetrieb vom linearen Betrieb. So wird klar, weshalb ein BJT als Lastschalter genügend Basisstrom benötigt, ein Verstärker dagegen einen stabilen Arbeitspunkt mit Reserve in beide Richtungen.
+
+## Lernpfad
+
+```text
+NPN/PNP → Strombeziehungen → Kennlinien und Bereiche
+→ Arbeitspunkt → Schalter → Verstärker → Thermik und SOA
+```
 
 ## Lektionen
 
@@ -15,13 +24,13 @@ Dieses Modul führt **Bipolartransistoren** von einer verständlichen Vorstellun
 5. [10.5 – BJT als Schalter](05-bjt-als-schalter.md)
 6. [10.6 – BJT als Verstärker](06-bjt-als-verstaerker.md)
 7. [10.7 – Verlustleistung und thermische Grenzen](07-verlustleistung-und-thermische-grenzen.md)
-8. [Übungen](../uebungen/modul-10.md)
-9. [Praxis – LED oder Relais über BJT schalten](../praxis/modul-10.md)
 
-## Bildungsplan 2026
+## Üben und messen
 
-Schwerpunkt: `b1`, `b4`, `b5`. Details und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
+- [Übungen zu Modul 10](../uebungen/modul-10.md)
+- [Separate Lösungen](../loesungen/modul-10-loesungen.md)
+- [Praxis – LED oder Relais über BJT schalten](../praxis/modul-10.md)
 
-## Projektbezug
+## Bezug Bildungsplan 2026
 
-Die [Projektübersicht](../projekte/README.md) zeigt, wie das Modul in Projekt A, B oder C einfliesst.
+Schwerpunkte: `b1-LK01–06`, `b4-LK01–10`, `b5` und `c1–c2`. Nachgewiesen werden Kennlinienverständnis, robuste Basisdimensionierung, Messung von Strömen und Knotenpotentialen sowie thermische Plausibilisierung. Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

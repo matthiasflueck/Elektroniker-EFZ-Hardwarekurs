@@ -2,59 +2,77 @@
 
 [← Zurück](05-differenzverstaerker.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](07-offset-bias-slew-rate-rail-to-rail-und-versorgung.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Komparator und Schmitt-Trigger** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Komparator und OPV unterscheiden
+- Hysterese als zwei Schaltschwellen erklären
+- Pull-up und Ausgangstyp korrekt beschalten
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Langsam oder verrauscht durchlaufene Schwellen erzeugen ohne Hysterese viele Übergänge. Ein Schmitt-Trigger schafft getrennte Ein- und Ausschaltschwellen. Komparatoren sind dafür gebaut; ein beliebiger OPV kann in Sättigung langsam oder ausserhalb seiner Eingangsgrenzen reagieren.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Offener Regelkreis
+
+Der Komparator vergleicht Uplus und Uminus und schaltet seinen Ausgang in einen definierten Zustand. Viele Typen besitzen Open-Collector oder Open-Drain und benötigen einen Pull-up. Ausgangshigh entspricht dann der Pull-up-Spannung innerhalb der zulässigen Grenzen.
+
+### Positive Rückkopplung
+
+Beim Schmitt-Trigger wird ein Teil des Ausgangs auf den Vergleichseingang zurückgeführt. Dadurch entstehen obere Schwelle UTH und untere Schwelle UTL. Ihre Differenz `UH = UTH − UTL` ist die Hysterese.
+
+![Komparator und Schmitt-Trigger mit Hysteresekennlinie](../bilder/12-operationsverstaerker/12-06-schmitt-trigger.png)
+
+Die genaue Formel hängt von Topologie, Referenz und Ausgangspegeln ab. Diese Pegel sind real und oft asymmetrisch. Widerstände werden deshalb mit den garantierten VOH/VOL- beziehungsweise Pull-up-Bedingungen berechnet.
+
+### Dynamik
+
+Propagationszeit, Eingangsoverdrive und Ausgangslast bestimmen Schaltzeit. Langsame Eingangsrampen können trotz Hysterese Jitter zeigen; interne Eingangsschutzstrukturen und Common Mode bleiben einzuhalten.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Thermostat schaltet die Heizung bei 19 °C ein und erst bei 21 °C wieder aus. Zwei Schwellen verhindern hektisches Ein- und Ausschalten um genau 20 °C.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein Eingang rauscht um eine Schwelle mit ±20 mV. Eine geplante Hysterese von 100 mV bietet Reserve. Liegen die Schwellen bei 1,45 V und 1,55 V, gilt `UH = 100 mV`; ihre absolute Genauigkeit hängt von Referenz, Ausgangspegeln und Widerständen ab.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 12](../praxis/modul-12.md).
+Speise eine langsame Dreieckspannung ein und miss Ein- sowie Ausschaltschwelle. Überlagere begrenztes Rauschen und vergleiche ohne und mit Hysterese.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Ein Timer-Input oder Interrupt sieht die bereinigten Flanken. Firmware-Entprellung ergänzt, aber ersetzt keine Hardwarehysterese bei schnellen Störungen oder unzulässigen Zwischenpegeln.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Hysterese schafft zwei Schwellen und verhindert Mehrfachschalten durch Rauschen nahe dem Umschaltpunkt.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- beliebigen OPV als schnellen Komparator nutzen
+- Open-Drain ohne Pull-up betreiben
+- Ausgangspegel ideal annehmen
+- Hysterese und Firmwareentprellung verwechseln
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Komparatoren entscheiden Pegel; positive Rückkopplung erzeugt robuste getrennte Schwellen. Ausgangstyp und Dynamik gehören zur Dimensionierung.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was ist UH?
+2. Warum braucht Open-Drain einen Pull-up?
+3. Wie misst du beide Schwellen?
+4. Was ergänzt Firmware?
+
+Weitere Aufgaben: [Übungen zu Modul 12](../uebungen/modul-12.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b4-LK01–10`, `c1–c2`
+- Nachweise: gemessene Hysteresekennlinie und digitale Flankenprüfung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

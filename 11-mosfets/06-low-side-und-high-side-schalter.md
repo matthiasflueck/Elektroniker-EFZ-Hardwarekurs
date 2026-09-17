@@ -2,59 +2,75 @@
 
 [← Zurück](05-gate-kapazitaet-gate-charge-und-treiber.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](07-schaltverluste-thermik-und-datenblattwahl.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Low-Side- und High-Side-Schalter** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`, `c1`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Low- und High-Side-Strompfade analysieren
+- N-Kanal-High-Side-Treiber erklären
+- Halbbrücke mit Totzeit sicher beurteilen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Der Einbauort des Schalters bestimmt Bezugspotential, Diagnose und Treiber. Eine Halbbrücke benötigt zwei komplementäre Schalter, darf sie aber nie gleichzeitig einschalten. Schon wenige Nanosekunden falscher Überlappung können einen hohen Quer-strom erzeugen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Low-Side
+
+Beim N-Kanal-Low-Side liegt Source nahe GND. Ansteuerung und Messung sind einfach, aber die Last ist im Aus-Zustand nicht zwingend auf GND bezogen. Fehler nach Plus können unbemerkt Strom liefern.
+
+### High-Side
+
+Ein P-Kanal vereinfacht moderate High-Side-Pfade, besitzt aber oft höheren RDS(on). Ein N-Kanal benötigt Gate-Spannung oberhalb der Source. Bootstrap-Treiber erzeugen diese Spannung nur bei ausreichender Umschaltung und sind nicht für beliebige 100-%-Einschaltdauer geeignet.
+
+![Low-Side High-Side und Halbbrücke mit Strompfaden](../bilder/11-mosfets/11-06-low-high-side.png)
+
+### Halbbrücke
+
+High- und Low-Side dürfen nicht gleichzeitig leiten. Totzeit verhindert Shoot-through, erzeugt aber Body-Diodenleitung und zusätzliche Verluste. Parasitäres Miller-Einschalten wird durch Treiberimpedanz, Layout und gegebenenfalls Miller-Clamp reduziert.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Zwei Schleusentore verbinden ein Becken abwechselnd mit oben und unten. Öffnen beide gleichzeitig, entsteht ein unkontrollierter Kurzschlusskanal. Eine kurze Sicherheitswartezeit verhindert dies.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Bei 24 V und insgesamt 50 mΩ Querpfad wären im idealisierten gleichzeitigen Einschalten `I = 24/0,05 = 480 A`. Reale Induktivität begrenzt den Anstieg, doch die Zahl zeigt, warum Totzeit und Hardwareverriegelung kritisch sind.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 11](../praxis/modul-11.md).
+Beginne mit einem einzelnen Low-Side-Schalter. Halbbrücken werden nur auf freigegebener Platine mit Strombegrenzung, isolierter/differenzieller Messung und Totzeit untersucht.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Timer erzeugen komplementäre PWM und Deadtime. Ausgänge müssen bei Break-Ereignis, Reset und Debug-Halt in einen sicheren Zustand wechseln. Registerkonfiguration wird am Gate gemessen, nicht nur im Code geprüft.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> High-Side-Ansteuerung folgt der Source; Halbbrücken benötigen garantierte Totzeit und sicheren Fehlerzustand.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- N-Kanal-High-Side mit festem GPIO treiben
+- Bootstrap bei 100 % Tastgrad voraussetzen
+- Totzeit nur im Mittelwert betrachten
+- normale Masseklemme am schwebenden Knoten verwenden
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Topologie bestimmt Treiber, Messung und Fehlerpfad. Halbbrücken verbinden Hardwareverriegelung, Totzeit und sorgfältiges Layout.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Warum ist Low-Side einfach?
+2. Was braucht ein N-Kanal-High-Side?
+3. Was ist Shoot-through?
+4. Wie prüfst du Totzeit?
+
+Weitere Aufgaben: [Übungen zu Modul 11](../uebungen/modul-11.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b4-LK01–10`, `c1–c2`
+- Nachweise: Strompfadanalyse und gemessene sichere Schaltfolge; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

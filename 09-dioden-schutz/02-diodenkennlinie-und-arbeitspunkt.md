@@ -2,59 +2,76 @@
 
 [← Zurück](01-halbleitergrundlagen-und-pn-uebergang.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](03-gleichrichter-und-schottky-dioden.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Diodenkennlinie und Arbeitspunkt** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`, `d8`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Diodenkennlinie lesen
+- Arbeitspunkt mit Vorwiderstand bestimmen
+- statischen und differentiellen Widerstand unterscheiden
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Eine reale Diode entscheidet ihren Strom nicht allein. Quelle und Serienwiderstand liefern eine zweite Beziehung; ihr Schnittpunkt ist der Arbeitspunkt. Diese Denkweise verhindert Überstrom und bildet die Grundlage für LEDs, Gleichrichter und Schutzklemmen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Nichtlineare Kennlinie
+
+Der Durchlassstrom wächst näherungsweise exponentiell mit der Diodenspannung. Für praktische Handrechnung wird meist ein Datenblattpunkt oder ein stückweise lineares Modell verwendet. Ein einzelner Wert wie 0,7 V ist nur innerhalb eines begrenzten Strom- und Temperaturbereichs brauchbar.
+
+![Diodenkennlinie mit Lastgerade und Arbeitspunkt](../bilder/09-dioden-schutz/09-02-kennlinie-lastgerade.png)
+
+### Lastgerade
+
+Für Quelle UQ, Widerstand R1 und Diode D1 gilt `ID = (UQ − UD)/R1`. Diese Gerade enthält alle Arbeitspunkte, die die äussere Schaltung zulässt. Der Schnitt mit der Diodenkennlinie erfüllt beide Bedingungen gleichzeitig.
+
+### Zwei Widerstandsbegriffe
+
+Der statische Widerstand am Arbeitspunkt ist `Rstat = UD/ID`. Der differentielle Widerstand `rd = ΔUD/ΔID` beschreibt die lokale Steigung und ist meist deutlich kleiner. `rd` ist ein Kleinsignalwert, kein Ersatz für den Vorwiderstand.
+
+Temperatur verschiebt die Kennlinie. Parallele Dioden teilen Strom deshalb nicht zwangsläufig gleich; kleine Temperatur- oder Bauteilunterschiede können sich verstärken.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Eine Pumpe liefert Druck, ein Ventil besitzt eine stark nichtlineare Öffnung und das Rohr begrenzt den Durchfluss. Der tatsächliche Durchfluss entsteht aus allen drei Eigenschaften, nicht aus dem Ventil allein.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+UQ = 5 V, R1 = 330 Ω und der erwartete Diodenpunkt UD = 0,72 V. Dann gilt `ID = (5 V − 0,72 V)/330 Ω ≈ 13,0 mA`. Mit 0,65 V wären es 13,2 mA: Der Widerstand stabilisiert den Strom gegenüber der unsicheren Flussspannung.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 09](../praxis/modul-09.md).
+Nimm die Kennlinie mit strombegrenzter Quelle und Serienwiderstand punktweise auf. Miss UD und die Widerstandsspannung; berechne ID daraus. Verändere nie die Schaltung unter Spannung.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Ein ADC kann UD und Shuntspannung erfassen. Firmware darf aus einem einzigen Diodenwert keine Temperatur ableiten, solange Prüfstrom, Kalibrierung und Eigenerwärmung unbekannt sind.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Der Arbeitspunkt ist der Schnitt aus Bauteilkennlinie und äusserer Schaltung.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Diodenstrom ohne Serienwiderstand einstellen
+- statischen mit differentiellem Widerstand verwechseln
+- Kennlinie zwischen verschiedenen Temperaturen vergleichen
+- Strombereich des Messgeräts überschreiten
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Kennlinie und Lastgerade bestimmen gemeinsam UD und ID. Datenblatt, Temperatur und Messbedingungen gehören zu jedem Kennlinienpunkt.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was beschreibt die Lastgerade?
+2. Berechne ID für 3,3 V, 220 Ω und 0,7 V. Wozu dient rd?
+3. Warum ist paralleles Schalten kritisch?
+
+Weitere Aufgaben: [Übungen zu Modul 09](../uebungen/modul-09.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK02–03`, `b4-LK01–10`, `b5`
+- Nachweise: gemessene Kennlinie mit berechnetem Arbeitspunkt; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

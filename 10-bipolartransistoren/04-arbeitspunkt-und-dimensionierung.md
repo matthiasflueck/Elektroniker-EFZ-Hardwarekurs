@@ -2,59 +2,73 @@
 
 [← Zurück](03-kennlinien-und-betriebsbereiche.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](05-bjt-als-schalter.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Arbeitspunkt und Dimensionierung** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- linearen Arbeitspunkt festlegen
+- Spannungsteilerbias mit Emitterwiderstand erklären
+- Temperatur- und β-Abhängigkeit reduzieren
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Ein Verstärker benötigt Spielraum nach oben und unten. Ein schlecht stabilisierter Arbeitspunkt wandert mit β und Temperatur, verzerrt früh oder überhitzt. Emitterwiderstand und steifer Bias erzeugen Gegenkopplung bereits im Gleichstrombetrieb.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Ziel des Arbeitspunkts
+
+Ohne Eingangssignal sollen IC und VCE so liegen, dass das Ausgangssignal möglichst symmetrisch schwingen kann. Bei einer einfachen Emitterschaltung wird VCE häufig grob in die Mitte des nutzbaren Bereichs gelegt.
+
+![BJT-Arbeitspunkt mit Spannungsteiler und Emitterwiderstand](../bilder/10-bipolartransistoren/10-04-arbeitspunkt.png)
+
+Der Basisspannungsteiler stellt UB ein. Näherungsweise gilt `UE ≈ UB − UBE` und `IE ≈ UE/RE`. Diese Näherung setzt voraus, dass der Teiler durch IB nicht stark belastet wird. Ein vollständiges Modell ersetzt ihn durch seine Théveninquelle.
+
+### Stabilisierung
+
+Steigt IC durch Temperatur, steigt UE am Emitterwiderstand. Dadurch sinkt UBE bei nahezu fester UB und die Stromzunahme wird gebremst. Diese Gegenkopplung kostet Spannungsreserve, verbessert aber Robustheit. Bauteiltoleranzen und minimale β werden im Worst Case geprüft.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Der Arbeitspunkt ist die Mittelstellung einer Federung. Liegt sie schon am Anschlag, kann eine Bodenwelle nur noch in eine Richtung abgefangen werden. Der Emitterwiderstand wirkt wie eine rückstellende Feder.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+UB = 1,7 V, UBE näherungsweise 0,7 V und RE = 1 kΩ ergeben `IE ≈ 1 mA`. Bei RC = 4,7 kΩ und 12 V fällt am Kollektorwiderstand etwa 4,7 V ab; der verbleibende VCE-Spielraum wird gegen das Entwurfsziel geprüft.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 10](../praxis/modul-10.md).
+Miss UB, UE, UC und berechne IE sowie IC. Erwärme Q1 nur vorsichtig und beobachte die Stabilisierung. Vergleiche mit einer Variante ohne Emitterwiderstand nur unter strenger Strombegrenzung.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Ein ADC misst den Ausgang relativ zu GND. Der analoge Arbeitspunkt muss im ADC-Bereich liegen; Firmware kann Offset rechnerisch entfernen, aber abgeschnittene Signalspitzen nicht wiederherstellen.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Ein stabiler Arbeitspunkt entsteht durch geplante Spannungsreserve und Gegenkopplung, nicht durch typisches β.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Spannungsteiler unbelastet annehmen
+- UBE exakt setzen
+- Emitterwiderstand ohne Headroom planen
+- Clipping per Firmware korrigieren wollen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Biasnetzwerk und Emitterwiderstand legen den Gleichstromarbeitspunkt fest und reduzieren β- sowie Temperaturabhängigkeit.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Warum liegt der Arbeitspunkt nicht am Rand?
+2. Wie stabilisiert RE?
+3. Wann ist die Teiler-Näherung gültig?
+4. Welche Spannungen misst du zuerst?
+
+Weitere Aufgaben: [Übungen zu Modul 10](../uebungen/modul-10.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK02–06`, `b4-LK01–10`, `c1`
+- Nachweise: dimensionierter und vermessener DC-Arbeitspunkt; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

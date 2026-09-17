@@ -2,78 +2,74 @@
 
 [← Modul 11](../11-mosfets/README.md) · [Praxisübersicht](README.md) · [Kursübersicht](../README.md)
 
-> **Ausbaustatus:** Praxisgerüst. Vor Durchführung werden Schaltung, Material, Grenzen, Sollwerte und Auswertung vollständig freigegeben.
-
 ## Lernziel
 
-MOSFET-Leistungsstufe aufbauen und Gate/Drain messen und das Ergebnis fachlich begründet beurteilen.
-
-## Voraussetzungen
-
-Theorie und Übungen des Moduls 11.
+Du wählst einen für die reale Gate-Spannung spezifizierten N-Kanal-MOSFET, baust eine strombegrenzte Low-Side-Stufe auf und misst VGS, VDS, Strom, Schaltzeit und Temperatur bei PWM.
 
 ## Benötigtes Material
 
-Wird mit der fachlichen Ausarbeitung spezifiziert.
+Logic-Level-N-MOSFET mit Datenblatt, sichere ohmsche Last oder kleine Lampe, Gatewiderstände 10…220 Ω, 47-kΩ-Gate-Pulldown, geeigneter Shunt, lokale Abblockkondensatoren und kurze Verbindungen.
 
 ## Benötigte Messgeräte
 
-Werden passend zu Messgrösse, Bereich, Belastung und Sicherheit ausgewählt.
+Strombegrenztes Labornetzgerät, Funktionsgenerator oder MCU-PWM, Zweikanal-Oszilloskop, 10:1-Tastköpfe, DMM und berührungslose Temperaturmessung. Für schwebende Messpunkte nur geeignete Differentialtechnik.
 
 ## Schaltung / Messaufbau
 
-Die Endfassung enthält ein genormtes Schema mit eindeutigen Mess- und Bezugspunkten.
+Last von +U an Drain von Q1, Source über niederinduktiven Shunt an GND. Gate über Rg zum Treiber, Pulldown Gate-Source. Abblockkondensator liegt nahe Laststromschleife.
+
+![MOSFET-Low-Side-Stufe mit Gate- und Drain-Messpunkten](../bilder/11-mosfets/11-05-gate-charge.png)
 
 ## Sicherheitshinweise
 
-Energiequelle, Strombegrenzung, gespeicherte Energie, Massebezug und Abbruchkriterien vor Aufbau festlegen.
+Nur SELV-Kleinspannung und begrenzte Leistung. VGS, VDS, ID, SOA und Bauteiltemperatur erhalten feste Abbruchgrenzen. Die Oszilloskopmasse niemals an Drain oder einen schwebenden Halbbrückenknoten klemmen. ESD-Schutz beim Umgang mit Q1.
 
 ## Vorbereitung
 
-Erst vorhersagen, dann berechnen und erst danach aufbauen.
+Dokumentiere garantierten RDS(on) bei realer VGS, maximal VGS/VDS, QG, SOA, thermische Daten und Pinout. Sage Gate- und Drainverlauf sowie Einfluss eines grösseren Rg voraus.
 
 ## Berechnung
 
-Sollwerte, Toleranzen und Grenzwerte mit Einheiten bestimmen.
+Berechne Pcond mit heissem Maximal-RDS(on), grobes Psw, Pgate, Shuntspannung und erwartete stationäre Temperaturerhöhung. Lege PWM-Frequenz und Tastgrad zunächst konservativ fest.
 
 ## Aufbau
 
-Spannungsfrei aufbauen, Sicht- und Durchgangsprüfung durchführen.
+Stromlos aufbauen. Gate-Schleife und Leistungsschleife kurz halten. Pulldown, Pinout, Shuntleistung und Abblockung prüfen. Netzgerätstromgrenze einstellen; zuerst statisch mit kleinem Laststrom testen.
 
-## Durchführung
+## Durchführung und Messung
 
-Mit Strombegrenzung schrittweise in Betrieb nehmen.
-
-## Messung
-
-Messpunkte, Geräte und Einstellungen dokumentieren.
+1. Miss VGS im Aus- und Ein-Zustand direkt Gate-Source sowie VDS.
+2. Aktiviere niedrige PWM-Frequenz und kontrolliere Logik, Tastgrad und Strom.
+3. Miss tr, tf, Miller-Plateau, VDS-Überschwingen und Shuntstrom.
+4. Vergleiche zwei Rg-Werte bei identischen Bedingungen.
+5. Erhöhe Last oder Frequenz nur innerhalb der Freigabe und beobachte thermisches Einschwingen.
 
 ## Messwerte
 
-| Grösse | Soll | Ist | Unsicherheit/Bedingung |
-|---|---:|---:|---|
-| | | | |
+| Rg | fs | D | VGS high | VDS on | IDrms | tr + tf | Überschwingen | Temperatur |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| | | | | | | | | |
 
 ## Auswertung
 
-Soll und Ist vergleichen, Abweichungen erklären und Änderungen nachführen.
+Vergleiche Pcond und Psw mit Temperaturtrend. Erkläre Rg-Einfluss auf Schaltzeit und Ringing. Prüfe, ob gemessenes VGS wirklich der Datenblattbedingung für RDS(on) entspricht.
 
 ## Fragen
 
-Welche Annahme beeinflusst das Resultat am stärksten?
+Warum genügt VGS(th) nicht? Woher kommt das Miller-Plateau? Weshalb kann höhere PWM-Frequenz überproportional heizen? Welche Messschleife erzeugt scheinbares Ringing?
 
 ## Was solltest du beobachtet haben?
 
-Wird in der Endfassung mit zulässigem Wertebereich beschrieben.
+Das Gate benötigt kurze Lade-/Entladeströme. Während der Drainflanke bleibt VGS im Plateau. Grösserer Rg verlangsamt die Flanken und kann Ringing reduzieren, erhöht aber die Übergangsenergie.
 
 ## Bezug zur Theorie
 
-Modul 11 – MOSFETs und Leistungsschalter.
+Lektionen 11.1 sowie 11.3–11.7; Projekt B übernimmt Datenblatt- und Messnachweise.
 
 ## 🔗 Hardware ↔ Firmware
 
-Falls ein Mikrocontroller beteiligt ist: Konfiguration, Pinzustand, Peripherie und reale Messung gemeinsam beurteilen.
+Timerfrequenz, Comparewert, Ausgangspolarität und Resetmodus werden den realen Gate-/Drainverläufen gegenübergestellt. Jede Frequenzänderung verlangt erneute Verlust- und Temperaturprüfung.
 
-## Bildungsplan 2026
+## Bezug Bildungsplan 2026
 
-`b1`, `b4`, `b5`, `c1`
+`a3`, `b1-LK01–06`, `b4-LK01–10`, `b5`, `c1–c2`; Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
