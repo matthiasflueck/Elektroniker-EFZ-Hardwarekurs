@@ -2,59 +2,73 @@
 
 [← Zurück](03-i-c-open-drain-und-pull-up.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](05-rs-485-und-differentielle-uebertragung.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **SPI und Chip Select** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b2`, `b4`, `b5`, `c1`, `c2`, `d9`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- SCLK, MOSI, MISO und CS zuordnen
+- CPOL und CPHA anhand von Zeitdiagrammen bestimmen
+- MISO-Konflikte und Flankenprobleme diagnostizieren
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+SPI erreicht hohe Datenraten und besitzt keine einheitliche automatische Rahmung. Bausteine unterscheiden sich bei Taktmodus, Wortlänge, Bitreihenfolge und Chip-Select-Zeit. Die elektrische Messung zeigt, was tatsächlich übertragen wurde.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Vier Signalrollen
+
+Der Controller erzeugt SCLK und wählt über CS einen Teilnehmer. MOSI führt Daten zum Teilnehmer, MISO zurück. Mehrere Teilnehmer teilen SCLK und MOSI; ihre MISO-Ausgänge müssen ausserhalb des eigenen CS hochohmig sein.
+
+![SPI-Bus mit Controller, zwei Teilnehmern und getrennten Chip-Select-Leitungen](../bilder/15-schnittstellen-busse/15-04-spi-bus.png)
+
+CPOL bestimmt den Ruhezustand des Takts, CPHA die Abtast- und Änderungsflanke. Daten benötigen Setup- und Hold-Zeit um die Abtastflanke. CS besitzt oft Mindestzeiten vor dem ersten und nach dem letzten Takt.
+
+### Elektrische Grenzen
+
+Schnelle Push-Pull-Flanken erzeugen Reflexionen und Übersprechen auf langen Leitungen. Serienwiderstände nahe am Treiber reduzieren Flankensteilheit und bedämpfen. Sternförmige SCLK-Abzweige sind kritisch. MISO-Konflikte zeigen sich als Zwischenpegel und hoher Strom.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+SCLK ist ein Dirigent, MOSI und MISO sind zwei Leserichtungen, und CS ruft genau einen Musiker auf. Spielen zwei Rückkanäle gleichzeitig, entsteht kein Duett, sondern ein elektrischer Konflikt.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+24 Bits bei 8 MHz benötigen ideal `24/8 MHz = 3 µs`. Fordert das Datenblatt zusätzlich 1 µs CS-Vorlauf und 0,5 µs Nachlauf, dauert der minimale Transfer 4,5 µs.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 15](../praxis/modul-15.md).
+Zeichne SCLK, MOSI, MISO und CS gemeinsam auf. Bestimme CPOL/CPHA, Setup/Hold und Bitreihenfolge. Vergleiche Flanken mit und ohne kleinen freigegebenen Serienwiderstand.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Firmware wählt Modus, Prescaler, Wortlänge und CS-Sequenz. Hardwareprüfung kontrolliert Pegel, Timing und MISO-Freigabe. Detaillierte STM32-SPI-Programmierung bleibt im Programmierkurs.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> SPI ist schnell, aber nur zuverlässig, wenn Taktmodus, CS-Timing, Bitreihenfolge und Leitungseigenschaften gemeinsam stimmen.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- CPOL und CPHA raten
+- MISO mehrerer Teilnehmer gleichzeitig aktivieren
+- CS-Timing auslassen
+- hohe Taktfrequenz ohne Flanken- und Rückwegprüfung wählen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+SPI verwendet getrennte Datenrichtungen und Auswahlleitungen. Das Datenblatt definiert das Protokoll, das Oszilloskop bestätigt Timing und Signalintegrität.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Welche Leitung wählt den Teilnehmer?
+2. Was unterscheidet CPOL und CPHA?
+3. Wie lange dauern 40 Bit bei 10 MHz?
+4. Woran erkennst du einen MISO-Konflikt?
+
+Weitere Aufgaben: [Übungen zu Modul 15](../uebungen/modul-15.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b4`, `b5`, `c1–c2`, `d9`
+- Nachweise: vierkanalige SPI-Timingmessung mit Datenblattvergleich; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

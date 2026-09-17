@@ -2,59 +2,73 @@
 
 [← Zurück](04-boolesche-algebra.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](06-multiplexer-und-schieberegister.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Flip-Flops, Zähler und Zustände** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`, `c5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- kombinatorische und sequenzielle Logik unterscheiden
+- D-Flip-Flop und Zähler zeitlich erklären
+- Setup, Hold und Metastabilität einordnen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Ein Flip-Flop merkt sich einen Zustand. Damit entstehen Zähler, Zustandsautomaten und synchronisierte Eingänge. Entscheidend ist nicht nur der Pegel, sondern der Zeitpunkt relativ zur Taktflanke.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Ein Bit mit Takt
+
+Ein flankengetriggertes D-Flip-Flop übernimmt D an der aktiven Taktflanke nach Q und hält den Wert bis zur nächsten Flanke. Setup-Zeit fordert einen stabilen Eingang vor, Hold-Zeit nach der Flanke. Clock-to-Q beschreibt die Ausgangsverzögerung.
+
+![D-Flip-Flop mit Setup-, Hold- und Clock-to-Q-Zeitdiagramm](../bilder/14-digitaltechnik/14-05-flipflop-timing.png)
+
+Wird das Zeitfenster verletzt, kann Metastabilität auftreten: Q ist vorübergehend weder garantiert Low noch High. Ein Synchronisierer aus zwei Flip-Flops reduziert die Wahrscheinlichkeit, beseitigt sie aber mathematisch nie vollständig.
+
+### Zähler und Zustände
+
+Zählerketten speichern eine Binärzahl. Synchrone Zähler ändern Bits zur gemeinsamen Taktflanke; Ripple-Zähler leiten den Takt weiter und zeigen Zwischenzustände. Reset und Preset können synchron oder asynchron sein und benötigen definierte Freigabezeiten.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Fotoapparat übernimmt genau den Zustand im Moment des Auslösens. Bewegt sich das Motiv während der Belichtung, wird das Bild unscharf – vergleichbar mit verletzter Setup- oder Hold-Zeit.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein 8-Bit-Zähler besitzt 256 Zustände. Bei 1 MHz läuft er nach `256/1 MHz = 256 µs` über. Sein höchstes Bit wechselt mit 1 MHz/256 = 3,90625 kHz.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 14](../praxis/modul-14.md).
+Speise einen Takt ein, beobachte Q-Ausgänge und dekodiere den Zähler. Erzeuge einen asynchronen Eingang nahe der Taktflanke nur an dafür geeigneter Übungshardware und untersuche variable Verzögerungen.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Timer und Register enthalten Flip-Flops. Firmware sieht nur stabil übernommene Zustände; externe asynchrone Signale benötigen Synchronisation, auch wenn der Code sie korrekt liest.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Sequenzielle Logik speichert Zustände an Taktflanken; Setup, Hold und Metastabilität verbinden Zeit und Logikpegel.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Flip-Flop als transparenten Draht behandeln
+- asynchronen Eingang direkt mehrfach verwenden
+- Ripple-Zwischenzustände ignorieren
+- Reset-Freigabe ohne Taktbezug planen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Flip-Flops speichern Bits, Zähler verbinden Zustände über Zeit. Timinganforderungen und Synchronisation sind für zuverlässige Hardware unverzichtbar.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wann übernimmt ein D-Flip-Flop D?
+2. Was bedeuten Setup und Hold?
+3. Wie lange zählt ein 10-Bit-Zähler bei 100 kHz?
+4. Was leistet ein Zwei-Flip-Flop-Synchronisierer?
+
+Weitere Aufgaben: [Übungen zu Modul 14](../uebungen/modul-14.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK06`, `b4-LK01–10`, `c1–c2`, `c5`
+- Nachweise: gemessenes Takt- und Zustandsdiagramm eines Zählers; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

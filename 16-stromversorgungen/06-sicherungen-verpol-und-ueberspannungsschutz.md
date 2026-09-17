@@ -2,59 +2,73 @@
 
 [← Zurück](05-ripple-und-wirkungsgrad.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](07-entkopplung-lastsprung-und-messung.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Sicherungen, Verpol- und Überspannungsschutz** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b2`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Schutzkette nach Energie und Fehlerart strukturieren
+- Sicherung, Verpolschutz und TVS funktional unterscheiden
+- Normalbetrieb und Fehlerenergie nachweisen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Ein Schutzbauteil allein schützt nicht gegen jeden Fehler. Sicherungen begrenzen langfristige Fehlerenergie, Verpolschutz sperrt falsche Polarität, TVS-Dioden klemmen kurze Überspannungen. Erst die koordinierte Kette besitzt einen kontrollierten Energiepfad.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Schutzfunktionen
+
+Eine Sicherung reagiert abhängig von Strom und Zeit; ihr I²t-Wert beschreibt Energiebeanspruchung bei kurzen Ereignissen. Eine rückstellende PTC begrenzt anders und besitzt hohen Kalt-/Heisswiderstand. Ein MOSFET-Verpolschutz reduziert Verlust gegenüber einer Seriendiode, benötigt aber richtige Body-Dioden-Orientierung und Gate-Schutz.
+
+![Koordinierte Eingangsschutzkette aus Sicherung, Verpolschutz und TVS](../bilder/16-stromversorgungen/16-06-eingangsschutz.png)
+
+Eine TVS klemmt schnelle Überspannungen und wandelt Pulsenergie in Wärme. Standoff-, Breakdown- und Clamping-Spannung sind verschieden. Die vorgeschaltete Quellenimpedanz oder Sicherung begrenzt den Strom. Crowbar- und eFuse-Lösungen können dauerhafte Überspannung abschalten.
+
+### Koordination und Layout
+
+Schutz liegt am Eintrittspunkt. Ableitstrompfade sind kurz und führen nicht durch die empfindliche Masse. Bauteiltoleranzen, Temperatur, Pulsform, Wiederholrate und nachgeschaltete Absolute-Maximum-Grenzen werden gemeinsam geprüft.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Gebäude besitzt Eingangstür, Überspannungsableiter und Hauptsicherung. Jedes Element behandelt einen anderen Fehler; ihre Reihenfolge entscheidet, wohin die Energie fliesst.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Eine 24-V-Leitung steigt auf 40 V, die TVS klemmt bei 32 V und die Quelle besitzt 2 Ω. Der Pulsstrom ist näherungsweise `(40 − 32)/2 = 4 A`, die momentane TVS-Leistung `32 V·4 A = 128 W`. Zulässige Pulsdauer muss aus der Kurve folgen.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 16](../praxis/modul-16.md).
+Prüfe Verpolschutz zunächst strombegrenzt und ohne Last. Überspannungstests erfolgen nur mit dafür freigegebener Energiequelle oder Simulator. Miss Spannungen vor und nach jeder Schutzstufe.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Firmware kann eFuse-Status, Unterspannung und Power Good auswerten. Sie kann weder Verpolung noch Überspannung während ausgeschaltetem Zustand verhindern. Hardware muss sicher begrenzen und abschalten.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Schutz funktioniert als koordinierte Kette mit definiertem Energie- und Rückstrompfad.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Sicherung als schnellen Überspannungsschutz ansehen
+- TVS nur nach Nennspannung auswählen
+- MOSFET-Body-Diode falsch orientieren
+- Ableitstrom durch Signalmassen führen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Sicherung, Verpolschutz, TVS und Abschaltung besitzen unterschiedliche Aufgaben. Dimensionierung und Layout müssen den realen Fehlerstrom beherrschen.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Welche Aufgabe besitzt die Sicherung?
+2. Warum unterscheiden sich VRWM und VC einer TVS?
+3. Berechne Pulsstrom und Leistung für den gegebenen Fehler.
+4. Welche Schutzfunktionen wirken ohne Firmware?
+
+Weitere Aufgaben: [Übungen zu Modul 16](../uebungen/modul-16.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a2–a3`, `b1-LK01–07`, `b2-LK03–04`, `b4-LK03`, `b5`
+- Nachweise: begründete Schutzkette mit Puls- und Dauerfehlernachweis; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

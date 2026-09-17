@@ -2,59 +2,75 @@
 
 [← Zurück](04-schaltregler-buck-boost-und-buck-boost.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](06-sicherungen-verpol-und-ueberspannungsschutz.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Ripple und Wirkungsgrad** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b2`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Ripple-Komponenten und Verlustpfade unterscheiden
+- Wirkungsgrad aus Ein- und Ausgangsleistung bestimmen
+- Ripple ohne Messschleifenfehler erfassen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Eine korrekte Mittelspannung kann dennoch störenden Ripple und schlechte Effizienz besitzen. Ripple zeigt Energiespeicherung und Schaltvorgänge, der Wirkungsgrad fasst alle Verluste zusammen. Beide Messungen sind stark vom Aufbau abhängig.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Ripplequellen
+
+Ausgangsripple entsteht aus Spulenstromwelligkeit, Kondensatorkapazität, ESR, ESL und Regelschleife. Schaltspitzen kommen von parasitären Induktivitäten und schnellen Flanken. Sie sind nicht dasselbe wie die niederfrequente Welligkeit.
+
+![Ripple-Messung mit kurzer Massefeder und getrennten Leistungsströmen](../bilder/16-stromversorgungen/16-05-ripple-wirkungsgrad.png)
+
+Der Wirkungsgrad ist `η = Pout/Pin`. Mit Gleichgrössen gilt `Pin = Uin·Iin` und `Pout = Uout·Iout`, sofern die Messwerte den zeitlichen Verlauf korrekt erfassen. Ruhestrom dominiert oft bei kleiner Last, Leitverluste bei grosser Last, Schalt- und Gateverluste bei hoher Frequenz.
+
+### Messmethode
+
+Ripple wird direkt über dem Ausgangskondensator mit kurzer Massefeder gemessen. Bandbreitenbegrenzung und AC-Kopplung werden dokumentiert. Lange Masseleitungen bilden eine Antenne und zeigen künstliche Spitzen.
+
+Für Effizienz müssen Ein- und Ausgang gleichzeitig und möglichst nahe am Regler gemessen werden. Leitungsverluste ausserhalb der Messpunkte verfälschen das Ergebnis.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Der Mittelstand eines Wassertanks kann stimmen, obwohl die Oberfläche wellt. Der Wirkungsgrad sagt zusätzlich, wie viel Pumpenenergie als nutzbarer Durchfluss ankommt.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Uin = 12,0 V, Iin = 0,245 A, Uout = 5,02 V und Iout = 0,500 A. `Pin = 2,94 W`, `Pout = 2,51 W`, `η ≈ 85,4 %`. Die Verlustleistung beträgt rund 0,43 W; Messunsicherheit ist mitzuführen.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 16](../praxis/modul-16.md).
+Vermesse Ripple, Wirkungsgrad und Temperatur bei mehreren Lastpunkten. Wiederhole Ripple mit langer Masseleitung als bewusst falsche Messung und dokumentiere den Unterschied.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Lastmuster aus Sleep, Funk und PWM verändern Wirkungsgrad und Ripple. Firmwaretests müssen reale Betriebsprofile erzeugen. ADC-Telemetrie dient der Überwachung, für genaue Effizienzmessung sind kalibrierte externe Geräte nötig.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Ripple benötigt einen kontrollierten Hochfrequenz-Messaufbau; Wirkungsgrad benötigt korrekt platzierte Leistungs-Messpunkte.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- lange Tastkopfmasse für Ripple verwenden
+- Schaltspitzen und Grundripple vermischen
+- nur einen Lastpunkt messen
+- Kabelverluste dem Regler zurechnen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Ripple beschreibt zeitliche Ausgangsabweichungen, Wirkungsgrad die Leistungsbilanz. Messpunkt, Bandbreite, Last und Temperatur gehören zum Ergebnis.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Welche Bauteile erzeugen Rippleanteile?
+2. Berechne η für 10 W Eingang und 8,7 W Ausgang.
+3. Warum ist die Massefeder wichtig?
+4. Wie erzeugt Firmware ein realistisches Lastprofil?
+
+Weitere Aufgaben: [Übungen zu Modul 16](../uebungen/modul-16.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK03–04`, `b4`, `b5`, `c2`
+- Nachweise: Ripple- und Wirkungsgradkennfeld mit dokumentiertem Messaufbau; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

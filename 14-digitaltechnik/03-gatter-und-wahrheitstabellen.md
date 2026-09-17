@@ -2,59 +2,73 @@
 
 [← Zurück](02-logikpegel-ttl-und-cmos.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](04-boolesche-algebra.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Gatter und Wahrheitstabellen** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`, `c5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- AND, OR, NOT, NAND, NOR und XOR erklären
+- Wahrheitstabellen systematisch erstellen
+- Logikfunktion und reales Gatter verbinden
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Gatter verknüpfen Bedingungen zu Freigaben, Verriegelungen und Fehlerausgängen. Eine Wahrheitstabelle zwingt dazu, alle Eingangskombinationen zu prüfen – nicht nur den gewünschten Normalfall.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Grundfunktionen
+
+AND wird nur 1, wenn alle Eingänge 1 sind. OR wird 1, wenn mindestens ein Eingang 1 ist. NOT kehrt um. NAND und NOR sind negierte Funktionen; aus jeweils nur NAND- oder nur NOR-Gattern lassen sich alle Booleschen Funktionen aufbauen. XOR ist 1, wenn die Eingänge verschieden sind.
+
+![IEC-Gattersymbole mit zwei Eingängen und gemeinsamem Ausgangsbeispiel](../bilder/14-digitaltechnik/14-03-logikgatter.png)
+
+Eine Wahrheitstabelle mit n Eingängen besitzt `2ⁿ` Zeilen. Für zwei Eingänge A und B werden 00, 01, 10 und 11 vollständig ausgewertet. Negationskreise am Symbol bedeuten logische Invertierung, nicht automatisch einen anderen elektrischen Pegelstandard.
+
+### Reale Gatter
+
+Ein reales Gatter besitzt Laufzeit, begrenzten Ausgangsstrom, Eingangsleckstrom und Versorgung. Bei gleichzeitig wechselnden Eingängen können wegen unterschiedlicher Laufzeiten kurze Glitches entstehen. Unbenutzte Eingänge erhalten definierte Pegel.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Eine Sicherheitsfreigabe kann zwei Schlüssel gleichzeitig verlangen – das ist AND. Ein Alarm kann auf Rauch oder Hitze reagieren – das ist OR. XOR entspricht einer Wechselschaltung: genau einer von zwei Zuständen ist aktiv.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Für `Y = (A AND B) OR C` gibt es acht Zeilen. Bei A=1, B=0, C=1 wird zuerst A AND B = 0, danach Y = 0 OR 1 = 1. Die Zwischenspalte verhindert Denkfehler.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 14](../praxis/modul-14.md).
+Baue eine Funktion mit Tastern, definierten Pull-Widerständen und LED-Ausgang auf. Prüfe jede Tabellenzeile und beobachte schnelle Übergänge mit dem Logic Analyzer.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Dieselbe Funktion kann in Software, FPGA oder externen Gattern umgesetzt werden. Externe Hardware reagiert auch während Reset oder Firmwarestillstand; sicherheitsrelevante Verriegelungen dürfen nicht unkritisch verlagert werden.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Eine Wahrheitstabelle beschreibt die vollständige Logikfunktion; das reale Gatter ergänzt Pegel, Laufzeit und Stromgrenzen.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- OR mit XOR verwechseln
+- nicht alle Eingangskombinationen prüfen
+- unbenutzte Eingänge offen lassen
+- Laufzeit und Glitches ignorieren
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Gatter setzen Boolesche Funktionen elektrisch um. Wahrheitstabellen prüfen Vollständigkeit, Messungen zeigen reale Pegel und zeitliche Effekte.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wann ist XOR gleich 1?
+2. Wie viele Zeilen hat eine Tabelle mit vier Eingängen?
+3. Erstelle Y = NAND(A,B).
+4. Warum kann Hardwarelogik während Reset wichtig sein?
+
+Weitere Aufgaben: [Übungen zu Modul 14](../uebungen/modul-14.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK06`, `b4-LK01–10`, `c1`, `c5`
+- Nachweise: vollständig geprüfte Wahrheitstabelle an realer Gatterhardware; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

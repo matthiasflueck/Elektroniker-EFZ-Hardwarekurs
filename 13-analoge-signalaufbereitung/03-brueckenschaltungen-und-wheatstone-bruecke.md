@@ -2,59 +2,75 @@
 
 [← Zurück](02-referenzspannungen.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](04-sensorsignalaufbereitung.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Brückenschaltungen und Wheatstone-Brücke** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a2`, `a3`, `b1`, `b4`, `b5`, `c1`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Brückenausgang und Common-Mode-Pegel bestimmen
+- Viertel-, Halb- und Vollbrücke unterscheiden
+- kleine Widerstandsänderungen differenziell messen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Dehnungsmessstreifen, Drucksensoren und präzise Widerstandssensoren ändern ihren Widerstand oft nur sehr wenig. Die Wheatstone-Brücke wandelt diese kleine Änderung in eine differentielle Spannung und kann gemeinsame Einflüsse teilweise kompensieren.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Zwei Spannungsteiler im Vergleich
+
+Vier Widerstände bilden zwei Spannungsteiler an der Erregerspannung Uexc. Der Ausgang ist die Differenz der beiden Mittelpunkte: `Udiff = Uplus − Uminus`. Im abgeglichenen Zustand mit gleichen Verhältnissen ist Udiff ideal null, während beide Knoten ungefähr bei Uexc/2 liegen.
+
+![Wheatstone-Brücke mit Erregung, Differenzausgang und Knotenpunkten](../bilder/13-analoge-signalaufbereitung/13-03-wheatstone-bruecke.png)
+
+Der Verstärker muss deshalb nicht nur Millivolt Differenz auflösen, sondern auch den gemeinsamen Pegel Ucm vertragen. `Ucm = (Uplus + Uminus)/2` ist der Common-Mode-Pegel.
+
+### Sensoranordnung
+
+Bei der Viertelbrücke ändert sich ein Widerstand, bei der Halbbrücke zwei und bei der Vollbrücke vier. Geeignete Anordnung erhöht Empfindlichkeit und kompensiert Temperatur oder unerwünschte Belastungsrichtungen. Leitungswiderstand kann mit Drei- oder Vierleitertechnik reduziert werden.
+
+Für eine kleine Änderung ΔR an einem Widerstand gilt bei der Viertelbrücke näherungsweise `Udiff ≈ Uexc·ΔR/(4R)`. Die Näherung setzt `|ΔR| ≪ R` voraus.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Eine Balkenwaage vergleicht zwei Seiten. Ein grosses gemeinsames Gewicht hebt sich im Vergleich auf; eine kleine Differenz kippt die Waage sichtbar.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+R = 350 Ω, ΔR = 0,35 Ω und Uexc = 5 V. Dann ist `ΔR/R = 0,001` und `Udiff ≈ 5 V·0,001/4 = 1,25 mV`. Beide Brückenknoten liegen trotzdem nahe 2,5 V – entscheidend für den Eingangsbereich des Verstärkers.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 13](../praxis/modul-13.md).
+Gleiche eine Widerstandsbrücke ab, ändere einen Zweig kontrolliert und miss beide Knoten gegen GND sowie Udiff differentiell. Vergleiche exakte Teilerrechnung und Näherung.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Der ADC misst nach Verstärkung und Filterung. Firmware kann Nullpunkt und Empfindlichkeit kalibrieren, muss aber Übersteuerung, Brückenunterbruch und Common-Mode-Verletzung als Hardwarefehler erkennen.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Eine Brücke macht kleine Widerstandsänderungen als Differenz sichtbar, während ein grosser gemeinsamer Pegel bestehen bleibt.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- nur Udiff und nicht beide Knoten gegen GND prüfen
+- Näherung für grosse ΔR verwenden
+- Leitungswiderstand und Selbsterwärmung ignorieren
+- Brückenpolarität nach der Montage vertauschen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Die Wheatstone-Brücke vergleicht zwei Teiler. Sensoranordnung, Erregung, Common Mode, Leitungsfehler und Verstärkerbereich bestimmen die nutzbare Genauigkeit.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wann ist eine Brücke abgeglichen?
+2. Berechne Udiff für ΔR/R = 0,002 und Uexc = 3,3 V.
+3. Warum ist Ucm wichtig?
+4. Welche Fehler erkennt ein Plausibilitätstest beider Knoten?
+
+Weitere Aufgaben: [Übungen zu Modul 13](../uebungen/modul-13.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a2–a3`, `b1-LK01–06`, `b4-LK01–10`, `c1–c2`
+- Nachweise: berechnete und vermessene Viertelbrücke; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

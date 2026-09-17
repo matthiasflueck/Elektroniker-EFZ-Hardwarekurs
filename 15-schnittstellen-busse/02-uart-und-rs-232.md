@@ -2,59 +2,75 @@
 
 [← Zurück](01-gpio-als-elektrische-schnittstelle.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](03-i-c-open-drain-und-pull-up.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **UART und RS-232** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b2`, `b4`, `b5`, `c1`, `c2`, `d9`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- UART-Rahmen und Baudrate erklären
+- UART-Logikpegel von RS-232 unterscheiden
+- Signalrichtung und Massebezug korrekt verbinden
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+UART ist ein digitales Zeichenformat am MCU-Pin; RS-232 ist ein elektrischer Leitungsstandard mit anderen Spannungen und invertierter Logik. Eine direkte Verbindung kann unzuverlässig sein oder Hardware beschädigen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Asynchroner Rahmen
+
+Eine UART-Leitung ist im Ruhezustand High. Ein Startbit Low synchronisiert den Empfänger, danach folgen Datenbits, optional Parität und ein oder mehrere Stopbits High. Sender und Empfänger benötigen ausreichend ähnliche Baudraten.
+
+![UART-Rahmen mit Transceiver zwischen MCU-Pegel und RS-232-Leitung](../bilder/15-schnittstellen-busse/15-02-uart-rs232.png)
+
+Die Bitzeit ist `tbit = 1/Baudrate`. 115200 Baud ergibt etwa 8,68 µs pro Bit. Bei 8N1 benötigt jedes Datenbyte zehn Bitzeiten und erreicht maximal ungefähr 11520 Byte/s ohne Pausen.
+
+### RS-232 ist nicht UART-TTL
+
+RS-232 verwendet positive und negative Leitungsspannungen und invertiert die logische Bedeutung gegenüber typischen MCU-UART-Pins. Ein RS-232-Transceiver erzeugt die Pegel, schützt und invertiert. TX wird mit RX der Gegenseite verbunden; gemeinsame Signalmassen benötigen einen kontrollierten Pfad.
+
+Lange oder störbehaftete Verbindungen können trotz korrekter Zeichenparameter scheitern. Flanken, Kabelkapazität, Bezugspotential und Störungen werden am richtigen Ort gemessen.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+UART ist die Grammatik eines Satzes, RS-232 die Lautstärke und Tonlage der Übertragung. Gleiche Wörter helfen nicht, wenn Sender und Empfänger völlig unterschiedliche elektrische Sprachen sprechen.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Für 9600 Baud ist `tbit ≈ 104,17 µs`. Ein 8N1-Zeichen dauert rund 1,042 ms. 100 Zeichen benötigen ideal mindestens 104 ms; Protokollpausen kommen hinzu.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 15](../praxis/modul-15.md).
+Zeichne MCU-TX und Leitung nach dem RS-232-Transceiver gleichzeitig auf. Dekodiere Start-, Daten- und Stopbits und prüfe die Inversion. Verwende nur dafür geeignete Tastköpfe und Kleinspannungsgeräte.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Firmware konfiguriert Baudrate, Wortlänge, Parität und Stopbits. Ein korrektes Registersetup behebt keine vertauschten Leitungen oder fehlenden Transceiver. Der STM32-Kurs behandelt UART und DMA im Detail.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> UART beschreibt den Datenrahmen; RS-232 beschreibt eine andere elektrische Schnittstelle und benötigt einen Transceiver.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- RS-232 direkt mit einem MCU-Pin verbinden
+- TX mit TX verbinden
+- Bitzeit und Bytezeit verwechseln
+- gemeinsamen Bezug und Kabellast ignorieren
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+UART überträgt asynchron gerahmte Bits. RS-232 setzt diese in robuste, invertierte Leitungsspannungen um.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Warum besitzt 8N1 zehn Bits pro Byte?
+2. Berechne tbit bei 57600 Baud.
+3. Welche Aufgabe hat der RS-232-Transceiver?
+4. Welche Fehler sind elektrisch statt firmwarebedingt?
+
+Weitere Aufgaben: [Übungen zu Modul 15](../uebungen/modul-15.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b4`, `b5`, `c1–c2`, `d9`
+- Nachweise: elektrisch und logisch dekodierter UART-/RS-232-Rahmen; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

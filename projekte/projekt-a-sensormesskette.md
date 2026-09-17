@@ -37,6 +37,15 @@ Sensor → Messbrücke/Spannungsteiler → OPV → Filter → 0–3.3-V-Signal �
 - Gleichspannungs-Arbeitspunkte und ein dynamisches Testsignal messen; Soll- und Ist-Verstärkung vergleichen
 - elektrische Schnittstelle zum ADC mit Massebezug, Schutz, Quellimpedanz und Firmware-Plausibilitätsgrenzen dokumentieren
 
+## Meilenstein nach Modul 13
+
+- vollständige Messkette von Sensorerregung und Brücke bis zum ADC-Eingang als Blockdiagramm und Schema dokumentieren
+- Referenzspannung, Verstärkung, Offset, Filtergrenzfrequenz und ADC-Schutz gemeinsam dimensionieren und ihre Toleranzen beurteilen
+- jeden Messknoten mit Sollwert, zulässigem Bereich, Quellimpedanz und geeignetem Messgerät in einem Messplan erfassen
+- statische Arbeitspunkte und dynamische Antwort messen; Abweichungen zwischen Rechnung, Simulation und Aufbau begründen
+- ADC-Erfassungszeit, Multiplexer-Einschwingzeit und Firmware-Abtastrate so abstimmen, dass jeder Kanal innerhalb der geforderten Genauigkeit erfasst wird
+- Diagnosegrenzen für Sensorunterbruch, Kurzschluss, Sättigung und unplausible Rohwerte definieren
+
 ## Verbindliche Nachweise
 
 Anforderungen und Akzeptanzkriterien, Blockdiagramm, Berechnungen, Datenblattentscheidungen, genormtes Schema, Gefährdungs- und Messplan, as-built-Stand, Rohdaten, Soll-Ist-Auswertung, Fehler-/Änderungsjournal sowie Abschluss- und Übergabedokumentation.

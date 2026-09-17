@@ -2,59 +2,73 @@
 
 [← Zurück](04-spi-und-chip-select.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](06-can-terminierung-und-schutz.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **RS-485 und differentielle Übertragung** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b2`, `b4`, `b5`, `c1`, `c2`, `d9`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- differentielle Signalübertragung erklären
+- Busleitung und Abschluss korrekt anordnen
+- Treiberfreigabe und Failsafe-Zustand prüfen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+RS-485 überträgt Daten über lange Leitungen und in störender Umgebung. Der Empfänger wertet die Differenz zwischen A und B aus, doch Gleichtaktbereich, Abschluss, Topologie und Bezugspfad bleiben entscheidend.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Differenz statt einzelner Pegel
+
+Der Transceiver treibt zwei Leitungen gegensinnig. Der Empfänger bildet `Udiff = UA − UB`; eingekoppelte gemeinsame Störungen heben sich innerhalb des Gleichtaktbereichs weitgehend auf.
+
+![RS-485-Linienbus mit Transceivern, verdrilltem Paar und zwei Abschlüssen](../bilder/15-schnittstellen-busse/15-05-rs485-bus.png)
+
+Eine lange Leitung wird an beiden physischen Enden mit ihrem Wellenwiderstand abgeschlossen, typischerweise ungefähr 120 Ω bei passendem Kabel. Nicht jeder Teilnehmer erhält einen Abschluss. Stichleitungen bleiben kurz; der Bus wird als Linie geführt.
+
+### Halbduplex und Ruhezustand
+
+Bei Halbduplex steuert Driver Enable den Sender. Zwei aktive Treiber können kollidieren. Moderne Empfänger besitzen Failsafe, dennoch können Bias-Widerstände einen definierten Ruhezustand erzeugen. Ein Bezug oder Schirmkonzept hält Gleichtaktspannung im zulässigen Bereich; der Differenzbus ersetzt keine galvanische Trennung.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Zwei Personen tragen eine Stange: Entscheidend ist der Höhenunterschied zwischen beiden Enden. Hebt eine Bodenwelle beide Personen gleich an, bleibt der Unterschied nahezu gleich.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Zwei 120-Ω-Abschlüsse liegen aus Sicht des Treibers parallel und ergeben 60 Ω. Bei 2 V differentieller Spannung fliesst ideal etwa `2 V/60 Ω = 33 mA`, zusätzlich zu Bias- und Knotenströmen.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 15](../praxis/modul-15.md).
+Miss A und B jeweils gegen Bezug sowie differentiell. Vergleiche korrekte, fehlende und zusätzliche Terminierung an sicherer Übungshardware. Beobachte Driver-Enable beim Richtungswechsel.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+UART liefert die Daten, ein GPIO oder Transceiver steuert DE. Firmware muss nach dem letzten Stopbit lange genug senden und dann freigeben. Kollisions- und Timeoutbehandlung ergänzen die Hardware.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> RS-485 ist ein differentieller Linienbus; Abschluss gehört nur an die beiden Enden und Gleichtaktgrenzen bleiben verbindlich.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- jeden Teilnehmer mit 120 Ω abschliessen
+- Sternverkabelung mit langen Stichleitungen
+- DE vor dem letzten Bit deaktivieren
+- Differenzmessung ohne Gleichtaktprüfung
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Differentialübertragung verbessert Störfestigkeit. Leitungsführung, zwei Abschlüsse, Treiberfreigabe und zulässiger Gleichtaktbereich bestimmen die Zuverlässigkeit.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Warum liegen zwei Abschlüsse parallel?
+2. Welchen Strom verlangt 1,5 V an 60 Ω?
+3. Was macht Driver Enable?
+4. Wann ist galvanische Trennung nötig?
+
+Weitere Aufgaben: [Übungen zu Modul 15](../uebungen/modul-15.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b2-LK03–04`, `b4`, `b5`, `c1–c2`, `d9`
+- Nachweise: differentielle Busmessung mit Abschlussvergleich; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

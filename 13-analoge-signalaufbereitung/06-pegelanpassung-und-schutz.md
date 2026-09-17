@@ -2,59 +2,71 @@
 
 [← Zurück](05-aktive-filter.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](07-analogschalter-und-vollstaendige-messkette.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Pegelanpassung und Schutz** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a2`, `a3`, `b1`, `b4`, `b5`, `c1`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- analoge Pegel sicher in einen ADC-Bereich übersetzen
+- Serienwiderstand und Klemmpfade dimensionieren
+- Normalbetrieb und Fehlerfall getrennt prüfen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Sensorsignale können negativ werden, Versorgungsspitzen enthalten oder bei ausgeschaltetem Mikrocontroller anliegen. Der ADC-Pin ist kein ideal geschützter Eingang. Pegelanpassung muss das Nutzsignal erhalten und Fehlerenergie begrenzen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Skalieren, verschieben, begrenzen
+
+Ein Widerstandsteiler skaliert, ein OPV kann zusätzlich verschieben und puffern. Serienwiderstand RS begrenzt Fehlerstrom. Externe Schottky- oder TVS-Klemmen führen Energie zu definierten Schienen oder Massepfaden ab; die internen MCU-Schutzdioden sind keine beliebigen Betriebsstrompfade.
+
+![Geschützter ADC-Eingang mit Teiler, Serienwiderstand und Klemmdioden](../bilder/13-analoge-signalaufbereitung/13-06-adc-eingangsschutz.png)
+
+Im Normalbetrieb werden Teilerfehler, Quellimpedanz, Filterwirkung und ADC-Einschwingen geprüft. Im Fehlerfall zählen maximale Eingangsspannung, Klemmspannung, Strom durch RS, Leistung und Rückspeisung in die Versorgung.
+
+Bei ausgeschaltetem MCU kann ein Eingang über die Schutzdiode VDD anheben. Ein definierter Abschaltpfad, ein geeignetes Schutzbauteil oder galvanische Trennung kann nötig sein. Die zulässigen Injection Currents stehen im Datenblatt.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Eine Schleuse passt den Wasserstand an und besitzt zugleich ein Überlaufwehr. Die Schleuse verarbeitet den Normalbetrieb; das Wehr begrenzt seltene, energiereiche Fehler.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein Fehlerpegel von 12 V wird extern bei 3,6 V geklemmt. Soll der Fehlerstrom höchstens 2 mA sein, gilt `RS ≥ (12 V − 3,6 V)/2 mA = 4,2 kΩ`; gewählt werden mindestens 4,7 kΩ. Danach ist zu prüfen, ob RS mit ADC-Eingangskapazität noch schnell genug einschwingt.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 13](../praxis/modul-13.md).
+Prüfe die Übertragungskennlinie zuerst im Normalbereich. Simuliere Fehler nur strombegrenzt und unterhalb freigegebener Energie. Miss Pinspannung, Klemmstrom und Versorgung; teste auch MCU ausgeschaltet.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Firmware erkennt Grenzcodes, festhängende Werte und unplausible Sprünge. Sie kann den Schutzstrom nicht begrenzen, wenn der Kern ausgeschaltet oder abgestürzt ist. Sichere Grenzen gehören daher in die Hardware.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Pegelanpassung behandelt das Nutzsignal; Schutz begrenzt Energie in vorhersehbaren Fehlerfällen.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- absolute Maximum Ratings als Betriebsbereich verwenden
+- Injection Current nicht prüfen
+- Serienwiderstand ohne ADC-Einschwingzeit wählen
+- Rückspeisung bei ausgeschalteter Versorgung übersehen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Teiler, Puffer, Serienwiderstand und Klemmen werden für Normalbetrieb und Fehlerfall getrennt dimensioniert. Der reale Rückstrompfad entscheidet über die Sicherheit.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was begrenzt RS?
+2. Dimensioniere RS für 24 V, 3,6 V und 1 mA.
+3. Was bedeutet Injection Current?
+4. Warum muss der ausgeschaltete Zustand geprüft werden?
+
+Weitere Aufgaben: [Übungen zu Modul 13](../uebungen/modul-13.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK01–06`, `b4-LK01–10`, `b5`, `c1–c2`
+- Nachweise: Schutzstrom- und Einschwingnachweis eines ADC-Eingangs; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

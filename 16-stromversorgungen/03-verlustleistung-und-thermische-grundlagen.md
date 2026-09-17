@@ -2,59 +2,75 @@
 
 [← Zurück](02-linearregler-und-ldo.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](04-schaltregler-buck-boost-und-buck-boost.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Verlustleistung und thermische Grundlagen** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b2`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- thermische Widerstände und Temperaturen zuordnen
+- Sperrschichttemperatur abschätzen
+- Datenblattbedingungen und PCB-Kühlpfad berücksichtigen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Elektrische Verlustleistung wird als Wärme abgeführt. Ein Bauteil kann elektrisch korrekt dimensioniert sein und dennoch wegen Gehäuse, Kupferfläche oder Umgebung überhitzen. Temperatur ist deshalb ein eigener Stromkreis aus Wärmefluss und Widerständen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Thermisches Ersatznetz
+
+Wärme fliesst von der Sperrschicht über Gehäuse, Lötpad, Leiterplatte und Luft. Der thermische Widerstand Rθ in K/W beschreibt die Temperaturdifferenz pro Watt. Für eine grobe stationäre Abschätzung gilt `TJ = TA + PV·RθJA`.
+
+![Thermischer Pfad von Sperrschicht über Gehäuse und PCB zur Umgebung](../bilder/16-stromversorgungen/16-03-thermischer-pfad.png)
+
+TJ ist die Sperrschichttemperatur, TA die Umgebungstemperatur, PV die Verlustleistung und RθJA der thermische Widerstand Junction-to-Ambient. RθJA gilt nur für die im Datenblatt beschriebene Platine, Kupferfläche und Luftbewegung.
+
+### Transient und Derating
+
+Wärmekapazitäten verzögern den Temperaturanstieg. Kurze Pulse werden mit transienter thermischer Impedanz bewertet. Dauerbetrieb benötigt stationären Nachweis. Maximaltemperatur wird nicht als Ziel verwendet; Reserve deckt Toleranz, Gehäuse, Sonneneinstrahlung und Alterung ab.
+
+Exposed Pads benötigen definierte Kupferflächen und thermische Vias. Kühlkörper wirken nur mit kontrolliertem Kontaktwiderstand.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Wärmefluss ähnelt Strom: Verlustleistung ist der Fluss, Temperaturdifferenz die treibende «Spannung» und der thermische Widerstand bremst den Abtransport.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+PV = 1,5 W, TA = 45 °C und RθJA = 55 K/W ergeben `TJ ≈ 45 °C + 1,5·55 K = 127,5 °C`. Bei 125 °C zulässigem Entwurfsziel ist der Aufbau ungeeignet, selbst wenn Absolute Maximum höher liegt.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 16](../praxis/modul-16.md).
+Miss Gehäuse- und Umgebungstemperatur bis zum thermischen Gleichgewicht. Verwende Wärmebildkamera oder Sensor korrekt emissivitätsbewertet. Leite TJ nur mit bekanntem Mess- und Thermikmodell ab.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Temperatursensoren und Lastreduktion können schützen. Firmware reagiert jedoch verzögert und benötigt funktionsfähige Versorgung; hardwareseitige Thermal Shutdown und Strombegrenzung bleiben wichtig.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Watt werden nur mit einem definierten thermischen Pfad zu einer zulässigen Sperrschichttemperatur.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- RθJA ohne Datenblatt-Testplatine übernehmen
+- Gehäusetemperatur mit TJ gleichsetzen
+- kurzen Puls als Dauerleistung rechnen oder umgekehrt
+- Absolute Maximum als Entwurfsziel verwenden
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Thermische Widerstände verbinden Verlustleistung und Temperatur. Layout, Zeitverlauf, Umgebung und Reserve entscheiden über den sicheren Betrieb.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was bedeutet K/W?
+2. Berechne TJ für 0,8 W, 60 K/W und 40 °C.
+3. Warum ist RθJA layoutabhängig?
+4. Welche Schutzfunktion kann Firmware ergänzen?
+
+Weitere Aufgaben: [Übungen zu Modul 16](../uebungen/modul-16.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK01–07`, `b2-LK03–04`, `b4`, `b5`
+- Nachweise: thermische Rechnung und stationäre Temperaturmessung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

@@ -70,16 +70,16 @@ Die Leistungskriterien sind hier knapp und sinngemäss wiedergegeben. Verbindlic
 
 | ID | Leistungskriterium, sinngemäss | Theorie / Lektionen | Praxisnachweis | Projekt |
 |---|---|---|---|---|
-| `b4-LK01` | Messpunkte aus Schema und Funktion festlegen | 03.3–03.7; 04.6–04.7; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09.2–09.7; 10.3–10.7; 11.3–11.7; 12.2–12.7; 17.5; 18–21; 26.6 | Praxis 03–12, 17–21 und 26 | A, B, C |
-| `b4-LK02` | Passende Messgeräte und Hilfsmittel bestimmen | 03.7; 04.6; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09–12; 17–20; 26.7 | Praxis 03–12, 17–20 und 26 | A, B, C |
-| `b4-LK03` | Schutzmassnahmen für Menschen, Gerät und Prüfling treffen | 00.4; 03.5; 04.3–04.4; 05.2; 06.3–06.5; 07.3; 08.1–08.2; 09.4–09.7; 10.5–10.7; 11.4–11.7; 12.7; 18.7; 19.8; 26.1–26.3 | Praxis 00, 03–12, 18–19, 26 | A, B, C |
+| `b4-LK01` | Messpunkte aus Schema und Funktion festlegen | 03.3–03.7; 04.6–04.7; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09.2–09.7; 10.3–10.7; 11.3–11.7; 12.2–12.7; 13.1–13.7; 14.2–14.7; 15.1–15.7; 16.1–16.7; 17.5; 18–21; 26.6 | Praxis 03–21 und 26 | A, B, C |
+| `b4-LK02` | Passende Messgeräte und Hilfsmittel bestimmen | 03.7; 04.6; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09–16; 17–20; 26.7 | Praxis 03–20 und 26 | A, B, C |
+| `b4-LK03` | Schutzmassnahmen für Menschen, Gerät und Prüfling treffen | 00.4; 03.5; 04.3–04.4; 05.2; 06.3–06.5; 07.3; 08.1–08.2; 09.4–09.7; 10.5–10.7; 11.4–11.7; 12.7; 13.1–13.7; 14.2; 15.1–15.7; 16.1–16.7; 18.7; 19.8; 26.1–26.3 | Praxis 00, 03–19 und 26 | A, B, C |
 | `b4-LK04` | Inbetriebnahmeschritte in korrekter Reihenfolge ausführen | 26.1–26.7 | Praxis 26 | B, C |
-| `b4-LK05` | Vermutungen bei Sollwertabweichungen protokollieren | 03.7; 04.2; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09.2–09.7; 10.3–10.7; 11.3–11.7; 12.2–12.7; 21.1; 26.7 | Praxis 03–12, 21 und 26 | A, B, C |
-| `b4-LK06` | Schaltungen messen, ohne ihre Funktion unzulässig zu beeinflussen | 03.3–03.7; 04.6; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09.2–09.7; 10.5–10.7; 11.3–11.7; 12.2–12.7; 17.4; 18–20 | Praxis 03–12, 17–20 | A, B, C |
-| `b4-LK07` | Signalverläufe klassischer Grundschaltungen grafisch darstellen | 04.6–04.7; 05–09; 10.3–10.7; 11.3–11.7; 12.1–12.7; 17.6; 19.6–19.7 | Praxis 04–12 und 19 | A, B |
-| `b4-LK08` | Einfluss der Messgeräte abschätzen | 03.3; 03.6–03.7; 04.6; 09.2; 10.6; 11.5; 12.2; 12.7; 17.4; 18.6–18.7; 19.3–19.5 | Praxis 03–04, 09–12, 17–19 | A, B, C |
-| `b4-LK09` | Messparameter und Messwerte vollständig protokollieren | 00.7; 03.7; 04.6–04.7; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09–12; 17.5–17.7; 27.5 | Praxis 03–12, 17 und 27 | A, B, C |
-| `b4-LK10` | Übersichtliche Messschemas erstellen | 03.7; 04.6–04.7; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09–12; 17.5; 23.2; 26.7 | Praxis 03–12, 17, 23, 26 | A, B, C |
+| `b4-LK05` | Vermutungen bei Sollwertabweichungen protokollieren | 03.7; 04.2; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09.2–09.7; 10.3–10.7; 11.3–11.7; 12.2–12.7; 13.1–13.7; 14.2–14.7; 15.1–15.7; 16.1–16.7; 21.1; 26.7 | Praxis 03–16, 21 und 26 | A, B, C |
+| `b4-LK06` | Schaltungen messen, ohne ihre Funktion unzulässig zu beeinflussen | 03.3–03.7; 04.6; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09.2–09.7; 10.5–10.7; 11.3–11.7; 12.2–12.7; 13.1–13.7; 14.2–14.7; 15.1–15.7; 16.2–16.7; 17.4; 18–20 | Praxis 03–20 | A, B, C |
+| `b4-LK07` | Signalverläufe klassischer Grundschaltungen grafisch darstellen | 04.6–04.7; 05–09; 10.3–10.7; 11.3–11.7; 12.1–12.7; 13.1–13.7; 14.2–14.7; 15.2–15.7; 16.2–16.7; 17.6; 19.6–19.7 | Praxis 04–16 und 19 | A, B |
+| `b4-LK08` | Einfluss der Messgeräte abschätzen | 03.3; 03.6–03.7; 04.6; 09.2; 10.6; 11.5; 12.2; 12.7; 13.2–13.7; 14.2; 15.2–15.7; 16.5–16.7; 17.4; 18.6–18.7; 19.3–19.5 | Praxis 03–04, 09–19 | A, B, C |
+| `b4-LK09` | Messparameter und Messwerte vollständig protokollieren | 00.7; 03.7; 04.6–04.7; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09–16; 17.5–17.7; 27.5 | Praxis 03–17 und 27 | A, B, C |
+| `b4-LK10` | Übersichtliche Messschemas erstellen | 03.7; 04.6–04.7; 05.2–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09–16; 17.5; 23.2; 26.7 | Praxis 03–17, 23 und 26 | A, B, C |
 | `b4-LK11` | Unterlagen beschaffen, Fehler eingrenzen und strukturiert beheben | 21.1–21.7; 26.5–26.7 | Praxis 21 und 26 | A, B, C |
 | `b4-LK12` | Messungen gegenüber dem Pflichtenheft validieren | 22.1; 27.1–27.5 | Praxis 22 und 27 | A, B, C |
 
@@ -87,11 +87,11 @@ Die Leistungskriterien sind hier knapp und sinngemäss wiedergegeben. Verbindlic
 
 | ID | Leistungskriterium, sinngemäss | Theorie / Lektionen | Praxisnachweis | Projekt |
 |---|---|---|---|---|
-| `b5-LK01` | Aus Spezifikationen beziehungsweise Pflichtenheft Prüfkriterien ableiten | 03.7; 04.2–04.7; 09.3–09.7; 10.5–10.7; 11.3–11.7; 12.2–12.7; 22.1–22.2; 27.1–27.2 | Praxis 03–04, 09–12, 22 und 27 | A, B, C |
-| `b5-LK02` | Sinnvolle Prüfschritte und ein Testkonzept definieren | 03.7; 04.6; 09–12; 27.2–27.3 | Praxis 03–04, 09–12 und 27 | A, B, C |
-| `b5-LK03` | Geeignete Messgeräte und Hilfsmittel auswählen | 03.7; 04.6; 09–12; 17–20; 27.3 | Praxis 03–04, 09–12, 17–20 und 27 | A, B, C |
-| `b5-LK04` | Prüfschritte gemäss Testkonzept ausführen | 03.7; 04.6; 09–12; 27.3–27.4 | Praxis 03–04, 09–12 und 27 | A, B, C |
-| `b5-LK05` | Ergebnisse vollständig in einem Testprotokoll festhalten | 03.7; 04.6; 09–12; 27.5; 27.7 | Praxis 03–04, 09–12 und 27 | A, B, C |
+| `b5-LK01` | Aus Spezifikationen beziehungsweise Pflichtenheft Prüfkriterien ableiten | 03.7; 04.2–04.7; 09.3–09.7; 10.5–10.7; 11.3–11.7; 12.2–12.7; 13.1–13.7; 14.2–14.7; 15.1–15.7; 16.1–16.7; 22.1–22.2; 27.1–27.2 | Praxis 03–04, 09–16, 22 und 27 | A, B, C |
+| `b5-LK02` | Sinnvolle Prüfschritte und ein Testkonzept definieren | 03.7; 04.6; 09–16; 27.2–27.3 | Praxis 03–04, 09–16 und 27 | A, B, C |
+| `b5-LK03` | Geeignete Messgeräte und Hilfsmittel auswählen | 03.7; 04.6; 09–16; 17–20; 27.3 | Praxis 03–04, 09–20 und 27 | A, B, C |
+| `b5-LK04` | Prüfschritte gemäss Testkonzept ausführen | 03.7; 04.6; 09–16; 27.3–27.4 | Praxis 03–04, 09–16 und 27 | A, B, C |
+| `b5-LK05` | Ergebnisse vollständig in einem Testprotokoll festhalten | 03.7; 04.6; 09–16; 27.5; 27.7 | Praxis 03–04, 09–16 und 27 | A, B, C |
 | `b5-LK06` | Bei ungenügenden Ergebnissen Änderungen veranlassen | 21.7; 27.5–27.6 | Praxis 21 und 27 | A, B, C |
 | `b5-LK07` | Auswirkungen von Änderungen auf die Gesamtschaltung prüfen | 27.6 | Praxis 27 | A, B, C |
 
@@ -103,14 +103,14 @@ Die Leistungskriterien sind hier knapp und sinngemäss wiedergegeben. Verbindlic
 | `a2` | Lösungsvarianten, Blockdiagramme und Konzepte entwickeln und begründet auswählen | 22.2–22.3; Praxis 22 | A, B, C |
 | `a3` | Machbarkeit durch Recherche, Versuch, Messung und Abschätzung belegen | 01.7; 03–04; 17; 22.5–22.7; Praxis 03–04, 17 und 22 | A, B, C |
 | `c1` | Hardware-Schnittstellen definieren, MCU und Peripherie passend konfigurieren, externe Hardware ansteuern | 03.3–03.7; 04.6–04.7; 05.3–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09.5; 10.5; 11.1–11.7; 12.1–12.7; 13–16; 26.5; jeweilige Hardware↔Firmware-Abschnitte | A, B, C |
-| `c2` | Hardware-/Firmware-Systemtests ableiten, durchführen und auswerten | 04.6–04.7; 05.3–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09–12; 15; 21.7; 26–27; Praxis 04–12, 15, 21, 26–27 | A, B, C |
+| `c2` | Hardware-/Firmware-Systemtests ableiten, durchführen und auswerten | 04.6–04.7; 05.3–05.7; 06.3–06.7; 07.1–07.7; 08.1–08.7; 09–16; 21.7; 26–27; Praxis 04–16, 21, 26–27 | A, B, C |
 | `d1` | Projektorientierte Hardwareaufträge mit Ressourcen, Phasen und Risiken planen | 00.3; 22; Projekte A–C | A, B, C |
 | `d2` | Fortschritt, Qualität, Abweichungen und Änderungen kontrollieren | 00.7; 17.5; 22.7; 27.5–27.7 | A, B, C |
 | `d3` | Resultate auswerten, dokumentieren und Verbesserungen ableiten | 17.6–17.7; 21.7; 27.4–27.7 | A, B, C |
 
 ## Hardwarebezogene Wahlpflichtanteile
 
-`b6` wird in Modul 26 vertieft, `d5` in Modul 25, `d6` in Modul 21, `d8` in den Modulen 17–21 und 27 sowie `d9` in den Modulen 15, 20 und 26. Die vollständige Wahlpflichtausbildung bleibt von der betrieblichen Auswahl der zwei verbindlichen Wahlpflichtkompetenzen abhängig.
+`b6` wird in Modul 26 vertieft, `c5` erhält seine hardwarebezogene Grundlage in Modul 14, `d5` in Modul 25, `d6` in Modul 21, `d8` in den Modulen 17–21 und 27 sowie `d9` in den Modulen 15, 20 und 26. Die vollständige Wahlpflichtausbildung bleibt von der betrieblichen Auswahl der zwei verbindlichen Wahlpflichtkompetenzen abhängig.
 
 ## Pflege der Matrix
 

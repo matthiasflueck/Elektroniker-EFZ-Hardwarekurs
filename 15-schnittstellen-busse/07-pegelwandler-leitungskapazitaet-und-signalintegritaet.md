@@ -1,60 +1,74 @@
 # 15.7 – Pegelwandler, Leitungskapazität und Signalintegrität
 
-[← Zurück](06-can-terminierung-und-schutz.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../uebungen/modul-15.md)
-
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
+[← Zurück](06-can-terminierung-und-schutz.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../16-stromversorgungen/README.md)
 
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Pegelwandler, Leitungskapazität und Signalintegrität** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b2`, `b4`, `b5`, `c1`, `c2`, `d9`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Pegelwandler passend zur Signalrichtung auswählen
+- Kapazität und Flankenzeit quantitativ verbinden
+- Rückstrompfad und Reflexion als Systemproblem erklären
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Ein Bus kann bei niedriger Frequenz viele Bits pro Sekunde übertragen und trotzdem sehr schnelle Flanken besitzen. Für Signalintegrität zählt die Flankenzeit im Verhältnis zur Leitungslaufzeit, nicht nur die Taktrate.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Richtungs- und Treiberart
+
+Ein unidirektionaler Puffer eignet sich für bekannte Richtung. Bidirektionale automatische Wandler besitzen Einschränkungen bei Last, Pull-ups und Protokoll. Der bekannte MOSFET-Pegelwandler passt zu Open-Drain-Bussen, aber nicht allgemein zu schnellen Push-Pull-Signalen.
+
+![Pegelwandler mit Leitungskapazität, Rückstrompfad und verformter Flanke](../bilder/15-schnittstellen-busse/15-07-signalintegritaet.png)
+
+Leitungskapazität bildet mit Ausgangswiderstand oder Pull-up eine Zeitkonstante. Eine langsame Flanke reduziert Störabstrahlung, kann aber Setup-Zeit verletzen. Eine sehr schnelle Flanke sieht eine längere Leiterbahn als Übertragungsleitung; Impedanzsprünge erzeugen Reflexionen.
+
+### Signal und Rückweg
+
+Jeder Signalstrom benötigt einen nahen Rückstrompfad, meist über eine Referenzfläche. Schlitze, Stecker und Ebenenwechsel vergrössern die Schleife und Kopplung. Serienabschluss nahe am Treiber kann den Quellwiderstand an die Leitung anpassen. Tastkopfmassen müssen kurz sein, sonst erzeugt die Messung selbst Ringing.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein kurzer Wasserstoss in einem langen Rohr erzeugt Druckwellen und Echos. Nicht die Anzahl Stösse pro Sekunde allein, sondern die Schärfe jedes Stosses bestimmt das Wellenverhalten.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein Pull-up 3,3 kΩ treibt 150 pF. Für eine RC-Flanke gilt grob `tr(10–90 %) ≈ 2,2·R·C ≈ 1,09 µs`. Ein Protokoll mit geforderten 300 ns benötigt kleineren Widerstand, kleinere Kapazität oder aktiven Treiber.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 15](../praxis/modul-15.md).
+Miss dieselbe Leitung mit langer Masseleitung und Massefeder, dann mit zwei Serienwiderständen. Dokumentiere Anstiegszeit, Überschwingen und Messaufbau. Änderungen erfolgen nur innerhalb der Treibergrenzen.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Geringere Datenrate kann helfen, beseitigt aber nicht jedes Flankenproblem. Viele MCUs erlauben langsamere GPIO-Slew-Rate oder Drive Strength. Firmwareparameter werden erst nach elektrischer Messung freigegeben.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Für Signalintegrität zählen Flankenzeit, Leitung, Abschluss und Rückstrompfad – nicht nur die nominelle Busfrequenz.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- jeden Pegelwandler für jedes Protokoll verwenden
+- Taktrate statt Flankenzeit beurteilen
+- Rückstrompfad im Layout vergessen
+- Tastkopf-Ringing als Schaltungsfehler interpretieren
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Pegelwandler müssen zur Richtung und Treiberart passen. Kapazität, Leitungsimpedanz und Rückweg formen die reale Flanke.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wann eignet sich der MOSFET-I²C-Wandler?
+2. Berechne tr für 4,7 kΩ und 100 pF.
+3. Warum hilft ein Serienwiderstand?
+4. Welche GPIO-Einstellung beeinflusst die Flanke?
+
+Weitere Aufgaben: [Übungen zu Modul 15](../uebungen/modul-15.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b2-LK03–04`, `b4`, `b5`, `c1–c2`, `d9`
+- Nachweise: dokumentierter Flanken- und Rückwegvergleich; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

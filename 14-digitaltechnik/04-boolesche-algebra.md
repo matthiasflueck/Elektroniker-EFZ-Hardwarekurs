@@ -2,59 +2,73 @@
 
 [← Zurück](03-gatter-und-wahrheitstabellen.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](05-flip-flops-zaehler-und-zustaende.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Boolesche Algebra** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`, `c5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Boolesche Ausdrücke vereinfachen
+- De-Morgan-Regeln anwenden
+- logische Äquivalenz mit Tabellen prüfen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Dieselbe Funktion kann mit vielen oder wenigen Gattern aufgebaut werden. Vereinfachung reduziert Bauteile, Strom und Verzögerung. Sie darf aber keine Eingangskombination verändern und zeitliche Glitches müssen separat betrachtet werden.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Rechenregeln für Zustände
+
+Boolesche Variablen besitzen 0 oder 1. Wichtige Regeln sind `A AND A = A`, `A OR A = A`, `A AND 1 = A`, `A OR 0 = A` und `A OR (A AND B) = A`.
+
+De Morgan lautet: NOT(A AND B) = NOT A OR NOT B sowie NOT(A OR B) = NOT A AND NOT B. Damit werden NAND- und NOR-Strukturen systematisch umgeformt.
+
+![Zwei logisch äquivalente Schaltungen nach De Morgan](../bilder/14-digitaltechnik/14-04-de-morgan.png)
+
+### Funktional gleich, zeitlich nicht zwingend gleich
+
+Zwei Ausdrücke sind logisch äquivalent, wenn alle Zeilen ihrer Wahrheitstabellen übereinstimmen. Unterschiedliche Gatterpfade besitzen jedoch andere Laufzeiten. Bei Eingangssprüngen kann eine vereinfachte oder mehrstufige Schaltung kurz einen falschen Zustand zeigen. Synchrone Systeme übernehmen deshalb Signale an definierten Taktflanken.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+«Nicht beide Türen sind geschlossen» bedeutet dasselbe wie «Tür A ist offen oder Tür B ist offen». Die Formulierung ändert sich, die Aussage bleibt gleich – das ist De Morgan.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+`Y = (A AND B) OR (A AND NOT B)` lässt sich ausklammern: `Y = A AND (B OR NOT B) = A AND 1 = A`. Die ursprüngliche Schaltung benötigt mehrere Gatter, die vereinfachte Funktion nur eine Verbindung beziehungsweise einen Puffer.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 14](../praxis/modul-14.md).
+Implementiere Original und Vereinfachung parallel. Vergleiche alle statischen Zustände und trigger den Logic Analyzer auf einen kurzen Unterschied während gleichzeitiger Eingangsänderungen.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Compiler und FPGA-Werkzeuge optimieren Logik, doch elektrische Eingänge können asynchron und verrauscht sein. Synchronisation und Entprellung sind nicht durch algebraische Vereinfachung ersetzt.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Boolesche Algebra beweist statische Gleichheit; Laufzeiten und asynchrone Übergänge bleiben reale Hardwarethemen.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- normale Algebra unverändert übertragen
+- Negation bei De Morgan nicht auf alle Terme anwenden
+- Vereinfachung ohne Wahrheitstabelle freigeben
+- logische Gleichheit mit gleichem Zeitverhalten verwechseln
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Rechenregeln vereinfachen Logikfunktionen. Wahrheitstabellen beweisen die Funktion, Zeitmessungen prüfen Glitches und Laufzeitpfade.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Forme NOT(A OR B) um.
+2. Vereinfache A OR (A AND B).
+3. Wie beweist du Äquivalenz?
+4. Warum können äquivalente Schaltungen verschiedene Glitches zeigen?
+
+Weitere Aufgaben: [Übungen zu Modul 14](../uebungen/modul-14.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK06`, `b4-LK07`, `c1`, `c5`
+- Nachweise: algebraisch und messtechnisch geprüfte Logikäquivalenz; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

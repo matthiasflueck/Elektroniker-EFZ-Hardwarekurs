@@ -2,78 +2,79 @@
 
 [← Modul 14](../14-digitaltechnik/README.md) · [Praxisübersicht](README.md) · [Kursübersicht](../README.md)
 
-> **Ausbaustatus:** Praxisgerüst. Vor Durchführung werden Schaltung, Material, Grenzen, Sollwerte und Auswertung vollständig freigegeben.
-
 ## Lernziel
 
-Digitale Schaltung mit Logic Analyzer untersuchen und das Ergebnis fachlich begründet beurteilen.
-
-## Voraussetzungen
-
-Theorie und Übungen des Moduls 14.
+Du baust eine kleine digitale Kette aus entprelltem Eingang, Flip-Flop/Zähler oder Schieberegister und Open-Drain-Ausgang auf. Du prüfst Wahrheitstabelle, Pegel, Taktbezug und reale Flanken mit Logic Analyzer und Oszilloskop.
 
 ## Benötigtes Material
 
-Wird mit der fachlichen Ausarbeitung spezifiziert.
+3,3- oder 5-V-Logikfamilie mit Datenblatt, Taster, Pull-Widerstände, RC- und Schmitt-Entprellung, Zähler oder Schieberegister, LEDs mit Vorwiderständen, Open-Drain-Ausgang beziehungsweise geeigneter Transistor und Abblockkondensatoren.
 
 ## Benötigte Messgeräte
 
-Werden passend zu Messgrösse, Bereich, Belastung und Sicherheit ausgewählt.
+Strombegrenztes Labornetzgerät, DMM, mindestens vierkanaliger Logic Analyzer und Zweikanal-Oszilloskop mit 10:1-Tastköpfen.
 
 ## Schaltung / Messaufbau
 
-Die Endfassung enthält ein genormtes Schema mit eindeutigen Mess- und Bezugspunkten.
+Taster und Entprellung erzeugen Clock/Enable. Die sequenzielle Logik liefert mehrere Zustände; ein Ausgang wird zusätzlich als Open Drain mit externem Pull-up untersucht.
+
+![Praxisaufbau mit Taster, Schmitt-Trigger, Zähler und Logic Analyzer](../bilder/14-digitaltechnik/14-08-praxis-logic-analyzer.png)
 
 ## Sicherheitshinweise
 
-Energiequelle, Strombegrenzung, gespeicherte Energie, Massebezug und Abbruchkriterien vor Aufbau festlegen.
+Nur SELV-Kleinspannung. Alle ICs erhalten lokale Abblockung und gemeinsame Masse. Unbenutzte CMOS-Eingänge werden definiert. Logic-Analyzer-Eingänge müssen zur Versorgung kompatibel sein. Ausgänge verschiedener Bausteine nie direkt gegeneinander schalten.
 
 ## Vorbereitung
 
-Erst vorhersagen, dann berechnen und erst danach aufbauen.
+Erstelle Wahrheitstabelle und erwartetes Zeitdiagramm. Prüfe VIH, VIL, VOH, VOL, Ausgangsstrom, Taktflanke und Resetpolarität. Lege eine gemeinsame Kanal- und Farbbezeichnung für alle Messgeräte fest.
 
 ## Berechnung
 
-Sollwerte, Toleranzen und Grenzwerte mit Einheiten bestimmen.
+Dimensioniere LED- und Pull-Widerstände. Schätze Open-Drain-Low-Strom und RC-Anstiegszeit. Berechne Zählerüberlauf oder Übertragungsdauer des Schieberegisters.
 
 ## Aufbau
 
-Spannungsfrei aufbauen, Sicht- und Durchgangsprüfung durchführen.
+Spannungsfrei verdrahten. Versorgung, Pinout, Reset und Abblockung prüfen. Beginne mit langsamem manuellem Takt und geringer LED-Last; ergänze Logic Analyzer erst nach DMM-Prüfung.
 
 ## Durchführung
 
-Mit Strombegrenzung schrittweise in Betrieb nehmen.
-
-## Messung
-
-Messpunkte, Geräte und Einstellungen dokumentieren.
+1. Zeichne Rohkontakt und entprelltes Signal gleichzeitig auf.
+2. Prüfe alle statischen Eingangskombinationen gegen die Wahrheitstabelle.
+3. Erfasse Clock, Data/Enable und mindestens zwei Ausgänge über mehrere Zustände.
+4. Bestimme Verzögerung zwischen Taktflanke und Ausgang.
+5. Vergleiche die Open-Drain-Flanke mit zwei Pull-up-Werten und zusätzlicher Kapazität.
+6. Beobachte Reset und Einschaltzustand.
 
 ## Messwerte
 
-| Grösse | Soll | Ist | Unsicherheit/Bedingung |
-|---|---:|---:|---|
-| | | | |
+| Zustand | Eingänge | Sollausgang | Istausgang | VOH/VOL | Bemerkung |
+|---:|---|---|---|---:|---|
+| | | | | | |
+
+| RP | CB | Low-Strom | tr 30–70 % | Soll | Ist |
+|---:|---:|---:|---:|---:|---:|
+| | | | | | |
 
 ## Auswertung
 
-Soll und Ist vergleichen, Abweichungen erklären und Änderungen nachführen.
+Vergleiche logische Dekodierung mit analogen Pegeln. Erkläre Prellen, Laufzeit und Anstiegszeit. Beurteile, ob Logic-Analyzer-Schwellen oder Tastkopfbelastung das Ergebnis beeinflusst haben.
 
 ## Fragen
 
-Welche Annahme beeinflusst das Resultat am stärksten?
+Warum kann der Logic Analyzer einen Zustand korrekt anzeigen, obwohl die Störreserve klein ist? Welche Flanke übernimmt das Flip-Flop? Was verändert RP ausser dem Strom? Ist der Resetzustand für die Last sicher?
 
 ## Was solltest du beobachtet haben?
 
-Wird in der Endfassung mit zulässigem Wertebereich beschrieben.
+Entprellung erzeugt aus mehreren Kontaktflanken einen stabilen Übergang. Sequenzielle Ausgänge ändern sich mit messbarer Verzögerung zur Taktflanke. Die Open-Drain-High-Flanke wird mit grösserem RP oder CB langsamer.
 
 ## Bezug zur Theorie
 
-Modul 14 – Digitaltechnik und Logik.
+Lektionen 14.1–14.7; elektrische Grundgrössen aus Modul 02 und RC-Verhalten aus Modul 05.
 
 ## 🔗 Hardware ↔ Firmware
 
-Falls ein Mikrocontroller beteiligt ist: Konfiguration, Pinzustand, Peripherie und reale Messung gemeinsam beurteilen.
+Vergleiche optional einen hardwareseitigen Zähler mit einem Timer-/GPIO-Signal des MCU. Registerzustand, Logic-Analyzer-Dekodierung und gemessener Pinpegel werden in einer Tabelle zusammengeführt.
 
-## Bildungsplan 2026
+## Bezug Bildungsplan 2026
 
-`b1`, `b4`, `b5`, `c5`
+`a3`, `b1-LK03–06`, `b4-LK01–10`, `b5`, `c1–c2` und hardwarebezogene Grundlagen zu `c5`; Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

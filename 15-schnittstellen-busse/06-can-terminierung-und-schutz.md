@@ -2,59 +2,75 @@
 
 [← Zurück](05-rs-485-und-differentielle-uebertragung.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](07-pegelwandler-leitungskapazitaet-und-signalintegritaet.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **CAN, Terminierung und Schutz** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b2`, `b4`, `b5`, `c1`, `c2`, `d9`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- dominanten und rezessiven CAN-Zustand elektrisch erklären
+- Terminierung und Buswiderstand prüfen
+- Transceiver, Schutz und Massekonzept unterscheiden
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+CAN kombiniert differentiellen Bus, Arbitration und robuste Fehlererkennung. Auf der Leiterplatte sieht der Mikrocontroller nur TXD und RXD; die realen Buspegel entstehen im Transceiver und auf der Leitung.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Dominant gewinnt
+
+Im rezessiven Zustand liegen CANH und CANL nahe beieinander. Dominant treibt der Transceiver CANH höher und CANL tiefer. Mehrere Teilnehmer dürfen dominant senden; deshalb funktioniert bitweise Arbitration ohne zerstörerischen Konflikt.
+
+![CAN-Linienbus mit zwei 120-Ohm-Abschlüssen, Transceivern und Schutz](../bilder/15-schnittstellen-busse/15-06-can-bus.png)
+
+Zwei 120-Ω-Abschlüsse sitzen an den Busenden. Stromlos gemessen ergibt der Bus zwischen CANH und CANL ungefähr 60 Ω, sofern keine zusätzlichen Pfade dominieren. Split-Terminierung kann den Gleichtakt hochfrequent stabilisieren.
+
+### Transceiver und Schutz
+
+Der Transceiver stellt Gleichtaktfestigkeit, Flankensteuerung und oft Standby bereit. TVS-Dioden, Common-Mode-Drossel und ESD-Konzept werden passend zur Umgebung gewählt; Schutzbauteile fügen Kapazität hinzu. Galvanische Trennung benötigt isolierte Versorgung und einen getrennten Bezug.
+
+Bitrate, Buslänge und Stichleitungen begrenzen sich gegenseitig. Fehlerzähler und Bus-off sind Protokollreaktionen, ersetzen aber keine saubere physikalische Schicht.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+In einer Sitzung bedeutet Schweigen «rezessiv». Sobald eine Person deutlich Einspruch erhebt, hören es alle – dominant gewinnt, ohne dass mehrere Einsprechende gegeneinander treiben.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Zwei 120-Ω-Abschlüsse ergeben 60 Ω. Zeigt die stromlose Messung etwa 40 Ω, liegt wahrscheinlich ein dritter 120-Ω-Abschluss parallel: `1/(1/120 + 1/120 + 1/120) = 40 Ω`.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 15](../praxis/modul-15.md).
+Miss den stromlosen Buswiderstand. Zeichne CANH, CANL und die Differenz bei dominantem und rezessivem Bit auf. Verändere Terminierung nur an freigegebener Laborhardware.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Der CAN-Controller behandelt Bit-Timing, Arbitration und Fehlerzähler; der Transceiver erzeugt Buspegel. Bei Bus-off werden sowohl Protokollstatus als auch Versorgung, Abschluss und reale Signalform geprüft.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> CAN-Protokoll und CAN-Physik sind getrennte Ebenen; Transceiver, Leitung und zwei Abschlüsse erzeugen den messbaren Bus.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- TXD/RXD mit CANH/CANL verwechseln
+- Abschluss nach Teilnehmerzahl setzen
+- nur CANH gegen GND beurteilen
+- Bus-off ausschliesslich als Softwarefehler behandeln
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+CAN verwendet dominante und rezessive differentielle Zustände. Topologie, Abschluss, Schutz und Gleichtakt bestimmen die physikalische Zuverlässigkeit.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Welcher Zustand gewinnt bei Arbitration?
+2. Was bedeutet 40 Ω am stromlosen Bus?
+3. Welche Aufgabe hat der Transceiver?
+4. Welche Hardware prüfst du bei Bus-off?
+
+Weitere Aufgaben: [Übungen zu Modul 15](../uebungen/modul-15.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b2-LK03–04`, `b4`, `b5`, `c1–c2`, `d9`
+- Nachweise: Widerstands- und Differenzmessung eines CAN-Busses; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

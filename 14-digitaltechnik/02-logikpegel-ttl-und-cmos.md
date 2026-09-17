@@ -2,59 +2,75 @@
 
 [← Zurück](01-binaer-und-hexadezimalsystem.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](03-gatter-und-wahrheitstabellen.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Logikpegel, TTL und CMOS** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`, `c5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Spannungsbereiche für Low, undefiniert und High unterscheiden
+- Noise Margins aus Datenblattgrenzen bestimmen
+- TTL- und CMOS-Familien kompatibel verbinden
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Logisch 0 und 1 sind elektrische Spannungsbereiche, keine idealen Zahlen. Zwei Bausteine funktionieren nur zuverlässig zusammen, wenn garantierte Ausgangspegel zu den garantierten Eingangsschwellen passen – auch bei Last, Temperatur und Störungen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Garantierte Bereiche
+
+Ein Eingang garantiert Low bis VIL(max) und High ab VIH(min). Dazwischen liegt der undefinierte Bereich. Ein Ausgang garantiert bei festgelegtem Strom höchstens VOL(max) für Low und mindestens VOH(min) für High.
+
+![Logikpegel mit Low-, undefiniertem und High-Bereich sowie Noise Margins](../bilder/14-digitaltechnik/14-02-logikpegel.png)
+
+Die Low-Störreserve ist `NML = VIL(max) − VOL(max)`, die High-Störreserve `NMH = VOH(min) − VIH(min)`. Spannungen zwischen den Schwellen dürfen nicht als stabiler Logikzustand geplant werden.
+
+### Logikfamilien und Versorgung
+
+Klassisches TTL und moderne CMOS-Familien besitzen unterschiedliche Schwellen und Ausgangsströme. Namen wie HC, HCT, LVC oder echte 5-V-Toleranz sind nicht austauschbar. Absolute Maximum Ratings geben Überlebensgrenzen an, nicht gültige Logikpegel.
+
+CMOS-Eingänge sind hochohmig und dürfen nicht offen bleiben. Langsame Flanken erhöhen die Zeit im undefinierten Bereich und können Querstrom oder Mehrfachschalten verursachen. Schmitt-Trigger-Eingänge verbessern langsame oder verrauschte Signale.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Eine Ampel besitzt klar Rot und Grün; ein Zwischenzustand mit beiden Lampen halbhell ist keine gültige Verkehrsregel. Die Störreserve ist der Abstand zur missverständlichen Zone.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Ein Ausgang garantiert VOH(min) = 2,9 V, der Eingang fordert VIH(min) = 2,0 V. Dann ist `NMH = 0,9 V`. Für Low seien VIL(max) = 0,8 V und VOL(max) = 0,4 V; `NML = 0,4 V`.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 14](../praxis/modul-14.md).
+Belaste einen Logikausgang innerhalb der Datenblattgrenzen und miss VOH sowie VOL. Fahre einen Schmitt-Eingang langsam mit dem Generator durch beide Schwellen und beobachte die Hysterese.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Die GPIO-Konfiguration wählt Eingang, Ausgang, Pull und oft Flankengeschwindigkeit. Sie ändert keine absolute Spannungsverträglichkeit. Ein gelesener Bitwert beweist nicht, dass der Pegel genügend Störreserve besitzt.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Logikkompatibilität wird mit garantierten Ausgangspegeln, Eingangsschwellen und Störreserven nachgewiesen.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- halbe Versorgung als universelle Schwelle annehmen
+- typische statt garantierte Werte vergleichen
+- 5-V-Toleranz für jeden Pinzustand voraussetzen
+- offene CMOS-Eingänge zulassen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Digitale Zustände sind Spannungsbereiche. Familie, Versorgung, Last, Temperatur und Flankengeschwindigkeit bestimmen die sichere Verbindung.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Was liegt zwischen VIL(max) und VIH(min)?
+2. Berechne NMH für 2,7 V und 2,0 V.
+3. Warum ist Absolute Maximum kein Logikpegel?
+4. Was konfiguriert Firmware – und was nicht?
+
+Weitere Aufgaben: [Übungen zu Modul 14](../uebungen/modul-14.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b4-LK01–08`, `c1`, `c5`
+- Nachweise: Kompatibilitäts- und Noise-Margin-Nachweis zweier Bausteine; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

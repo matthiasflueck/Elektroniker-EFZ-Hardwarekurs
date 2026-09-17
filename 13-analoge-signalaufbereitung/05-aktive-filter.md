@@ -2,59 +2,73 @@
 
 [← Zurück](04-sensorsignalaufbereitung.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](06-pegelanpassung-und-schutz.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Aktive Filter** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a2`, `a3`, `b1`, `b4`, `b5`, `c1`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- aktive und passive Filter unterscheiden
+- Grenzfrequenz und Güte eines aktiven Tiefpasses einordnen
+- OPV-Bandbreite und Stabilität mitprüfen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Ein passiver RC-Filter dämpft, belastet die Quelle und kann den ADC nur begrenzt treiben. Ein aktiver Filter kombiniert Frequenzselektion mit Pufferung oder Verstärkung. Dafür kommen OPV-Grenzen und Stabilität als zusätzliche Entwurfsbedingungen hinzu.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Filterordnung und Polstellen
+
+Jede Polstelle erhöht die asymptotische Dämpfung um 20 dB pro Dekade. Ein Filter zweiter Ordnung erreicht 40 dB pro Dekade. Die Güte Q bestimmt, ob der Übergang flach, überhöht oder stark gedämpft ist.
+
+![Sallen-Key-Tiefpass zweiter Ordnung mit vollständigen Knoten](../bilder/13-analoge-signalaufbereitung/13-05-aktiver-tiefpass.png)
+
+Beim Sallen-Key-Tiefpass bilden R1, R2, C1 und C2 das frequenzabhängige Netzwerk; der OPV puffert beziehungsweise verstärkt. Für gleiche Widerstände R und gleiche Kondensatoren C gilt als Grössenordnung `fc = 1/(2πRC)`. Die genaue Übertragungsfunktion und Q hängen von Topologie und Verstärkung ab.
+
+### Reale Auslegung
+
+Widerstands- und Kondensatortoleranzen verschieben fc und Q. Der OPV benötigt genügend GBW, Slew Rate, Eingangs- und Ausgangsbereich. Hohe Q macht die Schaltung empfindlicher und kann Überschwingen erzeugen. Vor einem ADC muss zusätzlich die Einschwingzeit nach Abtastimpulsen geprüft werden.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein aktiver Filter ist wie ein Türsteher mit Verstärkeranlage: Er entscheidet, welche Frequenzen passieren, und kann die zugelassenen Signale zugleich kräftig weitergeben.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Mit R = 10 kΩ und C = 10 nF ergibt sich als Grundfrequenz `fc ≈ 1/(2π·10 kΩ·10 nF) ≈ 1,59 kHz`. Bei ±5 % Kondensatoren muss die reale Grenzfrequenz entsprechend abweichen; Q benötigt eine separate Toleranzprüfung.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 13](../praxis/modul-13.md).
+Speise Sinuswerte unterhalb, nahe und oberhalb fc ein. Miss Verstärkung und Phase, prüfe die Sprungantwort und vergleiche Bauteiltoleranzen mit der gemessenen Resonanzüberhöhung.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Das Analogfilter begrenzt Aliasanteile vor dem ADC. Eine digitale Filterung nach dem Abtasten kann bereits gefaltete Frequenzen nicht entfernen. Abtastrate, analoges Filter und gewünschte Bandbreite werden gemeinsam festgelegt.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Ein aktives Filter benötigt neben R und C auch einen OPV, der die geforderte Übertragungsfunktion real liefern kann.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- nur fc und nicht Q betrachten
+- idealen OPV in der Simulation belassen
+- digitale Filterung als vollständigen Alias-Schutz ansehen
+- ADC-Einschwingimpulse ignorieren
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Aktive Filter liefern höhere Ordnung, Pufferung und mögliche Verstärkung. Bauteiltoleranzen, Q und OPV-Dynamik bestimmen den realen Frequenzgang.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Welche Dämpfung besitzt ein Filter zweiter Ordnung?
+2. Berechne fc für 4,7 kΩ und 22 nF.
+3. Wie beeinflusst Q die Sprungantwort?
+4. Warum bleibt ein Analogfilter vor dem ADC nötig?
+
+Weitere Aufgaben: [Übungen zu Modul 13](../uebungen/modul-13.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a2–a3`, `b1-LK01–06`, `b4-LK01–10`, `c1–c2`
+- Nachweise: berechneter und gemessener aktiver Frequenzgang; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

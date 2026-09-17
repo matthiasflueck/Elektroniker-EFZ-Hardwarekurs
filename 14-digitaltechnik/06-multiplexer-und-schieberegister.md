@@ -2,59 +2,71 @@
 
 [← Zurück](05-flip-flops-zaehler-und-zustaende.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](07-open-collector-open-drain-pull-widerstaende-und-entprellung.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Multiplexer und Schieberegister** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`, `c5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Multiplexer als digitalen Wahlschalter erklären
+- serielle und parallele Datenwege unterscheiden
+- Schieberegistersignale zeitlich zuordnen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Multiplexer wählen Signale, Schieberegister erweitern Ein- und Ausgänge mit wenigen Leitungen. Beide sparen Pins, verlangen aber klare Adressen, Taktflanken und Freigabesignale.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Auswahl und Verschiebung
+
+Ein 4-zu-1-Multiplexer verbindet abhängig von zwei Adressbits einen Eingang mit dem Ausgang. `2ⁿ` Eingänge benötigen n Adressleitungen. Enable kann den Ausgang aktivieren oder in einen hochohmigen Zustand versetzen.
+
+Ein Serial-In/Parallel-Out-Schieberegister übernimmt pro Takt ein Bit. Nach acht Takten liegen acht Bits intern; ein separater Latch übernimmt sie gleichzeitig an die Ausgänge. Dadurch flackern Ausgänge nicht während des Schiebens.
+
+![Multiplexer und achtstufiges Schieberegister mit Takt und Latch](../bilder/14-digitaltechnik/14-06-mux-schieberegister.png)
+
+Setup, Hold, maximale Taktfrequenz und Ausgangsstrom gelten auch hier. Kaskadierte Register verlängern die Datenkette. Ein definierter Output Enable verhindert falsche Zustände beim Start.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Multiplexer ist ein Gleiswähler, der einen Zug auf genau ein Gleis lenkt. Ein Schieberegister ist eine Reihe von Personen, die bei jedem Takt einen Zettel weiterreichen und erst auf Kommando gleichzeitig zeigen.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Drei kaskadierte 8-Bit-Register benötigen 24 Takte pro Aktualisierung. Bei 2 MHz dauert eine Taktperiode 0,5 µs und die reine Übertragung somit `24·0,5 µs = 12 µs`. Mit Latchimpuls und den geforderten Vor- und Nachzeiten bleibt die Aktualisierung in diesem Beispiel unter 20 µs.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 14](../praxis/modul-14.md).
+Sende bekannte Bitmuster und zeichne Data, Clock, Latch und einen Ausgang auf. Prüfe Bitreihenfolge, aktive Flanke und Startzustand. Belastungsstrom je Pin und Gesamtstrom bleiben innerhalb des Datenblatts.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+SPI kann das Schieben übernehmen; ein GPIO erzeugt Latch oder Enable. Die Hardwarelektion prüft reale Flanken, Reihenfolge und Ausgangspegel, der STM32-Kurs behandelt die Peripheriekonfiguration.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Multiplexer wählen einen Pfad; Schieberegister transportieren Zustände über Takt und übernehmen sie kontrolliert an die Ausgänge.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Adressbits in falscher Reihenfolge verbinden
+- Takt- und Latchflanke verwechseln
+- Ausgangsstromsumme ignorieren
+- Startzustand bei Reset nicht definieren
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Auswahl- und Schiebeschaltungen reduzieren Leitungen. Ihr zuverlässiger Betrieb hängt von Timing, Freigaben, Pegeln und Lastgrenzen ab.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wie viele Adressbits braucht ein 16-zu-1-MUX?
+2. Wozu dient das Ausgangslatch?
+3. Wie lange dauern 32 Bits bei 4 MHz?
+4. Welche Signale misst du am Logic Analyzer?
+
+Weitere Aufgaben: [Übungen zu Modul 14](../uebungen/modul-14.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b4-LK01–10`, `c1–c2`, `c5`
+- Nachweise: dekodierter serieller Transfer mit parallelem Ausgangsnachweis; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

@@ -4,9 +4,11 @@
 
 ## Worum geht es?
 
-Dieses Modul führt **Digitale Schnittstellen und Busse** von einer verständlichen Vorstellung zu technisch belastbaren Berechnungen, Schaltungen und Messungen. Die Theorie-Lektionen bereiten die Praxis gezielt vor; Übungen und Lösungen sind getrennt.
+UART, I²C, SPI, RS-485 und CAN werden hier nicht nur als Protokolle, sondern als elektrische Systeme behandelt. Pegel, Treiberart, Pull-up, Abschluss, Leitungskapazität, Gleichtakt und Rückstrompfad entscheiden, ob korrekt konfigurierte Firmware tatsächlich kommuniziert.
 
-## Lektionen
+Jede Schnittstelle wird vom MCU-Peripheral über den Pin und Transceiver bis zum messbaren Bussignal verfolgt. Oszilloskop und Logic Analyzer ergänzen sich: Das eine zeigt die elektrische Qualität, das andere die logische Bedeutung.
+
+## Lernpfad
 
 1. [15.1 – GPIO als elektrische Schnittstelle](01-gpio-als-elektrische-schnittstelle.md)
 2. [15.2 – UART und RS-232](02-uart-und-rs-232.md)
@@ -15,13 +17,17 @@ Dieses Modul führt **Digitale Schnittstellen und Busse** von einer verständlic
 5. [15.5 – RS-485 und differentielle Übertragung](05-rs-485-und-differentielle-uebertragung.md)
 6. [15.6 – CAN, Terminierung und Schutz](06-can-terminierung-und-schutz.md)
 7. [15.7 – Pegelwandler, Leitungskapazität und Signalintegrität](07-pegelwandler-leitungskapazitaet-und-signalintegritaet.md)
-8. [Übungen](../uebungen/modul-15.md)
-9. [Praxis – UART, I²C und SPI elektrisch untersuchen](../praxis/modul-15.md)
 
-## Bildungsplan 2026
+## Üben und Anwenden
 
-Schwerpunkt: `b1`, `b2`, `b4`, `b5`, `c1`, `c2`, `d9`. Details und Leistungskriterien: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).
+- [Übungen Modul 15](../uebungen/modul-15.md)
+- [Separate Lösungen](../loesungen/modul-15-loesungen.md)
+- [Praxis – UART, I²C und SPI elektrisch untersuchen](../praxis/modul-15.md)
 
-## Projektbezug
+## Hardware ↔ Firmware
 
-Die [Projektübersicht](../projekte/README.md) zeigt, wie das Modul in Projekt A, B oder C einfliesst.
+Dieses Modul ist die zentrale Brücke zum [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs): Konfiguration und Register erklären die beabsichtigte Funktion, die Messung an Pin und Bus bestätigt Pegel, Timing, Richtung und Fehlerzustände.
+
+## Bezug Bildungsplan 2026
+
+Schwerpunkte: `b1`, `b2`, `b4`, `b5`, `c1–c2` und hardwarebezogene Anteile von `d9`; konkrete Nachweise stehen in der [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

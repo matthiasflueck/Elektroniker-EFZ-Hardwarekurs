@@ -1,60 +1,74 @@
 # 14.7 – Open Collector, Open Drain, Pull-Widerstände und Entprellung
 
-[← Zurück](06-multiplexer-und-schieberegister.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../uebungen/modul-14.md)
-
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
+[← Zurück](06-multiplexer-und-schieberegister.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../15-schnittstellen-busse/README.md)
 
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Open Collector, Open Drain, Pull-Widerstände und Entprellung** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b1`, `b4`, `b5`, `c5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Open-Drain-Ausgänge und Pull-up dimensionieren
+- wired-AND-Verhalten elektrisch erklären
+- mechanische Kontakte hardware- und softwareseitig entprellen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Viele Teilnehmer teilen eine Leitung, indem jeder nur Low erzwingen kann. Der Pull-up erzeugt High. Dasselbe Prinzip steckt in I²C, Interruptleitungen und Fehlersammelsignalen. Mechanische Taster zeigen zusätzlich mehrere schnelle Übergänge statt einer sauberen Flanke.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Gemeinsam Low ziehen
+
+Ein Open-Drain- oder Open-Collector-Ausgang besitzt keinen aktiven High-Treiber. Ist Q1 aus, zieht RP die Leitung nach High; ist irgendein Teilnehmer ein, wird sie Low. Mehrere Ausgänge dürfen deshalb verbunden werden, sofern Spannungen und Ströme passen.
+
+![Open-Drain-Leitung mit zwei Teilnehmern, Pull-up und Entprellung](../bilder/14-digitaltechnik/14-07-open-drain-entprellung.png)
+
+Der Low-Strom ist näherungsweise `IL = (VDD − VOL)/RP`. Die steigende Flanke entsteht aus RP und Buskapazität CB. Kleiner RP macht sie schneller, erhöht aber Low-Strom und Verlust. Interne Pulls sind oft schwach und stark toleriert.
+
+### Entprellung
+
+Ein mechanischer Kontakt kann während Millisekunden mehrfach öffnen und schliessen. RC plus Schmitt-Trigger erzeugt eine saubere Hardwareflanke. Software kann nach der ersten Änderung eine stabile Zeit fordern. Ein reines RC direkt an einem normalen CMOS-Eingang kann lange im undefinierten Bereich bleiben.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Mehrere Personen halten ein federbelastetes Seil. Die Feder zieht es nach oben; jede Person kann es nach unten ziehen. Niemand drückt aktiv nach oben – so entsteht kein Kurzschluss zwischen Teilnehmern.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+VDD = 3,3 V, VOL(max) = 0,4 V und erlaubter Sinkstrom 2 mA. Dann gilt `RP ≥ (3,3 − 0,4)/2 mA = 1,45 kΩ`. Ein grösserer Wert reduziert Strom, verlangsamt aber mit CB die steigende Flanke.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 14](../praxis/modul-14.md).
+Miss eine Open-Drain-Leitung mit zwei RP-Werten und zusätzlicher Kapazität. Zeichne gleichzeitig einen ungefilterten Taster und den Ausgang eines Schmitt-Triggers auf.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+GPIO muss für Open Drain passend konfiguriert werden; «High schreiben» bedeutet Transistor aus. Softwareentprellung benötigt ein definiertes Zeitkriterium und darf kurze echte Fehlerimpulse nicht pauschal verschlucken.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Open Drain erzeugt nur Low; Pull-up und Kapazität bestimmen High-Pegel, Strom und Anstiegszeit.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Push-Pull-Ausgänge zusammenschalten
+- Pull-up nur nach Widerstand, nicht nach Zeit dimensionieren
+- internen Pull ohne Toleranznachweis verwenden
+- langsames RC-Signal ohne Schmitt-Eingang zuführen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Open-Drain-Netze erlauben gemeinsame Leitungen. Pull-up, Kapazität, Sinkstrom und Entprellung verbinden statische Logik mit realem Zeitverhalten.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wer erzeugt den High-Pegel?
+2. Berechne den Low-Strom bei 4,7 kΩ und 3,3 V.
+3. Warum wird eine grosse Buskapazität problematisch?
+4. Was bedeutet High bei einem Open-Drain-GPIO?
+
+Weitere Aufgaben: [Übungen zu Modul 14](../uebungen/modul-14.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b1-LK01–06`, `b4`, `b5`, `c1–c2`, `c5`
+- Nachweise: Strom- und Flankenmessung einer Open-Drain-Leitung; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

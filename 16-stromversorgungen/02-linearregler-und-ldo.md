@@ -2,59 +2,75 @@
 
 [← Zurück](01-anforderungen-lastprofile-und-schutz.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](03-verlustleistung-und-thermische-grundlagen.md)
 
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
-
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Linearregler und LDO** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b2`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Linearregler und LDO erklären
+- Dropout und Verlustleistung bestimmen
+- Stabilitätsvorgaben für Kondensatoren prüfen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Linearregler sind einfach, rauscharm und gut messbar. Sie wandeln überschüssige Spannung jedoch direkt in Wärme. Ein LDO funktioniert mit kleinerer Spannungsreserve, bleibt aber ein Regelkreis mit Stabilitäts- und Lastgrenzen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Serien-Stellglied
+
+Der Regler vergleicht einen Anteil von Uout mit einer Referenz und steuert ein Serienbauteil. Idealerweise ist `Iin ≈ Iout + IQ`, wobei IQ der Ruhestrom des Reglers ist.
+
+![LDO mit Ein- und Ausgangskondensator, Lastpfad und Dropout-Spannung](../bilder/16-stromversorgungen/16-02-ldo.png)
+
+Die Verlustleistung lautet näherungsweise `PV = (Uin − Uout)·Iout + Uin·IQ`. Dropout ist die minimale Differenz zwischen Ein- und Ausgang für garantierte Regelung und hängt von Strom und Temperatur ab.
+
+### Regelgüte und Stabilität
+
+Line Regulation beschreibt Änderungen mit Uin, Load Regulation mit Last. PSRR zeigt, wie gut Eingangsstörungen unter bestimmten Frequenzen gedämpft werden. Ausgangsrauschen ist separat spezifiziert.
+
+Ein- und Ausgangskondensator sind Teil der Regelschleife. Wert, ESR, Typ, Temperatur und Platzierung müssen zum Datenblatt passen. Keramikkondensatoren verlieren unter DC-Bias Kapazität. Mindestlast, Reverse Current und Enable-Zustand werden ebenfalls geprüft.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein Druckminderventil hält den Ausgangsdruck konstant und vernichtet den überschüssigen Druck. Je grösser Druckdifferenz und Durchfluss, desto mehr Energie wird im Ventil warm.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+12 V werden auf 5 V bei 180 mA geregelt. Ohne IQ gilt `PV = 7 V·0,18 A = 1,26 W`; die Last erhält 0,90 W. Der ideale Wirkungsgrad liegt nur bei `5/12 ≈ 41,7 %`. Thermik ist der entscheidende Nachweis.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 16](../praxis/modul-16.md).
+Miss Uout über Eingang und Last, bestimme Dropout bei langsam sinkendem Uin und beobachte Lastsprung. Verwende ausschliesslich freigegebene Kondensatoren und begrenzte Leistung.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Enable-Pins und Power-Good können sequenziert und überwacht werden. Firmware kann Last reduzieren, bevor der Regler thermisch abschaltet; sie darf stabile Versorgung beim Booten nicht voraussetzen.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Ein LDO spart Spannungsreserve, nicht Verlustleistung; seine Kondensatoren gehören zur Stabilität des Regelkreises.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- Dropout als konstanten typischen Wert verwenden
+- Ruhestrom bei Batteriebetrieb vergessen
+- beliebigen Ausgangskondensator einsetzen
+- PSRR als frequenzunabhängig ansehen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Linearregler liefern saubere Spannung mit einfacher Topologie. Eingangsdifferenz, Strom, Dropout, Thermik und Stabilitätskondensatoren bestimmen die Eignung.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Wie entsteht PV?
+2. Berechne PV für 9 V auf 3,3 V bei 250 mA.
+3. Was bedeutet Dropout?
+4. Warum ist Cout Teil der Regelschleife?
+
+Weitere Aufgaben: [Übungen zu Modul 16](../uebungen/modul-16.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a3`, `b1-LK01–07`, `b4`, `b5`, `c1–c2`
+- Nachweise: Dropout-, Last- und Temperaturmessung eines LDO; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

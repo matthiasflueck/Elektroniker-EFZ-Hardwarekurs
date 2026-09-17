@@ -2,78 +2,83 @@
 
 [← Modul 13](../13-analoge-signalaufbereitung/README.md) · [Praxisübersicht](README.md) · [Kursübersicht](../README.md)
 
-> **Ausbaustatus:** Praxisgerüst. Vor Durchführung werden Schaltung, Material, Grenzen, Sollwerte und Auswertung vollständig freigegeben.
-
 ## Lernziel
 
-Analoges Sensorsystem entwickeln und das Ergebnis fachlich begründet beurteilen.
-
-## Voraussetzungen
-
-Theorie und Übungen des Moduls 13.
+Du entwickelst eine sichere Sensormesskette aus resistivem Sensor, Teiler oder Brücke, OPV, aktivem beziehungsweise gepuffertem Filter und 0–3,3-V-ADC-Schnittstelle. Du sagst jeden Knotenbereich voraus und verifizierst Signal, Fehlerzustände und Einschwingen.
 
 ## Benötigtes Material
 
-Wird mit der fachlichen Ausarbeitung spezifiziert.
+- NTC oder Widerstandssensor mit Datenblatt sowie Präzisionswiderstände
+- für 3,3 oder 5 V geeigneter, unity-gain-stabiler OPV
+- Widerstände für Verstärkung und Schutz, Kondensatoren für Filter und Abblockung
+- optional Analogmultiplexer mit bekanntem RON
+- Steckbrett oder vorbereitete Leiterplatte mit eindeutigem Massebezug
 
 ## Benötigte Messgeräte
 
-Werden passend zu Messgrösse, Bereich, Belastung und Sicherheit ausgewählt.
+Strombegrenztes Labornetzgerät, zwei DMM, Zweikanal-Oszilloskop mit 10:1-Tastköpfen, Funktionsgenerator für kleine sichere Testsignale und optional MCU/ADC-Board.
 
 ## Schaltung / Messaufbau
 
-Die Endfassung enthält ein genormtes Schema mit eindeutigen Mess- und Bezugspunkten.
+Sensor oder Sensorsimulator speist Teiler/Brücke. Der OPV verstärkt mit Reserve, das Filter begrenzt Bandbreite und ein Serienwiderstand schützt den ADC-Eingang. Messpunkte liegen an Sensor, Verstärkereingängen, OPV-Ausgang und ADC-Pin.
+
+![Messaufbau einer vollständigen analogen Sensorkette](../bilder/13-analoge-signalaufbereitung/13-08-praxis-messaufbau.png)
 
 ## Sicherheitshinweise
 
-Energiequelle, Strombegrenzung, gespeicherte Energie, Massebezug und Abbruchkriterien vor Aufbau festlegen.
+Nur SELV-Kleinspannung. Eingang und Ausgang müssen innerhalb der OPV- und ADC-Grenzen bleiben. Generatoroffset vor Anschluss prüfen. Fehlerzustände nur über strombegrenzte Widerstände einspeisen. Versorgung vor Umbauten ausschalten; OPV-Pinout und Abblockung vor dem ersten Einschalten kontrollieren.
 
 ## Vorbereitung
 
-Erst vorhersagen, dann berechnen und erst danach aufbauen.
+Definiere Messbereich, gewünschte ADC-Reserve, zulässigen Fehler, Bandbreite und Diagnosezustände. Erstelle eine Knotentabelle mit Minimum, Nennwert, Maximum und Bezugspotential. Sage Sensor- und Ausgangskennlinie voraus.
 
 ## Berechnung
 
-Sollwerte, Toleranzen und Grenzwerte mit Einheiten bestimmen.
+Dimensioniere Teiler oder Brücke, Verstärkung und Offset. Berechne Grenzfrequenz, ADC-Quellimpedanz, Worst Case aus Widerständen und OPV-Offset sowie Schutzstrom bei den vereinbarten Fehlerpegeln. Lege Abbruchgrenzen fest.
 
 ## Aufbau
 
-Spannungsfrei aufbauen, Sicht- und Durchgangsprüfung durchführen.
+Baue in Funktionsblöcken auf. Prüfe zuerst Versorgung und Referenz ohne OPV, danach Ruhestrom und OPV-Ausgang ohne Sensor. Ergänze Sensor, Filter und ADC erst nach Freigabe des vorherigen Blocks.
 
 ## Durchführung
 
-Mit Strombegrenzung schrittweise in Betrieb nehmen.
-
-## Messung
-
-Messpunkte, Geräte und Einstellungen dokumentieren.
+1. Stelle mindestens fünf Sensorwerte einschliesslich der Randwerte ein.
+2. Miss an jedem Knoten DC-Soll und Ist; protokolliere Versorgung und Temperatur.
+3. Speise ein kleines dynamisches Signal ein und bestimme Verstärkung, Phase und Grenzfrequenz.
+4. Prüfe Sensorunterbruch und Kurzschluss über sichere Widerstände.
+5. Falls ein MUX verwendet wird: Schalte zwischen zwei Pegeln und bestimme die nötige Wartezeit.
+6. Vergleiche ADC-Rohwerte mit der gleichzeitig gemessenen Pinspannung.
 
 ## Messwerte
 
-| Grösse | Soll | Ist | Unsicherheit/Bedingung |
-|---|---:|---:|---|
-| | | | |
+| Sensorzustand | Usensor | Uplus | Uminus | Uout | UADC | ADC-Rohcode | Bewertung |
+|---|---:|---:|---:|---:|---:|---:|---|
+| | | | | | | | |
+
+| Frequenz | Verstärkung | Phase | Soll | Abweichung | Bedingung |
+|---:|---:|---:|---:|---:|---|
+| | | | | | |
 
 ## Auswertung
 
-Soll und Ist vergleichen, Abweichungen erklären und Änderungen nachführen.
+Trenne Nullpunkt-, Verstärkungs-, Nichtlinearitäts- und Dynamikfehler. Aktualisiere das Fehlerbudget mit Messwerten. Begründe, welche Abweichung kalibriert werden darf und welche eine Hardwareänderung verlangt.
 
 ## Fragen
 
-Welche Annahme beeinflusst das Resultat am stärksten?
+Wo entsteht die grösste Unsicherheit? Welche Reserve verhindert Sättigung? Wie erkennst du Sensorunterbruch unabhängig von Firmware? Welcher Knoten begrenzt die Einschwingzeit?
 
 ## Was solltest du beobachtet haben?
 
-Wird in der Endfassung mit zulässigem Wertebereich beschrieben.
+Die Knotenspannungen folgen der vorhergesagten Kette, solange Common Mode und Ausgangshub eingehalten werden. Filter und MUX benötigen messbare Einschwingzeit. Fehlerzustände erzeugen definierte Diagnosebereiche statt unkontrollierter Übersteuerung.
 
 ## Bezug zur Theorie
 
-Modul 13 – Analoge Signalaufbereitung und Sensorik.
+Lektionen 13.1–13.7 sowie OPV-Grundlagen aus Modul 12 und Filtergrundlagen aus Modul 08.
 
 ## 🔗 Hardware ↔ Firmware
 
-Falls ein Mikrocontroller beteiligt ist: Konfiguration, Pinzustand, Peripherie und reale Messung gemeinsam beurteilen.
+Firmware wählt Kanal und Wartezeit, liest Rohcodes und wendet Kalibrierung an. Der Laborbericht stellt jedem Rohcode die reale ADC-Pinspannung gegenüber. Diagnosegrenzen werden aus sicheren Hardwarebereichen abgeleitet.
 
-## Bildungsplan 2026
+## Bezug Bildungsplan 2026
 
-`a2`, `a3`, `b1`, `b4`, `b5`, `c1`
+`a1–a3`, `b1-LK01–10`, `b4-LK01–10`, `b5`, `c1–c2`, `d1–d3`; Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

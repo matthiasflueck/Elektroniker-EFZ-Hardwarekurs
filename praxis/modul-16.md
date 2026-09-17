@@ -2,78 +2,79 @@
 
 [← Modul 16](../16-stromversorgungen/README.md) · [Praxisübersicht](README.md) · [Kursübersicht](../README.md)
 
-> **Ausbaustatus:** Praxisgerüst. Vor Durchführung werden Schaltung, Material, Grenzen, Sollwerte und Auswertung vollständig freigegeben.
-
 ## Lernziel
 
-Linear- und Schaltregler vermessen und das Ergebnis fachlich begründet beurteilen.
-
-## Voraussetzungen
-
-Theorie und Übungen des Moduls 16.
+Du vergleichst einen LDO und ein sicheres Buck-Evaluationsmodul hinsichtlich Dropout, Lastregelung, Ripple, Wirkungsgrad, Lastsprung und Temperatur. Messpunkte und Unsicherheit werden so dokumentiert, dass die Resultate reproduzierbar sind.
 
 ## Benötigtes Material
 
-Wird mit der fachlichen Ausarbeitung spezifiziert.
+LDO-Schaltung mit datenblattkonformen Kondensatoren, fertiges Kleinspannungs-Buck-Evaluationsmodul, Leistungswiderstände oder elektronische Last, geschaltete Last für Transienten, kurze Leitungen und Temperaturmessfläche.
 
 ## Benötigte Messgeräte
 
-Werden passend zu Messgrösse, Bereich, Belastung und Sicherheit ausgewählt.
+Zwei strombegrenzte Labornetzgeräte beziehungsweise Quelle und elektronische Last, mindestens zwei DMM, Zweikanal-Oszilloskop mit 10:1-Tastköpfen und Massefedern sowie Temperaturmessgerät. Optional Stromzange mit ausreichender Bandbreite.
 
 ## Schaltung / Messaufbau
 
-Die Endfassung enthält ein genormtes Schema mit eindeutigen Mess- und Bezugspunkten.
+Ein- und Ausgangsspannung werden direkt an den Regleranschlüssen gemessen; Ströme mit geeigneten Geräten in den jeweiligen Leistungspfaden. Ripple wird direkt am Ausgangskondensator, Lastsprung zusätzlich direkt am Verbraucher erfasst.
+
+![Messaufbau für Wirkungsgrad, Ripple, Lastsprung und Temperatur](../bilder/16-stromversorgungen/16-08-praxis-reglermessung.png)
 
 ## Sicherheitshinweise
 
-Energiequelle, Strombegrenzung, gespeicherte Energie, Massebezug und Abbruchkriterien vor Aufbau festlegen.
+Nur SELV-Kleinspannung und freigegebene Evaluationshardware. Keine netzspannungsführenden Regler aufbauen oder messen. Strom- und Temperaturgrenzen vorab festlegen. Oszilloskopmasse niemals an Schaltknoten legen. Heisse Bauteile nicht berühren; Kondensatoren vor Umbauten entladen.
 
 ## Vorbereitung
 
-Erst vorhersagen, dann berechnen und erst danach aufbauen.
+Erstelle Lastpunkte bei etwa 10 %, 50 % und 90 % des freigegebenen Bereichs. Sage LDO-Verlustleistung, Buck-Eingangsstrom, Wirkungsgradtrend, Ripple und maximale Temperatur voraus. Definiere Messbandbreite und Abbruchkriterien.
 
 ## Berechnung
 
-Sollwerte, Toleranzen und Grenzwerte mit Einheiten bestimmen.
+Berechne Pin, Pout, PV und η für alle Sollpunkte. Schätze LDO-TJ mit Datenblattthermik. Bestimme ideal notwendige Kapazität für den geplanten Lastsprung und erwarteten ESR-Sprung.
 
 ## Aufbau
 
-Spannungsfrei aufbauen, Sicht- und Durchgangsprüfung durchführen.
+Kontrolliere Polarität, Kondensatoren, Lastleistung und Messbereiche. Stelle Stromgrenze mit abgetrennter Schaltung ein. Nimm zuerst ohne Last, dann schrittweise in Betrieb.
 
 ## Durchführung
 
-Mit Strombegrenzung schrittweise in Betrieb nehmen.
-
-## Messung
-
-Messpunkte, Geräte und Einstellungen dokumentieren.
+1. LDO: Variiere Uin und bestimme Dropout bei konstanter Last.
+2. Vermesse Uout, Pin, Pout, PV und Temperatur bei drei Lastpunkten.
+3. Buck: Wiederhole die Leistungs- und Temperaturmessung nach thermischem Einschwingen.
+4. Miss Ripple mit Massefeder und definierter Bandbreite; führe einmal bewusst die lange Masseleitung zum Vergleich vor.
+5. Schalte zwischen zwei Lasten und erfasse Strom, Einbruch, Überschwingen und Einschwingzeit.
+6. Vergleiche Messwerte mit Datenblatt, Rechnung und Lastprofil.
 
 ## Messwerte
 
-| Grösse | Soll | Ist | Unsicherheit/Bedingung |
-|---|---:|---:|---|
-| | | | |
+| Regler | Uin | Iin | Uout | Iout | Pin | Pout | η | Temperatur |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| | | | | | | | | |
+
+| Regler | Lastsprung | Ripple Upp | Einbruch | Überschwingen | Einschwingzeit | Messbandbreite |
+|---|---:|---:|---:|---:|---:|---|
+| | | | | | | |
 
 ## Auswertung
 
-Soll und Ist vergleichen, Abweichungen erklären und Änderungen nachführen.
+Erstelle Wirkungsgrad- und Temperaturdiagramm über Last. Trenne echten Ripple von Messschleifenartefakten. Erkläre Abweichungen durch Kabel, Ruhestrom, Bauteiltoleranz, thermischen Zustand und dynamische Regelung.
 
 ## Fragen
 
-Welche Annahme beeinflusst das Resultat am stärksten?
+Warum ist der LDO bei grosser Spannungsdifferenz thermisch kritisch? Warum fällt der Buck-Wirkungsgrad bei kleiner Last? Welche Kurve belegt Dropout? Was zeigt die Messung am Verbraucher zusätzlich zur Reglerklemme?
 
 ## Was solltest du beobachtet haben?
 
-Wird in der Endfassung mit zulässigem Wertebereich beschrieben.
+Der LDO besitzt geringe Schaltstörung, aber Verlust proportional zur Spannungsdifferenz. Der Buck erreicht meist höheren Wirkungsgrad, zeigt jedoch Schalt- und Regelripple. Kurze Messverbindungen verändern das beobachtete Hochfrequenzsignal deutlich.
 
 ## Bezug zur Theorie
 
-Modul 16 – Stromversorgungen.
+Lektionen 16.1–16.7 sowie Kondensatoren aus Modul 05, Spulen aus Modul 06 und MOSFET-Verluste aus Modul 11.
 
 ## 🔗 Hardware ↔ Firmware
 
-Falls ein Mikrocontroller beteiligt ist: Konfiguration, Pinzustand, Peripherie und reale Messung gemeinsam beurteilen.
+Optional erzeugt Firmware reproduzierbare Lastmuster und markiert sie mit einem Trigger-GPIO. Brownout- oder Power-Good-Status wird zeitlich zur gemessenen Versorgung betrachtet.
 
-## Bildungsplan 2026
+## Bezug Bildungsplan 2026
 
-`a3`, `b1`, `b2`, `b4`, `b5`
+`a1–a3`, `b1`, `b2-LK03–04`, `b4-LK01–10`, `b5`, `c1–c2`; Details: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md).

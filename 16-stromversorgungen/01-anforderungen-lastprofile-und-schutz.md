@@ -1,60 +1,74 @@
 # 16.1 – Anforderungen, Lastprofile und Schutz
 
-[← Zurück](README.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](02-linearregler-und-ldo.md)
-
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
+[← Zurück](../15-schnittstellen-busse/07-pegelwandler-leitungskapazitaet-und-signalintegritaet.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](02-linearregler-und-ldo.md)
 
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Anforderungen, Lastprofile und Schutz** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a3`, `b1`, `b2`, `b4`, `b5`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- eine Versorgungsspezifikation vollständig formulieren
+- Lastprofil und Einschaltzustände berücksichtigen
+- eine Power-Tree-Struktur mit Schutz planen
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+«Wir brauchen 3,3 V» ist keine ausreichende Spezifikation. Eingang, Dauer- und Spitzenstrom, Ripple, Startreihenfolge, Fehlerfälle, Temperatur und Wirkungsgrad bestimmen Topologie und Bauteile. Eine Versorgung wird vom Lastprofil her entworfen.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Anforderungen vor Schaltung
+
+Festgelegt werden minimaler, nominaler und maximaler Eingang, Ausgangstoleranz, Dauer- und Pulsstrom, zulässiger Ripple, Lastsprung, Startzeit, Sequenz, Ruhestrom, Umgebungstemperatur und Schutz. Kabelabfall und Steckverbinder gehören zum Eingang.
+
+![Power Tree mit Eingangsschutz, Reglern, Lasten und Messpunkten](../bilder/16-stromversorgungen/16-01-power-tree.png)
+
+Ein Power Tree zeigt jede Schiene, Quelle, Last und Abhängigkeit. Analoge, digitale und leistungsstarke Verbraucher können getrennte Filter oder Regler benötigen, bleiben aber über Masse- und Rückstrompfade gekoppelt.
+
+### Energie und Fehlerzustände
+
+Kondensatoren, Akkus und induktive Lasten speichern Energie. Einschaltstrom, Brownout, Rückspeisung und Hot Plug werden berücksichtigt. Schutz umfasst Sicherung oder Strombegrenzung, Verpolung, Überspannung, ESD/Surge und thermische Abschaltung. Die Reihenfolge entscheidet: Ein TVS ohne vorgeschaltete Strombegrenzung kann überlastet werden.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Eine Wasserversorgung wird nicht nur nach dem gewünschten Druck geplant. Gleichzeitig öffnende Ventile, Rohrverluste, Rückfluss, Lecks und Notabsperrung bestimmen die Anlage.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Eine 3,3-V-Schiene versorgt MCU 80 mA, Sensoren 35 mA und Funkmodul mit 420 mA Pulsen. Mit 25 % Reserve sind mindestens `(80 + 35 + 420) mA·1,25 ≈ 669 mA` Spitzenfähigkeit nötig. Dauerleistung wird separat aus dem zeitlichen Lastprofil bestimmt.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 16](../praxis/modul-16.md).
+Zeichne den Power Tree eines Übungssystems. Miss jede Last im Schlaf-, Normal- und Spitzenzustand und überprüfe Kabel- sowie Steckerverlust. Lege Messpunkte und Abbruchgrenzen fest.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Firmware steuert Sleep, Funkpulse und Power Enable und beeinflusst damit das Lastprofil. Hardware muss einen sicheren Reset- und Fehlerzustand gewährleisten. Brownout-Flags und Versorgungstelemetrie helfen bei der Diagnose.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Eine Stromversorgung wird für den vollständigen Eingangs-, Last-, Zeit-, Temperatur- und Fehlerbereich spezifiziert.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- nur Nennstrom statt Lastprofil angeben
+- Einschaltstrom und Rückspeisung vergessen
+- Schutzbauteile ohne Energiepfad anordnen
+- Firmwarezustände nicht in die Lastanalyse aufnehmen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Spezifikation und Power Tree verbinden Quelle, Regler, Schutz und reale Lastzustände. Erst daraus folgt die geeignete Topologie.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Welche Angaben fehlen bei 3,3 V/1 A?
+2. Warum werden Puls- und Dauerstrom getrennt?
+3. Was zeigt ein Power Tree?
+4. Welche Firmwarezustände verändern die Versorgung?
+
+Weitere Aufgaben: [Übungen zu Modul 16](../uebungen/modul-16.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a1–a3`, `b1-LK01–07`, `b4`, `b5`, `c1–c2`
+- Nachweise: vollständige Versorgungsspezifikation und Lastprofiltabelle; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

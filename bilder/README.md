@@ -56,3 +56,14 @@ Die 28 Abbildungen dieses Blocks sind hochauflösende PNG-Dateien. Die Schaltbil
 | `12-operationsverstaerker` | 7 | reales OPV-Modell, Gegenkopplung, nichtinvertierende und invertierende Verstärker, Differenzverstärker, Schmitt-Trigger und dynamische Grenzen |
 
 Die 28 Abbildungen sind als PNG direkt bei den zugehörigen Erklärungen eingebunden. Neben Kennlinien und Funktionsdiagrammen enthält der Block bewusst viele vollständige Schaltungen mit IEC-Widerstandssymbolen, Referenzbezeichnern und klar erkennbaren Signal- oder Strompfaden.
+
+## Abbildungen der Module 13–16
+
+| Modul | Anzahl | Schwerpunkte |
+|---|---:|---|
+| `13-analoge-signalaufbereitung` | 8 | Konstantstromquelle, Referenzverteilung, Wheatstone-Brücke, Sensormesskette, aktiver Filter, ADC-Schutz, Analogmultiplexer und Labor-Messkette |
+| `14-digitaltechnik` | 8 | Stellenwerte, Logikpegel, IEC-Gatter, De-Morgan-Äquivalenz, Flip-Flop-Zeitverhalten, Multiplexer, Schieberegister, Open Drain und Logic-Analyzer-Aufbau |
+| `15-schnittstellen-busse` | 8 | GPIO-Pad, UART/RS-232, I²C-Pull-ups, SPI-Verzweigung, RS-485, CAN, Pegelwandlung und Busmessung |
+| `16-stromversorgungen` | 8 | Power Tree, LDO, thermischer Pfad, Schaltreglertopologien, Ripple- und Wirkungsgradmessung, Schutzkette, Entkopplung und Reglerprüfstand |
+
+Die 32 PNG-Abbildungen zeigen elektrische Knoten und Abzweigungen eindeutig. Leitungen werden nicht durch Bauteilkörper geführt; Verbindungspunkte, Referenzbezeichner, Signalrichtungen und Messstellen sind dort eingezeichnet, wo sie für die Interpretation erforderlich sind.

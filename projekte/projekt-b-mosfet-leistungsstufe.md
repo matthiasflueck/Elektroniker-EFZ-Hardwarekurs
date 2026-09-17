@@ -29,6 +29,15 @@ MCU/Logik → Gate-Ansteuerung → MOSFET → Last; ergänzt um Schutz, Freilauf
 - Gate-Source- und Drain-Source-Spannung mit gemeinsamer Zeitbasis messen und Miller-Plateau, Flanken und Überschwingen beurteilen
 - Fehlerzustände bei offenem Gate, fehlender Masseverbindung, überhöhter PWM-Frequenz und induktiver Last dokumentieren
 
+## Meilenstein nach Modul 16
+
+- Power Tree mit Eingangsschutz, Regler, Entkopplung und Lastprofil der Leistungsstufe erstellen
+- Dauer-, Puls- und Einschaltstrom der Last erfassen und daraus Anforderungen an Quelle, Sicherung, Leiterpfad und Regler ableiten
+- Leitungs-, Schalt- und Reglerverluste zu einer Leistungsbilanz zusammenführen und die erwartete Bauteiltemperatur abschätzen
+- Versorgungseinbruch, Ripple und Lastsprungantwort bei mehreren PWM-Tastgraden messen und gegen Grenzwerte bewerten
+- Schutzpfade für Verpolung, induktive Abschaltenergie und Überspannungsimpulse koordinieren, ohne die normale Funktion zu beeinträchtigen
+- Firmware-Startzustand, Gate-Pulldown, Brownout-Verhalten und sicheren Aus-Zustand gemeinsam mit der Hardware dokumentieren
+
 ## Verbindliche Nachweise
 
 Anforderungen und Akzeptanzkriterien, Blockdiagramm, Berechnungen, Datenblattentscheidungen, genormtes Schema, Gefährdungs- und Messplan, as-built-Stand, Rohdaten, Soll-Ist-Auswertung, Fehler-/Änderungsjournal sowie Abschluss- und Übergabedokumentation.

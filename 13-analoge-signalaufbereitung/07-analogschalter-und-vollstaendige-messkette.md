@@ -1,60 +1,74 @@
 # 13.7 – Analogschalter und vollständige Messkette
 
-[← Zurück](06-pegelanpassung-und-schutz.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../uebungen/modul-13.md)
-
-> **Ausbaustatus:** Strukturiertes Lektionsgerüst. Fachtext, Beispiele, Schaltbilder und Aufgaben werden im vorgesehenen Modulblock vollständig ausgearbeitet und geprüft.
+[← Zurück](06-pegelanpassung-und-schutz.md) · [Modulübersicht](README.md) · [Kursübersicht](../README.md) · [Weiter →](../14-digitaltechnik/README.md)
 
 ## Lernziele
 
-Nach dieser Lektion kannst du die Grundidee von **Analogschalter und vollständige Messkette** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
+Nach dieser Lektion kannst du:
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `a2`, `a3`, `b1`, `b4`, `b5`, `c1`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
+- Analogschalter und Multiplexer elektrisch beurteilen
+- Einschwingzeit nach einem Kanalwechsel bestimmen
+- eine Messkette mit Diagnosezuständen verifizieren
 
 ## Warum ist das wichtig?
 
-Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
+Mehrere Sensoren teilen sich häufig Verstärker oder ADC. Ein Analogmultiplexer spart Hardware, verbindet aber nacheinander sehr unterschiedliche Quellen mit einem gemeinsamen Knoten. Leckstrom, Einschaltwiderstand und Ladungsinjektion werden damit Teil der Messung.
 
 ## Theorie
 
-Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+### Der Schalter ist nicht ideal
+
+Ein eingeschalteter Kanal besitzt RON, einen signalabhängigen Widerstand. Ausgeschaltete Kanäle besitzen Leckströme und Kapazitäten. Beim Umschalten wird Ladung in den Signalknoten eingespritzt. Break-before-make verhindert meist, dass zwei Quellen kurzzeitig verbunden werden.
+
+![Analogmultiplexer mit Quellwiderständen, Ausgangsknoten und ADC-Abtastung](../bilder/13-analoge-signalaufbereitung/13-07-analogmultiplexer.png)
+
+RON bildet mit Quell- und Lastwiderstand einen Fehler. Nach jedem Kanalwechsel müssen MUX-Ausgang, Filter, OPV und ADC-Sample-and-Hold einschwingen. Hochohmige Quellen reagieren langsamer und stärker auf Leckstrom.
+
+### Vollständige Verifikation
+
+Für jeden Kanal werden erlaubter Signalbereich, Common Mode, Fehlerzustand, Einschwingzeit und Kalibrierung definiert. Offene Sensoren können über einen schwachen Diagnose-Pull erkannt werden. Ein Testkanal mit GND oder Referenz trennt Fehler im Sensorpfad von ADC- und Firmwarefehlern.
 
 ## Anschauliches Beispiel
 
-Eine konkrete Schaltung oder ein Messaufbau zeigt, wo die behandelte Wirkung im Strom- oder Signalpfad auftritt.
+Ein einziges Thermometer wird nacheinander in verschiedene Flüssigkeiten getaucht. Vor jedem Ablesen muss es den alten Wert vergessen und die neue Temperatur annehmen.
 
 ## Berechnungsbeispiel
 
-Die Endfassung erklärt Variablen und Einheiten vor der Formel, rechnet einen vollständigen Fall vor und schliesst mit Einheiten- sowie Grössenordnungsprüfung.
+Rsource = 47 kΩ, RON = 150 Ω und der wirksame Knoten besitzt 10 nF. Näherungsweise ist `τ = (Rsource + RON)·C ≈ 471,5 µs`. Für rund 0,7 % Restfehler sind etwa 5τ beziehungsweise 2,36 ms zu warten; höhere Genauigkeit benötigt mehr Zeit.
 
 ## Praxisbezug
 
-Siehe [Praxis zu Modul 13](../praxis/modul-13.md).
+Schalte abwechselnd zwischen zwei deutlich verschiedenen, sicheren Spannungen. Miss den MUX-Ausgang und den ADC-Knoten. Bestimme die nötige Wartezeit und vergleiche ersten sowie späteren ADC-Sample.
 
 ## 🔗 Hardware ↔ Firmware
 
-Wo fachlich sinnvoll, werden Pin, Peripherie, Konfiguration, messbares Signal und mögliche Hardware-/Firmwarefehler erklärt. Vertiefung: [STM32-Programmierkurs](https://github.com/matthiasflueck/STM32-Programmierkurs).
+Firmware setzt Adressleitungen, wartet die berechnete Einschwingzeit und verwirft bei Bedarf die erste Wandlung. Testkanäle, Grenzwerte und Rohcodeprotokollierung machen die Kette diagnostizierbar.
 
 ## Merksatz
 
-> Das Endresultat wird erst nach Vorhersage, Aufbau und Messung beurteilt.
+> Nach jedem Kanalwechsel muss die gesamte analoge Kette neu einschwingen, nicht nur der digitale Multiplexerzustand.
 
 ## Häufige Fehler und Missverständnisse
 
-Die Endfassung nennt typische Denk-, Aufbau- und Messfehler sowie eine Methode, sie zu erkennen.
+- RON als konstant und null behandeln
+- sofort nach dem Umschalten messen
+- nicht versorgte Eingangssignale zulassen
+- Testkanäle und offene Sensoren nicht vorsehen
 
 ## Zusammenfassung
 
-Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis zusammen.
+Analogschalter sparen Hardware, fügen aber Widerstand, Leckstrom, Ladung und Umschaltzeit hinzu. Eine vollständige Messkette benötigt elektrische und firmwareseitige Diagnose.
 
 ## Übungsfragen
 
-1. Wie würdest du das Prinzip ohne Formel erklären?
-2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
-3. Welche reale Abweichung erwartest du beim Messen?
+1. Welche vier Nichtidealitäten besitzt ein Analogschalter?
+2. Warum beeinflusst Rsource die Wartezeit?
+3. Was prüft ein interner Referenzkanal?
+4. Wann wird die erste ADC-Wandlung verworfen?
+
+Weitere Aufgaben: [Übungen zu Modul 13](../uebungen/modul-13.md).
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `a1–a3`, `b1-LK01–06`, `b4`, `b5`, `c1–c2`
+- Nachweise: verifizierte Mehrkanal-Messkette mit Einschwing- und Diagnosenachweis; [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
