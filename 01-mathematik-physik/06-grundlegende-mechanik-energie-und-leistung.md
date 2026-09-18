@@ -29,15 +29,33 @@ Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und 
 
 ### Arbeit und Energie
 
-Arbeit beschreibt übertragene Energie. Wird eine konstante Kraft $F$ entlang des Weges $s$ ausgeübt, gilt nach dieser Vorstellung $W=F\cdot s$. Die Einheit Joule ist gleich Newtonmeter. Energie kann gespeichert oder umgewandelt werden.
+Arbeit beschreibt übertragene Energie. Wird eine konstante Kraft $F$ entlang des Weges $s$ ausgeübt, gilt:
+
+$$
+W = F\cdot s
+$$
+
+Die Einheit Joule ist gleich Newtonmeter. Energie kann gespeichert oder umgewandelt werden.
 
 ### Leistung
 
-Leistung sagt, wie schnell Energie umgesetzt wird: $P=\frac{W}{t}$. Ein Joule pro Sekunde ist ein Watt. Zwei Geräte können dieselbe Energie verbrauchen, aber unterschiedlich schnell.
+Leistung sagt, wie schnell Energie umgesetzt wird:
+
+$$
+P = \frac{W}{t}
+$$
+
+Ein Joule pro Sekunde ist ein Watt. Zwei Geräte können dieselbe Energie verbrauchen, aber unterschiedlich schnell.
 
 ### Wirkungsgrad und Wärme
 
-Der Wirkungsgrad ist $\eta=\frac{P\mathrm{nutz}}{P\mathrm{zu}}$. Er liegt bei passiven Umwandlungen zwischen 0 und 1. Die Differenz wird überwiegend zu Wärme. Diese Verlustleistung bestimmt Temperaturanstieg und Kühlbedarf.
+Der Wirkungsgrad vergleicht die nutzbare Ausgangsleistung mit der zugeführten Leistung:
+
+$$
+\eta = \frac{P_{\mathrm{nutz}}}{P_{\mathrm{zu}}}
+$$
+
+Er liegt bei passiven Umwandlungen zwischen 0 und 1. Die Differenz wird überwiegend zu Wärme. Diese Verlustleistung bestimmt Temperaturanstieg und Kühlbedarf.
 
 ### Energie kann gespeichert und übertragen werden
 
@@ -66,7 +84,84 @@ Ein Motor hebt eine Masse. Die elektrische Quelle liefert Energie, der Treiber v
 
 ## Berechnungsbeispiel
 
-Ein System nimmt $12\,\mathrm{W}$ auf und liefert $9\,\mathrm{W}$ mechanisch. Es gilt $\eta=\frac{9}{12}=0{,}75=75\,\%$. Die Verlustleistung beträgt $12\,\mathrm{W}-9\,\mathrm{W}=3\,\mathrm{W}$. Läuft es $10\,\mathrm{min}$, werden $3\,\mathrm{W}\cdot600\,\mathrm{s}=1800\,\mathrm{J}$ als Verlustenergie umgesetzt.
+### 🧮 Berechnungsbeispiel: Wirkungsgrad und Verlustenergie bestimmen
+
+Ein System nimmt **12 W** elektrische Leistung auf und gibt **9 W** als nutzbare mechanische Leistung ab. Es läuft während **10 min**.
+
+**Gegeben:**
+
+- zugeführte Leistung: **12 W**
+- nutzbare Leistung: **9 W**
+- Betriebsdauer: **10 min = 600 s**
+
+#### 1. Formeln
+
+$$
+\eta = \frac{P_{\mathrm{nutz}}}{P_{\mathrm{zu}}}
+$$
+
+$$
+P_{\mathrm{verlust}}
+=
+P_{\mathrm{zu}}-P_{\mathrm{nutz}}
+$$
+
+$$
+E_{\mathrm{verlust}}
+=
+P_{\mathrm{verlust}}\cdot t
+$$
+
+#### 2. Werte einsetzen
+
+$$
+\eta
+=
+\frac{9\,\mathrm{W}}
+     {12\,\mathrm{W}}
+$$
+
+$$
+P_{\mathrm{verlust}}
+=
+12\,\mathrm{W}-9\,\mathrm{W}
+$$
+
+$$
+E_{\mathrm{verlust}}
+=
+3\,\mathrm{W}\cdot600\,\mathrm{s}
+$$
+
+#### 3. Berechnen
+
+$$
+\eta = 0{,}75 = 75\,\%
+$$
+
+$$
+P_{\mathrm{verlust}} = 3\,\mathrm{W}
+$$
+
+$$
+E_{\mathrm{verlust}} = 1800\,\mathrm{J}
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{\eta = 75\,\%}
+$$
+
+$$
+\boxed{P_{\mathrm{verlust}} = 3\,\mathrm{W}}
+$$
+
+$$
+\boxed{E_{\mathrm{verlust}} = 1800\,\mathrm{J}}
+$$
+
+Die nicht nutzbare Leistung wird überwiegend in Wärme umgesetzt.
 
 ## Praxisbezug
 

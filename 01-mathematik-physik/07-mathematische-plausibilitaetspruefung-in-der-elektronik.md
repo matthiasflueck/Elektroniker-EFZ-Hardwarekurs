@@ -62,11 +62,66 @@ In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig n
 
 ## Anschauliches Beispiel
 
-Für $5\,\mathrm{V}$ an $1\,\mathrm{k}\Omega$ zeigt ein Rechner $5000\,\mathrm{A}$. Die Einheitserwartung $\frac{\mathrm{V}}{\mathrm{k}\Omega}=\mathrm{mA}$ entlarvt den Fehler sofort: Der Widerstand wurde vermutlich als $0{,}001\,\Omega$ statt $1000\,\Omega$ eingegeben.
+Für eine Spannung von **5 V** an einem Widerstand von **1 kΩ** zeigt ein falsch bedienter Rechner **5000 A**. Schon die Einheitenerwartung zeigt, dass dieses Resultat unmöglich ist:
+
+$$
+\frac{\mathrm{V}}{\mathrm{k}\Omega} = \mathrm{mA}
+$$
+
+Die korrekte Grössenordnung lautet:
+
+$$
+\frac{5\,\mathrm{V}}
+     {1\,\mathrm{k}\Omega}
+=
+5\,\mathrm{mA}
+$$
+
+Der Widerstand wurde bei der falschen Eingabe vermutlich als **0,001 Ω** statt **1000 Ω** eingegeben.
 
 ## Berechnungsbeispiel
 
-Exakt gilt $\frac{4{,}98\,\mathrm{V}}{997\,\Omega}=4{,}994\ldots\,\mathrm{mA}$. Mit etwa $5\,\mathrm{V}$ und $1\,\mathrm{k}\Omega$ war $5\,\mathrm{mA}$ erwartet. Das Endresultat $4{,}99\,\mathrm{mA}$ ist angemessen; $4{,}994984954864\ldots\,\mathrm{mA}$ täuscht Genauigkeit vor.
+### 🧮 Berechnungsbeispiel: Strom berechnen und sinnvoll runden
+
+An einem gemessenen Widerstand von **997 Ω** liegen **4,98 V**. Gesucht ist der Strom. Vor der exakten Rechnung wird ein Ergebnis nahe **5 mA** erwartet.
+
+**Gegeben:**
+
+- Spannung: **4,98 V**
+- Widerstand: **997 Ω**
+- erwartete Grössenordnung: **etwa 5 mA**
+
+#### 1. Formel
+
+$$
+I = \frac{U}{R}
+$$
+
+#### 2. Werte einsetzen
+
+$$
+I =
+\frac{4{,}98\,\mathrm{V}}
+     {997\,\Omega}
+$$
+
+#### 3. Berechnen
+
+$$
+I
+=
+0{,}004994984\ldots\,\mathrm{A}
+=
+4{,}994984\ldots\,\mathrm{mA}
+$$
+
+#### 4. Ergebnis sinnvoll runden
+
+$$
+\boxed{I \approx 4{,}99\,\mathrm{mA}}
+$$
+
+Das Ergebnis stimmt mit der erwarteten Grössenordnung von ungefähr 5 mA überein. Eine Angabe wie **4,994984954864 mA** würde eine nicht vorhandene Genauigkeit vortäuschen.
 
 ## Praxisbezug
 
@@ -94,7 +149,11 @@ Plausibilitätsprüfung kombiniert Dimension, Grössenordnung, Grenzfall und una
 
 1. Welche vier Prüfungen werden verwendet?
 2. Warum sind 12 Rechnerstellen kein Genauigkeitsnachweis?
-3. Nenne einen sinnvollen Grenzfall für $I=\frac{U}{R}$.
+3. Nenne einen sinnvollen Grenzfall für:
+
+   $$
+   I=\frac{U}{R}
+   $$
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
 

@@ -33,7 +33,25 @@ Das Gleichheitszeichen bedeutet, dass links und rechts derselbe Wert steht. Jede
 
 ### Beispiel Ohmsches Gesetz
 
-Die Aussage $U=R\cdot I$ bedeutet: Bei konstantem Widerstand steigt die Spannung proportional zum Strom. Gesucht sei $I$. Beide Seiten werden durch $R$ geteilt: $\frac{U}{R}=\frac{R\cdot I}{R}$, also $I=\frac{U}{R}$.
+Die Aussage
+
+$$
+U = R \cdot I
+$$
+
+bedeutet: Bei konstantem Widerstand steigt die Spannung proportional zum Strom. Gesucht sei $I$. Beide Seiten werden durch $R$ geteilt:
+
+$$
+\frac{U}{R}
+=
+\frac{R\cdot I}{R}
+$$
+
+Der Faktor $R$ kürzt sich auf der rechten Seite. Damit ergibt sich:
+
+$$
+I = \frac{U}{R}
+$$
 
 ### Bedingungen und Symbole
 
@@ -41,7 +59,13 @@ Vor dem Einsetzen werden Symbole, Einheiten und Modellgrenzen notiert. Das Ohmsc
 
 ### Erst die Abhängigkeit verstehen
 
-Vor dem Umstellen wird gefragt, wie sich die gesuchte Grösse verändert. Bei $I=\frac{U}{R}$ muss der Strom steigen, wenn $U$ steigt, und sinken, wenn $R$ steigt. Diese qualitative Aussage ist ein wirksamer Kontrollpunkt: Ergibt die umgestellte Formel das Gegenteil, ist sie falsch oder das Modell wurde missverstanden.
+Vor dem Umstellen wird gefragt, wie sich die gesuchte Grösse verändert. Für den Strom gilt:
+
+$$
+I = \frac{U}{R}
+$$
+
+Der Strom muss steigen, wenn $U$ steigt, und sinken, wenn $R$ steigt. Diese qualitative Aussage ist ein wirksamer Kontrollpunkt: Ergibt die umgestellte Formel das Gegenteil, ist sie falsch oder das Modell wurde missverstanden.
 
 Klammern helfen, zusammengehörige Terme sichtbar zu halten. Bei längeren Formeln wird nicht versucht, mehrere Schritte gleichzeitig «im Kopf» zu erledigen. Jede Zeile enthält genau eine nachvollziehbare Operation. Das dauert kaum länger und macht Vorzeichen- oder Kehrwertfehler deutlich leichter auffindbar.
 
@@ -66,11 +90,77 @@ Die bekannte Beziehung wird als Waage vorgestellt. Multiplizierst du nur eine Se
 
 ## Berechnungsbeispiel
 
-Aus $P=U\cdot I$ soll $U$ bestimmt werden. Division beider Seiten durch $I$ ergibt $U=\frac{P}{I}$. Mit $P=0{,}50\,\mathrm{W}$ und $I=0{,}10\,\mathrm{A}$ folgt $U=5{,}0\,\mathrm{V}$. Rückprüfung: $5{,}0\,\mathrm{V}\cdot0{,}10\,\mathrm{A}=0{,}50\,\mathrm{W}$.
+### 🧮 Berechnungsbeispiel: Spannung aus Leistung und Strom bestimmen
+
+Ein Verbraucher nimmt eine Leistung von **0,50 W** auf. Durch ihn fliesst ein Strom von **0,10 A**. Gesucht ist die Spannung.
+
+**Gegeben:**
+
+- Leistung: **0,50 W**
+- Strom: **0,10 A**
+- gesucht: Spannung $U$
+
+#### 1. Formel
+
+Ausgangspunkt ist die elektrische Leistung:
+
+$$
+P = U \cdot I
+$$
+
+Nach $U$ umgestellt:
+
+$$
+U = \frac{P}{I}
+$$
+
+#### 2. Werte einsetzen
+
+$$
+U =
+\frac{0{,}50\,\mathrm{W}}
+     {0{,}10\,\mathrm{A}}
+$$
+
+#### 3. Berechnen
+
+$$
+U = 5{,}0\,\mathrm{V}
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{U = 5{,}0\,\mathrm{V}}
+$$
+
+#### Rückprüfung
+
+$$
+5{,}0\,\mathrm{V}\cdot0{,}10\,\mathrm{A}
+=
+0{,}50\,\mathrm{W}
+$$
+
+Die Rückprüfung ergibt wieder die vorgegebene Leistung.
 
 ## Praxisbezug
 
-Stelle $U=R\cdot I$, $P=U\cdot I$ und $\eta=\frac{P\mathrm{out}}{P\mathrm{in}}$ jeweils nach jeder vorkommenden Grösse um. Schreibe jeden Rechenschritt aus.
+Stelle die folgenden Beziehungen jeweils nach jeder vorkommenden Grösse um:
+
+$$
+U = R\cdot I
+$$
+
+$$
+P = U\cdot I
+$$
+
+$$
+\eta = \frac{P_{\mathrm{out}}}{P_{\mathrm{in}}}
+$$
+
+Schreibe jeden Rechenschritt aus.
 
 ## 🔗 Hardware ↔ Firmware
 
@@ -92,7 +182,11 @@ Formeln beschreiben Bedingungen und Zusammenhänge. Systematisches Umstellen, Ei
 
 ## Übungsfragen
 
-1. Stelle $E=P\cdot t$ nach $t$ um.
+1. Stelle die folgende Formel nach $t$ um:
+
+   $$
+   E=P\cdot t
+   $$
 2. Warum ist Rückeinsetzen nützlich?
 3. Welche Bedingung gilt beim ohmschen Widerstand?
 

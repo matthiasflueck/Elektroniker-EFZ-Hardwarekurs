@@ -33,7 +33,13 @@ Vor jeder Interpretation werden x- und y-Grösse, Einheit, lineare oder logarith
 
 ### Steigung als Änderungsrate
 
-Die mittlere Steigung zwischen zwei Punkten ist $\frac{\Delta y}{\Delta x}$. Eine positive Steigung bedeutet, dass $y$ mit $x$ wächst. Bei nichtlinearen Kennlinien hängt die lokale Steigung vom Arbeitspunkt ab.
+Die mittlere Steigung zwischen zwei Punkten ist:
+
+$$
+m = \frac{\Delta y}{\Delta x}
+$$
+
+Eine positive Steigung bedeutet, dass $y$ mit $x$ wächst. Bei nichtlinearen Kennlinien hängt die lokale Steigung vom Arbeitspunkt ab.
 
 ### Interpolation und Extrapolation
 
@@ -68,7 +74,70 @@ Eine NTC-Kennlinie fällt mit steigender Temperatur. Zwischen 20 °C und 30 °C 
 
 ## Berechnungsbeispiel
 
-Eine Gerade geht durch $(1\,\mathrm{V},2\,\mathrm{mA})$ und $(3\,\mathrm{V},6\,\mathrm{mA})$. Die Steigung ist $\frac{(6-2)\,\mathrm{mA}}{(3-1)\,\mathrm{V}}=2\,\mathrm{mA/V}=2\,\mathrm{mS}$. Der Kehrwert entspricht hier $500\,\Omega$.
+### 🧮 Berechnungsbeispiel: Steigung einer linearen Kennlinie bestimmen
+
+Eine lineare Strom-Spannungs-Kennlinie verläuft durch zwei bekannte Messpunkte. Gesucht sind ihre Steigung und der zugehörige Widerstand.
+
+**Gegeben:**
+
+- Punkt 1: **1 V, 2 mA**
+- Punkt 2: **3 V, 6 mA**
+
+#### 1. Formeln
+
+Die Steigung der Strom-Spannungs-Kennlinie entspricht dem Leitwert $G$:
+
+$$
+G = \frac{\Delta I}{\Delta U}
+$$
+
+Da die lineare Kennlinie in diesem Beispiel durch den Ursprung verläuft, ist der Widerstand der Kehrwert des Leitwerts:
+
+$$
+R = \frac{1}{G}
+$$
+
+#### 2. Werte einsetzen
+
+$$
+G
+=
+\frac{(6-2)\,\mathrm{mA}}
+     {(3-1)\,\mathrm{V}}
+$$
+
+#### 3. Berechnen
+
+$$
+G
+=
+\frac{4\,\mathrm{mA}}
+     {2\,\mathrm{V}}
+=
+2\,\mathrm{mA/V}
+=
+2\,\mathrm{mS}
+$$
+
+$$
+R
+=
+\frac{1}{2\,\mathrm{mS}}
+=
+500\,\Omega
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{G = 2\,\mathrm{mS}}
+$$
+
+$$
+\boxed{R = 500\,\Omega}
+$$
+
+Die positive Steigung zeigt: Mit steigender Spannung wächst auch der Strom.
 
 ## Praxisbezug
 

@@ -29,15 +29,50 @@ Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und 
 
 ### Mantisse und Exponent
 
-Eine Zahl wird als $a\cdot10^n$ geschrieben, wobei der Betrag von $a$ zwischen 1 und 10 liegt. Der Exponent sagt, wie weit das Dezimalzeichen verschoben wurde. $0{,}000\,0047\,\mathrm{A}$ wird zu $4{,}7\cdot10^{-6}\,\mathrm{A}$.
+Eine Zahl wird in wissenschaftlicher Schreibweise dargestellt als:
+
+$$
+x = a \cdot 10^n
+$$
+
+Dabei liegt der Betrag der Mantisse $a$ zwischen 1 und 10. Der Exponent $n$ sagt, wie weit das Dezimalzeichen verschoben wurde. Ein Beispiel:
+
+$$
+0{,}000\,0047\,\mathrm{A}
+=
+4{,}7 \cdot 10^{-6}\,\mathrm{A}
+$$
 
 ### Rechenregeln
 
-Beim Multiplizieren werden Mantissen multipliziert und Exponenten addiert. Beim Dividieren werden Mantissen dividiert und Exponenten subtrahiert. Bei Addition müssen die Exponenten zuerst gleich gemacht werden.
+Beim Multiplizieren werden Mantissen multipliziert und Exponenten addiert:
+
+$$
+(a\cdot10^m)\cdot(b\cdot10^n)
+=
+(a\cdot b)\cdot10^{m+n}
+$$
+
+Beim Dividieren werden Mantissen dividiert und Exponenten subtrahiert:
+
+$$
+\frac{a\cdot10^m}{b\cdot10^n}
+=
+\frac{a}{b}\cdot10^{m-n}
+$$
+
+Bei einer Addition müssen die Exponenten zuerst gleich gemacht werden.
 
 ### Grössenordnung
 
-Vor dem Taschenrechner wird grob geschätzt. $\frac{3{,}3\,\mathrm{V}}{1\,\mathrm{k}\Omega}$ muss im Milliamperebereich liegen, denn Volt durch Kiloohm ergibt Milliampere. Ein Ergebnis von $3300\,\mathrm{A}$ wäre offensichtlich falsch.
+Vor dem Taschenrechner wird grob geschätzt. Der Ausdruck
+
+$$
+\frac{3{,}3\,\mathrm{V}}
+     {1\,\mathrm{k}\Omega}
+$$
+
+muss im Milliamperebereich liegen, denn Volt durch Kiloohm ergibt Milliampere. Ein Ergebnis von **3300 A** wäre offensichtlich falsch.
 
 ### Das Dezimalzeichen bewusst verschieben
 
@@ -62,11 +97,72 @@ In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig n
 
 ## Anschauliches Beispiel
 
-Ein Kondensatorwert von $100\,\mathrm{nF}$ entspricht $100\cdot10^{-9}\,\mathrm{F}=1{,}0\cdot10^{-7}\,\mathrm{F}$. Beide Darstellungen bezeichnen denselben Wert; $100\,\mathrm{nF}$ ist für Schaltpläne meist lesbarer.
+Ein Kondensatorwert von **100 nF** lässt sich in wissenschaftlicher Schreibweise ausdrücken als:
+
+$$
+100\,\mathrm{nF}
+=
+100\cdot10^{-9}\,\mathrm{F}
+=
+1{,}0\cdot10^{-7}\,\mathrm{F}
+$$
+
+Beide Darstellungen bezeichnen denselben Wert; **100 nF** ist für Schaltpläne meist lesbarer.
 
 ## Berechnungsbeispiel
 
-$(4{,}7\cdot10^3)\cdot(2{,}0\cdot10^{-3})=9{,}4\cdot10^0=9{,}4$. Die Exponenten $3+(-3)$ heben sich auf. Eine Abschätzung mit $5\cdot2\approx10$ bestätigt die Grössenordnung.
+### 🧮 Berechnungsbeispiel: Zahlen in wissenschaftlicher Schreibweise multiplizieren
+
+Zwei Zahlen in wissenschaftlicher Schreibweise sollen miteinander multipliziert werden.
+
+**Gegeben:**
+
+- erster Faktor: **4,7 · 10³**
+- zweiter Faktor: **2,0 · 10⁻³**
+
+#### 1. Rechenregel
+
+$$
+(a\cdot10^m)\cdot(b\cdot10^n)
+=
+(a\cdot b)\cdot10^{m+n}
+$$
+
+#### 2. Werte einsetzen
+
+$$
+(4{,}7\cdot10^3)\cdot(2{,}0\cdot10^{-3})
+=
+(4{,}7\cdot2{,}0)\cdot10^{3+(-3)}
+$$
+
+#### 3. Mantisse und Exponent berechnen
+
+$$
+4{,}7\cdot2{,}0 = 9{,}4
+$$
+
+$$
+3+(-3)=0
+$$
+
+Damit folgt:
+
+$$
+9{,}4\cdot10^0 = 9{,}4
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{9{,}4}
+$$
+
+**Plausibilitätskontrolle:** Die Überschlagsrechnung bestätigt die Grössenordnung:
+
+$$
+5\cdot2\approx10
+$$
 
 ## Praxisbezug
 
@@ -89,8 +185,18 @@ Wissenschaftliche Schreibweise trennt signifikanten Zahlenwert und Grössenordnu
 ## Übungsfragen
 
 1. Schreibe 0,00047 in wissenschaftlicher Form.
-2. Was ergibt $\frac{10^6}{10^3}$?
-3. In welchem Strombereich liegt $\frac{5\,\mathrm{V}}{10\,\mathrm{k}\Omega}$?
+2. Berechne:
+
+   $$
+   \frac{10^6}{10^3}
+   $$
+
+3. In welchem Strombereich liegt der folgende Quotient?
+
+   $$
+   \frac{5\,\mathrm{V}}
+        {10\,\mathrm{k}\Omega}
+   $$
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
 

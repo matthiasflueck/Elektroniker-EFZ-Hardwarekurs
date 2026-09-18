@@ -29,11 +29,39 @@ Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und 
 
 ### Absolut und relativ
 
-Die absolute Abweichung trägt dieselbe Einheit wie die Grösse: $\Delta x=x\mathrm{ist}-x\mathrm{soll}$. Die relative Abweichung vergleicht sie mit dem Sollwert: $\delta=\frac{\Delta x}{x\mathrm{soll}}$; als Prozent wird mit $100\,\%$ multipliziert.
+Die absolute Abweichung trägt dieselbe Einheit wie die betrachtete Grösse:
+
+$$
+\Delta x = x_{\mathrm{ist}} - x_{\mathrm{soll}}
+$$
+
+Die relative Abweichung vergleicht die absolute Abweichung mit dem Sollwert:
+
+$$
+\delta = \frac{\Delta x}{x_{\mathrm{soll}}}
+$$
+
+Für die Angabe in Prozent wird mit 100 % multipliziert:
+
+$$
+\delta_{\%}
+=
+\frac{\Delta x}{x_{\mathrm{soll}}}\cdot100\,\%
+$$
 
 ### Toleranzbereich
 
-Bei einem Nennwert $xN$ und einer symmetrischen Toleranz $t$ liegen die Grenzen bei $x\mathrm{min}=xN(1-t)$ und $x\mathrm{max}=xN(1+t)$. Toleranz ist eine zugesicherte Spanne, keine Wahrscheinlichkeitsverteilung.
+Bei einem Nennwert $x_{\mathrm{N}}$ und einer symmetrischen Toleranz $t$ ergeben sich die Grenzen zu:
+
+$$
+x_{\mathrm{min}} = x_{\mathrm{N}}(1-t)
+$$
+
+$$
+x_{\mathrm{max}} = x_{\mathrm{N}}(1+t)
+$$
+
+Toleranz ist eine zugesicherte Spanne, keine Wahrscheinlichkeitsverteilung.
 
 ### Worst Case
 
@@ -47,7 +75,7 @@ Toleranzen verschiedener Ursachen dürfen nicht unüberlegt addiert werden. Baut
 
 ### Asymmetrische Grenzen
 
-Nicht jede Spezifikation ist symmetrisch. Ein Regler kann beispielsweise $+2\,\%/-3\,\%$ erlauben. Dann werden obere und untere Grenze getrennt berechnet. Auch Grenzwerte wie «höchstens 100 mA» haben nur eine relevante Richtung und dürfen nicht als symmetrische Toleranz interpretiert werden.
+Nicht jede Spezifikation ist symmetrisch. Ein Regler kann beispielsweise **+2 % / −3 %** erlauben. Dann werden obere und untere Grenze getrennt berechnet. Auch Grenzwerte wie «höchstens 100 mA» haben nur eine relevante Richtung und dürfen nicht als symmetrische Toleranz interpretiert werden.
 
 
 ## Anwendungsfall
@@ -66,7 +94,85 @@ Bei einem Spannungsteiler macht ein kleiner oberer und grosser unterer Widerstan
 
 ## Berechnungsbeispiel
 
-$R=4{,}7\,\mathrm{k}\Omega\pm5\,\%$: Fünf Prozent sind $0{,}05\cdot4700\,\Omega=235\,\Omega$. Somit gelten $R\mathrm{min}=4465\,\Omega$ und $R\mathrm{max}=4935\,\Omega$. Ein Messwert von $4{,}82\,\mathrm{k}\Omega$ liegt im Bereich; seine Abweichung vom Nennwert beträgt $\frac{120}{4700}=2{,}55\,\%$.
+### 🧮 Berechnungsbeispiel: Widerstandstoleranz und Messwert beurteilen
+
+Ein Widerstand besitzt den Nennwert **4,7 kΩ** und eine Toleranz von **±5 %**. Gemessen werden **4,82 kΩ**. Zuerst wird der zulässige Bereich bestimmt, danach der Messwert beurteilt.
+
+**Gegeben:**
+
+- Nennwert: **4,7 kΩ**
+- Toleranz: **±5 %**
+- Messwert: **4,82 kΩ**
+
+#### 1. Formeln
+
+$$
+\Delta R = R_{\mathrm{N}}\cdot t
+$$
+
+$$
+R_{\mathrm{min}} = R_{\mathrm{N}}-\Delta R
+$$
+
+$$
+R_{\mathrm{max}} = R_{\mathrm{N}}+\Delta R
+$$
+
+#### 2. Werte einsetzen
+
+Die Toleranz von 5 % wird als Dezimalzahl **0,05** eingesetzt:
+
+$$
+\Delta R
+=
+4700\,\Omega\cdot0{,}05
+$$
+
+#### 3. Toleranz und Grenzwerte berechnen
+
+$$
+\Delta R = 235\,\Omega
+$$
+
+$$
+R_{\mathrm{min}}
+=
+4700\,\Omega-235\,\Omega
+=
+4465\,\Omega
+$$
+
+$$
+R_{\mathrm{max}}
+=
+4700\,\Omega+235\,\Omega
+=
+4935\,\Omega
+$$
+
+Die relative Abweichung des Messwerts beträgt:
+
+$$
+\delta_R
+=
+\frac{4820\,\Omega-4700\,\Omega}
+     {4700\,\Omega}
+\cdot100\,\%
+=
+2{,}55\,\%
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{4465\,\Omega \le R \le 4935\,\Omega}
+$$
+
+$$
+\boxed{\delta_R = +2{,}55\,\%}
+$$
+
+Der Messwert von **4,82 kΩ** liegt innerhalb des zulässigen Toleranzbereichs.
 
 ## Praxisbezug
 
@@ -88,7 +194,7 @@ Absolute Abweichung zeigt den Unterschied in der Einheit, relative Abweichung ma
 
 ## Übungsfragen
 
-1. Berechne die Grenzen von $10\,\mathrm{k}\Omega\pm1\,\%$.
+1. Berechne die Grenzen eines Widerstands von **10 kΩ ±1 %**.
 2. Was bedeutet eine negative Abweichung?
 3. Warum ist Toleranz nicht gleich Messunsicherheit?
 

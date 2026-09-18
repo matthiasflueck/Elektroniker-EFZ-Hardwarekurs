@@ -29,7 +29,7 @@ Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und 
 
 ### Grösse, Zahlenwert und Einheit
 
-Eine physikalische Angabe besteht aus Zahlenwert und Einheit, zum Beispiel $4{,}7\,\mathrm{k}\Omega$. Der Widerstand ist die Grösse, 4,7 der Zahlenwert und Kiloohm die Einheit mit Präfix. Erst gemeinsam ist die Aussage vollständig.
+Eine physikalische Angabe besteht aus Zahlenwert und Einheit, zum Beispiel **4,7 kΩ**. Der Widerstand ist die Grösse, 4,7 der Zahlenwert und Kiloohm die Einheit mit Präfix. Erst gemeinsam ist die Aussage vollständig.
 
 ### Häufige Präfixe
 
@@ -46,17 +46,35 @@ Gross-/Kleinschreibung ist bedeutsam: $\mathrm{m}$ ist milli, $\mathrm{M}$ ist m
 
 ### Einheiten als Fehlerdetektor
 
-Eine Gleichung muss auf beiden Seiten dieselbe Dimension besitzen. Bei $U=R\cdot I$ ergibt sich $\Omega\cdot\mathrm{A}=\mathrm{V}$. Passt die Einheit nicht, ist mindestens ein Rechenschritt oder eine Formel falsch.
+Eine Gleichung muss auf beiden Seiten dieselbe Dimension besitzen. Beim Ohmschen Gesetz gilt:
+
+$$
+U = R \cdot I
+$$
+
+Auch die Einheiten müssen diese Beziehung erfüllen:
+
+$$
+\Omega \cdot \mathrm{A} = \mathrm{V}
+$$
+
+Passt die Einheit nicht, ist mindestens ein Rechenschritt oder eine Formel falsch.
 
 ### Mit Einheiten rechnen
 
 Einheiten dürfen wie algebraische Faktoren behandelt werden. Werden Meter durch Sekunden geteilt, entsteht Meter pro Sekunde. Werden Volt durch Ampere geteilt, entsteht Ohm. Dieses Mitführen zwingt dazu, Eingangsgrössen korrekt umzuwandeln und macht sichtbar, ob die verwendete Beziehung überhaupt zur gesuchten Grösse passt.
 
-Vor dem Einsetzen werden alle Werte entweder in zusammenpassende technische Einheiten oder in SI-Einheiten gebracht. Beide Wege sind zulässig, solange sie konsequent bleiben. Die praktische Beziehung $\frac{\mathrm{V}}{\mathrm{k}\Omega}=\mathrm{mA}$ ist schnell und sicher; ein Gemisch wie Volt, Ohm und Milliampere ohne Umrechnung führt dagegen zum Faktor-1000-Fehler.
+Vor dem Einsetzen werden alle Werte entweder in zusammenpassende technische Einheiten oder in SI-Einheiten gebracht. Beide Wege sind zulässig, solange sie konsequent bleiben. Für viele Elektronikrechnungen ist folgende Beziehung praktisch:
+
+$$
+\frac{\mathrm{V}}{\mathrm{k}\Omega} = \mathrm{mA}
+$$
+
+Ein Gemisch wie Volt, Ohm und Milliampere ohne Umrechnung führt dagegen zum Faktor-1000-Fehler.
 
 ### Sinnvolle Schreibweise wählen
 
-Technische Werte werden so geschrieben, dass sie gut lesbar und schwer verwechselbar sind. $0{,}000001\,\mathrm{F}$ ist mathematisch korrekt, $1\,\mu\mathrm{F}$ aber leichter zu erfassen. Sehr viele oder sehr wenige signifikante Stellen erschweren den Vergleich. Die Schreibweise soll zur Genauigkeit der Angabe passen.
+Technische Werte werden so geschrieben, dass sie gut lesbar und schwer verwechselbar sind. **0,000001 F** ist mathematisch korrekt, **1 µF** aber leichter zu erfassen. Sehr viele oder sehr wenige signifikante Stellen erschweren den Vergleich. Die Schreibweise soll zur Genauigkeit der Angabe passen.
 
 
 ## Anwendungsfall
@@ -71,11 +89,58 @@ In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig n
 
 ## Anschauliches Beispiel
 
-Ein Schaltplan nennt $\mathrm{R1}=4\mathrm{k}7$. Das bedeutet $4{,}7\,\mathrm{k}\Omega=4700\,\Omega$, nicht $47\,\mathrm{k}\Omega$. Die Schreibweise ersetzt das Dezimalkomma und verhindert, dass es im Druck verschwindet.
+Ein Schaltplan nennt für den Widerstand $R_1$ den Wert **4k7**. Die Schreibweise ersetzt das Dezimalkomma und verhindert, dass es im Druck verschwindet:
+
+$$
+R_1 = 4\mathrm{k}7 = 4{,}7\,\mathrm{k}\Omega = 4700\,\Omega
+$$
+
+Der Wert ist nicht mit **47 kΩ** zu verwechseln.
 
 ## Berechnungsbeispiel
 
-$3300\,\mu\mathrm{A}$ werden in Milliampere umgerechnet. Da $1\,\mathrm{mA}=1000\,\mu\mathrm{A}$, gilt $\frac{3300\,\mu\mathrm{A}}{1000}=3{,}3\,\mathrm{mA}$. Kontrolle: Die Einheit wird grösser, also muss der Zahlenwert kleiner werden.
+### 🧮 Berechnungsbeispiel: Mikroampere in Milliampere umrechnen
+
+Ein Messgerät zeigt einen Strom von **3300 µA** an. Der Wert soll in Milliampere angegeben werden.
+
+**Gegeben:**
+
+- Strom: **3300 µA**
+
+#### 1. Umrechnungsbeziehung
+
+$$
+1\,\mathrm{mA} = 1000\,\mu\mathrm{A}
+$$
+
+#### 2. Wert einsetzen
+
+$$
+I
+=
+3300\,\mu\mathrm{A}
+\cdot
+\frac{1\,\mathrm{mA}}
+     {1000\,\mu\mathrm{A}}
+$$
+
+#### 3. Berechnen
+
+$$
+I
+=
+\frac{3300}{1000}\,\mathrm{mA}
+=
+3{,}3\,\mathrm{mA}
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{I = 3{,}3\,\mathrm{mA}}
+$$
+
+**Plausibilitätskontrolle:** Die Einheit wird von Mikroampere zu Milliampere grösser. Deshalb muss der Zahlenwert kleiner werden.
 
 ## Praxisbezug
 
@@ -103,7 +168,11 @@ SI-Einheiten machen technische Angaben vergleichbar. Präfixe verkürzen grosse 
 
 1. Wie viele Ohm sind 2,2 MΩ?
 2. Warum ist 10 mA nicht dasselbe wie 10 MA?
-3. Welche Einheit ergibt $\Omega\cdot\mathrm{A}$?
+3. Welche Einheit ergibt das folgende Produkt?
+
+   $$
+   \Omega\cdot\mathrm{A}
+   $$
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
 
