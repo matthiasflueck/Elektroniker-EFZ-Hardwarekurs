@@ -91,12 +91,12 @@ Die bekannte Beziehung wird als Waage vorgestellt. Multiplizierst du nur eine Se
 
 ### 🧮 Berechnungsbeispiel: Spannung aus Leistung und Strom bestimmen
 
-Ein Verbraucher nimmt eine Leistung von **0,50 W** auf. Durch ihn fliesst ein Strom von **0,10 A**. Gesucht ist die Spannung.
+Ein Verbraucher nimmt eine Leistung von **0.50 W** auf. Durch ihn fliesst ein Strom von **0.10 A**. Gesucht ist die Spannung.
 
 **Gegeben:**
 
-- Leistung: **0,50 W**
-- Strom: **0,10 A**
+- Leistung: **0.50 W**
+- Strom: **0.10 A**
 - gesucht: Spannung $U$
 
 #### 1. Formel
@@ -117,27 +117,27 @@ $$
 
 $$
 U =
-\frac{0{,}50\,\mathrm{W}}
-     {0{,}10\,\mathrm{A}}
+\frac{0.50~\mathrm{W}}
+     {0.10~\mathrm{A}}
 $$
 
 #### 3. Berechnen
 
 $$
-U = 5{,}0\,\mathrm{V}
+U = 5.0~\mathrm{V}
 $$
 
 #### 4. Ergebnis
 
 $$
-\boxed{U = 5{,}0\,\mathrm{V}}
+\boxed{U = 5.0~\mathrm{V}}
 $$
 
 #### Rückprüfung
 
 $$
-5{,}0\,\mathrm{V}\cdot0{,}10\,\mathrm{A} =
-0{,}50\,\mathrm{W}
+5.0~\mathrm{V}\cdot0.10~\mathrm{A} =
+0.50~\mathrm{W}
 $$
 
 Die Rückprüfung ergibt wieder die vorgegebene Leistung.

@@ -43,7 +43,7 @@ Bei einem unplausiblen Wert werden Präfixe, Einheiten, Vorzeichen, Klammern, Sc
 
 Eine Rückrechnung mit derselben falsch eingegebenen Zahl kann denselben Fehler bestätigen. Besser ist ein möglichst unabhängiger Weg: grobe Kopfrechnung, zweite Formel, Simulation, Messung oder Vergleich mit einem bekannten Grenzwert. Je unterschiedlicher die Methoden sind, desto wahrscheinlicher entdecken sie gemeinsame Denkfehler.
 
-Auch ein plausibler Einzelwert kann in einem unplausiblen Zusammenhang stehen. Eine Versorgung von 5,00 V wirkt korrekt, während gleichzeitig 2 A durch einen 10-kΩ-Widerstand gemeldet werden. Deshalb werden zusammengehörige Grössen als System geprüft und nicht nur jede Zahl für sich.
+Auch ein plausibler Einzelwert kann in einem unplausiblen Zusammenhang stehen. Eine Versorgung von 5.00 V wirkt korrekt, während gleichzeitig 2 A durch einen 10-kΩ-Widerstand gemeldet werden. Deshalb werden zusammengehörige Grössen als System geprüft und nicht nur jede Zahl für sich.
 
 ### Plausibel ist noch nicht bewiesen
 
@@ -71,22 +71,22 @@ $$
 Die korrekte Grössenordnung lautet:
 
 $$
-\frac{5\,\mathrm{V}}
-     {1\,\mathrm{k}\Omega} =
-5\,\mathrm{mA}
+\frac{5~\mathrm{V}}
+     {1~\mathrm{k}\Omega} =
+5~\mathrm{mA}
 $$
 
-Der Widerstand wurde bei der falschen Eingabe vermutlich als **0,001 Ω** statt **1000 Ω** eingegeben.
+Der Widerstand wurde bei der falschen Eingabe vermutlich als **0.001 Ω** statt **1000 Ω** eingegeben.
 
 ## Berechnungsbeispiel
 
 ### 🧮 Berechnungsbeispiel: Strom berechnen und sinnvoll runden
 
-An einem gemessenen Widerstand von **997 Ω** liegen **4,98 V**. Gesucht ist der Strom. Vor der exakten Rechnung wird ein Ergebnis nahe **5 mA** erwartet.
+An einem gemessenen Widerstand von **997 Ω** liegen **4.98 V**. Gesucht ist der Strom. Vor der exakten Rechnung wird ein Ergebnis nahe **5 mA** erwartet.
 
 **Gegeben:**
 
-- Spannung: **4,98 V**
+- Spannung: **4.98 V**
 - Widerstand: **997 Ω**
 - erwartete Grössenordnung: **etwa 5 mA**
 
@@ -100,25 +100,25 @@ $$
 
 $$
 I =
-\frac{4{,}98\,\mathrm{V}}
-     {997\,\Omega}
+\frac{4.98~\mathrm{V}}
+     {997~\Omega}
 $$
 
 #### 3. Berechnen
 
 $$
 I =
-0{,}004994984\ldots\,\mathrm{A} =
-4{,}994984\ldots\,\mathrm{mA}
+0.004994984\ldots~\mathrm{A} =
+4.994984\ldots~\mathrm{mA}
 $$
 
 #### 4. Ergebnis sinnvoll runden
 
 $$
-\boxed{I \approx 4{,}99\,\mathrm{mA}}
+\boxed{I \approx 4.99~\mathrm{mA}}
 $$
 
-Das Ergebnis stimmt mit der erwarteten Grössenordnung von ungefähr 5 mA überein. Eine Angabe wie **4,994984954864 mA** würde eine nicht vorhandene Genauigkeit vortäuschen.
+Das Ergebnis stimmt mit der erwarteten Grössenordnung von ungefähr 5 mA überein. Eine Angabe wie **4.994984954864 mA** würde eine nicht vorhandene Genauigkeit vortäuschen.
 
 ## Praxisbezug
 

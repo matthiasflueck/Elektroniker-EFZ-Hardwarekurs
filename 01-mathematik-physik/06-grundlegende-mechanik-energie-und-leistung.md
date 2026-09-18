@@ -114,46 +114,46 @@ $$
 
 $$
 \eta =
-\frac{9\,\mathrm{W}}
-     {12\,\mathrm{W}}
+\frac{9~\mathrm{W}}
+     {12~\mathrm{W}}
 $$
 
 $$
 P_{\mathrm{verlust}} =
-12\,\mathrm{W}-9\,\mathrm{W}
+12~\mathrm{W}-9~\mathrm{W}
 $$
 
 $$
 E_{\mathrm{verlust}} =
-3\,\mathrm{W}\cdot600\,\mathrm{s}
+3~\mathrm{W}\cdot600~\mathrm{s}
 $$
 
 #### 3. Berechnen
 
 $$
-\eta = 0{,}75 = 75\,\%
+\eta = 0.75 = 75~\\%
 $$
 
 $$
-P_{\mathrm{verlust}} = 3\,\mathrm{W}
+P_{\mathrm{verlust}} = 3~\mathrm{W}
 $$
 
 $$
-E_{\mathrm{verlust}} = 1800\,\mathrm{J}
+E_{\mathrm{verlust}} = 1800~\mathrm{J}
 $$
 
 #### 4. Ergebnis
 
 $$
-\boxed{\eta = 75\,\%}
+\boxed{\eta = 75~\\%}
 $$
 
 $$
-\boxed{P_{\mathrm{verlust}} = 3\mathrm{W}}
+\boxed{P_{\mathrm{verlust}} = 3~\mathrm{W}}
 $$
 
 $$
-\boxed{E_{\mathrm{verlust}} = 1800\,\mathrm{J}}
+\boxed{E_{\mathrm{verlust}} = 1800~\mathrm{J}}
 $$
 
 Die nicht nutzbare Leistung wird überwiegend in Wärme umgesetzt.
@@ -173,7 +173,7 @@ PWM verändert die mittlere Energiezufuhr zur Last. Firmware bestimmt Tastgrad u
 ## Häufige Fehler und Missverständnisse
 
 - Watt und Wattstunde verwechseln.
-- Wirkungsgrad in Prozent direkt als Zahl 75 einsetzen statt 0,75.
+- Wirkungsgrad in Prozent direkt als Zahl 75 einsetzen statt 0.75.
 - Verlustleistung ohne thermische Folgen betrachten.
 
 ## Zusammenfassung

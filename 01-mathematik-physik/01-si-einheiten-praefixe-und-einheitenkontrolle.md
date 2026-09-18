@@ -29,18 +29,18 @@ Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und 
 
 ### Grösse, Zahlenwert und Einheit
 
-Eine physikalische Angabe besteht aus Zahlenwert und Einheit, zum Beispiel **4,7 kΩ**. Der Widerstand ist die Grösse, 4,7 der Zahlenwert und Kiloohm die Einheit mit Präfix. Erst gemeinsam ist die Aussage vollständig.
+Eine physikalische Angabe besteht aus Zahlenwert und Einheit, zum Beispiel **4.7 kΩ**. Der Widerstand ist die Grösse, 4.7 der Zahlenwert und Kiloohm die Einheit mit Präfix. Erst gemeinsam ist die Aussage vollständig.
 
 ### Häufige Präfixe
 
 | Präfix | Zeichen | Faktor | Beispiel |
 |---|---:|---:|---:|
-| pico | p | $10^{-12}$ | $22\,\mathrm{pF}$ |
-| nano | n | $10^{-9}$ | $100\,\mathrm{nF}$ |
-| mikro | µ | $10^{-6}$ | $10\,\mu\mathrm{A}$ |
-| milli | m | $10^{-3}$ | $25\,\mathrm{mA}$ |
-| kilo | k | $10^3$ | $4{,}7\,\mathrm{k}\Omega$ |
-| mega | M | $10^6$ | $10\,\mathrm{M}\Omega$ |
+| pico | p | $10^{-12}$ | $22~\mathrm{pF}$ |
+| nano | n | $10^{-9}$ | $100~\mathrm{nF}$ |
+| mikro | µ | $10^{-6}$ | $10~\mu\mathrm{A}$ |
+| milli | m | $10^{-3}$ | $25~\mathrm{mA}$ |
+| kilo | k | $10^3$ | $4.7~\mathrm{k}\Omega$ |
+| mega | M | $10^6$ | $10~\mathrm{M}\Omega$ |
 
 Gross-/Kleinschreibung ist bedeutsam: $\mathrm{m}$ ist milli, $\mathrm{M}$ ist mega. Beim Umrechnen bleibt die physikalische Grösse gleich; nur Zahlenwert und Einheit ändern sich.
 
@@ -74,7 +74,7 @@ Ein Gemisch wie Volt, Ohm und Milliampere ohne Umrechnung führt dagegen zum Fak
 
 ### Sinnvolle Schreibweise wählen
 
-Technische Werte werden so geschrieben, dass sie gut lesbar und schwer verwechselbar sind. **0,000001 F** ist mathematisch korrekt, **1 µF** aber leichter zu erfassen. Sehr viele oder sehr wenige signifikante Stellen erschweren den Vergleich. Die Schreibweise soll zur Genauigkeit der Angabe passen.
+Technische Werte werden so geschrieben, dass sie gut lesbar und schwer verwechselbar sind. **0.000001 F** ist mathematisch korrekt, **1 µF** aber leichter zu erfassen. Sehr viele oder sehr wenige signifikante Stellen erschweren den Vergleich. Die Schreibweise soll zur Genauigkeit der Angabe passen.
 
 
 ## Anwendungsfall
@@ -92,7 +92,7 @@ In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig n
 Ein Schaltplan nennt für den Widerstand $R_1$ den Wert **4k7**. Die Schreibweise ersetzt das Dezimalkomma und verhindert, dass es im Druck verschwindet:
 
 $$
-R_1 = 4\mathrm{k}7 = 4{,}7\,\mathrm{k}\Omega = 4700\,\Omega
+R_1 = 4\mathrm{k}7 = 4.7~\mathrm{k}\Omega = 4700~\Omega
 $$
 
 Der Wert ist nicht mit **47 kΩ** zu verwechseln.
@@ -110,31 +110,31 @@ Ein Messgerät zeigt einen Strom von **3300 µA** an. Der Wert soll in Milliampe
 #### 1. Umrechnungsbeziehung
 
 $$
-1\,\mathrm{mA} = 1000\,\mu\mathrm{A}
+1~\mathrm{mA} = 1000~\mu\mathrm{A}
 $$
 
 #### 2. Wert einsetzen
 
 $$
 I =
-3300\,\mu\mathrm{A}
+3300~\mu\mathrm{A}
 \cdot
-\frac{1\,\mathrm{mA}}
-     {1000\,\mu\mathrm{A}}
+\frac{1~\mathrm{mA}}
+     {1000~\mu\mathrm{A}}
 $$
 
 #### 3. Berechnen
 
 $$
 I =
-\frac{3300}{1000}\,\mathrm{mA} =
-3{,}3\,\mathrm{mA}
+\frac{3300}{1000}~\mathrm{mA} =
+3.3~\mathrm{mA}
 $$
 
 #### 4. Ergebnis
 
 $$
-\boxed{I = 3{,}3\,\mathrm{mA}}
+\boxed{I = 3.3~\mathrm{mA}}
 $$
 
 **Plausibilitätskontrolle:** Die Einheit wird von Mikroampere zu Milliampere grösser. Deshalb muss der Zahlenwert kleiner werden.
@@ -163,7 +163,7 @@ SI-Einheiten machen technische Angaben vergleichbar. Präfixe verkürzen grosse 
 
 ## Übungsfragen
 
-1. Wie viele Ohm sind 2,2 MΩ?
+1. Wie viele Ohm sind 2.2 MΩ?
 2. Warum ist 10 mA nicht dasselbe wie 10 MA?
 3. Welche Einheit ergibt das folgende Produkt?
 

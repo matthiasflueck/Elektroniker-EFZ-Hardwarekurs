@@ -28,6 +28,14 @@ Neue oder selten verwendete Formelzeichen werden unmittelbar an der ersten Verwe
 
 Formelzeichen und Bauteil-Designatoren werden ohne typografische Unterstriche geschrieben: `R1`, `C2`, `Uout`, `fG` und `RNTC` statt Schreibweisen wie `R_1` oder `U_out`. Dateinamen und normale Satzzeichen sind von dieser Regel nicht betroffen.
 
+### Zahlen, Dezimalzeichen und Einheiten
+
+Für Dezimalzahlen wird im gesamten Kurs verbindlich der Dezimalpunkt verwendet: `4.7 V`, `0.25 A` und in LaTeX entsprechend `4.7` beziehungsweise `0.25`. Dezimalkommas wie `4,7` oder LaTeX-Schreibweisen wie `4{,}7` werden nicht verwendet.
+
+Im normalen Text steht zwischen Zahlenwert und Einheit ein gewöhnliches Leerzeichen, beispielsweise `24 V`. In LaTeX wird dafür ein geschützter Abstand mit `~` geschrieben, beispielsweise `24~\mathrm{V}`. Die Schreibweise `\,` wird nicht verwendet, weil sie in der GitHub-Markdown-Verarbeitung als sichtbares Komma erscheinen kann.
+
+Ein Prozentzeichen muss in GitHub-kompatiblen LaTeX-Blöcken als `\\%` notiert werden, beispielsweise `75~\\%`. Dadurch erhält der Mathematik-Renderer nach der Markdown-Verarbeitung das erforderliche `\%`. Neue oder geänderte Formeln werden abschliessend sowohl in der GitHub-Vorschau als auch in der Visual-Studio-Code-Vorschau kontrolliert.
+
 ## Schaltbilder und Visualisierungen
 
 Elektrische Grundprinzipien erhalten bevorzugt ein genormtes Schema statt einer rein dekorativen Grafik. IEC-Symbole, Referenzbezeichner, Werte, Netznamen, Verbindungspunkte, Strom-/Spannungspfeile und Bezugspotentiale müssen konsistent sein. Schaltbilder und Diagramme werden reproduzierbar erstellt, fachlich geprüft und als hochauflösende PNG-Dateien an der didaktisch richtigen Stelle eingebunden. Umfangreiche Lektionen verwenden bei didaktischem Mehrwert mehrere getrennte Bilder, beispielsweise ein Funktionsschema und eine Kennlinie, statt zu viele Aussagen in eine einzige Grafik zu packen.

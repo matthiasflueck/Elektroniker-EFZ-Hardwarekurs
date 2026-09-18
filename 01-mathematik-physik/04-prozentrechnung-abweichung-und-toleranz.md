@@ -44,8 +44,8 @@ $$
 Für die Angabe in Prozent wird mit 100 % multipliziert:
 
 $$
-\delta_{\%} =
-\frac{\Delta x}{x_{\mathrm{soll}}}\cdot100\,\%
+\delta_{\\%} =
+\frac{\Delta x}{x_{\mathrm{soll}}}\cdot100~\\%
 $$
 
 ### Toleranzbereich
@@ -95,13 +95,13 @@ Bei einem Spannungsteiler macht ein kleiner oberer und grosser unterer Widerstan
 
 ### 🧮 Berechnungsbeispiel: Widerstandstoleranz und Messwert beurteilen
 
-Ein Widerstand besitzt den Nennwert **4,7 kΩ** und eine Toleranz von **±5 %**. Gemessen werden **4,82 kΩ**. Zuerst wird der zulässige Bereich bestimmt, danach der Messwert beurteilt.
+Ein Widerstand besitzt den Nennwert **4.7 kΩ** und eine Toleranz von **±5 %**. Gemessen werden **4.82 kΩ**. Zuerst wird der zulässige Bereich bestimmt, danach der Messwert beurteilt.
 
 **Gegeben:**
 
-- Nennwert: **4,7 kΩ**
+- Nennwert: **4.7 kΩ**
 - Toleranz: **±5 %**
-- Messwert: **4,82 kΩ**
+- Messwert: **4.82 kΩ**
 
 #### 1. Formeln
 
@@ -119,52 +119,52 @@ $$
 
 #### 2. Werte einsetzen
 
-Die Toleranz von 5 % wird als Dezimalzahl **0,05** eingesetzt:
+Die Toleranz von 5 % wird als Dezimalzahl **0.05** eingesetzt:
 
 $$
 \Delta R =
-4700\,\Omega\cdot0{,}05
+4700~\Omega\cdot0.05
 $$
 
 #### 3. Toleranz und Grenzwerte berechnen
 
 $$
-\Delta R = 235\,\Omega
+\Delta R = 235~\Omega
 $$
 
 $$
 R_{\mathrm{min}} =
-4700\,\Omega-235\,\Omega =
-4465\,\Omega
+4700~\Omega-235~\Omega =
+4465~\Omega
 $$
 
 $$
 R_{\mathrm{max}} =
-4700\,\Omega+235\,\Omega =
-4935\,\Omega
+4700~\Omega+235~\Omega =
+4935~\Omega
 $$
 
 Die relative Abweichung des Messwerts beträgt:
 
 $$
 \delta_R =
-\frac{4820\,\Omega-4700\,\Omega}
-     {4700\,\Omega}
-\cdot100\,\% =
-2{,}55\,\%
+\frac{4820~\Omega-4700~\Omega}
+     {4700~\Omega}
+\cdot100~\\% =
+2.55~\\%
 $$
 
 #### 4. Ergebnis
 
 $$
-\boxed{4465\,\Omega \le R \le 4935\,\Omega}
+\boxed{4465~\Omega \le R \le 4935~\Omega}
 $$
 
 $$
-\boxed{\delta_R = +2{,}55\,\%}
+\boxed{\delta_R = +2.55~\\%}
 $$
 
-Der Messwert von **4,82 kΩ** liegt innerhalb des zulässigen Toleranzbereichs.
+Der Messwert von **4.82 kΩ** liegt innerhalb des zulässigen Toleranzbereichs.
 
 ## Praxisbezug
 

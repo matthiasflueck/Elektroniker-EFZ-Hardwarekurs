@@ -38,8 +38,8 @@ $$
 Dabei liegt der Betrag der Mantisse $a$ zwischen 1 und 10. Der Exponent $n$ sagt, wie weit das Dezimalzeichen verschoben wurde. Ein Beispiel:
 
 $$
-0{,}000\,0047\,\mathrm{A} =
-4{,}7 \cdot 10^{-6}\,\mathrm{A}
+0.000~0047~\mathrm{A} =
+4.7 \cdot 10^{-6}~\mathrm{A}
 $$
 
 ### Rechenregeln
@@ -65,8 +65,8 @@ Bei einer Addition müssen die Exponenten zuerst gleich gemacht werden.
 Vor dem Taschenrechner wird grob geschätzt. Der Ausdruck
 
 $$
-\frac{3{,}3\,\mathrm{V}}
-     {1\,\mathrm{k}\Omega}
+\frac{3.3~\mathrm{V}}
+     {1~\mathrm{k}\Omega}
 $$
 
 muss im Milliamperebereich liegen, denn Volt durch Kiloohm ergibt Milliampere. Ein Ergebnis von **3300 A** wäre offensichtlich falsch.
@@ -79,7 +79,7 @@ Bei technischen Präfixen sind Dreierschritte besonders wichtig. Mikro, Milli, B
 
 ### Überschlagsrechnung vor der exakten Rechnung
 
-Für die Schätzung werden Mantissen grob gerundet. Aus 4,7 wird etwa 5, aus 2,2 etwa 2. Der Exponent bleibt bewusst sichtbar. Stimmt das exakte Ergebnis nicht mit diesem groben Bereich überein, werden Eingabe und Potenzrechnung geprüft, bevor das Resultat weiterverwendet wird.
+Für die Schätzung werden Mantissen grob gerundet. Aus 4.7 wird etwa 5, aus 2.2 etwa 2. Der Exponent bleibt bewusst sichtbar. Stimmt das exakte Ergebnis nicht mit diesem groben Bereich überein, werden Eingabe und Potenzrechnung geprüft, bevor das Resultat weiterverwendet wird.
 
 
 ## Anwendungsfall
@@ -97,9 +97,9 @@ In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig n
 Ein Kondensatorwert von **100 nF** lässt sich in wissenschaftlicher Schreibweise ausdrücken als:
 
 $$
-100\,\mathrm{nF} =
-100\cdot10^{-9}\,\mathrm{F} =
-1{,}0\cdot10^{-7}\,\mathrm{F}
+100~\mathrm{nF} =
+100\cdot10^{-9}~\mathrm{F} =
+1.0\cdot10^{-7}~\mathrm{F}
 $$
 
 Beide Darstellungen bezeichnen denselben Wert; **100 nF** ist für Schaltpläne meist lesbarer.
@@ -112,8 +112,8 @@ Zwei Zahlen in wissenschaftlicher Schreibweise sollen miteinander multipliziert 
 
 **Gegeben:**
 
-- erster Faktor: **4,7 · 10³**
-- zweiter Faktor: **2,0 · 10⁻³**
+- erster Faktor: **4.7 · 10³**
+- zweiter Faktor: **2.0 · 10⁻³**
 
 #### 1. Rechenregel
 
@@ -125,14 +125,14 @@ $$
 #### 2. Werte einsetzen
 
 $$
-(4{,}7\cdot10^3)\cdot(2{,}0\cdot10^{-3}) =
-(4{,}7\cdot2{,}0)\cdot10^{3+(-3)}
+(4.7\cdot10^3)\cdot(2.0\cdot10^{-3}) =
+(4.7\cdot2.0)\cdot10^{3+(-3)}
 $$
 
 #### 3. Mantisse und Exponent berechnen
 
 $$
-4{,}7\cdot2{,}0 = 9{,}4
+4.7\cdot2.0 = 9.4
 $$
 
 $$
@@ -142,13 +142,13 @@ $$
 Damit folgt:
 
 $$
-9{,}4\cdot10^0 = 9{,}4
+9.4\cdot10^0 = 9.4
 $$
 
 #### 4. Ergebnis
 
 $$
-\boxed{9{,}4}
+\boxed{9.4}
 $$
 
 **Plausibilitätskontrolle:** Die Überschlagsrechnung bestätigt die Grössenordnung:
@@ -177,7 +177,7 @@ Wissenschaftliche Schreibweise trennt signifikanten Zahlenwert und Grössenordnu
 
 ## Übungsfragen
 
-1. Schreibe 0,00047 in wissenschaftlicher Form.
+1. Schreibe 0.00047 in wissenschaftlicher Form.
 2. Berechne:
 
 $$
@@ -187,8 +187,8 @@ $$
 3. In welchem Strombereich liegt der folgende Quotient?
 
 $$
-\frac{5\,\mathrm{V}}
-     {10\,\mathrm{k}\Omega}
+\frac{5~\mathrm{V}}
+     {10~\mathrm{k}\Omega}
 $$
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
