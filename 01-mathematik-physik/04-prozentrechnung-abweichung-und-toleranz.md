@@ -44,8 +44,7 @@ $$
 Für die Angabe in Prozent wird mit 100 % multipliziert:
 
 $$
-\delta_{\%}
-=
+\delta_{\%} =
 \frac{\Delta x}{x_{\mathrm{soll}}}\cdot100\,\%
 $$
 
@@ -123,8 +122,7 @@ $$
 Die Toleranz von 5 % wird als Dezimalzahl **0,05** eingesetzt:
 
 $$
-\Delta R
-=
+\Delta R =
 4700\,\Omega\cdot0{,}05
 $$
 
@@ -135,30 +133,24 @@ $$
 $$
 
 $$
-R_{\mathrm{min}}
-=
-4700\,\Omega-235\,\Omega
-=
+R_{\mathrm{min}} =
+4700\,\Omega-235\,\Omega =
 4465\,\Omega
 $$
 
 $$
-R_{\mathrm{max}}
-=
-4700\,\Omega+235\,\Omega
-=
+R_{\mathrm{max}} =
+4700\,\Omega+235\,\Omega =
 4935\,\Omega
 $$
 
 Die relative Abweichung des Messwerts beträgt:
 
 $$
-\delta_R
-=
+\delta_R =
 \frac{4820\,\Omega-4700\,\Omega}
      {4700\,\Omega}
-\cdot100\,\%
-=
+\cdot100\,\% =
 2{,}55\,\%
 $$
 

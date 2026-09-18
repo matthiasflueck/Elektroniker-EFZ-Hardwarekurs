@@ -72,8 +72,7 @@ Die korrekte Grössenordnung lautet:
 
 $$
 \frac{5\,\mathrm{V}}
-     {1\,\mathrm{k}\Omega}
-=
+     {1\,\mathrm{k}\Omega} =
 5\,\mathrm{mA}
 $$
 
@@ -108,10 +107,8 @@ $$
 #### 3. Berechnen
 
 $$
-I
-=
-0{,}004994984\ldots\,\mathrm{A}
-=
+I =
+0{,}004994984\ldots\,\mathrm{A} =
 4{,}994984\ldots\,\mathrm{mA}
 $$
 

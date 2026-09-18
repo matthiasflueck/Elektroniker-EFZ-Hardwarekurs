@@ -28,8 +28,7 @@
 
    $$
    \frac{3{,}3\,\mathrm{V}}
-        {1\,\mathrm{k}\Omega}
-   =
+        {1\,\mathrm{k}\Omega} =
    3300\,\mathrm{A}
    $$
 

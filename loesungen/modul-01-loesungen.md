@@ -29,10 +29,8 @@
 3. Mantissen und Zehnerpotenzen werden getrennt berechnet:
 
    $$
-   (2{,}2\cdot10^3)\cdot(3\cdot10^{-3})
-   =
-   (2{,}2\cdot3)\cdot10^{3+(-3)}
-   =
+   (2{,}2\cdot10^3)\cdot(3\cdot10^{-3}) =
+   (2{,}2\cdot3)\cdot10^{3+(-3)} =
    6{,}6\cdot10^0
    $$
 
@@ -79,24 +77,19 @@
 6. Die absolute Abweichung beträgt:
 
    $$
-   \Delta U
-   =
-   U_{\mathrm{ist}}-U_{\mathrm{soll}}
-   =
-   4{,}85\,\mathrm{V}-5{,}00\,\mathrm{V}
-   =
+   \Delta U =
+   U_{\mathrm{ist}}-U_{\mathrm{soll}} =
+   4{,}85\,\mathrm{V}-5{,}00\,\mathrm{V} =
    -0{,}15\,\mathrm{V}
    $$
 
    Die relative Abweichung beträgt:
 
    $$
-   \delta_U
-   =
+   \delta_U =
    \frac{-0{,}15\,\mathrm{V}}
         {5{,}00\,\mathrm{V}}
-   \cdot100\,\%
-   =
+   \cdot100\,\% =
    -3{,}0\,\%
    $$
 
@@ -107,13 +100,10 @@
 7. Die Steigung der Strom-Spannungs-Kennlinie ist:
 
    $$
-   G
-   =
+   G =
    \frac{(8-2)\,\mathrm{mA}}
-        {(4-1)\,\mathrm{V}}
-   =
-   2\,\mathrm{mA/V}
-   =
+        {(4-1)\,\mathrm{V}} =
+   2\,\mathrm{mA/V} =
    2\,\mathrm{mS}
    $$
 
@@ -130,22 +120,16 @@
 8. Der Wirkungsgrad und die Verlustleistung ergeben sich zu:
 
    $$
-   \eta
-   =
-   \frac{P_{\mathrm{nutz}}}{P_{\mathrm{zu}}}
-   =
-   \frac{16\,\mathrm{W}}{20\,\mathrm{W}}
-   =
-   0{,}8
-   =
+   \eta =
+   \frac{P_{\mathrm{nutz}}}{P_{\mathrm{zu}}} =
+   \frac{16\,\mathrm{W}}{20\,\mathrm{W}} =
+   0{,}8 =
    80\,\%
    $$
 
    $$
-   P_{\mathrm{verlust}}
-   =
-   20\,\mathrm{W}-16\,\mathrm{W}
-   =
+   P_{\mathrm{verlust}} =
+   20\,\mathrm{W}-16\,\mathrm{W} =
    4\,\mathrm{W}
    $$
 
@@ -157,8 +141,7 @@
 
    $$
    \frac{3{,}3\,\mathrm{V}}
-        {1\,\mathrm{k}\Omega}
-   =
+        {1\,\mathrm{k}\Omega} =
    3{,}3\,\mathrm{mA}
    $$
 

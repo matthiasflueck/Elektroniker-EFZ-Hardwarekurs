@@ -38,8 +38,7 @@ $$
 Dabei liegt der Betrag der Mantisse $a$ zwischen 1 und 10. Der Exponent $n$ sagt, wie weit das Dezimalzeichen verschoben wurde. Ein Beispiel:
 
 $$
-0{,}000\,0047\,\mathrm{A}
-=
+0{,}000\,0047\,\mathrm{A} =
 4{,}7 \cdot 10^{-6}\,\mathrm{A}
 $$
 
@@ -48,16 +47,14 @@ $$
 Beim Multiplizieren werden Mantissen multipliziert und Exponenten addiert:
 
 $$
-(a\cdot10^m)\cdot(b\cdot10^n)
-=
+(a\cdot10^m)\cdot(b\cdot10^n) =
 (a\cdot b)\cdot10^{m+n}
 $$
 
 Beim Dividieren werden Mantissen dividiert und Exponenten subtrahiert:
 
 $$
-\frac{a\cdot10^m}{b\cdot10^n}
-=
+\frac{a\cdot10^m}{b\cdot10^n} =
 \frac{a}{b}\cdot10^{m-n}
 $$
 
@@ -100,10 +97,8 @@ In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig n
 Ein Kondensatorwert von **100 nF** lässt sich in wissenschaftlicher Schreibweise ausdrücken als:
 
 $$
-100\,\mathrm{nF}
-=
-100\cdot10^{-9}\,\mathrm{F}
-=
+100\,\mathrm{nF} =
+100\cdot10^{-9}\,\mathrm{F} =
 1{,}0\cdot10^{-7}\,\mathrm{F}
 $$
 
@@ -123,16 +118,14 @@ Zwei Zahlen in wissenschaftlicher Schreibweise sollen miteinander multipliziert 
 #### 1. Rechenregel
 
 $$
-(a\cdot10^m)\cdot(b\cdot10^n)
-=
+(a\cdot10^m)\cdot(b\cdot10^n) =
 (a\cdot b)\cdot10^{m+n}
 $$
 
 #### 2. Werte einsetzen
 
 $$
-(4{,}7\cdot10^3)\cdot(2{,}0\cdot10^{-3})
-=
+(4{,}7\cdot10^3)\cdot(2{,}0\cdot10^{-3}) =
 (4{,}7\cdot2{,}0)\cdot10^{3+(-3)}
 $$
 

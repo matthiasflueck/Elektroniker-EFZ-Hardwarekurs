@@ -101,35 +101,30 @@ $$
 $$
 
 $$
-P_{\mathrm{verlust}}
-=
+P_{\mathrm{verlust}} =
 P_{\mathrm{zu}}-P_{\mathrm{nutz}}
 $$
 
 $$
-E_{\mathrm{verlust}}
-=
+E_{\mathrm{verlust}} =
 P_{\mathrm{verlust}}\cdot t
 $$
 
 #### 2. Werte einsetzen
 
 $$
-\eta
-=
+\eta =
 \frac{9\,\mathrm{W}}
      {12\,\mathrm{W}}
 $$
 
 $$
-P_{\mathrm{verlust}}
-=
+P_{\mathrm{verlust}} =
 12\,\mathrm{W}-9\,\mathrm{W}
 $$
 
 $$
-E_{\mathrm{verlust}}
-=
+E_{\mathrm{verlust}} =
 3\,\mathrm{W}\cdot600\,\mathrm{s}
 $$
 

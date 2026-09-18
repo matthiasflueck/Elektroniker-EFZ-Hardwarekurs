@@ -42,8 +42,7 @@ $$
 bedeutet: Bei konstantem Widerstand steigt die Spannung proportional zum Strom. Gesucht sei $I$. Beide Seiten werden durch $R$ geteilt:
 
 $$
-\frac{U}{R}
-=
+\frac{U}{R} =
 \frac{R\cdot I}{R}
 $$
 
@@ -137,8 +136,7 @@ $$
 #### Rückprüfung
 
 $$
-5{,}0\,\mathrm{V}\cdot0{,}10\,\mathrm{A}
-=
+5{,}0\,\mathrm{V}\cdot0{,}10\,\mathrm{A} =
 0{,}50\,\mathrm{W}
 $$
 

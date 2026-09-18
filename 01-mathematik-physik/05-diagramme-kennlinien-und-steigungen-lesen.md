@@ -100,8 +100,7 @@ $$
 #### 2. Werte einsetzen
 
 $$
-G
-=
+G =
 \frac{(6-2)\,\mathrm{mA}}
      {(3-1)\,\mathrm{V}}
 $$
@@ -109,21 +108,16 @@ $$
 #### 3. Berechnen
 
 $$
-G
-=
+G =
 \frac{4\,\mathrm{mA}}
-     {2\,\mathrm{V}}
-=
-2\,\mathrm{mA/V}
-=
+     {2\,\mathrm{V}} =
+2\,\mathrm{mA/V} =
 2\,\mathrm{mS}
 $$
 
 $$
-R
-=
-\frac{1}{2\,\mathrm{mS}}
-=
+R =
+\frac{1}{2\,\mathrm{mS}} =
 500\,\Omega
 $$
 

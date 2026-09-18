@@ -116,8 +116,7 @@ $$
 #### 2. Wert einsetzen
 
 $$
-I
-=
+I =
 3300\,\mu\mathrm{A}
 \cdot
 \frac{1\,\mathrm{mA}}
@@ -127,10 +126,8 @@ $$
 #### 3. Berechnen
 
 $$
-I
-=
-\frac{3300}{1000}\,\mathrm{mA}
-=
+I =
+\frac{3300}{1000}\,\mathrm{mA} =
 3{,}3\,\mathrm{mA}
 $$
 
