@@ -167,9 +167,9 @@ SI-Einheiten machen technische Angaben vergleichbar. Präfixe verkürzen grosse 
 2. Warum ist 10 mA nicht dasselbe wie 10 MA?
 3. Welche Einheit ergibt das folgende Produkt?
 
-   $$
-   \Omega\cdot\mathrm{A}
-   $$
+$$
+\Omega\cdot\mathrm{A}
+$$
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
 

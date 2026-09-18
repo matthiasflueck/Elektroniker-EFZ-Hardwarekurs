@@ -180,16 +180,16 @@ Wissenschaftliche Schreibweise trennt signifikanten Zahlenwert und Grössenordnu
 1. Schreibe 0,00047 in wissenschaftlicher Form.
 2. Berechne:
 
-   $$
-   \frac{10^6}{10^3}
-   $$
+$$
+\frac{10^6}{10^3}
+$$
 
 3. In welchem Strombereich liegt der folgende Quotient?
 
-   $$
-   \frac{5\,\mathrm{V}}
-        {10\,\mathrm{k}\Omega}
-   $$
+$$
+\frac{5\,\mathrm{V}}
+     {10\,\mathrm{k}\Omega}
+$$
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
 

@@ -182,9 +182,9 @@ Formeln beschreiben Bedingungen und Zusammenhänge. Systematisches Umstellen, Ei
 
 1. Stelle die folgende Formel nach $t$ um:
 
-   $$
-   E=P\cdot t
-   $$
+$$
+E=P\cdot t
+$$
 2. Warum ist Rückeinsetzen nützlich?
 3. Welche Bedingung gilt beim ohmschen Widerstand?
 

@@ -148,9 +148,9 @@ Plausibilitätsprüfung kombiniert Dimension, Grössenordnung, Grenzfall und una
 2. Warum sind 12 Rechnerstellen kein Genauigkeitsnachweis?
 3. Nenne einen sinnvollen Grenzfall für:
 
-   $$
-   I=\frac{U}{R}
-   $$
+$$
+I=\frac{U}{R}
+$$
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
 
