@@ -180,6 +180,8 @@ $$
 
 #### 3. Berechnen
 
+**Reihenschaltung**
+
 $$
 R_{\mathrm{eq,R}} = 3.0~\mathrm{k}\Omega
 $$
@@ -194,6 +196,14 @@ U_1 = 4.0~\mathrm{V}
 U_2 = 8.0~\mathrm{V}
 $$
 
+Kontrolle der Spannungsbilanz:
+
+$$
+U_1+U_2 = 4.0~\mathrm{V}+8.0~\mathrm{V}=12~\mathrm{V}
+$$
+
+**Parallelschaltung**
+
 $$
 I_1 = 12~\mathrm{mA}
 \qquad
@@ -201,7 +211,7 @@ I_2 = 6~\mathrm{mA}
 $$
 
 $$
-I_{\mathrm{ges}} = 18~\mathrm{mA}
+I_{\mathrm{ges}} = I_1+I_2 = 18~\mathrm{mA}
 $$
 
 $$
@@ -213,15 +223,27 @@ $$
 
 #### 4. Ergebnis
 
+**Reihenschaltung**
+
 $$
 \boxed{R_{\mathrm{eq,R}} = 3.0~\mathrm{k}\Omega}
 $$
 
 $$
+\boxed{I_{\mathrm{R}} = 4.0~\mathrm{mA}}
+$$
+
+**Parallelschaltung**
+
+$$
 \boxed{R_{\mathrm{eq,P}} \approx 667~\Omega}
 $$
 
-Die Reihenschaltung besitzt wie erwartet einen Ersatzwiderstand grösser als beide Einzelwiderstände. Der Parallelersatz liegt dagegen unter dem kleinsten Einzelwiderstand. Zusätzlich bestätigt $U_1+U_2=12~\mathrm{V}$ die Spannungsbilanz der Reihenschaltung.
+$$
+\boxed{I_{\mathrm{ges}} = 18~\mathrm{mA}}
+$$
+
+Die beiden Schaltungsarten sind damit klar getrennt: In der Reihenschaltung fliesst durch beide Widerstände derselbe Strom und die Spannung teilt sich auf. In der Parallelschaltung liegt an beiden Widerständen dieselbe Spannung und die Zweigströme addieren sich zum Gesamtstrom.
 
 ## Praxisbezug
 

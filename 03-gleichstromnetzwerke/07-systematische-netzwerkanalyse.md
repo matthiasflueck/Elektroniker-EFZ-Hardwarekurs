@@ -161,12 +161,16 @@ U_{23} =
 5~\mathrm{V}
 $$
 
+Zweigströme:
+
 $$
 I_2 = I_3 =
 \frac{5~\mathrm{V}}
      {2~\mathrm{k}\Omega}
-=
-2.5~\mathrm{mA}
+$$
+
+$$
+I_2 = I_3 = 2.5~\mathrm{mA}
 $$
 
 Knotenkontrolle:
