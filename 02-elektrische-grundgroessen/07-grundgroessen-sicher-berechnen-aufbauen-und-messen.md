@@ -64,11 +64,88 @@ In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funkt
 
 ## Anschauliches Beispiel
 
-Für 5,00 V und gemessene 997 Ω werden 5,02 mA erwartet. Zeigt das DMM 4,98 mA, ist nicht automatisch etwas defekt. Quellenabweichung, Widerstandstoleranz, Burden Voltage und Gerätegenauigkeit werden verglichen.
+Für 5.00 V und gemessene 997 Ω werden 5.02 mA erwartet. Zeigt das DMM 4.98 mA, ist nicht automatisch etwas defekt. Quellenabweichung, Widerstandstoleranz, Burden Voltage und Gerätegenauigkeit werden verglichen.
 
 ## Berechnungsbeispiel
 
-Mit `U = 5,00 V` und `R = 997 Ω`: `Isoll = 5,015 mA`. Gemessen seien `UR = 4,96 V` und `Iist = 4,98 mA`. Aus U/I folgt `R = 996 Ω`. Die relative Stromabweichung ist etwa `(4,98−5,015)/5,015 = −0,70 %` und damit plausibel.
+### 🧮 Berechnungsbeispiel: Soll- und Messwerte vergleichen
+
+Ein gemessener Widerstand von **997 Ω** wird an **5.00 V** betrieben. Im eingeschalteten Aufbau werden am Widerstand **4.96 V** und im Strompfad **4.98 mA** gemessen. Gesucht sind der Sollstrom, der aus den Messwerten bestimmte Widerstand und die relative Stromabweichung.
+
+**Gegeben:**
+
+- Versorgungsspannung für die Sollrechnung: **5.00 V**
+- spannungsfrei gemessener Widerstand: **997 Ω**
+- gemessene Widerstandsspannung: **4.96 V**
+- gemessener Strom: **4.98 mA**
+
+#### 1. Formeln
+
+$$
+I_{\mathrm{soll}} = \frac{U}{R}
+$$
+
+$$
+R_{\mathrm{mess}} = \frac{U_R}{I_{\mathrm{ist}}}
+$$
+
+$$
+\delta_I =
+\frac{I_{\mathrm{ist}}-I_{\mathrm{soll}}}
+     {I_{\mathrm{soll}}}
+\cdot100~\\%
+$$
+
+#### 2. Werte einsetzen
+
+$$
+I_{\mathrm{soll}} =
+\frac{5.00~\mathrm{V}}
+     {997~\Omega}
+$$
+
+$$
+R_{\mathrm{mess}} =
+\frac{4.96~\mathrm{V}}
+     {4.98~\mathrm{mA}}
+$$
+
+$$
+\delta_I =
+\frac{4.98~\mathrm{mA}-5.015~\mathrm{mA}}
+     {5.015~\mathrm{mA}}
+\cdot100~\\%
+$$
+
+#### 3. Berechnen
+
+$$
+I_{\mathrm{soll}} \approx 5.015~\mathrm{mA}
+$$
+
+$$
+R_{\mathrm{mess}} \approx 996~\Omega
+$$
+
+$$
+\delta_I \approx -0.70~\\%
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{I_{\mathrm{soll}} \approx 5.015~\mathrm{mA}}
+$$
+
+$$
+\boxed{R_{\mathrm{mess}} \approx 996~\Omega}
+$$
+
+$$
+\boxed{\delta_I \approx -0.70~\\%}
+$$
+
+Die kleine Abweichung ist plausibel. Die tatsächlich am Widerstand gemessene Spannung liegt etwas unter der für die Sollrechnung verwendeten Versorgungsspannung; zusätzlich wirken Bauteil- und Messgerätetoleranzen.
 
 ## Praxisbezug
 

@@ -12,7 +12,7 @@ Nach dieser Lektion kannst du:
 
 ## Einleitung
 
-Spannung existiert immer zwischen zwei Punkten. Die Aussage «am Pin liegen 3,3 V» ist unvollständig, solange der Bezug fehlt. Diese Sichtweise ist besonders wichtig bei Sensoren, ADCs und Oszilloskopmessungen. Sie verhindert, dass ein korrekt angezeigter Messwert falsch interpretiert oder eine Masseverbindung unbedacht hergestellt wird.
+Spannung existiert immer zwischen zwei Punkten. Die Aussage «am Pin liegen 3.3 V» ist unvollständig, solange der Bezug fehlt. Diese Sichtweise ist besonders wichtig bei Sensoren, ADCs und Oszilloskopmessungen. Sie verhindert, dass ein korrekt angezeigter Messwert falsch interpretiert oder eine Masseverbindung unbedacht hergestellt wird.
 
 
 <!-- context-expansion-2026 -->
@@ -29,13 +29,19 @@ Zur Analyse wird zuerst der reale Strompfad gezeichnet und ein Bezugspotential f
 
 ### Elektrisches Potential
 
-Das Potential beschreibt elektrische Energie pro Ladung an einem Punkt relativ zu einer gewählten Referenz. Spannung ist die Differenz zweier Potentiale: Erst nachdem A und B benannt sind, schreiben wir `UAB = φA − φB`.
+Das Potential $\varphi$ beschreibt elektrische Energie pro Ladung an einem Punkt relativ zu einer gewählten Referenz. Spannung ist die Differenz zweier Potentiale. Erst nachdem die Punkte A und B sowie die Messrichtung benannt sind, schreiben wir:
+
+$$
+U_{AB} = \varphi_A-\varphi_B
+$$
+
+Die Reihenfolge der Indizes ist wichtig: $U_{AB}$ bezeichnet das Potential von A gegenüber B.
 
 ![Quelle und IEC-Widerstand mit Knotenpotentialen und Spannungspfeil](../bilder/02-elektrische-grundgroessen/02-03-potential-und-spannung.png)
 
 ### Vorzeichen
 
-Die rote DMM-Spitze an A und die schwarze an B zeigt `UAB`. Werden die Spitzen vertauscht, ändert sich das Vorzeichen. Ein negatives Resultat ist oft eine korrekte Information über die tatsächliche Polarität und kein Fehler des Messgeräts.
+Die rote DMM-Spitze an A und die schwarze an B zeigt $U_{AB}$. Werden die Spitzen vertauscht, ändert sich das Vorzeichen. Ein negatives Resultat ist oft eine korrekte Information über die tatsächliche Polarität und kein Fehler des Messgeräts.
 
 ### Spannungsabfall und Energie
 
@@ -64,11 +70,58 @@ In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funkt
 
 ## Anschauliches Beispiel
 
-TP1 liegt bei 2,50 V gegen GND, TP2 bei 1,20 V gegen GND. Zwischen TP1 und TP2 liegen daher 1,30 V. Gegen einen anderen Bezug hätten beide Einzelwerte andere Zahlen, ihre Differenz bliebe gleich.
+TP1 liegt bei 2.50 V gegen GND, TP2 bei 1.20 V gegen GND. Zwischen TP1 und TP2 liegen daher 1.30 V. Gegen einen anderen Bezug hätten beide Einzelwerte andere Zahlen, ihre Differenz bliebe gleich.
 
 ## Berechnungsbeispiel
 
-`UTP1,TP2 = φTP1 − φTP2 = 2,50 V − 1,20 V = 1,30 V`. Vertauscht: `UTP2,TP1 = −1,30 V`. Die Einheit Volt ist Joule pro Coulomb. Das positive Ergebnis bestätigt, dass TP1 gegenüber TP2 auf dem höheren Potential liegt.
+### 🧮 Berechnungsbeispiel: Spannung zwischen zwei Messpunkten bestimmen
+
+Die Potentiale der Messpunkte TP1 und TP2 wurden gegen denselben GND-Bezug gemessen. Gesucht sind die Spannungen in beiden Messrichtungen.
+
+**Gegeben:**
+
+- Potential an TP1: **2.50 V**
+- Potential an TP2: **1.20 V**
+
+#### 1. Formel
+
+$$
+U_{\mathrm{TP1,TP2}} =
+\varphi_{\mathrm{TP1}}-\varphi_{\mathrm{TP2}}
+$$
+
+#### 2. Werte einsetzen
+
+$$
+U_{\mathrm{TP1,TP2}} =
+2.50~\mathrm{V}-1.20~\mathrm{V}
+$$
+
+#### 3. Berechnen
+
+$$
+U_{\mathrm{TP1,TP2}} = 1.30~\mathrm{V}
+$$
+
+Bei vertauschter Messrichtung gilt:
+
+$$
+U_{\mathrm{TP2,TP1}} =
+1.20~\mathrm{V}-2.50~\mathrm{V} =
+-1.30~\mathrm{V}
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{U_{\mathrm{TP1,TP2}} = 1.30~\mathrm{V}}
+$$
+
+$$
+\boxed{U_{\mathrm{TP2,TP1}} = -1.30~\mathrm{V}}
+$$
+
+Das positive erste Ergebnis bestätigt, dass TP1 gegenüber TP2 auf dem höheren Potential liegt. Die Einheit Volt entspricht Joule pro Coulomb.
 
 ## Praxisbezug
 
@@ -97,7 +150,7 @@ Potential ist auf eine Referenz bezogen; Spannung ist eine Potentialdifferenz. P
 
 1. Was fehlt bei der Aussage «Punkt A hat 5 V»?
 2. Was zeigt das DMM nach dem Vertauschen der Messspitzen?
-3. Berechne `UAB` für `φA = 1 V` und `φB = 3 V`.
+3. Berechne $U_{AB}$ für $\varphi_A=1~\mathrm{V}$ und $\varphi_B=3~\mathrm{V}$.
 4. Weshalb benötigt ein ADC neben dem Signaleingang auch einen definierten Masse- und Referenzbezug?
 
 Weitere Aufgaben: [Übungen zu Modul 02](../uebungen/modul-02.md). Die Lösungen liegen bewusst getrennt.

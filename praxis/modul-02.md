@@ -8,7 +8,7 @@ Du sagst Strom und Leistung eines einfachen Stromkreises voraus, baust ihn siche
 
 ## Benötigtes Material
 
-Steckbrett, R1 = 1 kΩ (mindestens 0,25 W), Leitungen, Schalter oder Steckbrücke.
+Steckbrett, R1 = 1 kΩ (mindestens 0.25 W), Leitungen, Schalter oder Steckbrücke.
 
 ## Benötigte Messgeräte
 
@@ -28,7 +28,17 @@ Markiere Plus, GND, technischen Strompfeil, Mess- und Bezugspunkte. Kontrolliere
 
 ## Berechnung
 
-Miss R1 spannungsfrei. Berechne für 1, 2, 3, 4 und 5 V jeweils I und P. Ergänze einen Bereich aus Widerstandstoleranz und Quellenabweichung.
+Miss R1 spannungsfrei. Berechne für 1, 2, 3, 4 und 5 V jeweils Strom und Leistung mit:
+
+$$
+I = \frac{U}{R}
+$$
+
+$$
+P = U\cdot I
+$$
+
+Ergänze einen Bereich aus Widerstandstoleranz und Quellenabweichung.
 
 ## Aufbau
 
@@ -40,7 +50,15 @@ Erhöhe U in 1-V-Schritten. Vor jedem Schritt: I und P vorhersagen. Danach U par
 
 ## Messung
 
-Erfasse tatsächliche Quellspannung, Widerstandsspannung und Strom. Berechne zusätzlich `R = U/I` und `P = U·I`.
+Erfasse tatsächliche Quellspannung, Widerstandsspannung und Strom. Berechne zusätzlich den Widerstand und die umgesetzte Leistung:
+
+$$
+R = \frac{U}{I}
+$$
+
+$$
+P = U\cdot I
+$$
 
 ## Messwerte
 

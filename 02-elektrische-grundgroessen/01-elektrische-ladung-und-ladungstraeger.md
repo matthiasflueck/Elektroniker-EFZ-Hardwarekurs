@@ -37,7 +37,19 @@ In Metallen sind Elektronen beweglich, während die Atomrümpfe im Gitter bleibe
 
 ### Quantisierung und Einheit
 
-Erst nach dieser Vorstellung wird die Grösse definiert: Ladung `Q` wird in Coulomb (`C`) angegeben. Die Elementarladung hat den Betrag `e ≈ 1,602 × 10⁻¹⁹ C`. Makroskopische Ladungsmengen enthalten daher sehr viele einzelne Träger.
+Erst nach dieser Vorstellung wird die Grösse definiert: Die Ladung $Q$ wird in Coulomb ($\mathrm{C}$) angegeben. Die Elementarladung $e$ ist der Betrag der Ladung eines einzelnen Protons beziehungsweise Elektrons:
+
+$$
+e = 1.602\cdot10^{-19}~\mathrm{C}
+$$
+
+Besteht eine Ladungsmenge aus $N$ gleichartigen Elementarladungen, gilt:
+
+$$
+Q = N\cdot e
+$$
+
+Dabei ist $N$ eine reine Anzahl ohne Einheit. Makroskopische Ladungsmengen enthalten daher sehr viele einzelne Ladungsträger.
 
 ### Ladungstrennung
 
@@ -70,7 +82,54 @@ Beim Gehen auf einem isolierenden Boden können Elektronen zwischen Materialien 
 
 ## Berechnungsbeispiel
 
-Eine Ladungsmenge von `1 µC = 1 × 10⁻⁶ C` entspricht näherungsweise `N = Q/e = 10⁻⁶ / 1,602×10⁻¹⁹ ≈ 6,24 × 10¹²` Elementarladungen. Der grosse Wert erklärt, warum wir im Stromkreis mit kontinuierlichen Grössen rechnen können.
+### 🧮 Berechnungsbeispiel: Anzahl der Elementarladungen bestimmen
+
+Eine Ladungsmenge von **1 µC** soll in die entsprechende Anzahl Elementarladungen umgerechnet werden.
+
+**Gegeben:**
+
+- Ladungsmenge: **1 µC**
+- Elementarladung: **1.602 · 10⁻¹⁹ C**
+
+#### 1. Formel
+
+Aus $Q=N\cdot e$ folgt:
+
+$$
+N = \frac{Q}{e}
+$$
+
+#### 2. Werte einsetzen
+
+Zuerst wird Mikro durch die entsprechende Zehnerpotenz ersetzt:
+
+$$
+Q = 1~\mu\mathrm{C} = 1\cdot10^{-6}~\mathrm{C}
+$$
+
+Damit ergibt sich:
+
+$$
+N =
+\frac{1\cdot10^{-6}~\mathrm{C}}
+     {1.602\cdot10^{-19}~\mathrm{C}}
+$$
+
+#### 3. Berechnen
+
+$$
+N \approx 6.24\cdot10^{12}
+$$
+
+Die Einheit Coulomb kürzt sich. Das Ergebnis ist deshalb eine Anzahl.
+
+#### 4. Ergebnis
+
+$$
+\boxed{N \approx 6.24\cdot10^{12}\ \text{Elementarladungen}}
+$$
+
+Der grosse Wert erklärt, warum wir in makroskopischen Stromkreisen meist mit kontinuierlichen Grössen rechnen können.
 
 ## Praxisbezug
 

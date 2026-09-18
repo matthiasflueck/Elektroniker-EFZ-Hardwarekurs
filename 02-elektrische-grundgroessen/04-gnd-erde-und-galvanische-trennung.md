@@ -68,7 +68,50 @@ Ein USB-versorgtes Board ist über den PC bereits mit Erde gekoppelt. Eine zusä
 
 ## Berechnungsbeispiel
 
-Zwischen zwei vermeintlichen GND-Punkten liegen 50 mV; über eine 0,10-Ω-Verbindung fliesst `I = 0,050 V / 0,10 Ω = 0,5 A`. Kleine Potentialunterschiede können daher erhebliche Ausgleichsströme erzeugen.
+### 🧮 Berechnungsbeispiel: Ausgleichsstrom zwischen zwei GND-Punkten
+
+Zwischen zwei vermeintlich gleichen GND-Punkten werden **50 mV** gemessen. Die leitende Verbindung zwischen ihnen besitzt einen Widerstand von **0.10 Ω**. Gesucht ist der Ausgleichsstrom.
+
+**Gegeben:**
+
+- Potentialdifferenz: **50 mV**
+- Verbindungswiderstand: **0.10 Ω**
+
+#### 1. Formel
+
+Nach dem Ohmschen Gesetz gilt:
+
+$$
+I = \frac{U}{R}
+$$
+
+#### 2. Werte einsetzen
+
+Die Spannung wird vor dem Einsetzen in Volt umgerechnet:
+
+$$
+50~\mathrm{mV} = 0.050~\mathrm{V}
+$$
+
+$$
+I =
+\frac{0.050~\mathrm{V}}
+     {0.10~\Omega}
+$$
+
+#### 3. Berechnen
+
+$$
+I = 0.5~\mathrm{A}
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{I = 0.5~\mathrm{A}}
+$$
+
+Das Ergebnis zeigt: Selbst eine kleine Potentialdifferenz kann bei einer sehr niederohmigen Verbindung einen erheblichen Ausgleichsstrom erzeugen.
 
 ## Praxisbezug
 

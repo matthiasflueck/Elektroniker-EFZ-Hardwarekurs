@@ -37,7 +37,33 @@ Legt man verschiedene Spannungen an einen idealisierten ohmschen Widerstand und 
 
 ### Ohmsches Gesetz
 
-Nach dieser Beobachtung wird die Beziehung formuliert: `U = R·I`. Daraus folgen `I = U/R` und `R = U/I`. R wird in Ohm gemessen; `1 Ω = 1 V/A`. Praktisch gilt `V/kΩ = mA`.
+Nach dieser Beobachtung wird die Beziehung formuliert:
+
+$$
+U = R\cdot I
+$$
+
+Je nach gesuchter Grösse wird das Ohmsche Gesetz umgestellt:
+
+$$
+I = \frac{U}{R}
+$$
+
+$$
+R = \frac{U}{I}
+$$
+
+Der Widerstand $R$ wird in Ohm gemessen. Ein Ohm bedeutet, dass bei einer Spannung von einem Volt ein Strom von einem Ampere fliesst:
+
+$$
+1~\Omega = 1~\frac{\mathrm{V}}{\mathrm{A}}
+$$
+
+Für häufige Laborwerte ist auch die Präfixbeziehung praktisch:
+
+$$
+\frac{\mathrm{V}}{\mathrm{k}\Omega} = \mathrm{mA}
+$$
 
 ### Gültigkeitsgrenze
 
@@ -45,13 +71,19 @@ Die einfache Proportionalität gilt für ein ohmsches Bauteil bei annähernd kon
 
 ### Material, Länge und Querschnitt
 
-Der Widerstand eines homogenen Leiters hängt von Material, Länge und Querschnitt ab. Ein längerer Leiter bietet mehr Weg für Stösse der Ladungsträger; ein grösserer Querschnitt stellt mehr parallele Transportwege bereit. Diese Vorstellung führt zur Beziehung `R = ρ·l/A`, wobei der spezifische Widerstand ρ das Material beschreibt.
+Der Widerstand eines homogenen Leiters hängt von Material, Länge und Querschnitt ab. Ein längerer Leiter bietet mehr Weg für Stösse der Ladungsträger; ein grösserer Querschnitt stellt mehr parallele Transportwege bereit. Diese Vorstellung führt zur Beziehung:
+
+$$
+R = \rho\cdot\frac{l}{A}
+$$
+
+Dabei bezeichnet $\rho$ den spezifischen Widerstand des Materials, $l$ die Leiterlänge und $A$ die Querschnittsfläche.
 
 Temperatur kann ρ verändern. Bei vielen Metallen steigt der Widerstand mit der Temperatur. Deshalb kann ein Bauteil bei der Messung mit kleinem Prüfstrom einen anderen Wert zeigen als im heissen Betriebszustand. Das Ohmsche Gesetz bleibt am jeweiligen Zustand nutzbar, der Widerstand ist aber nicht mehr konstant.
 
 ### Statischer und differentieller Widerstand
 
-Bei einer nichtlinearen Kennlinie bezeichnet `U/I` das Verhältnis vom Ursprung zum Arbeitspunkt. Die lokale Steigung `dU/dI` beschreibt dagegen die Reaktion auf eine kleine Änderung um diesen Punkt. Bei einem ideal ohmschen Widerstand sind beide gleich; bei Dioden oder Transistoren nicht.
+Bei einer nichtlinearen Kennlinie bezeichnet $U/I$ das Verhältnis vom Ursprung zum Arbeitspunkt. Die lokale Steigung $\mathrm{d}U/\mathrm{d}I$ beschreibt dagegen die Reaktion auf eine kleine Änderung um diesen Punkt. Bei einem ideal ohmschen Widerstand sind beide gleich; bei Dioden oder Transistoren nicht.
 
 
 ## Anwendungsfall
@@ -70,7 +102,65 @@ Verdoppelt man bei konstantem 1-kΩ-Widerstand die Spannung von 2 V auf 4 V, ste
 
 ## Berechnungsbeispiel
 
-An `R = 1,0 kΩ` liegen `U = 5,0 V`. `I = U/R = 5,0 V / 1,0 kΩ = 5,0 mA`. Rückprüfung: `1,0 kΩ × 5,0 mA = 5,0 V`. Die Leistung ist `25 mW`, weit unter 0,25 W.
+### 🧮 Berechnungsbeispiel: Strom und Verlustleistung eines Widerstands
+
+An einem Widerstand von **1.0 kΩ** liegen **5.0 V**. Gesucht sind der Strom und die im Widerstand umgesetzte Leistung.
+
+**Gegeben:**
+
+- Widerstand: **1.0 kΩ**
+- Spannung: **5.0 V**
+- Nennleistung des Widerstands: **0.25 W**
+
+#### 1. Formeln
+
+$$
+I = \frac{U}{R}
+$$
+
+$$
+P = U\cdot I
+$$
+
+#### 2. Werte einsetzen
+
+$$
+I =
+\frac{5.0~\mathrm{V}}
+     {1.0~\mathrm{k}\Omega}
+$$
+
+$$
+P = 5.0~\mathrm{V}\cdot5.0~\mathrm{mA}
+$$
+
+#### 3. Berechnen und rückprüfen
+
+$$
+I = 5.0~\mathrm{mA}
+$$
+
+$$
+P = 25~\mathrm{mW} = 0.025~\mathrm{W}
+$$
+
+Die Rückprüfung mit $U=R\cdot I$ ergibt:
+
+$$
+1.0~\mathrm{k}\Omega\cdot5.0~\mathrm{mA} = 5.0~\mathrm{V}
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{I = 5.0~\mathrm{mA}}
+$$
+
+$$
+\boxed{P = 25~\mathrm{mW}}
+$$
+
+Die berechneten **25 mW** liegen deutlich unter der Nennleistung von **0.25 W**. Die elektrische Belastung ist für dieses vereinfachte Beispiel ausreichend klein.
 
 ## Praxisbezug
 
@@ -96,7 +186,7 @@ Bei ohmschem Verhalten sind Spannung und Strom proportional. Das Gesetz erlaubt 
 
 ## Übungsfragen
 
-1. Welcher Strom fliesst bei 3,3 V und 330 Ω?
+1. Welcher Strom fliesst bei 3.3 V und 330 Ω?
 2. Wann ist das einfache Modell ungeeignet?
 3. Wie wird das Voltmeter angeschlossen?
 

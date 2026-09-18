@@ -29,23 +29,59 @@ Zur Analyse wird zuerst der reale Strompfad gezeichnet und ein Bezugspotential f
 
 ### Leistung im Bauteil
 
-Fliesst Ladung durch eine Potentialdifferenz, wird Energie übertragen. Pro Zeit ergibt sich Leistung. Erst aus dieser Vorstellung folgt `P = U·I`. Für einen ohmschen Widerstand dürfen mit dem Ohmschen Gesetz auch `P = I²R` und `P = U²/R` verwendet werden.
+Fliesst Ladung durch eine Potentialdifferenz, wird Energie übertragen. Pro Zeit ergibt sich Leistung. Erst aus dieser Vorstellung folgt:
+
+$$
+P = U\cdot I
+$$
+
+Für einen ohmschen Widerstand dürfen mit dem Ohmschen Gesetz auch folgende Formen verwendet werden:
+
+$$
+P = I^2\cdot R
+$$
+
+$$
+P = \frac{U^2}{R}
+$$
 
 ![Energiefluss von Quelle über Schaltung zur Nutzleistung und Verlustwärme](../bilder/02-elektrische-grundgroessen/02-06-leistung-wirkungsgrad.png)
 
 ### Energie über Zeit
 
-Bei konstanter Leistung gilt `E = P·t`. Joule beziehungsweise Wattsekunde ist die SI-Einheit; bei Energieversorgung wird häufig Wattstunde verwendet. `1 Wh = 3600 J`.
+Bei konstanter Leistung gilt:
+
+$$
+E = P\cdot t
+$$
+
+Joule beziehungsweise Wattsekunde ist die SI-Einheit; bei Energieversorgung wird häufig Wattstunde verwendet:
+
+$$
+1~\mathrm{Wh} = 3600~\mathrm{J}
+$$
 
 ### Wirkungsgrad
 
-`η = Pnutz/Pzu`. Die Differenz `Pverlust = Pzu − Pnutz` erwärmt Bauteile oder wird anderweitig ungewollt umgesetzt. Nennleistung ist kein Zielbetrieb; Reserve und Umgebungstemperatur sind zu beachten.
+Der Wirkungsgrad $\eta$ vergleicht die nutzbare Leistung mit der zugeführten Leistung:
+
+$$
+\eta = \frac{P_{\mathrm{nutz}}}{P_{\mathrm{zu}}}
+$$
+
+Die Differenz ist die Verlustleistung:
+
+$$
+P_{\mathrm{verlust}} = P_{\mathrm{zu}}-P_{\mathrm{nutz}}
+$$
+
+Sie erwärmt Bauteile oder wird anderweitig ungewollt umgesetzt. Nennleistung ist kein Zielbetrieb; Reserve und Umgebungstemperatur sind zu beachten.
 
 ### Vorzeichen der Leistung
 
 Wird Strompfeil und Spannungspolung nach der passiven Vorzeichenkonvention gewählt, bedeutet positive Leistung, dass ein Bauteil Energie aufnimmt. Ein negatives Ergebnis bedeutet, dass es Energie abgibt. So lassen sich Quelle, Verbraucher und rückspeisende Systeme mit derselben Gleichung beschreiben.
 
-Die Formeln `I²R` und `U²/R` dürfen nur verwendet werden, wenn U, I und R zum selben ohmschen Bauteil und Betriebszustand gehören. `P = U·I` ist allgemeiner, bei zeitabhängigen Signalen muss jedoch die momentane Leistung oder ein korrekt gebildeter Mittelwert betrachtet werden.
+Die Formeln $I^2R$ und $U^2/R$ dürfen nur verwendet werden, wenn $U$, $I$ und $R$ zum selben ohmschen Bauteil und Betriebszustand gehören. $P=U\cdot I$ ist allgemeiner, bei zeitabhängigen Signalen muss jedoch die momentane Leistung oder ein korrekt gebildeter Mittelwert betrachtet werden.
 
 ### Temperatur ist nicht Leistung
 
@@ -64,11 +100,84 @@ In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funkt
 
 ## Anschauliches Beispiel
 
-Ein Linearregler wandelt 12 V auf 5 V bei 100 mA. Die Last erhält 0,5 W, der Regler verheizt ungefähr 0,7 W. Die Funktion stimmt, doch das thermische Design kann ungenügend sein.
+Ein Linearregler wandelt 12 V auf 5 V bei 100 mA. Die Last erhält 0.5 W, der Regler verheizt ungefähr 0.7 W. Die Funktion stimmt, doch das thermische Design kann ungenügend sein.
 
 ## Berechnungsbeispiel
 
-Am 1-kΩ-Widerstand aus Lektion 02.5 liegen 5 V. `P = U²/R = 25 V² / 1000 Ω = 0,025 W = 25 mW`. In 10 min: `E = 0,025 W × 600 s = 15 J`. Bei 0,25-W-Nennleistung beträgt die statische Auslastung 10 %.
+### 🧮 Berechnungsbeispiel: Leistung, Energie und Auslastung eines Widerstands
+
+Am **1-kΩ-Widerstand** aus Lektion 02.5 liegen **5 V**. Gesucht sind die Verlustleistung, die in **10 min** umgesetzte Energie und die Auslastung eines **0.25-W-Widerstands**.
+
+**Gegeben:**
+
+- Spannung: **5 V**
+- Widerstand: **1 kΩ**
+- Betriebsdauer: **10 min = 600 s**
+- Nennleistung: **0.25 W**
+
+#### 1. Formeln
+
+$$
+P = \frac{U^2}{R}
+$$
+
+$$
+E = P\cdot t
+$$
+
+$$
+a = \frac{P}{P_{\mathrm{N}}}
+$$
+
+Dabei bezeichnet $a$ die Auslastung und $P_{\mathrm{N}}$ die Nennleistung des Widerstands.
+
+#### 2. Werte einsetzen
+
+$$
+P =
+\frac{(5~\mathrm{V})^2}
+     {1000~\Omega}
+$$
+
+$$
+E = 0.025~\mathrm{W}\cdot600~\mathrm{s}
+$$
+
+$$
+a =
+\frac{0.025~\mathrm{W}}
+     {0.25~\mathrm{W}}
+$$
+
+#### 3. Berechnen
+
+$$
+P = 0.025~\mathrm{W} = 25~\mathrm{mW}
+$$
+
+$$
+E = 15~\mathrm{J}
+$$
+
+$$
+a = 0.10 = 10~\\%
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{P = 25~\mathrm{mW}}
+$$
+
+$$
+\boxed{E = 15~\mathrm{J}}
+$$
+
+$$
+\boxed{a = 10~\\%}
+$$
+
+Der Widerstand wird statisch mit **10 %** seiner Nennleistung belastet. Das lässt in diesem vereinfachten Fall eine deutliche Leistungsreserve.
 
 ## Praxisbezug
 

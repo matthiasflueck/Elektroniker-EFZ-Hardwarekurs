@@ -37,7 +37,19 @@ Eine Quelle trennt Ladung und stellt Energie bereit. Im geschlossenen Kreis verl
 
 ### Stromstärke
 
-Je mehr Ladung pro Zeit einen Querschnitt passiert, desto grösser ist der Strom. Daraus folgt `I = ΔQ/Δt`. Ein Ampere ist ein Coulomb pro Sekunde. Die Formel fasst die vorher beschriebene Bewegung quantitativ zusammen.
+Je mehr Ladung pro Zeit einen Querschnitt passiert, desto grösser ist der Strom. Die Stromstärke $I$ ist deshalb die übertragene Ladungsmenge $\Delta Q$ geteilt durch das betrachtete Zeitintervall $\Delta t$:
+
+$$
+I = \frac{\Delta Q}{\Delta t}
+$$
+
+Ein Ampere ist ein Coulomb pro Sekunde:
+
+$$
+1~\mathrm{A} = 1~\frac{\mathrm{C}}{\mathrm{s}}
+$$
+
+Die Formel fasst die vorher beschriebene Bewegung quantitativ zusammen.
 
 ### Strom an Knoten
 
@@ -70,7 +82,50 @@ In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funkt
 
 ## Berechnungsbeispiel
 
-In `2 ms` werden `6 µC` übertragen. `I = 6 µC / 2 ms`. Mit gleichen Präfixen ergibt sich `3 mA`. In SI: `6×10⁻⁶ C / 2×10⁻³ s = 3×10⁻³ A`.
+### 🧮 Berechnungsbeispiel: Strom aus Ladung und Zeit berechnen
+
+Durch einen Leiterquerschnitt werden während **2 ms** insgesamt **6 µC** Ladung übertragen. Gesucht ist die mittlere Stromstärke.
+
+**Gegeben:**
+
+- übertragene Ladung: **6 µC**
+- Zeitintervall: **2 ms**
+
+#### 1. Formel
+
+$$
+I = \frac{\Delta Q}{\Delta t}
+$$
+
+#### 2. Werte einsetzen
+
+Die Präfixe werden zunächst in SI-Zehnerpotenzen geschrieben:
+
+$$
+I =
+\frac{6\cdot10^{-6}~\mathrm{C}}
+     {2\cdot10^{-3}~\mathrm{s}}
+$$
+
+#### 3. Berechnen
+
+$$
+I = 3\cdot10^{-3}~\mathrm{A}
+$$
+
+Da $10^{-3}~\mathrm{A}$ einem Milliampere entspricht, gilt:
+
+$$
+3\cdot10^{-3}~\mathrm{A} = 3~\mathrm{mA}
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{I = 3~\mathrm{mA}}
+$$
+
+Die Grössenordnung ist plausibel: Mehrere Mikro-Coulomb in wenigen Millisekunden ergeben einen Strom im Milliamperebereich.
 
 ## Praxisbezug
 
