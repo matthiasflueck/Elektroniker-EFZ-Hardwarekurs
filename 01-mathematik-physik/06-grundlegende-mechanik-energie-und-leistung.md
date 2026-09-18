@@ -149,7 +149,7 @@ $$
 $$
 
 $$
-\boxed{P_{\mathrm{verlust}} = 3\,\mathrm{W}}
+\boxed{P_{\mathrm{verlust}} = 3\mathrm{W}}
 $$
 
 $$
