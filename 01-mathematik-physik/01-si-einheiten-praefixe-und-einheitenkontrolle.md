@@ -29,34 +29,34 @@ Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und 
 
 ### Grösse, Zahlenwert und Einheit
 
-Eine physikalische Angabe besteht aus Zahlenwert und Einheit, zum Beispiel `4,7 kΩ`. Der Widerstand ist die Grösse, 4,7 der Zahlenwert und Kiloohm die Einheit mit Präfix. Erst gemeinsam ist die Aussage vollständig.
+Eine physikalische Angabe besteht aus Zahlenwert und Einheit, zum Beispiel $4{,}7\,\mathrm{k}\Omega$. Der Widerstand ist die Grösse, 4,7 der Zahlenwert und Kiloohm die Einheit mit Präfix. Erst gemeinsam ist die Aussage vollständig.
 
 ### Häufige Präfixe
 
 | Präfix | Zeichen | Faktor | Beispiel |
 |---|---:|---:|---:|
-| pico | p | `10⁻¹²` | `22 pF` |
-| nano | n | `10⁻⁹` | `100 nF` |
-| mikro | µ | `10⁻⁶` | `10 µA` |
-| milli | m | `10⁻³` | `25 mA` |
-| kilo | k | `10³` | `4,7 kΩ` |
-| mega | M | `10⁶` | `10 MΩ` |
+| pico | p | $10^{-12}$ | $22\,\mathrm{pF}$ |
+| nano | n | $10^{-9}$ | $100\,\mathrm{nF}$ |
+| mikro | µ | $10^{-6}$ | $10\,\mu\mathrm{A}$ |
+| milli | m | $10^{-3}$ | $25\,\mathrm{mA}$ |
+| kilo | k | $10^3$ | $4{,}7\,\mathrm{k}\Omega$ |
+| mega | M | $10^6$ | $10\,\mathrm{M}\Omega$ |
 
-Gross-/Kleinschreibung ist bedeutsam: `m` ist milli, `M` ist mega. Beim Umrechnen bleibt die physikalische Grösse gleich; nur Zahlenwert und Einheit ändern sich.
+Gross-/Kleinschreibung ist bedeutsam: $\mathrm{m}$ ist milli, $\mathrm{M}$ ist mega. Beim Umrechnen bleibt die physikalische Grösse gleich; nur Zahlenwert und Einheit ändern sich.
 
 ### Einheiten als Fehlerdetektor
 
-Eine Gleichung muss auf beiden Seiten dieselbe Dimension besitzen. Bei `U = R · I` ergibt `Ω · A = V`. Passt die Einheit nicht, ist mindestens ein Rechenschritt oder eine Formel falsch.
+Eine Gleichung muss auf beiden Seiten dieselbe Dimension besitzen. Bei $U=R\cdot I$ ergibt sich $\Omega\cdot\mathrm{A}=\mathrm{V}$. Passt die Einheit nicht, ist mindestens ein Rechenschritt oder eine Formel falsch.
 
 ### Mit Einheiten rechnen
 
 Einheiten dürfen wie algebraische Faktoren behandelt werden. Werden Meter durch Sekunden geteilt, entsteht Meter pro Sekunde. Werden Volt durch Ampere geteilt, entsteht Ohm. Dieses Mitführen zwingt dazu, Eingangsgrössen korrekt umzuwandeln und macht sichtbar, ob die verwendete Beziehung überhaupt zur gesuchten Grösse passt.
 
-Vor dem Einsetzen werden alle Werte entweder in zusammenpassende technische Einheiten oder in SI-Einheiten gebracht. Beide Wege sind zulässig, solange sie konsequent bleiben. Die praktische Beziehung `V/kΩ = mA` ist schnell und sicher; ein Gemisch wie Volt, Ohm und Milliampere ohne Umrechnung führt dagegen zum Faktor-1000-Fehler.
+Vor dem Einsetzen werden alle Werte entweder in zusammenpassende technische Einheiten oder in SI-Einheiten gebracht. Beide Wege sind zulässig, solange sie konsequent bleiben. Die praktische Beziehung $\frac{\mathrm{V}}{\mathrm{k}\Omega}=\mathrm{mA}$ ist schnell und sicher; ein Gemisch wie Volt, Ohm und Milliampere ohne Umrechnung führt dagegen zum Faktor-1000-Fehler.
 
 ### Sinnvolle Schreibweise wählen
 
-Technische Werte werden so geschrieben, dass sie gut lesbar und schwer verwechselbar sind. `0,000001 F` ist mathematisch korrekt, `1 µF` aber leichter zu erfassen. Sehr viele oder sehr wenige signifikante Stellen erschweren den Vergleich. Die Schreibweise soll zur Genauigkeit der Angabe passen.
+Technische Werte werden so geschrieben, dass sie gut lesbar und schwer verwechselbar sind. $0{,}000001\,\mathrm{F}$ ist mathematisch korrekt, $1\,\mu\mathrm{F}$ aber leichter zu erfassen. Sehr viele oder sehr wenige signifikante Stellen erschweren den Vergleich. Die Schreibweise soll zur Genauigkeit der Angabe passen.
 
 
 ## Anwendungsfall
@@ -71,11 +71,11 @@ In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig n
 
 ## Anschauliches Beispiel
 
-Ein Schaltplan nennt `R1 = 4k7`. Das bedeutet `4,7 kΩ = 4700 Ω`, nicht 47 kΩ. Die Schreibweise ersetzt das Dezimalkomma und verhindert, dass es im Druck verschwindet.
+Ein Schaltplan nennt $\mathrm{R1}=4\mathrm{k}7$. Das bedeutet $4{,}7\,\mathrm{k}\Omega=4700\,\Omega$, nicht $47\,\mathrm{k}\Omega$. Die Schreibweise ersetzt das Dezimalkomma und verhindert, dass es im Druck verschwindet.
 
 ## Berechnungsbeispiel
 
-`3300 µA` werden in Milliampere umgerechnet. Da `1 mA = 1000 µA`, gilt `3300 µA ÷ 1000 = 3,3 mA`. Kontrolle: Die Einheit wird grösser, also muss der Zahlenwert kleiner werden.
+$3300\,\mu\mathrm{A}$ werden in Milliampere umgerechnet. Da $1\,\mathrm{mA}=1000\,\mu\mathrm{A}$, gilt $\frac{3300\,\mu\mathrm{A}}{1000}=3{,}3\,\mathrm{mA}$. Kontrolle: Die Einheit wird grösser, also muss der Zahlenwert kleiner werden.
 
 ## Praxisbezug
 
@@ -91,7 +91,7 @@ Registerwerte sind einheitenlos, aber Firmware rechnet sie in Volt, Ampere oder 
 
 ## Häufige Fehler und Missverständnisse
 
-- `m` und `M` verwechseln.
+- $\mathrm{m}$ und $\mathrm{M}$ verwechseln.
 - Einheiten während der Rechnung weglassen.
 - Dezimalpräfixe wie Zweierpotenzen behandeln.
 
@@ -103,7 +103,7 @@ SI-Einheiten machen technische Angaben vergleichbar. Präfixe verkürzen grosse 
 
 1. Wie viele Ohm sind 2,2 MΩ?
 2. Warum ist 10 mA nicht dasselbe wie 10 MA?
-3. Welche Einheit ergibt Ω·A?
+3. Welche Einheit ergibt $\Omega\cdot\mathrm{A}$?
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
 

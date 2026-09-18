@@ -62,7 +62,7 @@ Bei einer defekten Baugruppe ersetzt eine Fachperson nicht wahllos Teile. Sie kl
 
 ## Berechnungsbeispiel
 
-Hier steht noch keine Schaltungsformel im Zentrum. Eine erste quantitative Abschätzung ist dennoch möglich: Braucht eine Prüfung 12 Minuten und werden 25 Baugruppen geprüft, sind mindestens `12 min × 25 = 300 min = 5 h` reine Prüfzeit einzuplanen. Rüstzeit, Dokumentation und Fehlerfälle kommen hinzu. Auch Arbeitsplanung ist technische Arbeit.
+Hier steht noch keine Schaltungsformel im Zentrum. Eine erste quantitative Abschätzung ist dennoch möglich: Braucht eine Prüfung 12 Minuten und werden 25 Baugruppen geprüft, sind mindestens $12\,\mathrm{min}\cdot 25 = 300\,\mathrm{min} = 5\,\mathrm{h}$ reine Prüfzeit einzuplanen. Rüstzeit, Dokumentation und Fehlerfälle kommen hinzu. Auch Arbeitsplanung ist technische Arbeit.
 
 ## Praxisbezug
 

@@ -72,7 +72,7 @@ Ein ADC-Kanal zeigt nur bei trockener Luft gelegentliche Sprünge. Ein Vergleich
 
 ## Berechnungsbeispiel
 
-Das vereinfachte Körpermodell speichert bei `C = 100 pF` und `U = 2000 V` die Energie `E = ½ × 100 pF × (2000 V)² = 0,2 mJ`. Die Energie wirkt in sehr kurzer Zeit auf eine mikroskopisch kleine Struktur; deshalb kann sie trotz des kleinen Zahlenwerts schädigen.
+Das vereinfachte Körpermodell speichert bei $C=100\,\mathrm{pF}$ und $U=2000\,\mathrm{V}$ die Energie $E=\frac{1}{2}\cdot 100\,\mathrm{pF}\cdot(2000\,\mathrm{V})^2=0{,}2\,\mathrm{mJ}$. Die Energie wirkt in sehr kurzer Zeit auf eine mikroskopisch kleine Struktur; deshalb kann sie trotz des kleinen Zahlenwerts schädigen.
 
 ## Praxisbezug
 

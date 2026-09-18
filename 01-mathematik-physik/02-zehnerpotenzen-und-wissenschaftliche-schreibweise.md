@@ -29,7 +29,7 @@ Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und 
 
 ### Mantisse und Exponent
 
-Eine Zahl wird als `a × 10ⁿ` geschrieben, wobei der Betrag von `a` zwischen 1 und 10 liegt. Der Exponent sagt, wie weit das Dezimalzeichen verschoben wurde. `0,000 0047 A` wird zu `4,7 × 10⁻⁶ A`.
+Eine Zahl wird als $a\cdot10^n$ geschrieben, wobei der Betrag von $a$ zwischen 1 und 10 liegt. Der Exponent sagt, wie weit das Dezimalzeichen verschoben wurde. $0{,}000\,0047\,\mathrm{A}$ wird zu $4{,}7\cdot10^{-6}\,\mathrm{A}$.
 
 ### Rechenregeln
 
@@ -37,7 +37,7 @@ Beim Multiplizieren werden Mantissen multipliziert und Exponenten addiert. Beim 
 
 ### Grössenordnung
 
-Vor dem Taschenrechner wird grob geschätzt. `3,3 V / 1 kΩ` muss im Milliamperebereich liegen, denn Volt durch Kiloohm ergibt Milliampere. Ein Ergebnis von 3300 A wäre offensichtlich falsch.
+Vor dem Taschenrechner wird grob geschätzt. $\frac{3{,}3\,\mathrm{V}}{1\,\mathrm{k}\Omega}$ muss im Milliamperebereich liegen, denn Volt durch Kiloohm ergibt Milliampere. Ein Ergebnis von $3300\,\mathrm{A}$ wäre offensichtlich falsch.
 
 ### Das Dezimalzeichen bewusst verschieben
 
@@ -62,11 +62,11 @@ In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig n
 
 ## Anschauliches Beispiel
 
-Ein Kondensatorwert `100 nF` entspricht `100 × 10⁻⁹ F = 1,0 × 10⁻⁷ F`. Beide Darstellungen bezeichnen denselben Wert; `100 nF` ist für Schaltpläne meist lesbarer.
+Ein Kondensatorwert von $100\,\mathrm{nF}$ entspricht $100\cdot10^{-9}\,\mathrm{F}=1{,}0\cdot10^{-7}\,\mathrm{F}$. Beide Darstellungen bezeichnen denselben Wert; $100\,\mathrm{nF}$ ist für Schaltpläne meist lesbarer.
 
 ## Berechnungsbeispiel
 
-`(4,7 × 10³) × (2,0 × 10⁻³) = 9,4 × 10⁰ = 9,4`. Die Exponenten `3 + (−3)` heben sich auf. Eine Abschätzung `≈ 5 × 2 = 10` bestätigt die Grössenordnung.
+$(4{,}7\cdot10^3)\cdot(2{,}0\cdot10^{-3})=9{,}4\cdot10^0=9{,}4$. Die Exponenten $3+(-3)$ heben sich auf. Eine Abschätzung mit $5\cdot2\approx10$ bestätigt die Grössenordnung.
 
 ## Praxisbezug
 
@@ -89,8 +89,8 @@ Wissenschaftliche Schreibweise trennt signifikanten Zahlenwert und Grössenordnu
 ## Übungsfragen
 
 1. Schreibe 0,00047 in wissenschaftlicher Form.
-2. Was ergibt `10⁶ / 10³`?
-3. In welchem Strombereich liegt 5 V / 10 kΩ?
+2. Was ergibt $\frac{10^6}{10^3}$?
+3. In welchem Strombereich liegt $\frac{5\,\mathrm{V}}{10\,\mathrm{k}\Omega}$?
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
 

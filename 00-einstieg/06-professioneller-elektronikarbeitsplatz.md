@@ -68,7 +68,7 @@ Ein DMM steht noch auf Strommessung und die Leitung steckt in der A-Buchse. Die 
 
 ## Berechnungsbeispiel
 
-Für eine 5-V-Schaltung mit erwarteten 20 mA kann eine erste Stromgrenze von 30 mA begründet sein. Sie liegt `10 mA` beziehungsweise `50 %` über dem Soll, aber weit unter einem möglichen Ampere-Kurzschluss. Der genaue Wert hängt vom Einschaltstrom ab.
+Für eine 5-V-Schaltung mit erwarteten 20 mA kann eine erste Stromgrenze von 30 mA begründet sein. Sie liegt $10\,\mathrm{mA}$ beziehungsweise $50\,\%$ über dem Soll, aber weit unter einem möglichen Ampere-Kurzschluss. Der genaue Wert hängt vom Einschaltstrom ab.
 
 ## Praxisbezug
 

@@ -62,11 +62,11 @@ In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig n
 
 ## Anschauliches Beispiel
 
-Für 5 V an 1 kΩ zeigt ein Rechner 5000 A. Die Einheitserwartung `V/kΩ = mA` entlarvt den Fehler sofort: Der Widerstand wurde vermutlich als 0,001 Ω statt 1000 Ω eingegeben.
+Für $5\,\mathrm{V}$ an $1\,\mathrm{k}\Omega$ zeigt ein Rechner $5000\,\mathrm{A}$. Die Einheitserwartung $\frac{\mathrm{V}}{\mathrm{k}\Omega}=\mathrm{mA}$ entlarvt den Fehler sofort: Der Widerstand wurde vermutlich als $0{,}001\,\Omega$ statt $1000\,\Omega$ eingegeben.
 
 ## Berechnungsbeispiel
 
-Exakt: `4,98 V / 997 Ω = 4,994… mA`. Mit etwa 5 V und 1 kΩ war 5 mA erwartet. Das Endresultat `4,99 mA` ist angemessen; `4,994984954864… mA` täuscht Genauigkeit vor.
+Exakt gilt $\frac{4{,}98\,\mathrm{V}}{997\,\Omega}=4{,}994\ldots\,\mathrm{mA}$. Mit etwa $5\,\mathrm{V}$ und $1\,\mathrm{k}\Omega$ war $5\,\mathrm{mA}$ erwartet. Das Endresultat $4{,}99\,\mathrm{mA}$ ist angemessen; $4{,}994984954864\ldots\,\mathrm{mA}$ täuscht Genauigkeit vor.
 
 ## Praxisbezug
 
@@ -94,7 +94,7 @@ Plausibilitätsprüfung kombiniert Dimension, Grössenordnung, Grenzfall und una
 
 1. Welche vier Prüfungen werden verwendet?
 2. Warum sind 12 Rechnerstellen kein Genauigkeitsnachweis?
-3. Nenne einen sinnvollen Grenzfall für `I = U/R`.
+3. Nenne einen sinnvollen Grenzfall für $I=\frac{U}{R}$.
 
 Weitere Aufgaben: [Übungen zu Modul 01](../uebungen/modul-01.md). Die Lösungen liegen bewusst getrennt.
 

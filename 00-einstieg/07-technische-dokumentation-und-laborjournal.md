@@ -35,7 +35,7 @@ Zu jedem Versuch gehören Datum, Person, Ziel, Schaltungsrevision, Aufbau, Mater
 
 ### Soll, Ist und Bewertung
 
-Ein Messwert wird nie allein notiert. `TP3 = 3,28 V gegen GND, DMM-01, 10-V-Bereich, 5,00-V-Versorgung` ist aussagekräftiger als `3,28`. Die Bewertung berücksichtigt Toleranzen und Messunsicherheit.
+Ein Messwert wird nie allein notiert. Der Eintrag «$U(\mathrm{TP3})=3{,}28\,\mathrm{V}$ gegen GND, DMM-01, 10-V-Bereich, 5,00-V-Versorgung» ist aussagekräftiger als die alleinstehende Zahl 3,28. Die Bewertung berücksichtigt Toleranzen und Messunsicherheit.
 
 ### Revision und Versionsverwaltung
 
@@ -43,7 +43,7 @@ Schema, Stückliste, PCB, Firmware und Testplan müssen denselben Stand beschrei
 
 ### Beobachtung und Interpretation trennen
 
-Im Laborjournal steht zuerst, was tatsächlich beobachtet wurde: Messwert, Signalform, Geräteeinstellung oder sichtbarer Zustand. Danach folgt die Interpretation. «TP4 = 0,18 V gegen GND» ist eine Beobachtung; «der Ausgang ist kurzgeschlossen» ist bereits eine Hypothese. Diese Trennung verhindert, dass Vermutungen später wie gesicherte Tatsachen gelesen werden.
+Im Laborjournal steht zuerst, was tatsächlich beobachtet wurde: Messwert, Signalform, Geräteeinstellung oder sichtbarer Zustand. Danach folgt die Interpretation. «$U(\mathrm{TP4})=0{,}18\,\mathrm{V}$ gegen GND» ist eine Beobachtung; «der Ausgang ist kurzgeschlossen» ist bereits eine Hypothese. Diese Trennung verhindert, dass Vermutungen später wie gesicherte Tatsachen gelesen werden.
 
 Eine gute Hypothese führt zu einer unterscheidenden Prüfung. Wenn sowohl Kurzschluss als auch deaktivierter Ausgang einen niedrigen Pegel erklären könnten, wird eine Messung geplant, die beide Fälle trennt. Das Ergebnis und die verworfene Ursache bleiben dokumentiert. So entsteht aus Fehlersuche technisches Wissen.
 
@@ -68,7 +68,7 @@ Nach dem Austausch von R7 wird nicht nur «R7 geändert» notiert. Dokumentiert 
 
 ## Berechnungsbeispiel
 
-Bei `Soll = 5,00 V` und `Ist = 4,92 V` ist die absolute Abweichung `ΔU = −0,08 V`. Relativ: `−0,08 V / 5,00 V × 100 % = −1,6 %`. Erst der zulässige Bereich entscheidet, ob dies akzeptabel ist.
+Bei $U\mathrm{soll}=5{,}00\,\mathrm{V}$ und $U\mathrm{ist}=4{,}92\,\mathrm{V}$ ist die absolute Abweichung $\Delta U=-0{,}08\,\mathrm{V}$. Relativ gilt $\frac{-0{,}08\,\mathrm{V}}{5{,}00\,\mathrm{V}}\cdot100\,\%=-1{,}6\,\%$. Erst der zulässige Bereich entscheidet, ob dies akzeptabel ist.
 
 ## Praxisbezug
 
@@ -94,7 +94,7 @@ Ein Laborjournal verbindet Erwartung, Rohdaten, Auswertung und Entscheidung. Rev
 
 ## Übungsfragen
 
-1. Welche Angaben fehlen bei «Spannung = 3,3»?
+1. Welche Angaben fehlen bei «$U=3{,}3$»?
 2. Warum müssen Rohdaten erhalten bleiben?
 3. Was unterscheidet Versionsstand und Freigabe?
 

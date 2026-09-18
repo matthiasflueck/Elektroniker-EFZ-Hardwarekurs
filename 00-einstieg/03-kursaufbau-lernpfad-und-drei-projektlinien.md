@@ -58,7 +58,7 @@ Bei Projekt A berechnest du zuerst den Sensorteiler. Später prüfst du, ob der 
 
 ## Berechnungsbeispiel
 
-Ein Lernblock aus 45 Minuten Theorie, 30 Minuten Übungen und 90 Minuten Labor benötigt ohne Dokumentation bereits `45 + 30 + 90 = 165 min = 2 h 45 min`. Plane zusätzlich Zeit für Vorbereitung, Fehlersuche und Auswertung ein.
+Ein Lernblock aus 45 Minuten Theorie, 30 Minuten Übungen und 90 Minuten Labor benötigt ohne Dokumentation bereits $45+30+90=165\,\mathrm{min}=2\,\mathrm{h}\,45\,\mathrm{min}$. Plane zusätzlich Zeit für Vorbereitung, Fehlersuche und Auswertung ein.
 
 ## Praxisbezug
 

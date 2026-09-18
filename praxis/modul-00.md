@@ -30,7 +30,7 @@ Erstelle Checklisten für Dokumenten-, Aufbau-, Energie- und Messfreigabe. Notie
 
 ## Berechnung
 
-Für 5 V und 1 kΩ gilt `I = 5 mA`, `P_R = 25 mW`. Begründe eine Stromgrenze von 10 mA.
+Für $U=5\,\mathrm{V}$ und $\mathrm{R1}=1\,\mathrm{k}\Omega$ gilt $I=5\,\mathrm{mA}$ und $P(\mathrm{R1})=25\,\mathrm{mW}$. Begründe eine Stromgrenze von $10\,\mathrm{mA}$.
 
 ## Aufbau
 

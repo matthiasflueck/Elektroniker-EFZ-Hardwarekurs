@@ -33,7 +33,7 @@ Vor jeder Interpretation werden x- und y-Grösse, Einheit, lineare oder logarith
 
 ### Steigung als Änderungsrate
 
-Die mittlere Steigung zwischen zwei Punkten ist `Δy/Δx`. Eine positive Steigung bedeutet, dass y mit x wächst. Bei nichtlinearen Kennlinien hängt die lokale Steigung vom Arbeitspunkt ab.
+Die mittlere Steigung zwischen zwei Punkten ist $\frac{\Delta y}{\Delta x}$. Eine positive Steigung bedeutet, dass $y$ mit $x$ wächst. Bei nichtlinearen Kennlinien hängt die lokale Steigung vom Arbeitspunkt ab.
 
 ### Interpolation und Extrapolation
 
@@ -68,7 +68,7 @@ Eine NTC-Kennlinie fällt mit steigender Temperatur. Zwischen 20 °C und 30 °C 
 
 ## Berechnungsbeispiel
 
-Eine Gerade geht durch `(1 V, 2 mA)` und `(3 V, 6 mA)`. Die Steigung ist `(6−2) mA / (3−1) V = 2 mA/V = 2 mS`. Der Kehrwert entspricht hier `500 Ω`.
+Eine Gerade geht durch $(1\,\mathrm{V},2\,\mathrm{mA})$ und $(3\,\mathrm{V},6\,\mathrm{mA})$. Die Steigung ist $\frac{(6-2)\,\mathrm{mA}}{(3-1)\,\mathrm{V}}=2\,\mathrm{mA/V}=2\,\mathrm{mS}$. Der Kehrwert entspricht hier $500\,\Omega$.
 
 ## Praxisbezug
 

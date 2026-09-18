@@ -29,11 +29,11 @@ Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und 
 
 ### Absolut und relativ
 
-Die absolute Abweichung trägt dieselbe Einheit wie die Grösse: `Δx = xist − xsoll`. Die relative Abweichung vergleicht sie mit dem Sollwert: `δ = Δx/xsoll`; als Prozent wird mit 100 % multipliziert.
+Die absolute Abweichung trägt dieselbe Einheit wie die Grösse: $\Delta x=x\mathrm{ist}-x\mathrm{soll}$. Die relative Abweichung vergleicht sie mit dem Sollwert: $\delta=\frac{\Delta x}{x\mathrm{soll}}$; als Prozent wird mit $100\,\%$ multipliziert.
 
 ### Toleranzbereich
 
-Bei einem Nennwert `xN` und einer symmetrischen Toleranz `t` liegen die Grenzen bei `xmin = xN(1−t)` und `xmax = xN(1+t)`. Toleranz ist eine zugesicherte Spanne, keine Wahrscheinlichkeitsverteilung.
+Bei einem Nennwert $xN$ und einer symmetrischen Toleranz $t$ liegen die Grenzen bei $x\mathrm{min}=xN(1-t)$ und $x\mathrm{max}=xN(1+t)$. Toleranz ist eine zugesicherte Spanne, keine Wahrscheinlichkeitsverteilung.
 
 ### Worst Case
 
@@ -47,7 +47,7 @@ Toleranzen verschiedener Ursachen dürfen nicht unüberlegt addiert werden. Baut
 
 ### Asymmetrische Grenzen
 
-Nicht jede Spezifikation ist symmetrisch. Ein Regler kann beispielsweise `+2 %/−3 %` erlauben. Dann werden obere und untere Grenze getrennt berechnet. Auch Grenzwerte wie «höchstens 100 mA» haben nur eine relevante Richtung und dürfen nicht als symmetrische Toleranz interpretiert werden.
+Nicht jede Spezifikation ist symmetrisch. Ein Regler kann beispielsweise $+2\,\%/-3\,\%$ erlauben. Dann werden obere und untere Grenze getrennt berechnet. Auch Grenzwerte wie «höchstens 100 mA» haben nur eine relevante Richtung und dürfen nicht als symmetrische Toleranz interpretiert werden.
 
 
 ## Anwendungsfall
@@ -66,7 +66,7 @@ Bei einem Spannungsteiler macht ein kleiner oberer und grosser unterer Widerstan
 
 ## Berechnungsbeispiel
 
-`R = 4,7 kΩ ± 5 %`: Fünf Prozent sind `0,05 × 4700 Ω = 235 Ω`. Somit `Rmin = 4465 Ω`, `Rmax = 4935 Ω`. Ein Messwert 4,82 kΩ liegt im Bereich; seine Abweichung vom Nennwert beträgt `+120/4700 = +2,55 %`.
+$R=4{,}7\,\mathrm{k}\Omega\pm5\,\%$: Fünf Prozent sind $0{,}05\cdot4700\,\Omega=235\,\Omega$. Somit gelten $R\mathrm{min}=4465\,\Omega$ und $R\mathrm{max}=4935\,\Omega$. Ein Messwert von $4{,}82\,\mathrm{k}\Omega$ liegt im Bereich; seine Abweichung vom Nennwert beträgt $\frac{120}{4700}=2{,}55\,\%$.
 
 ## Praxisbezug
 
@@ -88,7 +88,7 @@ Absolute Abweichung zeigt den Unterschied in der Einheit, relative Abweichung ma
 
 ## Übungsfragen
 
-1. Berechne die Grenzen von 10 kΩ ±1 %.
+1. Berechne die Grenzen von $10\,\mathrm{k}\Omega\pm1\,\%$.
 2. Was bedeutet eine negative Abweichung?
 3. Warum ist Toleranz nicht gleich Messunsicherheit?
 

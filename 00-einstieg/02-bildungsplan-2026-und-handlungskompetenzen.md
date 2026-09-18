@@ -60,7 +60,7 @@ Das Kriterium «Messpunkte aus Schema und Funktion festlegen» gehört zu `b4`. 
 
 ## Berechnungsbeispiel
 
-Leistungsniveaus sind keine Prozentwerte. Eine einfache Abdeckungsprüfung kann trotzdem zählen: Wenn 12 von 12 intern erfassten `b4`-Kriterien mindestens einer Theorie-, Praxis- und Projektstelle zugeordnet sind, beträgt die strukturelle Zuordnung `12/12 = 100 %`. Das beweist noch nicht die Lernqualität, verhindert aber offensichtliche Lücken.
+Leistungsniveaus sind keine Prozentwerte. Eine einfache Abdeckungsprüfung kann trotzdem zählen: Wenn 12 von 12 intern erfassten `b4`-Kriterien mindestens einer Theorie-, Praxis- und Projektstelle zugeordnet sind, beträgt die strukturelle Zuordnung $\frac{12}{12}=100\,\%$. Das beweist noch nicht die Lernqualität, verhindert aber offensichtliche Lücken.
 
 ## Praxisbezug
 

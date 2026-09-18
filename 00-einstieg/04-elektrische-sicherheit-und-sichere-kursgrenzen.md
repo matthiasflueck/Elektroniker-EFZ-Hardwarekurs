@@ -43,7 +43,7 @@ Vor dem Einschalten werden Schema, Polarität, Kurzschlussfreiheit und Messpunkt
 
 ### Gespeicherte Energie
 
-Ein Kondensator kann nach dem Ausschalten geladen bleiben. Erst nachdem diese reale Gefahr verstanden ist, ist die Formel sinnvoll: `E = ½ · C · U²`. Entladen wird kontrolliert über einen geeigneten Widerstand, niemals durch absichtlichen Kurzschluss.
+Ein Kondensator kann nach dem Ausschalten geladen bleiben. Erst nachdem diese reale Gefahr verstanden ist, ist die Formel sinnvoll: $E=\frac{1}{2}\cdot C\cdot U^2$. Entladen wird kontrolliert über einen geeigneten Widerstand, niemals durch absichtlichen Kurzschluss.
 
 ### Strom, Spannung und Einwirkdauer gemeinsam betrachten
 
@@ -72,7 +72,7 @@ Ein 4700-µF-Kondensator an 12 V sieht harmlos aus, kann beim Kurzschliessen abe
 
 ## Berechnungsbeispiel
 
-Mit `C = 4700 µF = 0,0047 F` und `U = 12 V` ergibt sich `E = 0,5 × 0,0047 F × (12 V)² = 0,338 J`. Die quadratische Spannung zeigt: Verdoppelt sich U, vervierfacht sich die Energie.
+Mit $C=4700\,\mu\mathrm{F}=0{,}0047\,\mathrm{F}$ und $U=12\,\mathrm{V}$ ergibt sich $E=0{,}5\cdot 0{,}0047\,\mathrm{F}\cdot(12\,\mathrm{V})^2=0{,}338\,\mathrm{J}$. Die quadratische Spannung zeigt: Verdoppelt sich $U$, vervierfacht sich die Energie.
 
 ## Praxisbezug
 
