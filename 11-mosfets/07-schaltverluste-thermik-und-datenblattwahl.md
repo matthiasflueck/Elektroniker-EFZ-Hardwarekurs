@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - thermischen Pfad dimensionieren
 - MOSFET anhand eines vollständigen Datenblatt-Workflows auswählen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Der MOSFET mit dem kleinsten RDS(on) ist nicht automatisch der beste. Grosse Chips besitzen oft mehr Gate-Ladung; geringe Leitverluste können höhere Schaltverluste und stärkeren Treiberbedarf bedeuten. Auswahl ist ein Systemkompromiss.
 
+
+<!-- context-expansion-2026 -->
+MOSFETs steuern einen Drain-Source-Strompfad über die Gate-Source-Spannung. Sie sind zentrale Leistungsschalter in modernen Baugruppen, reagieren aber empfindlich auf Gate-Ladung, Überspannung, parasitäre Induktivitäten und Wärme. Statischer und dynamischer Betrieb müssen getrennt beurteilt werden.
+
+Beim Thema **Schaltverluste, Thermik und Datenblattwahl** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Beim MOSFET werden Gatekreis und Leistungspfad getrennt gezeichnet. VGS beschreibt die Ansteuerung relativ zur Source, VDS die Belastung des Leistungspfads. RDS(on), Gate Charge und SOA gelten jeweils nur unter den im Datenblatt genannten Bedingungen.
 
 ### Verlustanteile
 
@@ -29,6 +40,17 @@ Zuerst werden VDS mit Transientenreserve, ID, SOA und Gehäuse festgelegt. Danac
 ### Verifikation
 
 Rechnung liefert eine Erwartung. Gemessen werden VGS, VDS, Strom, Schaltzeiten und Temperatur im ungünstigen Betriebspunkt. Ringing und Überspannung dürfen Maximalwerte nicht ausnutzen. Messfehler durch Tastkopfschleife werden ausgeschlossen.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Wirkungsgrad und Temperatur einer Leistungsstufe
+- Datenblattvergleich mehrerer Typen
+- Freigabe gegen Überschwingen, SOA und Kühlung
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

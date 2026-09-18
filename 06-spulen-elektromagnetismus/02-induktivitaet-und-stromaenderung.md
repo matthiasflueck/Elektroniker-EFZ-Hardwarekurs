@@ -10,11 +10,24 @@ Nach dieser Lektion kannst du:
 - Induktionsspannung berechnen
 - Windungszahl und Kern als Einflussgrössen benennen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Eine Spule reagiert nicht auf Strom an sich, sondern auf dessen Änderung. Beim Einschalten verzögert sie den Stromanstieg; beim Ausschalten erzeugt sie die nötige Spannung, um den Strom weiterzuführen. Dieses Verhalten verursacht sowohl nützliche Energieübertragung als auch gefährliche Spannungsspitzen.
 
+
+<!-- context-expansion-2026 -->
+Spulen und Transformatoren speichern oder übertragen Energie über Magnetfelder. Weil sich der Spulenstrom nicht sprunghaft ändern kann, entstehen beim Ein- und Ausschalten charakteristische Spannungen. Kernmaterial, Sättigung und Wicklungswiderstand machen aus dem idealen Symbol ein reales Bauteil.
+
+Beim Thema **Induktivität und Stromänderung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Das ideale Induktivitätsgesetz beschreibt die Spannung bei einer Stromänderung. Reale Spulen ergänzen Wicklungswiderstand, Kernverluste, parasitäre Kapazität und Sättigung. Der Strompfad muss sowohl während der Energieaufnahme als auch während der Energieabgabe geschlossen sein.
+
+**Eine Spule besitzt zwei Wicklungsanschlüsse und wird mit `L` bezeichnet.** Das Schaltzeichen zeigt mehrere Windungen; bei gekoppelten Spulen ergänzt ein Kern- und Punktsymbol die magnetische Zuordnung. Eine einzelne ideale Spule hat keine feste Polarität, doch der gewählte Strom- und Spannungspfeil bestimmt das Vorzeichen in der Gleichung.
 
 ### Induktionsgesetz
 
@@ -37,6 +50,17 @@ Mehr Windungen erhöhen L stark; im einfachen Bereich wächst L ungefähr mit de
 ### Strom ist stetig
 
 Ein idealer Spulenstrom kann nicht sprunghaft ändern, weil dazu unendliche Spannung nötig wäre. Reale parasitäre Kapazitäten und Überschläge begrenzen die Spannung, wenn kein sicherer Strompfad vorhanden ist.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Drosseln in Filtern und Wandlern
+- Stromglättung in Buck-Reglern
+- Erzeugen von Induktionsspannung bei Stromänderung
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

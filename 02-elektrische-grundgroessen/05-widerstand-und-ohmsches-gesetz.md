@@ -10,11 +10,24 @@ Nach dieser Lektion kannst du:
 - Ohmsches Gesetz sicher nach U, I und R anwenden
 - Gültigkeitsbereich und Verlustleistung berücksichtigen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein Widerstand begrenzt Strom nicht aktiv wie ein Wächter. Seine Material- und Geometrieeigenschaften führen dazu, dass für einen bestimmten Strom eine bestimmte Spannung nötig ist. Dieses Verhältnis lässt sich bei ohmschem Verhalten einfach beschreiben.
 
+
+<!-- context-expansion-2026 -->
+Elektrische Grössen beschreiben verschiedene Seiten desselben Vorgangs: Ladung wird bewegt, Spannung stellt Energie pro Ladung bereit, Widerstände begrenzen den Strom und Leistung beschreibt den Energieumsatz. Erst der geschlossene Stromkreis und ein festgelegter Bezug machen einzelne Zahlen zu einem verständlichen System.
+
+Beim Thema **Widerstand und Ohmsches Gesetz** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Zur Analyse wird zuerst der reale Strompfad gezeichnet und ein Bezugspotential festgelegt. Danach werden Richtung und Polarität definiert. Formeln beschreiben anschliessend diesen bereits verstandenen Vorgang; sie ersetzen weder Schaltbild noch Plausibilitätskontrolle.
+
+**Der Widerstand besitzt zwei Anschlüsse und keine Polarität.** Sein IEC-Schaltzeichen ist ein Rechteck, der Referenzbezeichner beginnt mit `R`. Ein idealer ohmscher Widerstand erzeugt bei positiver Spannung einen proportionalen Strom; reale Widerstände besitzen zusätzlich Toleranz, Temperaturkoeffizient, maximale Spannung und Belastbarkeit.
 
 ### Vom Bauteilverhalten zur Kennlinie
 
@@ -39,6 +52,17 @@ Temperatur kann ρ verändern. Bei vielen Metallen steigt der Widerstand mit der
 ### Statischer und differentieller Widerstand
 
 Bei einer nichtlinearen Kennlinie bezeichnet `U/I` das Verhältnis vom Ursprung zum Arbeitspunkt. Die lokale Steigung `dU/dI` beschreibt dagegen die Reaktion auf eine kleine Änderung um diesen Punkt. Bei einem ideal ohmschen Widerstand sind beide gleich; bei Dioden oder Transistoren nicht.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- LED-Vorwiderstand und Pull-up
+- Strombegrenzung an Eingängen
+- Bewertung ohmscher Lasten und Leitungsverluste
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

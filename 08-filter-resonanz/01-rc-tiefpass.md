@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Übertragungsbetrag berechnen
 - Belastung und Quellenwiderstand berücksichtigen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein Tiefpass glättet schnelle Änderungen und lässt langsame Signalanteile eher passieren. Er begrenzt ADC-Rauschen, formt PWM in eine Mittelspannung und reduziert hochfrequente Störungen. Dabei entsteht immer ein Kompromiss zwischen Glättung und Reaktionsgeschwindigkeit.
 
+
+<!-- context-expansion-2026 -->
+Filter formen Signale abhängig von ihrer Frequenz. Widerstände, Kondensatoren und Spulen bilden dazu frequenzabhängige Spannungsteiler und Energiespeicher. Zeitverhalten, Frequenzgang und reale Verluste sind drei Sichten auf dasselbe Netzwerk.
+
+Beim Thema **RC-Tiefpass** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Filter werden zunächst als frequenzabhängige Spannungsteiler verstanden. Danach folgen Grenzfrequenz, Phase und asymptotischer Verlauf. Bauteiltoleranzen, Quell- und Lastimpedanz sowie parasitäre Elemente erklären die Abweichung zwischen idealer Kurve und Messung.
 
 ### Schaltung und Wirkung
 
@@ -37,6 +48,17 @@ Eine Last parallel zu C verändert den wirksamen Widerstand und die Gleichspannu
 Vor der Dimensionierung werden Ausgangswiderstand der Quelle, Eingangswiderstand und Eingangskapazität der Folgestufe ermittelt. Der reale Quellwiderstand liegt zu R1 in Serie; eine Last am Ausgang verändert den wirksamen Widerstand. Dadurch verschieben sich Gleichverstärkung und Grenzfrequenz. Der Messkopf ist ebenfalls eine Last und gehört bei hohen Widerständen oder Frequenzen zum Modell.
 
 Ein Tiefpass entfernt Störungen nicht spurlos, sondern schwächt Frequenzanteile abgestuft. Bei einer Dekade über fG beträgt die ideale Dämpfung erster Ordnung ungefähr 20 dB, also Faktor 10 in der Spannung. Gleichzeitig verzögert der Filter schnelle Nutzsignaländerungen. Die Wahl von fG ist damit ein Kompromiss zwischen Rauschunterdrückung und Reaktionszeit. Für ADC-Eingänge kommt hinzu, dass der Sample-and-Hold-Kondensator kurzzeitig Ladung verlangt. Ein zu grosser R1 kann trotz passender Filterkurve zu Einschwingfehlern während der Abtastzeit führen.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Glättung von Sensorsignalen
+- PWM-Mittelwertbildung
+- Begrenzung hochfrequenter Störungen vor einem ADC
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

@@ -10,19 +10,30 @@ Nach dieser Lektion kannst du:
 - Bauteiltoleranzen als Bereich angeben
 - günstige und ungünstige Grenzfälle unterscheiden
 
-## Warum ist das wichtig?
+## Einleitung
 
 Reale Bauteile besitzen keinen exakt idealen Wert. Ein 1-kΩ-Widerstand kann etwas höher oder tiefer liegen, und ein Messgerät zeigt ebenfalls nicht den unbekannten wahren Wert. Prozentrechnung übersetzt diese Streuungen in nachvollziehbare Grenzen.
 
+
+<!-- context-expansion-2026 -->
+Mathematik ist in der Elektronik kein Selbstzweck, sondern eine gemeinsame Sprache für Datenblatt, Schaltung, Messgerät und Prüfbericht. Eine Rechnung ist erst dann nützlich, wenn Einheit, Grössenordnung, Randbedingungen und physikalische Bedeutung zusammenpassen.
+
+Beim Thema **Prozentrechnung, Abweichung und Toleranz** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie die Darstellung beim Rechnen, Lesen von Datenblättern, Auswerten von Messungen und Prüfen der Grössenordnung konkret eingesetzt wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und einem Gültigkeitsbereich. Vor dem Einsetzen von Zahlen wird daher geklärt, was gesucht ist, welche Annahmen gelten und welche Grössenordnung physikalisch zu erwarten ist.
 
 ### Absolut und relativ
 
-Die absolute Abweichung trägt dieselbe Einheit wie die Grösse: `Δx = x_ist − x_soll`. Die relative Abweichung vergleicht sie mit dem Sollwert: `δ = Δx/x_soll`; als Prozent wird mit 100 % multipliziert.
+Die absolute Abweichung trägt dieselbe Einheit wie die Grösse: `Δx = xist − xsoll`. Die relative Abweichung vergleicht sie mit dem Sollwert: `δ = Δx/xsoll`; als Prozent wird mit 100 % multipliziert.
 
 ### Toleranzbereich
 
-Bei einem Nennwert `x_N` und einer symmetrischen Toleranz `t` liegen die Grenzen bei `x_min = x_N(1−t)` und `x_max = x_N(1+t)`. Toleranz ist eine zugesicherte Spanne, keine Wahrscheinlichkeitsverteilung.
+Bei einem Nennwert `xN` und einer symmetrischen Toleranz `t` liegen die Grenzen bei `xmin = xN(1−t)` und `xmax = xN(1+t)`. Toleranz ist eine zugesicherte Spanne, keine Wahrscheinlichkeitsverteilung.
 
 ### Worst Case
 
@@ -38,13 +49,24 @@ Toleranzen verschiedener Ursachen dürfen nicht unüberlegt addiert werden. Baut
 
 Nicht jede Spezifikation ist symmetrisch. Ein Regler kann beispielsweise `+2 %/−3 %` erlauben. Dann werden obere und untere Grenze getrennt berechnet. Auch Grenzwerte wie «höchstens 100 mA» haben nur eine relevante Richtung und dürfen nicht als symmetrische Toleranz interpretiert werden.
 
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Toleranz- und Worst-Case-Rechnung
+- Vergleich von Soll- und Messwert
+- Bewertung von Wirkungsgrad und Drift
+
+In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig notiert. Das Resultat wird anschliessend mit Grenzfällen, Grössenordnung oder einem Messwert geprüft, damit ein formal korrektes, aber physikalisch falsches Ergebnis nicht unbemerkt bleibt.
+
 ## Anschauliches Beispiel
 
 Bei einem Spannungsteiler macht ein kleiner oberer und grosser unterer Widerstand die Ausgangsspannung maximal. Die umgekehrte Kombination macht sie minimal.
 
 ## Berechnungsbeispiel
 
-`R = 4,7 kΩ ± 5 %`: Fünf Prozent sind `0,05 × 4700 Ω = 235 Ω`. Somit `R_min = 4465 Ω`, `R_max = 4935 Ω`. Ein Messwert 4,82 kΩ liegt im Bereich; seine Abweichung vom Nennwert beträgt `+120/4700 = +2,55 %`.
+`R = 4,7 kΩ ± 5 %`: Fünf Prozent sind `0,05 × 4700 Ω = 235 Ω`. Somit `Rmin = 4465 Ω`, `Rmax = 4935 Ω`. Ein Messwert 4,82 kΩ liegt im Bereich; seine Abweichung vom Nennwert beträgt `+120/4700 = +2,55 %`.
 
 ## Praxisbezug
 

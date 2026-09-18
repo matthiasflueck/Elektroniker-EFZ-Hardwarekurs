@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Eingangs- und Ausgangsbereich prüfen
 - Bandbreite und Widerstandstoleranz einbeziehen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Sensorsignale sind oft zu klein für den ADC-Bereich. Der nichtinvertierende Verstärker erhöht sie mit hoher Eingangsimpedanz. Eine richtige Widerstandsformel genügt jedoch nicht, wenn Offset, Common Mode oder Ausgangshub verletzt werden.
 
+
+<!-- context-expansion-2026 -->
+Operationsverstärker formen analoge Signale mithilfe sehr hoher Leerlaufverstärkung und gezielter Rückkopplung. Das Schaltbild legt die gewünschte Funktion fest; Versorgung, Eingangsbereich, Ausgangshub und Bandbreite bestimmen, ob der reale Baustein diese Funktion auch erfüllen kann.
+
+Beim Thema **Nichtinvertierender Verstärker** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Ein OPV wird als Regelkreis gelesen: Der Ausgang verändert über die Rückkopplung die Eingangsdifferenz. Zuerst wird die gewünschte Wirkung des Rückkopplungsnetzes bestimmt, danach werden Common Mode, Ausgangshub, Stabilität und Dynamik des realen Bausteins geprüft.
 
 ### Rückkopplungsteiler
 
@@ -27,6 +38,17 @@ Die Eingangsspannung liegt am nichtinvertierenden Eingang und erscheint ideal ph
 ### Reale Dimensionierung
 
 Widerstände bestimmen zusätzlich Rauschen, Biasstromfehler und Ausgangslast. Das Verstärkungs-Bandbreiten-Produkt begrenzt näherungsweise `fBW ≈ GBW/Av`. Slew Rate kann grosse schnelle Signale früher begrenzen. Widerstandstoleranzen erzeugen Verstärkungsfehler.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Verstärkung kleiner unipolarer Sensorsignale
+- Skalierung auf den ADC-Bereich
+- Messverstärker mit hohem Eingangswiderstand
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

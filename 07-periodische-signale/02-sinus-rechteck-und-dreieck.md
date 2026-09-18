@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Flanken und Oberwellen qualitativ erklären
 - eine Signalform passend zur Aufgabe auswählen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Gleiches f und gleicher Spitzenwert bedeuten nicht gleiche Wirkung. Signalform bestimmt Effektivwert, Oberwellen, Flankenstrom und Filterverhalten. Rechtecksignale fordern eine Schaltung oft weit über ihre Grundfrequenz hinaus.
 
+
+<!-- context-expansion-2026 -->
+Elektronische Signale verändern sich mit der Zeit. Frequenz, Amplitude, Effektivwert und Phase beschreiben unterschiedliche Eigenschaften desselben Verlaufs. Für Messung und Schaltungsentwurf muss deshalb stets geklärt werden, welche Signalgrösse gemeint ist und unter welchen Bedingungen sie gilt.
+
+Beim Thema **Sinus, Rechteck und Dreieck** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Ein Signal wird zuerst im Zeitdiagramm mit Bezugslinie und Einheiten beschrieben. Daraus lassen sich Periodendauer, Frequenz, Momentanwert und Phasenbezug ableiten. Messgeräte können je nach Kopplung, Bandbreite und Auswerteverfahren unterschiedliche Kennwerte desselben Signals anzeigen.
 
 ### Drei Grundformen
 
@@ -35,6 +46,17 @@ Beim Rechteck ist `D = ton/T`. D ist der Tastgrad, ton die Einschaltzeit. D beei
 Die Zeitform verrät noch nicht vollständig, welche Frequenzanteile ein Signal enthält. Ein idealer Sinus besteht aus genau einer Frequenz. Ein Rechteck setzt sich aus Grundschwingung und ungeraden Oberschwingungen zusammen; ein Dreieck enthält ebenfalls ungerade Oberschwingungen, deren Amplituden jedoch schneller abnehmen. Deshalb benötigt ein scharfes Rechteck wesentlich mehr Bandbreite als seine Wiederholfrequenz vermuten lässt.
 
 Reale Generatoren und digitale Ausgänge besitzen keine senkrechten Flanken. Anstiegszeit, Ausgangswiderstand, Leitungsimpedanz, Lastkapazität und Messkopf formen den Übergang. Wird ein 1-MHz-Rechteck auf einem zu langsamen Oszilloskop fast sinusförmig dargestellt, muss nicht die Quelle fehlerhaft sein: Messkette und Bandbreitenbegrenzung können die Oberschwingungen entfernt haben. Für einen Vergleich werden deshalb Frequenz, Amplitude, Offset, Tastgrad, Last und Tastkopfeinstellung gemeinsam dokumentiert. Erst dann lässt sich entscheiden, ob eine Abweichung vom Generator, von der Schaltung oder von der Messung stammt.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Sinusförmige Mess- und Netzsignale
+- Digitale Takte und PWM-Rechtecke
+- Dreieckrampen in Modulatoren und Funktionsgeneratoren
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

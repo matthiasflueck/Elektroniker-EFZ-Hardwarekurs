@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Bitgewicht, Nibble und Byte erklären
 - Bitmasken auf Register und Messdaten anwenden
 
-## Warum ist das wichtig?
+## Einleitung
 
 Digitale Hardware arbeitet mit zwei logischen Zuständen, Datenblätter und Registerbeschreibungen verwenden jedoch häufig Hexadezimalzahlen. Wer Stellenwerte sicher liest, erkennt gesetzte Bits, Buswerte und Messfehler ohne Rätselraten.
 
+
+<!-- context-expansion-2026 -->
+Digitale Zustände werden elektrisch durch Spannungsbereiche und zeitlich durch Flanken dargestellt. Logische Funktion, Störreserve, Laufzeit und Startzustand gehören zusammen. Ein korrekter Wahrheitswert allein beweist noch keine robuste Hardware.
+
+Beim Thema **Binär- und Hexadezimalsystem** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Digitale Schaltungen werden in drei Ebenen untersucht: Boolesche Funktion, elektrischer Pegel und zeitliches Verhalten. Wahrheitstabelle, Datenblattgrenzen und Zeitdiagramm beantworten unterschiedliche Fragen und müssen für eine belastbare Freigabe zusammenpassen.
 
 ### Stellenwerte mit Basis 2 und 16
 
@@ -29,6 +40,17 @@ Im Binärsystem besitzt jede Stelle das Gewicht `2ⁿ`. Von rechts beginnen die 
 Eine Maske wählt bestimmte Bits. AND prüft oder löscht Bits, OR setzt Bits, XOR kippt Bits. Eine Zahl besitzt ohne Kontext keine Bedeutung: Sie kann unsigned, Zweierkomplement, Festkomma, ADC-Code oder Statuswort sein. Wortbreite und Bitreihenfolge gehören immer zur Angabe.
 
 Bei serieller Übertragung unterscheidet man zusätzlich Bitreihenfolge und Byte-Reihenfolge. MSB first beschreibt das zuerst gesendete höchstwertige Bit; Endianness beschreibt die Reihenfolge mehrerer Bytes im Speicher oder Protokoll.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Lesen von Register- und Buswerten
+- Auswertung von ADC- und Statuswörtern
+- Dokumentation von Pin- und Bitmasken
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - die Wirkung einer Last oder eines Messeingangs berechnen
 - beurteilen, wann ein Spannungsteiler keine geeignete Versorgung ist
 
-## Warum ist das wichtig?
+## Einleitung
 
 Spannungsteiler begegnen dir bei Sensorsignalen, Referenzpegeln, Batterieüberwachung und Eingangsbeschaltungen. Die Grundformel wirkt einfach, gilt aber nur dann direkt, wenn am Ausgang praktisch kein Strom entnommen wird. Genau diese Bedingung wird in realen Schaltungen oft übersehen.
 
 Ein Spannungsteiler erzeugt keine «feste kleinere Versorgung». Er stellt einen Ausgangspegel bereit, dessen Wert von den Widerständen und von jeder angeschlossenen Last abhängt. Deshalb gehört zur Dimensionierung immer die Frage: Was wird am Ausgang angeschlossen, welchen Eingangswiderstand besitzt es und wie dynamisch ist die Belastung?
 
+
+<!-- context-expansion-2026 -->
+Eine Baugruppe besteht aus verbundenen Quellen, Bauteilen und Lasten. Gleichstromnetzwerke liefern die Regeln, mit denen sich unbekannte Ströme und Spannungen aus Topologie und Bauteilwerten ableiten lassen. Dabei sind Knoten, Maschen und Rückstrompfade ebenso wichtig wie die Zahlenwerte.
+
+Beim Thema **Spannungsteiler und belasteter Spannungsteiler** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Netzwerke werden aus Sicht ihrer Topologie gelesen: Bauteile in demselben Strompfad liegen in Reihe, Bauteile an denselben zwei Knoten parallel. Erst danach werden Ersatzwerte, Knotenbilanzen oder Maschengleichungen gebildet. Diese Reihenfolge verhindert viele Vorzeichen- und Zuordnungsfehler.
 
 ### Unbelasteter Teiler
 
@@ -24,34 +35,45 @@ Zwei Widerstände liegen in Reihe an der Eingangsspannung. Der Ausgang ist der Z
 
 ![Unbelasteter und belasteter Spannungsteiler mit Ausgangsknoten](../bilder/03-gleichstromnetzwerke/03-03-spannungsteiler.png)
 
-`U_out = U_in · R_2 / (R_1 + R_2)`
+`Uout = Uin · R2 / (R1 + R2)`
 
 | Formelzeichen | Bedeutung | Einheit |
 |---|---|---|
-| `U_in` | Eingangsspannung des Teilers | V |
-| `U_out` | Ausgangsspannung gegen den unteren Bezugsknoten | V |
-| `R_1` | oberer Widerstand | Ω |
-| `R_2` | unterer Widerstand | Ω |
+| `Uin` | Eingangsspannung des Teilers | V |
+| `Uout` | Ausgangsspannung gegen den unteren Bezugsknoten | V |
+| `R1` | oberer Widerstand | Ω |
+| `R2` | unterer Widerstand | Ω |
 
-Der Quotient `R_2/(R_1+R_2)` heisst Teilverhältnis. Er liegt bei positiven Widerständen zwischen 0 und 1. Die Ausgangsspannung kann daher ohne aktive Bauteile nicht grösser als die Eingangsspannung werden.
+Der Quotient `R2/(R1+R2)` heisst Teilverhältnis. Er liegt bei positiven Widerständen zwischen 0 und 1. Die Ausgangsspannung kann daher ohne aktive Bauteile nicht grösser als die Eingangsspannung werden.
 
 ### Belastung verändert den unteren Zweig
 
-Eine Last `R_L` vom Ausgang nach GND liegt parallel zu `R_2`. Für die Berechnung wird zuerst `R_2L = R_2 || R_L` gebildet und dann dieser Ersatzwiderstand in die Teilerformel eingesetzt:
+Eine Last `RL` vom Ausgang nach GND liegt parallel zu `R2`. Für die Berechnung wird zuerst `R2L = R2 || RL` gebildet und dann dieser Ersatzwiderstand in die Teilerformel eingesetzt:
 
-`U_out,bel = U_in · R_2L / (R_1 + R_2L)`
+`Uout,bel = Uin · R2L / (R1 + R2L)`
 
-`R_L` bezeichnet den Lastwiderstand, `R_2L` den Ersatzwiderstand aus unterem Teilerwiderstand und Last. Weil `R_2L` kleiner als `R_2` ist, sinkt die Ausgangsspannung. Eine praktische Faustidee lautet: Der Lastwiderstand sollte deutlich, häufig mindestens um den Faktor zehn, grösser als der wirksame Ausgangswiderstand sein. Ob das genügt, entscheidet die erlaubte Abweichung.
+`RL` bezeichnet den Lastwiderstand, `R2L` den Ersatzwiderstand aus unterem Teilerwiderstand und Last. Weil `R2L` kleiner als `R2` ist, sinkt die Ausgangsspannung. Eine praktische Faustidee lautet: Der Lastwiderstand sollte deutlich, häufig mindestens um den Faktor zehn, grösser als der wirksame Ausgangswiderstand sein. Ob das genügt, entscheidet die erlaubte Abweichung.
 
 ### Ausgangswiderstand und Messgerätebelastung
 
-Vom Ausgang aus gesehen besitzt der Teiler bei kurzgeschlossener idealer Quelle den Widerstand `R_out = R_1 || R_2`. Ein Voltmeter mit endlichem Eingangswiderstand wird selbst zur Last. Bei 10 MΩ ist die Wirkung an einem 10-kΩ-Teiler meist klein, an einem Teiler im Megaohmbereich jedoch messbar.
+Vom Ausgang aus gesehen besitzt der Teiler bei kurzgeschlossener idealer Quelle den Widerstand `Rout = R1 || R2`. Ein Voltmeter mit endlichem Eingangswiderstand wird selbst zur Last. Bei 10 MΩ ist die Wirkung an einem 10-kΩ-Teiler meist klein, an einem Teiler im Megaohmbereich jedoch messbar.
 
 Hohe Widerstandswerte sparen Ruhestrom, erhöhen aber Empfindlichkeit gegenüber Leckströmen, Störeinkopplung und ADC-Abtaststrom. Niedrige Werte belasten die Quelle und erzeugen Verlustleistung. Die Auswahl ist daher ein Kompromiss.
 
 ### Dynamische Lasten
 
 Ein ADC-Eingang ist nicht nur ein idealer Widerstand. Beim Abtasten muss ein interner Kondensator über die Quellimpedanz geladen werden. Ein statisch korrekt berechneter Teiler kann deshalb bei kurzer Abtastzeit falsche Werte liefern. Ein Stützkondensator oder Pufferverstärker kann helfen; die zulässige Quellimpedanz steht im MCU-Datenblatt.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Erzeugen von Referenz- und Sensorspannungen
+- Pegelvorgabe für ADC- oder Komparatoreingänge
+- Bewertung der Belastung durch Messgerät oder Folgestufe
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 
@@ -61,7 +83,7 @@ Ein Potentiometer ist ein verstellbarer Spannungsteiler. Zwischen seinen Endansc
 
 Zuerst wird der unbelastete Sollwert bestimmt. Danach lässt sich klar erkennen, welche Änderung allein durch die zusätzliche Last entsteht.
 
-`R_1 = 10 kΩ` und `R_2 = 10 kΩ` teilen 10 V unbelastet auf 5 V. Eine Last von `R_L = 10 kΩ` ergibt `R_2L = 10 kΩ || 10 kΩ = 5 kΩ`. Damit wird `U_out,bel = 10 V · 5 kΩ/(10 kΩ+5 kΩ) = 3,33 V`. Die Last halbiert also nicht nur einen Strom, sondern verändert das Teilverhältnis deutlich.
+`R1 = 10 kΩ` und `R2 = 10 kΩ` teilen 10 V unbelastet auf 5 V. Eine Last von `RL = 10 kΩ` ergibt `R2L = 10 kΩ || 10 kΩ = 5 kΩ`. Damit wird `Uout,bel = 10 V · 5 kΩ/(10 kΩ+5 kΩ) = 3,33 V`. Die Last halbiert also nicht nur einen Strom, sondern verändert das Teilverhältnis deutlich.
 
 ## Praxisbezug
 

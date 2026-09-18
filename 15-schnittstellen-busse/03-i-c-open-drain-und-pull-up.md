@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Pull-up aus Strom und Anstiegszeit dimensionieren
 - Start, Adresse, ACK und Stop elektrisch erkennen
 
-## Warum ist das wichtig?
+## Einleitung
 
 I²C verbindet viele Bausteine mit zwei Leitungen. Weil kein Teilnehmer aktiv High treibt, bestimmen Pull-ups und gesamte Buskapazität die steigenden Flanken. Ein logisch korrektes Protokoll kann elektrisch trotzdem zu langsam sein.
 
+
+<!-- context-expansion-2026 -->
+Eine digitale Schnittstelle besteht aus Protokoll und physikalischer Übertragung. Register erzeugen Bits, Pad-Zellen und Transceiver erzeugen reale Pegel, und Leitung sowie Rückweg formen die Flanken. Diagnose muss daher Firmwarezustand und Messsignal gleichzeitig berücksichtigen.
+
+Beim Thema **I²C, Open Drain und Pull-up** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Bei Bussystemen werden Datenrichtung, Treiberart, Bezugspotential und Abschluss vor der Protokolldekodierung geklärt. Ein Logic Analyzer zeigt logische Zustände; das Oszilloskop zeigt, ob Pegel und Flanken die Empfängergrenzen tatsächlich einhalten.
 
 ### Gemeinsamer Bus
 
@@ -29,6 +40,17 @@ Eine Startbedingung ist SDA fallend bei SCL High, Stop ist SDA steigend bei SCL 
 Der kleinste RP wird durch zulässigen Sinkstrom und VOL begrenzt: `RPmin = (VDD − VOLmax)/IOL`. Der grösste RP folgt aus Buskapazität CB und erlaubter Anstiegszeit tr. Für die übliche 30–70-%-Definition gilt näherungsweise `tr ≈ 0,8473·RP·CB`.
 
 Stecker, Leiterbahnen, Kabel, Tastköpfe und alle Eingänge tragen zu CB bei. Pull-ups an mehreren Modulen liegen parallel.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Sensor-, EEPROM- und Konfigurationsbusse
+- Mehrere Teilnehmer an zwei Leitungen
+- Messung von Pull-up und Buskapazität
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

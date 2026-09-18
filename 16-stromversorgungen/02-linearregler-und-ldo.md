@@ -10,11 +10,24 @@ Nach dieser Lektion kannst du:
 - Dropout und Verlustleistung bestimmen
 - Stabilitätsvorgaben für Kondensatoren prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Linearregler sind einfach, rauscharm und gut messbar. Sie wandeln überschüssige Spannung jedoch direkt in Wärme. Ein LDO funktioniert mit kleinerer Spannungsreserve, bleibt aber ein Regelkreis mit Stabilitäts- und Lastgrenzen.
 
+
+<!-- context-expansion-2026 -->
+Eine Stromversorgung ist eine dynamische Energiequelle für die gesamte Baugruppe. Eingang, Schutz, Regler, Leiterpfade, Kondensatoren und Lastprofil bilden ein System. Nennspannung allein genügt weder für die Dimensionierung noch für die Verifikation.
+
+Beim Thema **Linearregler und LDO** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Versorgungen werden über Leistungs- und Strompfade analysiert. Für jeden Betriebszustand werden Eingang, Ausgang, Verlust, Temperatur und gespeicherte Energie bilanziert. Dynamische Vorgänge wie Einschalten und Lastsprung werden zusätzlich im Zeitbereich gemessen.
+
+Ein einfacher Festspannungsregler besitzt Eingang `IN`, Ausgang `OUT` und Bezug `GND`; Varianten ergänzen Enable, Feedback, Power Good oder Sense. Die Kondensatoren an IN und OUT sind elektrische Bestandteile der Anwendungsschaltung und werden mit kurzen Rückwegen angeschlossen. Pinout und freigegebene Kondensatorbereiche stammen aus dem Datenblatt des konkreten Reglers.
 
 ### Serien-Stellglied
 
@@ -29,6 +42,17 @@ Die Verlustleistung lautet näherungsweise `PV = (Uin − Uout)·Iout + Uin·IQ`
 Line Regulation beschreibt Änderungen mit Uin, Load Regulation mit Last. PSRR zeigt, wie gut Eingangsstörungen unter bestimmten Frequenzen gedämpft werden. Ausgangsrauschen ist separat spezifiziert.
 
 Ein- und Ausgangskondensator sind Teil der Regelschleife. Wert, ESR, Typ, Temperatur und Platzierung müssen zum Datenblatt passen. Keramikkondensatoren verlieren unter DC-Bias Kapazität. Mindestlast, Reverse Current und Enable-Zustand werden ebenfalls geprüft.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Rauscharme Analog- und Sensorspeisung
+- Nachregelung aus Batterie oder Vorregler
+- Einfache Hilfsspannungen kleiner Leistung
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

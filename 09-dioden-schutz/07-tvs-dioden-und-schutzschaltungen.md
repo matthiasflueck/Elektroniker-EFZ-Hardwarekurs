@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Schutz als Energiepfad planen
 - Verpol- und Eingangsschutz kombinieren
 
-## Warum ist das wichtig?
+## Einleitung
 
 Eine Schutzdiode macht einen Eingang nicht automatisch robust. Der Störstrom benötigt einen begrenzten, niederinduktiven Weg; Sicherung, Serienimpedanz, TVS und Massekonzept müssen zusammenarbeiten. Platzierung entscheidet bei schnellen Ereignissen ebenso wie der Nennwert.
 
+
+<!-- context-expansion-2026 -->
+Dioden steuern Strom abhängig von Polarität, Spannung und Temperatur. Sie werden zum Gleichrichten, Begrenzen, Schützen und Erzeugen von Licht eingesetzt. Das einfache Schaltzeichen steht dabei für einen realen PN- oder Metall-Halbleiter-Übergang mit klaren Grenzwerten.
+
+Beim Thema **TVS-Dioden und Schutzschaltungen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Für jede Diodenschaltung werden zuerst Anode, Kathode, vorgesehene Stromrichtung und Sperrspannung markiert. Danach folgen Arbeitspunkt und Verlustleistung. Diese Reihenfolge macht sichtbar, ob die Diode im Normalbetrieb leitet, sperrt oder nur im Fehlerfall Energie übernimmt.
 
 ### Stand-off, Durchbruch und Klemmung
 
@@ -35,6 +46,17 @@ Die Quelle oder Serienimpedanz begrenzt Strom. TVS und Massepfad führen Energie
 ### Layout
 
 TVS und Rückleiter liegen nahe am Eintrittspunkt. Lange Leiterbahnen erzeugen durch `u = L·di/dt` zusätzliche Spannung. Empfindliche Schaltungsteile dürfen nicht im Ableitstrompfad liegen.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- ESD- und Surge-Schutz an Steckern
+- Klemmen von Versorgungstransienten
+- Koordinierte Schutzketten mit Sicherung und Serienimpedanz
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

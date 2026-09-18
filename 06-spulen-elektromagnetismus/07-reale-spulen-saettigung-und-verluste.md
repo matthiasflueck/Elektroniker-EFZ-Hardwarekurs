@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Sättigungs- und Erwärmungsgrenzen unterscheiden
 - Datenblattkurven für Strom und Frequenz auswerten
 
-## Warum ist das wichtig?
+## Einleitung
 
 Die aufgedruckte Induktivität gilt nur unter definierten Messbedingungen. Gleichstrom, Ripple, Frequenz und Temperatur verändern reale Spulen. In Sättigung fällt die differentielle Induktivität; der Strom kann dadurch sehr schnell ansteigen.
 
+
+<!-- context-expansion-2026 -->
+Spulen und Transformatoren speichern oder übertragen Energie über Magnetfelder. Weil sich der Spulenstrom nicht sprunghaft ändern kann, entstehen beim Ein- und Ausschalten charakteristische Spannungen. Kernmaterial, Sättigung und Wicklungswiderstand machen aus dem idealen Symbol ein reales Bauteil.
+
+Beim Thema **Reale Spulen, Sättigung und Verluste** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Das ideale Induktivitätsgesetz beschreibt die Spannung bei einer Stromänderung. Reale Spulen ergänzen Wicklungswiderstand, Kernverluste, parasitäre Kapazität und Sättigung. Der Strompfad muss sowohl während der Energieaufnahme als auch während der Energieabgabe geschlossen sein.
 
 ### Reales Modell
 
@@ -39,6 +50,17 @@ Kurze Stromschleifen, ausreichende Leiterbahnen und Abstand zu empfindlichen Sig
 Der aufgedruckte Induktivitätswert gilt gewöhnlich bei einer festgelegten Messfrequenz, kleinen Wechselstromamplitude und häufig ohne Gleichstromvormagnetisierung. Im Einsatz kann ein grosser Gleichstrom die effektive Induktivität bereits deutlich reduzieren, lange bevor ein abrupter Sättigungsknick sichtbar wird. Datenblätter zeigen dafür Kurven wie `L/L0` über dem Biasstrom sowie Temperaturanstieg über dem Effektivstrom. Der Sättigungsstrom und der thermisch zulässige Strom beschreiben unterschiedliche Grenzen; verwendet wird der kleinere Wert für die konkrete Anwendung.
 
 Mit einem LCR-Meter lässt sich die Kleinsignalinduktivität prüfen, nicht automatisch das Verhalten im Schaltregler. Dort werden zusätzlich Stromrampe, Tastgrad, Schaltfrequenz und Spitzentemperatur beobachtet. Beginnt die Stromrampe innerhalb eines Schaltzyklus nach oben zu krümmen, ist das ein starkes Zeichen fallender Induktivität. Die Messung erfolgt mit geeigneter Stromsonde oder niederinduktivem Shunt und kurzer Tastkopfschleife, damit die parasitäre Messanordnung nicht mit der Spule verwechselt wird.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Auswahl von Leistungsinduktivitäten
+- Vermeidung von Kernsättigung
+- Berechnung von Kupfer-, Kern- und Schaltverlusten
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - Entwicklung, Fertigung, Inbetriebnahme und Prüfung als zusammenhängenden Prozess beschreiben
 - sorgfältige Dokumentation und Kommunikation als technische Arbeit begründen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Elektronik wirkt am Anfang oft wie eine Sammlung von Bauteilen und Formeln. Im Berufsalltag geht es aber selten nur darum, einen Widerstand auszurechnen oder ein Kabel anzulöten. Entscheidend ist, aus einer unvollständigen Aufgabenstellung eine zuverlässige, sichere und prüfbare Lösung zu machen.
 
 Diese Lektion gibt dir deshalb zuerst das grosse Bild. Wenn du weisst, wozu ein einzelner Lernschritt später gebraucht wird, kannst du Formeln, Messmethoden und Dokumente besser einordnen.
 
+
+<!-- context-expansion-2026 -->
+Elektronik entsteht nie nur am Schreibtisch. Anforderungen, Sicherheit, Dokumentation, Fertigung, Messung und Zusammenarbeit greifen ineinander. Die folgenden Grundlagen ordnen das Thema deshalb in den vollständigen Arbeitsablauf einer Elektronikerin oder eines Elektronikers ein.
+
+Beim Thema **Berufsbild Elektroniker/in EFZ und Arbeitsfelder** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie das Thema in einem Arbeitsauftrag umgesetzt, sicher durchgeführt, dokumentiert und als berufliche Handlung nachvollziehbar nachgewiesen wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Die Theorie wird hier immer auf eine konkrete berufliche Entscheidung bezogen: Was muss vor Arbeitsbeginn bekannt sein, welcher Nachweis ist nötig und woran erkennt man einen fachgerechten Zustand? So entsteht aus einer Regel ein wiederholbarer Arbeitsprozess.
 
 ### Vom Bedürfnis zum nachgewiesenen Produkt
 

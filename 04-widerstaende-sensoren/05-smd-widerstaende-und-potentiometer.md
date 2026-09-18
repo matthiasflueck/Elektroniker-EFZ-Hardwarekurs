@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - Bauform, Footprint und elektrische Belastbarkeit auseinanderhalten
 - Potentiometer als Teiler oder veränderlichen Widerstand korrekt beschalten
 
-## Warum ist das wichtig?
+## Einleitung
 
 Auf einer Leiterplatte ist der aufgedruckte Code oft die erste Orientierung. Er ersetzt aber weder Stückliste noch Schaltplan: kleine SMD-Widerstände können unbeschriftet sein, Codes sind nicht in jedem System eindeutig und 0-Ω-Brücken sehen anderen Widerständen ähnlich.
 
 Potentiometer besitzen drei Anschlüsse und können Spannungen teilen oder als veränderlicher Widerstand verwendet werden. Falsch angeschlossen kann ein Schleiferunterbruch einen Eingang offen lassen oder am Endanschlag einen unerwünscht kleinen Widerstand erzeugen.
 
+
+<!-- context-expansion-2026 -->
+Ein Widerstand ist nicht nur ein Zahlenwert in Ohm. Technologie, Toleranz, Temperatur, Spannung, Pulsenergie, Bauform und Alterung entscheiden, ob er seine Aufgabe zuverlässig erfüllt. Widerstandssensoren nutzen dieselben Abhängigkeiten gezielt als Messprinzip.
+
+Beim Thema **SMD-Widerstände und Potentiometer** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Bei der Bauteilauswahl werden Nennwert und Bauform mit den realen Betriebsbedingungen verknüpft. Neben dem Normalbetrieb werden Toleranz, Temperatur, Verlustleistung, kurzzeitige Überlast und Fehlerfall geprüft. Das Datenblatt ist dabei Teil der Schaltungsauslegung.
 
 ### SMD-Codes
 
@@ -40,11 +51,11 @@ Ein Potentiometer besitzt zwei Endanschlüsse der Widerstandsbahn und einen Schl
 
 Im unbelasteten linearen Modell beschreibt die Schleiferstellung `x` den Anteil von 0 bis 1:
 
-`U_W ≈ x · U_in`
+`UW ≈ x · Uin`
 
 | Formelzeichen | Bedeutung | Einheit |
 |---|---|---|
-| `U_W` | Spannung am Schleifer gegen den unteren Endanschluss | V |
+| `UW` | Spannung am Schleifer gegen den unteren Endanschluss | V |
 | `x` | normierte Schleiferstellung von 0 bis 1 | einheitenlos |
 
 Die Beziehung gilt für eine lineare Kennlinie und geringe Schleiferlast. Logarithmische Potentiometer besitzen absichtlich einen anderen Zusammenhang.
@@ -54,6 +65,17 @@ Die Beziehung gilt für eine lineare Kennlinie und geringe Schleiferlast. Logari
 Werden Schleifer und ein Endanschluss verwendet, entsteht ein Rheostat. Häufig wird der Schleifer mit dem verwendeten Endanschluss verbunden. Verliert der Schleifer kurzzeitig den Kontakt, bleibt dann eher der volle Bahnwert statt eines vollständig offenen Kreises wirksam. Ob diese Beschaltung geeignet ist, hängt vom Fehlerfall der Schaltung ab.
 
 Schleiferstrom und gesamte Bahnleistung sind begrenzt. Bei kleinem eingestelltem Teilwiderstand darf nicht automatisch die volle Nennleistung der gesamten Bahn in diesem kurzen Abschnitt umgesetzt werden.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Bestückung kompakter Leiterplatten
+- Abgleich von Verstärkung oder Offset
+- Bedienelemente und einstellbare Sollwerte
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

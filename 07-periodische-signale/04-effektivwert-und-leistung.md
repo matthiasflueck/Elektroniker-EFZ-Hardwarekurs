@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Effektivwerte einfacher Signalformen berechnen
 - True-RMS-Grenzen eines Messgeräts prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Der Effektivwert beantwortet, welche Gleichspannung an einem ohmschen Widerstand dieselbe mittlere Leistung erzeugen würde. Er ist deshalb für Erwärmung und Leistung wichtig und nicht einfach ein anderer Name für den Mittelwert.
 
+
+<!-- context-expansion-2026 -->
+Elektronische Signale verändern sich mit der Zeit. Frequenz, Amplitude, Effektivwert und Phase beschreiben unterschiedliche Eigenschaften desselben Verlaufs. Für Messung und Schaltungsentwurf muss deshalb stets geklärt werden, welche Signalgrösse gemeint ist und unter welchen Bedingungen sie gilt.
+
+Beim Thema **Effektivwert und Leistung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Ein Signal wird zuerst im Zeitdiagramm mit Bezugslinie und Einheiten beschrieben. Daraus lassen sich Periodendauer, Frequenz, Momentanwert und Phasenbezug ableiten. Messgeräte können je nach Kopplung, Bandbreite und Auswerteverfahren unterschiedliche Kennwerte desselben Signals anzeigen.
 
 ### Definition
 
@@ -37,6 +48,17 @@ Ein True-RMS-Messgerät berechnet innerhalb seiner Bandbreite und seines Crest-F
 Ein Signal kann gleichzeitig einen Gleichanteil und eine überlagerte Wechselkomponente besitzen. Sind beide Anteile getrennt bekannt, gilt `Ueff,gesamt = sqrt(Udc² + Uac,eff²)`. `Udc` ist der zeitliche Mittelwert, `Uac,eff` der Effektivwert der wechselnden Komponente. Je nach AC- oder DC-Kopplung zeigt ein Messgerät nur einen Anteil oder den Gesamtwert. Diese Einstellung gehört zwingend ins Messprotokoll.
 
 Der Crest Factor `CF = Upeak/Ueff` beschreibt, wie hoch die Spitze im Verhältnis zum Effektivwert ist. Kurze, schmale Pulse können einen grossen Crest Factor besitzen. Obwohl ihr Effektivwert moderat ist, übersteuern ihre Spitzen den Eingang eines DMM oder ADC. Ein True-RMS-Gerät kann dann einen plausibel wirkenden, aber falschen Wert anzeigen. Zur Kontrolle werden Signalform und Spitze zusätzlich mit dem Oszilloskop geprüft. Bei Strommessungen gilt dasselbe: Leiterbahn, Shunt und Schalter müssen sowohl Effektivstrom als auch Spitzenstrom sicher verkraften.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Netz-, Audio- und Motorsignale
+- True-RMS-Messung nichtsinusförmiger Verläufe
+- Leistungsberechnung an ohmschen Lasten
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

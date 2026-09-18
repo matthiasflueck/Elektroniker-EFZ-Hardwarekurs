@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - zwischen periodisch und wiederkehrend gestört unterscheiden
 - passende Zeitbasis und Abtastrate wählen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Takt, PWM, Netzripple und Sensorsignale wiederholen sich zeitlich. Frequenz beschreibt, wie oft ein vollständiger Vorgang pro Sekunde auftritt; Periodendauer beschreibt die Zeit eines Zyklus. Beide Sichtweisen werden beim Oszilloskop und in Firmware ständig benötigt.
 
+
+<!-- context-expansion-2026 -->
+Elektronische Signale verändern sich mit der Zeit. Frequenz, Amplitude, Effektivwert und Phase beschreiben unterschiedliche Eigenschaften desselben Verlaufs. Für Messung und Schaltungsentwurf muss deshalb stets geklärt werden, welche Signalgrösse gemeint ist und unter welchen Bedingungen sie gilt.
+
+Beim Thema **Periodische Vorgänge, Frequenz und Periodendauer** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Ein Signal wird zuerst im Zeitdiagramm mit Bezugslinie und Einheiten beschrieben. Daraus lassen sich Periodendauer, Frequenz, Momentanwert und Phasenbezug ableiten. Messgeräte können je nach Kopplung, Bandbreite und Auswerteverfahren unterschiedliche Kennwerte desselben Signals anzeigen.
 
 ### Ein vollständiger Zyklus
 
@@ -36,6 +47,17 @@ Jitter verändert die Lage einzelner Flanken, Drift verändert die mittlere Freq
 ### Messfenster
 
 Für eine Periodenmessung müssen genügend Signalabschnitte sichtbar und ausreichend abgetastet sein. Eine lange Aufzeichnung verbessert Frequenzauflösung, während eine kurze Zeitbasis Flankendetails zeigt.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Takt- und PWM-Signale
+- Netzfrequenz und Sensorsignale
+- Festlegen von Oszilloskop-Zeitbasis und Abtastrate
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

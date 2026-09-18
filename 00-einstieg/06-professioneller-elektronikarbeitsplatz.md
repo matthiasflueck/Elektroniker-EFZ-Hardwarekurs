@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - Messgeräte vor dem Anschluss richtig vorbereiten
 - Dokumenten-, Aufbau-, Energie- und Messfreigabe unterscheiden
 
-## Warum ist das wichtig?
+## Einleitung
 
 Viele Laborfehler entstehen nicht durch schwierige Theorie, sondern durch eine Leitung in der falschen Buchse, eine unterbrochene Versorgungsschiene oder eine unklare Aufbauversion. Ein gut organisierter Platz senkt diese Fehlerwahrscheinlichkeit.
 
 Ordnung bedeutet dabei nicht, dass der Tisch schön aussieht. Sie macht Strompfade, Messpunkte und Zuständigkeiten sichtbar.
 
+
+<!-- context-expansion-2026 -->
+Elektronik entsteht nie nur am Schreibtisch. Anforderungen, Sicherheit, Dokumentation, Fertigung, Messung und Zusammenarbeit greifen ineinander. Die folgenden Grundlagen ordnen das Thema deshalb in den vollständigen Arbeitsablauf einer Elektronikerin oder eines Elektronikers ein.
+
+Beim Thema **Professioneller Elektronikarbeitsplatz** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie das Thema in einem Arbeitsauftrag umgesetzt, sicher durchgeführt, dokumentiert und als berufliche Handlung nachvollziehbar nachgewiesen wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Die Theorie wird hier immer auf eine konkrete berufliche Entscheidung bezogen: Was muss vor Arbeitsbeginn bekannt sein, welcher Nachweis ist nötig und woran erkennt man einen fachgerechten Zustand? So entsteht aus einer Regel ein wiederholbarer Arbeitsprozess.
 
 ### Funktionszonen
 
@@ -39,6 +50,17 @@ Ein professioneller Platz unterstützt auch die Fehlersuche. Sind Bauteile verde
 ### Gerätezustand sichtbar machen
 
 Ausgang EIN/AUS, eingestellte Stromgrenze, Tastkopffaktor und DMM-Buchse müssen vor dem Anschluss erkennbar sein. Nach Arbeitsende werden Geräte in einen definierten Grundzustand gebracht. Diese Gewohnheit schützt besonders die nächste Person, die den Arbeitsplatz verwendet und sonst von einer unbemerkten Voreinstellung überrascht werden könnte.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Aufbau und Vermessung von Prototypen
+- Bestückungs- und Rework-Arbeiten
+- Wiederholbare Fehlersuche am Laborplatz
+
+In einer konkreten Arbeitssituation wird festgelegt, welche Vorbereitung, Schutzmassnahme, Dokumentation und Qualitätskontrolle erforderlich ist. Der Anwendungsfall gilt erst als beherrscht, wenn das Vorgehen reproduzierbar und für andere nachvollziehbar ist.
 
 ## Anschauliches Beispiel
 

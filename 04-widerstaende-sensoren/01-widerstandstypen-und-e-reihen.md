@@ -10,13 +10,26 @@ Nach dieser Lektion kannst du:
 - einen passenden Normwert aus einer E-Reihe auswählen
 - neben dem Nennwert weitere entscheidende Datenblattangaben nennen
 
-## Warum ist das wichtig?
+## Einleitung
 
 «10 kΩ» beschreibt noch kein vollständig ausgewähltes Bauteil. Zwei Widerstände mit demselben Nennwert können sich bei Toleranz, Temperaturverhalten, Rauschen, Spannungsfestigkeit, Pulsbelastbarkeit und Baugrösse deutlich unterscheiden. Für einen LED-Vorwiderstand sind andere Eigenschaften wichtig als für einen präzisen Messverstärker oder einen Hochspannungsteiler.
 
 Normreihen begrenzen die Anzahl produzierter Werte sinnvoll. Die Aufgabe in der Entwicklung besteht deshalb selten darin, irgendeinen exakt berechneten Wert zu bestellen. Man wählt einen verfügbaren Normwert und prüft anschliessend, ob die resultierende Schaltung innerhalb ihrer Anforderungen bleibt.
 
+
+<!-- context-expansion-2026 -->
+Ein Widerstand ist nicht nur ein Zahlenwert in Ohm. Technologie, Toleranz, Temperatur, Spannung, Pulsenergie, Bauform und Alterung entscheiden, ob er seine Aufgabe zuverlässig erfüllt. Widerstandssensoren nutzen dieselben Abhängigkeiten gezielt als Messprinzip.
+
+Beim Thema **Widerstandstypen und E-Reihen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Bei der Bauteilauswahl werden Nennwert und Bauform mit den realen Betriebsbedingungen verknüpft. Neben dem Normalbetrieb werden Toleranz, Temperatur, Verlustleistung, kurzzeitige Überlast und Fehlerfall geprüft. Das Datenblatt ist dabei Teil der Schaltungsauslegung.
+
+Im Schaltplan wird der Widerstand unabhängig von seiner Technologie mit dem rechteckigen IEC-Symbol dargestellt. `R1`, `R2` und weitere Referenzbezeichner verbinden Schema, Stückliste, Leiterplatte und Messprotokoll. Erst Wert, Toleranz, Bauform und Technologie legen fest, welches reale Bauteil hinter dem Symbol steht.
 
 ### Häufige Technologien
 
@@ -53,6 +66,17 @@ Für einen LED-Vorwiderstand kann Aufrunden den Strom sicher reduzieren. Bei ein
 ### Auswahlkriterien aus dem Datenblatt
 
 Neben Nennwert und Toleranz gehören mindestens Nennleistung, maximal zulässige Arbeitsspannung, Temperaturkoeffizient, Temperaturbereich und Bauform in die Prüfung. Bei besonderen Anwendungen kommen Pulsbelastbarkeit, Spannungskoeffizient, Langzeitdrift, Rauschen und Schwefelbeständigkeit hinzu.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Pull-ups, Spannungsteiler und Verstärkungsnetzwerke
+- Auswahl verfügbarer E-Reihen-Werte
+- Präzisions-, Leistungs- und Hochspannungswiderstände
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

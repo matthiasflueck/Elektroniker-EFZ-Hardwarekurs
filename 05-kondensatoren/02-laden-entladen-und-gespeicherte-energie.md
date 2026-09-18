@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - die Feldenergie berechnen
 - sichere Entladepfade dimensionieren
 
-## Warum ist das wichtig?
+## Einleitung
 
 Beim Einschalten kann ein ungeladener Kondensator kurzzeitig viel Strom aufnehmen. Beim Ausschalten kann er eine Schaltung weiter speisen. Diese beiden Vorgänge erklären Einschaltstrom, Reset-Verzögerung, Funken und scheinbar «weiterlebende» Baugruppen.
 
 Entscheidend ist die Energie: Auch wenn kein stationärer Strom fliesst, kann ein geladener Kondensator Arbeit verrichten. Deshalb gehört zu jeder sicheren Schaltung ein definierter Entlade- oder Bleederpfad, wenn gefährliche oder störende Restladung möglich ist.
 
+
+<!-- context-expansion-2026 -->
+Kondensatoren speichern Ladung in einem elektrischen Feld. Dadurch verbinden sie Gleichstromverhalten, zeitliche Vorgänge und hochfrequente Strompfade. Ihre Aufgabe wird erst verständlich, wenn neben dem Kapazitätswert auch Polarität, ESR, ESL und der reale Einbauort betrachtet werden.
+
+Beim Thema **Laden, Entladen und gespeicherte Energie** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Das ideale Kondensatormodell erklärt Ladung und Zeitverhalten. Für eine reale Baugruppe werden zusätzlich Serienwiderstand, Serieninduktivität, Leckstrom, Spannungsabhängigkeit und Polarität berücksichtigt. Je höher die Frequenz, desto wichtiger werden Anschluss- und Leiterbahngeometrie.
 
 ### Strom folgt der Spannungsänderung
 
@@ -40,6 +51,17 @@ Doppelte Spannung bedeutet bei gleicher Kapazität vierfache Energie. Deshalb er
 ### Definierte Entladung
 
 Ein Entladewiderstand begrenzt den Strom und sorgt für eine berechenbare Restspannung. Seine Leistung ist direkt nach dem Abschalten am grössten. Widerstand, Zeit, Spannungsfestigkeit und Energiebelastung werden gemeinsam geprüft.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Pufferung kurzer Lastspitzen
+- Erzeugen von Verzögerungen und Rampen
+- Speichern von Energie für Blitz, Impuls oder Backup
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

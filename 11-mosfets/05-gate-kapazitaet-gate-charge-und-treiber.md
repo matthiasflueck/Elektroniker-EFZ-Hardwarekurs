@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Miller-Plateau erklären
 - Gatewiderstand als EMV-Verlust-Kompromiss dimensionieren
 
-## Warum ist das wichtig?
+## Einleitung
 
 Der MOSFET schaltet nur so schnell, wie sein Gate geladen wird. Während des Miller-Plateaus ändert sich die Drainspannung und gleichzeitig entsteht besonders viel Schaltverlust. Treiber und Layout sind deshalb Teil der Leistungsstufe.
 
+
+<!-- context-expansion-2026 -->
+MOSFETs steuern einen Drain-Source-Strompfad über die Gate-Source-Spannung. Sie sind zentrale Leistungsschalter in modernen Baugruppen, reagieren aber empfindlich auf Gate-Ladung, Überspannung, parasitäre Induktivitäten und Wärme. Statischer und dynamischer Betrieb müssen getrennt beurteilt werden.
+
+Beim Thema **Gate-Kapazität, Gate Charge und Treiber** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Beim MOSFET werden Gatekreis und Leistungspfad getrennt gezeichnet. VGS beschreibt die Ansteuerung relativ zur Source, VDS die Belastung des Leistungspfads. RDS(on), Gate Charge und SOA gelten jeweils nur unter den im Datenblatt genannten Bedingungen.
 
 ### Nichtlineare Kapazitäten
 
@@ -27,6 +38,17 @@ Die mittlere Treiberleistung näherungsweise `Pgate = QG·Vdrive·fs`. Für die 
 ### Gatewiderstand und Schleife
 
 Rg begrenzt Spitzenstrom, dämpft Schwingen und steuert Flankensteilheit. Zu gross erhöht Schaltverlust; zu klein kann EMV, Überschwingen und Treiberbelastung verschärfen. Treiber, Gate, Source-Rückleiter und Abblockkondensator bilden eine kurze Stromschleife. Gemeinsame Source-Induktivität erzeugt Gegenkopplung und scheinbare VGS-Spitzen.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Dimensionierung von Gate-Widerstand und Treiber
+- Festlegen sinnvoller PWM-Frequenz
+- Begrenzung von Schaltverlust und EMV
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

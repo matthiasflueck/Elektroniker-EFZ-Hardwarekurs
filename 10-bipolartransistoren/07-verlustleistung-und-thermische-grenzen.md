@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - thermisches Widerstandsmodell anwenden
 - SOA und Secondary Breakdown berücksichtigen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein elektrisch plausibler Arbeitspunkt kann thermisch unzulässig sein. Die Sperrschicht ist wärmer als das Gehäuse, und Wärme benötigt Zeit sowie einen Pfad zur Umgebung. Besonders lineare BJT-Anwendungen sind durch Secondary Breakdown gefährdet.
 
+
+<!-- context-expansion-2026 -->
+Bipolartransistoren verbinden einen steuernden Basis-Emitter-Kreis mit einem Kollektor-Emitter-Lastpfad. Je nach Arbeitspunkt arbeiten sie als Schalter, Verstärker oder Stromquelle. Anschlussbelegung, Stromrichtung und thermische Rückwirkung gehören deshalb von Beginn an zur Betrachtung.
+
+Beim Thema **Verlustleistung und thermische Grenzen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Beim BJT werden Basis-, Kollektor- und Emitterkreis getrennt verfolgt und anschliessend über den Arbeitspunkt verbunden. Der Steuerstrom stammt aus einer realen Quelle, der Laststrom aus einem eigenen Energiepfad. Verstärkung und Sättigung sind Betriebszustände, keine unveränderlichen Bauteilkonstanten.
 
 ### Elektrische Verlustleistung
 
@@ -27,6 +38,17 @@ Die stationäre Temperaturabschätzung lautet `TJ = TA + PQ·RθJA`. `RθJA` ist
 ### SOA und Stabilität
 
 Das Safe-Operating-Area-Diagramm begrenzt Kombinationen aus VCE, IC und Pulsdauer. Secondary Breakdown kann den BJT bereits unter der einfachen Leistungshyperbel zerstören. Temperatur erhöht Leckstrom und kann ohne Gegenkopplung zu thermischem Durchgehen beitragen.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Thermische Freigabe von Lastschaltern
+- SOA-Prüfung bei linearer Belastung
+- Kühlung und Derating von Transistorstufen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

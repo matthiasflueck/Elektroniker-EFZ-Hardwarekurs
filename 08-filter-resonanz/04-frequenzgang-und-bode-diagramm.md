@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - logarithmische Frequenzachsen lesen
 - Messdaten als Bode-Diagramm darstellen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Elektronische Systeme wirken über viele Frequenzdekaden. Ein lineares Diagramm würde wichtige Bereiche zusammendrängen. Das Bode-Diagramm stellt Betrag und Phase über logarithmischer Frequenz dar und macht Eckpunkte sowie Steigungen sichtbar.
 
+
+<!-- context-expansion-2026 -->
+Filter formen Signale abhängig von ihrer Frequenz. Widerstände, Kondensatoren und Spulen bilden dazu frequenzabhängige Spannungsteiler und Energiespeicher. Zeitverhalten, Frequenzgang und reale Verluste sind drei Sichten auf dasselbe Netzwerk.
+
+Beim Thema **Frequenzgang und Bode-Diagramm** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Filter werden zunächst als frequenzabhängige Spannungsteiler verstanden. Danach folgen Grenzfrequenz, Phase und asymptotischer Verlauf. Bauteiltoleranzen, Quell- und Lastimpedanz sowie parasitäre Elemente erklären die Abweichung zwischen idealer Kurve und Messung.
 
 ### Dezibel
 
@@ -40,6 +51,17 @@ Frequenzen werden logarithmisch gewählt, etwa 1-2-5 pro Dekade und dichter um f
 An jedem Messpunkt werden Eingangsamplitude, Ausgangsamplitude und Zeitverschiebung dokumentiert. Der Betrag folgt aus `20·log10(Uout/Uin)`, die Phase aus `360°·Δt/T`. `Δt` ist der gemessene Zeitversatz gleichartiger Signalpunkte. Mehrere Punkte pro Dekade zeigen die asymptotische Steigung, zusätzliche Punkte um fG erfassen den Übergang.
 
 Bei sehr kleiner Ausgangsspannung steigt der relative Einfluss von Rauschen und Oszilloskopauflösung. Gleichzeitig können Generatorausgang und Tastkopfkapazität die Schaltung belasten. Eine geglättete Kurve darf diese Unsicherheit nicht verbergen; auffällige Punkte werden wiederholt oder mit veränderter Amplitude kontrolliert. Ein gemessener Peak deutet auf Resonanz, Rückkopplung oder parasitäre Kopplung hin und passt nicht zum idealen RC-Filter erster Ordnung. Das Diagramm dient deshalb nicht nur zur Bestätigung, sondern auch zur Diagnose eines unvollständigen Modells.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Datenblattbewertung von Filtern und Verstärkern
+- Messung der Bandbreite einer Baugruppe
+- Vergleich von Simulation und realem Frequenzgang
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - mit Zehnerpotenzen multiplizieren und dividieren
 - Grössenordnungen vor einer Detailrechnung abschätzen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Zwischen einem Leckstrom von Nanoampere und einem Motorstrom von Ampere liegen neun Zehnerpotenzen. Die wissenschaftliche Schreibweise macht solche Unterschiede sichtbar und verhindert lange Folgen von Nullen.
 
+
+<!-- context-expansion-2026 -->
+Mathematik ist in der Elektronik kein Selbstzweck, sondern eine gemeinsame Sprache für Datenblatt, Schaltung, Messgerät und Prüfbericht. Eine Rechnung ist erst dann nützlich, wenn Einheit, Grössenordnung, Randbedingungen und physikalische Bedeutung zusammenpassen.
+
+Beim Thema **Zehnerpotenzen und wissenschaftliche Schreibweise** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie die Darstellung beim Rechnen, Lesen von Datenblättern, Auswerten von Messungen und Prüfen der Grössenordnung konkret eingesetzt wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und einem Gültigkeitsbereich. Vor dem Einsetzen von Zahlen wird daher geklärt, was gesucht ist, welche Annahmen gelten und welche Grössenordnung physikalisch zu erwarten ist.
 
 ### Mantisse und Exponent
 
@@ -37,6 +48,17 @@ Bei technischen Präfixen sind Dreierschritte besonders wichtig. Mikro, Milli, B
 ### Überschlagsrechnung vor der exakten Rechnung
 
 Für die Schätzung werden Mantissen grob gerundet. Aus 4,7 wird etwa 5, aus 2,2 etwa 2. Der Exponent bleibt bewusst sichtbar. Stimmt das exakte Ergebnis nicht mit diesem groben Bereich überein, werden Eingabe und Potenzrechnung geprüft, bevor das Resultat weiterverwendet wird.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Darstellung sehr kleiner Leckströme
+- Berechnung grosser Widerstandsbereiche
+- Plausibilisierung von Frequenz- und Zeitangaben
+
+In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig notiert. Das Resultat wird anschliessend mit Grenzfällen, Grössenordnung oder einem Messwert geprüft, damit ein formal korrektes, aber physikalisch falsches Ergebnis nicht unbemerkt bleibt.
 
 ## Anschauliches Beispiel
 

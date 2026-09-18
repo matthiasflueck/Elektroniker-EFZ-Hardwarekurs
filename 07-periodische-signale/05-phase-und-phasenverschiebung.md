@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Zeitverschiebung in Grad umrechnen
 - Vorzeichen und Messrichtung konsistent verwenden
 
-## Warum ist das wichtig?
+## Einleitung
 
 Zwei Signale können gleiche Frequenz und Amplitude besitzen, aber zeitlich gegeneinander verschoben sein. Diese Phase entscheidet bei Filtern, Leistungsübertragung, Motoren und Bussignalen über Funktion und Messinterpretation.
 
+
+<!-- context-expansion-2026 -->
+Elektronische Signale verändern sich mit der Zeit. Frequenz, Amplitude, Effektivwert und Phase beschreiben unterschiedliche Eigenschaften desselben Verlaufs. Für Messung und Schaltungsentwurf muss deshalb stets geklärt werden, welche Signalgrösse gemeint ist und unter welchen Bedingungen sie gilt.
+
+Beim Thema **Phase und Phasenverschiebung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Ein Signal wird zuerst im Zeitdiagramm mit Bezugslinie und Einheiten beschrieben. Daraus lassen sich Periodendauer, Frequenz, Momentanwert und Phasenbezug ableiten. Messgeräte können je nach Kopplung, Bandbreite und Auswerteverfahren unterschiedliche Kennwerte desselben Signals anzeigen.
 
 ### Phase ist relativ
 
@@ -42,6 +53,17 @@ Beide Kanäle benötigen denselben Zeitbezug. Tastköpfe, Kabellängen und Kanal
 Eine Phasenangabe ist nur mit klarer Referenz eindeutig. Wird Signal B gegenüber Signal A später erreicht, hinkt B hinterher; bei gleicher Frequenz entspricht die Zeitverschiebung `Δt` dem Winkel `φ = 360°·Δt/T`. Ein negatives Vorzeichen wird häufig für Nacheilen verwendet. Da Fachliteratur und Messgeräte unterschiedliche Vorzeichenkonventionen nutzen können, werden Referenz und Richtung ausdrücklich notiert.
 
 Am Oszilloskop werden beide Signale gleichzeitig und mit gemeinsamem Trigger dargestellt. Man misst zwei gleichartige Punkte, beispielsweise steigende Nulldurchgänge, und nicht beliebige Spitzen eines verzerrten Signals. Unsicherheit entsteht durch begrenzte Abtastrate, Triggerjitter, Kanallaufzeit und Tastköpfe. Bei hohen Frequenzen können schon unterschiedlich lange Leitungen eine sichtbare Phase erzeugen. Vor der Bauteilmessung werden daher beide Kanäle an dasselbe Signal angeschlossen; die beobachtete Restverschiebung ist der systematische Beitrag der Messkette.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Zeitabgleich mehrerer Sensorsignale
+- Bewertung von Filter- und Reglerverzögerung
+- Drehstrom-, Encoder- und Kommunikationssignale
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

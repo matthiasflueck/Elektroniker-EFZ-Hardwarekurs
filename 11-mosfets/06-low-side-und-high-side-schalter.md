@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - N-Kanal-High-Side-Treiber erklären
 - Halbbrücke mit Totzeit sicher beurteilen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Der Einbauort des Schalters bestimmt Bezugspotential, Diagnose und Treiber. Eine Halbbrücke benötigt zwei komplementäre Schalter, darf sie aber nie gleichzeitig einschalten. Schon wenige Nanosekunden falscher Überlappung können einen hohen Quer-strom erzeugen.
 
+
+<!-- context-expansion-2026 -->
+MOSFETs steuern einen Drain-Source-Strompfad über die Gate-Source-Spannung. Sie sind zentrale Leistungsschalter in modernen Baugruppen, reagieren aber empfindlich auf Gate-Ladung, Überspannung, parasitäre Induktivitäten und Wärme. Statischer und dynamischer Betrieb müssen getrennt beurteilt werden.
+
+Beim Thema **Low-Side- und High-Side-Schalter** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Beim MOSFET werden Gatekreis und Leistungspfad getrennt gezeichnet. VGS beschreibt die Ansteuerung relativ zur Source, VDS die Belastung des Leistungspfads. RDS(on), Gate Charge und SOA gelten jeweils nur unter den im Datenblatt genannten Bedingungen.
 
 ### Low-Side
 
@@ -29,6 +40,17 @@ Ein P-Kanal vereinfacht moderate High-Side-Pfade, besitzt aber oft höheren RDS(
 ### Halbbrücke
 
 High- und Low-Side dürfen nicht gleichzeitig leiten. Totzeit verhindert Shoot-through, erzeugt aber Body-Diodenleitung und zusätzliche Verluste. Parasitäres Miller-Einschalten wird durch Treiberimpedanz, Layout und gegebenenfalls Miller-Clamp reduziert.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Ansteuerung massebezogener Lasten
+- Schalten positiver Versorgungspfade
+- Treiberwahl für Halbbrücken und schwebende Sources
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

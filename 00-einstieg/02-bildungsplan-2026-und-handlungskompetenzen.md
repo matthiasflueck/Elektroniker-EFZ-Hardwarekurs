@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - die Pflichtkompetenzen und den Hardwarebereich b1–b5 einordnen
 - Kurslektionen über die Kompetenzmatrix mit offiziellen Anforderungen verbinden
 
-## Warum ist das wichtig?
+## Einleitung
 
 Der Bildungsplan ist kein Inhaltsverzeichnis eines Lehrbuchs. Er beschreibt, was eine ausgebildete Fachperson in realen Arbeitssituationen leisten können muss. Darum tauchen Themen wie Messen, Dokumentieren oder Sicherheit in mehreren Kompetenzen auf.
 
 Wer den Aufbau versteht, lernt zielgerichteter: Du erkennst, warum eine Übung verlangt wird und welcher beobachtbare Nachweis am Ende zählt.
 
+
+<!-- context-expansion-2026 -->
+Elektronik entsteht nie nur am Schreibtisch. Anforderungen, Sicherheit, Dokumentation, Fertigung, Messung und Zusammenarbeit greifen ineinander. Die folgenden Grundlagen ordnen das Thema deshalb in den vollständigen Arbeitsablauf einer Elektronikerin oder eines Elektronikers ein.
+
+Beim Thema **Bildungsplan 2026 und Handlungskompetenzen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie das Thema in einem Arbeitsauftrag umgesetzt, sicher durchgeführt, dokumentiert und als berufliche Handlung nachvollziehbar nachgewiesen wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Die Theorie wird hier immer auf eine konkrete berufliche Entscheidung bezogen: Was muss vor Arbeitsbeginn bekannt sein, welcher Nachweis ist nötig und woran erkennt man einen fachgerechten Zustand? So entsteht aus einer Regel ein wiederholbarer Arbeitsprozess.
 
 ### Verbindliche Grundlage
 
@@ -41,6 +52,7 @@ Die Leistungsniveaus des Bildungsplans beschreiben dabei die erwartete Selbstst�
 ### Mindestanforderung und fachliche Vertiefung
 
 Der Bildungsplan definiert die verbindliche Mindestanforderung. Für eine professionelle Hardwarepraxis werden ausgewählte Themen bewusst vertieft, etwa Messgerätebelastung, MOSFET-Auswahl, Worst-Case-Betrachtung oder sichere Oszilloskopmessung. Diese Vertiefung widerspricht dem Bildungsplan nicht; sie liefert zusätzliches Verständnis für die dort verlangten Handlungen.
+
 
 ## Anschauliches Beispiel
 

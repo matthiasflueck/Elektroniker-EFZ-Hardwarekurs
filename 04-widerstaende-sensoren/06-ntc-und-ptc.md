@@ -10,28 +10,39 @@ Nach dieser Lektion kannst du:
 - einen NTC mit Beta-Modell und Kennlinie auswerten
 - Eigenerwärmung, Messstrom und Schutzanwendung berücksichtigen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Temperaturabhängige Widerstände werden als Sensoren, Einschaltstrombegrenzer und Schutzbauteile eingesetzt. Die Bezeichnungen NTC und PTC sagen zunächst nur, in welche Richtung sich der Widerstand mit steigender Temperatur verändert. Kennlinienform, Nennwert und Belastbarkeit hängen vom konkreten Bauteil ab.
 
 Ein Temperatursensor soll möglichst die Umgebung messen. Der dazu verwendete Messstrom erwärmt ihn jedoch selbst. Ein Leistungs-NTC zur Einschaltstrombegrenzung nutzt Eigenerwärmung dagegen absichtlich. Gleicher Grundeffekt, aber völlig unterschiedliche Auslegung.
 
+
+<!-- context-expansion-2026 -->
+Ein Widerstand ist nicht nur ein Zahlenwert in Ohm. Technologie, Toleranz, Temperatur, Spannung, Pulsenergie, Bauform und Alterung entscheiden, ob er seine Aufgabe zuverlässig erfüllt. Widerstandssensoren nutzen dieselben Abhängigkeiten gezielt als Messprinzip.
+
+Beim Thema **NTC und PTC** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Bei der Bauteilauswahl werden Nennwert und Bauform mit den realen Betriebsbedingungen verknüpft. Neben dem Normalbetrieb werden Toleranz, Temperatur, Verlustleistung, kurzzeitige Überlast und Fehlerfall geprüft. Das Datenblatt ist dabei Teil der Schaltungsauslegung.
 
 ### NTC: negativer Temperaturkoeffizient
 
-Bei einem NTC sinkt der Widerstand mit steigender Temperatur. Viele Mess-NTCs besitzen bei der Referenztemperatur 25 °C einen angegebenen Nennwiderstand `R_25`. Ihre Kennlinie ist stark nichtlinear.
+Bei einem NTC sinkt der Widerstand mit steigender Temperatur. Viele Mess-NTCs besitzen bei der Referenztemperatur 25 °C einen angegebenen Nennwiderstand `R25`. Ihre Kennlinie ist stark nichtlinear.
 
 Für einen begrenzten Bereich kann das Beta-Modell verwendet werden:
 
-`R(T) = R_0 · exp[B·(1/T − 1/T_0)]`
+`R(T) = R0 · exp[B·(1/T − 1/T0)]`
 
 | Formelzeichen | Bedeutung | Einheit |
 |---|---|---|
 | `R(T)` | NTC-Widerstand bei absoluter Temperatur `T` | Ω |
-| `R_0` | Widerstand bei der Referenztemperatur `T_0` | Ω |
+| `R0` | Widerstand bei der Referenztemperatur `T0` | Ω |
 | `B` | material- und bereichsabhängige Beta-Konstante | K |
-| `T`, `T_0` | absolute Temperaturen | K |
+| `T`, `T0` | absolute Temperaturen | K |
 | `exp` | Exponentialfunktion zur Basis `e` | – |
 
 Für das Modell müssen Temperaturen in Kelvin eingesetzt werden: `T[K] = ϑ[°C] + 273,15`. Der B-Wert gilt nur für den spezifizierten Temperaturbereich. Für höhere Genauigkeit werden Herstellerkennlinien, Tabellen oder die Steinhart-Hart-Gleichung verwendet.
@@ -50,7 +61,7 @@ Ein NTC wird häufig mit einem Festwiderstand als Spannungsteiler betrieben. Je 
 
 ![NTC-Spannungsteiler mit ADC, Messstrom und Eigenerwärmung](../bilder/04-widerstaende-sensoren/04-06-ntc-adc-teiler.png)
 
-Liegt der NTC unten gegen GND, gilt `U_out = U_in·R_NTC/(R_fix+R_NTC)`. Mit steigender Temperatur sinkt `R_NTC` und damit `U_out`. Der Festwiderstand wird oft in der Nähe des NTC-Werts im interessierenden Temperaturzentrum gewählt, um dort eine gute Empfindlichkeit zu erhalten. Die genaue Wahl hängt von Messbereich, ADC und zulässigem Strom ab.
+Liegt der NTC unten gegen GND, gilt `Uout = Uin·RNTC/(Rfix+RNTC)`. Mit steigender Temperatur sinkt `RNTC` und damit `Uout`. Der Festwiderstand wird oft in der Nähe des NTC-Werts im interessierenden Temperaturzentrum gewählt, um dort eine gute Empfindlichkeit zu erhalten. Die genaue Wahl hängt von Messbereich, ADC und zulässigem Strom ab.
 
 ### Eigenerwärmung und thermische Zeitkonstante
 
@@ -58,13 +69,24 @@ Die Leistung `P = I²R` erwärmt den Sensor. Der Datenblattparameter Dissipation
 
 Temperaturänderungen erscheinen ausserdem verzögert. Die thermische Zeitkonstante beschreibt, wie schnell der Sensor einem Temperatursprung folgt. Sie ist nicht mit einer elektrischen RC-Zeitkonstante identisch, obwohl beide einen zeitlichen Annäherungsvorgang beschreiben.
 
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Temperaturmessung an Akku, Motor oder Regler
+- Einschaltstrombegrenzung mit PTC/NTC
+- Übertemperatur- und Frostüberwachung
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
+
 ## Anschauliches Beispiel
 
 Ein 10-kΩ-NTC bei 25 °C bildet mit 10 kΩ einen halben Teiler. Wird er wärmer, sinkt sein Widerstand und – bei Position gegen GND – auch die Ausgangsspannung. Wird der NTC nach oben an die Versorgung gesetzt, kehrt sich die Signalrichtung um.
 
 ## Berechnungsbeispiel
 
-Für einen rein didaktischen NTC seien `R_0 = 10 kΩ` bei `T_0 = 298,15 K` und `B = 3950 K` gegeben. Bei 50 °C ist `T = 323,15 K`. Das Beta-Modell ergibt ungefähr `R(50 °C) ≈ 3,59 kΩ`. Mit `R_fix = 10 kΩ` und 3,3 V entstehen etwa `0,872 V`. Für eine reale Entwicklung werden die konkreten Herstellerdaten verwendet.
+Für einen rein didaktischen NTC seien `R0 = 10 kΩ` bei `T0 = 298,15 K` und `B = 3950 K` gegeben. Bei 50 °C ist `T = 323,15 K`. Das Beta-Modell ergibt ungefähr `R(50 °C) ≈ 3,59 kΩ`. Mit `Rfix = 10 kΩ` und 3,3 V entstehen etwa `0,872 V`. Für eine reale Entwicklung werden die konkreten Herstellerdaten verwendet.
 
 ## Praxisbezug
 
@@ -91,7 +113,7 @@ NTCs besitzen fallende, stark nichtlineare Widerstandskennlinien; PTCs steigen u
 
 ## Übungsfragen
 
-1. In welche Richtung ändert sich `U_out`, wenn ein NTC unten im Teiler liegt und wärmer wird?
+1. In welche Richtung ändert sich `Uout`, wenn ein NTC unten im Teiler liegt und wärmer wird?
 2. Warum verlangt das Beta-Modell absolute Temperaturen?
 3. Wodurch entsteht Eigenerwärmung?
 4. Welche Schritte führen vom ADC-Code zur Temperatur?

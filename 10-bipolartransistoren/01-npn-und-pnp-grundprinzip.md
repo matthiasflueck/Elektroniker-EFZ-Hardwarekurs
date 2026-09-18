@@ -10,11 +10,26 @@ Nach dieser Lektion kannst du:
 - Basis Emitter und Kollektor funktional erklären
 - Low-Side und High-Side einordnen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein kleiner Steuerstrom kann einen grösseren Laststrom beeinflussen. Der BJT bildet damit Schalter, Verstärker, Stromquelle und Eingangsstufe. Entscheidend ist, dass Basis, Emitter und Kollektor nicht beliebig vertauschbar sind und immer auf reale Potentiale bezogen werden.
 
+
+<!-- context-expansion-2026 -->
+Bipolartransistoren verbinden einen steuernden Basis-Emitter-Kreis mit einem Kollektor-Emitter-Lastpfad. Je nach Arbeitspunkt arbeiten sie als Schalter, Verstärker oder Stromquelle. Anschlussbelegung, Stromrichtung und thermische Rückwirkung gehören deshalb von Beginn an zur Betrachtung.
+
+Beim Thema **NPN- und PNP-Grundprinzip** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Beim BJT werden Basis-, Kollektor- und Emitterkreis getrennt verfolgt und anschliessend über den Arbeitspunkt verbunden. Der Steuerstrom stammt aus einer realen Quelle, der Laststrom aus einem eigenen Energiepfad. Verstärkung und Sättigung sind Betriebszustände, keine unveränderlichen Bauteilkonstanten.
+
+**Ein bipolarer Transistor besitzt drei Anschlüsse:** Basis `B`, Kollektor `C` und Emitter `E`. Die Basis ist der Steueranschluss, der Kollektor gehört meist zur Lastseite und der Emitter bildet den gemeinsamen Bezug von Steuer- und Lastkreis. Das Symbol trägt seinen Pfeil immer am Emitter: beim NPN zeigt er nach aussen, beim PNP nach innen. Der Referenzbezeichner lautet üblicherweise `Q`.
+
+Die Gehäusebelegung darf nie nur aus der Gehäuseform geraten werden. Zwei Transistoren im gleichen Gehäuse können unterschiedliche Pinfolgen besitzen. Vor dem Aufbau werden deshalb Symbolanschlüsse, Pin-Nummern und reale Pins mit dem Herstellerdatenblatt abgeglichen.
 
 ### Aufbau und Steuerung
 
@@ -27,6 +42,17 @@ Beim NPN zeigt der Emitterpfeil nach aussen; konventioneller Kollektorstrom flie
 ### Schaltungsrollen
 
 NPN eignet sich häufig als Low-Side-Schalter: Last an Plus, Transistor nach GND. PNP kann als einfacher High-Side-Schalter dienen, verlangt aber eine auf seinen Emitter bezogene Basisansteuerung. Für beide Typen sind Basisstrombegrenzung und definierter Aus-Zustand nötig.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Low-Side-Schalter für LED und Relais
+- High-Side-Stufe mit PNP
+- Analoge Verstärker- und Stromquellenschaltungen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

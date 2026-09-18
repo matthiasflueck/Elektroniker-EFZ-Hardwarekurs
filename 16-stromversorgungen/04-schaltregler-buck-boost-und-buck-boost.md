@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - idealen Tastgrad abschätzen
 - Schaltknoten und Stromschleifen erkennen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Schaltregler übertragen Energie paketweise und erreichen hohe Wirkungsgrade. Ihre Funktion wird verständlich, wenn für Ein- und Aus-Zustand jeweils der Strompfad durch Schalter, Diode beziehungsweise Synchron-MOSFET, Spule und Kondensator verfolgt wird.
 
+
+<!-- context-expansion-2026 -->
+Eine Stromversorgung ist eine dynamische Energiequelle für die gesamte Baugruppe. Eingang, Schutz, Regler, Leiterpfade, Kondensatoren und Lastprofil bilden ein System. Nennspannung allein genügt weder für die Dimensionierung noch für die Verifikation.
+
+Beim Thema **Schaltregler: Buck, Boost und Buck-Boost** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Versorgungen werden über Leistungs- und Strompfade analysiert. Für jeden Betriebszustand werden Eingang, Ausgang, Verlust, Temperatur und gespeicherte Energie bilanziert. Dynamische Vorgänge wie Einschalten und Lastsprung werden zusätzlich im Zeitbereich gemessen.
 
 ### Drei Grundtopologien
 
@@ -29,6 +40,17 @@ D ist der Tastgrad zwischen 0 und 1. Die idealen Formeln ignorieren Schaltverlus
 Die Spule glättet Strom, der Ausgangskondensator Spannung. Besonders kritisch sind Schleifen mit schnell wechselndem Strom: beim Buck Eingangskondensator, High-Side-Schalter und Low-Side-Pfad. Der Schaltknoten besitzt hohe dv/dt und bleibt klein sowie fern von Feedback und empfindlichen Signalen.
 
 Reglerdatenblätter geben Induktivität, Schaltfrequenz, Kompensation und Layout vor. Ein scheinbar gleiches Schema kann durch schlechtes Layout unbrauchbar werden.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Effiziente Abwärts- und Aufwärtswandlung
+- Batteriebetrieb mit wechselnder Eingangsspannung
+- Versorgung leistungsstarker digitaler Lasten
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

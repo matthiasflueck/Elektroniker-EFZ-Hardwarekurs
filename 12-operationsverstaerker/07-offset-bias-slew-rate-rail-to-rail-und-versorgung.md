@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Slew Rate und GBW unterscheiden
 - Rail-to-Rail-Angaben und Versorgung korrekt prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Eine OPV-Schaltung kann die ideale Verstärkung erfüllen und trotzdem falsche DC-Werte, verzerrte Flanken oder begrenzten Ausgang zeigen. Diese Abweichungen sind systematisch im Datenblatt beschrieben und entscheiden bei kleinen Sensorsignalen über die Messqualität.
 
+
+<!-- context-expansion-2026 -->
+Operationsverstärker formen analoge Signale mithilfe sehr hoher Leerlaufverstärkung und gezielter Rückkopplung. Das Schaltbild legt die gewünschte Funktion fest; Versorgung, Eingangsbereich, Ausgangshub und Bandbreite bestimmen, ob der reale Baustein diese Funktion auch erfüllen kann.
+
+Beim Thema **Offset, Bias, Slew Rate, Rail-to-Rail und Versorgung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Ein OPV wird als Regelkreis gelesen: Der Ausgang verändert über die Rückkopplung die Eingangsdifferenz. Zuerst wird die gewünschte Wirkung des Rückkopplungsnetzes bestimmt, danach werden Common Mode, Ausgangshub, Stabilität und Dynamik des realen Bausteins geprüft.
 
 ### DC-Fehler
 
@@ -33,6 +44,17 @@ Rail-to-Rail Input und Output sind getrennte Eigenschaften und gelten nur unter 
 ### Auswahl
 
 Geprüft werden Versorgung, Eingangsbereich, Ausgangshub bei Last, Offset und Drift, Bias, Rauschen, GBW, SR, Stabilität, Ruhestrom, Gehäuse und Temperaturbereich.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Auswahl realer OPVs für Batterie- und 3,3-V-Systeme
+- Fehlerbudget präziser Messketten
+- Dynamikprüfung schneller oder grosser Signale
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

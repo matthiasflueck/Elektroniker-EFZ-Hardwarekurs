@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Formeln schrittweise nach einer gesuchten Grösse umstellen
 - das Resultat mit Einheiten und Rückeinsetzen prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Eine Formel ist eine verdichtete Aussage über einen Zusammenhang. Wer sie nur als Zahlenrezept benutzt, übersieht leicht, wann sie gilt und was sich physikalisch ändert. Sicheres Umstellen beginnt deshalb mit einer sprachlichen Beschreibung.
 
+
+<!-- context-expansion-2026 -->
+Mathematik ist in der Elektronik kein Selbstzweck, sondern eine gemeinsame Sprache für Datenblatt, Schaltung, Messgerät und Prüfbericht. Eine Rechnung ist erst dann nützlich, wenn Einheit, Grössenordnung, Randbedingungen und physikalische Bedeutung zusammenpassen.
+
+Beim Thema **Formeln verstehen und sicher umstellen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie die Darstellung beim Rechnen, Lesen von Datenblättern, Auswerten von Messungen und Prüfen der Grössenordnung konkret eingesetzt wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und einem Gültigkeitsbereich. Vor dem Einsetzen von Zahlen wird daher geklärt, was gesucht ist, welche Annahmen gelten und welche Grössenordnung physikalisch zu erwarten ist.
 
 ### Gleichgewicht erhalten
 
@@ -38,6 +49,17 @@ Klammern helfen, zusammengehörige Terme sichtbar zu halten. Bei längeren Forme
 
 Eine Formel wird zuerst symbolisch umgestellt und erst danach mit Zahlen gefüllt. Dadurch bleibt sichtbar, welche Grössen im Zähler und Nenner stehen. Ausserdem lässt sich derselbe Rechenweg für andere Werte verwenden und durch Dimensionsanalyse prüfen.
 
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Dimensionierung von Widerständen und Filtern
+- Umstellen von Datenblattformeln
+- Berechnung unbekannter Messgrössen
+
+In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig notiert. Das Resultat wird anschliessend mit Grenzfällen, Grössenordnung oder einem Messwert geprüft, damit ein formal korrektes, aber physikalisch falsches Ergebnis nicht unbemerkt bleibt.
+
 ## Anschauliches Beispiel
 
 Die bekannte Beziehung wird als Waage vorgestellt. Multiplizierst du nur eine Seite mit 2, kippt die Waage. Führst du dieselbe Operation auf beiden Seiten aus, bleibt die Gleichheit erhalten.
@@ -48,7 +70,7 @@ Aus `P = U · I` soll U bestimmt werden. Division beider Seiten durch I ergibt `
 
 ## Praxisbezug
 
-Stelle `U = R·I`, `P = U·I` und `η = P_out/P_in` jeweils nach jeder vorkommenden Grösse um. Schreibe jeden Rechenschritt aus.
+Stelle `U = R·I`, `P = U·I` und `η = Pout/Pin` jeweils nach jeder vorkommenden Grösse um. Schreibe jeden Rechenschritt aus.
 
 ## 🔗 Hardware ↔ Firmware
 

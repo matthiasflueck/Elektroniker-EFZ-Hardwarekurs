@@ -10,11 +10,28 @@ Nach dieser Lektion kannst du:
 - Entstehung der Raumladungszone erklären
 - Durchlass- und Sperrrichtung physikalisch deuten
 
-## Warum ist das wichtig?
+## Einleitung
 
 Dioden erscheinen im Schaltplan als einfaches Zweipolbauteil. Ihr Verhalten entsteht jedoch aus beweglichen Ladungsträgern, einem inneren elektrischen Feld und einer Grenzschicht. Wer diese Vorstellung versteht, kann Durchlassspannung, Leckstrom, Temperaturwirkung und Durchbruch besser einordnen, statt die Diode als idealen Einwegschalter zu behandeln.
 
+
+<!-- context-expansion-2026 -->
+Dioden steuern Strom abhängig von Polarität, Spannung und Temperatur. Sie werden zum Gleichrichten, Begrenzen, Schützen und Erzeugen von Licht eingesetzt. Das einfache Schaltzeichen steht dabei für einen realen PN- oder Metall-Halbleiter-Übergang mit klaren Grenzwerten.
+
+Beim Thema **Halbleitergrundlagen und PN-Übergang** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Für jede Diodenschaltung werden zuerst Anode, Kathode, vorgesehene Stromrichtung und Sperrspannung markiert. Danach folgen Arbeitspunkt und Verlustleistung. Diese Reihenfolge macht sichtbar, ob die Diode im Normalbetrieb leitet, sperrt oder nur im Fehlerfall Energie übernimmt.
+
+**Die Diode ist ein Zweipolbauteil mit Anode A und Kathode K.** Im Schaltzeichen markiert der senkrechte Strich die Kathode; am realen Bauteil kennzeichnet häufig ein Ring dieselbe Seite. In Durchlassrichtung liegt die Anode positiver als die Kathode und der technische Strom kann von A nach K fliessen. In Sperrrichtung liegt die Kathode positiver; die Diode blockiert bis auf Leckstrom, solange ihre zulässige Sperrspannung nicht überschritten wird. Der Referenzbezeichner beginnt üblicherweise mit `D`.
+
+![Diodensymbol mit Anode, Kathode sowie Durchlass- und Sperrrichtung](../bilder/09-dioden-schutz/09-01a-diodensymbol-richtungen.png)
+
+Vor jeder Analyse werden daher A und K im Schema markiert. Danach wird gefragt: Welche Polarität liegt im Normalbetrieb an, welcher Strompfad entsteht beim Leiten und welche Spannung muss die Diode beim Sperren aushalten? Erst auf dieser Grundlage sind Kennlinie und Arbeitspunkt sinnvoll.
 
 ### Vom Kristall zum Halbleiter
 
@@ -31,6 +48,17 @@ In Durchlassrichtung verkleinert die äussere Spannung die Potentialbarriere. Vi
 ### Temperatur
 
 Höhere Temperatur erzeugt mehr Ladungsträger. Bei gleichem Durchlassstrom sinkt die benötigte Durchlassspannung typischerweise; der Sperrstrom steigt. Das beeinflusst Stromaufteilung und thermische Stabilität.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Gleichrichtung und Verpolschutz
+- Freilauf- und Klemmwege
+- Signalbegrenzung und Pegelerkennung
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Grenzfrequenz berechnen
 - Wicklungswiderstand und Sättigung berücksichtigen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Eine Spule besitzt steigenden Blindwiderstand mit Frequenz. Zusammen mit R entstehen Filter, Stromglättung und Entstörung. Reale Spulen bringen jedoch DCR, Kernverlust und Sättigung mit.
 
+
+<!-- context-expansion-2026 -->
+Filter formen Signale abhängig von ihrer Frequenz. Widerstände, Kondensatoren und Spulen bilden dazu frequenzabhängige Spannungsteiler und Energiespeicher. Zeitverhalten, Frequenzgang und reale Verluste sind drei Sichten auf dasselbe Netzwerk.
+
+Beim Thema **RL-Netzwerke** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Filter werden zunächst als frequenzabhängige Spannungsteiler verstanden. Danach folgen Grenzfrequenz, Phase und asymptotischer Verlauf. Bauteiltoleranzen, Quell- und Lastimpedanz sowie parasitäre Elemente erklären die Abweichung zwischen idealer Kurve und Messung.
 
 ### Abgriff bestimmt Funktion
 
@@ -37,6 +48,17 @@ Mit Gleichstrom kann L wegen Sättigung sinken. DCR verändert Verstärkung und 
 Ein RL-Netzwerk kann dieselben Bauteile je nach Ausgangsabgriff als Tief- oder Hochpass verwenden. Wird die Ausgangsspannung über R abgegriffen, ist sie bei tiefen Frequenzen gross und fällt mit zunehmendem XL: Das ist ein Tiefpass. Der Abgriff über L liefert dagegen einen Hochpass. Vor jeder Formel muss daher klar sein, über welchem Bauteil Uout definiert ist.
 
 Reale Spulen besitzen den Serienwiderstand Rdc. Er liegt nicht ausserhalb des Bauteils, sondern ist Teil des wirksamen Rges und verursacht bereits bei Gleichstrom Verlustleistung `Pcu = Ieff²·Rdc`. Bei höheren Frequenzen können Kern- und Skin-Effekt-Verluste hinzukommen. Der gemessene Frequenzgang weicht dann vom idealen Verlauf ab. Für Leistungsschaltungen werden Induktivität, Rdc, Sättigungsstrom und thermisch zulässiger Effektivstrom gemeinsam geprüft; ein richtiger fG-Wert allein schützt die Spule nicht vor Überhitzung.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Stromglättung und EMV-Filter
+- Zeitverhalten induktiver Sensoren
+- Eingangs- und Ausgangsfilter von Stromversorgungen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

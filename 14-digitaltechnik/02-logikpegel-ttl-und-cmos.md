@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Noise Margins aus Datenblattgrenzen bestimmen
 - TTL- und CMOS-Familien kompatibel verbinden
 
-## Warum ist das wichtig?
+## Einleitung
 
 Logisch 0 und 1 sind elektrische Spannungsbereiche, keine idealen Zahlen. Zwei Bausteine funktionieren nur zuverlässig zusammen, wenn garantierte Ausgangspegel zu den garantierten Eingangsschwellen passen – auch bei Last, Temperatur und Störungen.
 
+
+<!-- context-expansion-2026 -->
+Digitale Zustände werden elektrisch durch Spannungsbereiche und zeitlich durch Flanken dargestellt. Logische Funktion, Störreserve, Laufzeit und Startzustand gehören zusammen. Ein korrekter Wahrheitswert allein beweist noch keine robuste Hardware.
+
+Beim Thema **Logikpegel, TTL und CMOS** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Digitale Schaltungen werden in drei Ebenen untersucht: Boolesche Funktion, elektrischer Pegel und zeitliches Verhalten. Wahrheitstabelle, Datenblattgrenzen und Zeitdiagramm beantworten unterschiedliche Fragen und müssen für eine belastbare Freigabe zusammenpassen.
 
 ### Garantierte Bereiche
 
@@ -29,6 +40,17 @@ Die Low-Störreserve ist `NML = VIL(max) − VOL(max)`, die High-Störreserve `N
 Klassisches TTL und moderne CMOS-Familien besitzen unterschiedliche Schwellen und Ausgangsströme. Namen wie HC, HCT, LVC oder echte 5-V-Toleranz sind nicht austauschbar. Absolute Maximum Ratings geben Überlebensgrenzen an, nicht gültige Logikpegel.
 
 CMOS-Eingänge sind hochohmig und dürfen nicht offen bleiben. Langsame Flanken erhöhen die Zeit im undefinierten Bereich und können Querstrom oder Mehrfachschalten verursachen. Schmitt-Trigger-Eingänge verbessern langsame oder verrauschte Signale.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Verbindung von MCU, Sensor und Logik-IC
+- Bewertung von 3,3-V-/5-V-Kompatibilität
+- Festlegen von Störreserve und Pegelwandler
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

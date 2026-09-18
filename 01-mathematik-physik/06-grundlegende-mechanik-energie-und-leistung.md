@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Energieumwandlung in einem elektromechanischen System verfolgen
 - Wirkungsgrad und Verlustleistung berechnen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Elektronik wirkt auf die physische Welt: Ein Motor hebt eine Last, ein Relais bewegt einen Anker, ein Kühlkörper führt Wärme ab. Die gleichen Begriffe Energie und Leistung verbinden Mechanik, Elektrik und Thermik.
 
+
+<!-- context-expansion-2026 -->
+Mathematik ist in der Elektronik kein Selbstzweck, sondern eine gemeinsame Sprache für Datenblatt, Schaltung, Messgerät und Prüfbericht. Eine Rechnung ist erst dann nützlich, wenn Einheit, Grössenordnung, Randbedingungen und physikalische Bedeutung zusammenpassen.
+
+Beim Thema **Grundlegende Mechanik, Energie und Leistung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie die Darstellung beim Rechnen, Lesen von Datenblättern, Auswerten von Messungen und Prüfen der Grössenordnung konkret eingesetzt wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und einem Gültigkeitsbereich. Vor dem Einsetzen von Zahlen wird daher geklärt, was gesucht ist, welche Annahmen gelten und welche Grössenordnung physikalisch zu erwarten ist.
 
 ### Arbeit und Energie
 
@@ -26,7 +37,7 @@ Leistung sagt, wie schnell Energie umgesetzt wird: `P = W/t`. Ein Joule pro Seku
 
 ### Wirkungsgrad und Wärme
 
-Der Wirkungsgrad ist `η = P_nutz/P_zu`. Er liegt bei passiven Umwandlungen zwischen 0 und 1. Die Differenz wird überwiegend zu Wärme. Diese Verlustleistung bestimmt Temperaturanstieg und Kühlbedarf.
+Der Wirkungsgrad ist `η = Pnutz/Pzu`. Er liegt bei passiven Umwandlungen zwischen 0 und 1. Die Differenz wird überwiegend zu Wärme. Diese Verlustleistung bestimmt Temperaturanstieg und Kühlbedarf.
 
 ### Energie kann gespeichert und übertragen werden
 
@@ -37,6 +48,17 @@ Leistung wird besonders wichtig, wenn sich ein Zustand schnell ändert. Eine kle
 ### Thermischer Endzustand
 
 Verlustleistung erhöht zunächst die Temperatur. Gleichzeitig wächst meist die Wärmeabgabe an Umgebung oder Kühlkörper. Im stationären Zustand sind erzeugte und abgeführte Wärmeleistung gleich. Die erreichte Temperatur hängt daher nicht nur von Watt, sondern auch von Gehäuse, Leiterplatte, Luftstrom und Umgebung ab.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Thermische und mechanische Abschätzungen
+- Leistungsbilanz von Reglern und Lasten
+- Energiebetrachtung bei Kondensatoren und Spulen
+
+In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig notiert. Das Resultat wird anschliessend mit Grenzfällen, Grössenordnung oder einem Messwert geprüft, damit ein formal korrektes, aber physikalisch falsches Ergebnis nicht unbemerkt bleibt.
 
 ## Anschauliches Beispiel
 

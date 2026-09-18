@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - wired-AND-Verhalten elektrisch erklären
 - mechanische Kontakte hardware- und softwareseitig entprellen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Viele Teilnehmer teilen eine Leitung, indem jeder nur Low erzwingen kann. Der Pull-up erzeugt High. Dasselbe Prinzip steckt in I²C, Interruptleitungen und Fehlersammelsignalen. Mechanische Taster zeigen zusätzlich mehrere schnelle Übergänge statt einer sauberen Flanke.
 
+
+<!-- context-expansion-2026 -->
+Digitale Zustände werden elektrisch durch Spannungsbereiche und zeitlich durch Flanken dargestellt. Logische Funktion, Störreserve, Laufzeit und Startzustand gehören zusammen. Ein korrekter Wahrheitswert allein beweist noch keine robuste Hardware.
+
+Beim Thema **Open Collector, Open Drain, Pull-Widerstände und Entprellung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Digitale Schaltungen werden in drei Ebenen untersucht: Boolesche Funktion, elektrischer Pegel und zeitliches Verhalten. Wahrheitstabelle, Datenblattgrenzen und Zeitdiagramm beantworten unterschiedliche Fragen und müssen für eine belastbare Freigabe zusammenpassen.
 
 ### Gemeinsam Low ziehen
 
@@ -27,6 +38,17 @@ Der Low-Strom ist näherungsweise `IL = (VDD − VOL)/RP`. Die steigende Flanke 
 ### Entprellung
 
 Ein mechanischer Kontakt kann während Millisekunden mehrfach öffnen und schliessen. RC plus Schmitt-Trigger erzeugt eine saubere Hardwareflanke. Software kann nach der ersten Änderung eine stabile Zeit fordern. Ein reines RC direkt an einem normalen CMOS-Eingang kann lange im undefinierten Bereich bleiben.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- I²C- und Interruptleitungen
+- Gemeinsame Fehlersignale
+- Taster, Relaiskontakte und störfeste digitale Eingänge
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

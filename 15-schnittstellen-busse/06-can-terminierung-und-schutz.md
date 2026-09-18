@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Terminierung und Buswiderstand prüfen
 - Transceiver, Schutz und Massekonzept unterscheiden
 
-## Warum ist das wichtig?
+## Einleitung
 
 CAN kombiniert differentiellen Bus, Arbitration und robuste Fehlererkennung. Auf der Leiterplatte sieht der Mikrocontroller nur TXD und RXD; die realen Buspegel entstehen im Transceiver und auf der Leitung.
 
+
+<!-- context-expansion-2026 -->
+Eine digitale Schnittstelle besteht aus Protokoll und physikalischer Übertragung. Register erzeugen Bits, Pad-Zellen und Transceiver erzeugen reale Pegel, und Leitung sowie Rückweg formen die Flanken. Diagnose muss daher Firmwarezustand und Messsignal gleichzeitig berücksichtigen.
+
+Beim Thema **CAN, Terminierung und Schutz** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Bei Bussystemen werden Datenrichtung, Treiberart, Bezugspotential und Abschluss vor der Protokolldekodierung geklärt. Ein Logic Analyzer zeigt logische Zustände; das Oszilloskop zeigt, ob Pegel und Flanken die Empfängergrenzen tatsächlich einhalten.
 
 ### Dominant gewinnt
 
@@ -29,6 +40,17 @@ Zwei 120-Ω-Abschlüsse sitzen an den Busenden. Stromlos gemessen ergibt der Bus
 Der Transceiver stellt Gleichtaktfestigkeit, Flankensteuerung und oft Standby bereit. TVS-Dioden, Common-Mode-Drossel und ESD-Konzept werden passend zur Umgebung gewählt; Schutzbauteile fügen Kapazität hinzu. Galvanische Trennung benötigt isolierte Versorgung und einen getrennten Bezug.
 
 Bitrate, Buslänge und Stichleitungen begrenzen sich gegenseitig. Fehlerzähler und Bus-off sind Protokollreaktionen, ersetzen aber keine saubere physikalische Schicht.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Fahrzeug- und Maschinenkommunikation
+- Robuste verteilte Steuerungen
+- Diagnose von Terminierung und Busfehlern
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

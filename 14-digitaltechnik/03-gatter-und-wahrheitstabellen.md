@@ -10,11 +10,24 @@ Nach dieser Lektion kannst du:
 - Wahrheitstabellen systematisch erstellen
 - Logikfunktion und reales Gatter verbinden
 
-## Warum ist das wichtig?
+## Einleitung
 
 Gatter verknüpfen Bedingungen zu Freigaben, Verriegelungen und Fehlerausgängen. Eine Wahrheitstabelle zwingt dazu, alle Eingangskombinationen zu prüfen – nicht nur den gewünschten Normalfall.
 
+
+<!-- context-expansion-2026 -->
+Digitale Zustände werden elektrisch durch Spannungsbereiche und zeitlich durch Flanken dargestellt. Logische Funktion, Störreserve, Laufzeit und Startzustand gehören zusammen. Ein korrekter Wahrheitswert allein beweist noch keine robuste Hardware.
+
+Beim Thema **Gatter und Wahrheitstabellen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Digitale Schaltungen werden in drei Ebenen untersucht: Boolesche Funktion, elektrischer Pegel und zeitliches Verhalten. Wahrheitstabelle, Datenblattgrenzen und Zeitdiagramm beantworten unterschiedliche Fragen und müssen für eine belastbare Freigabe zusammenpassen.
+
+Ein Logikgatter besitzt einen oder mehrere Eingänge und einen Ausgang. IEC-Rechtecksignaturen kennzeichnen die Funktion im Symbol; kleine Negationskreise markieren eine Invertierung am betreffenden Anschluss. Referenzbezeichner wie `U1A` verbinden eine einzelne Gattereinheit mit dem gemeinsamen IC-Gehäuse `U1` und dessen Versorgungspins.
 
 ### Grundfunktionen
 
@@ -27,6 +40,17 @@ Eine Wahrheitstabelle mit n Eingängen besitzt `2ⁿ` Zeilen. Für zwei Eingäng
 ### Reale Gatter
 
 Ein reales Gatter besitzt Laufzeit, begrenzten Ausgangsstrom, Eingangsleckstrom und Versorgung. Bei gleichzeitig wechselnden Eingängen können wegen unterschiedlicher Laufzeiten kurze Glitches entstehen. Unbenutzte Eingänge erhalten definierte Pegel.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Verriegelungen und Freigabelogik
+- Alarm- und Fehlersammelsignale
+- Dekodierung von Zuständen in Steuerbaugruppen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

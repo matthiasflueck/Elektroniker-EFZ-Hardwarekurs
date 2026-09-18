@@ -10,26 +10,37 @@ Nach dieser Lektion kannst du:
 - Umgebungstemperatur, Eigenerwärmung und Derating unterscheiden
 - eine Widerstandsbelastung gegen Datenblattgrenzen prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Widerstände wandeln elektrische Leistung in Wärme um. Gleichzeitig verändert Temperatur ihren Widerstandswert und begrenzt die zulässige Belastung. Eine Rechnung bei 25 °C reicht daher nicht automatisch für ein Gerät, das in einem geschlossenen Gehäuse oder neben warmen Leistungshalbleitern arbeitet.
 
 Der Temperaturkoeffizient beschreibt die Wertänderung, während eine Derating-Kurve die zulässige Leistung bei erhöhter Umgebungstemperatur begrenzt. Beide betreffen Temperatur, beantworten aber unterschiedliche Fragen.
 
+
+<!-- context-expansion-2026 -->
+Ein Widerstand ist nicht nur ein Zahlenwert in Ohm. Technologie, Toleranz, Temperatur, Spannung, Pulsenergie, Bauform und Alterung entscheiden, ob er seine Aufgabe zuverlässig erfüllt. Widerstandssensoren nutzen dieselben Abhängigkeiten gezielt als Messprinzip.
+
+Beim Thema **Temperaturkoeffizient und Belastbarkeit** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Bei der Bauteilauswahl werden Nennwert und Bauform mit den realen Betriebsbedingungen verknüpft. Neben dem Normalbetrieb werden Toleranz, Temperatur, Verlustleistung, kurzzeitige Überlast und Fehlerfall geprüft. Das Datenblatt ist dabei Teil der Schaltungsauslegung.
 
 ### Linearer Temperaturkoeffizient
 
 Für einen begrenzten Temperaturbereich kann die Widerstandsänderung vieler Festwiderstände linear angenähert werden:
 
-`R(T) ≈ R_ref · [1 + α·(T − T_ref)]`
+`R(T) ≈ Rref · [1 + α·(T − Tref)]`
 
 | Formelzeichen | Bedeutung | Einheit |
 |---|---|---|
 | `R(T)` | Widerstand bei der Temperatur `T` | Ω |
-| `R_ref` | Widerstand bei der Referenztemperatur `T_ref` | Ω |
+| `Rref` | Widerstand bei der Referenztemperatur `Tref` | Ω |
 | `α` | Temperaturkoeffizient, oft in ppm/K | 1/K |
-| `T`, `T_ref` | aktuelle und Referenztemperatur | °C oder K für Differenzen |
+| `T`, `Tref` | aktuelle und Referenztemperatur | °C oder K für Differenzen |
 
 `ppm` bedeutet «parts per million». Ein Koeffizient von 100 ppm/K entspricht `100·10⁻⁶/K = 0,0001/K = 0,01 %/K`. Temperaturdifferenzen haben in Kelvin und Grad Celsius denselben Zahlenwert.
 
@@ -55,13 +66,24 @@ Eine Derating-Kurve wird nicht zwischen unterschiedlichen Bauteilserien übertra
 
 Selbst wenn `P = U²/R` unterhalb der Nennleistung liegt, kann die maximal zulässige Arbeitsspannung überschritten sein. Das betrifft besonders hochohmige Widerstände. Umgekehrt kann ein niederohmiger Widerstand seine Leistungsgrenze bei relativ kleiner Spannung erreichen.
 
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Präzisionsmessung und Referenznetzwerke
+- Leistungswiderstände auf warmen Leiterplatten
+- Temperaturkompensation analoger Schaltungen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
+
 ## Anschauliches Beispiel
 
 Ein präziser 10-kΩ-Widerstand mit 25 ppm/K ändert sich bei 40 K Temperaturanstieg näherungsweise um 0,1 %. Das sind 10 Ω. Für einen LED-Vorwiderstand ist dies oft unkritisch; in einem genauen Messverstärker kann es die gesamte Fehlerreserve aufbrauchen.
 
 ## Berechnungsbeispiel
 
-Gegeben sind `R_ref = 10,000 kΩ`, `α = 50 ppm/K`, `T_ref = 25 °C` und `T = 85 °C`. Die Differenz beträgt 60 K. Die relative Änderung ist `50·10⁻⁶/K · 60 K = 0,003 = 0,3 %`. Damit ergibt sich näherungsweise `R(85 °C) = 10,030 kΩ`.
+Gegeben sind `Rref = 10,000 kΩ`, `α = 50 ppm/K`, `Tref = 25 °C` und `T = 85 °C`. Die Differenz beträgt 60 K. Die relative Änderung ist `50·10⁻⁶/K · 60 K = 0,003 = 0,3 %`. Damit ergibt sich näherungsweise `R(85 °C) = 10,030 kΩ`.
 
 ## Praxisbezug
 

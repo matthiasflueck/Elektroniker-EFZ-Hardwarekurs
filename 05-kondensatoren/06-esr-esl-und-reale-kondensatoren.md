@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Selbstresonanz und Ripple-Erwärmung beurteilen
 - Messabweichungen realer Kondensatoren deuten
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein realer Kondensator ist bei hoher Frequenz nicht nur C. Anschluss- und Aufbauinduktivität sowie Verluste verändern seine Impedanz. Deshalb kann ein grosser Kondensator schnelle Stromspitzen schlechter abfangen als ein kleiner, günstig platzierter Typ.
 
+
+<!-- context-expansion-2026 -->
+Kondensatoren speichern Ladung in einem elektrischen Feld. Dadurch verbinden sie Gleichstromverhalten, zeitliche Vorgänge und hochfrequente Strompfade. Ihre Aufgabe wird erst verständlich, wenn neben dem Kapazitätswert auch Polarität, ESR, ESL und der reale Einbauort betrachtet werden.
+
+Beim Thema **ESR, ESL und reale Kondensatoren** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Das ideale Kondensatormodell erklärt Ladung und Zeitverhalten. Für eine reale Baugruppe werden zusätzlich Serienwiderstand, Serieninduktivität, Leckstrom, Spannungsabhängigkeit und Polarität berücksichtigt. Je höher die Frequenz, desto wichtiger werden Anschluss- und Leiterbahngeometrie.
 
 ### Ersatzmodell
 
@@ -37,6 +48,17 @@ Unterhalb der Selbstresonanz dominiert C und die Impedanz sinkt. Am Minimum komp
 ### Messbedingungen
 
 Ein LCR-Meter misst bei definierter Frequenz und Signalhöhe. Kapazitäts-, ESR- und Impedanzwerte ohne Messbedingung sind unvollständig. Ein Oszilloskop zeigt die Wirkung im realen Strompfad, nicht direkt einen einzelnen Modellparameter.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Ripple-Strom in Stromversorgungen
+- Hochfrequenz-Entkopplung
+- Bewertung von Selbstresonanz und Verlusten
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

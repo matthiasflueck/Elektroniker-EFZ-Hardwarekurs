@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Hysterese als zwei Schaltschwellen erklären
 - Pull-up und Ausgangstyp korrekt beschalten
 
-## Warum ist das wichtig?
+## Einleitung
 
 Langsam oder verrauscht durchlaufene Schwellen erzeugen ohne Hysterese viele Übergänge. Ein Schmitt-Trigger schafft getrennte Ein- und Ausschaltschwellen. Komparatoren sind dafür gebaut; ein beliebiger OPV kann in Sättigung langsam oder ausserhalb seiner Eingangsgrenzen reagieren.
 
+
+<!-- context-expansion-2026 -->
+Operationsverstärker formen analoge Signale mithilfe sehr hoher Leerlaufverstärkung und gezielter Rückkopplung. Das Schaltbild legt die gewünschte Funktion fest; Versorgung, Eingangsbereich, Ausgangshub und Bandbreite bestimmen, ob der reale Baustein diese Funktion auch erfüllen kann.
+
+Beim Thema **Komparator und Schmitt-Trigger** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Ein OPV wird als Regelkreis gelesen: Der Ausgang verändert über die Rückkopplung die Eingangsdifferenz. Zuerst wird die gewünschte Wirkung des Rückkopplungsnetzes bestimmt, danach werden Common Mode, Ausgangshub, Stabilität und Dynamik des realen Bausteins geprüft.
 
 ### Offener Regelkreis
 
@@ -31,6 +42,17 @@ Die genaue Formel hängt von Topologie, Referenz und Ausgangspegeln ab. Diese Pe
 ### Dynamik
 
 Propagationszeit, Eingangsoverdrive und Ausgangslast bestimmen Schaltzeit. Langsame Eingangsrampen können trotz Hysterese Jitter zeigen; interne Eingangsschutzstrukturen und Common Mode bleiben einzuhalten.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Schwellwertüberwachung und Power Good
+- Taster- und Sensorsignalaufbereitung
+- Erzeugen störfester Schaltpunkte mit Hysterese
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

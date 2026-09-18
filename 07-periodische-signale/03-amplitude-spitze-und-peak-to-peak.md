@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Messwerte aus dem Oszilloskop korrekt zuordnen
 - zulässige Eingangsgrenzen mit Extremwerten prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 «Das Signal hat 2 V» ist unvollständig. Gemeint sein können Amplitude, Effektivwert oder Spitze-Spitze-Wert. Für Übersteuerung und Schutz zählen absolute Maximal- und Minimalwerte inklusive Gleichanteil.
 
+
+<!-- context-expansion-2026 -->
+Elektronische Signale verändern sich mit der Zeit. Frequenz, Amplitude, Effektivwert und Phase beschreiben unterschiedliche Eigenschaften desselben Verlaufs. Für Messung und Schaltungsentwurf muss deshalb stets geklärt werden, welche Signalgrösse gemeint ist und unter welchen Bedingungen sie gilt.
+
+Beim Thema **Amplitude, Spitze und Peak-to-Peak** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Ein Signal wird zuerst im Zeitdiagramm mit Bezugslinie und Einheiten beschrieben. Daraus lassen sich Periodendauer, Frequenz, Momentanwert und Phasenbezug ableiten. Messgeräte können je nach Kopplung, Bandbreite und Auswerteverfahren unterschiedliche Kennwerte desselben Signals anzeigen.
 
 ### Bezugsgrössen
 
@@ -35,6 +46,17 @@ DC-Kopplung zeigt Gleich- und Wechselanteil. AC-Kopplung entfernt langsame bezie
 ### Grenzen
 
 Für einen MCU-Eingang werden Umax und Umin gegen absolute und normale Betriebsgrenzen geprüft. Upp allein kann einen gefährlichen Offset verbergen.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Prüfung von Logikpegeln und Versorgungsspitzen
+- Angabe von Ripple als Peak-to-Peak
+- Bewertung zulässiger Eingangshübe
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

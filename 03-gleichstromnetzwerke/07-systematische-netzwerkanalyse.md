@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - eine passende Analysemethode auswählen und dokumentieren
 - das Resultat durch unabhängige Kontrollen und Messpunkte absichern
 
-## Warum ist das wichtig?
+## Einleitung
 
 Die meisten Fehler in einer Netzwerkanalyse entstehen nicht beim Taschenrechnen, sondern vorher: Ein Knoten wird übersehen, ein Pfeil fehlt, eine Formel wird ausserhalb ihrer Bedingungen verwendet oder ein Resultat nicht geprüft. Ein festes Vorgehen reduziert diese Fehler und macht den Lösungsweg für andere nachvollziehbar.
 
 Professionelle Analyse bedeutet deshalb mehr als «die richtige Zahl». Das Schema wird strukturiert, Annahmen werden genannt, Einheiten bleiben sichtbar und mindestens eine unabhängige Kontrolle wird durchgeführt. Genau dieses Vorgehen lässt sich später auf Halbleiter-, OPV- und Versorgungsschaltungen übertragen.
 
+
+<!-- context-expansion-2026 -->
+Eine Baugruppe besteht aus verbundenen Quellen, Bauteilen und Lasten. Gleichstromnetzwerke liefern die Regeln, mit denen sich unbekannte Ströme und Spannungen aus Topologie und Bauteilwerten ableiten lassen. Dabei sind Knoten, Maschen und Rückstrompfade ebenso wichtig wie die Zahlenwerte.
+
+Beim Thema **Systematische Netzwerkanalyse** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Netzwerke werden aus Sicht ihrer Topologie gelesen: Bauteile in demselben Strompfad liegen in Reihe, Bauteile an denselben zwei Knoten parallel. Erst danach werden Ersatzwerte, Knotenbilanzen oder Maschengleichungen gebildet. Diese Reihenfolge verhindert viele Vorzeichen- und Zuordnungsfehler.
 
 ### Schritt 1: Aufgabe und Bezug klären
 
@@ -49,7 +60,7 @@ Eine gute Lösung besitzt mehrere Kontrollmöglichkeiten:
 - Liegt ein Ersatzwiderstand in einem plausiblen Bereich?
 - Stimmen Knoten- und Maschenbilanzen innerhalb der Rundung?
 - Ist die von Quellen gelieferte Leistung ungefähr gleich der aufgenommenen Leistung?
-- Verhalten sich Grenzfälle sinnvoll, etwa `R_L → ∞` für Leerlauf?
+- Verhalten sich Grenzfälle sinnvoll, etwa `RL → ∞` für Leerlauf?
 - Bleiben Bauteilwerte, Ströme und Leistungen innerhalb sicherer Grenzen?
 
 ![Beispielnetzwerk mit nummerierten Knoten und geplanten Messpunkten](../bilder/03-gleichstromnetzwerke/03-07-messpunkte.png)
@@ -60,6 +71,17 @@ Messpunkte werden aus der Funktion gewählt. Eine Quellenspannung prüft die Spe
 
 Soll und Ist werden mit den Betriebsbedingungen dokumentiert. Bei einer Abweichung wird nur eine Hypothese auf einmal geprüft: falscher Wert, Unterbruch, Kurzschluss, Messgerätebelastung oder Quellenbegrenzung.
 
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Fehlersuche in unbekannten Gleichstromschaltungen
+- Vorhersage aller Knotenwerte vor dem Aufbau
+- Plausibilitätsprüfung eines vollständigen Messprotokolls
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
+
 ## Anschauliches Beispiel
 
 Ein Netzwerk enthält eine 10-V-Quelle, einen Serienwiderstand und zwei parallele Lasten. Statt sofort eine Gleichung zu raten, werden zuerst die beiden Lasten parallel zusammengefasst, danach der Gesamtstrom berechnet und zuletzt mit der gemeinsamen Zweigspannung die Einzelströme bestimmt. Knoten- und Maschenbilanz bestätigen unabhängig das Ergebnis.
@@ -68,7 +90,7 @@ Ein Netzwerk enthält eine 10-V-Quelle, einen Serienwiderstand und zwei parallel
 
 Das folgende gemischte Netzwerk wird zuerst topologisch vereinfacht. Erst danach werden Gesamtstrom, Knotenspannung und Zweigströme berechnet.
 
-`R_1 = 1 kΩ` liegt in Reihe mit `R_2 = 2 kΩ || R_3 = 2 kΩ` an 10 V. Der Parallelersatz beträgt 1 kΩ, der Gesamtwiderstand 2 kΩ und der Quellenstrom 5 mA. Am Parallelzweig liegen 5 V; dort fliessen zweimal 2,5 mA. Kontrolle: `2,5 mA + 2,5 mA = 5 mA`, und die beiden Spannungsabfälle von je 5 V ergeben 10 V.
+`R1 = 1 kΩ` liegt in Reihe mit `R2 = 2 kΩ || R3 = 2 kΩ` an 10 V. Der Parallelersatz beträgt 1 kΩ, der Gesamtwiderstand 2 kΩ und der Quellenstrom 5 mA. Am Parallelzweig liegen 5 V; dort fliessen zweimal 2,5 mA. Kontrolle: `2,5 mA + 2,5 mA = 5 mA`, und die beiden Spannungsabfälle von je 5 V ergeben 10 V.
 
 ## Praxisbezug
 

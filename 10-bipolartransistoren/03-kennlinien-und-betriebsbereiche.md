@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Ausgangskennlinien lesen
 - sicheren Arbeitsbereich berücksichtigen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Derselbe Transistor kann gesperrt, linear verstärkend oder gesättigt arbeiten. Nur wenn der Betriebsbereich bewusst gewählt wird, stimmen Verstärkung, Verlustleistung und Schaltgeschwindigkeit. Kennlinien zeigen, wo das vereinfachte Modell endet.
 
+
+<!-- context-expansion-2026 -->
+Bipolartransistoren verbinden einen steuernden Basis-Emitter-Kreis mit einem Kollektor-Emitter-Lastpfad. Je nach Arbeitspunkt arbeiten sie als Schalter, Verstärker oder Stromquelle. Anschlussbelegung, Stromrichtung und thermische Rückwirkung gehören deshalb von Beginn an zur Betrachtung.
+
+Beim Thema **Kennlinien und Betriebsbereiche** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Beim BJT werden Basis-, Kollektor- und Emitterkreis getrennt verfolgt und anschliessend über den Arbeitspunkt verbunden. Der Steuerstrom stammt aus einer realen Quelle, der Laststrom aus einem eigenen Energiepfad. Verstärkung und Sättigung sind Betriebszustände, keine unveränderlichen Bauteilkonstanten.
 
 ### Drei Hauptbereiche
 
@@ -27,6 +38,17 @@ Ausgangskennlinien zeigen IC über VCE für mehrere Basisströme. Die Lastgerade
 ### Grenzen
 
 Maximalwerte für VCEO, IC, Verlustleistung und Sperrschichttemperatur gelten gemeinsam mit dem Safe Operating Area. Bei linearem Betrieb kann Secondary Breakdown den zulässigen Bereich zusätzlich einschränken. Ein Bauteil innerhalb einzelner Maximalwerte ist nicht automatisch sicher.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Unterscheidung von Sperrung, aktivem Bereich und Sättigung
+- Auswahl eines sicheren Arbeitspunkts
+- Interpretation von Ausgangskennlinien
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

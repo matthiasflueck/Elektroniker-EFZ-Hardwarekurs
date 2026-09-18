@@ -12,11 +12,11 @@ Warum brauche ich das? → einfache Vorstellung → physikalischer Vorgang
 → realer Aufbau → Messung → Abweichung → typische Fehler
 ```
 
-Lektionen und Kapitel beginnen mit zwei bis vier verständlichen Absätzen. Eine Formel darf nie der erste Erklärschritt eines neuen Prinzips sein. Fachbegriffe und mathematische Beschreibung folgen erst, nachdem die reale Frage und eine anschauliche Vorstellung geklärt sind.
+Lektionen und Kapitel beginnen mit zwei bis vier verständlichen Absätzen. Die Einleitung ordnet das Thema in die gesamte Baugruppe und den bisherigen Lernpfad ein. Die Theorie erklärt zuerst Symbol, Anschlüsse, Polaritäten, Strompfade und Grundfunktion, bevor Kennlinien oder Detailformeln folgen. Ein Abschnitt «Anwendungsfall» nennt bei Bauteilen und Schaltungsteilen konkrete elektronische Anwendungen und die dort erfüllte Aufgabe. Eine Formel darf nie der erste Erklärschritt eines neuen Prinzips sein. Fachbegriffe und mathematische Beschreibung folgen erst, nachdem die reale Frage und eine anschauliche Vorstellung geklärt sind.
 
 ## Verbindliche Lektionsstruktur
 
-Lernziele · Warum ist das wichtig? · Theorie · anschauliches Beispiel · Berechnungsbeispiel · Praxisbezug · optional **🔗 Hardware ↔ Firmware** · Merksatz · häufige Fehler · Zusammenfassung · Übungsfragen · **Bezug Bildungsplan 2026 als letzter Abschnitt**.
+Lernziele · Einleitung · Theorie · Anwendungsfall, wenn fachlich sinnvoll · anschauliches Beispiel · Berechnungsbeispiel · Praxisbezug · optional **🔗 Hardware ↔ Firmware** · Merksatz · häufige Fehler · Zusammenfassung · Übungsfragen · **Bezug Bildungsplan 2026 als letzter Abschnitt**.
 
 Ein eigenes Kapitel «Voraussetzungen» wird nicht verwendet. Benötigtes Vorwissen wird bei Bedarf kurz und natürlich in die Einleitung oder an der fachlich passenden Stelle aufgenommen.
 

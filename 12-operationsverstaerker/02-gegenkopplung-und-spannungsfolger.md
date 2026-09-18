@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Spannungsfolger analysieren
 - Stabilität und kapazitive Last beurteilen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Der Spannungsfolger verstärkt die Spannung nicht, aber er entkoppelt eine hochohmige Quelle von einer Last. Gleichzeitig zeigt er am klarsten, wie der OPV seinen Ausgang so nachführt, dass die Eingangsdifferenz klein wird.
 
+
+<!-- context-expansion-2026 -->
+Operationsverstärker formen analoge Signale mithilfe sehr hoher Leerlaufverstärkung und gezielter Rückkopplung. Das Schaltbild legt die gewünschte Funktion fest; Versorgung, Eingangsbereich, Ausgangshub und Bandbreite bestimmen, ob der reale Baustein diese Funktion auch erfüllen kann.
+
+Beim Thema **Gegenkopplung und Spannungsfolger** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Ein OPV wird als Regelkreis gelesen: Der Ausgang verändert über die Rückkopplung die Eingangsdifferenz. Zuerst wird die gewünschte Wirkung des Rückkopplungsnetzes bestimmt, danach werden Common Mode, Ausgangshub, Stabilität und Dynamik des realen Bausteins geprüft.
 
 ### Geschlossener Regelkreis
 
@@ -27,6 +38,17 @@ Ideal gilt `Uout = Uin`. Der Eingang belastet die Quelle kaum, der Ausgang liefe
 ### Stabilität
 
 Nicht jeder OPV ist bei Verstärkung 1 stabil. Kapazitive Last erzeugt zusätzliche Phase und kann Überschwingen oder Oszillation verursachen. Datenblattangaben zu Unity-Gain-Stabilität, Lastkapazität und empfohlenem Serienwiderstand sind verbindlich. Versorgung erhält lokale Abblockkondensatoren mit kurzem Rückweg.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Impedanzwandlung vor einem ADC
+- Entkopplung hochohmiger Sensoren
+- Rückkopplung in Regel- und Verstärkerstufen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

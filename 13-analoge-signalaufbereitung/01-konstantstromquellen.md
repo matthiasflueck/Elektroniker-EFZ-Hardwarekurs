@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Sollstrom, Bürde und Verlustleistung dimensionieren
 - eine OPV-Stromsenke samt Grenzen beurteilen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Widerstandssensoren, LEDs, 4–20-mA-Schleifen und Messbrücken benötigen oft einen definierten Strom. Eine Konstantstromquelle hält diesen Strom trotz wechselnder Last möglichst stabil. Sie kann das aber nur innerhalb ihres zulässigen Spannungs- und Leistungsbereichs.
 
+
+<!-- context-expansion-2026 -->
+Eine analoge Messkette übersetzt eine physikalische Grösse schrittweise in einen belastbaren ADC-Code. Erregung, Bezug, Verstärkung, Filter, Schutz und Abtastung beeinflussen sich gegenseitig. Deshalb wird jede Stufe zusammen mit ihren Grenzwerten und Messpunkten betrachtet.
+
+Beim Thema **Konstantstromquellen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Eine Messkette wird an ihren Schnittstellen beschrieben. Für jeden Knoten werden Signalbereich, Bezug, Quellimpedanz, Last, Bandbreite, Fehlerzustand und geeigneter Messpunkt festgelegt. Dadurch bleibt nachvollziehbar, wo Verstärkung, Filterung oder Abweichung entsteht.
 
 ### Regelung statt idealer Quelle
 
@@ -29,6 +40,17 @@ Der OPV vergleicht die Shuntspannung mit Vref und steuert Q1. Der Strom fliesst 
 Die Schaltung benötigt eine Mindestspannung über Q1, RS und Leitungen. Diese Reserve heisst Compliance oder Bürdenreserve. Wird die Lastspannung zu gross, erreicht der OPV seinen Ausgangsanschlag oder Q1 verlässt den Regelbereich; der Strom sinkt. Für Q1 gilt `PQ = VDS·Iout`, für den Shunt `PRS = Iout²·RS`. Temperaturkoeffizient, Offset und Referenzfehler bestimmen die Genauigkeit.
 
 Stromspiegel sind kompakt, hängen aber stärker von Transistorpaarung und Temperatur ab. Präzisionsquellen verwenden deshalb Rückkopplung, geeignete Referenzen und Kelvin-Anschlüsse am Shunt.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Erregung resistiver Sensoren
+- LED- und Diodenprüfung
+- 4–20-mA- und präzise Bias-Schaltungen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - virtuellen Bezug korrekt erklären
 - mehrere Eingangssignale gewichtet summieren
 
-## Warum ist das wichtig?
+## Einleitung
 
 Die invertierende Schaltung ermöglicht präzise Widerstandsverhältnisse, Stromsummierung und Offsetaddition. Der Eingang liegt jedoch nicht hochohmig am Signal; R1 bestimmt die Last. Der «virtuelle Massepunkt» darf niemals als reale Stromsenke missverstanden werden.
 
+
+<!-- context-expansion-2026 -->
+Operationsverstärker formen analoge Signale mithilfe sehr hoher Leerlaufverstärkung und gezielter Rückkopplung. Das Schaltbild legt die gewünschte Funktion fest; Versorgung, Eingangsbereich, Ausgangshub und Bandbreite bestimmen, ob der reale Baustein diese Funktion auch erfüllen kann.
+
+Beim Thema **Invertierender Verstärker und Summierer** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Ein OPV wird als Regelkreis gelesen: Der Ausgang verändert über die Rückkopplung die Eingangsdifferenz. Zuerst wird die gewünschte Wirkung des Rückkopplungsnetzes bestimmt, danach werden Common Mode, Ausgangshub, Stabilität und Dynamik des realen Bausteins geprüft.
 
 ### Virtueller Bezug
 
@@ -27,6 +38,17 @@ Für Vref = 0 gilt `Av = −Rf/Rin`. Das Minuszeichen beschreibt die Phasendrehu
 ### Reale Grenzen
 
 Rin ist zugleich Eingangswiderstand. Quellenwiderstand verändert die Verstärkung. Grosse Widerstände erhöhen Bias- und Rauschfehler; kleine belasten Quelle und Ausgang. Alle Summensignale müssen innerhalb des Ausgangshubs bleiben.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Invertierung und Gewichtung analoger Signale
+- Mischen mehrerer Soll- oder Sensorsignale
+- Aktive Filter- und DAC-Stufen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

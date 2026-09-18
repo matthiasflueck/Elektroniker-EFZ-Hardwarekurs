@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Ladungsmenge und Elementarladung einordnen
 - Aufladung, Polarisation und Neutralität unterscheiden
 
-## Warum ist das wichtig?
+## Einleitung
 
 Bevor Strom fliessen kann, muss geklärt sein, was sich überhaupt bewegt. Ladung ist eine grundlegende Eigenschaft von Materie. Sie erklärt elektrostatische Anziehung, ESD und später den Strom in Leitern und Halbleitern.
 
+
+<!-- context-expansion-2026 -->
+Elektrische Grössen beschreiben verschiedene Seiten desselben Vorgangs: Ladung wird bewegt, Spannung stellt Energie pro Ladung bereit, Widerstände begrenzen den Strom und Leistung beschreibt den Energieumsatz. Erst der geschlossene Stromkreis und ein festgelegter Bezug machen einzelne Zahlen zu einem verständlichen System.
+
+Beim Thema **Elektrische Ladung und Ladungsträger** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Zur Analyse wird zuerst der reale Strompfad gezeichnet und ein Bezugspotential festgelegt. Danach werden Richtung und Polarität definiert. Formeln beschreiben anschliessend diesen bereits verstandenen Vorgang; sie ersetzen weder Schaltbild noch Plausibilitätskontrolle.
 
 ### Ladung als Eigenschaft
 
@@ -41,6 +52,17 @@ Ladung kann sich innerhalb eines Körpers verschieben, ohne dass seine Gesamtlad
 ### Ladungserhaltung
 
 In einem abgeschlossenen System bleibt die Gesamtladung erhalten. Sie kann getrennt, verschoben und zwischen Körpern übertragen werden, aber nicht einfach verschwinden. Diese Erhaltung bildet später die Grundlage der Knotenregel: Was an Ladung in einen Knoten hineinfließt, muss ihn wieder verlassen oder seine gespeicherte Ladung verändern.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Batterien, Kondensatoren und ESD-Vorgänge
+- Ladungsspeicherung in Sensoren und ADC-Eingängen
+- Erklärung von Elektronen- und technischer Stromrichtung
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

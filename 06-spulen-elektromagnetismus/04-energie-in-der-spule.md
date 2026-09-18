@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Energiepfade beim Abschalten verfolgen
 - Bauteilbelastung aus Strom und Induktivität abschätzen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Beim Abschalten verschwindet Magnetfeldenergie nicht. Sie muss in Widerständen, Diode, Klemme, Lichtbogen oder Last umgesetzt werden. Die Energiebilanz erklärt, weshalb eine kleine Relaisspule einen Halbleiter zerstören kann und weshalb Schutzbauteile Energieangaben besitzen.
 
+
+<!-- context-expansion-2026 -->
+Spulen und Transformatoren speichern oder übertragen Energie über Magnetfelder. Weil sich der Spulenstrom nicht sprunghaft ändern kann, entstehen beim Ein- und Ausschalten charakteristische Spannungen. Kernmaterial, Sättigung und Wicklungswiderstand machen aus dem idealen Symbol ein reales Bauteil.
+
+Beim Thema **Energie in der Spule** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Das ideale Induktivitätsgesetz beschreibt die Spannung bei einer Stromänderung. Reale Spulen ergänzen Wicklungswiderstand, Kernverluste, parasitäre Kapazität und Sättigung. Der Strompfad muss sowohl während der Energieaufnahme als auch während der Energieabgabe geschlossen sein.
 
 ### Feldenergie
 
@@ -33,6 +44,17 @@ Bei einer Diode wird Energie hauptsächlich in Wicklungswiderstand und Diode umg
 ### Wiederholbetrieb
 
 Bei periodischem Schalten zählt neben Einzelenergie die Wiederholrate. Die mittlere umgesetzte Leistung ist näherungsweise Energie pro Zyklus mal Schaltfrequenz, sofern die Energie jedes Mal vollständig auf- und abgebaut wird.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Zwischenspeicherung in Schaltreglern
+- Magnetische Aktoren
+- Bewertung der Energie beim Abschalten einer Last
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Spannung, Strom und Widerstand sicher messen
 - Messabweichungen mit Toleranz und Gerätebelastung erklären
 
-## Warum ist das wichtig?
+## Einleitung
 
 Einzelbegriffe werden erst nützlich, wenn sie in einem realen Stromkreis zusammenpassen. Diese Lektion führt deshalb den ganzen Arbeitsablauf durch: vom Schema über die Rechnung und Freigabe bis zur Messung und Bewertung.
 
+
+<!-- context-expansion-2026 -->
+Elektrische Grössen beschreiben verschiedene Seiten desselben Vorgangs: Ladung wird bewegt, Spannung stellt Energie pro Ladung bereit, Widerstände begrenzen den Strom und Leistung beschreibt den Energieumsatz. Erst der geschlossene Stromkreis und ein festgelegter Bezug machen einzelne Zahlen zu einem verständlichen System.
+
+Beim Thema **Grundgrössen sicher berechnen, aufbauen und messen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Zur Analyse wird zuerst der reale Strompfad gezeichnet und ein Bezugspotential festgelegt. Danach werden Richtung und Polarität definiert. Formeln beschreiben anschliessend diesen bereits verstandenen Vorgang; sie ersetzen weder Schaltbild noch Plausibilitätskontrolle.
 
 ### Das Schema zuerst lesen
 
@@ -40,13 +51,24 @@ Ein unerwarteter Wert führt nicht sofort zum Umbau. Zuerst werden Messfunktion,
 
 Mehrere Spannungs-/Strompaare zeigen, ob der Widerstand im untersuchten Bereich annähernd linear bleibt. Die Gerade sollte nahe durch den Ursprung verlaufen; ihre Steigung hängt von der gewählten Achsendarstellung ab. Einzelne Ausreisser werden nicht gelöscht, sondern auf Ablese-, Kontakt- oder Einstellfehler untersucht.
 
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Erstinbetriebnahme einer einfachen Schaltung
+- Vergleich von Rechnung, Aufbau und Messung
+- Dokumentation von Abweichungen und Messgerätebelastung
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
+
 ## Anschauliches Beispiel
 
 Für 5,00 V und gemessene 997 Ω werden 5,02 mA erwartet. Zeigt das DMM 4,98 mA, ist nicht automatisch etwas defekt. Quellenabweichung, Widerstandstoleranz, Burden Voltage und Gerätegenauigkeit werden verglichen.
 
 ## Berechnungsbeispiel
 
-Mit `U = 5,00 V` und `R = 997 Ω`: `I_soll = 5,015 mA`. Gemessen seien `U_R = 4,96 V` und `I_ist = 4,98 mA`. Aus U/I folgt `R = 996 Ω`. Die relative Stromabweichung ist etwa `(4,98−5,015)/5,015 = −0,70 %` und damit plausibel.
+Mit `U = 5,00 V` und `R = 997 Ω`: `Isoll = 5,015 mA`. Gemessen seien `UR = 4,96 V` und `Iist = 4,98 mA`. Aus U/I folgt `R = 996 Ω`. Die relative Stromabweichung ist etwa `(4,98−5,015)/5,015 = −0,70 %` und damit plausibel.
 
 ## Praxisbezug
 

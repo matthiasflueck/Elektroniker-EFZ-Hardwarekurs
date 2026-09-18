@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - R und Blindanteil vektoriell kombinieren
 - Wirkleistung Scheinleistung und Leistungsfaktor unterscheiden
 
-## Warum ist das wichtig?
+## Einleitung
 
 In einer Wechselstromschaltung reicht eine einzelne Ohmzahl oft nicht. Impedanz beschreibt gleichzeitig, wie stark eine Last den Strom begrenzt und wie weit Strom und Spannung phasenverschoben sind.
 
+
+<!-- context-expansion-2026 -->
+Elektronische Signale verändern sich mit der Zeit. Frequenz, Amplitude, Effektivwert und Phase beschreiben unterschiedliche Eigenschaften desselben Verlaufs. Für Messung und Schaltungsentwurf muss deshalb stets geklärt werden, welche Signalgrösse gemeint ist und unter welchen Bedingungen sie gilt.
+
+Beim Thema **Impedanz und komplexe Lasten** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Ein Signal wird zuerst im Zeitdiagramm mit Bezugslinie und Einheiten beschrieben. Daraus lassen sich Periodendauer, Frequenz, Momentanwert und Phasenbezug ableiten. Messgeräte können je nach Kopplung, Bandbreite und Auswerteverfahren unterschiedliche Kennwerte desselben Signals anzeigen.
 
 ### Komplexe Darstellung
 
@@ -37,6 +48,17 @@ Wirkleistung P wird dauerhaft umgesetzt, Blindleistung Q pendelt zwischen Quelle
 ### Reale Lasten
 
 Motoren, Netzteile und Treiber können nichtlinear sein. Dann entstehen Oberwellen, und der Leistungsfaktor wird nicht allein durch einen Phasenwinkel beschrieben.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Last- und Quellenanpassung
+- Analyse von Filtern und Leitungen
+- Bewertung komplexer Verbraucher über Frequenz
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

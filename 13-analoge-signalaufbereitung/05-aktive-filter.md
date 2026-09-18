@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Grenzfrequenz und Güte eines aktiven Tiefpasses einordnen
 - OPV-Bandbreite und Stabilität mitprüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein passiver RC-Filter dämpft, belastet die Quelle und kann den ADC nur begrenzt treiben. Ein aktiver Filter kombiniert Frequenzselektion mit Pufferung oder Verstärkung. Dafür kommen OPV-Grenzen und Stabilität als zusätzliche Entwurfsbedingungen hinzu.
 
+
+<!-- context-expansion-2026 -->
+Eine analoge Messkette übersetzt eine physikalische Grösse schrittweise in einen belastbaren ADC-Code. Erregung, Bezug, Verstärkung, Filter, Schutz und Abtastung beeinflussen sich gegenseitig. Deshalb wird jede Stufe zusammen mit ihren Grenzwerten und Messpunkten betrachtet.
+
+Beim Thema **Aktive Filter** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Eine Messkette wird an ihren Schnittstellen beschrieben. Für jeden Knoten werden Signalbereich, Bezug, Quellimpedanz, Last, Bandbreite, Fehlerzustand und geeigneter Messpunkt festgelegt. Dadurch bleibt nachvollziehbar, wo Verstärkung, Filterung oder Abweichung entsteht.
 
 ### Filterordnung und Polstellen
 
@@ -27,6 +38,17 @@ Beim Sallen-Key-Tiefpass bilden R1, R2, C1 und C2 das frequenzabhängige Netzwer
 ### Reale Auslegung
 
 Widerstands- und Kondensatortoleranzen verschieben fc und Q. Der OPV benötigt genügend GBW, Slew Rate, Eingangs- und Ausgangsbereich. Hohe Q macht die Schaltung empfindlicher und kann Überschwingen erzeugen. Vor einem ADC muss zusätzlich die Einschwingzeit nach Abtastimpulsen geprüft werden.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Anti-Alias-Filter vor ADCs
+- Rauschbegrenzung in Sensorverstärkern
+- Frequenzformung in Audio- und Regelkreisen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

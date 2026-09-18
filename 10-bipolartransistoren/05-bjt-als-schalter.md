@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Basiswiderstand und Freilaufpfad prüfen
 - Schaltverlust und Speicherzeit erkennen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Relais, LED und kleine Motoren benötigen oft mehr Strom als ein GPIO liefern darf. Der BJT übernimmt den Laststrom. Ein guter Schalter braucht jedoch ausreichenden Basisstrom, Schutz vor induktiver Energie und einen sicheren Zustand während Reset.
 
+
+<!-- context-expansion-2026 -->
+Bipolartransistoren verbinden einen steuernden Basis-Emitter-Kreis mit einem Kollektor-Emitter-Lastpfad. Je nach Arbeitspunkt arbeiten sie als Schalter, Verstärker oder Stromquelle. Anschlussbelegung, Stromrichtung und thermische Rückwirkung gehören deshalb von Beginn an zur Betrachtung.
+
+Beim Thema **BJT als Schalter** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Beim BJT werden Basis-, Kollektor- und Emitterkreis getrennt verfolgt und anschliessend über den Arbeitspunkt verbunden. Der Steuerstrom stammt aus einer realen Quelle, der Laststrom aus einem eigenen Energiepfad. Verstärkung und Sättigung sind Betriebszustände, keine unveränderlichen Bauteilkonstanten.
 
 ### Low-Side-Schalter
 
@@ -27,6 +38,17 @@ Für robustes Einschalten wird IB aus `IC/βforced` bestimmt. Danach gilt `RB = 
 ### Dynamik
 
 Tiefe Sättigung speichert Ladung und kann das Abschalten verzögern. Bei langsamer PWM oder Relais ist dies oft unkritisch; bei hoher Frequenz werden Basisentladung, Schottky-Klemme oder MOSFET geprüft.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Schalten von Relais, Summern und kleinen Motoren
+- Pegelverstärkung hinter Logikausgängen
+- Invertierende Lastansteuerung
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

@@ -10,11 +10,24 @@ Nach dieser Lektion kannst du:
 - Pin-, Port- und Versorgungslimits unterscheiden
 - Reset- und Fehlersituationen messtechnisch prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein GPIO ist die Grenze zwischen Register und realer Schaltung. Hinter einem geschriebenen Bit stehen Ausgangstransistoren, Schutzdioden, Pull-Widerstände und Stromgrenzen. Viele scheinbare Firmwarefehler entstehen an dieser elektrischen Schnittstelle.
 
+
+<!-- context-expansion-2026 -->
+Eine digitale Schnittstelle besteht aus Protokoll und physikalischer Übertragung. Register erzeugen Bits, Pad-Zellen und Transceiver erzeugen reale Pegel, und Leitung sowie Rückweg formen die Flanken. Diagnose muss daher Firmwarezustand und Messsignal gleichzeitig berücksichtigen.
+
+Beim Thema **GPIO als elektrische Schnittstelle** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Bei Bussystemen werden Datenrichtung, Treiberart, Bezugspotential und Abschluss vor der Protokolldekodierung geklärt. Ein Logic Analyzer zeigt logische Zustände; das Oszilloskop zeigt, ob Pegel und Flanken die Empfängergrenzen tatsächlich einhalten.
+
+Am realen MCU-Gehäuse ist ein GPIO zunächst ein nummerierter Pin mit Schutzstruktur und Pad-Zelle. Erst die interne Multiplexer- und Registerkonfiguration verbindet ihn mit Eingangsbuffer, Ausgangstreiber oder Peripherie. Pinname, Gehäusepin, Portbit und Leiterplattennetz müssen deshalb eindeutig auseinandergehalten und dokumentiert werden.
 
 ### Aufbau eines Pins
 
@@ -29,6 +42,17 @@ Push Pull treibt High und Low aktiv. Open Drain treibt nur Low. Eingang und Alte
 Datenblätter nennen Strom pro Pin, Summen pro Port oder Versorgungspin sowie garantierte VOH/VOL bei bestimmten Lasten. Absolute Maximalwerte sind keine Betriebswerte. Während Reset sind Pins meist hochohmig oder mit speziellen Bootfunktionen belegt. Externe Pulls sorgen für sichere Lastzustände.
 
 Ein Signal ausserhalb der Versorgung kann über Schutzdioden Strom einspeisen. Serienwiderstand und Power-Sequencing werden deshalb schon im Schema betrachtet.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Direkte Ansteuerung und Abfrage externer Hardware
+- Reset- und Bootzustände von Lasten
+- Übergang von Register zu realem Pin
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

@@ -10,13 +10,26 @@ Nach dieser Lektion kannst du:
 - Kapazität aus Ladung und Spannung sowie aus Geometrie deuten
 - Spannungsfestigkeit und Dielektrikum als reale Grenzen berücksichtigen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Kondensatoren speichern getrennte elektrische Ladungen und reagieren deshalb auf Spannungsänderungen. Sie glätten Versorgungen, koppeln Wechselanteile, bestimmen Zeitabläufe und liefern kurzfristig Strom. Ohne Vorstellung vom elektrischen Feld bleibt ihr Verhalten leicht eine Sammlung aus Formeln.
 
 Die Kapazität sagt, wie viel Ladung pro Volt gespeichert wird. Sie hängt von Plattenfläche, Abstand und Isolierstoff ab. Diese Zusammenhänge erklären zugleich, weshalb kleine, hochkapazitive Bauteile empfindlich auf Spannung, Temperatur und Fertigungstoleranz reagieren können.
 
+
+<!-- context-expansion-2026 -->
+Kondensatoren speichern Ladung in einem elektrischen Feld. Dadurch verbinden sie Gleichstromverhalten, zeitliche Vorgänge und hochfrequente Strompfade. Ihre Aufgabe wird erst verständlich, wenn neben dem Kapazitätswert auch Polarität, ESR, ESL und der reale Einbauort betrachtet werden.
+
+Beim Thema **Physikalischer Aufbau und Kapazität** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Das ideale Kondensatormodell erklärt Ladung und Zeitverhalten. Für eine reale Baugruppe werden zusätzlich Serienwiderstand, Serieninduktivität, Leckstrom, Spannungsabhängigkeit und Polarität berücksichtigt. Je höher die Frequenz, desto wichtiger werden Anschluss- und Leiterbahngeometrie.
+
+**Ein Kondensator besitzt zwei Elektroden, die durch ein Dielektrikum getrennt sind.** Im Schaltplan zeigen zwei parallele Platten das Grundprinzip; der Referenzbezeichner beginnt mit `C`. Unpolare Kondensatoren dürfen in beiden Richtungen betrieben werden. Elektrolytkondensatoren besitzen dagegen einen gekennzeichneten Plus- beziehungsweise Minusanschluss und können bei falscher Polarität beschädigt werden.
 
 ### Ladungstrennung und Feld
 
@@ -40,6 +53,17 @@ Für einen idealen Plattenkondensator gilt `C = ε0·εr·A/d`. `A` ist die wirk
 ### Durchschlag und Leckstrom
 
 Wird die Feldstärke zu gross, kann das Dielektrikum beschädigt werden. Die Nennspannung ist daher keine Zielspannung. Reale Kondensatoren besitzen ausserdem Leckstrom und können nach dem Trennen einer Quelle noch gefährliche Ladung tragen.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Energiespeicher in Netzteilen
+- Koppelkondensatoren in Signalpfaden
+- Zeitglieder und lokale Abblockung
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

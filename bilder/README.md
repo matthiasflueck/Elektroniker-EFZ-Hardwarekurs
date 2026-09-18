@@ -50,12 +50,12 @@ Die 28 Abbildungen dieses Blocks sind hochauflösende PNG-Dateien. Die Schaltbil
 
 | Modul | Anzahl | Schwerpunkte |
 |---|---:|---|
-| `09-dioden-schutz` | 7 | PN-Übergang, Kennlinie und Lastgerade, Diodenauswahl, Z-Dioden-Begrenzung, LED-Strompfad, Brückengleichrichter und koordinierter Überspannungsschutz |
+| `09-dioden-schutz` | 8 | Diodensymbol mit Anode/Kathode und Betriebsrichtungen, PN-Übergang, Kennlinie und Lastgerade, Diodenauswahl, Z-Dioden-Begrenzung, LED-Strompfad, Brückengleichrichter und koordinierter Überspannungsschutz |
 | `10-bipolartransistoren` | 7 | NPN/PNP, Strombeziehungen, Kennlinienfelder, Arbeitspunkt, Low-Side-Schalter, Kleinsignalverstärker und thermischer Arbeitsbereich |
 | `11-mosfets` | 7 | Feldsteuerung, N-/P-Kanal-Topologien, Threshold-Kennlinie, RDS(on), Gate-Ladung, High-/Low-Side-Ansteuerung und Verlustbilanz |
 | `12-operationsverstaerker` | 7 | reales OPV-Modell, Gegenkopplung, nichtinvertierende und invertierende Verstärker, Differenzverstärker, Schmitt-Trigger und dynamische Grenzen |
 
-Die 28 Abbildungen sind als PNG direkt bei den zugehörigen Erklärungen eingebunden. Neben Kennlinien und Funktionsdiagrammen enthält der Block bewusst viele vollständige Schaltungen mit IEC-Widerstandssymbolen, Referenzbezeichnern und klar erkennbaren Signal- oder Strompfaden.
+Die 29 Abbildungen sind als PNG direkt bei den zugehörigen Erklärungen eingebunden. Neben Kennlinien und Funktionsdiagrammen enthält der Block bewusst viele vollständige Schaltungen mit IEC-Widerstandssymbolen, Referenzbezeichnern und klar erkennbaren Signal- oder Strompfaden.
 
 ## Abbildungen der Module 13–16
 

@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Serienwiderstand und Klemmpfade dimensionieren
 - Normalbetrieb und Fehlerfall getrennt prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Sensorsignale können negativ werden, Versorgungsspitzen enthalten oder bei ausgeschaltetem Mikrocontroller anliegen. Der ADC-Pin ist kein ideal geschützter Eingang. Pegelanpassung muss das Nutzsignal erhalten und Fehlerenergie begrenzen.
 
+
+<!-- context-expansion-2026 -->
+Eine analoge Messkette übersetzt eine physikalische Grösse schrittweise in einen belastbaren ADC-Code. Erregung, Bezug, Verstärkung, Filter, Schutz und Abtastung beeinflussen sich gegenseitig. Deshalb wird jede Stufe zusammen mit ihren Grenzwerten und Messpunkten betrachtet.
+
+Beim Thema **Pegelanpassung und Schutz** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Eine Messkette wird an ihren Schnittstellen beschrieben. Für jeden Knoten werden Signalbereich, Bezug, Quellimpedanz, Last, Bandbreite, Fehlerzustand und geeigneter Messpunkt festgelegt. Dadurch bleibt nachvollziehbar, wo Verstärkung, Filterung oder Abweichung entsteht.
 
 ### Skalieren, verschieben, begrenzen
 
@@ -25,6 +36,17 @@ Ein Widerstandsteiler skaliert, ein OPV kann zusätzlich verschieben und puffern
 Im Normalbetrieb werden Teilerfehler, Quellimpedanz, Filterwirkung und ADC-Einschwingen geprüft. Im Fehlerfall zählen maximale Eingangsspannung, Klemmspannung, Strom durch RS, Leistung und Rückspeisung in die Versorgung.
 
 Bei ausgeschaltetem MCU kann ein Eingang über die Schutzdiode VDD anheben. Ein definierter Abschaltpfad, ein geeignetes Schutzbauteil oder galvanische Trennung kann nötig sein. Die zulässigen Injection Currents stehen im Datenblatt.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Schutz und Skalierung externer Analogsignale
+- Übersetzen bipolarer Sensorwerte
+- Begrenzung von Fehlerstrom am MCU-Pin
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

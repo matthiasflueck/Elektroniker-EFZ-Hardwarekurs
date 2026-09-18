@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Kennfelder und Maximalwerte unterscheiden
 - MOSFET-SOA für linear und gepulst prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein kleiner RDS(on) reduziert Leitverluste, sagt aber nicht alles über Schaltbetrieb, Kühlung oder linearen Betrieb. Datenblattwerte gelten bei definierter VGS und Temperatur; die Sperrschicht kann während eines Pulses viel heisser werden als das Gehäuse.
 
+
+<!-- context-expansion-2026 -->
+MOSFETs steuern einen Drain-Source-Strompfad über die Gate-Source-Spannung. Sie sind zentrale Leistungsschalter in modernen Baugruppen, reagieren aber empfindlich auf Gate-Ladung, Überspannung, parasitäre Induktivitäten und Wärme. Statischer und dynamischer Betrieb müssen getrennt beurteilt werden.
+
+Beim Thema **RDS(on), Kennfelder und sichere Betriebsbereiche** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Beim MOSFET werden Gatekreis und Leistungspfad getrennt gezeichnet. VGS beschreibt die Ansteuerung relativ zur Source, VDS die Belastung des Leistungspfads. RDS(on), Gate Charge und SOA gelten jeweils nur unter den im Datenblatt genannten Bedingungen.
 
 ### Leitender Kanal
 
@@ -29,6 +40,17 @@ Ausgangskennlinien zeigen ID über VDS für verschiedene VGS; Transferkurven ID 
 ### Safe Operating Area
 
 Die SOA begrenzt Kombinationen aus VDS, ID und Pulsdauer. Viele Schalt-MOSFETs sind für linearen Betrieb nur eingeschränkt geeignet. Repetitive Avalanche darf nur verwendet werden, wenn Datenblatt, Energie, Temperatur und Lebensdauer sie ausdrücklich abdecken.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Auswahl eines MOSFETs nach Gate-Spannung und Strom
+- Verlustrechnung im eingeschalteten Zustand
+- Prüfung von Puls- und Linearbetrieb
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

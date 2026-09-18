@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Frequenztrends vergleichen
 - Phasenlage und Energieaustausch erklären
 
-## Warum ist das wichtig?
+## Einleitung
 
 Kondensator und Spule verhalten sich bei Sinus nicht wie konstante Widerstände. Ihre Wirkung hängt von f ab und verschiebt Strom und Spannung. Blindwiderstände bilden die Brücke von Zeitvorgängen zu Filter- und Resonanzrechnung.
 
+
+<!-- context-expansion-2026 -->
+Elektronische Signale verändern sich mit der Zeit. Frequenz, Amplitude, Effektivwert und Phase beschreiben unterschiedliche Eigenschaften desselben Verlaufs. Für Messung und Schaltungsentwurf muss deshalb stets geklärt werden, welche Signalgrösse gemeint ist und unter welchen Bedingungen sie gilt.
+
+Beim Thema **Blindwiderstand von C und L** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Ein Signal wird zuerst im Zeitdiagramm mit Bezugslinie und Einheiten beschrieben. Daraus lassen sich Periodendauer, Frequenz, Momentanwert und Phasenbezug ableiten. Messgeräte können je nach Kopplung, Bandbreite und Auswerteverfahren unterschiedliche Kennwerte desselben Signals anzeigen.
 
 ### Gegensätzliche Frequenztrends
 
@@ -42,6 +53,17 @@ Für f gegen null wird XC sehr gross und XL sehr klein. Hohe Frequenz kehrt dies
 Die Formeln beschreiben ideale Bauteile. Beim Kondensator liegt der kapazitive Bereich nur unterhalb seiner Selbstresonanz; darüber dominiert die parasitäre Induktivität. Bei der Spule begrenzen Wicklungskapazität, Kernverluste und Sättigung den nutzbaren Bereich. Ein berechneter Blindwiderstand ist daher nur dann aussagekräftig, wenn die Arbeitsfrequenz innerhalb des im Datenblatt beschriebenen Bereichs liegt.
 
 Der Blindwiderstand bestimmt zusammen mit realen Widerständen Strom und Spannungsteilung. Ein 100-nF-Kondensator besitzt bei 1 kHz rund 1,59 kΩ, bei 100 kHz dagegen nur etwa 15,9 Ω. Diese starke Frequenzabhängigkeit erklärt, weshalb ein Abblockkondensator schnelle Stromanteile lokal führen kann, langsame Versorgungsschwankungen aber kaum korrigiert. Umgekehrt kann eine Drossel hochfrequente Störungen bremsen, während Gleichstrom nahezu ungehindert fliesst. Für reale Verlustleistung werden zusätzlich ESR beziehungsweise Wicklungswiderstand und der Effektivstrom benötigt.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Auswahl von Kondensatoren und Spulen bei AC
+- Dimensionierung frequenzabhängiger Teiler
+- Erklärung von Phasenverschiebung und Blindstrom
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

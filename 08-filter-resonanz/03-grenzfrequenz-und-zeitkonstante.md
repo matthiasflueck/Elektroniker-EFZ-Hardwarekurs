@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Grenzfrequenz korrekt interpretieren
 - Bauteiltoleranzen auf fG übertragen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Zeitkonstante und Grenzfrequenz sind keine getrennten Eigenschaften. Sie beschreiben dasselbe RC-Netz einmal anhand einer Sprungantwort und einmal anhand eines Sinus-Frequenzgangs.
 
+
+<!-- context-expansion-2026 -->
+Filter formen Signale abhängig von ihrer Frequenz. Widerstände, Kondensatoren und Spulen bilden dazu frequenzabhängige Spannungsteiler und Energiespeicher. Zeitverhalten, Frequenzgang und reale Verluste sind drei Sichten auf dasselbe Netzwerk.
+
+Beim Thema **Grenzfrequenz und Zeitkonstante** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Filter werden zunächst als frequenzabhängige Spannungsteiler verstanden. Danach folgen Grenzfrequenz, Phase und asymptotischer Verlauf. Bauteiltoleranzen, Quell- und Lastimpedanz sowie parasitäre Elemente erklären die Abweichung zwischen idealer Kurve und Messung.
 
 ### Eine Schaltung, zwei Ansichten
 
@@ -37,6 +48,17 @@ Der Durchlasswert muss festgelegt werden. Bei belasteten Filtern kann er unter 1
 Die Sprungantwort und der Frequenzgang stammen aus derselben Differentialgleichung. Wird im Zeitbereich τ gemessen, kann daraus `fG = 1/(2πτ)` vorhergesagt werden. Umgekehrt liefert eine gemessene Grenzfrequenz die erwartete Zeitkonstante. Stimmen beide Ergebnisse nicht innerhalb der Unsicherheit überein, sind zusätzliche Pole, Bauteiltoleranzen, Quell- oder Lastwiderstände wahrscheinlich.
 
 Für eine saubere Sprungmessung muss die Generatorflanke deutlich schneller als die zu untersuchende Schaltung sein. Die 63,2-%-Marke wird zwischen tatsächlichem Anfangs- und Endwert bestimmt, nicht pauschal gegen 0 V. Im Frequenzversuch wird Uout/Uin gemessen, damit eine frequenzabhängige Generatoramplitude das Ergebnis nicht verfälscht. Die Grenzfrequenz liegt dort, wo das Verhältnis gegenüber dem Durchlassbereich auf 0,707 gefallen ist. Diese Vorgehensweise verbindet Vorhersage, zwei unabhängige Messmethoden und Plausibilitätskontrolle.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Abstimmung von Zeit- und Frequenzanforderung
+- Dimensionierung von Entprellung und Filterung
+- Plausibilisierung gemessener Sprungantworten
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

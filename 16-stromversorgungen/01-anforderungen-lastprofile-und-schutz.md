@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Lastprofil und Einschaltzustände berücksichtigen
 - eine Power-Tree-Struktur mit Schutz planen
 
-## Warum ist das wichtig?
+## Einleitung
 
 «Wir brauchen 3,3 V» ist keine ausreichende Spezifikation. Eingang, Dauer- und Spitzenstrom, Ripple, Startreihenfolge, Fehlerfälle, Temperatur und Wirkungsgrad bestimmen Topologie und Bauteile. Eine Versorgung wird vom Lastprofil her entworfen.
 
+
+<!-- context-expansion-2026 -->
+Eine Stromversorgung ist eine dynamische Energiequelle für die gesamte Baugruppe. Eingang, Schutz, Regler, Leiterpfade, Kondensatoren und Lastprofil bilden ein System. Nennspannung allein genügt weder für die Dimensionierung noch für die Verifikation.
+
+Beim Thema **Anforderungen, Lastprofile und Schutz** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Versorgungen werden über Leistungs- und Strompfade analysiert. Für jeden Betriebszustand werden Eingang, Ausgang, Verlust, Temperatur und gespeicherte Energie bilanziert. Dynamische Vorgänge wie Einschalten und Lastsprung werden zusätzlich im Zeitbereich gemessen.
 
 ### Anforderungen vor Schaltung
 
@@ -27,6 +38,17 @@ Ein Power Tree zeigt jede Schiene, Quelle, Last und Abhängigkeit. Analoge, digi
 ### Energie und Fehlerzustände
 
 Kondensatoren, Akkus und induktive Lasten speichern Energie. Einschaltstrom, Brownout, Rückspeisung und Hot Plug werden berücksichtigt. Schutz umfasst Sicherung oder Strombegrenzung, Verpolung, Überspannung, ESD/Surge und thermische Abschaltung. Die Reihenfolge entscheidet: Ein TVS ohne vorgeschaltete Strombegrenzung kann überlastet werden.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Versorgung von MCU, Sensor, Funk und Aktor
+- Dimensionierung von Quelle und Steckverbinder
+- Planung von Schutz und Einschaltreihenfolge
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

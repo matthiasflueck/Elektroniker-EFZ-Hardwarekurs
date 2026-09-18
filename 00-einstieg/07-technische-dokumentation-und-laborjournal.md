@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - Sollwert, Messwert, Abweichung und Bewertung trennen
 - Revisionen und Entscheidungen rückverfolgbar dokumentieren
 
-## Warum ist das wichtig?
+## Einleitung
 
 Nach einigen Tagen ist kaum noch sicher erinnerlich, welcher Widerstand eingesetzt oder welche Geräteeinstellung verwendet wurde. Ohne Aufzeichnung kann selbst ein korrektes Resultat nicht zuverlässig wiederholt werden.
 
 Gute Dokumentation entsteht während der Arbeit. Sie zeigt auch verworfene Hypothesen und verhindert, dass derselbe Fehler später nochmals untersucht werden muss.
 
+
+<!-- context-expansion-2026 -->
+Elektronik entsteht nie nur am Schreibtisch. Anforderungen, Sicherheit, Dokumentation, Fertigung, Messung und Zusammenarbeit greifen ineinander. Die folgenden Grundlagen ordnen das Thema deshalb in den vollständigen Arbeitsablauf einer Elektronikerin oder eines Elektronikers ein.
+
+Beim Thema **Technische Dokumentation und Laborjournal** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie das Thema in einem Arbeitsauftrag umgesetzt, sicher durchgeführt, dokumentiert und als berufliche Handlung nachvollziehbar nachgewiesen wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Die Theorie wird hier immer auf eine konkrete berufliche Entscheidung bezogen: Was muss vor Arbeitsbeginn bekannt sein, welcher Nachweis ist nötig und woran erkennt man einen fachgerechten Zustand? So entsteht aus einer Regel ein wiederholbarer Arbeitsprozess.
 
 ### Mindestinhalt eines Laborjournals
 
@@ -39,6 +50,17 @@ Eine gute Hypothese führt zu einer unterscheidenden Prüfung. Wenn sowohl Kurzs
 ### Diagramme und Bildschirmbilder
 
 Messbilder benötigen Achsenskalierung, Kopplung, Tastkopffaktor, Triggerbedingung, Messpunkt und Bezug. Diagramme enthalten Grösse, Einheit und Betriebsbedingung. Ein Bild ohne diese Angaben kann anschaulich aussehen, ist aber kein reproduzierbarer Nachweis. Wo möglich bleiben zusätzlich die Rohdaten erhalten.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Laborjournal und Messprotokoll
+- Design Review und Änderungsnachweis
+- Übergabe an Fertigung, Test oder Service
+
+In einer konkreten Arbeitssituation wird festgelegt, welche Vorbereitung, Schutzmassnahme, Dokumentation und Qualitätskontrolle erforderlich ist. Der Anwendungsfall gilt erst als beherrscht, wenn das Vorgehen reproduzierbar und für andere nachvollziehbar ist.
 
 ## Anschauliches Beispiel
 

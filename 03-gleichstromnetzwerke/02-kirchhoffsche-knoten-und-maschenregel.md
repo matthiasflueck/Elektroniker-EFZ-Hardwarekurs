@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - Knoten- und Maschengleichungen aus einem Schema aufstellen
 - negative Ergebnisse physikalisch richtig interpretieren
 
-## Warum ist das wichtig?
+## Einleitung
 
 Bei einfachen Reihen- oder Parallelschaltungen genügt oft eine bekannte Ersatzformel. Sobald mehrere Quellen und Verzweigungen vorkommen, braucht es ein Verfahren, das unabhängig von der Form der Schaltung funktioniert. Die Kirchhoffschen Regeln liefern dieses Gerüst.
 
 Beide Regeln drücken Erhaltungssätze aus. An einem Knoten kann sich elektrische Ladung im stationären Gleichstromfall nicht dauerhaft ansammeln. In einer geschlossenen Masche muss die gesamte Energieänderung pro Ladung wieder null ergeben. Damit werden auch komplexere Netzwerke zu einem lösbaren Gleichungssystem.
 
+
+<!-- context-expansion-2026 -->
+Eine Baugruppe besteht aus verbundenen Quellen, Bauteilen und Lasten. Gleichstromnetzwerke liefern die Regeln, mit denen sich unbekannte Ströme und Spannungen aus Topologie und Bauteilwerten ableiten lassen. Dabei sind Knoten, Maschen und Rückstrompfade ebenso wichtig wie die Zahlenwerte.
+
+Beim Thema **Kirchhoffsche Knoten- und Maschenregel** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Netzwerke werden aus Sicht ihrer Topologie gelesen: Bauteile in demselben Strompfad liegen in Reihe, Bauteile an denselben zwei Knoten parallel. Erst danach werden Ersatzwerte, Knotenbilanzen oder Maschengleichungen gebildet. Diese Reihenfolge verhindert viele Vorzeichen- und Zuordnungsfehler.
 
 ### Vorzeichen zuerst festlegen
 
@@ -28,27 +39,38 @@ Vor jeder Rechnung werden angenommene Strompfeile und Spannungspolungen eingezei
 
 Ein Knoten verbindet mindestens drei Zweige. Weil Ladung erhalten bleibt, ist die algebraische Summe aller Knotenströme null:
 
-`Σ I_k = 0`
+`Σ Ik = 0`
 
 | Formelzeichen | Bedeutung | Einheit |
 |---|---|---|
 | `Σ` | Summe über alle betrachteten Grössen | – |
-| `I_k` | Strom des Zweigs mit dem Laufindex `k` | A |
+| `Ik` | Strom des Zweigs mit dem Laufindex `k` | A |
 | `k` | Kennzeichnung eines Zweigs | – |
 
-Mit der Vereinbarung «zufliessend positiv, abfliessend negativ» wird beispielsweise `I_1 - I_2 - I_3 = 0`. Gleichwertig ist `I_1 = I_2 + I_3`. Wichtig ist nicht die gewählte Konvention, sondern ihre konsequente Anwendung.
+Mit der Vereinbarung «zufliessend positiv, abfliessend negativ» wird beispielsweise `I1 - I2 - I3 = 0`. Gleichwertig ist `I1 = I2 + I3`. Wichtig ist nicht die gewählte Konvention, sondern ihre konsequente Anwendung.
 
 ### Maschenregel
 
 Eine Masche ist ein geschlossener Umlauf im Netzwerk. Addiert man alle Spannungen mit ihrer durch die Umlaufrichtung bestimmten Polarität, ergibt sich:
 
-`Σ U_k = 0`
+`Σ Uk = 0`
 
-Beim Umlauf von `−` nach `+` wird eine Spannung als Anstieg gezählt, von `+` nach `−` als Abfall. Für eine Quelle und zwei Widerstände kann so `U_q - U_1 - U_2 = 0` entstehen. Die Regel sagt nicht, dass an jedem Ort null Volt herrschen; sie sagt, dass man nach einem vollständigen Umlauf wieder dasselbe Potential erreicht.
+Beim Umlauf von `−` nach `+` wird eine Spannung als Anstieg gezählt, von `+` nach `−` als Abfall. Für eine Quelle und zwei Widerstände kann so `Uq - U1 - U2 = 0` entstehen. Die Regel sagt nicht, dass an jedem Ort null Volt herrschen; sie sagt, dass man nach einem vollständigen Umlauf wieder dasselbe Potential erreicht.
 
 ### Unabhängige Gleichungen
 
 Nicht jede denkbare Knoten- oder Maschengleichung liefert neue Information. Für `n` Knoten werden höchstens `n−1` unabhängige Knotengleichungen benötigt. Bei grösseren Netzwerken helfen systematische Knotenpotential- oder Maschenstromverfahren. In diesem Modul steht zunächst das saubere Übersetzen vom Schema zur Gleichung im Vordergrund.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Berechnung verzweigter Strompfade
+- Analyse von Masse- und Versorgungsknoten
+- Fehlersuche mit Knoten- und Maschenbilanzen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 
@@ -56,7 +78,7 @@ An einer Verzweigung fliessen 7 mA zu. Zwei gemessene Abflüsse betragen 2 mA un
 
 ## Berechnungsbeispiel
 
-Eine 9-V-Quelle speist zwei Serienwiderstände `R_1 = 1 kΩ` und `R_2 = 2 kΩ`. Mit der Umlaufrichtung des Stroms gilt `9 V - I·1 kΩ - I·2 kΩ = 0`. Zusammenfassen ergibt `I = 9 V / 3 kΩ = 3 mA`. Die Spannungsabfälle sind 3 V und 6 V; `9 V - 3 V - 6 V = 0` bestätigt die Maschenbilanz.
+Eine 9-V-Quelle speist zwei Serienwiderstände `R1 = 1 kΩ` und `R2 = 2 kΩ`. Mit der Umlaufrichtung des Stroms gilt `9 V - I·1 kΩ - I·2 kΩ = 0`. Zusammenfassen ergibt `I = 9 V / 3 kΩ = 3 mA`. Die Spannungsabfälle sind 3 V und 6 V; `9 V - 3 V - 6 V = 0` bestätigt die Maschenbilanz.
 
 ## Praxisbezug
 

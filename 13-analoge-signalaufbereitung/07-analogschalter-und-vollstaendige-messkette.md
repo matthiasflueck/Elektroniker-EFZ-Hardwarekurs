@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Einschwingzeit nach einem Kanalwechsel bestimmen
 - eine Messkette mit Diagnosezuständen verifizieren
 
-## Warum ist das wichtig?
+## Einleitung
 
 Mehrere Sensoren teilen sich häufig Verstärker oder ADC. Ein Analogmultiplexer spart Hardware, verbindet aber nacheinander sehr unterschiedliche Quellen mit einem gemeinsamen Knoten. Leckstrom, Einschaltwiderstand und Ladungsinjektion werden damit Teil der Messung.
 
+
+<!-- context-expansion-2026 -->
+Eine analoge Messkette übersetzt eine physikalische Grösse schrittweise in einen belastbaren ADC-Code. Erregung, Bezug, Verstärkung, Filter, Schutz und Abtastung beeinflussen sich gegenseitig. Deshalb wird jede Stufe zusammen mit ihren Grenzwerten und Messpunkten betrachtet.
+
+Beim Thema **Analogschalter und vollständige Messkette** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Eine Messkette wird an ihren Schnittstellen beschrieben. Für jeden Knoten werden Signalbereich, Bezug, Quellimpedanz, Last, Bandbreite, Fehlerzustand und geeigneter Messpunkt festgelegt. Dadurch bleibt nachvollziehbar, wo Verstärkung, Filterung oder Abweichung entsteht.
 
 ### Der Schalter ist nicht ideal
 
@@ -27,6 +38,17 @@ RON bildet mit Quell- und Lastwiderstand einen Fehler. Nach jedem Kanalwechsel m
 ### Vollständige Verifikation
 
 Für jeden Kanal werden erlaubter Signalbereich, Common Mode, Fehlerzustand, Einschwingzeit und Kalibrierung definiert. Offene Sensoren können über einen schwachen Diagnose-Pull erkannt werden. Ein Testkanal mit GND oder Referenz trennt Fehler im Sensorpfad von ADC- und Firmwarefehlern.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Mehrkanal-Datenerfassung
+- Selbsttest mit GND- und Referenzkanälen
+- Gemeinsame ADC- und Verstärkerpfade für mehrere Sensoren
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

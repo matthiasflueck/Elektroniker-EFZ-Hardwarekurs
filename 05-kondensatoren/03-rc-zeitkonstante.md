@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - Lade- und Entladewerte berechnen
 - Messpunkte auf einer Exponentialkurve deuten
 
-## Warum ist das wichtig?
+## Einleitung
 
 Widerstand und Kondensator bilden gemeinsam einen zeitlichen Ablauf. Der Widerstand begrenzt den Ladestrom; dadurch nähert sich die Spannung nicht sofort, sondern exponentiell ihrem Endwert. Dieses Verhalten steckt in Reset-Schaltungen, Tastenentprellung, Filtern und Verzögerungen.
 
 Die Zeitkonstante ist keine Zeit bis «voll». Sie ist eine Masszahl für die Geschwindigkeit des Vorgangs und erlaubt einfache, sehr nützliche Vorhersagen.
 
+
+<!-- context-expansion-2026 -->
+Kondensatoren speichern Ladung in einem elektrischen Feld. Dadurch verbinden sie Gleichstromverhalten, zeitliche Vorgänge und hochfrequente Strompfade. Ihre Aufgabe wird erst verständlich, wenn neben dem Kapazitätswert auch Polarität, ESR, ESL und der reale Einbauort betrachtet werden.
+
+Beim Thema **RC-Zeitkonstante** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Das ideale Kondensatormodell erklärt Ladung und Zeitverhalten. Für eine reale Baugruppe werden zusätzlich Serienwiderstand, Serieninduktivität, Leckstrom, Spannungsabhängigkeit und Polarität berücksichtigt. Je höher die Frequenz, desto wichtiger werden Anschluss- und Leiterbahngeometrie.
 
 ### Bedeutung von Tau
 
@@ -37,6 +48,17 @@ Nach etwa 5τ ist die Differenz zum Endwert kleiner als 1 %. In einer Genauigkei
 ### Anfang und Ende
 
 Direkt nach dem Spannungssprung verhält sich ein ungeladener Kondensator näherungsweise wie ein Kurzschluss; im Gleichstrom-Endzustand wie eine Unterbrechung. Diese Aussagen gelten für den betrachteten Vorgang, nicht als universelle Bauteilersatzbilder.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Reset-Verzögerung und Tasterentprellung
+- Messung von Lade- und Entladekurven
+- Dimensionierung analoger Zeitglieder
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

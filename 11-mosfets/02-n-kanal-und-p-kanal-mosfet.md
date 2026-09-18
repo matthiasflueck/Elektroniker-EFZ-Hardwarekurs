@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Body-Diodenrichtung bestimmen
 - geeignete Low- und High-Side-Rollen wählen
 
-## Warum ist das wichtig?
+## Einleitung
 
 N- und P-Kanal-Typen ermöglichen Schalten gegen GND oder Versorgung. Die Wahl beeinflusst Treiberaufwand, Verluste und Verpolpfade. Besonders beim High-Side-Schalter muss das Gate relativ zur bewegten Source angesteuert werden.
 
+
+<!-- context-expansion-2026 -->
+MOSFETs steuern einen Drain-Source-Strompfad über die Gate-Source-Spannung. Sie sind zentrale Leistungsschalter in modernen Baugruppen, reagieren aber empfindlich auf Gate-Ladung, Überspannung, parasitäre Induktivitäten und Wärme. Statischer und dynamischer Betrieb müssen getrennt beurteilt werden.
+
+Beim Thema **N-Kanal- und P-Kanal-MOSFET** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Beim MOSFET werden Gatekreis und Leistungspfad getrennt gezeichnet. VGS beschreibt die Ansteuerung relativ zur Source, VDS die Belastung des Leistungspfads. RDS(on), Gate Charge und SOA gelten jeweils nur unter den im Datenblatt genannten Bedingungen.
 
 ### N-Kanal
 
@@ -29,6 +40,17 @@ Ein P-Kanal-MOSFET leitet bei negativer VGS. Als High-Side-Schalter liegt seine 
 ### Body-Diode und Rückspeisung
 
 Die Body-Diode legt eine natürliche Stromrichtung fest. Bei Verpolschutz, Halbbrücken und mehreren Versorgungen kann sie unerwartete Rückspeisung zulassen. Ein ausgeschalteter MOSFET sperrt daher nicht grundsätzlich in beiden Richtungen; dafür sind Back-to-Back-MOSFETs nötig.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- N-Kanal-Low-Side- und P-Kanal-High-Side-Stufen
+- Lastabschaltung und Verpolschutz
+- Halb- und Vollbrücken
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - galvanische Trennung erklären
 - gefährliche Masseverbindungen beim Oszilloskop erkennen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Das Massesymbol wird häufig als universelles Nullpotential missverstanden. In Wirklichkeit kann eine Schaltung mehrere Bezugssysteme besitzen, die getrennt sind oder nur an einem definierten Punkt verbunden werden. Ein Messgerät kann diese Trennung unbeabsichtigt aufheben.
 
+
+<!-- context-expansion-2026 -->
+Elektrische Grössen beschreiben verschiedene Seiten desselben Vorgangs: Ladung wird bewegt, Spannung stellt Energie pro Ladung bereit, Widerstände begrenzen den Strom und Leistung beschreibt den Energieumsatz. Erst der geschlossene Stromkreis und ein festgelegter Bezug machen einzelne Zahlen zu einem verständlichen System.
+
+Beim Thema **GND, Erde und galvanische Trennung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Zur Analyse wird zuerst der reale Strompfad gezeichnet und ein Bezugspotential festgelegt. Danach werden Richtung und Polarität definiert. Formeln beschreiben anschliessend diesen bereits verstandenen Vorgang; sie ersetzen weder Schaltbild noch Plausibilitätskontrolle.
 
 ### Drei unterschiedliche Begriffe
 
@@ -39,6 +50,17 @@ Eine galvanisch getrennte Quelle «schwebt» gegenüber Erde, solange kein weite
 ### Common-Mode-Bereich beachten
 
 Auch differentielle Eingänge dürfen nur innerhalb ihres zulässigen Gleichtaktbereichs betrieben werden. Zwei Leitungen können untereinander nur wenige Millivolt Differenz haben und dennoch gemeinsam so weit gegenüber Gerätemasse verschoben sein, dass ein Eingang überlastet wird. Galvanische Trennung und Differentialtastkopf lösen unterschiedliche Aufgaben und sind nicht beliebig austauschbar.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Trennung von Schutzleiter und Signalmasse
+- Galvanisch getrennte Schnittstellen
+- Vermeidung von Masseschleifen in Messaufbauten
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

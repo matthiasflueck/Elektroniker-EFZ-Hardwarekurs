@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Sperrspannung und Strombelastung auswählen
 - Reverse-Recovery und Leckstrom beurteilen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Die «kleinere Durchlassspannung» einer Schottky-Diode ist attraktiv, aber nicht kostenlos: Sperrstrom, Sperrspannung und Temperaturverhalten unterscheiden sich. In schnellen Wandlern kommt die Umschaltladung hinzu. Die passende Diode wird aus dem gesamten Betriebsfall gewählt.
 
+
+<!-- context-expansion-2026 -->
+Dioden steuern Strom abhängig von Polarität, Spannung und Temperatur. Sie werden zum Gleichrichten, Begrenzen, Schützen und Erzeugen von Licht eingesetzt. Das einfache Schaltzeichen steht dabei für einen realen PN- oder Metall-Halbleiter-Übergang mit klaren Grenzwerten.
+
+Beim Thema **Gleichrichter- und Schottky-Dioden** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Für jede Diodenschaltung werden zuerst Anode, Kathode, vorgesehene Stromrichtung und Sperrspannung markiert. Danach folgen Arbeitspunkt und Verlustleistung. Diese Reihenfolge macht sichtbar, ob die Diode im Normalbetrieb leitet, sperrt oder nur im Fehlerfall Energie übernimmt.
 
 ### PN-Gleichrichterdiode
 
@@ -29,6 +40,17 @@ Der Metall-Halbleiter-Übergang einer Schottky-Diode speichert weniger Minderhei
 ### Datenblattwahl
 
 Geprüft werden wiederkehrende Spitzensperrspannung, mittlerer und gepulster Durchlassstrom, Flussspannung bei realem Strom, Sperrstrom bei maximaler Temperatur, Reverse-Recovery sowie Gehäuse und thermische Bedingungen. Absolute Maximum Ratings sind keine empfohlenen Arbeitspunkte.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Netzteilgleichrichtung bei sicherer Kleinspannung
+- Schnelle Freilaufpfade
+- Verpol- und Rückstromschutz mit kleinem Spannungsabfall
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

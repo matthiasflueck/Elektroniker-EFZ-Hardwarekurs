@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - De-Morgan-Regeln anwenden
 - logische Äquivalenz mit Tabellen prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Dieselbe Funktion kann mit vielen oder wenigen Gattern aufgebaut werden. Vereinfachung reduziert Bauteile, Strom und Verzögerung. Sie darf aber keine Eingangskombination verändern und zeitliche Glitches müssen separat betrachtet werden.
 
+
+<!-- context-expansion-2026 -->
+Digitale Zustände werden elektrisch durch Spannungsbereiche und zeitlich durch Flanken dargestellt. Logische Funktion, Störreserve, Laufzeit und Startzustand gehören zusammen. Ein korrekter Wahrheitswert allein beweist noch keine robuste Hardware.
+
+Beim Thema **Boolesche Algebra** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Digitale Schaltungen werden in drei Ebenen untersucht: Boolesche Funktion, elektrischer Pegel und zeitliches Verhalten. Wahrheitstabelle, Datenblattgrenzen und Zeitdiagramm beantworten unterschiedliche Fragen und müssen für eine belastbare Freigabe zusammenpassen.
 
 ### Rechenregeln für Zustände
 
@@ -27,6 +38,17 @@ De Morgan lautet: NOT(A AND B) = NOT A OR NOT B sowie NOT(A OR B) = NOT A AND NO
 ### Funktional gleich, zeitlich nicht zwingend gleich
 
 Zwei Ausdrücke sind logisch äquivalent, wenn alle Zeilen ihrer Wahrheitstabellen übereinstimmen. Unterschiedliche Gatterpfade besitzen jedoch andere Laufzeiten. Bei Eingangssprüngen kann eine vereinfachte oder mehrstufige Schaltung kurz einen falschen Zustand zeigen. Synchrone Systeme übernehmen deshalb Signale an definierten Taktflanken.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Vereinfachung diskreter Logik
+- Umsetzung mit NAND- oder NOR-Gattern
+- Prüfung äquivalenter Sicherheitsbedingungen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

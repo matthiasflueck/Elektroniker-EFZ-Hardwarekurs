@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - serielle und parallele Datenwege unterscheiden
 - Schieberegistersignale zeitlich zuordnen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Multiplexer wählen Signale, Schieberegister erweitern Ein- und Ausgänge mit wenigen Leitungen. Beide sparen Pins, verlangen aber klare Adressen, Taktflanken und Freigabesignale.
 
+
+<!-- context-expansion-2026 -->
+Digitale Zustände werden elektrisch durch Spannungsbereiche und zeitlich durch Flanken dargestellt. Logische Funktion, Störreserve, Laufzeit und Startzustand gehören zusammen. Ein korrekter Wahrheitswert allein beweist noch keine robuste Hardware.
+
+Beim Thema **Multiplexer und Schieberegister** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Digitale Schaltungen werden in drei Ebenen untersucht: Boolesche Funktion, elektrischer Pegel und zeitliches Verhalten. Wahrheitstabelle, Datenblattgrenzen und Zeitdiagramm beantworten unterschiedliche Fragen und müssen für eine belastbare Freigabe zusammenpassen.
 
 ### Auswahl und Verschiebung
 
@@ -25,6 +36,17 @@ Ein Serial-In/Parallel-Out-Schieberegister übernimmt pro Takt ein Bit. Nach ach
 ![Multiplexer und achtstufiges Schieberegister mit Takt und Latch](../bilder/14-digitaltechnik/14-06-mux-schieberegister.png)
 
 Setup, Hold, maximale Taktfrequenz und Ausgangsstrom gelten auch hier. Kaskadierte Register verlängern die Datenkette. Ein definierter Output Enable verhindert falsche Zustände beim Start.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Porterweiterung für LED und Taster
+- Auswahl mehrerer Datenquellen
+- Serielle Ausgabe paralleler Zustände
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

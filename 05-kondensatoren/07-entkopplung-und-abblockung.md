@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Kondensatoren platzierungs- und frequenzgerecht auswählen
 - Versorgungseinbrüche gemeinsam mit MCU-Aktivität untersuchen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Digitale ICs ziehen beim Umschalten kurze Stromimpulse. Die entfernte Versorgung kann wegen Leiterbahninduktivität nicht augenblicklich liefern. Ein lokaler Kondensator stellt den Strom über eine kleine Schleife bereit und hält die Versorgung am IC stabil.
 
+
+<!-- context-expansion-2026 -->
+Kondensatoren speichern Ladung in einem elektrischen Feld. Dadurch verbinden sie Gleichstromverhalten, zeitliche Vorgänge und hochfrequente Strompfade. Ihre Aufgabe wird erst verständlich, wenn neben dem Kapazitätswert auch Polarität, ESR, ESL und der reale Einbauort betrachtet werden.
+
+Beim Thema **Entkopplung und Abblockung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Das ideale Kondensatormodell erklärt Ladung und Zeitverhalten. Für eine reale Baugruppe werden zusätzlich Serienwiderstand, Serieninduktivität, Leckstrom, Spannungsabhängigkeit und Polarität berücksichtigt. Je höher die Frequenz, desto wichtiger werden Anschluss- und Leiterbahngeometrie.
 
 ### Stromschleife statt Dekoration
 
@@ -33,6 +44,17 @@ Für einen Lastsprung kann zunächst `ΔU = ΔI·Δt/C` abgeschätzt werden. `Δ
 ### Messen am richtigen Ort
 
 Ripple wird direkt an den Versorgungspins mit sehr kleiner Tastkopfschleife gemessen. Eine lange Masseleitung zeigt zusätzliche induzierte Spannung und kann das Problem grösser erscheinen lassen.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Versorgung von MCU, FPGA und Sensor
+- Stabilisierung lokaler IC-Spannungen
+- Schliessen kurzer hochfrequenter Laststromschleifen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

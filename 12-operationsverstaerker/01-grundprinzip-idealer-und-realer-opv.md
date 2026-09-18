@@ -10,11 +10,26 @@ Nach dieser Lektion kannst du:
 - ideales Modell sinnvoll anwenden
 - Eingangs- und Ausgangsgrenzen realer OPVs erkennen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Operationsverstärker verstärken, filtern, puffern und vergleichen Sensorsignale. Ihr Symbol wirkt einfach, doch die Ausgangsspannung hängt von Versorgung, Gegenkopplung, Eingangsbereich, Last und Geschwindigkeit ab. Das ideale Modell ist nützlich, solange seine Voraussetzungen geprüft werden.
 
+
+<!-- context-expansion-2026 -->
+Operationsverstärker formen analoge Signale mithilfe sehr hoher Leerlaufverstärkung und gezielter Rückkopplung. Das Schaltbild legt die gewünschte Funktion fest; Versorgung, Eingangsbereich, Ausgangshub und Bandbreite bestimmen, ob der reale Baustein diese Funktion auch erfüllen kann.
+
+Beim Thema **Grundprinzip, idealer und realer OPV** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Ein OPV wird als Regelkreis gelesen: Der Ausgang verändert über die Rückkopplung die Eingangsdifferenz. Zuerst wird die gewünschte Wirkung des Rückkopplungsnetzes bestimmt, danach werden Common Mode, Ausgangshub, Stabilität und Dynamik des realen Bausteins geprüft.
+
+**Das OPV-Symbol besitzt einen nichtinvertierenden Eingang `+`, einen invertierenden Eingang `−` und einen Ausgang.** Hinzu kommen mindestens die positiven und negativen Versorgungspins; bei Single-Supply-Betrieb liegt der negative Versorgungspin häufig an GND. Manche Bausteine besitzen zusätzlich Offset-, Enable- oder Kompensationsanschlüsse. Versorgungspins dürfen im Schema grafisch ausgelagert sein, elektrisch sind sie dennoch zwingend vorhanden.
+
+Ein positiver Unterschied `Uplus − Uminus` treibt den Ausgang in positive Richtung, ein negativer in negative Richtung – jeweils nur innerhalb des verfügbaren Ausgangshubs. Die Eingänge sind Signalanschlüsse und keine Versorgungseingänge. Pinbelegung und zulässige Bereiche werden stets im Datenblatt des konkreten Typs geprüft.
 
 ### Differenzverstärker mit hoher Leerlaufverstärkung
 
@@ -27,6 +42,17 @@ Im idealen Modell gilt unendliche Leerlaufverstärkung, unendlicher Eingangswide
 ### Reale Grenzen
 
 Common-Mode-Eingangsbereich, Ausgangshub, Kurzschlussstrom, Versorgungsspannung, Verstärkungs-Bandbreiten-Produkt, Offset und Biasströme begrenzen die Schaltung. Ein OPV kann am Eingang ausserhalb seines zulässigen Bereichs liegen, obwohl die Ausgangsspannung rechnerisch plausibel erscheint.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Pufferung und Verstärkung von Sensorsignalen
+- Aktive Filter
+- Referenz-, Regel- und Vergleichsschaltungen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

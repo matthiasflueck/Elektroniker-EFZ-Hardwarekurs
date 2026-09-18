@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Lastsprung und Spannungsabweichung beurteilen
 - Versorgungsrauschen reproduzierbar messen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein Regler kann einen Lastsprung nicht ohne Verzögerung beantworten. Lokale Kondensatoren liefern den schnellen Strom, bis Regler und Zuleitung nachregeln. Entscheidend sind nicht nur Kapazitätswerte, sondern Schleifenfläche, ESR, ESL und Rückstrompfad.
 
+
+<!-- context-expansion-2026 -->
+Eine Stromversorgung ist eine dynamische Energiequelle für die gesamte Baugruppe. Eingang, Schutz, Regler, Leiterpfade, Kondensatoren und Lastprofil bilden ein System. Nennspannung allein genügt weder für die Dimensionierung noch für die Verifikation.
+
+Beim Thema **Entkopplung, Lastsprung und Messung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Versorgungen werden über Leistungs- und Strompfade analysiert. Für jeden Betriebszustand werden Eingang, Ausgang, Verlust, Temperatur und gespeicherte Energie bilanziert. Dynamische Vorgänge wie Einschalten und Lastsprung werden zusätzlich im Zeitbereich gemessen.
 
 ### Schneller lokaler Strom
 
@@ -27,6 +38,17 @@ Kleine Keramikkondensatoren liegen direkt an Versorgung und GND des IC. Grösser
 ### Lastsprungmessung
 
 Die Last wird zwischen zwei bekannten Strömen geschaltet. Gemessen werden Einbruch, Überschwingen, Einschwingzeit und mögliche Oszillation direkt am Verbraucher. Eine zweite Messung am Regler trennt Leitungsabfall vom Regelverhalten. Stromsonde oder Shunt bestätigt den tatsächlichen Sprung.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Lokale MCU- und FPGA-Entkopplung
+- Abfangen von Funk- und Motorlastsprüngen
+- Vermeidung von Brownout und Reset durch Versorgungseinbruch
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

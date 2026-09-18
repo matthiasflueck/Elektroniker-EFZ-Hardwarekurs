@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Sperrschichttemperatur abschätzen
 - Datenblattbedingungen und PCB-Kühlpfad berücksichtigen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Elektrische Verlustleistung wird als Wärme abgeführt. Ein Bauteil kann elektrisch korrekt dimensioniert sein und dennoch wegen Gehäuse, Kupferfläche oder Umgebung überhitzen. Temperatur ist deshalb ein eigener Stromkreis aus Wärmefluss und Widerständen.
 
+
+<!-- context-expansion-2026 -->
+Eine Stromversorgung ist eine dynamische Energiequelle für die gesamte Baugruppe. Eingang, Schutz, Regler, Leiterpfade, Kondensatoren und Lastprofil bilden ein System. Nennspannung allein genügt weder für die Dimensionierung noch für die Verifikation.
+
+Beim Thema **Verlustleistung und thermische Grundlagen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Versorgungen werden über Leistungs- und Strompfade analysiert. Für jeden Betriebszustand werden Eingang, Ausgang, Verlust, Temperatur und gespeicherte Energie bilanziert. Dynamische Vorgänge wie Einschalten und Lastsprung werden zusätzlich im Zeitbereich gemessen.
 
 ### Thermisches Ersatznetz
 
@@ -29,6 +40,17 @@ TJ ist die Sperrschichttemperatur, TA die Umgebungstemperatur, PV die Verlustlei
 Wärmekapazitäten verzögern den Temperaturanstieg. Kurze Pulse werden mit transienter thermischer Impedanz bewertet. Dauerbetrieb benötigt stationären Nachweis. Maximaltemperatur wird nicht als Ziel verwendet; Reserve deckt Toleranz, Gehäuse, Sonneneinstrahlung und Alterung ab.
 
 Exposed Pads benötigen definierte Kupferflächen und thermische Vias. Kühlkörper wirken nur mit kontrolliertem Kontaktwiderstand.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Kühlpfad von Regler, Diode und Leistungsschalter
+- Bewertung von Gehäuse und Kupferfläche
+- Festlegen von Derating und Temperaturgrenzen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

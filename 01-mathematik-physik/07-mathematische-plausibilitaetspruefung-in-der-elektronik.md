@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - unabhängige Rechen- und Messwege vergleichen
 - unplausible Resultate systematisch eingrenzen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Taschenrechner führen auch falsch eingegebene Rechnungen zuverlässig aus. Plausibilitätsprüfung ist deshalb kein optionaler letzter Blick, sondern eine zweite, möglichst unabhängige Methode.
 
+
+<!-- context-expansion-2026 -->
+Mathematik ist in der Elektronik kein Selbstzweck, sondern eine gemeinsame Sprache für Datenblatt, Schaltung, Messgerät und Prüfbericht. Eine Rechnung ist erst dann nützlich, wenn Einheit, Grössenordnung, Randbedingungen und physikalische Bedeutung zusammenpassen.
+
+Beim Thema **Mathematische Plausibilitätsprüfung in der Elektronik** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie die Darstellung beim Rechnen, Lesen von Datenblättern, Auswerten von Messungen und Prüfen der Grössenordnung konkret eingesetzt wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und einem Gültigkeitsbereich. Vor dem Einsetzen von Zahlen wird daher geklärt, was gesucht ist, welche Annahmen gelten und welche Grössenordnung physikalisch zu erwarten ist.
 
 ### Vier Prüfungen
 
@@ -37,6 +48,17 @@ Auch ein plausibler Einzelwert kann in einem unplausiblen Zusammenhang stehen. E
 ### Plausibel ist noch nicht bewiesen
 
 Plausibilität zeigt, dass ein Wert möglich erscheint. Sie ersetzt keine genaue Verifikation. Nach dem schnellen Filter folgen – abhängig vom Risiko – Toleranzrechnung, kalibrierte Messung und dokumentierter Test. Plausibilitätsprüfung verhindert grobe Fehler, die formale Prüfung bestätigt die Anforderung.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Prüfen von Simulation und Messwert
+- Erkennen falscher Einheiten oder Dezimalstellen
+- Bewerten, ob ein Ergebnis zur realen Schaltung passt
+
+In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig notiert. Das Resultat wird anschliessend mit Grenzfällen, Grössenordnung oder einem Messwert geprüft, damit ein formal korrektes, aber physikalisch falsches Ergebnis nicht unbemerkt bleibt.
 
 ## Anschauliches Beispiel
 

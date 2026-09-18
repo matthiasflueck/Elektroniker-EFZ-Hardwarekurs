@@ -10,34 +10,45 @@ Nach dieser Lektion kannst du:
 - Ersatzspannung und Ersatzwiderstand bestimmen
 - die Grenzen und den praktischen Nutzen einer Ersatzschaltung erklären
 
-## Warum ist das wichtig?
+## Einleitung
 
 Eine Last «sieht» von aussen oft nur zwei Klemmen. Ob dahinter drei Widerstände, mehrere Quellen oder ein ganzer Schaltungsteil liegen, ist für das Lastverhalten nicht immer relevant. Eine Ersatzschaltung fasst dieses Verhalten in wenigen Grössen zusammen und macht Belastungsrechnungen übersichtlich.
 
 Dabei wird die innere Schaltung nicht als physisch identisch behauptet. Thévenin- und Norton-Modell sind an den betrachteten Klemmen gleichwertig, solange das Netzwerk linear ist und im untersuchten Betriebsbereich bleibt. Für Fehlersuche und Schnittstellendimensionierung ist diese Unterscheidung sehr wertvoll.
 
+
+<!-- context-expansion-2026 -->
+Eine Baugruppe besteht aus verbundenen Quellen, Bauteilen und Lasten. Gleichstromnetzwerke liefern die Regeln, mit denen sich unbekannte Ströme und Spannungen aus Topologie und Bauteilwerten ableiten lassen. Dabei sind Knoten, Maschen und Rückstrompfade ebenso wichtig wie die Zahlenwerte.
+
+Beim Thema **Innenwiderstand und Ersatzschaltungen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Netzwerke werden aus Sicht ihrer Topologie gelesen: Bauteile in demselben Strompfad liegen in Reihe, Bauteile an denselben zwei Knoten parallel. Erst danach werden Ersatzwerte, Knotenbilanzen oder Maschengleichungen gebildet. Diese Reihenfolge verhindert viele Vorzeichen- und Zuordnungsfehler.
 
 ### Thévenin-Ersatzquelle
 
-Jedes lineare Zweipolnetzwerk aus Quellen und Widerständen lässt sich an zwei Klemmen durch eine ideale Spannungsquelle `U_Th` in Reihe mit `R_Th` ersetzen. `U_Th` ist die Leerlaufspannung an den Klemmen. `R_Th` beschreibt, wie stark die Klemmenspannung unter Belastung sinkt.
+Jedes lineare Zweipolnetzwerk aus Quellen und Widerständen lässt sich an zwei Klemmen durch eine ideale Spannungsquelle `UTh` in Reihe mit `RTh` ersetzen. `UTh` ist die Leerlaufspannung an den Klemmen. `RTh` beschreibt, wie stark die Klemmenspannung unter Belastung sinkt.
 
 ![Komplexes Zweipolnetzwerk und gleichwertige Thévenin- sowie Norton-Ersatzquelle](../bilder/03-gleichstromnetzwerke/03-06-thevenin-norton.png)
 
 | Formelzeichen | Bedeutung | Einheit |
 |---|---|---|
-| `U_Th` | Thévenin- oder Leerlaufspannung | V |
-| `R_Th` | Thévenin-Ersatzwiderstand | Ω |
-| `I_N` | Norton- oder Kurzschlussstrom | A |
-| `R_N` | Norton-Ersatzwiderstand; bei linearen Netzen `R_N = R_Th` | Ω |
+| `UTh` | Thévenin- oder Leerlaufspannung | V |
+| `RTh` | Thévenin-Ersatzwiderstand | Ω |
+| `IN` | Norton- oder Kurzschlussstrom | A |
+| `RN` | Norton-Ersatzwiderstand; bei linearen Netzen `RN = RTh` | Ω |
 
 ### Norton-Ersatzquelle
 
-Dasselbe Klemmenverhalten kann als ideale Stromquelle `I_N` parallel zu `R_N` beschrieben werden. Beide Darstellungen lassen sich umrechnen:
+Dasselbe Klemmenverhalten kann als ideale Stromquelle `IN` parallel zu `RN` beschrieben werden. Beide Darstellungen lassen sich umrechnen:
 
-`I_N = U_Th / R_Th`
+`IN = UTh / RTh`
 
-`U_Th = I_N · R_N`
+`UTh = IN · RN`
 
 Welche Form übersichtlicher ist, hängt von der angeschlossenen Schaltung ab. Für eine Serienlast ist Thévenin oft anschaulich; für mehrere parallele Pfade kann Norton günstiger sein.
 
@@ -45,7 +56,7 @@ Welche Form übersichtlicher ist, hängt von der angeschlossenen Schaltung ab. F
 
 Bei einem Netz aus ausschliesslich unabhängigen Quellen werden diese für die Widerstandsbetrachtung deaktiviert: ideale Spannungsquellen werden kurzgeschlossen, ideale Stromquellen geöffnet. Danach wird der von den Klemmen sichtbare Widerstand berechnet. Das bedeutet nicht, reale Quellen unkontrolliert kurzzuschliessen; es ist ein Rechenschritt am idealen Modell.
 
-Alternativ können zwei Betriebspunkte verwendet werden. Ändert sich der Laststrom um `ΔI` und die Klemmenspannung um `ΔU`, gilt für ein lineares Quellenmodell betragsmässig `R_Th = |ΔU/ΔI|`. Das Delta-Zeichen `Δ` bezeichnet die Differenz zwischen zwei Messwerten, nicht einen einzelnen Wert.
+Alternativ können zwei Betriebspunkte verwendet werden. Ändert sich der Laststrom um `ΔI` und die Klemmenspannung um `ΔU`, gilt für ein lineares Quellenmodell betragsmässig `RTh = |ΔU/ΔI|`. Das Delta-Zeichen `Δ` bezeichnet die Differenz zwischen zwei Messwerten, nicht einen einzelnen Wert.
 
 Bei abhängigen Quellen dürfen diese nicht deaktiviert werden. Dann wird eine Testspannung oder ein Teststrom an den Klemmen angelegt und das Verhältnis berechnet. Diese Methode wird in späteren Schaltungsmodulen vertieft.
 
@@ -53,13 +64,24 @@ Bei abhängigen Quellen dürfen diese nicht deaktiviert werden. Dann wird eine T
 
 Eine Ersatzschaltung bewahrt das äussere Strom-Spannungs-Verhalten, nicht interne Leistungen oder einzelne Knotenspannungen. Nichtlineare Bauteile, Strombegrenzung und Temperatur können dazu führen, dass ein einziges lineares Modell nur lokal gilt. Dann müssen Betriebspunkt und Messbereich dokumentiert werden.
 
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Vereinfachung komplexer Sensornetze
+- Bestimmung der Belastbarkeit eines Ausgangsknotens
+- Vergleich von Thévenin- und Nortonmodell
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
+
 ## Anschauliches Beispiel
 
-Ein Spannungsteiler aus 10 kΩ und 10 kΩ an 10 V wirkt am Mittelabgriff wie eine 5-V-Quelle mit `R_Th = 10 kΩ || 10 kΩ = 5 kΩ`. Damit ist sofort sichtbar, warum eine 5-kΩ-Last die Ausgangsspannung auf 2,5 V zieht.
+Ein Spannungsteiler aus 10 kΩ und 10 kΩ an 10 V wirkt am Mittelabgriff wie eine 5-V-Quelle mit `RTh = 10 kΩ || 10 kΩ = 5 kΩ`. Damit ist sofort sichtbar, warum eine 5-kΩ-Last die Ausgangsspannung auf 2,5 V zieht.
 
 ## Berechnungsbeispiel
 
-Für den genannten Teiler ist `U_Th = 5 V` und `R_Th = 5 kΩ`. Die Nortonquelle hat `I_N = 5 V/5 kΩ = 1 mA` und `R_N = 5 kΩ`. An einer Last von 15 kΩ ergibt die Thévenin-Darstellung `I_L = 5 V/(5 kΩ+15 kΩ) = 0,25 mA`; daher liegen an der Last 3,75 V.
+Für den genannten Teiler ist `UTh = 5 V` und `RTh = 5 kΩ`. Die Nortonquelle hat `IN = 5 V/5 kΩ = 1 mA` und `RN = 5 kΩ`. An einer Last von 15 kΩ ergibt die Thévenin-Darstellung `IL = 5 V/(5 kΩ+15 kΩ) = 0,25 mA`; daher liegen an der Last 3,75 V.
 
 ## Praxisbezug
 
@@ -88,7 +110,7 @@ Thévenin- und Norton-Ersatzquelle beschreiben denselben linearen Zweipol. Leerl
 
 1. Welche zwei Grössen bestimmen eine Thévenin-Ersatzquelle?
 2. Wie werden unabhängige ideale Spannungs- und Stromquellen bei der Widerstandsbestimmung behandelt?
-3. Wandle `U_Th = 3,3 V` und `R_Th = 330 Ω` in eine Nortonquelle um.
+3. Wandle `UTh = 3,3 V` und `RTh = 330 Ω` in eine Nortonquelle um.
 4. Welche Information über die innere Schaltung geht bei der Ersatzbildung verloren?
 
 Weitere Aufgaben: [Übungen zu Modul 03](../uebungen/modul-03.md).

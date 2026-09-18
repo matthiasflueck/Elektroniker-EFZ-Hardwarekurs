@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - die Stromteilerformel aus Leitwerten herleiten
 - unerwartete Zweigströme systematisch untersuchen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Versorgungsströme teilen sich auf mehrere Baugruppen, Rückströme suchen verschiedene Massepfade, und Strommess-Shunts können durch parallele Leiter umgangen werden. Eine Stromteilerrechnung ist deshalb mehr als eine Schulformel: Sie hilft, reale Strompfade zu erkennen.
 
 In jedem Parallelzweig liegt dieselbe Spannung. Der niederohmigere Zweig führt mehr Strom. Das wirkt anfangs ungewohnt, weil der grössere Zweigstrom beim kleineren Widerstand entsteht. Mit dem Leitwert wird der Zusammenhang unmittelbar verständlich: Der besser leitende Pfad übernimmt den grösseren Anteil.
 
+
+<!-- context-expansion-2026 -->
+Eine Baugruppe besteht aus verbundenen Quellen, Bauteilen und Lasten. Gleichstromnetzwerke liefern die Regeln, mit denen sich unbekannte Ströme und Spannungen aus Topologie und Bauteilwerten ableiten lassen. Dabei sind Knoten, Maschen und Rückstrompfade ebenso wichtig wie die Zahlenwerte.
+
+Beim Thema **Stromteiler und Parallelzweige** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Netzwerke werden aus Sicht ihrer Topologie gelesen: Bauteile in demselben Strompfad liegen in Reihe, Bauteile an denselben zwei Knoten parallel. Erst danach werden Ersatzwerte, Knotenbilanzen oder Maschengleichungen gebildet. Diese Reihenfolge verhindert viele Vorzeichen- und Zuordnungsfehler.
 
 ### Aufteilung nach Leitwert
 
@@ -26,22 +37,22 @@ Der Gesamtstrom erreicht einen Knoten und verteilt sich auf die parallelen Zweig
 
 Für mehrere Zweige lässt sich der Stromanteil eines Zweigs `k` besonders klar mit Leitwerten schreiben:
 
-`I_k = I_total · G_k / G_total`
+`Ik = Itotal · Gk / Gtotal`
 
 | Formelzeichen | Bedeutung | Einheit |
 |---|---|---|
-| `I_total` | Gesamtstrom vor der Verzweigung | A |
-| `I_k` | Strom im betrachteten Zweig `k` | A |
-| `G_k` | Leitwert des betrachteten Zweigs | S (Siemens) |
-| `G_total` | Summe aller parallelen Leitwerte | S |
+| `Itotal` | Gesamtstrom vor der Verzweigung | A |
+| `Ik` | Strom im betrachteten Zweig `k` | A |
+| `Gk` | Leitwert des betrachteten Zweigs | S (Siemens) |
+| `Gtotal` | Summe aller parallelen Leitwerte | S |
 
 Da `G = 1/R` gilt, erhält der Zweig mit kleinerem Widerstand den grösseren Stromanteil.
 
 ### Spezialfall mit zwei Widerständen
 
-Für zwei parallele Widerstände kann der Strom durch `R_1` direkt berechnet werden:
+Für zwei parallele Widerstände kann der Strom durch `R1` direkt berechnet werden:
 
-`I_1 = I_total · R_2 / (R_1 + R_2)`
+`I1 = Itotal · R2 / (R1 + R2)`
 
 Im Zähler steht der jeweils andere Widerstand. Diese Form ist korrekt, aber leicht zu verwechseln. Sicherer ist oft: zuerst Parallelersatz bestimmen, daraus die gemeinsame Spannung berechnen und anschliessend jeden Zweigstrom mit dem Ohmschen Gesetz bestimmen. So lässt sich zugleich die Knotenbilanz prüfen.
 
@@ -55,13 +66,24 @@ Bei parallel geschalteten Bauteilen können Temperaturkoeffizienten die Aufteilu
 
 Ein Amperemeter wird in den interessierenden Zweig eingeschleift und bringt einen kleinen Innenwiderstand mit. Ein Stromzangen- oder Shuntaufbau kann bei geeigneten Strömen weniger Umbau verlangen. Entscheidend ist, dass die Messung nicht unbemerkt einen vorhandenen Parallelpfad verändert.
 
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Aufteilung von Last- und Rückströmen
+- Dimensionierung paralleler Shunts
+- Analyse von Stromverteilung in Widerstandsnetzen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
+
 ## Anschauliches Beispiel
 
 Zwei Widerstände von 1 kΩ und 3 kΩ liegen parallel. Der 1-kΩ-Zweig hat den dreifachen Leitwert und übernimmt deshalb drei Viertel des Gesamtstroms; der 3-kΩ-Zweig erhält ein Viertel. Die Zweigströme stehen umgekehrt proportional zu den Widerständen.
 
 ## Berechnungsbeispiel
 
-Ein Gesamtstrom von 8 mA teilt sich auf `R_1 = 1 kΩ` und `R_2 = 3 kΩ`. Damit gilt `I_1 = 8 mA · 3/(1+3) = 6 mA` und `I_2 = 2 mA`. Die gemeinsame Spannung beträgt in beiden Zweigen 6 V. Kontrolle: `6 mA + 2 mA = 8 mA`.
+Ein Gesamtstrom von 8 mA teilt sich auf `R1 = 1 kΩ` und `R2 = 3 kΩ`. Damit gilt `I1 = 8 mA · 3/(1+3) = 6 mA` und `I2 = 2 mA`. Die gemeinsame Spannung beträgt in beiden Zweigen 6 V. Kontrolle: `6 mA + 2 mA = 8 mA`.
 
 ## Praxisbezug
 

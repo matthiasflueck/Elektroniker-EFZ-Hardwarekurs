@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Vorwiderstand für Lastgrenzen dimensionieren
 - Verlustleistung und dynamischen Widerstand prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Eine Z-Diode kann eine Spannung begrenzen oder eine einfache Referenz bilden. Ohne Strombegrenzung zerstört sie sich jedoch. Zudem bleibt ihre Spannung nicht exakt konstant; Strom, Temperatur und dynamischer Widerstand bestimmen die Genauigkeit.
 
+
+<!-- context-expansion-2026 -->
+Dioden steuern Strom abhängig von Polarität, Spannung und Temperatur. Sie werden zum Gleichrichten, Begrenzen, Schützen und Erzeugen von Licht eingesetzt. Das einfache Schaltzeichen steht dabei für einen realen PN- oder Metall-Halbleiter-Übergang mit klaren Grenzwerten.
+
+Beim Thema **Z-Dioden und Spannungsbegrenzung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Für jede Diodenschaltung werden zuerst Anode, Kathode, vorgesehene Stromrichtung und Sperrspannung markiert. Danach folgen Arbeitspunkt und Verlustleistung. Diese Reihenfolge macht sichtbar, ob die Diode im Normalbetrieb leitet, sperrt oder nur im Fehlerfall Energie übernimmt.
 
 ### Kontrollierter Durchbruch
 
@@ -27,6 +38,17 @@ Der Serienwiderstand führt `IR = (Uin − UZ)/R1`. Dieser Strom teilt sich in Z
 ### Genauigkeit
 
 Die Prüfspannung UZ gilt bei einem definierten Teststrom. Der dynamische Widerstand rz beschreibt die lokale Spannungsänderung. Toleranz, Temperaturkoeffizient und Leitungswiderstände kommen hinzu. Für präzise Referenzen sind spezielle Referenzbausteine meist besser.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Einfache Referenzen und Überspannungsbegrenzung
+- Klemmen empfindlicher Eingänge
+- Erkennen definierter Schwellwerte
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

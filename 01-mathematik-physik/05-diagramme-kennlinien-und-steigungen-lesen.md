@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Werte, Steigungen und Bereiche aus Kennlinien lesen
 - Interpolation von unzulässiger Extrapolation unterscheiden
 
-## Warum ist das wichtig?
+## Einleitung
 
 Datenblätter beschreiben Bauteile häufig besser mit Kennlinien als mit einer einzigen Zahl. Wer nur einen Punkt abliest, kann Temperatur, Streuung oder den nichtlinearen Verlauf übersehen.
 
+
+<!-- context-expansion-2026 -->
+Mathematik ist in der Elektronik kein Selbstzweck, sondern eine gemeinsame Sprache für Datenblatt, Schaltung, Messgerät und Prüfbericht. Eine Rechnung ist erst dann nützlich, wenn Einheit, Grössenordnung, Randbedingungen und physikalische Bedeutung zusammenpassen.
+
+Beim Thema **Diagramme, Kennlinien und Steigungen lesen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie die Darstellung beim Rechnen, Lesen von Datenblättern, Auswerten von Messungen und Prüfen der Grössenordnung konkret eingesetzt wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und einem Gültigkeitsbereich. Vor dem Einsetzen von Zahlen wird daher geklärt, was gesucht ist, welche Annahmen gelten und welche Grössenordnung physikalisch zu erwarten ist.
 
 ### Zuerst die Achsen
 
@@ -39,6 +50,17 @@ Bei Datenblattkennlinien ist zusätzlich zu prüfen, ob typische oder garantiert
 ### Arbeitspunkt und lokale Änderung
 
 Der Arbeitspunkt bezeichnet den aktuellen Betriebszustand auf der Kennlinie. Bei nichtlinearem Verlauf kann die Steigung in seiner Nähe für kleine Änderungen genutzt werden, obwohl das Verhältnis vom Ursprung zum Arbeitspunkt anders ist. Diese Unterscheidung wird später bei Diode, Transistor und Sensor wichtig.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Auswertung von Dioden- und Sensorkennlinien
+- Bestimmung von Arbeitspunkten
+- Erkennen von Sättigung, Linearität und Grenzwerten
+
+In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig notiert. Das Resultat wird anschliessend mit Grenzfällen, Grössenordnung oder einem Messwert geprüft, damit ein formal korrektes, aber physikalisch falsches Ergebnis nicht unbemerkt bleibt.
 
 ## Anschauliches Beispiel
 

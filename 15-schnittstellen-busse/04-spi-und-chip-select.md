@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - CPOL und CPHA anhand von Zeitdiagrammen bestimmen
 - MISO-Konflikte und Flankenprobleme diagnostizieren
 
-## Warum ist das wichtig?
+## Einleitung
 
 SPI erreicht hohe Datenraten und besitzt keine einheitliche automatische Rahmung. Bausteine unterscheiden sich bei Taktmodus, Wortlänge, Bitreihenfolge und Chip-Select-Zeit. Die elektrische Messung zeigt, was tatsächlich übertragen wurde.
 
+
+<!-- context-expansion-2026 -->
+Eine digitale Schnittstelle besteht aus Protokoll und physikalischer Übertragung. Register erzeugen Bits, Pad-Zellen und Transceiver erzeugen reale Pegel, und Leitung sowie Rückweg formen die Flanken. Diagnose muss daher Firmwarezustand und Messsignal gleichzeitig berücksichtigen.
+
+Beim Thema **SPI und Chip Select** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Bei Bussystemen werden Datenrichtung, Treiberart, Bezugspotential und Abschluss vor der Protokolldekodierung geklärt. Ein Logic Analyzer zeigt logische Zustände; das Oszilloskop zeigt, ob Pegel und Flanken die Empfängergrenzen tatsächlich einhalten.
 
 ### Vier Signalrollen
 
@@ -27,6 +38,17 @@ CPOL bestimmt den Ruhezustand des Takts, CPHA die Abtast- und Änderungsflanke. 
 ### Elektrische Grenzen
 
 Schnelle Push-Pull-Flanken erzeugen Reflexionen und Übersprechen auf langen Leitungen. Serienwiderstände nahe am Treiber reduzieren Flankensteilheit und bedämpfen. Sternförmige SCLK-Abzweige sind kritisch. MISO-Konflikte zeigen sich als Zwischenpegel und hoher Strom.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Schnelle Sensoren, ADCs und Speicher
+- Displays und Schieberegister
+- Mehrere Teilnehmer mit getrenntem Chip Select
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - elektrische Leistung mit mehreren Formeln berechnen
 - Verlustleistung und thermische Reserve beurteilen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Eine Schaltung kann elektrisch richtig funktionieren und trotzdem überhitzen. Strom und Spannung sagen, was fliesst und anliegt; Leistung sagt, wie schnell Energie umgesetzt wird. Sie entscheidet über Bauteilgrösse, Temperatur und Laufzeit.
 
+
+<!-- context-expansion-2026 -->
+Elektrische Grössen beschreiben verschiedene Seiten desselben Vorgangs: Ladung wird bewegt, Spannung stellt Energie pro Ladung bereit, Widerstände begrenzen den Strom und Leistung beschreibt den Energieumsatz. Erst der geschlossene Stromkreis und ein festgelegter Bezug machen einzelne Zahlen zu einem verständlichen System.
+
+Beim Thema **Elektrische Leistung, Energie und Wirkungsgrad** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Zur Analyse wird zuerst der reale Strompfad gezeichnet und ein Bezugspotential festgelegt. Danach werden Richtung und Polarität definiert. Formeln beschreiben anschliessend diesen bereits verstandenen Vorgang; sie ersetzen weder Schaltbild noch Plausibilitätskontrolle.
 
 ### Leistung im Bauteil
 
@@ -28,7 +39,7 @@ Bei konstanter Leistung gilt `E = P·t`. Joule beziehungsweise Wattsekunde ist d
 
 ### Wirkungsgrad
 
-`η = P_nutz/P_zu`. Die Differenz `P_verlust = P_zu − P_nutz` erwärmt Bauteile oder wird anderweitig ungewollt umgesetzt. Nennleistung ist kein Zielbetrieb; Reserve und Umgebungstemperatur sind zu beachten.
+`η = Pnutz/Pzu`. Die Differenz `Pverlust = Pzu − Pnutz` erwärmt Bauteile oder wird anderweitig ungewollt umgesetzt. Nennleistung ist kein Zielbetrieb; Reserve und Umgebungstemperatur sind zu beachten.
 
 ### Vorzeichen der Leistung
 
@@ -39,6 +50,17 @@ Die Formeln `I²R` und `U²/R` dürfen nur verwendet werden, wenn U, I und R zum
 ### Temperatur ist nicht Leistung
 
 Watt beschreibt Wärmeentstehung pro Zeit, Grad Celsius einen Temperaturzustand. Zwei Bauteile mit gleicher Verlustleistung können wegen unterschiedlicher Gehäuse und Kühlpfade sehr verschiedene Temperaturen erreichen. Deshalb wird eine Leistungsrechnung später durch thermische Widerstände und zulässige Sperrschichttemperatur ergänzt.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Thermische Auslegung von Reglern und Widerständen
+- Batterielaufzeit und Energieverbrauch
+- Wirkungsgradvergleich von Versorgungskonzepten
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

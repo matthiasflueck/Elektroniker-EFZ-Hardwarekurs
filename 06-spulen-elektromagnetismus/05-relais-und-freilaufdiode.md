@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Diodenpolarität erklären
 - Kontakt- und Spulendaten getrennt prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein GPIO kann eine Relaisspule weder strommässig noch hinsichtlich Abschaltspannung direkt treiben. Ein Schalter übernimmt den Spulenstrom, die Freilaufdiode schützt ihn. Die Kontakte bilden einen galvanisch getrennten zweiten Stromkreis mit eigenen Grenzen.
 
+
+<!-- context-expansion-2026 -->
+Spulen und Transformatoren speichern oder übertragen Energie über Magnetfelder. Weil sich der Spulenstrom nicht sprunghaft ändern kann, entstehen beim Ein- und Ausschalten charakteristische Spannungen. Kernmaterial, Sättigung und Wicklungswiderstand machen aus dem idealen Symbol ein reales Bauteil.
+
+Beim Thema **Relais und Freilaufdiode** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Das ideale Induktivitätsgesetz beschreibt die Spannung bei einer Stromänderung. Reale Spulen ergänzen Wicklungswiderstand, Kernverluste, parasitäre Kapazität und Sättigung. Der Strompfad muss sowohl während der Energieaufnahme als auch während der Energieabgabe geschlossen sein.
 
 ### Treiber und Freilauf
 
@@ -35,6 +46,17 @@ Kontaktstrom ist nicht Spulenstrom. Gleich- und Wechselstrom, ohmsche und indukt
 Eine einfache Siliziumdiode klemmt die umgekehrte Spulenspannung auf einen kleinen Wert. Das schützt den Transistor sehr gut, lässt den Spulenstrom aber vergleichsweise langsam abklingen. Dadurch fällt der Anker verzögert ab. Wo eine kurze Abfallzeit wichtig ist, kann eine höhere, kontrollierte Klemmspannung mit Z-Diode oder TVS sinnvoll sein. Sie beschleunigt den Stromabbau, beansprucht den Schalter jedoch stärker. Die zulässige Klemmspannung muss deshalb deutlich unter seiner maximalen Drain-Source- beziehungsweise Kollektor-Emitter-Spannung bleiben.
 
 Die im Magnetfeld gespeicherte Energie `EL = 1/2·L·I²` verschwindet beim Abschalten nicht. Sie wird im Wicklungswiderstand, in der Diode und gegebenenfalls in der Klemme in Wärme umgesetzt. Ein Oszilloskopvergleich muss daher nicht nur die Spannungsspitze, sondern auch die Abklingzeit des Stroms beurteilen. Ein langer Tastkopf-Masseleiter kann zusätzliche Schwingungen vortäuschen; für die Messung wird eine kurze Massefeder verwendet.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Ansteuerung von Ventilen, Schützen und Relais
+- Freilauf an Motorwicklungen
+- Schutz von BJT-, MOSFET- und MCU-Ausgängen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

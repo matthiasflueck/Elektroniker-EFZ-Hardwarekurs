@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Busleitung und Abschluss korrekt anordnen
 - Treiberfreigabe und Failsafe-Zustand prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 RS-485 überträgt Daten über lange Leitungen und in störender Umgebung. Der Empfänger wertet die Differenz zwischen A und B aus, doch Gleichtaktbereich, Abschluss, Topologie und Bezugspfad bleiben entscheidend.
 
+
+<!-- context-expansion-2026 -->
+Eine digitale Schnittstelle besteht aus Protokoll und physikalischer Übertragung. Register erzeugen Bits, Pad-Zellen und Transceiver erzeugen reale Pegel, und Leitung sowie Rückweg formen die Flanken. Diagnose muss daher Firmwarezustand und Messsignal gleichzeitig berücksichtigen.
+
+Beim Thema **RS-485 und differentielle Übertragung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Bei Bussystemen werden Datenrichtung, Treiberart, Bezugspotential und Abschluss vor der Protokolldekodierung geklärt. Ein Logic Analyzer zeigt logische Zustände; das Oszilloskop zeigt, ob Pegel und Flanken die Empfängergrenzen tatsächlich einhalten.
 
 ### Differenz statt einzelner Pegel
 
@@ -27,6 +38,17 @@ Eine lange Leitung wird an beiden physischen Enden mit ihrem Wellenwiderstand ab
 ### Halbduplex und Ruhezustand
 
 Bei Halbduplex steuert Driver Enable den Sender. Zwei aktive Treiber können kollidieren. Moderne Empfänger besitzen Failsafe, dennoch können Bias-Widerstände einen definierten Ruhezustand erzeugen. Ein Bezug oder Schirmkonzept hält Gleichtaktspannung im zulässigen Bereich; der Differenzbus ersetzt keine galvanische Trennung.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Industrielle Mehrpunktverbindungen
+- Lange Leitungen in störender Umgebung
+- Halbduplex-Kommunikation mit Transceivern
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

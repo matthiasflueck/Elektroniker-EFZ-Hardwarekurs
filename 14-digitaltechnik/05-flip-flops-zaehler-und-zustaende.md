@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - D-Flip-Flop und Zähler zeitlich erklären
 - Setup, Hold und Metastabilität einordnen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein Flip-Flop merkt sich einen Zustand. Damit entstehen Zähler, Zustandsautomaten und synchronisierte Eingänge. Entscheidend ist nicht nur der Pegel, sondern der Zeitpunkt relativ zur Taktflanke.
 
+
+<!-- context-expansion-2026 -->
+Digitale Zustände werden elektrisch durch Spannungsbereiche und zeitlich durch Flanken dargestellt. Logische Funktion, Störreserve, Laufzeit und Startzustand gehören zusammen. Ein korrekter Wahrheitswert allein beweist noch keine robuste Hardware.
+
+Beim Thema **Flip-Flops, Zähler und Zustände** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Digitale Schaltungen werden in drei Ebenen untersucht: Boolesche Funktion, elektrischer Pegel und zeitliches Verhalten. Wahrheitstabelle, Datenblattgrenzen und Zeitdiagramm beantworten unterschiedliche Fragen und müssen für eine belastbare Freigabe zusammenpassen.
 
 ### Ein Bit mit Takt
 
@@ -27,6 +38,17 @@ Wird das Zeitfenster verletzt, kann Metastabilität auftreten: Q ist vorübergeh
 ### Zähler und Zustände
 
 Zählerketten speichern eine Binärzahl. Synchrone Zähler ändern Bits zur gemeinsamen Taktflanke; Ripple-Zähler leiten den Takt weiter und zeigen Zwischenzustände. Reset und Preset können synchron oder asynchron sein und benötigen definierte Freigabezeiten.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Zähler, Timer und Zustandsautomaten
+- Synchronisierung asynchroner Eingänge
+- Speichern von Status- und Steuersignalen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

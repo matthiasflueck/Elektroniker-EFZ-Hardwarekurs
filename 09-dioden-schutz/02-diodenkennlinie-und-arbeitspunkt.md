@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Arbeitspunkt mit Vorwiderstand bestimmen
 - statischen und differentiellen Widerstand unterscheiden
 
-## Warum ist das wichtig?
+## Einleitung
 
 Eine reale Diode entscheidet ihren Strom nicht allein. Quelle und Serienwiderstand liefern eine zweite Beziehung; ihr Schnittpunkt ist der Arbeitspunkt. Diese Denkweise verhindert Überstrom und bildet die Grundlage für LEDs, Gleichrichter und Schutzklemmen.
 
+
+<!-- context-expansion-2026 -->
+Dioden steuern Strom abhängig von Polarität, Spannung und Temperatur. Sie werden zum Gleichrichten, Begrenzen, Schützen und Erzeugen von Licht eingesetzt. Das einfache Schaltzeichen steht dabei für einen realen PN- oder Metall-Halbleiter-Übergang mit klaren Grenzwerten.
+
+Beim Thema **Diodenkennlinie und Arbeitspunkt** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Für jede Diodenschaltung werden zuerst Anode, Kathode, vorgesehene Stromrichtung und Sperrspannung markiert. Danach folgen Arbeitspunkt und Verlustleistung. Diese Reihenfolge macht sichtbar, ob die Diode im Normalbetrieb leitet, sperrt oder nur im Fehlerfall Energie übernimmt.
 
 ### Nichtlineare Kennlinie
 
@@ -31,6 +42,17 @@ Für Quelle UQ, Widerstand R1 und Diode D1 gilt `ID = (UQ − UD)/R1`. Diese Ger
 Der statische Widerstand am Arbeitspunkt ist `Rstat = UD/ID`. Der differentielle Widerstand `rd = ΔUD/ΔID` beschreibt die lokale Steigung und ist meist deutlich kleiner. `rd` ist ein Kleinsignalwert, kein Ersatz für den Vorwiderstand.
 
 Temperatur verschiebt die Kennlinie. Parallele Dioden teilen Strom deshalb nicht zwangsläufig gleich; kleine Temperatur- oder Bauteilunterschiede können sich verstärken.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Bestimmung von Vorwiderstand und Arbeitspunkt
+- Bewertung von Verlust und Temperatur
+- Vergleich verschiedener Diodentypen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

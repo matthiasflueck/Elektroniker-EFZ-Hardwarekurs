@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Initialfehler, Drift, Rauschen und Lastfehler einordnen
 - eine ADC-Referenz fachgerecht beschalten
 
-## Warum ist das wichtig?
+## Einleitung
 
 Jede Messung braucht einen Massstab. Beim ADC ist die Referenzspannung dieser Massstab: Ändert sie sich, ändern sich die Digitalwerte auch bei unverändertem Eingang. Eine saubere Referenz ist deshalb kein beliebiger Versorgungspin.
 
+
+<!-- context-expansion-2026 -->
+Eine analoge Messkette übersetzt eine physikalische Grösse schrittweise in einen belastbaren ADC-Code. Erregung, Bezug, Verstärkung, Filter, Schutz und Abtastung beeinflussen sich gegenseitig. Deshalb wird jede Stufe zusammen mit ihren Grenzwerten und Messpunkten betrachtet.
+
+Beim Thema **Referenzspannungen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Eine Messkette wird an ihren Schnittstellen beschrieben. Für jeden Knoten werden Signalbereich, Bezug, Quellimpedanz, Last, Bandbreite, Fehlerzustand und geeigneter Messpunkt festgelegt. Dadurch bleibt nachvollziehbar, wo Verstärkung, Filterung oder Abweichung entsteht.
 
 ### Referenz als elektrischer Massstab
 
@@ -29,6 +40,17 @@ Wichtige Daten sind Initialtoleranz, Temperaturkoeffizient in ppm/K, Langzeitdri
 Referenz- und Masseleitungen führen kleine, empfindliche Ströme. Last- oder Digitalschaltströme dürfen nicht denselben Leiterabschnitt als gemeinsamen Spannungsabfall nutzen. Der Abblockkondensator liegt am Referenzpin; Typ, Wert und ESR müssen zum Datenblatt passen.
 
 Bei ratiometrischen Messungen werden Sensor und ADC aus derselben Referenz gespeist. Eine gemeinsame Änderung kürzt sich dann weitgehend heraus. Das funktioniert nur, wenn Signal und Referenz tatsächlich proportional sind.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- ADC- und DAC-Massstab
+- Sensorspeisung und ratiometrische Messung
+- Präzise Sollwerte in Regelkreisen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

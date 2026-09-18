@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Kapazität und Flankenzeit quantitativ verbinden
 - Rückstrompfad und Reflexion als Systemproblem erklären
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein Bus kann bei niedriger Frequenz viele Bits pro Sekunde übertragen und trotzdem sehr schnelle Flanken besitzen. Für Signalintegrität zählt die Flankenzeit im Verhältnis zur Leitungslaufzeit, nicht nur die Taktrate.
 
+
+<!-- context-expansion-2026 -->
+Eine digitale Schnittstelle besteht aus Protokoll und physikalischer Übertragung. Register erzeugen Bits, Pad-Zellen und Transceiver erzeugen reale Pegel, und Leitung sowie Rückweg formen die Flanken. Diagnose muss daher Firmwarezustand und Messsignal gleichzeitig berücksichtigen.
+
+Beim Thema **Pegelwandler, Leitungskapazität und Signalintegrität** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Bei Bussystemen werden Datenrichtung, Treiberart, Bezugspotential und Abschluss vor der Protokolldekodierung geklärt. Ein Logic Analyzer zeigt logische Zustände; das Oszilloskop zeigt, ob Pegel und Flanken die Empfängergrenzen tatsächlich einhalten.
 
 ### Richtungs- und Treiberart
 
@@ -27,6 +38,17 @@ Leitungskapazität bildet mit Ausgangswiderstand oder Pull-up eine Zeitkonstante
 ### Signal und Rückweg
 
 Jeder Signalstrom benötigt einen nahen Rückstrompfad, meist über eine Referenzfläche. Schlitze, Stecker und Ebenenwechsel vergrössern die Schleife und Kopplung. Serienabschluss nahe am Treiber kann den Quellwiderstand an die Leitung anpassen. Tastkopfmassen müssen kurz sein, sonst erzeugt die Messung selbst Ringing.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Verbindung unterschiedlicher Logikspannungen
+- Anpassung schneller Leiterbahnen und Kabel
+- Reduktion von Reflexion, Übersprechen und Messartefakten
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

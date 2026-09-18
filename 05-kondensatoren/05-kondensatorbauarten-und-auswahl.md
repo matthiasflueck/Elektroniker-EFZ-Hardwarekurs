@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Spannungs- Temperatur- und Frequenzeinflüsse prüfen
 - einen Kondensator datenblattgestützt auswählen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Gleiche Kapazität bedeutet nicht gleiches Verhalten. Keramik-, Folien- und Elektrolytkondensatoren unterscheiden sich bei Polarität, Toleranz, Verlusten, Baugrösse und Alterung. Besonders Mehrschicht-Keramikkondensatoren können unter Gleichspannung deutlich Kapazität verlieren.
 
+
+<!-- context-expansion-2026 -->
+Kondensatoren speichern Ladung in einem elektrischen Feld. Dadurch verbinden sie Gleichstromverhalten, zeitliche Vorgänge und hochfrequente Strompfade. Ihre Aufgabe wird erst verständlich, wenn neben dem Kapazitätswert auch Polarität, ESR, ESL und der reale Einbauort betrachtet werden.
+
+Beim Thema **Kondensatorbauarten und Auswahl** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Das ideale Kondensatormodell erklärt Ladung und Zeitverhalten. Für eine reale Baugruppe werden zusätzlich Serienwiderstand, Serieninduktivität, Leckstrom, Spannungsabhängigkeit und Polarität berücksichtigt. Je höher die Frequenz, desto wichtiger werden Anschluss- und Leiterbahngeometrie.
 
 ### Bauarten
 
@@ -29,6 +40,17 @@ Zu prüfen sind effektive Kapazität im Arbeitspunkt, Toleranz, Nennspannung mit
 ### Polarität und Kennzeichnung
 
 Polarisierte Kondensatoren dürfen nicht beliebig verpolt werden. Die Markierung muss für die konkrete Bauart gelesen werden; optische Gewohnheit ersetzt kein Datenblatt.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Keramik-Abblockung
+- Elektrolytkondensatoren als Bulk-Speicher
+- Folienkondensatoren in Filtern und Pulsschaltungen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

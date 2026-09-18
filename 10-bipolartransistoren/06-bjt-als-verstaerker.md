@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Spannungsverstärkung und Phasendrehung abschätzen
 - Kopplungs- und Bypasskondensatoren beurteilen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Auch wenn integrierte Verstärker dominieren, erklärt die Emitterschaltung Arbeitspunkt, Kleinsignal, Gegenkopplung und Verzerrung besonders anschaulich. Diese Begriffe kehren in Operationsverstärkern, Sensorstufen und analogen ICs wieder.
 
+
+<!-- context-expansion-2026 -->
+Bipolartransistoren verbinden einen steuernden Basis-Emitter-Kreis mit einem Kollektor-Emitter-Lastpfad. Je nach Arbeitspunkt arbeiten sie als Schalter, Verstärker oder Stromquelle. Anschlussbelegung, Stromrichtung und thermische Rückwirkung gehören deshalb von Beginn an zur Betrachtung.
+
+Beim Thema **BJT als Verstärker** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Beim BJT werden Basis-, Kollektor- und Emitterkreis getrennt verfolgt und anschliessend über den Arbeitspunkt verbunden. Der Steuerstrom stammt aus einer realen Quelle, der Laststrom aus einem eigenen Energiepfad. Verstärkung und Sättigung sind Betriebszustände, keine unveränderlichen Bauteilkonstanten.
 
 ### Gleichstrom und Wechselstrom trennen
 
@@ -27,6 +38,17 @@ Ohne vollständig überbrückten RE ist die Verstärkung näherungsweise durch W
 ### Grenzen
 
 Zu grosses Eingangssignal treibt Q1 in Sperre oder Sättigung und erzeugt Clipping. Koppelkondensatoren bilden mit Ein- und Ausgangswiderständen Hochpässe. Transistorkapazitäten begrenzen hohe Frequenzen.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Mikrofon- und Sensorsignalverstärkung
+- Treiber- und Eingangsstufen
+- Kleine analoge Vorverstärker
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

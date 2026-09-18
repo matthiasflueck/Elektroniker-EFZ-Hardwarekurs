@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - β als streuenden Arbeitspunktparameter verstehen
 - erzwungene Verstärkung für Schalter verwenden
 
-## Warum ist das wichtig?
+## Einleitung
 
 Die Datenblattverstärkung ist kein präziser Konstruktionswert. Sie hängt von Strom, Spannung, Temperatur und Exemplar ab. Gute Schaltungen funktionieren deshalb auch mit der garantierten unteren Grenze oder verwenden im Schaltbetrieb eine bewusst kleinere erzwungene Verstärkung.
 
+
+<!-- context-expansion-2026 -->
+Bipolartransistoren verbinden einen steuernden Basis-Emitter-Kreis mit einem Kollektor-Emitter-Lastpfad. Je nach Arbeitspunkt arbeiten sie als Schalter, Verstärker oder Stromquelle. Anschlussbelegung, Stromrichtung und thermische Rückwirkung gehören deshalb von Beginn an zur Betrachtung.
+
+Beim Thema **Transistorströme und Stromverstärkung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Beim BJT werden Basis-, Kollektor- und Emitterkreis getrennt verfolgt und anschliessend über den Arbeitspunkt verbunden. Der Steuerstrom stammt aus einer realen Quelle, der Laststrom aus einem eigenen Energiepfad. Verstärkung und Sättigung sind Betriebszustände, keine unveränderlichen Bauteilkonstanten.
 
 ### Drei Ströme
 
@@ -34,6 +45,17 @@ In Sättigung gilt `IC = β·IB` nicht zuverlässig. Für robustes Schalten wird
 ### Verstärkerbetrieb
 
 In einer linearen Stufe beeinflusst β den Arbeitspunkt, aber Gegenkopplung über einen Emitterwiderstand kann die Abhängigkeit reduzieren. Wechselstromverstärkung und Gleichstromarbeitspunkt sind getrennt zu analysieren.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Dimensionierung des Basiswiderstands
+- Bewertung von GPIO- und Kollektorstrom
+- Abschätzung der Verstärkung im aktiven Bereich
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

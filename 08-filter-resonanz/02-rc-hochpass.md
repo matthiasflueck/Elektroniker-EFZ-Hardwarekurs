@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Betrag und Phase berechnen
 - Biaspfad und Einschwingvorgang beurteilen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein Hochpass unterdrückt Gleichanteile und langsame Änderungen. Er koppelt Audiosignale zwischen unterschiedlichen Arbeitspunkten, erkennt Flanken und trennt Offset. Ohne definierten Gleichstrompfad kann der Ausgang jedoch schweben.
 
+
+<!-- context-expansion-2026 -->
+Filter formen Signale abhängig von ihrer Frequenz. Widerstände, Kondensatoren und Spulen bilden dazu frequenzabhängige Spannungsteiler und Energiespeicher. Zeitverhalten, Frequenzgang und reale Verluste sind drei Sichten auf dasselbe Netzwerk.
+
+Beim Thema **RC-Hochpass** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Filter werden zunächst als frequenzabhängige Spannungsteiler verstanden. Danach folgen Grenzfrequenz, Phase und asymptotischer Verlauf. Bauteiltoleranzen, Quell- und Lastimpedanz sowie parasitäre Elemente erklären die Abweichung zwischen idealer Kurve und Messung.
 
 ### Schaltung
 
@@ -37,6 +48,17 @@ Bei einem ADC muss R den Ausgang auf einen zulässigen Biaspegel statt zwingend 
 Ein typischer Hochpass ist der Koppelkondensator zwischen zwei Verstärkerstufen. Er blockiert unterschiedliche Gleichspannungs-Arbeitspunkte, lässt aber den veränderlichen Signalanteil passieren. Der für die Grenzfrequenz wirksame Widerstand ist dabei nicht automatisch nur ein eingezeichneter R1. Ausgangswiderstand der vorherigen und Eingangswiderstand der folgenden Stufe wirken aus Sicht des Kondensators zusammen. Diese Ersatzschaltung wird zuerst gebildet, danach wird fG berechnet.
 
 Beim Einschalten oder nach einer sprunghaften Offsetänderung lädt sich C1 neu auf. Am Ausgang erscheint vorübergehend ein Impuls, obwohl der Hochpass stationäre Gleichspannung sperrt. Grosse Zeitkonstanten können deshalb hörbares Knacken, lange Einschwingzeiten oder scheinbar falsche Sensorsignale verursachen. Elektrolytkondensatoren benötigen ausserdem passende Polarität; bei wechselnder Spannung um 0 V ist ein ungepoltes Bauteil oder eine geeignete Bias-Schaltung nötig. Die zulässige Spannung und Leckstromwirkung werden zusätzlich zur Kapazität geprüft.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Entfernen von DC-Anteilen
+- Flankenerkennung und Koppelkondensatoren
+- Unterdrückung langsamer Drift in Messkanälen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

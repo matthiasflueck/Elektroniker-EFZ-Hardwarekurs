@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - kapazitiven Blindwiderstand berechnen
 - Phasenlage von Strom und Spannung erklären
 
-## Warum ist das wichtig?
+## Einleitung
 
 Die Aussage «ein Kondensator sperrt Gleichstrom und lässt Wechselstrom durch» ist nur eine Kurzfassung. Beim Einschalten fliesst auch an Gleichspannung Strom, und bei Wechselspannung hängt die Wirkung stark von Frequenz und Kapazität ab.
 
 Wer den Strom als Reaktion auf Spannungsänderung versteht, kann Kopplung, Entkopplung und Filterwirkung korrekt beurteilen.
 
+
+<!-- context-expansion-2026 -->
+Kondensatoren speichern Ladung in einem elektrischen Feld. Dadurch verbinden sie Gleichstromverhalten, zeitliche Vorgänge und hochfrequente Strompfade. Ihre Aufgabe wird erst verständlich, wenn neben dem Kapazitätswert auch Polarität, ESR, ESL und der reale Einbauort betrachtet werden.
+
+Beim Thema **Kondensatoren an Gleich- und Wechselspannung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Das ideale Kondensatormodell erklärt Ladung und Zeitverhalten. Für eine reale Baugruppe werden zusätzlich Serienwiderstand, Serieninduktivität, Leckstrom, Spannungsabhängigkeit und Polarität berücksichtigt. Je höher die Frequenz, desto wichtiger werden Anschluss- und Leiterbahngeometrie.
 
 ### Gleichspannung
 
@@ -39,6 +50,17 @@ Mit steigender Frequenz oder Kapazität sinkt XC. Beim idealen Kondensator eilt 
 ### Gleichanteil und Wechselanteil
 
 Ein Koppelkondensator kann einen Gleichanteil blockieren und einen ausreichend schnellen Wechselanteil übertragen. Zusammen mit den umgebenden Widerständen entsteht immer ein frequenzabhängiges Netzwerk.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- DC-Sperre und AC-Kopplung
+- Frequenzabhängige Spannungsteiler
+- Glättung und Signalübertragung
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

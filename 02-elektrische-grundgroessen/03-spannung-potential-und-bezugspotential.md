@@ -10,21 +10,32 @@ Nach dieser Lektion kannst du:
 - Bezugspunkt und Vorzeichen einer Messung angeben
 - Potentiale und Spannungsabfälle im Schema eintragen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Spannung existiert immer zwischen zwei Punkten. Die Aussage «am Pin liegen 3,3 V» ist unvollständig, solange der Bezug fehlt. Diese Sichtweise ist besonders wichtig bei Sensoren, ADCs und Oszilloskopmessungen. Sie verhindert, dass ein korrekt angezeigter Messwert falsch interpretiert oder eine Masseverbindung unbedacht hergestellt wird.
 
+
+<!-- context-expansion-2026 -->
+Elektrische Grössen beschreiben verschiedene Seiten desselben Vorgangs: Ladung wird bewegt, Spannung stellt Energie pro Ladung bereit, Widerstände begrenzen den Strom und Leistung beschreibt den Energieumsatz. Erst der geschlossene Stromkreis und ein festgelegter Bezug machen einzelne Zahlen zu einem verständlichen System.
+
+Beim Thema **Spannung, Potential und Bezugspotential** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Zur Analyse wird zuerst der reale Strompfad gezeichnet und ein Bezugspotential festgelegt. Danach werden Richtung und Polarität definiert. Formeln beschreiben anschliessend diesen bereits verstandenen Vorgang; sie ersetzen weder Schaltbild noch Plausibilitätskontrolle.
 
 ### Elektrisches Potential
 
-Das Potential beschreibt elektrische Energie pro Ladung an einem Punkt relativ zu einer gewählten Referenz. Spannung ist die Differenz zweier Potentiale: Erst nachdem A und B benannt sind, schreiben wir `U_AB = φ_A − φ_B`.
+Das Potential beschreibt elektrische Energie pro Ladung an einem Punkt relativ zu einer gewählten Referenz. Spannung ist die Differenz zweier Potentiale: Erst nachdem A und B benannt sind, schreiben wir `UAB = φA − φB`.
 
 ![Quelle und IEC-Widerstand mit Knotenpotentialen und Spannungspfeil](../bilder/02-elektrische-grundgroessen/02-03-potential-und-spannung.png)
 
 ### Vorzeichen
 
-Die rote DMM-Spitze an A und die schwarze an B zeigt `U_AB`. Werden die Spitzen vertauscht, ändert sich das Vorzeichen. Ein negatives Resultat ist oft eine korrekte Information über die tatsächliche Polarität und kein Fehler des Messgeräts.
+Die rote DMM-Spitze an A und die schwarze an B zeigt `UAB`. Werden die Spitzen vertauscht, ändert sich das Vorzeichen. Ein negatives Resultat ist oft eine korrekte Information über die tatsächliche Polarität und kein Fehler des Messgeräts.
 
 ### Spannungsabfall und Energie
 
@@ -40,13 +51,24 @@ Die Analogie endet dort, wo elektrische Felder und zeitabhängige Vorgänge wich
 
 Eine ideale Spannungsquelle hebt das Potential von ihrem Minus- zum Pluspol an. An einer passiven Last fällt es in technischer Stromrichtung ab. Verfolgt man eine vollständige Masche, kehrt man zum Ausgangspotential zurück. Diese Betrachtung bereitet die spätere Kirchhoffsche Maschenregel vor.
 
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Festlegen von Messbezug und Signalpegel
+- Bewertung von ADC- und GPIO-Spannungen
+- Differenzmessung zwischen zwei Baugruppenknoten
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
+
 ## Anschauliches Beispiel
 
 TP1 liegt bei 2,50 V gegen GND, TP2 bei 1,20 V gegen GND. Zwischen TP1 und TP2 liegen daher 1,30 V. Gegen einen anderen Bezug hätten beide Einzelwerte andere Zahlen, ihre Differenz bliebe gleich.
 
 ## Berechnungsbeispiel
 
-`U_TP1,TP2 = φ_TP1 − φ_TP2 = 2,50 V − 1,20 V = 1,30 V`. Vertauscht: `U_TP2,TP1 = −1,30 V`. Die Einheit Volt ist Joule pro Coulomb. Das positive Ergebnis bestätigt, dass TP1 gegenüber TP2 auf dem höheren Potential liegt.
+`UTP1,TP2 = φTP1 − φTP2 = 2,50 V − 1,20 V = 1,30 V`. Vertauscht: `UTP2,TP1 = −1,30 V`. Die Einheit Volt ist Joule pro Coulomb. Das positive Ergebnis bestätigt, dass TP1 gegenüber TP2 auf dem höheren Potential liegt.
 
 ## Praxisbezug
 
@@ -75,7 +97,7 @@ Potential ist auf eine Referenz bezogen; Spannung ist eine Potentialdifferenz. P
 
 1. Was fehlt bei der Aussage «Punkt A hat 5 V»?
 2. Was zeigt das DMM nach dem Vertauschen der Messspitzen?
-3. Berechne `U_AB` für `φ_A = 1 V` und `φ_B = 3 V`.
+3. Berechne `UAB` für `φA = 1 V` und `φB = 3 V`.
 4. Weshalb benötigt ein ADC neben dem Signaleingang auch einen definierten Masse- und Referenzbezug?
 
 Weitere Aufgaben: [Übungen zu Modul 02](../uebungen/modul-02.md). Die Lösungen liegen bewusst getrennt.

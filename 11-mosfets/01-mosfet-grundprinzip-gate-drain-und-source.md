@@ -10,11 +10,26 @@ Nach dieser Lektion kannst du:
 - feldgesteuerten Kanal beschreiben
 - statischen Gate-Strom und dynamische Gate-Ladung unterscheiden
 
-## Warum ist das wichtig?
+## Einleitung
 
 MOSFETs schalten Motoren, Heizungen, LEDs und Schaltregler mit kleinem statischem Steuerstrom. Das Gate ist jedoch kein idealer Logikeingang: Es speichert Ladung, besitzt Spannungsgrenzen und wird immer relativ zur Source beurteilt.
 
+
+<!-- context-expansion-2026 -->
+MOSFETs steuern einen Drain-Source-Strompfad über die Gate-Source-Spannung. Sie sind zentrale Leistungsschalter in modernen Baugruppen, reagieren aber empfindlich auf Gate-Ladung, Überspannung, parasitäre Induktivitäten und Wärme. Statischer und dynamischer Betrieb müssen getrennt beurteilt werden.
+
+Beim Thema **MOSFET-Grundprinzip, Gate, Drain und Source** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Beim MOSFET werden Gatekreis und Leistungspfad getrennt gezeichnet. VGS beschreibt die Ansteuerung relativ zur Source, VDS die Belastung des Leistungspfads. RDS(on), Gate Charge und SOA gelten jeweils nur unter den im Datenblatt genannten Bedingungen.
+
+**Ein MOSFET besitzt mindestens Gate `G`, Drain `D` und Source `S`; Leistungstypen können zusätzlich einen herausgeführten Body- oder Kelvin-Source-Anschluss besitzen.** Das Gate steuert den Kanal elektrisch isoliert. Drain und Source bilden den Leistungspfad, sind wegen Body-Diode und interner Struktur aber nicht beliebig austauschbar. Im Schema trägt der MOSFET üblicherweise den Referenzbezeichner `Q`.
+
+Vor dem Einschalten werden Pinout, maximale Gate-Source-Spannung, Body-Diodenrichtung und Source-Bezug geprüft. Gerade bei High-Side-Schaltungen bewegt sich die Source-Spannung; eine scheinbar hohe Gatespannung gegen GND kann deshalb eine zu kleine oder sogar negative VGS ergeben.
 
 ### Feldgesteuerter Kanal
 
@@ -31,6 +46,17 @@ Beim selbstsperrenden N-Kanal-MOSFET erzeugt eine positive Gate-Source-Spannung 
 Im stationären Zustand fliesst fast kein Gate-Strom. Beim Ein- und Ausschalten muss die Gatekapazität jedoch geladen beziehungsweise entladen werden. Kurze hohe Treiberströme bestimmen die Schaltzeit. Ein Gate-Pulldown verhindert Schweben während Reset oder abgezogenem Treiber.
 
 Die integrierte Body-Diode gehört zur Struktur. Sie kann Strom in einer Richtung führen, ersetzt aber nicht automatisch eine passend dimensionierte Freilaufdiode.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Schalten von Motor, Heizung und LED
+- Synchrone Gleichrichtung
+- Leistungsschalter in Buck- und Boost-Reglern
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

@@ -8,22 +8,18 @@
 
 Nach dieser Lektion kannst du die Grundidee von **Elektronische Last** in eigenen Worten erklären, den Zusammenhang technisch beschreiben und eine passende Berechnung, Schaltung oder Messung planen.
 
-## Bezug Bildungsplan 2026
-
-- Handlungskompetenzen: `b4`, `b5`, `d8`
-- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)
-
-## Voraussetzungen
-
-Vorherige Lektionen dieses Moduls und die jeweils verlinkten Grundlagenmodule.
-
-## Warum ist das wichtig?
+## Einleitung
 
 Die Einleitung der Endfassung ordnet das Thema zuerst in eine reale Elektronikaufgabe ein. Erst danach werden Modell, Fachbegriffe und Formeln eingeführt.
 
 ## Theorie
 
 Geplant sind physikalische Vorstellung, genormtes Schaltbild, Grössen und Einheiten, Gültigkeitsgrenzen, reale Nichtidealitäten und professionelle Auswahlkriterien.
+
+
+## Anwendungsfall
+
+Die Endfassung nennt konkrete Geräte, Baugruppen oder Arbeitssituationen, in denen dieses Thema eingesetzt wird, und erklärt die dort erfüllte Aufgabe.
 
 ## Anschauliches Beispiel
 
@@ -58,3 +54,8 @@ Die Endfassung fasst Vorstellung, Berechnung, reale Schaltung und Messnachweis z
 1. Wie würdest du das Prinzip ohne Formel erklären?
 2. Welches genormte Schaltbild macht den Strom- oder Signalpfad sichtbar?
 3. Welche reale Abweichung erwartest du beim Messen?
+
+## Bezug Bildungsplan 2026
+
+- Handlungskompetenzen: `b4`, `b5`, `d8`
+- Konkrete Leistungskriterien und Nachweise: [Kompetenzmatrix](../bildungsplan-2026/kompetenzmatrix.md)

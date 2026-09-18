@@ -21,6 +21,7 @@ Neugier, sorgfältiges Arbeiten und grundlegende Algebra. Frühere Elektronikerf
 - Module 00–27 und rund 200 Theorie-Lektionen sind vollständig geplant.
 - Jedes Modul besitzt README, Übungs-, Lösungs-, Praxis- und Bildstruktur.
 - Die Module 00–16 sind vollständig mit ausführlicher Theorie, Praxis, Übungen, Lösungen und reproduzierbaren Schaltbildern ausgearbeitet.
+- Alle Theorie-Lektionen verwenden «Einleitung» statt «Warum ist das wichtig?». In den ausgearbeiteten Modulen 00–16 wurden Gesamtkontext, Grundfunktion und konkrete Anwendungsfälle ergänzt; Bauteile werden vor Kennlinien und Detailformeln zuerst über Symbol, Anschlüsse und Strompfad eingeführt.
 - Die Module 00–02 bilden den Qualitäts-Pilot; 03–04, 05–08, 09–12 und 13–16 sind die darauf aufbauenden Modulblöcke. Die Module 17–27 bleiben bis zu ihrer etappenweisen Ausarbeitung klar als Ausbaugerüste gekennzeichnet.
 
 ## Bildungsplan 2026

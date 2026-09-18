@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Serien- und Parallelresonanz unterscheiden
 - Resonanzfrequenz berechnen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Spule und Kondensator besitzen gegensätzliche Blindwiderstände. Bei einer bestimmten Frequenz können sie sich kompensieren. Dadurch entstehen selektive Filter, Schwingkreise und zugleich unerwartete Überhöhungen.
 
+
+<!-- context-expansion-2026 -->
+Filter formen Signale abhängig von ihrer Frequenz. Widerstände, Kondensatoren und Spulen bilden dazu frequenzabhängige Spannungsteiler und Energiespeicher. Zeitverhalten, Frequenzgang und reale Verluste sind drei Sichten auf dasselbe Netzwerk.
+
+Beim Thema **RLC-Netzwerke** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Filter werden zunächst als frequenzabhängige Spannungsteiler verstanden. Danach folgen Grenzfrequenz, Phase und asymptotischer Verlauf. Bauteiltoleranzen, Quell- und Lastimpedanz sowie parasitäre Elemente erklären die Abweichung zwischen idealer Kurve und Messung.
 
 ### Energiependel
 
@@ -41,6 +52,17 @@ Im idealen Parallelkreis können grosse interne Blindströme zirkulieren, währe
 Bei Serienresonanz sind die Blindanteile der Impedanz betragsgleich und entgegengesetzt: `XL = XC`. Die Spannungen über L und C können dennoch gross sein und heben sich nur in ihrer vektoriellen Summe auf. Sie dürfen deshalb nicht als ungefährlich betrachtet werden. Der verbleibende Serienwiderstand begrenzt den Strom und bestimmt zusammen mit L und C die Güte.
 
 Im Parallelkreis kompensieren sich dagegen die Blindanteile der Zweigströme am Eingang. Innerhalb der Zweige können trotzdem hohe Ströme fliessen. Wicklungswiderstand, Kondensator-ESR und Belastung verschieben die Resonanz und verändern die Impedanzspitze. Für den Laborversuch wird ein Serienwiderstand vorgesehen, die Generatorleistung klein gehalten und jede Bauteilspannung vorab abgeschätzt. Ein Frequenz-Sweep beginnt ausserhalb der Resonanz mit kleinen Schritten und wird abgebrochen, sobald Strom, Spannung oder Temperatur die festgelegte Grenze erreicht.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Abstimmkreise und selektive Filter
+- Schwingkreise in Funk- und Sensorsystemen
+- Bewertung parasitärer Resonanzen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

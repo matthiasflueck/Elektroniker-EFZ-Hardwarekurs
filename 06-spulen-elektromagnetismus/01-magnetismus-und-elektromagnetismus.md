@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - die Feldrichtung einer stromdurchflossenen Spule bestimmen
 - Kernmaterial und Luftspalt funktional einordnen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Strom erzeugt ein Magnetfeld. Diese Verbindung ermöglicht Relais, Motoren, Transformatoren, Stromsensoren und Schaltregler. Magnetismus ist deshalb kein isoliertes Physikthema, sondern ein realer Energie- und Signalpfad in vielen Baugruppen.
 
 Feldlinien sind ein Modell zur Darstellung von Richtung und Dichte. Sie sind keine sichtbaren Drähte. Eine gute Vorstellung verbindet Stromrichtung, Wicklung, Kern und den geschlossenen magnetischen Kreis.
 
+
+<!-- context-expansion-2026 -->
+Spulen und Transformatoren speichern oder übertragen Energie über Magnetfelder. Weil sich der Spulenstrom nicht sprunghaft ändern kann, entstehen beim Ein- und Ausschalten charakteristische Spannungen. Kernmaterial, Sättigung und Wicklungswiderstand machen aus dem idealen Symbol ein reales Bauteil.
+
+Beim Thema **Magnetismus und Elektromagnetismus** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Das ideale Induktivitätsgesetz beschreibt die Spannung bei einer Stromänderung. Reale Spulen ergänzen Wicklungswiderstand, Kernverluste, parasitäre Kapazität und Sättigung. Der Strompfad muss sowohl während der Energieaufnahme als auch während der Energieabgabe geschlossen sein.
 
 ### Feld um Leiter und Spule
 
@@ -38,6 +49,17 @@ Ferromagnetische Kerne führen den Fluss wesentlich besser als Luft, besitzen ab
 ### Kräfte
 
 Ein Magnetfeld kann auf bewegte Ladungen, Leiter und ferromagnetische Teile Kräfte ausüben. Im Relais zieht diese Kraft den Anker an; bei Motoren erzeugt sie Drehmoment.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Elektromagnete, Relais und Motoren
+- Transformatoren und induktive Sensoren
+- Energiespeicher in Schaltreglern
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

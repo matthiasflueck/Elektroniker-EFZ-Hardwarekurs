@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - Gesamtwiderstand, Teilspannungen und Zweigströme berechnen
 - Ergebnisse mit Grenzfällen und einer Messung plausibilisieren
 
-## Warum ist das wichtig?
+## Einleitung
 
 Elektronische Schaltungen bestehen selten aus einem einzelnen Widerstand. Vorwiderstand und LED liegen beispielsweise in Reihe; mehrere Versorgungspfade oder Pull-up-Widerstände können parallel wirken. Wer nur nach der gezeichneten Anordnung «nebeneinander» oder «untereinander» urteilt, erkennt die elektrische Struktur oft falsch.
 
 Entscheidend sind die Knoten. Zwei Bauteile liegen in Reihe, wenn ihr gemeinsamer Knoten keine weitere Abzweigung besitzt: Durch beide fliesst derselbe Strom. Sie liegen parallel, wenn beide Anschlüsse jeweils mit denselben zwei Knoten verbunden sind: An beiden liegt dieselbe Spannung. Diese Definition funktioniert auch bei unübersichtlich gezeichneten Schemas.
 
+
+<!-- context-expansion-2026 -->
+Eine Baugruppe besteht aus verbundenen Quellen, Bauteilen und Lasten. Gleichstromnetzwerke liefern die Regeln, mit denen sich unbekannte Ströme und Spannungen aus Topologie und Bauteilwerten ableiten lassen. Dabei sind Knoten, Maschen und Rückstrompfade ebenso wichtig wie die Zahlenwerte.
+
+Beim Thema **Reihen- und Parallelschaltungen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Netzwerke werden aus Sicht ihrer Topologie gelesen: Bauteile in demselben Strompfad liegen in Reihe, Bauteile an denselben zwei Knoten parallel. Erst danach werden Ersatzwerte, Knotenbilanzen oder Maschengleichungen gebildet. Diese Reihenfolge verhindert viele Vorzeichen- und Zuordnungsfehler.
 
 ### Reihenschaltung: ein gemeinsamer Strompfad
 
@@ -26,14 +37,14 @@ In einer Reihenschaltung kann sich der Strom an keinem Zwischenknoten aufteilen.
 
 Die Ersatzschaltung soll bei gleicher Klemmenspannung denselben Strom aufnehmen. Für Widerstände in Reihe gilt deshalb:
 
-`R_eq = R_1 + R_2 + … + R_n`
+`Req = R1 + R2 + … + Rn`
 
 | Formelzeichen | Bedeutung | Einheit |
 |---|---|---|
-| `R_eq` | Ersatz- oder Gesamtwiderstand (*equivalent resistance*) | Ω |
-| `R_1 … R_n` | einzelne Widerstände | Ω |
-| `G`, `G_eq` | Leitwert eines Zweigs beziehungsweise Gesamtleitwert | S (Siemens) |
-| `G_1 … G_n` | einzelne Zweigleitwerte | S |
+| `Req` | Ersatz- oder Gesamtwiderstand (*equivalent resistance*) | Ω |
+| `R1 … Rn` | einzelne Widerstände | Ω |
+| `G`, `Geq` | Leitwert eines Zweigs beziehungsweise Gesamtleitwert | S (Siemens) |
+| `G1 … Gn` | einzelne Zweigleitwerte | S |
 | `n` | Anzahl der Widerstände | einheitenlos |
 
 Der Ersatzwiderstand einer Reihenschaltung ist immer grösser als der grösste Einzelwiderstand. Das ist eine schnelle Plausibilitätskontrolle.
@@ -44,17 +55,28 @@ In einer Parallelschaltung liegt jeder Zweig an denselben beiden Knoten. Deshalb
 
 Rechnerisch ist es hilfreich, zuerst mit dem Leitwert zu denken. Der Leitwert `G` beschreibt, wie gut ein Pfad Strom leitet, und ist der Kehrwert des Widerstands: `G = 1/R`. Parallele Leitpfade addieren sich:
 
-`G_eq = G_1 + G_2 + … + G_n`
+`Geq = G1 + G2 + … + Gn`
 
 und damit:
 
-`1/R_eq = 1/R_1 + 1/R_2 + … + 1/R_n`
+`1/Req = 1/R1 + 1/R2 + … + 1/Rn`
 
-Für genau zwei parallele Widerstände folgt `R_eq = (R_1·R_2)/(R_1+R_2)`. Der Gesamtwiderstand muss kleiner sein als der kleinste Einzelwiderstand, weil jeder weitere Zweig einen zusätzlichen Strompfad öffnet.
+Für genau zwei parallele Widerstände folgt `Req = (R1·R2)/(R1+R2)`. Der Gesamtwiderstand muss kleiner sein als der kleinste Einzelwiderstand, weil jeder weitere Zweig einen zusätzlichen Strompfad öffnet.
 
 ### Ideale Verbindung und reale Leiter
 
 In der Grundrechnung haben Leitungen null Ohm und jeder gezeichnete Knoten genau ein Potential. Reale Leiterbahnen, Steckkontakte und Messleitungen besitzen jedoch kleine Widerstände. Bei hohen Strömen können dadurch messbare Spannungsabfälle entstehen. Die ideale Netzwerkanalyse bleibt der Ausgangspunkt; parasitäre Widerstände werden ergänzt, wenn ihre Wirkung relevant ist.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- LED-Ketten und Serienwiderstände
+- Parallele Verbraucher an Versorgungsschienen
+- Ersatzwertbildung in Mess- und Sensornetzen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 
@@ -62,9 +84,9 @@ Drei gleich breite Türen hintereinander machen einen Fluchtweg nicht breiter: A
 
 ## Berechnungsbeispiel
 
-An 12 V liegen `R_1 = 1,0 kΩ` und `R_2 = 2,0 kΩ` in Reihe. Der Gesamtwiderstand beträgt `3,0 kΩ`; daraus folgt `I = 12 V / 3,0 kΩ = 4,0 mA`. Die Teilspannungen sind `U_1 = 4,0 V` und `U_2 = 8,0 V`. Ihre Summe ergibt wieder 12 V.
+An 12 V liegen `R1 = 1,0 kΩ` und `R2 = 2,0 kΩ` in Reihe. Der Gesamtwiderstand beträgt `3,0 kΩ`; daraus folgt `I = 12 V / 3,0 kΩ = 4,0 mA`. Die Teilspannungen sind `U1 = 4,0 V` und `U2 = 8,0 V`. Ihre Summe ergibt wieder 12 V.
 
-Werden dieselben Widerstände parallel an 12 V gelegt, fliessen `I_1 = 12 mA` und `I_2 = 6 mA`. Der Gesamtstrom ist 18 mA und `R_eq = 12 V / 18 mA ≈ 667 Ω`. Das Ergebnis liegt wie erwartet unter 1,0 kΩ.
+Werden dieselben Widerstände parallel an 12 V gelegt, fliessen `I1 = 12 mA` und `I2 = 6 mA`. Der Gesamtstrom ist 18 mA und `Req = 12 V / 18 mA ≈ 667 Ω`. Das Ergebnis liegt wie erwartet unter 1,0 kΩ.
 
 ## Praxisbezug
 
@@ -92,7 +114,7 @@ Reihenwiderstände addieren sich, weil derselbe Strom nacheinander durch alle Ba
 ## Übungsfragen
 
 1. Woran erkennst du unabhängig von der Zeichnung, dass zwei Widerstände parallel liegen?
-2. Berechne `R_eq` für 330 Ω und 680 Ω in Reihe sowie parallel.
+2. Berechne `Req` für 330 Ω und 680 Ω in Reihe sowie parallel.
 3. Weshalb muss ein paralleler Ersatzwiderstand kleiner als der kleinste Einzelwiderstand sein?
 4. Wie verändert ein aktivierter interner Pull-up eine externe Pull-up-Schaltung?
 

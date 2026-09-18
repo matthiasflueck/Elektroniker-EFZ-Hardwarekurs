@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Übersetzungsverhältnisse berechnen
 - galvanische Trennung und gemeinsame Masse korrekt beurteilen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Transformatoren übertragen Wechselenergie magnetisch zwischen Wicklungen; Drosseln begrenzen Stromänderungen oder filtern Störungen. Ähnliche Bauteile können sehr verschiedene Aufgaben und Sicherheitsanforderungen besitzen.
 
+
+<!-- context-expansion-2026 -->
+Spulen und Transformatoren speichern oder übertragen Energie über Magnetfelder. Weil sich der Spulenstrom nicht sprunghaft ändern kann, entstehen beim Ein- und Ausschalten charakteristische Spannungen. Kernmaterial, Sättigung und Wicklungswiderstand machen aus dem idealen Symbol ein reales Bauteil.
+
+Beim Thema **Transformator und Drosseln** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Das ideale Induktivitätsgesetz beschreibt die Spannung bei einer Stromänderung. Reale Spulen ergänzen Wicklungswiderstand, Kernverluste, parasitäre Kapazität und Sättigung. Der Strompfad muss sowohl während der Energieaufnahme als auch während der Energieabgabe geschlossen sein.
 
 ### Idealer Transformator
 
@@ -37,6 +48,17 @@ Eine Seriendrossel behindert schnelle Stromänderungen. Gleichtaktdrosseln wirke
 Für den idealen Transformator gilt `U1/U2 = N1/N2`. Die Spannungsübersetzung entspricht dem Windungsverhältnis. Weil die Leistung ideal erhalten bleibt, verhält sich der Strom umgekehrt: `I1/I2 = N2/N1`. `N1` und `N2` bezeichnen die Windungszahlen der Primär- und Sekundärwicklung. Diese Beziehungen gelten nur näherungsweise, denn Wicklungswiderstände, Streufluss und Kernverluste verursachen Spannungsabfall und Erwärmung.
 
 Ein Transformator benötigt einen zeitlich veränderlichen Fluss. Reine Gleichspannung erzeugt nach dem Einschaltvorgang keine dauerhafte Sekundärspannung, kann den Kern aber in Sättigung treiben und einen gefährlich hohen Primärstrom verursachen. Bei getakteten Wandlern begrenzen deshalb Frequenz, Tastgrad, Eingangsspannung, Windungszahl und Kernquerschnitt gemeinsam die Flussdichte. Eine Drossel wird dagegen nach Induktivität, Gleichstromwiderstand, Sättigungsstrom, Verlusten und zulässiger Temperaturerhöhung ausgewählt. Gleiche Induktivitätswerte bedeuten daher nicht automatisch austauschbare Bauteile.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Netzteile und galvanische Trennung
+- EMV-Drosseln und Filter
+- Energieübertragung und Impedanzanpassung
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

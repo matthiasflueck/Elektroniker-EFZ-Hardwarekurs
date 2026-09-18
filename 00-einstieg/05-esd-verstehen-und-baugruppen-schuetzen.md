@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - einen ESD-Schutzbereich korrekt benutzen
 - ESD-bedingte Fehler in der Diagnose berücksichtigen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein Funke, den Menschen spüren, ist deutlich stärker als viele Halbleitereingänge vertragen. Noch schwieriger sind Entladungen, die unbemerkt bleiben: Eine Baugruppe kann zunächst funktionieren und später sporadisch ausfallen.
 
 ESD-Schutz ist deshalb kein Ritual. Er schafft kontrollierte Potentialverhältnisse und verhindert schnelle Entladungen durch empfindliche Strukturen.
 
+
+<!-- context-expansion-2026 -->
+Elektronik entsteht nie nur am Schreibtisch. Anforderungen, Sicherheit, Dokumentation, Fertigung, Messung und Zusammenarbeit greifen ineinander. Die folgenden Grundlagen ordnen das Thema deshalb in den vollständigen Arbeitsablauf einer Elektronikerin oder eines Elektronikers ein.
+
+Beim Thema **ESD verstehen und Baugruppen schützen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie das Thema in einem Arbeitsauftrag umgesetzt, sicher durchgeführt, dokumentiert und als berufliche Handlung nachvollziehbar nachgewiesen wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Die Theorie wird hier immer auf eine konkrete berufliche Entscheidung bezogen: Was muss vor Arbeitsbeginn bekannt sein, welcher Nachweis ist nötig und woran erkennt man einen fachgerechten Zustand? So entsteht aus einer Regel ein wiederholbarer Arbeitsprozess.
 
 ### Aufladung und Entladung
 
@@ -43,6 +54,17 @@ ESD-Schutz verhindert nicht jede Ladung. Er sorgt dafür, dass sich Potentiale l
 ### Schutzkette statt Einzelmassnahme
 
 Ein geprüftes Handgelenkband nützt wenig, wenn die Baugruppe auf normalem Kunststoff liegt oder ungeschützt transportiert wird. Umgekehrt ersetzt eine ESD-Matte nicht die korrekte Personenerdung. Erst Verpackung, Transport, Arbeitsplatz, Person, Werkzeug und Lagerung bilden zusammen eine wirksame Schutzkette.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Handhabung unbestückter Leiterplatten und ICs
+- Programmierung und Test von MCU-Baugruppen
+- Rework und Fehlersuche an empfindlichen Eingängen
+
+In einer konkreten Arbeitssituation wird festgelegt, welche Vorbereitung, Schutzmassnahme, Dokumentation und Qualitätskontrolle erforderlich ist. Der Anwendungsfall gilt erst als beherrscht, wenn das Vorgehen reproduzierbar und für andere nachvollziehbar ist.
 
 ## Anschauliches Beispiel
 

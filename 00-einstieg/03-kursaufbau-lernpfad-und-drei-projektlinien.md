@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - Theorie, Übungen, Praxis und Projekte unterscheiden
 - die drei Projektlinien fachlich einordnen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein umfangreicher Kurs kann unübersichtlich wirken. Du musst aber nicht 197 Lektionen gleichzeitig im Kopf behalten. Entscheidend ist eine wiederkehrende Arbeitsweise: verstehen, vorhersagen, aufbauen, messen, vergleichen und erklären.
 
 Die drei Projekte sorgen dafür, dass einzelne Grundlagen nicht isoliert bleiben. Eine Rechnung aus Modul 02 taucht später in einer echten Sensorkette oder Leistungsstufe wieder auf.
 
+
+<!-- context-expansion-2026 -->
+Elektronik entsteht nie nur am Schreibtisch. Anforderungen, Sicherheit, Dokumentation, Fertigung, Messung und Zusammenarbeit greifen ineinander. Die folgenden Grundlagen ordnen das Thema deshalb in den vollständigen Arbeitsablauf einer Elektronikerin oder eines Elektronikers ein.
+
+Beim Thema **Kursaufbau, Lernpfad und drei Projektlinien** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie das Thema in einem Arbeitsauftrag umgesetzt, sicher durchgeführt, dokumentiert und als berufliche Handlung nachvollziehbar nachgewiesen wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Die Theorie wird hier immer auf eine konkrete berufliche Entscheidung bezogen: Was muss vor Arbeitsbeginn bekannt sein, welcher Nachweis ist nötig und woran erkennt man einen fachgerechten Zustand? So entsteht aus einer Regel ein wiederholbarer Arbeitsprozess.
 
 ### Vier Materialarten
 
@@ -39,6 +50,7 @@ In der Praxis wird diese Reihenfolge verbindlich. Ein Aufbau ohne dokumentierte 
 ### Meilensteine der Projekte
 
 Die Projekte wachsen mit dem Kurs. Am Anfang entstehen Anforderung, Blockdiagramm und erste Berechnungen. Später kommen Bauteilentscheid, Schema, Aufbau, Messungen und Verifikation hinzu. Ein Meilenstein gilt erst als abgeschlossen, wenn die Unterlagen zum tatsächlich geprüften Stand passen. So wird verhindert, dass am Ende eine scheinbar fertige Dokumentation entsteht, die den realen Aufbau nicht mehr beschreibt.
+
 
 ## Anschauliches Beispiel
 

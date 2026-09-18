@@ -10,13 +10,24 @@ Nach dieser Lektion kannst du:
 - Schutzmassnahmen nach dem STOP-Prinzip wählen
 - einen Kleinspannungsaufbau sicher erstinbetriebnehmen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Die meisten Grundversuche arbeiten mit kleiner Spannung. Trotzdem können Kurzschlüsse heisse Leitungen erzeugen, Kondensatoren Energie speichern und falsche Messanschlüsse Bauteile zerstören. «Nur 12 Volt» ist deshalb keine vollständige Risikobeurteilung.
 
 Sicherheit beginnt vor dem Einschalten. Wer Energiequelle, möglichen Fehlerstrom und Abbruchkriterien kennt, kann ruhig und systematisch arbeiten.
 
+
+<!-- context-expansion-2026 -->
+Elektronik entsteht nie nur am Schreibtisch. Anforderungen, Sicherheit, Dokumentation, Fertigung, Messung und Zusammenarbeit greifen ineinander. Die folgenden Grundlagen ordnen das Thema deshalb in den vollständigen Arbeitsablauf einer Elektronikerin oder eines Elektronikers ein.
+
+Beim Thema **Elektrische Sicherheit und sichere Kursgrenzen** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie das Thema in einem Arbeitsauftrag umgesetzt, sicher durchgeführt, dokumentiert und als berufliche Handlung nachvollziehbar nachgewiesen wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Die Theorie wird hier immer auf eine konkrete berufliche Entscheidung bezogen: Was muss vor Arbeitsbeginn bekannt sein, welcher Nachweis ist nötig und woran erkennt man einen fachgerechten Zustand? So entsteht aus einer Regel ein wiederholbarer Arbeitsprozess.
 
 ### Gefahr, Exposition und Risiko
 
@@ -43,6 +54,17 @@ Auch die Strombegrenzung eines Labornetzgeräts ist kein universeller Schutz. Si
 ### Sicherer Zustand nach dem Abschalten
 
 «Ausgeschaltet» bedeutet nicht automatisch «energiefrei». Kondensatoren können geladen, Spulenströme noch im Abklingen und Bauteile heiss sein. Vor dem Eingriff wird deshalb nicht nur der Schalterzustand kontrolliert, sondern der sichere Zustand nachgewiesen. Dazu gehören Spannungsmessung, angemessene Wartezeit und gegebenenfalls eine kontrollierte Entladung.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Arbeiten am Labornetzgerät und Prototyp
+- Messungen an unbekannten Baugruppen
+- Freigabe sicherer SELV-Versuche
+
+In einer konkreten Arbeitssituation wird festgelegt, welche Vorbereitung, Schutzmassnahme, Dokumentation und Qualitätskontrolle erforderlich ist. Der Anwendungsfall gilt erst als beherrscht, wenn das Vorgehen reproduzierbar und für andere nachvollziehbar ist.
 
 ## Anschauliches Beispiel
 

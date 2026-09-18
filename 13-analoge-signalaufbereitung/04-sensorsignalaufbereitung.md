@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Verstärkung und Headroom aus Signalgrenzen ableiten
 - ein einfaches Fehlerbudget erstellen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Ein Sensor liefert selten direkt ein ideales 0–3,3-V-Signal. Er benötigt Erregung, Schutz, Verstärkung, Filterung und einen definierten ADC-Anschluss. Gute Signalaufbereitung beginnt deshalb mit Signal- und Fehlergrenzen, nicht mit einem zufälligen OPV.
 
+
+<!-- context-expansion-2026 -->
+Eine analoge Messkette übersetzt eine physikalische Grösse schrittweise in einen belastbaren ADC-Code. Erregung, Bezug, Verstärkung, Filter, Schutz und Abtastung beeinflussen sich gegenseitig. Deshalb wird jede Stufe zusammen mit ihren Grenzwerten und Messpunkten betrachtet.
+
+Beim Thema **Sensorsignalaufbereitung** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Eine Messkette wird an ihren Schnittstellen beschrieben. Für jeden Knoten werden Signalbereich, Bezug, Quellimpedanz, Last, Bandbreite, Fehlerzustand und geeigneter Messpunkt festgelegt. Dadurch bleibt nachvollziehbar, wo Verstärkung, Filterung oder Abweichung entsteht.
 
 ### Von der Messgrösse zum ADC-Code
 
@@ -29,6 +40,17 @@ Die Verstärkung wird aus dem nutzbaren Eingangshub bestimmt. Reserve bleibt fü
 Offsetfehler addieren sich bezogen auf denselben Punkt; Verstärkungsfehler wirken proportional. Rauschen wird bei unabhängigen Quellen häufig quadratisch kombiniert. Für eine erste Worst-Case-Betrachtung ist eine lineare Summe konservativ und leicht nachvollziehbar.
 
 Quellimpedanz und ADC-Sample-and-Hold-Kondensator bestimmen die Einschwingzeit. Schutzwiderstand, Filter und ADC-Treiber bilden gemeinsam ein dynamisches Netzwerk. Masseführung und Referenz gehören deshalb in dasselbe Blockdiagramm.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Temperatur-, Druck- und Wegmessketten
+- Anpassung analoger Sensoren an 0–3,3 V
+- Diagnosefähige industrielle Eingänge
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Viertel-, Halb- und Vollbrücke unterscheiden
 - kleine Widerstandsänderungen differenziell messen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Dehnungsmessstreifen, Drucksensoren und präzise Widerstandssensoren ändern ihren Widerstand oft nur sehr wenig. Die Wheatstone-Brücke wandelt diese kleine Änderung in eine differentielle Spannung und kann gemeinsame Einflüsse teilweise kompensieren.
 
+
+<!-- context-expansion-2026 -->
+Eine analoge Messkette übersetzt eine physikalische Grösse schrittweise in einen belastbaren ADC-Code. Erregung, Bezug, Verstärkung, Filter, Schutz und Abtastung beeinflussen sich gegenseitig. Deshalb wird jede Stufe zusammen mit ihren Grenzwerten und Messpunkten betrachtet.
+
+Beim Thema **Brückenschaltungen und Wheatstone-Brücke** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Eine Messkette wird an ihren Schnittstellen beschrieben. Für jeden Knoten werden Signalbereich, Bezug, Quellimpedanz, Last, Bandbreite, Fehlerzustand und geeigneter Messpunkt festgelegt. Dadurch bleibt nachvollziehbar, wo Verstärkung, Filterung oder Abweichung entsteht.
 
 ### Zwei Spannungsteiler im Vergleich
 
@@ -29,6 +40,17 @@ Der Verstärker muss deshalb nicht nur Millivolt Differenz auflösen, sondern au
 Bei der Viertelbrücke ändert sich ein Widerstand, bei der Halbbrücke zwei und bei der Vollbrücke vier. Geeignete Anordnung erhöht Empfindlichkeit und kompensiert Temperatur oder unerwünschte Belastungsrichtungen. Leitungswiderstand kann mit Drei- oder Vierleitertechnik reduziert werden.
 
 Für eine kleine Änderung ΔR an einem Widerstand gilt bei der Viertelbrücke näherungsweise `Udiff ≈ Uexc·ΔR/(4R)`. Die Näherung setzt `|ΔR| ≪ R` voraus.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Dehnungsmessstreifen und Drucksensoren
+- Kraft- und Gewichtsmessung
+- Kompensation kleiner Widerstandsänderungen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

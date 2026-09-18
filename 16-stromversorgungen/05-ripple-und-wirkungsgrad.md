@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Wirkungsgrad aus Ein- und Ausgangsleistung bestimmen
 - Ripple ohne Messschleifenfehler erfassen
 
-## Warum ist das wichtig?
+## Einleitung
 
 Eine korrekte Mittelspannung kann dennoch störenden Ripple und schlechte Effizienz besitzen. Ripple zeigt Energiespeicherung und Schaltvorgänge, der Wirkungsgrad fasst alle Verluste zusammen. Beide Messungen sind stark vom Aufbau abhängig.
 
+
+<!-- context-expansion-2026 -->
+Eine Stromversorgung ist eine dynamische Energiequelle für die gesamte Baugruppe. Eingang, Schutz, Regler, Leiterpfade, Kondensatoren und Lastprofil bilden ein System. Nennspannung allein genügt weder für die Dimensionierung noch für die Verifikation.
+
+Beim Thema **Ripple und Wirkungsgrad** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Versorgungen werden über Leistungs- und Strompfade analysiert. Für jeden Betriebszustand werden Eingang, Ausgang, Verlust, Temperatur und gespeicherte Energie bilanziert. Dynamische Vorgänge wie Einschalten und Lastsprung werden zusätzlich im Zeitbereich gemessen.
 
 ### Ripplequellen
 
@@ -29,6 +40,17 @@ Der Wirkungsgrad ist `η = Pout/Pin`. Mit Gleichgrössen gilt `Pin = Uin·Iin` u
 Ripple wird direkt über dem Ausgangskondensator mit kurzer Massefeder gemessen. Bandbreitenbegrenzung und AC-Kopplung werden dokumentiert. Lange Masseleitungen bilden eine Antenne und zeigen künstliche Spitzen.
 
 Für Effizienz müssen Ein- und Ausgang gleichzeitig und möglichst nahe am Regler gemessen werden. Leitungsverluste ausserhalb der Messpunkte verfälschen das Ergebnis.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Effizienzvergleich bei mehreren Lastpunkten
+- Beurteilung von Versorgungsgüte für ADC und Funk
+- Nachweis von Wärme- und Energiebilanz
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 

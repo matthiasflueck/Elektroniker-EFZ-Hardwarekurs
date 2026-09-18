@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - Werte ohne Bedeutungsänderung umrechnen
 - eine Rechnung mit Einheiten prüfen
 
-## Warum ist das wichtig?
+## Einleitung
 
 In Elektronikdatenblättern stehen Werte von Pikofarad bis Megaohm. Ein übersehenes Präfix kann ein Ergebnis um den Faktor tausend oder eine Million verändern. Einheiten sind deshalb Teil der technischen Aussage, nicht bloss eine Beschriftung hinter der Zahl.
 
+
+<!-- context-expansion-2026 -->
+Mathematik ist in der Elektronik kein Selbstzweck, sondern eine gemeinsame Sprache für Datenblatt, Schaltung, Messgerät und Prüfbericht. Eine Rechnung ist erst dann nützlich, wenn Einheit, Grössenordnung, Randbedingungen und physikalische Bedeutung zusammenpassen.
+
+Beim Thema **SI-Einheiten, Präfixe und Einheitenkontrolle** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie die Darstellung beim Rechnen, Lesen von Datenblättern, Auswerten von Messungen und Prüfen der Grössenordnung konkret eingesetzt wird.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Jede mathematische Darstellung besteht aus Grössen, Einheiten, Beziehungen und einem Gültigkeitsbereich. Vor dem Einsetzen von Zahlen wird daher geklärt, was gesucht ist, welche Annahmen gelten und welche Grössenordnung physikalisch zu erwarten ist.
 
 ### Grösse, Zahlenwert und Einheit
 
@@ -47,6 +58,17 @@ Vor dem Einsetzen werden alle Werte entweder in zusammenpassende technische Einh
 
 Technische Werte werden so geschrieben, dass sie gut lesbar und schwer verwechselbar sind. `0,000001 F` ist mathematisch korrekt, `1 µF` aber leichter zu erfassen. Sehr viele oder sehr wenige signifikante Stellen erschweren den Vergleich. Die Schreibweise soll zur Genauigkeit der Angabe passen.
 
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Auswahl von Bauteilwerten aus Datenblättern
+- Beschriftung von Messachsen und Prüfberichten
+- Umrechnung zwischen mV, V, µA und A
+
+In einer konkreten Rechnung werden Formel, Einheiten und Annahmen vollständig notiert. Das Resultat wird anschliessend mit Grenzfällen, Grössenordnung oder einem Messwert geprüft, damit ein formal korrektes, aber physikalisch falsches Ergebnis nicht unbemerkt bleibt.
+
 ## Anschauliches Beispiel
 
 Ein Schaltplan nennt `R1 = 4k7`. Das bedeutet `4,7 kΩ = 4700 Ω`, nicht 47 kΩ. Die Schreibweise ersetzt das Dezimalkomma und verhindert, dass es im Druck verschwindet.
@@ -61,7 +83,7 @@ Suche an fünf realen Bauteilen oder Geräten Werte mit unterschiedlichen Präfi
 
 ## 🔗 Hardware ↔ Firmware
 
-Registerwerte sind einheitenlos, aber Firmware rechnet sie in Volt, Ampere oder Sekunden um. Konstanten brauchen deshalb klare Einheiten im Namen oder in der Dokumentation. `timeout_ms` und `timeout_us` dürfen nicht verwechselt werden.
+Registerwerte sind einheitenlos, aber Firmware rechnet sie in Volt, Ampere oder Sekunden um. Konstanten brauchen deshalb klare Einheiten im Namen oder in der Dokumentation. Eine Zeitangabe in Millisekunden darf nicht mit einer Angabe in Mikrosekunden verwechselt werden.
 
 ## Merksatz
 

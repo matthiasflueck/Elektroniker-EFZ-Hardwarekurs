@@ -10,11 +10,22 @@ Nach dieser Lektion kannst du:
 - UART-Logikpegel von RS-232 unterscheiden
 - Signalrichtung und Massebezug korrekt verbinden
 
-## Warum ist das wichtig?
+## Einleitung
 
 UART ist ein digitales Zeichenformat am MCU-Pin; RS-232 ist ein elektrischer Leitungsstandard mit anderen Spannungen und invertierter Logik. Eine direkte Verbindung kann unzuverlässig sein oder Hardware beschädigen.
 
+
+<!-- context-expansion-2026 -->
+Eine digitale Schnittstelle besteht aus Protokoll und physikalischer Übertragung. Register erzeugen Bits, Pad-Zellen und Transceiver erzeugen reale Pegel, und Leitung sowie Rückweg formen die Flanken. Diagnose muss daher Firmwarezustand und Messsignal gleichzeitig berücksichtigen.
+
+Beim Thema **UART und RS-232** geht es deshalb nicht nur um eine einzelne Formel oder Definition. Entscheidend ist, wie sich das Prinzip im Schema erkennen, im Datenblatt beurteilen, im Aufbau messen und bei einer Abweichung systematisch überprüfen lässt.
+
 ## Theorie
+
+<!-- theory-expansion-2026 -->
+### Einordnung und Grundidee
+
+Bei Bussystemen werden Datenrichtung, Treiberart, Bezugspotential und Abschluss vor der Protokolldekodierung geklärt. Ein Logic Analyzer zeigt logische Zustände; das Oszilloskop zeigt, ob Pegel und Flanken die Empfängergrenzen tatsächlich einhalten.
 
 ### Asynchroner Rahmen
 
@@ -29,6 +40,17 @@ Die Bitzeit ist `tbit = 1/Baudrate`. 115200 Baud ergibt etwa 8,68 µs pro Bit. B
 RS-232 verwendet positive und negative Leitungsspannungen und invertiert die logische Bedeutung gegenüber typischen MCU-UART-Pins. Ein RS-232-Transceiver erzeugt die Pegel, schützt und invertiert. TX wird mit RX der Gegenseite verbunden; gemeinsame Signalmassen benötigen einen kontrollierten Pfad.
 
 Lange oder störbehaftete Verbindungen können trotz korrekter Zeichenparameter scheitern. Flanken, Kabelkapazität, Bezugspotential und Störungen werden am richtigen Ort gemessen.
+
+
+## Anwendungsfall
+
+Typische elektronische Anwendungen und Baugruppen für dieses Thema sind:
+
+- Debugschnittstellen und Gerätekommunikation
+- Pegelumsetzung zu klassischen RS-232-Geräten
+- Diagnose serieller Datenrahmen
+
+In einer konkreten Entwicklung wird nicht nur geprüft, ob die gewünschte Funktion grundsätzlich entsteht. Ebenso wichtig sind zulässige Grenzwerte, Toleranzen, Temperatur, Messbarkeit und das Verhalten bei Unterbruch, Kurzschluss oder falscher Ansteuerung.
 
 ## Anschauliches Beispiel
 
