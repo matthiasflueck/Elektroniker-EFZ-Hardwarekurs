@@ -60,7 +60,7 @@ Eine gute Lösung besitzt mehrere Kontrollmöglichkeiten:
 - Liegt ein Ersatzwiderstand in einem plausiblen Bereich?
 - Stimmen Knoten- und Maschenbilanzen innerhalb der Rundung?
 - Ist die von Quellen gelieferte Leistung ungefähr gleich der aufgenommenen Leistung?
-- Verhalten sich Grenzfälle sinnvoll, etwa `RL → ∞` für Leerlauf?
+- Verhalten sich Grenzfälle sinnvoll, etwa $R_L\to\infty$ für Leerlauf?
 - Bleiben Bauteilwerte, Ströme und Leistungen innerhalb sicherer Grenzen?
 
 ![Beispielnetzwerk mit nummerierten Knoten und geplanten Messpunkten](../bilder/03-gleichstromnetzwerke/03-07-messpunkte.png)
@@ -88,9 +88,114 @@ Ein Netzwerk enthält eine 10-V-Quelle, einen Serienwiderstand und zwei parallel
 
 ## Berechnungsbeispiel
 
-Das folgende gemischte Netzwerk wird zuerst topologisch vereinfacht. Erst danach werden Gesamtstrom, Knotenspannung und Zweigströme berechnet.
+### 🧮 Berechnungsbeispiel: Gemischtes Gleichstromnetzwerk systematisch analysieren
 
-`R1 = 1 kΩ` liegt in Reihe mit `R2 = 2 kΩ || R3 = 2 kΩ` an 10 V. Der Parallelersatz beträgt 1 kΩ, der Gesamtwiderstand 2 kΩ und der Quellenstrom 5 mA. Am Parallelzweig liegen 5 V; dort fliessen zweimal 2,5 mA. Kontrolle: `2,5 mA + 2,5 mA = 5 mA`, und die beiden Spannungsabfälle von je 5 V ergeben 10 V.
+Ein Widerstand von **1 kΩ** liegt in Reihe mit zwei parallelen Widerständen von jeweils **2 kΩ** an **10 V**. Gesucht sind Gesamtstrom, Knotenspannung und Zweigströme.
+
+**Gegeben:**
+
+- Quellenspannung: **10 V**
+- Serienwiderstand $R_1$: **1 kΩ**
+- Parallelwiderstand $R_2$: **2 kΩ**
+- Parallelwiderstand $R_3$: **2 kΩ**
+
+#### 1. Formel
+
+$$
+R_{23} =
+R_2\parallel R_3 =
+\frac{R_2\cdot R_3}
+     {R_2+R_3}
+$$
+
+$$
+R_{\mathrm{ges}} = R_1+R_{23}
+$$
+
+$$
+I_{\mathrm{ges}} =
+\frac{U}{R_{\mathrm{ges}}}
+$$
+
+$$
+U_{23} = I_{\mathrm{ges}}\cdot R_{23}
+$$
+
+$$
+I_2 = \frac{U_{23}}{R_2}
+\qquad
+I_3 = \frac{U_{23}}{R_3}
+$$
+
+#### 2. Werte einsetzen
+
+$$
+R_{23} =
+\frac{2~\mathrm{k}\Omega\cdot2~\mathrm{k}\Omega}
+     {2~\mathrm{k}\Omega+2~\mathrm{k}\Omega}
+$$
+
+$$
+I_{\mathrm{ges}} =
+\frac{10~\mathrm{V}}
+     {1~\mathrm{k}\Omega+1~\mathrm{k}\Omega}
+$$
+
+#### 3. Berechnen
+
+$$
+R_{23} = 1~\mathrm{k}\Omega
+$$
+
+$$
+R_{\mathrm{ges}} = 2~\mathrm{k}\Omega
+$$
+
+$$
+I_{\mathrm{ges}} = 5~\mathrm{mA}
+$$
+
+$$
+U_{23} =
+5~\mathrm{mA}\cdot1~\mathrm{k}\Omega =
+5~\mathrm{V}
+$$
+
+$$
+I_2 = I_3 =
+\frac{5~\mathrm{V}}
+     {2~\mathrm{k}\Omega}
+=
+2.5~\mathrm{mA}
+$$
+
+Knotenkontrolle:
+
+$$
+2.5~\mathrm{mA}+2.5~\mathrm{mA}=5~\mathrm{mA}
+$$
+
+Maschenkontrolle:
+
+$$
+5~\mathrm{V}+5~\mathrm{V}=10~\mathrm{V}
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{I_{\mathrm{ges}} = 5~\mathrm{mA}}
+$$
+
+$$
+\boxed{U_{23} = 5~\mathrm{V}}
+$$
+
+$$
+\boxed{I_2=I_3=2.5~\mathrm{mA}}
+$$
+
+Knoten- und Maschenbilanz bestätigen das berechnete Ergebnis unabhängig voneinander.
 
 ## Praxisbezug
 

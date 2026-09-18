@@ -37,15 +37,17 @@ In einer Reihenschaltung kann sich der Strom an keinem Zwischenknoten aufteilen.
 
 Die Ersatzschaltung soll bei gleicher Klemmenspannung denselben Strom aufnehmen. Für Widerstände in Reihe gilt deshalb:
 
-`Req = R1 + R2 + … + Rn`
+$$
+R_{\mathrm{eq}} = R_1+R_2+\ldots+R_n
+$$
 
 | Formelzeichen | Bedeutung | Einheit |
 |---|---|---|
-| `Req` | Ersatz- oder Gesamtwiderstand (*equivalent resistance*) | Ω |
-| `R1 … Rn` | einzelne Widerstände | Ω |
-| `G`, `Geq` | Leitwert eines Zweigs beziehungsweise Gesamtleitwert | S (Siemens) |
-| `G1 … Gn` | einzelne Zweigleitwerte | S |
-| `n` | Anzahl der Widerstände | einheitenlos |
+| $R_{\mathrm{eq}}$ | Ersatz- oder Gesamtwiderstand (*equivalent resistance*) | Ω |
+| $R_1\ldots R_n$ | einzelne Widerstände | Ω |
+| $G$, $G_{\mathrm{eq}}$ | Leitwert eines Zweigs beziehungsweise Gesamtleitwert | S (Siemens) |
+| $G_1\ldots G_n$ | einzelne Zweigleitwerte | S |
+| $n$ | Anzahl der Widerstände | einheitenlos |
 
 Der Ersatzwiderstand einer Reihenschaltung ist immer grösser als der grösste Einzelwiderstand. Das ist eine schnelle Plausibilitätskontrolle.
 
@@ -53,15 +55,34 @@ Der Ersatzwiderstand einer Reihenschaltung ist immer grösser als der grösste E
 
 In einer Parallelschaltung liegt jeder Zweig an denselben beiden Knoten. Deshalb ist die Spannung über allen Zweigen gleich. Der Gesamtstrom ist die Summe der Zweigströme. Ein kleiner Widerstand führt bei gleicher Spannung zu einem grossen Zweigstrom.
 
-Rechnerisch ist es hilfreich, zuerst mit dem Leitwert zu denken. Der Leitwert `G` beschreibt, wie gut ein Pfad Strom leitet, und ist der Kehrwert des Widerstands: `G = 1/R`. Parallele Leitpfade addieren sich:
+Rechnerisch ist es hilfreich, zuerst mit dem Leitwert zu denken. Der Leitwert $G$ beschreibt, wie gut ein Pfad Strom leitet, und ist der Kehrwert des Widerstands:
 
-`Geq = G1 + G2 + … + Gn`
+$$
+G = \frac{1}{R}
+$$
+
+Parallele Leitpfade addieren sich:
+
+$$
+G_{\mathrm{eq}} = G_1+G_2+\ldots+G_n
+$$
 
 und damit:
 
-`1/Req = 1/R1 + 1/R2 + … + 1/Rn`
+$$
+\frac{1}{R_{\mathrm{eq}}} =
+\frac{1}{R_1}+\frac{1}{R_2}+\ldots+\frac{1}{R_n}
+$$
 
-Für genau zwei parallele Widerstände folgt `Req = (R1·R2)/(R1+R2)`. Der Gesamtwiderstand muss kleiner sein als der kleinste Einzelwiderstand, weil jeder weitere Zweig einen zusätzlichen Strompfad öffnet.
+Für genau zwei parallele Widerstände folgt:
+
+$$
+R_{\mathrm{eq}} =
+\frac{R_1\cdot R_2}
+     {R_1+R_2}
+$$
+
+Der Gesamtwiderstand muss kleiner sein als der kleinste Einzelwiderstand, weil jeder weitere Zweig einen zusätzlichen Strompfad öffnet.
 
 ### Ideale Verbindung und reale Leiter
 
@@ -84,9 +105,123 @@ Drei gleich breite Türen hintereinander machen einen Fluchtweg nicht breiter: A
 
 ## Berechnungsbeispiel
 
-An 12 V liegen `R1 = 1,0 kΩ` und `R2 = 2,0 kΩ` in Reihe. Der Gesamtwiderstand beträgt `3,0 kΩ`; daraus folgt `I = 12 V / 3,0 kΩ = 4,0 mA`. Die Teilspannungen sind `U1 = 4,0 V` und `U2 = 8,0 V`. Ihre Summe ergibt wieder 12 V.
+### 🧮 Berechnungsbeispiel: Reihen- und Parallelschaltung vergleichen
 
-Werden dieselben Widerstände parallel an 12 V gelegt, fliessen `I1 = 12 mA` und `I2 = 6 mA`. Der Gesamtstrom ist 18 mA und `Req = 12 V / 18 mA ≈ 667 Ω`. Das Ergebnis liegt wie erwartet unter 1,0 kΩ.
+Zwei Widerstände von **1.0 kΩ** und **2.0 kΩ** werden zuerst in Reihe und danach parallel an **12 V** betrieben. Gesucht sind Ersatzwiderstand, Ströme und Teilspannungen.
+
+**Gegeben:**
+
+- Spannung: **12 V**
+- Widerstand $R_1$: **1.0 kΩ**
+- Widerstand $R_2$: **2.0 kΩ**
+
+#### 1. Formel
+
+Für die Reihenschaltung gilt:
+
+$$
+R_{\mathrm{eq,R}} = R_1+R_2
+$$
+
+$$
+I_{\mathrm{R}} = \frac{U}{R_{\mathrm{eq,R}}}
+$$
+
+$$
+U_1 = I_{\mathrm{R}}\cdot R_1
+\qquad
+U_2 = I_{\mathrm{R}}\cdot R_2
+$$
+
+Für die Parallelschaltung gilt:
+
+$$
+R_{\mathrm{eq,P}} =
+\frac{R_1\cdot R_2}
+     {R_1+R_2}
+$$
+
+$$
+I_1 = \frac{U}{R_1}
+\qquad
+I_2 = \frac{U}{R_2}
+$$
+
+$$
+I_{\mathrm{ges}} = I_1+I_2
+$$
+
+#### 2. Werte einsetzen
+
+Reihenschaltung:
+
+$$
+R_{\mathrm{eq,R}} =
+1.0~\mathrm{k}\Omega+2.0~\mathrm{k}\Omega
+$$
+
+$$
+I_{\mathrm{R}} =
+\frac{12~\mathrm{V}}
+     {3.0~\mathrm{k}\Omega}
+$$
+
+Parallelschaltung:
+
+$$
+I_1 =
+\frac{12~\mathrm{V}}
+     {1.0~\mathrm{k}\Omega}
+\qquad
+I_2 =
+\frac{12~\mathrm{V}}
+     {2.0~\mathrm{k}\Omega}
+$$
+
+#### 3. Berechnen
+
+$$
+R_{\mathrm{eq,R}} = 3.0~\mathrm{k}\Omega
+$$
+
+$$
+I_{\mathrm{R}} = 4.0~\mathrm{mA}
+$$
+
+$$
+U_1 = 4.0~\mathrm{V}
+\qquad
+U_2 = 8.0~\mathrm{V}
+$$
+
+$$
+I_1 = 12~\mathrm{mA}
+\qquad
+I_2 = 6~\mathrm{mA}
+$$
+
+$$
+I_{\mathrm{ges}} = 18~\mathrm{mA}
+$$
+
+$$
+R_{\mathrm{eq,P}} =
+\frac{12~\mathrm{V}}
+     {18~\mathrm{mA}}
+\approx 667~\Omega
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{R_{\mathrm{eq,R}} = 3.0~\mathrm{k}\Omega}
+$$
+
+$$
+\boxed{R_{\mathrm{eq,P}} \approx 667~\Omega}
+$$
+
+Die Reihenschaltung besitzt wie erwartet einen Ersatzwiderstand grösser als beide Einzelwiderstände. Der Parallelersatz liegt dagegen unter dem kleinsten Einzelwiderstand. Zusätzlich bestätigt $U_1+U_2=12~\mathrm{V}$ die Spannungsbilanz der Reihenschaltung.
 
 ## Praxisbezug
 
@@ -114,7 +249,7 @@ Reihenwiderstände addieren sich, weil derselbe Strom nacheinander durch alle Ba
 ## Übungsfragen
 
 1. Woran erkennst du unabhängig von der Zeichnung, dass zwei Widerstände parallel liegen?
-2. Berechne `Req` für 330 Ω und 680 Ω in Reihe sowie parallel.
+2. Berechne $R_{\mathrm{eq}}$ für 330 Ω und 680 Ω in Reihe sowie parallel.
 3. Weshalb muss ein paralleler Ersatzwiderstand kleiner als der kleinste Einzelwiderstand sein?
 4. Wie verändert ein aktivierter interner Pull-up eine externe Pull-up-Schaltung?
 

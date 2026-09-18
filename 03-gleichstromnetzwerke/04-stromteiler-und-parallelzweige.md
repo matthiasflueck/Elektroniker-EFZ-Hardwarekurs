@@ -35,24 +35,38 @@ Der Gesamtstrom erreicht einen Knoten und verteilt sich auf die parallelen Zweig
 
 ![Stromteiler mit Gesamtstrom, Zweigströmen und gemeinsamem Spannungsbezug](../bilder/03-gleichstromnetzwerke/03-04-stromteiler.png)
 
-Für mehrere Zweige lässt sich der Stromanteil eines Zweigs `k` besonders klar mit Leitwerten schreiben:
+Für mehrere Zweige lässt sich der Stromanteil eines Zweigs $k$ besonders klar mit Leitwerten schreiben:
 
-`Ik = Itotal · Gk / Gtotal`
+$$
+I_k =
+I_{\mathrm{ges}}
+\frac{G_k}{G_{\mathrm{ges}}}
+$$
 
 | Formelzeichen | Bedeutung | Einheit |
 |---|---|---|
-| `Itotal` | Gesamtstrom vor der Verzweigung | A |
-| `Ik` | Strom im betrachteten Zweig `k` | A |
-| `Gk` | Leitwert des betrachteten Zweigs | S (Siemens) |
-| `Gtotal` | Summe aller parallelen Leitwerte | S |
+| $I_{\mathrm{ges}}$ | Gesamtstrom vor der Verzweigung | A |
+| $I_k$ | Strom im betrachteten Zweig $k$ | A |
+| $G_k$ | Leitwert des betrachteten Zweigs | S (Siemens) |
+| $G_{\mathrm{ges}}$ | Summe aller parallelen Leitwerte | S |
 
-Da `G = 1/R` gilt, erhält der Zweig mit kleinerem Widerstand den grösseren Stromanteil.
+Da
+
+$$
+G = \frac{1}{R}
+$$
+
+gilt, erhält der Zweig mit kleinerem Widerstand den grösseren Stromanteil.
 
 ### Spezialfall mit zwei Widerständen
 
-Für zwei parallele Widerstände kann der Strom durch `R1` direkt berechnet werden:
+Für zwei parallele Widerstände kann der Strom durch $R_1$ direkt berechnet werden:
 
-`I1 = Itotal · R2 / (R1 + R2)`
+$$
+I_1 =
+I_{\mathrm{ges}}
+\frac{R_2}{R_1+R_2}
+$$
 
 Im Zähler steht der jeweils andere Widerstand. Diese Form ist korrekt, aber leicht zu verwechseln. Sicherer ist oft: zuerst Parallelersatz bestimmen, daraus die gemeinsame Spannung berechnen und anschliessend jeden Zweigstrom mit dem Ohmschen Gesetz bestimmen. So lässt sich zugleich die Knotenbilanz prüfen.
 
@@ -83,7 +97,81 @@ Zwei Widerstände von 1 kΩ und 3 kΩ liegen parallel. Der 1-kΩ-Zweig hat den d
 
 ## Berechnungsbeispiel
 
-Ein Gesamtstrom von 8 mA teilt sich auf `R1 = 1 kΩ` und `R2 = 3 kΩ`. Damit gilt `I1 = 8 mA · 3/(1+3) = 6 mA` und `I2 = 2 mA`. Die gemeinsame Spannung beträgt in beiden Zweigen 6 V. Kontrolle: `6 mA + 2 mA = 8 mA`.
+### 🧮 Berechnungsbeispiel: Zweigströme eines Stromteilers bestimmen
+
+Ein Gesamtstrom von **8 mA** teilt sich auf zwei parallele Widerstände von **1 kΩ** und **3 kΩ** auf. Gesucht sind beide Zweigströme und die gemeinsame Spannung.
+
+**Gegeben:**
+
+- Gesamtstrom: **8 mA**
+- Widerstand $R_1$: **1 kΩ**
+- Widerstand $R_2$: **3 kΩ**
+
+#### 1. Formel
+
+$$
+I_1 =
+I_{\mathrm{ges}}
+\frac{R_2}{R_1+R_2}
+$$
+
+$$
+I_2 =
+I_{\mathrm{ges}}
+\frac{R_1}{R_1+R_2}
+$$
+
+$$
+U = I_1\cdot R_1
+$$
+
+#### 2. Werte einsetzen
+
+$$
+I_1 =
+8~\mathrm{mA}
+\frac{3~\mathrm{k}\Omega}
+     {1~\mathrm{k}\Omega+3~\mathrm{k}\Omega}
+$$
+
+$$
+I_2 =
+8~\mathrm{mA}
+\frac{1~\mathrm{k}\Omega}
+     {1~\mathrm{k}\Omega+3~\mathrm{k}\Omega}
+$$
+
+#### 3. Berechnen
+
+$$
+I_1 = 6~\mathrm{mA}
+$$
+
+$$
+I_2 = 2~\mathrm{mA}
+$$
+
+$$
+U = 6~\mathrm{mA}\cdot1~\mathrm{k}\Omega = 6~\mathrm{V}
+$$
+
+Kontrolle:
+
+$$
+6~\mathrm{mA}+2~\mathrm{mA}=8~\mathrm{mA}
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{I_1 = 6~\mathrm{mA},\qquad I_2 = 2~\mathrm{mA}}
+$$
+
+$$
+\boxed{U = 6~\mathrm{V}}
+$$
+
+Der kleinere Widerstand führt den grösseren Stromanteil; die Knotenbilanz ist erfüllt.
 
 ## Praxisbezug
 

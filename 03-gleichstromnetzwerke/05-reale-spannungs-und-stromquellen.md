@@ -31,23 +31,25 @@ Netzwerke werden aus Sicht ihrer Topologie gelesen: Bauteile in demselben Stromp
 
 ### Reale Spannungsquelle
 
-Eine reale Spannungsquelle wird im einfachen linearen Modell als ideale Quellenspannung `U0` in Reihe mit einem Innenwiderstand `Ri` dargestellt. Ohne Last fliesst kein Strom und die Klemmenspannung entspricht ungefähr `U0`. Unter Last fällt am Innenwiderstand eine Spannung ab.
+Eine reale Spannungsquelle wird im einfachen linearen Modell als ideale Quellenspannung $U_0$ in Reihe mit einem Innenwiderstand $R_i$ dargestellt. Ohne Last fliesst kein Strom und die Klemmenspannung entspricht ungefähr $U_0$. Unter Last fällt am Innenwiderstand eine Spannung ab.
 
 ![Ideale und reale Spannungs- sowie Stromquelle mit Innenwiderstand](../bilder/03-gleichstromnetzwerke/03-05-reale-quellen.png)
 
-`UK = U0 - I·Ri`
+$$
+U_K = U_0-I\cdot R_i
+$$
 
 | Formelzeichen | Bedeutung | Einheit |
 |---|---|---|
-| `U0` | Leerlauf- oder ideale Quellenspannung | V |
-| `UK` | Spannung an den äusseren Klemmen | V |
-| `Ri` | Innenwiderstand der Quelle | Ω |
+| $U_0$ | Leerlauf- oder ideale Quellenspannung | V |
+| $U_K$ | Spannung an den äusseren Klemmen | V |
+| $R_i$ | Innenwiderstand der Quelle | Ω |
 
 Das Modell erklärt einen annähernd linearen Spannungseinbruch. Ein reales Labornetzgerät verhält sich nur im normalen CV-Betrieb ähnlich. Erreicht es die eingestellte Stromgrenze, wechselt es in den CC-Betrieb; dann wird der Strom begrenzt und die Ausgangsspannung sinkt so weit wie nötig.
 
 ### Reale Stromquelle
 
-Eine reale Stromquelle lässt sich als ideale Stromquelle `I0` parallel zu einem Innenwiderstand modellieren. Je grösser dieser Parallelwiderstand ist, desto weniger ändert sich der Laststrom mit der Ausgangsspannung. Reale Stromquellen besitzen zusätzlich einen zulässigen Spannungsbereich.
+Eine reale Stromquelle lässt sich als ideale Stromquelle $I_0$ parallel zu einem Innenwiderstand modellieren. Je grösser dieser Parallelwiderstand ist, desto weniger ändert sich der Laststrom mit der Ausgangsspannung. Reale Stromquellen besitzen zusätzlich einen zulässigen Spannungsbereich.
 
 Die maximale Spannung, bei der der geregelte Strom noch eingehalten werden kann, wird häufig als Compliance-Spannung beschrieben. Reicht die verfügbare Spannung nicht aus, verlässt die Quelle ihren Regelbereich. Bei einer LED-Konstantstromquelle kann dann der gewünschte Strom trotz korrekter Sollvorgabe nicht mehr fliessen.
 
@@ -59,7 +61,13 @@ Die Ausgangskennlinie zeigt, welche Kombinationen aus Spannung und Strom möglic
 
 ### Kurzschluss und Leistung
 
-Im einfachen Quellenmodell wäre der Kurzschlussstrom `IK = U0/Ri`. Dieser Wert kann sehr gross werden. Bei Batterien erwärmen sich Zellen, Leitungen und Kontakte; bei Netzgeräten greift hoffentlich die elektronische Begrenzung. Ein Kurzschluss ist keine zulässige Standardmessung, ausser eine freigegebene Quelle und ein abgesichertes Verfahren sind ausdrücklich dafür vorgesehen.
+Im einfachen Quellenmodell wäre der Kurzschlussstrom:
+
+$$
+I_K = \frac{U_0}{R_i}
+$$
+
+Dieser Wert kann sehr gross werden. Bei Batterien erwärmen sich Zellen, Leitungen und Kontakte; bei Netzgeräten greift hoffentlich die elektronische Begrenzung. Ein Kurzschluss ist keine zulässige Standardmessung, ausser eine freigegebene Quelle und ein abgesichertes Verfahren sind ausdrücklich dafür vorgesehen.
 
 
 ## Anwendungsfall
@@ -78,7 +86,76 @@ Eine 9-V-Blockbatterie zeigt unbelastet nahezu 9 V. An einer niederohmigen Last 
 
 ## Berechnungsbeispiel
 
-Eine Quelle besitzt `U0 = 5,0 V` und `Ri = 2,0 Ω`. An `RL = 8,0 Ω` liegt insgesamt 10 Ω im Strompfad. Es fliessen `I = 5,0 V/10 Ω = 0,50 A`. Die Klemmenspannung ist `UK = 5,0 V - 0,50 A·2,0 Ω = 4,0 V`. Kontrolle an der Last: `0,50 A·8,0 Ω = 4,0 V`.
+### 🧮 Berechnungsbeispiel: Klemmenspannung einer realen Spannungsquelle
+
+Eine Quelle besitzt eine Leerlaufspannung von **5.0 V** und einen Innenwiderstand von **2.0 Ω**. Sie wird mit **8.0 Ω** belastet. Gesucht sind Laststrom und Klemmenspannung.
+
+**Gegeben:**
+
+- Leerlaufspannung $U_0$: **5.0 V**
+- Innenwiderstand $R_i$: **2.0 Ω**
+- Lastwiderstand $R_L$: **8.0 Ω**
+
+#### 1. Formel
+
+$$
+I =
+\frac{U_0}
+     {R_i+R_L}
+$$
+
+$$
+U_K = U_0-I\cdot R_i
+$$
+
+Zur Kontrolle gilt an der Last:
+
+$$
+U_K = I\cdot R_L
+$$
+
+#### 2. Werte einsetzen
+
+$$
+I =
+\frac{5.0~\mathrm{V}}
+     {2.0~\Omega+8.0~\Omega}
+$$
+
+$$
+U_K =
+5.0~\mathrm{V}-
+0.50~\mathrm{A}\cdot2.0~\Omega
+$$
+
+#### 3. Berechnen
+
+$$
+I = 0.50~\mathrm{A}
+$$
+
+$$
+U_K = 4.0~\mathrm{V}
+$$
+
+Kontrolle an der Last:
+
+$$
+0.50~\mathrm{A}\cdot8.0~\Omega =
+4.0~\mathrm{V}
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{I = 0.50~\mathrm{A}}
+$$
+
+$$
+\boxed{U_K = 4.0~\mathrm{V}}
+$$
+
+Die Belastung verursacht am Innenwiderstand einen Spannungsabfall von **1.0 V**; deshalb liegt an den Klemmen nur noch **4.0 V** an.
 
 ## Praxisbezug
 
@@ -107,7 +184,7 @@ Innenwiderstand und Schutzgrenzen erklären das Lastverhalten realer Quellen. Da
 
 1. Warum ist die Klemmenspannung unter Last kleiner als die Leerlaufspannung?
 2. Was geschieht beim Übergang eines Netzgeräts von CV zu CC?
-3. Berechne die Klemmenspannung für `U0 = 12 V`, `Ri = 1 Ω` und `RL = 5 Ω`.
+3. Berechne die Klemmenspannung für $U_0=12~\mathrm{V}$, $R_i=1~\Omega$ und $R_L=5~\Omega$.
 4. Wie kann ein hoher Leitungswiderstand einen Mikrocontroller-Reset verursachen?
 
 Weitere Aufgaben: [Übungen zu Modul 03](../uebungen/modul-03.md).

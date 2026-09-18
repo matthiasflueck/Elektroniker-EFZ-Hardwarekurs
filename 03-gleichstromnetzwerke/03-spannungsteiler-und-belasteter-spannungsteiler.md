@@ -35,28 +35,48 @@ Zwei Widerstände liegen in Reihe an der Eingangsspannung. Der Ausgang ist der Z
 
 ![Unbelasteter und belasteter Spannungsteiler mit Ausgangsknoten](../bilder/03-gleichstromnetzwerke/03-03-spannungsteiler.png)
 
-`Uout = Uin · R2 / (R1 + R2)`
+$$
+U_{\mathrm{out}} =
+U_{\mathrm{in}}
+\frac{R_2}{R_1+R_2}
+$$
 
 | Formelzeichen | Bedeutung | Einheit |
 |---|---|---|
-| `Uin` | Eingangsspannung des Teilers | V |
-| `Uout` | Ausgangsspannung gegen den unteren Bezugsknoten | V |
-| `R1` | oberer Widerstand | Ω |
-| `R2` | unterer Widerstand | Ω |
+| $U_{\mathrm{in}}$ | Eingangsspannung des Teilers | V |
+| $U_{\mathrm{out}}$ | Ausgangsspannung gegen den unteren Bezugsknoten | V |
+| $R_1$ | oberer Widerstand | Ω |
+| $R_2$ | unterer Widerstand | Ω |
 
-Der Quotient `R2/(R1+R2)` heisst Teilverhältnis. Er liegt bei positiven Widerständen zwischen 0 und 1. Die Ausgangsspannung kann daher ohne aktive Bauteile nicht grösser als die Eingangsspannung werden.
+Der Quotient $R_2/(R_1+R_2)$ heisst Teilverhältnis. Er liegt bei positiven Widerständen zwischen 0 und 1. Die Ausgangsspannung kann daher ohne aktive Bauteile nicht grösser als die Eingangsspannung werden.
 
 ### Belastung verändert den unteren Zweig
 
-Eine Last `RL` vom Ausgang nach GND liegt parallel zu `R2`. Für die Berechnung wird zuerst `R2L = R2 || RL` gebildet und dann dieser Ersatzwiderstand in die Teilerformel eingesetzt:
+Eine Last $R_L$ vom Ausgang nach GND liegt parallel zu $R_2$. Für die Berechnung wird zuerst der Ersatzwiderstand des unteren Zweigs gebildet:
 
-`Uout,bel = Uin · R2L / (R1 + R2L)`
+$$
+R_{2L} = R_2\parallel R_L =
+\frac{R_2\cdot R_L}
+     {R_2+R_L}
+$$
 
-`RL` bezeichnet den Lastwiderstand, `R2L` den Ersatzwiderstand aus unterem Teilerwiderstand und Last. Weil `R2L` kleiner als `R2` ist, sinkt die Ausgangsspannung. Eine praktische Faustidee lautet: Der Lastwiderstand sollte deutlich, häufig mindestens um den Faktor zehn, grösser als der wirksame Ausgangswiderstand sein. Ob das genügt, entscheidet die erlaubte Abweichung.
+Danach wird dieser Ersatzwiderstand in die Teilerformel eingesetzt:
+
+$$
+U_{\mathrm{out,bel}} =
+U_{\mathrm{in}}
+\frac{R_{2L}}{R_1+R_{2L}}
+$$
+
+$R_L$ bezeichnet den Lastwiderstand, $R_{2L}$ den Ersatzwiderstand aus unterem Teilerwiderstand und Last. Weil $R_{2L}$ kleiner als $R_2$ ist, sinkt die Ausgangsspannung. Eine praktische Faustidee lautet: Der Lastwiderstand sollte deutlich, häufig mindestens um den Faktor zehn, grösser als der wirksame Ausgangswiderstand sein. Ob das genügt, entscheidet die erlaubte Abweichung.
 
 ### Ausgangswiderstand und Messgerätebelastung
 
-Vom Ausgang aus gesehen besitzt der Teiler bei kurzgeschlossener idealer Quelle den Widerstand `Rout = R1 || R2`. Ein Voltmeter mit endlichem Eingangswiderstand wird selbst zur Last. Bei 10 MΩ ist die Wirkung an einem 10-kΩ-Teiler meist klein, an einem Teiler im Megaohmbereich jedoch messbar.
+Vom Ausgang aus gesehen besitzt der Teiler bei kurzgeschlossener idealer Quelle den Widerstand:
+
+$$
+R_{\mathrm{out}} = R_1\parallel R_2
+$ Ein Voltmeter mit endlichem Eingangswiderstand wird selbst zur Last. Bei 10 MΩ ist die Wirkung an einem 10-kΩ-Teiler meist klein, an einem Teiler im Megaohmbereich jedoch messbar.
 
 Hohe Widerstandswerte sparen Ruhestrom, erhöhen aber Empfindlichkeit gegenüber Leckströmen, Störeinkopplung und ADC-Abtaststrom. Niedrige Werte belasten die Quelle und erzeugen Verlustleistung. Die Auswahl ist daher ein Kompromiss.
 
@@ -81,9 +101,80 @@ Ein Potentiometer ist ein verstellbarer Spannungsteiler. Zwischen seinen Endansc
 
 ## Berechnungsbeispiel
 
-Zuerst wird der unbelastete Sollwert bestimmt. Danach lässt sich klar erkennen, welche Änderung allein durch die zusätzliche Last entsteht.
+### 🧮 Berechnungsbeispiel: Belasteten Spannungsteiler berechnen
 
-`R1 = 10 kΩ` und `R2 = 10 kΩ` teilen 10 V unbelastet auf 5 V. Eine Last von `RL = 10 kΩ` ergibt `R2L = 10 kΩ || 10 kΩ = 5 kΩ`. Damit wird `Uout,bel = 10 V · 5 kΩ/(10 kΩ+5 kΩ) = 3,33 V`. Die Last halbiert also nicht nur einen Strom, sondern verändert das Teilverhältnis deutlich.
+Ein Spannungsteiler aus zweimal **10 kΩ** liegt an **10 V**. Danach wird der Ausgang mit weiteren **10 kΩ** gegen GND belastet. Gesucht sind Leerlauf- und belastete Ausgangsspannung.
+
+**Gegeben:**
+
+- Eingangsspannung: **10 V**
+- oberer Widerstand $R_1$: **10 kΩ**
+- unterer Widerstand $R_2$: **10 kΩ**
+- Lastwiderstand $R_L$: **10 kΩ**
+
+#### 1. Formel
+
+$$
+U_{\mathrm{out}} =
+U_{\mathrm{in}}
+\frac{R_2}{R_1+R_2}
+$$
+
+$$
+R_{2L} = R_2\parallel R_L
+$$
+
+$$
+U_{\mathrm{out,bel}} =
+U_{\mathrm{in}}
+\frac{R_{2L}}{R_1+R_{2L}}
+$$
+
+#### 2. Werte einsetzen
+
+$$
+U_{\mathrm{out}} =
+10~\mathrm{V}
+\frac{10~\mathrm{k}\Omega}
+     {10~\mathrm{k}\Omega+10~\mathrm{k}\Omega}
+$$
+
+$$
+R_{2L} = 10~\mathrm{k}\Omega\parallel10~\mathrm{k}\Omega
+$$
+
+$$
+U_{\mathrm{out,bel}} =
+10~\mathrm{V}
+\frac{5~\mathrm{k}\Omega}
+     {10~\mathrm{k}\Omega+5~\mathrm{k}\Omega}
+$$
+
+#### 3. Berechnen
+
+$$
+U_{\mathrm{out}} = 5.0~\mathrm{V}
+$$
+
+$$
+R_{2L} = 5.0~\mathrm{k}\Omega
+$$
+
+$$
+U_{\mathrm{out,bel}} \approx 3.33~\mathrm{V}
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{U_{\mathrm{out}} = 5.0~\mathrm{V}}
+$$
+
+$$
+\boxed{U_{\mathrm{out,bel}} \approx 3.33~\mathrm{V}}
+$$
+
+Die zusätzliche Last verkleinert den wirksamen unteren Widerstand und verändert dadurch das Teilverhältnis deutlich.
 
 ## Praxisbezug
 

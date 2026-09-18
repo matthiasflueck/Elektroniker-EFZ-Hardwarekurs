@@ -39,27 +39,49 @@ Vor jeder Rechnung werden angenommene Strompfeile und Spannungspolungen eingezei
 
 Ein Knoten verbindet mindestens drei Zweige. Weil Ladung erhalten bleibt, ist die algebraische Summe aller Knotenströme null:
 
-`Σ Ik = 0`
+$$
+\sum_k I_k = 0
+$$
 
 | Formelzeichen | Bedeutung | Einheit |
 |---|---|---|
-| `Σ` | Summe über alle betrachteten Grössen | – |
-| `Ik` | Strom des Zweigs mit dem Laufindex `k` | A |
-| `k` | Kennzeichnung eines Zweigs | – |
+| $\sum$ | Summe über alle betrachteten Grössen | – |
+| $I_k$ | Strom des Zweigs mit dem Laufindex $k$ | A |
+| $k$ | Kennzeichnung eines Zweigs | – |
 
-Mit der Vereinbarung «zufliessend positiv, abfliessend negativ» wird beispielsweise `I1 - I2 - I3 = 0`. Gleichwertig ist `I1 = I2 + I3`. Wichtig ist nicht die gewählte Konvention, sondern ihre konsequente Anwendung.
+Mit der Vereinbarung «zufliessend positiv, abfliessend negativ» wird beispielsweise:
+
+$$
+I_1-I_2-I_3 = 0
+$$
+
+Gleichwertig ist:
+
+$$
+I_1 = I_2+I_3
+$$
+
+Wichtig ist nicht die gewählte Konvention, sondern ihre konsequente Anwendung.
 
 ### Maschenregel
 
 Eine Masche ist ein geschlossener Umlauf im Netzwerk. Addiert man alle Spannungen mit ihrer durch die Umlaufrichtung bestimmten Polarität, ergibt sich:
 
-`Σ Uk = 0`
+$$
+\sum_k U_k = 0
+$$
 
-Beim Umlauf von `−` nach `+` wird eine Spannung als Anstieg gezählt, von `+` nach `−` als Abfall. Für eine Quelle und zwei Widerstände kann so `Uq - U1 - U2 = 0` entstehen. Die Regel sagt nicht, dass an jedem Ort null Volt herrschen; sie sagt, dass man nach einem vollständigen Umlauf wieder dasselbe Potential erreicht.
+Beim Umlauf von $-$ nach $+$ wird eine Spannung als Anstieg gezählt, von $+$ nach $-$ als Abfall. Für eine Quelle und zwei Widerstände kann so entstehen:
+
+$$
+U_q-U_1-U_2 = 0
+$$
+
+Die Regel sagt nicht, dass an jedem Ort null Volt herrschen; sie sagt, dass man nach einem vollständigen Umlauf wieder dasselbe Potential erreicht.
 
 ### Unabhängige Gleichungen
 
-Nicht jede denkbare Knoten- oder Maschengleichung liefert neue Information. Für `n` Knoten werden höchstens `n−1` unabhängige Knotengleichungen benötigt. Bei grösseren Netzwerken helfen systematische Knotenpotential- oder Maschenstromverfahren. In diesem Modul steht zunächst das saubere Übersetzen vom Schema zur Gleichung im Vordergrund.
+Nicht jede denkbare Knoten- oder Maschengleichung liefert neue Information. Für $n$ Knoten werden höchstens $n-1$ unabhängige Knotengleichungen benötigt. Bei grösseren Netzwerken helfen systematische Knotenpotential- oder Maschenstromverfahren. In diesem Modul steht zunächst das saubere Übersetzen vom Schema zur Gleichung im Vordergrund.
 
 
 ## Anwendungsfall
@@ -78,7 +100,79 @@ An einer Verzweigung fliessen 7 mA zu. Zwei gemessene Abflüsse betragen 2 mA un
 
 ## Berechnungsbeispiel
 
-Eine 9-V-Quelle speist zwei Serienwiderstände `R1 = 1 kΩ` und `R2 = 2 kΩ`. Mit der Umlaufrichtung des Stroms gilt `9 V - I·1 kΩ - I·2 kΩ = 0`. Zusammenfassen ergibt `I = 9 V / 3 kΩ = 3 mA`. Die Spannungsabfälle sind 3 V und 6 V; `9 V - 3 V - 6 V = 0` bestätigt die Maschenbilanz.
+### 🧮 Berechnungsbeispiel: Maschenregel mit zwei Serienwiderständen
+
+Eine **9-V-Quelle** speist zwei Widerstände von **1 kΩ** und **2 kΩ** in Reihe. Gesucht sind Strom und Spannungsabfälle.
+
+**Gegeben:**
+
+- Quellenspannung: **9 V**
+- Widerstand $R_1$: **1 kΩ**
+- Widerstand $R_2$: **2 kΩ**
+
+#### 1. Formel
+
+$$
+U_q-U_1-U_2 = 0
+$$
+
+Mit dem Ohmschen Gesetz:
+
+$$
+U_1 = I\cdot R_1
+\qquad
+U_2 = I\cdot R_2
+$$
+
+Damit:
+
+$$
+U_q-I(R_1+R_2)=0
+$$
+
+$$
+I = \frac{U_q}{R_1+R_2}
+$$
+
+#### 2. Werte einsetzen
+
+$$
+I =
+\frac{9~\mathrm{V}}
+     {1~\mathrm{k}\Omega+2~\mathrm{k}\Omega}
+$$
+
+#### 3. Berechnen
+
+$$
+I = 3~\mathrm{mA}
+$$
+
+$$
+U_1 = 3~\mathrm{mA}\cdot1~\mathrm{k}\Omega = 3~\mathrm{V}
+$$
+
+$$
+U_2 = 3~\mathrm{mA}\cdot2~\mathrm{k}\Omega = 6~\mathrm{V}
+$$
+
+Kontrolle:
+
+$$
+9~\mathrm{V}-3~\mathrm{V}-6~\mathrm{V}=0
+$$
+
+#### 4. Ergebnis
+
+$$
+\boxed{I = 3~\mathrm{mA}}
+$$
+
+$$
+\boxed{U_1 = 3~\mathrm{V},\qquad U_2 = 6~\mathrm{V}}
+$$
+
+Die Spannungsbilanz ist erfüllt; die gewählte Stromrichtung ist damit konsistent.
 
 ## Praxisbezug
 
