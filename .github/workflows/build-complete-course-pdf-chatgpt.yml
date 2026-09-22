@@ -167,6 +167,8 @@ jobs:
           for i, p in enumerate(paths):
               raw = (root / p).read_text(encoding="utf-8")
               raw = raw.replace("\r\n", "\n").replace("\r", "\n")
+              # GitHub tolerates double-escaped percent signs in math; XeLaTeX does not.
+              raw = raw.replace("\\\\%", "\\%")
               raw = rewrite_links(raw, p)
 
               # Avoid duplicate YAML front matter from source files.
