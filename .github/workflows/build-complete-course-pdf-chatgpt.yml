@@ -239,15 +239,19 @@ jobs:
         run: |
           pandoc master.md \
             --from=markdown+raw_tex+tex_math_dollars \
-            --to=pdf \
-            --pdf-engine=xelatex \
+            --to=latex --standalone \
             --toc --toc-depth=2 \
             --metadata=geometry:a4paper \
             --metadata=geometry:margin=18mm \
             --metadata=geometry:headheight=15pt \
             --include-in-header=header.tex \
             --resource-path=".:bilder" \
-            --output=Elektroniker-EFZ-Hardwarekurs-Gesamtausgabe.pdf
+            --output=master.tex
+          echo "===== TeX context around previous error line ====="
+          nl -ba master.tex | sed -n '3250,3335p'
+          xelatex -interaction=nonstopmode -halt-on-error master.tex
+          xelatex -interaction=nonstopmode -halt-on-error master.tex
+          mv master.pdf Elektroniker-EFZ-Hardwarekurs-Gesamtausgabe.pdf
 
       - name: Sanity-check PDF
         run: |
