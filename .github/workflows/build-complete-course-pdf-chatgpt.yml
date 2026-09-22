@@ -238,7 +238,7 @@ jobs:
       - name: Convert to PDF
         run: |
           pandoc master.md \
-            --from=gfm+tex_math_dollars+raw_tex \
+            --from=markdown+raw_tex+tex_math_dollars \
             --to=pdf \
             --pdf-engine=xelatex \
             --toc --toc-depth=2 \
