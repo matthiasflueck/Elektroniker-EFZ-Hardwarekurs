@@ -246,7 +246,6 @@ jobs:
             --metadata=geometry:margin=18mm \
             --metadata=geometry:headheight=15pt \
             --include-in-header=header.tex \
-            --listings \
             --resource-path=".:bilder" \
             --output=Elektroniker-EFZ-Hardwarekurs-Gesamtausgabe.pdf
 
